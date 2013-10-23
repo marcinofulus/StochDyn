@@ -1,0 +1,536 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Stany stacjonarne i ich stabilność &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Atraktory" href="chI024.html" />
+    <link rel="prev" title="Dynamiczne układy zachowawcze i dysypatywne" href="chI022.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="chI024.html" title="Atraktory"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI022.html" title="Dynamiczne układy zachowawcze i dysypatywne"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="stany-stacjonarne-i-ich-stabilnosc">
+<h1>Stany stacjonarne i ich stabilność<a class="headerlink" href="#stany-stacjonarne-i-ich-stabilnosc" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Czasami rozwiązanie równań różniczkowych dąży do stałej wartości dla długich czasów, <span class="math">\(t\to \infty\)</span>. Mówimy wówczas, że istnieje rozwiązanie stacjonarne (stan stacjonarny, punkt stały, punkt równowagi):</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[\lim_{t \to \infty}  \vec x(t) = \vec x_s\]</div>
+<p>Może istnieć kilka stanów stacjonarnych, a nawet nieskończenie wiele stanów stacjonarnych. Który z tych stanów się realizuje,  zależy to od warunku początkowego <span class="math">\(\vec x(0) = \vec x_0\)</span>. Rozwiązanie stacjonarne <span class="math">\(\vec x_s\)</span> nie zależy od czasu. Nazwa &#8220;rozwiązanie stacjonarne&#8221; nie jest bezpodstawne. Faktycznie jest to rozwiązanie układu równań  różniczkowych</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[\frac{d\vec x}{dt} = \vec F(\vec x), \quad \quad \vec x(0)  = \vec x_0\]</div>
+<p>z warunkiem początkowym <span class="math">\(\vec x(0) = \vec x_s\)</span>. Jeżeli  <span class="math">\(\vec x(t) = \vec x_s\)</span> jest rozwiązaniem stacjonarnym to musi spełniać układ <a href="#equation-eqn2">(2)</a>., czyli</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[\mbox{jeżeli}  \quad \quad \vec x(t) = \vec x_s \quad \quad\mbox{to} \quad \quad\frac{d\vec x(t)}{dt} = \frac{d\vec x_s}{dt}=0 = \vec F(\vec x(t)) = \vec F(\vec x_s)) = 0\]</div>
+<p>Innymi słowy, stan stacjonarny wyznaczny jest z warunku:</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[\vec F(\vec x_s)) = 0\]</div>
+<p>Powyższy warunek to układ <span class="math">\(n\)</span>-równań algebraicznych. Zwykle udaje  nam się go rozwiązać analitycznie w niewielu przypadkach,  w szczególności gdy wymiar przestrzeni fazowej  <span class="math">\(n &gt;1\)</span>.  Natomiast możemy taki układ rozwiązywać numerycznie. Jeżeli już wyznaczymy stan stacjonarny, to nasuwa się pytanie na ile jest on stabily, tzn. gdy nieco wytrącimy układ z tego stanu to czy powróci on do poprzedniego stanu stacjonarnego czy też oddali się od niego.  Na przykład stanem stacjonarnym kulki poruszającej się na nitce w polu ziemskim jest położenie pionowe. Gdy kulkę wychylimy z tego położenia, po dostatecznie długim czasie powróci ona do pozycji pionowej i tak tam pozostanie nieruchoma. Jest to stabilny stan równowagi. Rozważmy teraz kulkę mogącą poruszać się tylko po sferze. Gdy umieścimy kulkę na  biegunie północnym sfery w polu ziemskim to nieskończenie małe zaburzenie spowoduje, że kulka spadnie z tego położenie i nigdy do niego nie powróci. W obu tych przypadkach zakładamy  rzeczywiste warunki ruchu z tarciem. Pominięcie tarcia spowoduje radykalnie różne zachowanie. Te dwa przyklady pozwalają nabyć intuicję, co to znaczy że stan stacjonarny jest stabilny lub jest niestabilny.  Z grubsza można powiedzieć, że stan stacjonarny  <span class="math">\(\vec x_s\)</span> jest stabilny jeśli każda trajektoria startującego z punktu bliskiego <span class="math">\(\vec x_s\)</span> pozostaje blisko <span class="math">\(\vec x_s\)</span> wraz z upływem czasu. Natomiast  <span class="math">\(\vec x_s\)</span> jest niestabilny gdy  każda każda trajektoria startującego z punktu bliskiego <span class="math">\(\vec x_s\)</span> oddala się od tego punktu gdy <span class="math">\(t\to \infty\)</span>.  Można podać bardziej precyzyjne definicje.</p>
+<dl class="docutils">
+<dt>Definicja</dt>
+<dd>Mówimy, że stan stacjonarny  <span class="math">\(\vec x_s\)</span> jest stabilny jeżeli  dla dowolnego <span class="math">\(\epsilon &gt;0\)</span> istnieje
+takie <span class="math">\(\delta(\epsilon) &gt;0\)</span>, że dla każdego <span class="math">\(\vec x_0\)</span> takiego że <span class="math">\(| \vec x_0 -\vec x_s| &lt; \delta\)</span>
+rozwiązanie <span class="math">\(\vec x(t)\)</span> spełnia nierówność: <span class="math">\(|\vec x(t) - \vec x_s| &lt; \epsilon\)</span> dla dowolnych czasów <span class="math">\(t&gt;0\)</span>.
+Jeżeli dodatkowo <span class="math">\(\lim_{t\to \infty} \vec x(t)  = \vec x_s\)</span> to stan stacjonarny <span class="math">\(\vec x_s\)</span> jest asymptotycznie stabilny.</dd>
+</dl>
+<p>Innymi słowy dla stabilnych stanów rozwiązanie <span class="math">\(\vec x(t)\)</span> jest cały czas blisko rozwiązania stacjonarnego <span class="math">\(\vec x_s\)</span>, a dla asymptotycznie stabilnych stanów rozwiązanie <span class="math">\(\vec x(t)\)</span> dąży do <span class="math">\(\vec x_s\)</span>  gdy czas <span class="math">\(t\to \infty\)</span>.</p>
+<div class="section" id="przypadek-a-jedno-rownanie-rozniczkowe">
+<h2>Przypadek A: Jedno równanie różniczkowe<a class="headerlink" href="#przypadek-a-jedno-rownanie-rozniczkowe" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<div class="section" id="przyklad-rownanie-rozniczkowe-liniowe">
+<h3>Przykład: Równanie różniczkowe liniowe<a class="headerlink" href="#przyklad-rownanie-rozniczkowe-liniowe" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[\dot x = \lambda x = f(x), \qquad \lambda  \in R\]</div>
+<p>Stan stacjonarny znajdujemy jako rozwiazanie równania</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[f(x_s) = \lambda x_s =0 \qquad \mbox{stąd otrzymujemy stan stacjonarny} \qquad x_s = 0\]</div>
+<p>Pytamy, czy ten stan jest stabilny. Musimy zaburzyć rozwiązanie stacjonarne <span class="math">\(x(t) = x_s = 0\)</span> i wystartować z dostatecznie bliskiego w stosunku do <span class="math">\(x_s=0\)</span> warunku początkowego <span class="math">\(X_0\)</span>. Rozwiązaniem równania różniczkowego liniowego jest funkcja</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[x(t) = X_0 e^{\lambda t}\]</div>
+<p>Jeżeli</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(8)</span>\[\begin{split}\lambda  &lt; 0  \quad \quad \mbox{ to} \quad \quad x(t) \to 0 \quad \quad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0\end{split}\]</div>
+<p>Wówczas stan stacjonarny <span class="math">\(x_s=0\)</span> jest stabilny i dodatkowo jest asymptotycznie stabilny ponieważ rozwiązanie to dąży do <span class="math">\(x_s =0\)</span>  gdy  <span class="math">\(t\to \infty\)</span> .</p>
+<p>Jeżeli</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(9)</span>\[\begin{split}\lambda &gt;0  \quad \quad \mbox{ to} \quad \quad x(t) \to \infty  \quad \quad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0\end{split}\]</div>
+<p>Wówczas stan stacjonarny <span class="math">\(x_s=0\)</span> jest niestabilny.</p>
+<div class='sage'><script type='text/x-sage'>var('x')
+pa1=plot(0.005*exp(-x), (x,0,1), figsize=(6,3),color="red")
+pa2=plot(0.005*exp(x), (x,0, 1), figsize=(6,3))
+pa3=plot(-0.005*exp(-x), (x,0,1), figsize=(6,3),color="red")
+pa4=plot(-0.005*exp(x), (x,0, 1), figsize=(6,3))
+show(pa1+pa2+pa3+pa4)</script></div><p>Na rysunku przedstawiono zagadnienie stabilności:  czerwone krzywe dążą do 0 gdy <span class="math">\(t\to \infty\)</span>. Niebieskie  krzywe uciekają od   0 gdy <span class="math">\(t\to \infty\)</span>.</p>
+<p>Warunki początkowe <span class="math">\(x(0)=\pm 0.05\)</span> są blisko stanu stacjonarnego <span class="math">\(x_s=0\)</span>. Przykład ten sugeruje nam metodę badania stabilności stanu stacjonarnego. Teraz podamy tę metodę.</p>
+</div>
+</div>
+<div class="section" id="metoda-linearyzacji-badania-stabilnosci">
+<h2>Metoda linearyzacji badania stabilności<a class="headerlink" href="#metoda-linearyzacji-badania-stabilnosci" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Rozpatrujemy układ 1-wymiarowy:</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(10)</span>\[\frac{dx}{dt} = \dot x = f(x), \quad \quad f(x_s) = 0\]</div>
+<p>Aby zbadać stabilność stanu  <span class="math">\(x_s\)</span>, analizujemy zaburzenie</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(11)</span>\[\begin{split}h(t) = x(t) - x_s,  \quad \quad  |h(0)| = |x(0) - x_s| &lt; \delta\end{split}\]</div>
+<p>Funkcja <span class="math">\(h(t)\)</span> powinna być mała, gdy stan <span class="math">\(x_s\)</span> jest stabilny. Jak daleko jest rozwiązanie <span class="math">\(x(t)\)</span> od rozwiązania <span class="math">\(x_s\)</span>. Zobaczmy, jakie równanie różniczkowe spełnia <span class="math">\(h(t)\)</span>:</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(12)</span>\[\frac{dh}{dt} = \frac{d}{dt} [x(t) - x_s] = \frac{dx}{dt} = f(x) = f( x_s +h)  = f(x_s) + f'(x_s) h + \frac{1}{2} f''(x_s) h^2 + \frac{1}{3!} f'''(x_s) h^3+ ....\]</div>
+<p>Ponieważ <span class="math">\(f(x_s)=0\)</span>, otrzymujemy równanie różniczkowe dla odchylenia <span class="math">\(h(t)\)</span> od stanu stacjonarnego</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(13)</span>\[\frac{dh}{dt} =  f'(x_s) h + \frac{1}{2} f''(x_s) h^2 + \frac{1}{3!} f'''(x_s) h^3+ ....\]</div>
+<p>Jeżeli :math:` f&#8217;(x_s) ne 0`, to pierwszy istotny wyraz w tym równaniu jest liniowy względem <span class="math">\(h\)</span>.  Wyrazy <span class="math">\(h^2,  h^3\)</span> i wyższych potęg są pomijalnie małe. Jeżeli np. <span class="math">\(h =10^{-2}\)</span> to  <span class="math">\(h^2 = 10^{-4},  h^3 = 10^{-6}\)</span>. Wówczas <span class="math">\(h^2,  h^3\)</span> i wyższe potęgi <span class="math">\(h\)</span>  można pominąć jako bardzo małe.  Otrzymujemy równanie różniczkowe liniowe</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(14)</span>\[\frac{dh}{dt} =\lambda h, \quad \quad \lambda = f'(x_s)\]</div>
+<p>z rozwiązaniem</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(15)</span>\[h(t) = h(0)  e^{\lambda t}\]</div>
+<p>Wiemy już z powyższego przykładu, że gdy <span class="math">\(\lambda &lt; 0\)</span> to <span class="math">\(h(t) \to 0\)</span> gdy <span class="math">\(t\to \infty\)</span>. To oznacza, że  zaburzenie <span class="math">\(x(t) \to x_s\)</span> gdy  <span class="math">\(t \to \infty\)</span>  i wówczas stan stacjonarny <span class="math">\(x_s\)</span> jest stabilny.  Jeżeli  <span class="math">\(\lambda &gt; 0\)</span> to <span class="math">\(|h(t)| \to \infty\)</span> gdy <span class="math">\(t\to \infty\)</span>. To oznacza, że  zaburzenie x(t) ucieka od <span class="math">\(x_s\)</span> gdy  <span class="math">\(t \to \infty\)</span>  i wówczas stan stacjonarny <span class="math">\(x_s\)</span> jest niestabilny. Otrzymujemy następujące kryterium na stabilność stanu stacjonarnego:</p>
+<p>Jeżeli <span class="math">\(\lambda = f'(x_s) &lt; 0\)</span> to  stan stacjonarny jest stabilny; jeżeli <span class="math">\(\lambda = f'(x_s) &gt; 0\)</span> to  stan stacjonarny jest niestabilny.</p>
+<p>Jeżeli <span class="math">\(\lambda = f'(x_s) = 0\)</span> to  nie wiem nic na temat stabilności. Musimy badać następne niezerowe wyrazy.  Jeżeli <span class="math">\(f''(x_s) \ne 0\)</span> zatrzymujemy pierwszy nieznikający wyraz czyli  badamy równanie</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(16)</span>\[\frac{dh}{dt} =\gamma h^2, \quad \quad \gamma  =  \frac{1}{2}f''(x_s)\]</div>
+<p>Jeżeli  <span class="math">\(f'(x_s) =0\)</span> oraz <span class="math">\(f''(x_s) =0\)</span> to  bierzemy następny nieznikający wyraz i badamy równanie</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(17)</span>\[ \frac{dh}{dt} =\nu h^3, \quad \quad \nu  =    \frac{1}{3!} f'''(x_s)\]</div>
+<p>Jeżeli w tych przypadkach <span class="math">\(h(t) \to 0\)</span> gdy <span class="math">\(t\to \infty\)</span>, to  stan stacjonarny <span class="math">\(x_s\)</span> jest stabilny. W przeciwnym przypadku  - nie jest stabilny.</p>
+</div>
+<div class="section" id="metoda-potencjalu-badania-stabilnosci">
+<h2>Metoda potencjału badania stabilności<a class="headerlink" href="#metoda-potencjalu-badania-stabilnosci" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>W jednym wymiarze, równanie różniczkowe  zawsze można przedstawić w postaci</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(18)</span>\[\frac{dx}{dt} = \dot x = f(x) = -\frac{dV(x)}{dx} = -V'(x), \quad \quad f(x_s) = 0\]</div>
+<p>gdzie funkcja</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(19)</span>\[V(x) = -\int f(x)  dx\]</div>
+<p>nazywana jest &#8220;potencjałem&#8221;.  W ogólności to nie jest potencjał fizyczny który pojawia się w równaniu Newtona  dla cząstki z tłumieniem:</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(20)</span>\[m \ddot x + \gamma \dot x = -V'(x)\]</div>
+<p>Jeżeli ruch cząstki odbywa się w środowisku o dużym  tarciu, w tzw. reżimie przetłumionym, w którym przyśpieszenie cząstki jest znikomo małe (formalnie gdy <span class="math">\(m=0\)</span>), wówczas równanie Newtona ma postać</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(21)</span>\[\gamma \dot x = -V'(x)\]</div>
+<p>które po przeskalowaniu ma postać:</p>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(22)</span>\[\dot x = -\frac{1}{\gamma} V'(x) = - {\tilde V} '(x)\]</div>
+<p>Stąd też &#8220;historycznie&#8221; wywodzi sią nazwa potencjał dla abstrakcyjnego układu dynamicznego:</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(23)</span>\[ \dot x = f(x) =  = -V'(x)\]</div>
+<p>Stan stacjonarny <span class="math">\(x_s\)</span> określony równaniem</p>
+<div class="math" id="equation-eqn24">
+<span class="eqno">(24)</span>\[f(x_s) = -V'(x_s) = 0\]</div>
+<p>to punkt ekstremalny potencjału (o ile  pochodna parzystego rzędu <span class="math">\(V^{(2k)}(x_s) \ne 0\)</span>).  Punkt <span class="math">\(x_s\)</span> jest stabilny gdy</p>
+<div class="math" id="equation-eqn25">
+<span class="eqno">(25)</span>\[\begin{split}\lambda = f'(x_s) = - V''(x_s) &lt; 0\end{split}\]</div>
+<p>czyli <span class="math">\(V''(x_s) &gt; 0\)</span>. To odpowiada minimum potencjału. Natomiast punkt <span class="math">\(x_s\)</span>  niestabily odpowiada maksimum potencjału. Mamy więc klarowy obraz: Rysujemy potencjał <span class="math">\(V(x)\)</span>. Minima potencjału to stabilne stany stacjonarne; maksima potencjału to niestabilne stany stacjonarne.</p>
+<div class="topic">
+<p class="topic-title first">Zadania</p>
+<p>Wyznacz stany stacjonarne i zbadaj ich (asymptotyczną) stabilność. Korzystaj z metody linearyzacji i metody potencjału.</p>
+<ol class="arabic simple">
+<li><span class="math">\(\dot x = 4 x - x^3\)</span></li>
+<li><span class="math">\(\dot x = 1+x^4\)</span></li>
+<li><span class="math">\(\dot x =3 \sin(x)\)</span></li>
+<li><span class="math">\(\dot x =2x \sin(x)\)</span></li>
+<li><span class="math">\(\dot x =-x^2 \sin(x)\)</span></li>
+</ol>
+</div>
+<p>Poniżej pokazujemy wyniki dla zadania 1. Są 3 stany stacjonarne: <span class="math">\(x_{s1} = 2,  x_{s2} = 0,  x_{s3} = -2\)</span>. Stany  <span class="math">\(x_{s1} = 2\)</span>  oraz  <span class="math">\(x_{s3} = -2\)</span>  są asymptotycznie stabilne (rozwiązania dążą do tych stanów). Stan <span class="math">\(x_{s2} = 0\)</span>  jest niestabilny (rozwiązania uciekają od tego stanu).</p>
+<div class='sage'><script type='text/x-sage'>var('x,y,z,u,Z,Y,t')
+T0 = srange(0,1.5,0.01)
+f11=4*x-x^3
+f12=4*y-y^3
+f13=4*z-z^3
+f15=4*u-u^3
+f16=0
+sol5=desolve_odeint( vector([f11, f12, f13, 0, 0,f15]), [4,0.2,-0.2,2,-2,-4],T0,[x,y,z,Z,Y,u])
+line( zip ( T0,sol5[:,0]) ,figsize=(7, 4)) +\
+... line( zip ( T0,sol5[:,1]) ,color='red')+\
+... line( zip ( T0,sol5[:,2]) ,color='green') +\
+... line( zip ( T0,sol5[:,4]) ,color='gray') +\
+... line( zip ( T0,sol5[:,5]) ,color='black')+\
+... line( zip ( T0,sol5[:,3]) ,color='violet')</script></div><p>Z powyższego przykładu zauważmy następujące cechy:</p>
+<ol class="arabic simple">
+<li>Zbiór warunków początkowych dzieli się na dwa podzbiory <span class="math">\(A_1 = (-\infty, 0)\)</span> oraz  <span class="math">\(A_2=(0, \infty)\)</span>. Dla warunków  początkowych ze zbioru <span class="math">\(A_1\)</span> rozwiązania <span class="math">\(x(t) \to -2\)</span> dla <span class="math">\(t\to\infty\)</span>, a  dla warunków  początkowych ze zbioru <span class="math">\(A_2\)</span> rozwiązania <span class="math">\(x(t) \to 2\)</span> dla <span class="math">\(t\to\infty\)</span>.</li>
+<li>Krzywe <span class="math">\(x(t)\)</span>  są funkcjami monotonicznymi: albo cały czas rosną w czasie, albo cały czas maleją gdy czas rośnie. Dlaczego? Rozważmy  2 przykłady warunków początkowych widocznych na rysunku:</li>
+</ol>
+<ol class="loweralpha simple">
+<li>gdy <span class="math">\(x(0) = 4\)</span> to <span class="math">\((dx/dt) (x=4) = 4*4 -4^3 = -48 &lt; 0\)</span>.   Pochodna jest ujemna, a to oznacza że funkcja maleje. Podobnie jest dla wszystkich warunków początkowych <span class="math">\(x(0) &gt; 2\)</span></li>
+<li>gdy <span class="math">\(x(0) = 0.2\)</span> to <span class="math">\((dx/dt) (x=0.2) = 4*0.2 -(0.2)^3 &gt; 0\)</span>.  Pochodna jest dodatnia, a to oznacza że funkcja rośnie. Podobnie jest dla wszystkich warunków początkowych <span class="math">\(x(0)  \in (0, 2)\)</span></li>
+</ol>
+<ol class="arabic simple" start="3">
+<li>Różne krzywe <span class="math">\(x(t)\)</span> nigdy się nie przecinają. Wynika to z tego, że rozwiązania są jedyne i jednoznaczne. Jeżeli by się przecinały,  to z punktu przecięcia wychodziłoby kilka rozwiązań. A to jest niemożliwe na mocy twierdzenia o jednoznaczności rozwiązań.</li>
+</ol>
+</div>
+<div class="section" id="przypadek-b-uklad-2-rownan-rozniczkowych">
+<h2>Przypadek B: Układ  2 równań różniczkowych<a class="headerlink" href="#przypadek-b-uklad-2-rownan-rozniczkowych" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Dla jasności prezentacji, rozpatrujemy układ 2 równań różniczkowych</p>
+<div class="math" id="equation-eqn26">
+<span class="eqno">(26)</span>\[\dot x = f(x, y),\]\[\dot y = g(x, y).\]</div>
+<p>Stany stacjonarne <span class="math">\((x_s, y_s)\)</span>  określone są jako rozwiązania układu równań algebraicznych</p>
+<div class="math" id="equation-eqn27">
+<span class="eqno">(27)</span>\[f(x_s, y_s)=0,\]\[g(x_s, y_s) =0.\]</div>
+<p>Gdyby istniał potencjał <span class="math">\(V(x, y)\)</span>, powyżej przedstawione wnioski otrzymane z metody potencjału są  także prawdziwe dla układów wielowymiarowyxch. Ponieważ w ogólnym  przypadku nie musi istnieć &#8220;potencjał&#8221;,  zbadamy  stabilność stanów   <span class="math">\((x_s, y_s)\)</span>  stosując metodę linearyzacji. Definiujemy  nowe funkcje</p>
+<div class="math" id="equation-eqn28">
+<span class="eqno">(28)</span>\[X(t) = x(t) - x_s,\]\[Y(t)=y(t)-y_s.\]</div>
+<p>Charakteryzują one odchylenie od stanu stacjonarnego, które są małe gdy stan stacjonarny jest stabilny. Zobaczymy, jakie równania różniczkowe spełniają te funkcje:</p>
+<div class="math" id="equation-eqn29">
+<span class="eqno">(29)</span>\[\dot X(t) = \dot x(t) - \dot x_s  = \dot x(t) =  f(x(t), y(t)) = f(x_s +X(t), y_s + Y(t))  = f(x_s, y_s) + \frac{\partial f}{\partial x}  X + \frac{\partial f}{\partial y} Y+ ...\]</div>
+<div class="math" id="equation-eqn30">
+<span class="eqno">(30)</span>\[ \dot Y(t)= \dot y(t) - \dot y_s  = \dot y(t) =  g(x(t), y(t)) =g(x_s +X(t), y_s + Y(t))  = gf(x_s, y_s) + \frac{\partial g}{\partial x}  X + \frac{\partial g}{\partial y} Y + ...\]</div>
+<p>Wszystkie pochodne cząstkowe są obliczane w punkcie <span class="math">\((x_s, y_s)\)</span>. Ponieważ w punkcie stacjonarnym <span class="math">\(f(x_s, y_s)=g(x_s, y_s)=0\)</span> otrzymujemy zlinearyzowane równania różniczkowe w postaci</p>
+<div class="math" id="equation-eqn31">
+<span class="eqno">(31)</span>\[\dot X =  a_{11} X +  a_{12} Y\]</div>
+<div class="math" id="equation-eqn32">
+<span class="eqno">(32)</span>\[ \dot Y=  a_{21} X +  a_{22} Y\]</div>
+<p>gdzie macierz współczynników</p>
+<div class="math" id="equation-eqn33">
+<span class="eqno">(33)</span>\[\begin{split} \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}&amp; \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}&amp; \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}a_{11} &amp;  a_{12} \\ a_{21}&amp; a_{22}  \end{bmatrix}   \quad \quad \mbox{obliczona w punkcie} \quad (x_s, y_s)\end{split}\]</div>
+<p>jest macierzą Jacobiego. Ponieważ otrzymaliśmy liniowy układ równań różniczkowych,  jego rozwiązanie poszukujemy w postaci funkcji</p>
+<div class="math" id="equation-eqn34">
+<span class="eqno">(34)</span>\[X(t) = A e^{\lambda t}, \quad \quad  Y(t) = B e^{\lambda t}\]</div>
+<p>gdzie stałe <span class="math">\(A\)</span> oraz <span class="math">\(B\)</span> są określone przez warunki początkowe <span class="math">\((X(0), Y(0))\)</span>.</p>
+<p>Zauważamy, że</p>
+<div class="math" id="equation-eqn35">
+<span class="eqno">(35)</span>\[ \dot X = \lambda X, \quad \quad \dot Y = \lambda  Y\]</div>
+<p>Wstawiamy te relacje do  układu równań zlinearyzowanych:</p>
+<div class="math" id="equation-eqn36">
+<span class="eqno">(36)</span>\[\lambda A = a_{11} A +  a_{12} B\]</div>
+<div class="math" id="equation-eqn37">
+<span class="eqno">(37)</span>\[ \lambda  Y=  a_{21} A +  a_{22} B\]</div>
+<p>Jest to zagadnienie własne dla macierzy Jacobiego, gdzie <span class="math">\(\lambda\)</span> to są wartości własne macierzy Jacobiego. To   jest także  równoważne liniowemu układowi równań algebraicznych</p>
+<div class="math" id="equation-eqn38">
+<span class="eqno">(38)</span>\[\ (a_{11} - \lambda) A +  a_{12} B  = 0\]</div>
+<div class="math" id="equation-eqn39">
+<span class="eqno">(39)</span>\[a_{21} A +  (a_{22} -\lambda) B  = 0\]</div>
+<p>Taki układ ma niezerowe rozwiązanie dla <span class="math">\(A\)</span> oraz <span class="math">\(B\)</span> gdy wyznacznik</p>
+<div class="math" id="equation-eqn40">
+<span class="eqno">(40)</span>\[\begin{split}\mbox{Det}  |J-\lambda I| = \mbox{Det} \begin{bmatrix}a_{11} -\lambda &amp;  a_{12} \\ a_{21}&amp; a_{22} - \lambda  \end{bmatrix} = (a_{11} -\lambda) ( a_{22} -\lambda) -a_{12} a_{21} = \lambda^2  - (a_{11} +a_{22} ) \lambda +a_{11} a_{22} -a_{12} a_{21} = 0\end{split}\]</div>
+<p>Macierz <span class="math">\(I\)</span> jest macierzą jednostkową, tzn. diagonalną <span class="math">\(2\times 2\)</span> i wszystkie elementy diagonalne to 1. Z powyższej relacji  otrzymujemy równanie kwadratowe dla nieznanych wartości  własnych <span class="math">\(\lambda = \lambda_1\)</span>  oraz <span class="math">\(\lambda = \lambda_2\)</span>.</p>
+<p>Rozwiązanie zlinearyzowanego układu jest w postaci kombinacji liniowej :</p>
+<div class="math" id="equation-eqn41">
+<span class="eqno">(41)</span>\[X(t) = A_1  e^{\lambda_1 t} + A_2 e^{\lambda_2 t}, \quad \quad  Y(t) = B_1 e^{\lambda_1 t} +  B_2 e^{\lambda_2 t}\]</div>
+<p>Pytanie o stabilność stanu stacjonarnego <span class="math">\((x_s, y_s)\)</span> jest równoważne pytaniu: kiedy</p>
+<div class="math" id="equation-eqn42">
+<span class="eqno">(42)</span>\[\lim_{t\to \infty} X(t) = 0  \quad \quad \lim_{t\to \infty} Y(t) = 0\]</div>
+<p>Funkcje exponencjalne dążą do zera jeżeli część rzeczywista  wartości własnych macierzy Jacobiego <span class="math">\(\lambda_i\)</span> są  ujemne:</p>
+<div class="math" id="equation-eqn43">
+<span class="eqno">(43)</span>\[\begin{split} Re(\lambda_1) &lt; 0, \quad \quad Re(\lambda_2) &lt; 0\end{split}\]</div>
+<p>Wówczas stan stacjonarny jest asymptotycznie stabilny. Jeżeli</p>
+<div class="math" id="equation-eqn44">
+<span class="eqno">(44)</span>\[\begin{split} Re(\lambda_1) &gt; 0, \quad \quad \mbox{i/lub} \quad \quad Re(\lambda_2) &gt;  0\end{split}\]</div>
+<p>to stan stacjonarny jest niestabilny. Jeżeli</p>
+<div class="math" id="equation-eqn45">
+<span class="eqno">(45)</span>\[ Re(\lambda_1) = Re(\lambda_2) =  0\]</div>
+<p>to stan stacjonarny jest stabilny, ale nie  jest asymptotycznie stabilny. Jeżeli wartości własne macierzy Jacobiego wynoszą zero, metoda linearyzacji nie rozstrzyga o stabilności.</p>
+<p>Zamiast wyznaczyć wartości własne <span class="math">\((\lambda_{1}, \lambda_{2})\)</span> tej macierzy, wystarczy sprawdzić, kiedy część rzeczywista wartości własnych jest ujemna (lub dodatnia).  Ponieważ macierz Jacobiego jest macierzą <span class="math">\(2 \times 2\)</span>, więc otrzymujemy równanie kwadratowe  dla <span class="math">\(\lambda\)</span>. Aby wartości własne miały część rzeczywistą ujemną muszą zachodzić dwie relacje:</p>
+<div class="math" id="equation-eqn46">
+<span class="eqno">(46)</span>\[\begin{split}\lambda_1 + \lambda_2  = a_{11}  + a_{22} &lt;0  \quad \mbox{oraz} \quad \lambda_1 \; \lambda_2 = a_{11} a_{22}  -a_{12}a_{21} &gt; 0,\end{split}\]</div>
+<p>to oznacza że</p>
+<div class="math" id="equation-eqn46a">
+<span class="eqno">(47)</span>\[\begin{split}\mbox{Tr} \, J &lt; 0, \quad \quad \mbox{det} \,J &gt; 0\end{split}\]</div>
+<p>gdzie Tr oznacza ślad macierzy, czyli sumę elementów diagonalnych macierzy oraz Det jest wyznacznikiem macierzy.</p>
+<div class="section" id="przyklad-1">
+<h3>Przykład 1<a class="headerlink" href="#przyklad-1" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<div class="math" id="equation-eqn47">
+<span class="eqno">(48)</span>\[\dot x= 1-xy = f(x, y),\]\[\dot y = x-y^2 = g(x, y).\]</div>
+<p>Łatwo znaleźć stany stacjonarne</p>
+<div class="math" id="equation-eqn48">
+<span class="eqno">(49)</span>\[ 1-xy = 0,\]\[ x-y^2 = 0.\]</div>
+<p>Z drugiego równania <span class="math">\(x=y^2\)</span> wstawiamy do pierwszego równania: <span class="math">\(1-y^3=0\)</span> czyli <span class="math">\(y^3=1\)</span>. Stąd <span class="math">\(y=1\)</span> oraz <span class="math">\(x=1\)</span>. Otrzymujemy stan stacjonarny</p>
+<div class="math" id="equation-eqn49">
+<span class="eqno">(50)</span>\[(x_s, y_s) = (1, 1)\]</div>
+<p>Obliczmy elementy macierzy Jacobiego</p>
+<div class="math" id="equation-eqn50">
+<span class="eqno">(51)</span>\[\begin{split} \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}&amp; \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}&amp; \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}-y &amp; -x \\ 1&amp; -2y  \end{bmatrix}    =  \begin{bmatrix}-1 &amp; -1 \\ 1&amp; -2  \end{bmatrix}\quad \quad \mbox{w punkcie} \quad (x=1, y=1)\end{split}\]</div>
+<p>Ślad macierz <span class="math">\(J\)</span>, czyli suma elementów diagonalnych Tr:math:<cite>J = -3 &lt; 0</cite> oraz wyznacznik Det:math:<cite>J = 3 &gt; 0</cite>. Spełnione są relacje dla stany stacjonarnego który jest asymptotycznie stabilny. Wniosek: stan stacjonarny <span class="math">\((x_s, y_s) = (1, 1)\)</span> jest asymptotycznie stabilny.</p>
+<p>Można sprawdzić to, wyliczając explicite wartości własne macierzy Jacobiego:</p>
+<div class="math" id="equation-eqn51">
+<span class="eqno">(52)</span>\[\lambda_1 = \frac{1}{2} (-3+i \sqrt 3), \quad \quad \lambda_1 = \frac{1}{2} (-3-i \sqrt 3)\]</div>
+<p>Ich części rzeczywiste są ujemne:  <span class="math">\(\Re(\lambda_1) = -3/2,  \Re(\lambda_2) = -3/2\)</span>.</p>
+</div>
+</div>
+<div class="section" id="przypadek-c-stabilnosc-stanow-stacjonarnych-ukladow-wielowymiarowych">
+<h2>Przypadek C: Stabilność stanów stacjonarnych układów wielowymiarowych<a class="headerlink" href="#przypadek-c-stabilnosc-stanow-stacjonarnych-ukladow-wielowymiarowych" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Dla układu równań różniczkowych o wymiarze większym niż 2 stosujemy te same metody co dla układu 2 równań różniczkowych.  Oczywiście istnieje więcej różnych przypadków i większe bogactwo własności  stanów stacjonarnych.  Nie będziemy przedstawiali tu przypadku o dowolnym wymiarze. Rozważymy przypadek 3 równań, aby pokazać podobieństwo do przypadku 2 równań. Analizujemy układ 3 równań różniczkowych:</p>
+<div class="math" id="equation-eqn52">
+<span class="eqno">(53)</span>\[\dot x = F_1(x, y, z), \quad x(0) = x_0,\]\[\dot y = F_2(x, y, z),  \quad y(0) = y_0,\]\[\dot z = F_3(x, y, z),  \quad z(0) = z_0.\]</div>
+<p>Stany stacjonarne są określone przez rozwiązania układu równań algebraicznych:</p>
+<div class="math" id="equation-eqn53">
+<span class="eqno">(54)</span>\[F_1(x, y, z) = 0, \quad  F_2(x, y, z) = 0,  \quad  F_3(x, y, z)=0\]</div>
+<p>Z równań tych otrzymujemy  stan stacjonarny   <span class="math">\((x, y, z,) = (x_{s}, y_{s}, z_s)\)</span>. Następnie obliczmy macierz Jacobiego</p>
+<div class="math" id="equation-eqn54">
+<span class="eqno">(55)</span>\[\begin{split} J = \begin{bmatrix}\frac{ \partial F_1}{\partial x}&amp; \frac{\partial F_1}{\partial y}&amp;\frac{ \partial F_1}{\partial z}\\ \frac{ \partial F_2}{\partial x}&amp;  \frac{ \partial F_2}{\partial y} &amp;\frac{ \partial F_2}{\partial z} \\ \frac{ \partial F_3}{\partial x}&amp; \frac{ \partial F_3}{\partial y}&amp;\frac{ \partial F_3}{\partial z} \end{bmatrix}\end{split}\]</div>
+<p>Obliczmy  macierz Jacobiego w punkcie stacjonarnym <span class="math">\(J=J(x_s, y_s, z_s)\)</span>.  W ten sposób otrzymujemy macierz liczbową. Kolejnym krokiem jest znalezienie wartości własnych <span class="math">\(\lambda = \lambda_i   (i=1, 2, 3)\)</span>   tej macierzy, czyli rozwiązanie  wielomianu 3-go stopnia dla <span class="math">\(\lambda\)</span>:</p>
+<div class="math" id="equation-eqn55">
+<span class="eqno">(56)</span>\[\begin{split} \mbox{Det} (J -\lambda I)  = \mbox{Det}  \begin{bmatrix}\frac{ \partial F_1}{\partial x} -\lambda &amp; \frac{\partial F_1}{\partial y}&amp;\frac{ \partial F_1}{\partial z}\\ \frac{ \partial F_2}{\partial x}&amp;  \frac{ \partial F_2}{\partial y} -\lambda &amp;\frac{ \partial F_2}{\partial z} \\ \frac{ \partial F_3}{\partial x}&amp; \frac{ \partial F_3}{\partial y}&amp;\frac{ \partial F_3}{\partial z} -\lambda \end{bmatrix}  =  0\end{split}\]</div>
+<p>Macierz <span class="math">\(I\)</span> jest macierzą jednostkową, tzn. diagonalną <span class="math">\(3\times 3\)</span> i wszystkie elementy diagonalne to 1.</p>
+<p>Jeżeli części  rzeczywiste  wszystkich wartości własnych macierzy Jacobiego <span class="math">\(\lambda_i\)</span> są  ujemne:</p>
+<div class="math" id="equation-eqn56">
+<span class="eqno">(57)</span>\[\begin{split} Re(\lambda_1) &lt; 0, \quad \quad Re(\lambda_2) &lt; 0, \quad \quad Re(\lambda_3) &lt; 0\end{split}\]</div>
+<p>to  stan stacjonarny jest asymptotycznie stabilny. Jeżeli  chociaż jedna z wartości własnych <span class="math">\(\lambda_i\)</span> ma część rzeczywistą dodatnią</p>
+<div class="math" id="equation-eqn57">
+<span class="eqno">(58)</span>\[\begin{split} Re(\lambda_1) &gt; 0, \quad \quad \mbox{i/lub} \quad \quad Re(\lambda_2) &gt;  0, \quad \quad \mbox{i/lub} \quad \quad Re(\lambda_3) &gt;  0\end{split}\]</div>
+<p>to stan stacjonarny jest niestabilny.</p>
+<p>W przypadkach wielowymiarowych wygodnie jest stosować metody numeryczne. Obliczanie wartości własnych macierzy jest numerycznie zadaniem łatwym.</p>
+<div class="section" id="przyklad-2-model-lorenza">
+<h3>Przykład 2: Model Lorenza<a class="headerlink" href="#przyklad-2-model-lorenza" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<div class="math" id="equation-eqn58">
+<span class="eqno">(59)</span>\[\dot x = \sigma (y-x) = F_1(x, y,  z), \quad \quad x(0) = x_0,\]\[\dot y = x(\rho - z) -y = F_2(x, y,  z),  \quad \quad y(0) = y_0,\]\[\dot z = x y - \beta z = F_3(x, y,  z), , \quad \quad z(0) = z_0.\]</div>
+<p>gdzie wszystkie parametry są dodatnie: <span class="math">\(\sigma, \rho, \beta &gt; 0\)</span>.</p>
+<p>KROK 1: Znajdujemy stany stacjonarne czyli rozwiązujemy układ równań algebraicznych</p>
+<div class="math" id="equation-eqn59">
+<span class="eqno">(60)</span>\[\sigma (y-x) =0,\]\[x(\rho - z) -y = 0,\]\[x y - \beta z = 0.\]</div>
+<p>Możemy posłużyć się programem w Sage, ale układ ten jest na tyle prosty, że możemy go roziązać  sami. Z pierwszego równania wynika, że</p>
+<div class="math" id="equation-eqn60">
+<span class="eqno">(61)</span>\[y=x\]</div>
+<p>Z trzeciego równania otrzymujemy</p>
+<div class="math" id="equation-eqn61">
+<span class="eqno">(62)</span>\[z= \frac{1}{\beta} x^2\]</div>
+<p>Wstawiamy <span class="math">\(x\)</span> oraz <span class="math">\(z\)</span> do drugiego równania otrzymując relację:</p>
+<div class="math" id="equation-eqn62">
+<span class="eqno">(63)</span>\[x \rho - x   {\frac{1}{\beta} }x^2 -x=0\]</div>
+<p>czyli</p>
+<div class="math" id="equation-eqn63">
+<span class="eqno">(64)</span>\[x [ \rho - 1  - {\frac{1}{\beta} }x^2]=0\]</div>
+<p>Ta relacja jest prosta i wynika z niej że</p>
+<div class="math" id="equation-eqn64">
+<span class="eqno">(65)</span>\[x= x_1 = 0 \quad \mbox{lub} \quad x=  x_2 = \sqrt{\beta ( \rho -1)} \quad \mbox{lub} \quad x= x_3 =  - \sqrt{\beta ( \rho -1)}\]</div>
+<p>Otrzymujemy 3 stany stacjonarne:</p>
+<div class="math" id="equation-eqn65">
+<span class="eqno">(66)</span>\[P_1 = (x_1, y_1, z_1) =  (0, 0, 0),\]\[P_2 = (x_2, y_2, z_2) =  ( \sqrt{\beta ( \rho -1)}, \sqrt{\beta ( \rho -1)}, \rho - 1),\]\[P_3 = (x_3, y_3, z_3) =  ( - \sqrt{\beta ( \rho -1)}, -  \sqrt{\beta ( \rho -1)}, \rho - 1).\]</div>
+<p>Dla każdego stanu stacjonarnego musimy zbadać jego stabilność analizując zagadnienie własne dla macierzy Jacobiego. No to do dzieła...</p>
+<div class='sage'><script type='text/x-sage'>#kilka zmiennych
+reset()
+var('x y z sigma rho beta alpha')
+#i kilka zalozen
+assume(sigma>0)
+assume(rho>0)
+assume(beta>0)
+#definiujemy rownania rozniczkowe
+F1 = sigma*(y-x)
+F2 = x*(rho-z) - y
+F3 = x*y - beta*z
+html.table([['$F_1$','$F_2$','$F_3$'],[F1,F1,F3]])
+print "stany stacjonarne"
+rozw = solve([F1==0,F2==0,F3==0],[x,y,z])
+P1 = rozw[2]
+P2 = rozw[0]
+P3 = rozw[1]
+html.table([['$P_1$','$P_2$','$P_3$'],[P1,P2,P3]])
+print 'Macierz Jakobiego'
+J = matrix([
+[diff(F1,x),diff(F1,y),diff(F1,z)],
+[diff(F2,x),diff(F2,y),diff(F2,z)],
+[diff(F3,x),diff(F3,y),diff(F3,z)]
+])
+show(J)
+#
+@interact
+def _(punkt=['P1','P2','P3']):
+ P = dict(zip(['P1','P2','P3'],[P1,P2,P3]))[punkt]
+ J = matrix([
+ [
+ diff(F1,x)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs()),
+ diff(F1,y)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs()),
+ diff(F1,z)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs())
+ ],
+ [
+ diff(F2,x)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs()),
+ diff(F2,y)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs()),
+ diff(F2,z)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs())
+ ],
+ [
+ diff(F3,x)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs()),
+ diff(F3,y)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs()),
+ diff(F3,z)(x=P[0].rhs(),y=P[1].rhs(),z=P[2].rhs())
+ ]
+ ])
+ print "macierz Jakobiego w punkcie %s" % P
+ show(J)
+ #zagadnienie własne macierzy
+ dJ = det(J - alpha*matrix(3,3,1)) == 0
+ rozwdJ1 = solve(dJ,alpha)
+ show(rozwdJ1)
+ b = 1
+ s = 2
+ r = 3
+ i = 0
+ for a in rozwdJ1:
+     print "sprawdzamy"
+     print "wartość własna alpha_%d"%(i+1)
+     buf = real(a.rhs()(rho=r,beta=b,sigma=s))
+     show(n(buf))
+     if buf < 0:
+         print "jest < 0"
+     else:
+         print "jest > 0"
+         i += 1
+ if i == 0:
+     print "\n"
+     print "Wynika z tego, że dla"
+     print "beta=%s, sigma=%s, rho=%s"%(b,s,r)
+     print "%s jest punktem stabilnym"%P
+ else:
+     print "\n"
+     print "Wynika z tego, że dla"
+     print "beta=%s, sigma=%s, rho=%s"%(b,s,r)
+     print "%s nie jest punktem stabilnym"%P</script></div></div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Stany stacjonarne i ich stabilność</a><ul>
+<li><a class="reference internal" href="#przypadek-a-jedno-rownanie-rozniczkowe">Przypadek A: Jedno równanie różniczkowe</a><ul>
+<li><a class="reference internal" href="#przyklad-rownanie-rozniczkowe-liniowe">Przykład: Równanie różniczkowe liniowe</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#metoda-linearyzacji-badania-stabilnosci">Metoda linearyzacji badania stabilności</a></li>
+<li><a class="reference internal" href="#metoda-potencjalu-badania-stabilnosci">Metoda potencjału badania stabilności</a></li>
+<li><a class="reference internal" href="#przypadek-b-uklad-2-rownan-rozniczkowych">Przypadek B: Układ  2 równań różniczkowych</a><ul>
+<li><a class="reference internal" href="#przyklad-1">Przykład 1</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#przypadek-c-stabilnosc-stanow-stacjonarnych-ukladow-wielowymiarowych">Przypadek C: Stabilność stanów stacjonarnych układów wielowymiarowych</a><ul>
+<li><a class="reference internal" href="#przyklad-2-model-lorenza">Przykład 2: Model Lorenza</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chI022.html"
+                        title="poprzedni rozdział">Dynamiczne układy zachowawcze i dysypatywne</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="chI024.html"
+                        title="następny rozdział">Atraktory</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch1/chI023.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="chI024.html" title="Atraktory"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI022.html" title="Dynamiczne układy zachowawcze i dysypatywne"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Oct 23, 2013.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>
