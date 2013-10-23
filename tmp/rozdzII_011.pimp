@@ -1,0 +1,58 @@
+    sage: 
+    sage: 
+    sage: 
+    sage: reset()
+    sage: # wykresy dla przypadku z tłumieniem
+    sage: var('x y z')
+    sage: x01, y01, z01 = 0.1,0.1,0
+    sage: x02, y02, z02 = 0.11,0.1,0
+    sage: #
+    sage: # siła
+    sage: F = x-x^3
+    sage: V = -integrate(F,x)
+    sage: #
+    sage: # tarcie: parametr gamma
+    sage: g = 0.25
+    sage: A = 0.3
+    sage: w = 1
+    sage: #
+    sage: # układ różniczkowych równań ruchu
+    sage: dx = y
+    sage: dy = F - g*y + A*cos(z)
+    sage: dz = w
+    sage: #
+    sage: # numeryczne rozwiazanie równań ruchu
+    sage: T = srange(0,200*pi,0.01)
+    sage: num1 = desolve_odeint(vector([dx,dy,dz]), [x01,y01,z01], T, [x,y,z])
+    sage: num2 = desolve_odeint(vector([dx,dy,dz]), [x02,y02,z02], T, [x,y,z])
+    sage: #
+    sage: lnum = int(len(num1[:,0])/10)
+    sage: trans1 = num1[:lnum]
+    sage: asymp1 = num1[-lnum:]
+    sage: trans2 = num2[:lnum]
+    sage: asymp2 = num2[-lnum:]
+    sage: #
+    sage: # wykresy funkcji
+    sage: lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+    sage: lt += list_plot(zip(trans2[:,0],trans2[:,1]), plotjoined=1, color='red')
+    sage: rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+    sage: rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined=1, color='red')
+    sage: lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+    sage: lb += list_plot(zip(asymp2[:,0],asymp2[:,1]), plotjoined=1, color='red')
+    sage: rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+    sage: rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoined=1, color='red')
+    sage: #
+    sage: html("""Układ równań różniczkowych
+    sage: $\dot{x} = %s$
+    sage: $\dot{y} = %s$
+    sage: $\dot{z} = %s$
+    sage: z różnymi warunkami początkowymi
+    sage: <span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2f,%.2f)$</span>
+    sage: <span style="color:red;">$(x_{02},y_{02},z_{02}) = (%.2f,%.2f,%.2f)$</span>
+    sage: """%(dx,dy,dz,x01,y01,z01,x02,y02,z02))
+    sage: html.table([[lt,rt],[lb,rb]])
+    sage: 
+    sage: 
+    sage: 
+    sage: 
+    sage: 

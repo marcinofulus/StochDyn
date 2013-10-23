@@ -7,7 +7,7 @@ if len(sys.argv) == 3:
   o = open(sys.argv[2], 'w')
 elif len(sys.argv) == 2:
   f = open(sys.argv[1], 'r')
-  o = open("outfile.s2r", 'w')
+  o = open(sys.argv[1][:-3]+"rst", 'w')
 else:
   exit()
 
@@ -38,10 +38,15 @@ for l in f.readlines():
     WHOLETXT += "    " + l[2:-3] + "\n\n"
     #o.write(l.replace("$$","ALA"))
     #o.write("Title%d="%(101-i)+l.split('/')[-1][:-5]+"\n")
-  elif l[:8] == 'SAGECELL':
+  elif 'SAGECELL' in l:
     WHOLETXT += '.. sagecellserver::\n'
     WHOLETXT += '    :is_verbatim: True\n\n\n'
     WHOLETXT += '.. end of input\n'
+  elif 'IMAGE' in l:
+    WHOLETXT += '.. figure:: images/\n'
+    WHOLETXT += '   :align: center\n'
+    WHOLETXT += '   :alt: \n\n'
+    WHOLETXT += '   caption goes here\n\n'
   else:
     words = l.split('$')
     lw = len(words)

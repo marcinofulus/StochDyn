@@ -56,7 +56,7 @@ copyright = u'2013, Jerzy Łuczka, Łukasz Machura'
 # built documents.
 #
 # The short X.Y version.
-version = '0.1'
+version = '0.2'
 # The full version, including alpha/beta/rc tags.
 release = 'I'
 

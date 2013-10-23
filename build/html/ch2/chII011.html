@@ -1,0 +1,716 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Determinizm a przewidywalność &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="prev" title="Atraktory" href="../ch1/chI024.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="../ch1/chI024.html" title="Atraktory"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="determinizm-a-przewidywalnosc">
+<h1>Determinizm a przewidywalność<a class="headerlink" href="#determinizm-a-przewidywalnosc" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Determinizm jest terminem wieloznacznym.  W odniesieniu do nauk przyrodniczych możemy mówić o tym że :</p>
+<p>Każde zjawisko jest wyznaczone przez swoje przyczyny i całokształt warunków.
+Każde zjawisko podlega prawidłowościom przyrody, które wyrażane są w postaci odpowiednich praw nauki.
+Jeżeli dysponujemy odpowiednią wiedzą (o przyczynach,  prawidłowościach), to można (przynajmniej w zasadzie) przewidywać przyszły bieg zdarzeń.  Poznawcze znaczenie zasady przyczynowości  sprowadza się do możliwości przewidywania. Determinizm i indeterminizm  występują już w starożytnej filozofii przyrody. Demokryt twierdził, że nie ma w świecie zdarzeń przypadkowych, lecz „wszystko dzieje się wskutek konieczności&#8221;. Determinizm  łączono z poglądem, że prawa przyrody mają charakter jednoznaczny. Okazało się jednak że wiele zjawisk podlega jedynie prawom statystycznym. Pogląd, że pewne zjawiska przyrody nie podlegają prawom jednoznacznym, ale jedynie statystycznym to indeterminizm .  Doniosła rola praw statystycznych w fizyce współczesnej wymaga rozszerzenia formuły determinizmu: każde zdarzenie podlega prawom przyrody jednoznacznym (determinizm jednoznaczny, mocny) bądź statystycznym (determinizm probabilistyczny, umiarkowany). Wówczas indeterminizm (umiarkowany) mieści się w ramach determinizmu  w szerszym ujęciu. Wydawało się, że w mechanice, stworzonej przez Galileusza i Newtona, znając położenie i prędkość (lub położenie i pęd) ciała materialnego można przewidzieć cały przyszły ruch tego ciała (a więc podać położenie i pęd w każdej chwili późniejszej), a także ustalić, jaki był ruch tego ciała w przeszłości. Wszystko to jest słuszne  przy założeniu, że znane są  wszystkie siły działające na ciało w przeszłości i w przyszłości. Wynikało to z twierdzeń matematycznych o jednoznaczności rozwiązań równań różniczkowych, a takimi są równania Newtona.</p>
+<p>Jednakże historia pokazała, że  w fizyce klasycznej są znane teorie statystyczne, niedeterministyczne.  Rozważmy dla przykładu  gaz zamknięty w jakimś naczyniu. Wiemy, że w warunkach równowagi termodynamicznej dwie równe co do objętości części tego naczynia będą zawierać jednakową liczbę cząsteczek gazu. Nie wiemy jednak, które cząsteczki znajdą się w której z dwu połówek naczynia. Sytuacja pozornie przypomina prawo rozpadu: można podać taki czas, w którym rozpadnie się połowa atomów, i w ten sposób podzielić wszystkie atomy na dwie równe części - te, które się w tym czasie rozpadną, i te, które się nie rozpadną, podobnie jak podzieliliśmy cząsteczki gazu według kryterium, w której połowie naczynia się znajdują. W klasycznej fizyce statystycznej znamy prawa rządzące zachowaniem pojedynczych cząsteczek (są nimi z założenia prawa mechaniki newtonowskiej), a nasza niewiedza co do tego zachowania jest spowodowana po pierwsze niemożliwością śledzenia ruchu wielu miliardów obiektów, a po drugie, brakiem potrzeby, aby to czynić: wystarczy nam znać właśnie tylko pewne wielkości średnie, które ujawniają się fenomenologicznie, na przykład jako temperatura gazu, czy też jego ciśnienie. Tak więc rzeczywisty kompletny opis stanu gazu musiałby zawierać informację dotyczącą N wektorów położenia i N wektorów pędu (N - liczba cząsteczek gazu), co jest liczbą ogromną, podczas gdy opis statystyczny ogranicza się do kilku potrzebnych liczb. Opis statystyczny odnosi się do ogromnej liczby cząstek i jest to opis oparty o teorię prawdopodobieństwa i teorię procesów stochastycznych. Z definicji jest to opis niedeterministyczny. Ale jak powiedzieliśmy, opis jednej cząstki jest w pełni deterministyczny. Twierdzenia o jednoznaczności rozwiązań równań różniczkowych dawały nadzieję na totalny determinizm i przewidywalność ruchu pojedyńczych cząstek. Nadzieja ta z praktycznego punktu widzenia okazała się mrzonką.  W latach 50-tych XX wieku pokazano, że z praktycznego punktu widzenia determinizm mechaniki Newtona jest złudny i ugruntowana wiara w przewidywalność zachowania się prostych układów  mechanicznych  załamała się. Pojawiły się liczne przykłady, a później teoria matematyczna, pokazujące  niemożliwość przewidywania czasowej ewolucji prostych układów mechanicznych. Podkreślamy, że chodzi tu o praktyczne aspekty przewidywalności. Z matematycznego punktu widzenia, przewidywalność jest ciągle słuszna.  Dobitnym przykładem nieprzewidywaloności w praktyce jest prognoza pogody, co udowadnia codzienne życie. Poniżej przedstawimy zagadnienia, które ukażą nam, co oznacza nieprzewidywalność w teorii deterministycznej. Pokażemy, dlaczego ewolucja określona przez determinizm równań Newtona jest nieprzewidywalna. Ta deterministyczna nieprzewidywalność ma swoją nazwę: deterministyczny chaos.</p>
+</div>
+<div class="section" id="model-chaosu-uklad-bistabilny-oscylator-duffinga">
+<h1>Model chaosu. Układ bistabilny (oscylator Duffinga)<a class="headerlink" href="#model-chaosu-uklad-bistabilny-oscylator-duffinga" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Aby dobrze zrozumieć istotę chaotycznego zachowania się układów dynamicznych, posłużymy się prostym przykładem z mechaniki klasycznej Newtona. Rozpatrujemy jednowymiarowy ruch cząstki wzdłuż osi OX opisany równaniem Newtona:</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[m \ddot x = F(x, \dot x, t) =ax - bx^3 - \gamma \dot x + A \cos(\Omega t), \qquad x(0) = x_0, \quad  \dot x(0) = v(0) = v_0\]</div>
+<p>Model ten wydaje się być banalnie prosty.</p>
+<p>jest to ruch cząstki w polu siły <span class="math">\(F(x) = ax-bx^3  (a, b &gt; 0)\)</span>
+jest to ruch tłumiony tarciem <span class="math">\(F(v) = - \gamma v = -\gamma \dot x\)</span> oraz
+na cząstkę działa siła periodyczna w czasie <span class="math">\(F(t) = A\cos(\Omega t)\)</span>.
+Zauważmy, że średnia wartość siły <span class="math">\(F(t)\)</span> na jednym okresie wynosi  zero, czyli średnio działa zerowa siła! Siła <span class="math">\(F(x) = x-x^3\)</span> to jest siła potencjalna. Dlatego warto wykreślić potencjał <span class="math">\(V(x)\)</span>  odpowiadający tej sile:</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[V(x) = - \int F(x) dx = \frac{1}{4}  b x^4 - \frac{1}{2}  a x^2\]</div>
+<p>Potencjał  ten nazywa się potencjałem bistabilnym i jest jednym z najważniejszych modelowych potencjałów w fizyce, począwszy od teorii Netwona, poprzez teorię przejść fazowych, teorię aktywacji  reakcji chemicznych, a na teorii cząstek elementarnych (mechanizm Higgsa) skończywszy. Poniżej pokazujemy wykres tego potencjału (mówiąc precyzyjnie: energii potencjalnej).</p>
+<p>Powyższe równanie Newtona  ma kilka realizacji.</p>
+<dl class="docutils">
+<dt>1 Pierwszy przykład realizacji: Metalowa kulka zawieszona na nieważkim</dt>
+<dd><p class="first">pręcie w polu dwóch magnesów (które modelują bistabilny potencjał).
+Na kulkę działa w kierunku poziomym periodyczne pole elektryczne
+<span class="math">\(A\cos(\omega t)\)</span>. Układ ten jest przedstawiony na rysunku.</p>
+<div class="last figure align-center">
+<img alt="wahadło" src="../_images/pendulum.png" />
+<p class="caption">Przykład realizacji układu bistabilnego.</p>
+</div>
+</dd>
+</dl>
+<p>2 Drugi przykład realizacji: Obwód elektroniczny, który jest szczegółowo opisany w pracy:</p>
+<blockquote>
+<div>B. K. Jones and G. Trefan, Am. J. Phys. 69 (2001) str. 464.
+&#8220;The Duffing oscillator: A precise electronic analog chaos demonstrator
+for the undergraduate laboratory &#8220;</div></blockquote>
+<div class='sage'><script type='text/x-sage'># Przeskalowany potencjał bistabilny: a=b=1
+p = plot(0.25*x^4 - 0.5*x^2, (x,-1.6,1.6), figsize=(6,4), axes_labels=[r'$x$',r'$V(x)$'], color="blue")
+p += text("$-x_s$",(-1,0.025),fontsize=16, color='black')
+p += text("$x_s$",(1,0.025),fontsize=16, color='black')
+p.show()</script></div><div class="section" id="skalowanie">
+<h2>Skalowanie<a class="headerlink" href="#skalowanie" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Układ opisany powyżej zawiera 6 parametrów. Część parametrów można wyeliminować poprzez przeskalowanie równania do postaci bezwymiarowej. Istnieje kilka  możliwości. Zwykle zaczynamy od skalowania czasu i położenia. Nowy bezwymiarowy czas <span class="math">\(\tau\)</span> ma postać:</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[s = \frac{t}{\tau_0}, \qquad \tau_0^2 = \frac{m}{a}\]</div>
+<p>Nowe bezwymiarowe położenie definiujemy jako</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[X = \frac{x}{L}, \qquad L^2 = \frac{a}{b}\]</div>
+<p>Wówczas bezwymiarowa postać równania ruchu jest następująca:</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[\ddot X = X - X^3 - \gamma_0 \dot X + A_0 \cos(\omega_0 s), \qquad X(0) = X_0, \quad  \dot X(0) = \dot X_0\]</div>
+<p>Obecnie występują 3 przeskalowane parametry:</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[ \gamma_0  = \frac{\tau_0^2}{m L} \gamma, \qquad A_0 = \frac{\tau_0^2}{m L} A, \qquad \omega_0 = \tau_0 \Omega\]</div>
+<p>W dalszej części będziemy posługiwali się tylko i wyłącznie przeskalowanym równaniem. Dlatego wygodnie będzie używać &#8220;starych&#8221; oznaczeń: Bedziemy analizowali równanie w postaci</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[\ddot x = x - x^3 - \gamma \dot x + A \cos(\omega_0 t ), \qquad x(0) = x_0, \quad  \dot x(0) = \dot y_0 = v_0\]</div>
+<p>gdzie przeskalowany potencjał</p>
+<div class="math" id="equation-eqn7a">
+<span class="eqno">(8)</span>\[V(x) = - \int F(x) dx = \frac{1}{4} x^4 - \frac{1}{2} x^2\]</div>
+<p>Przeskalowane równanie jest w takiej postaci, że przyjmujemy wartości parametrów <span class="math">\(m=1,  a=1,  b=1\)</span>.</p>
+</div>
+<div class="section" id="krok-1-uklad-zachowawczy">
+<h2>Krok 1. Układ zachowawczy<a class="headerlink" href="#krok-1-uklad-zachowawczy" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>W pierwszym  kroku rozpatrujemy najprostszy przypadek (pamiętajmy o przeskalowanej postaci, w której masa cząstki <span class="math">\(m=1\)</span>)):</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(9)</span>\[\ddot x = x - x^3 = - V'(x), \qquad x(0) = x_0, \quad  \dot x(0) = v(0) =  v_0\]</div>
+<p>Jest on równoważny układowi 2 równań różniczkowych, autonomicznych, pierwszego rzędu:</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(10)</span>\[\dot x = v, \qquad x(0) = x_0,\]\[\dot v = x - x^3, \qquad v(0) = v_0.\]</div>
+<p>Oznacza to, że przestrzeń fazowa jest 2-wymiarowa.</p>
+<p>Taki przypadek był już rozpatrywany: jest to układ zachowawczy o jednym stopniu swobody. Istnieje jedna stała ruchu (jedna całka ruchu), a mianowicie całkowita energia układu:</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(11)</span>\[\frac{1}{2} \dot x^2(t) + V(x(t)) = const. = E  = E_k + E_p = \frac{1}{2} \dot x^2(0) + V(x(0)) = \frac{1}{2}  v_0^2 + V(x_0)\]</div>
+<p>na którą składa się energia kinetyczna <span class="math">\(E_k\)</span> oraz energia potencjalna <span class="math">\(E_p\)</span>.  Stała <span class="math">\(E\)</span> jest określona przez warunki początkowe <span class="math">\(x(0) = x_0\)</span> oraz <span class="math">\(v(0) = v_0\)</span>.  Ponieważ jest zachowana całkowita energia układu, ruch jest periodyczny. Nie istnieją atraktory i nie istnieją  asymptotycznie stabilne stany stacjonarne. Krzywe fazowe są zamknięte co oznacza że  cząstka porusza się periodycznie w czasie. W zależności od warunków początkowych, amplituda dragań jest większa lub mniejsza, ponieważ warunki początkowe wyznaczają wartość stałej ruchu <span class="math">\(E\)</span>. Jeżeli dwa warunki początkowe <span class="math">\((x_{01}, v_{01})\)</span>  oraz  <span class="math">\((x_{02}, v_{02})\)</span> nieznacznie się różnią, np. w sensie odległości:</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(12)</span>\[\begin{split}| [x_{01}^2 +  v_{01}^2] - [x_{02}^2 +  v_{02}^2] | &lt;&lt; 1\end{split}\]</div>
+<p>to krzywe fazowe nieznacznie się różnią i ruch cząstki dla tych dwóch warunków początkowych nieznacznie się różni. Mówimy wówczas, że układ jest nieczuły na zmianę warunków początkowych.  Jak widać z powyższego wzoru, dwa różne warunki początkowe oznaczają, że układ ma dwie różne energie <span class="math">\(E\)</span>. To z kolei oznacza, że częstości ruchu periodycznego także będą różne.  Różnica częstości powoduje, że cząstki  będą się powoli oddalać od siebie, ale tempo oddalania będzie liniowe w czasie.  Gdyby tempo oddalania było znacznie szybsze, a mianowicie rosło eksponencjalnie w czasie, zachowanie takie nazwalibyśmy chaotycznym.  Do tego problemu powrócimy poniżej, ponieważ jest on kluczowym dla zrozumienia chaotycznego zachowania się układu.</p>
+<p>Poniżej przedstawiamy potencjał i  krzywe fazowe dla tego przypadku.</p>
+<div class='sage'><script type='text/x-sage'>#parametry dla wizualizacji
+var('x v')
+x0 = 1.5
+v0 = 0.2
+E = 0.25*x0^4 - 0.5*x0^2 + v0^2
+#
+#prawo zachowania energii
+V=0.25*x^4 - 0.5*x^2
+PZE = v^2 + V == E
+#
+#wychylenia ekstremalne
+print "ekstremalne wychylenia dla (x0,v0) = (%.2f,%.2f)"%(x0,v0)
+rozw = solve(PZE(v=0), x); show(rozw)
+xmin = min([i.rhs() for i in rozw if imag(i.rhs()) == 0])
+xmax = max([i.rhs() for i in rozw if imag(i.rhs()) == 0])
+#
+#i jego rozwiązanie
+print "ekstremalne prędkości dla (x0,v0) = (%.2f,%.2f)"%(x0,v0)
+rozw = solve(PZE, v); show(rozw)
+v1=rozw[0].rhs()
+v2=rozw[1].rhs()
+vmax = abs(v1(x=0))
+#
+#krzywe fazowe
+start_point = (x0,V(x=x0))
+p0 = point(start_point,size=30) + text(r"$  x_0$",start_point,vertical_alignment='bottom',horizontal_alignment='left')
+p1 = plot(V,(x,xmin,xmax))
+p21 = plot(v1, (x,xmin,xmax), color='red')
+p22 = plot(v2, (x,xmin,xmax), color='green')
+(p0+p1).show(figsize=4)
+(p21+p22).show(figsize=4)</script></div></div>
+<div class="section" id="krok-2-uklad-dysypatywny-czyli-wplyw-tarcia">
+<h2>Krok 2. Układ dysypatywny czyli wpływ tarcia.<a class="headerlink" href="#krok-2-uklad-dysypatywny-czyli-wplyw-tarcia" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>W drugim  kroku dodajemy tarcie i rozpatrujemy równanie ruchu w postaci:</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(13)</span>\[\ddot x =  x - x^3 -\gamma \dot x , \qquad x(0) = x_0, \quad  \dot x(0) = v(0) =  v_0\]</div>
+<p>Jest on równoważny układowi 2 równań różniczkowych, autonomicznych, pierwszego rzędu:</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(14)</span>\[\dot x = v, \qquad x(0) = x_0,\]\[\dot v = x - x^3 -\gamma v , \qquad v(0) = v_0.\]</div>
+<p>Oznacza to, że przestrzeń fazowa jest 2-wymiarowa.</p>
+<p>Taki przypadek był także rozpatrywany: jest to układ dysypatywny o jednym stopniu swobody. Nie istnieje już stała ruchu <span class="math">\(E\)</span>.  Całkowita energia układu maleje w czasie.  W tym układzie  istnieją 3 stany stacjonarne. Stany te określone są przez równanie:</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(15)</span>\[x-x^3=0, \qquad \mbox{stąd} \qquad x_{s0}=0, \quad x_{s1} = 1, \quad x_{s2} = -1\]</div>
+<p>Stany stacjonarne <span class="math">\(x_{s1} = 1\)</span> oraz <span class="math">\(x_{s2} = -1\)</span>  są  stabilne. Stan <span class="math">\(x_{s0}=0\)</span> jest niestabilny. Istnieją 2 atraktory  <span class="math">\(A_1= x_{s1} = 1\)</span> oraz <span class="math">\(A_2= x_{s2} = -1\)</span> i  2 obszary przyciągania <span class="math">\(B(A_1)\)</span> oraz <span class="math">\(B(A_2)\)</span>, których suma mnogościowa <span class="math">\(B(A_1) \cup  B(A_2) = R^2\)</span> jest całą płaszczyzną.  Krzywe fazowe  zawsze dążą do jednego z atraktorów lub do niestabilnego stanu stacjonarnego. Jeżeli dwa warunki początkowe <span class="math">\((x_{01}, v_{01})\)</span>  oraz  <span class="math">\((x_{02}, v_{02})\)</span> nieznacznie się różnią np. w sensie odległości:</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(16)</span>\[\begin{split}| [x_{01}^2 +  v_{01}^2] - [x_{02}^2 +  v_{02}^2] | &lt;&lt; 1\end{split}\]</div>
+<p>i są w tym samym obszarze przyciągania, to krzywe fazowe nieznacznie się różnią i ruch cząstki dla tych dwóch warunków początkowych nieznacznie się różni. Mówimy wówczas, że układ jest nieczuły na zmianę warunków początkowych. Natomiast jeżeli dwa warunki początkowe <span class="math">\((x_{01}, v_{01}) \in B(A_1)\)</span>  oraz  <span class="math">\((x_{02}, v_{02}) \in B(A_2)\)</span> nieznacznie się różnią, ale są w dwóch obszarach przyciągania <span class="math">\(B(A_1)\)</span> oraz <span class="math">\(B(A_2)\)</span>, to trajektorie zaczną po pewnym czasie różnić się znacznie, będą przyciągane do dwóch różnych atraktorów  i będą dążyć  do dwóch różnych stanów stacjonarnych :math:` x_{s1} = 1` oraz :math:` x_{s2} = -1`. Tym niemniej, w takiej sytuacji mówimy, że układ jest nieczuły na zmianę warunków początkowych w sensie o którym mowa powyżej.</p>
+<div class="figure align-center">
+<img alt="Baseny przyciągania." src="../_images/baseny_tarcie.jpg" />
+<p class="caption">Diagram basenów przyciągania dla potencjału bistabilnego</p>
+</div>
+<p>Kolor niebieski to obszar warunków początkowych które są &#8220;przyciągane&#8221;  do atraktora <span class="math">\((1, 0)\)</span>, do prawego
+minimum potencjału. Kolor czerwony to obszar warunków początkowych które są &#8220;przyciągane&#8221;  do atraktora
+<span class="math">\((-1, 0)\)</span>, do lewego minimum potencjału. W zależności od wartości stałej tłumienia <span class="math">\(\gamma\)</span>, diagram
+ten przybiera nieco inne kształty, ale struktura dwu-kolorowych pasów pozostaje. Brzeg obszarów przyciągania jest
+gładką krzywą, której wymiar wynosi 1. Jeżeli warunki początkowe są położone dokładnie na tym brzegu, to cząstka
+porusza się do niestabilnego stanu stacjonarnego <span class="math">\((x=0, v=0)\)</span> (maksimum potencjału).</p>
+<div class='sage'><script type='text/x-sage'># wykresy dla przypadku z tłumieniem
+var('x v')
+x01, v01 = 1.50, 0
+x02, v02 = 1.52, 0
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.1
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,20*pi,0.01)
+num1 = desolve_odeint(vector([v,F-g*v]), [x01,v01], T, [x,v])
+num2 = desolve_odeint(vector([v,F-g*v]), [x02,v02], T, [x,v])
+#
+#krzywe fazowe
+lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(x02)])), color='black', figsize=4)
+lt += point((x01,V(x=x01)), color='green', size=50, axes_labels=['$x$','$V(x)$'])
+lt += point((x02,V(x=x02)), color='red', size=50)
+lb  = list_plot(num1.tolist(), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'])
+lb += list_plot(num2.tolist(), plotjoined=1, color='red', figsize=4)
+rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'])
+rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color='red', figsize=4)
+rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$v(t)$'])
+rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color='red', figsize=4)
+#
+html("""
+<p align='center'>rozwiązania z warunkami początkowymi
+<span style="color:green">($x_{01},v_{01}$)=(%.2f,%.2f)</span>
+<span style="color:red">($x_{02},v_{02}$)=(%.2f,%.2f)</span>
+dążą do tego samego atraktora:
+(x,v)=(-1,0)
+</p>
+"""%(x01,v01,x02,v02))
+html.table([[lt,rt],[lb,rb]])</script></div><p>Na powyższym zestawie rysunków,  2 warunki początkowe leżą w tym samym obszarze  przyciągania  atraktora <span class="math">\((-1, 0)\)</span>. Oznacza to, że 2 warunki początkowe są umiejscowione w czerwonym obszarze na diagramie basenów przyciągania pokazanym powyżej. Układ nie jest czuły na zmianę warunków początkowych, gdy leżą one w tym samym basenie przyciągania.</p>
+<div class='sage'><script type='text/x-sage'># wykresy dla przypadku z tłumieniem
+var('x v')
+x01, v01 = 1.58, 0
+x02, v02 = 1.57, 0
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.1
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,20*pi,0.01)
+num1 = desolve_odeint(vector([v,F-g*v]), [x01,v01], T, [x,v])
+num2 = desolve_odeint(vector([v,F-g*v]), [x02,v02], T, [x,v])
+#
+# wykresy funkcji
+lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(x02)])),color='black',  figsize=4)
+lt += point((x01,V(x=x01)), color='blue', size=50, axes_labels=['$x$','$V(x)$'])
+lt += point((x02,V(x=x02)), color='red', size=50)
+lb  = list_plot(num1.tolist(), plotjoined=1, color='blue', axes_labels=['$x(t)$','$v(t)$'])
+lb += list_plot(num2.tolist(), plotjoined=1, color='red', figsize=4)
+rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color='blue', axes_labels=['$t$','$x(t)$'])
+rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color='red', figsize=4)
+rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color='blue', axes_labels=['$t$','$v(t)$'])
+rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color='red', figsize=4)
+#
+html("""
+<p align='center'>rozwiązania z warunkami początkowymi
+<span style="color:blue">($x_{01},v_{01}$)=(%.2f,%.2f)</span>
+<span style="color:red">($x_{02},v_{02}$)=(%.2f,%.2f)</span>
+dążą do różnych atraktorów:
+<span style="color:blue">(x,v)=(1,0)</span>
+<span style="color:red">(x,v)=(-1,0)</span>
+</p>
+"""%(x01,v01,x02,v02))
+html.table([[lt,rt],[lb,rb]])</script></div><p>Na powyższym zestawie rysunków,  2 warunki początkowe leżą w dwóch różnych obszarach  przyciągania.  Oznacza to, że 1 warunek  początkowy leży w  niebieskim obszarze na diagramie basenów przyciągania, natomiast  2 warunek  początkowy leży w  czerwonym obszarze na diagramie basenów przyciągania. Te dwa warunki początkowe leżą blisko brzegu 2 basenów przyciągania. Dlatego układ jest czuły na zmianę warunków początkowych, pod warunkiem że leżą one w dwóch różnych basenach przyciągania. Ale to nie jest jeszcze kryterium własności chaotyczych układu.</p>
+</div>
+<div class="section" id="krok-3-uklad-z-tarciem-i-periodyczna-sila">
+<h2>Krok 3. Układ z tarciem i periodyczną siłą.<a class="headerlink" href="#krok-3-uklad-z-tarciem-i-periodyczna-sila" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>W trzecim kroku dodajemy siłę periodyczną w czasie  i rozpatrujemy równanie ruchu w wyjściowej pełnej postaci:</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(17)</span>\[\ddot x =  x - x^3 -\gamma \dot x  +  A \cos (\omega_0 t) , \qquad x(0) = x_0, \quad  \dot x(0) = v(0) =  v_0\]</div>
+<p>Jest on równoważny układowi 3 równań różniczkowych, autonomicznych, pierwszego rzędu:</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(18)</span>\[\dot x = v, \qquad x(0) = x_0,\]\[\dot v = x - x^3 -\gamma v + A \cos z , \qquad v(0) = v_0,\]\[z = \omega_0, \qquad z(0) = 0.\]</div>
+<p>Oznacza to, że przestrzeń fazowa jest 3-wymiarowa.</p>
+<p>Matematycy wolą przepisać powyższy układ równań dla &#8220;tradycyjnych&#8221;  3 zmiennych <span class="math">\((x, y, z)\)</span> w postaci:</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(19)</span>\[\dot x = y, \qquad x(0) = x_0,\]\[\dot y = x - x^3 -\gamma y + A \cos z , \qquad y(0) = y_0,\]\[z = \omega_0, \qquad z(0) = 0.\]</div>
+<p>czyli prędkość cząstki <span class="math">\(v\)</span> jest teraz oznaczona jako <span class="math">\(v=y\)</span>.</p>
+<p>Okazuje się, że pełny układ wykazuje radykalnie inne własności od poprzednich 2 przypadków. Z punktu widzenia fizyki mamy taki oto proces:  Cząstka porusza się w bistabilnym potencjale. Ponieważ potencjał dąży do nieskończoności gdy położenie dąży do nieskończoności, ruch cząstki jest ograniczony; cząstka jest uwięziona w potencjale i nie może uciec do nieskończoności. Siła tarcia pcha cząstkę do jednego ze (&#8220;starych&#8221;) stanów stacjonarnych  <span class="math">\(x_{s1}\)</span>  lub <span class="math">\(x_{s2}\)</span>. Z kolei zewnętrzna siła periodyczna w czasie pompuje energię do układu i przeciwdziała sile tarcia. Cząstka już nie dąży do stanu stacjonarnego, nie zatrzyma się dla długich czasów ale będzie  ciągle poruszać się i nigdy już nie spocznie. Istotne stają się efekty inercjalne związane z masą czastki, które są odzwierciedlone w wyrazie <span class="math">\(\dot y\)</span>, czyli przyśpieszeniu cząstki. Istotne jest to, że nie jest to ruch przetłumiony. W konsekwencji układ nie posiada stanu stacjonarnego w postaci punktu w przestrzeni fazowej jak to było w przypadku 2. Wszystkie te powyższe czynniki stają się istotne dla zrozumienia  skomplikowanych i złożonych własności ewolucji cząstki.</p>
+<div class='sage'><script type='text/x-sage'># przykładowa trajektoria  (górny wykres)
+# wraz z krzywą fazową (dolny wykres)
+var('x y z')
+T = srange(0,150*pi,0.01)
+sol=desolve_odeint( vector([y,x-x^3-0.26*y+0.3*cos(z), 1]), [0.1,0.1,0],T,[x,y,z])
+t = line(zip(T,sol[:,0]), figsize=(12,4), axes_labels=["$t$","$x(t)$"], frame=1, axes=0)
+b = line(zip(sol[:,0],sol[:,1]), figsize=(12,4), axes_labels=["$x(t)$","$v(t)$"], frame=1, axes=0)
+html.table([[t],[b]])</script></div></div>
+<div class="section" id="ruch-periodyczny-o-okresie-1">
+<h2>Ruch periodyczny o okresie 1<a class="headerlink" href="#ruch-periodyczny-o-okresie-1" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>W modelu występują 3 bezwymiarowe parametry: współczynnik tarcia <span class="math">\(\gamma\)</span>, amplituda zewnętrznej siły <span class="math">\(A\)</span> oraz częstość drgań <span class="math">\(\omega_0\)</span> siły periodycznej w czasie. Poniżej pokażemy kilka charakterystycznych trajektorii układu. Zaczniemy od prostej periodycznej ewolucji, ruchu okresowego o tzw. okresie 1.</p>
+<p>Załóżmy następujące wartości parametrów:</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(20)</span>\[\gamma = 0.15, \qquad A = 0.3, \qquad \omega_0 = 1\]</div>
+<p>W tym przypadku obserwujemy regularny ruch. Jeżeli nieco zaburzymy warunki początkowe, to nowy ruch jest także regularny (trzeba być ostrożnym, gdy mówimy &#8220;nieco zaburzymy&#8221;).</p>
+<div class='sage'><script type='text/x-sage'># wykresy dla przypadku z tłumieniem
+var('x y z')
+x0, y0, z0 = 0.1,0.1,0
+kolor = 'green'
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.1
+A = 0.3
+w = 1
+#
+# układ różniczkowych równań ruchu
+dx = y
+dy = F - g*y + A*cos(z)
+dz = w
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,30*pi,0.01)
+num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
+#
+# wykresy funkcji
+xmin = 1.5
+lt  = plot(V, (x,-xmin,xmin), figsize=4)
+lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['$x$','$V(x)$'])
+lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=kolor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$x(t)$'], figsize=4)
+rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$v(t)$'], figsize=4)
+#
+html("""Układ równań różniczkowych
+$\dot{x} = %s$
+$\dot{y} = %s$
+$\dot{z} = %s$
+z warunkami początkowymi
+$(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
+"""%(dx,dy,dz,x0,y0,z0))
+html.table([[lt,rt],[lb,rb]])</script></div><p>Przyjrzyjmy sie teraz dwóm trajektoriom startującym z bliskich warunków początkowych. Rozpatrzmy ich początkową i asymptotyczną (dla długich czasów) ewolucję.</p>
+<div class='sage'><script type='text/x-sage'># wykresy dla przypadku z tłumieniem
+var('x y z')
+x01, y01, z01 = 0.1,0.1,0
+x02, y02, z02 = 0.11,0.1,0
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.1
+A = 0.3
+w = 1
+#
+# układ różniczkowych równań ruchu
+dx = y
+dy = F - g*y + A*cos(z)
+dz = w
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,200*pi,0.01)
+num1 = desolve_odeint(vector([dx,dy,dz]), [x01,y01,z01], T, [x,y,z])
+num2 = desolve_odeint(vector([dx,dy,dz]), [x02,y02,z02], T, [x,y,z])
+#
+lnum = int(len(num1[:,0])/10)
+trans1 = num1[:lnum]
+asymp1 = num1[-lnum:]
+trans2 = num2[:lnum]
+asymp2 = num2[-lnum:]
+#
+# wykresy funkcji
+lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+lt += list_plot(zip(trans2[:,0],trans2[:,1]), plotjoined=1, color='red')
+rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined=1, color='red')
+lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+lb += list_plot(zip(asymp2[:,0],asymp2[:,1]), plotjoined=0, color='red')
+rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoined=1, color='red')
+#
+html("""Układ równań różniczkowych
+$\dot{x} = %s$
+$\dot{y} = %s$
+$\dot{z} = %s$
+z różnymi warunkami początkowymi
+<span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2f,%.2f)$</span>
+<span style="color:red;">$(x_{02},y_{02},z_{02}) = (%.2f,%.2f,%.2f)$</span>
+"""%(dx,dy,dz,x01,y01,z01,x02,y02,z02))
+html.table([[lt,rt],[lb,rb]])</script></div><p>Na dwóch górnych diagramach przedstawioną reżim krótkich czasów. Ponieważ 2 warunki początkowe nieco się różnią, więc początkowa ewolucja nieco się różni. Kolor czerwony i zielony jest rozróżnialny na prawym górnym rysunku pokazującym ewolucję <span class="math">\(x(t)\)</span> dla krótkich czasów.  Jeżeli przyjrzymy się reżimowy długich czasów (dwa dolne diagramy) to zauważymy duże podobieństwo w ewolucji: krzywe fazowe są zamknięte więc jest to prosty ruch periodyczny, przypominający nieco zdeformowaną funkcję typu <span class="math">\(\sin(\alpha t)\)</span> czy też <span class="math">\(\cos(\alpha t)\)</span>. Jest to funkcja okresowa z charakterystycznym jednym jedynym  okresem <span class="math">\(T\)</span>. Dlatego mówimy, że jest ruch periodyczny o okresie 1. Dwie krzywe <span class="math">\(x(t)\)</span> na dolnym prawym rysunku nie są rozróżnialne.</p>
+<p>Można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że trajektorie dążą do tego samego okresowego rozwiązania, są przyciagane do tego okresowego rozwiązania. Innymi słowy, ta krzywa fazowa o okresie 1  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 1 lub 1-okresowym  atraktorem. Można by postawić pytanie: jak wygląda basen przyciągania dla tego atraktora. Aby dać odpowiedź na to pytanie należy zbadać numerycznie np. kwadrat warunków początkowych  <span class="math">\((x_0, y_0)\)</span> i wybrać te warunki początkowe które dążą do powyższej krzywej fazowej o okresie 1. Okazuje się, że basen przyciągania jest &#8220;porządnym&#8221; zbiorem, którego brzeg jest gładką krzywą, podobnie jak w przypadku zilustrowanym powyżej dla układu tylko z tarciem, bez siły okresowej.</p>
+</div>
+<div class="section" id="ruch-periodyczny-o-okresie-3">
+<h2>Ruch periodyczny o okresie 3<a class="headerlink" href="#ruch-periodyczny-o-okresie-3" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Załóżmy następujące wartości parametrów:</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(21)</span>\[\gamma = 0.22, \qquad A = 0.3, \qquad \omega_0 = 1\]</div>
+<p>W tym przypadku obserwujemy także periodyczny ruch, ale nieco bardziej skomplikowany. Nie jest to prosty periodyczny ruch, ale tzw. ruch o okresie 3, tzn. teraz okres jest 3 razy dłuższy niż w poprzednim przypadku.</p>
+<div class='sage'><script type='text/x-sage'># wykresy dla przypadku z tłumieniem
+var('x y z')
+x0, y0, z0 = 0.1,0.1,0
+kolor = 'red'
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.22
+A = 0.3
+w = 1
+#
+# układ różniczkowych równań ruchu
+dx = y
+dy = F - g*y + A*cos(z)
+dz = w
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,20*pi,0.01)
+num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
+#
+# wykresy funkcji
+xmin = 1.5
+lt  = plot(V, (x,-xmin,xmin), figsize=4)
+lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['$x$','$V(x)$'])
+lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=kolor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$x(t)$'], figsize=4)
+rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$v(t)$'], figsize=4)
+#
+html("""Układ równań różniczkowych
+$\dot{x} = %s$
+$\dot{y} = %s$
+$\dot{z} = %s$
+z warunkami początkowymi
+$(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
+"""%(dx,dy,dz,x0,y0,z0))
+html.table([[lt,rt],[lb,rb]])</script></div><p>I znów zobaczymy, jak początkowa ewolucja różni się od tej po długim czasie.</p>
+<div class='sage'><script type='text/x-sage'># wykresy dla przypadku z tłumieniem
+var('x y z')
+x01, y01, z01 = 0.10,0.1,0
+x02, y02, z02 = 0.11,0.1,0
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.22
+A = 0.3
+w = 1
+#
+# układ różniczkowych równań ruchu
+dx = y
+dy = F - g*y + A*cos(z)
+dz = w
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,200*pi,0.01)
+num1 = desolve_odeint(vector([dx,dy,dz]), [x01,y01,z01], T, [x,y,z])
+num2 = desolve_odeint(vector([dx,dy,dz]), [x02,y02,z02], T, [x,y,z])
+#
+lnum = int(len(num1[:,0])/10)
+trans1 = num1[:lnum]
+asymp1 = num1[-lnum:]
+trans2 = num2[:lnum]
+asymp2 = num2[-lnum:]
+#
+# wykresy funkcji
+lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+lt += list_plot(zip(trans2[:,0],trans2[:,1]), plotjoined=1, color='red')
+rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined=1, color='red')
+lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+lb += list_plot(zip(asymp2[:,0],asymp2[:,1]), plotjoined=0, color='red')
+rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoined=1, color='red')
+#
+html("""Układ równań różniczkowych
+$\dot{x} = %s$
+$\dot{y} = %s$
+$\dot{z} = %s$
+z różnymi warunkami początkowymi
+<span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2f,%.2f)$</span>
+<span style="color:red;">$(x_{02},y_{02},z_{02}) = (%.2f,%.2f,%.2f)$</span>
+"""%(dx,dy,dz,x01,y01,z01,x02,y02,z02))
+html.table([[lt,rt],[lb,rb]])</script></div><p>Dla długich czasów, krzywe fazowe są zamknięte, ale nie są  to krzywe typu zdeformowana elipsa.  To są krzywe z 2 pętelkami. Tym niemniej, ruch jest periodyczny.</p>
+<p>Podobnie jak poprzednim przypadku, można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że wiele trajektorii dąży do tej samej  okresowej orbity, są one  przyciagane do tej  zamkniętek krzywej fazowej. Innymi słowy, ta krzywa fazowa o okresie 3  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 3 lub 3-okresowym  atraktorem.  Basen przyciągania dla tego atraktora  na płaszczyźnie warunków początkowych <span class="math">\((x_0, y_0)\)</span>  jest &#8220;porządnym&#8221; zbiorem o wymiarze 2 (czyli kawałek płaszczyzny), którego brzeg jest gładką krzywą.</p>
+</div>
+<div class="section" id="ruch-chaotyczny">
+<h2>Ruch chaotyczny<a class="headerlink" href="#ruch-chaotyczny" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Załóżmy następujące wartości parametrów:</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(22)</span>\[\gamma = 0.25, \qquad A = 0.3, \qquad \omega_0 = 1\]</div>
+<p>W tym przypadku obserwujemy ruch, który wydaje się być wyjątkowo nieregularny, chaotyczny.</p>
+<div class='sage'><script type='text/x-sage'># wykresy dla przypadku chaotycznego
+var('x y z')
+x0, y0, z0 = 0.1,0.1,0
+kolor = 'firebrick'
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.25
+A = 0.3
+w = 1
+#
+# układ różniczkowych równań ruchu
+dx = y
+dy = F - g*y + A*cos(z)
+dz = w
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,50*pi,0.01)
+num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
+#
+# wykresy funkcji
+xmin = 1.5
+lt  = plot(V, (x,-xmin,xmin), figsize=4)
+lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['$x$','$V(x)$'])
+lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=kolor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$x(t)$'], figsize=4)
+rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$v(t)$'], figsize=4)
+#
+html("""Układ równań różniczkowych
+$\dot{x} = %s$
+$\dot{y} = %s$
+$\dot{z} = %s$
+z warunkami początkowymi
+$(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
+"""%(dx,dy,dz,x0,y0,z0))
+html.table([[lt,rt],[lb,rb]])</script></div><p>Zobaczmy, jak tym razem ewoluują rozwiązania o 2 bliskich warunkach początkowych.</p>
+<div class='sage'><script type='text/x-sage'>var('x y z')
+x01, y01, z01 = 0.1,0.1,0
+x02, y02, z02 = 0.11,0.1,0
+#
+# siła
+F = x-x^3
+V = -integrate(F,x)
+#
+# tarcie: parametr gamma
+g = 0.25
+A = 0.3
+w = 1
+#
+# układ różniczkowych równań ruchu
+dx = y
+dy = F - g*y + A*cos(z)
+dz = w
+#
+# numeryczne rozwiazanie równań ruchu
+T = srange(0,200*pi,0.01)
+num1 = desolve_odeint(vector([dx,dy,dz]), [x01,y01,z01], T, [x,y,z])
+num2 = desolve_odeint(vector([dx,dy,dz]), [x02,y02,z02], T, [x,y,z])
+#
+lnum = int(len(num1[:,0])/10)
+trans1 = num1[:lnum]
+asymp1 = num1[-lnum:]
+trans2 = num2[:lnum]
+asymp2 = num2[-lnum:]
+#
+# wykresy funkcji
+lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+lt += list_plot(zip(trans2[:,0],trans2[:,1]), plotjoined=1, color='red')
+rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined=1, color='red')
+lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
+lb += list_plot(zip(asymp2[:,0],asymp2[:,1]), plotjoined=1, color='red')
+rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
+rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoined=1, color='red')
+#
+html("""Układ równań różniczkowych
+$\dot{x} = %s$
+$\dot{y} = %s$
+$\dot{z} = %s$
+z różnymi warunkami początkowymi
+<span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2f,%.2f)$</span>
+<span style="color:red;">$(x_{02},y_{02},z_{02}) = (%.2f,%.2f,%.2f)$</span>
+"""%(dx,dy,dz,x01,y01,z01,x02,y02,z02))
+html.table([[lt,rt],[lb,rb]])</script></div><p>Początkowa ewolucja dwóch rozwiązań jest nierozróżnialna (ponieważ 2 warunki początkowe są bardzo blisko siebie). Po pewnym charakterystycznym czasie, zwanym czasem Lapunowa, trajektorie zaczynają różnić się coraz bardziej, zaczynają rozbiegać się: patrz trajektoria czerwona i zielona na dolnym prawym rysunku.</p>
+<div class="figure align-center">
+<img alt="Chaos" src="../_images/chaos_traj.png" />
+<p class="caption">Schematyczne trajektorie w reżimie chaotycznym.</p>
+</div>
+<p>W reżimie chaotycznym, te dwie trajektorie oddalają się od siebie w eksponencjalnie szybkim tempie określonym przez zależność:</p>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(23)</span>\[\begin{split}|x_1(t) - x_2(t)| = |x_1(0) - x_2(0)|\mbox{e}^{\lambda t}, \qquad \lambda &gt; 0\end{split}\]</div>
+<p>lub</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(24)</span>\[\begin{split}|\Delta x(t)| = |\Delta x_0|\mbox{e}^{\lambda t}, \qquad \lambda &gt; 0\end{split}\]</div>
+<p>gdzie <span class="math">\(\lambda\)</span> nazywa sie wykładnikiem Lapunowa.</p>
+<p>Różnice w ewolucji stają się zbyt duże i pojawia się dylemat: która trajektoria jest właściwa, skoro nasza aparatura nie rozróżnia bliskich warunków początkowych. Determinizm staje się złudnym. Nie możemy przewidywać właściwej ewolucji układu.</p>
+<p>Przedstawiony powyżej reżim chaotyczny nie jest jedyny. W układzie istnieje wiele takich wartości parametrów <span class="math">\((\gamma, A, \omega)\)</span>, dla których pojawia się ruch chaotyczny. Należy nadmienić, że dla długich czasów  wiele trajektorii generowanych przez różne warunki początkowe zachowuje się bardzo podobnie, wiele trajektorii jest przyciąganych. Tu także istnieje atraktor i jego basen przyciągania. Jednakże ten atraktor jest dziwny: jego wymiar nie jest liczbą całkowitą i atraktor  jest fraktalem. Dlatego nazywa się dziwnym atraktorem.  Brzeg basenu przyciągania tego atraktora też ma dziwną strukturę  i jego wymiar jest fraktalny.</p>
+<div class="topic">
+<p class="topic-title first">Zadania</p>
+<ol class="arabic">
+<li><p class="first">Niech <span class="math">\(\gamma = 0.1, \quad \omega_0 =1.4 , \quad (x_0, y_0, z_0) = (-0.5, -0.2, 0)\)</span>.
+Zmieniaj parametr <span class="math">\(A=0.1,  0.32,  0.338,  0.35\)</span>.</p>
+<p>Obserwuj scenariusz  podwojenia okresu:</p>
+<ol class="lowerroman simple">
+<li>pojawia się atraktor periodyczny o okresie 1.</li>
+<li>pojawia się atraktor periodyczny o okresie 2.</li>
+<li>pojawia się atraktor periodyczny o okresie 4.</li>
+<li>pojawia się atraktor periodyczny o okresie 8 (trudno  trafić).</li>
+<li>pojawia się ruch nieregularny, chaotyczny.</li>
+</ol>
+</li>
+<li><p class="first">Zbadaj zachowanie się układu dla następujących wartości parametrów:
+<span class="math">\(\gamma = 1.35  -  1.38, \quad A=1, \quad \omega_0 =1, \quad (x_0, y_0, z_0) = (0.0, 0.5, 0)\)</span>.</p>
+</li>
+<li><p class="first">To samo dla wartości
+<span class="math">\(\gamma = 0.5, \quad A=0.34875, \quad \omega_0 =1, \quad (x_0, y_0, z_0) = (0,  0, 0)\)</span></p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Determinizm a przewidywalność</a></li>
+<li><a class="reference internal" href="#model-chaosu-uklad-bistabilny-oscylator-duffinga">Model chaosu. Układ bistabilny (oscylator Duffinga)</a><ul>
+<li><a class="reference internal" href="#skalowanie">Skalowanie</a></li>
+<li><a class="reference internal" href="#krok-1-uklad-zachowawczy">Krok 1. Układ zachowawczy</a></li>
+<li><a class="reference internal" href="#krok-2-uklad-dysypatywny-czyli-wplyw-tarcia">Krok 2. Układ dysypatywny czyli wpływ tarcia.</a></li>
+<li><a class="reference internal" href="#krok-3-uklad-z-tarciem-i-periodyczna-sila">Krok 3. Układ z tarciem i periodyczną siłą.</a></li>
+<li><a class="reference internal" href="#ruch-periodyczny-o-okresie-1">Ruch periodyczny o okresie 1</a></li>
+<li><a class="reference internal" href="#ruch-periodyczny-o-okresie-3">Ruch periodyczny o okresie 3</a></li>
+<li><a class="reference internal" href="#ruch-chaotyczny">Ruch chaotyczny</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="../ch1/chI024.html"
+                        title="poprzedni rozdział">Atraktory</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch2/chII011.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="../ch1/chI024.html" title="Atraktory"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Oct 23, 2013.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>
