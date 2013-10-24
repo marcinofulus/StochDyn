@@ -26,7 +26,7 @@
 
 
 \title{Dynamika stochastyczna}
-\date{23/10/2013}
+\date{24/10/2013}
 \release{I}
 \author{Jerzy Łuczka, Łukasz Machura}
 \newcommand{\sphinxlogo}{}
@@ -2072,6 +2072,389 @@ print "3D rysunek atraktora Lorenza"
 p3d.show()
 \end{verbatim}
 
+
+
+\section{Dyskretne układy dynamiczne}
+\label{ch1/chI031:dyskretne-uklady-dynamiczne}\label{ch1/chI031::doc}
+We Wprowadzeniu pokazaliśmy w jaki sposób mogą pojawiać się zagadnienia modelowane równaniami rekurencyjnymi
+\phantomsection\label{ch1/chI031:equation-eqn1}\begin{gather}
+\begin{split}x_{n+1} = f(x_n), \quad \quad x_0 = c\qquad\end{split}\label{ch1/chI031-eqn1}
+\end{gather}
+Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykladem jest algorytm Newtona pozwalający znajdować rekurencyjnie  pierwiastki równania
+\phantomsection\label{ch1/chI031:equation-eqn2}\begin{gather}
+\begin{split}F(x) = 0\end{split}\label{ch1/chI031-eqn2}
+\end{gather}
+W metodzie  Newtona  kolejne przybliżenie pierwiastka dane jest przez równanie
+\phantomsection\label{ch1/chI031:equation-eqn2a}\begin{gather}
+\begin{split}x_{n+1} = x_n + \frac{F(x_n)}{F'(x_n)}\equiv f(x_n)\end{split}\label{ch1/chI031-eqn2a}
+\end{gather}
+gdzie zakładamy, że pochodna $F'(x)$ istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji $F(x)$.  W szczególności dla $F(x)=x^2-2$ ciąg \eqref{ch1/chI031-eqn2a} w zależności od warunku początkowego zmierza do liczby $x_{+}=\sqrt{2}$ lub $x_{-}=\sqrt{2}$  (co jest oczywiste skądinąd).
+\begin{description}
+\item[{\emph{Wizualizacja iteracji}}] \leavevmode
+Używając komputera, kolejne wyrazy $x_n$ jest łatwo uzyskać. Dla przykładu, niech
+\phantomsection\label{ch1/chI031:equation-eqn3}\begin{gather}
+\begin{split}x_{n+1} = x_n - 0.5  x_{n}^2 +1.7, \qquad x_0 = 1\end{split}\label{ch1/chI031-eqn3}
+\end{gather}
+Poniżej prezentujemy program w SAGE:
+
+\end{description}
+
+
+\begin{verbatim}
+# warunek początkowy
+x0 = 1
+# tu można wstawić dowolną funkcję f(x)
+f(x) = x - 0.5*x*x+1.7
+for i in range(20):
+ print x0
+ x0 = f(x0)
+\end{verbatim}
+
+
+Poniżej jest prezentacja graficzna dla ogólniejszego przypadku
+\phantomsection\label{ch1/chI031:equation-eqn4}\begin{gather}
+\begin{split}x_{n+1} = x_n - b  x_{n}^2 +1.7, \qquad x_0 = 1\end{split}\label{ch1/chI031-eqn4}
+\end{gather}
+z dowolnym parametrem $b$. Zachęcamy do zabawy: zmieniajcie wartość parametru $b$ oraz warunek początkowy. Czytelnik łatwo może podać swoje własne równanie, zmieniając odpowiednie wyrażenia w programie.
+
+
+\begin{verbatim}
+def ne(b,X):
+ return X - b*X*X +1.7
+#
+def pophis(startp,b,length):
+ his = [startp]
+ for i in range(length):
+     his.append( ne(b,his[i]) )
+ return his
+#
+#warunek pocz. przed b,
+#po b ilość iteracji,
+#skala wykresu podana w ymin, ymax
+@interact
+def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
+ show(list_plot(pophis(1,b,35),plotjoined=True,marker='o',ymin=0.5,ymax=3))
+\end{verbatim}
+
+
+
+\subsection{Metoda pajęczyny}
+\label{ch1/chI031:metoda-pajeczyny}
+Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można oberwować kolejne kroki iteracji.
+
+Sposób rysowania:
+\begin{description}
+\item[{\# Dla danego równania  $x_{n+1} = f(x_n)$, rysujemy wykres funkcji}] \leavevmode
+$y = f (x)$ oraz  linię prostą $y  = x$. Prosta ta pozwala
+przenosić wartość $x_{n+1}$  z osi OY na oś OX.
+
+\item[{\# Na osi OX zaznaczamy warunek początkowy $x_0$. Znajdujemy}] \leavevmode
+graficznie punkt $x_1 = f(x_0)$, który jest na osi OY.
+
+\end{description}
+
+\# Przy pomocy prostej $y=x$ przenosimy teraz  punkt $x_1$ na oś OX.
+\begin{description}
+\item[{\# Mając na osi OX punkt $x_1$, traktujemy go jako następny warunek}] \leavevmode
+początkowy i znajdujemy graficznie na osi OY punkt $x_2=f(x_1)$.
+
+\end{description}
+
+\# Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym $x_0$.
+
+
+\begin{verbatim}
+var('r,x0,n')
+@interact
+def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)
+ f(x)=x - a*x*x+1.7    ## postać funkcji f(x), która mozna zmieniać
+ p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color='black')+plot(x,(x,-1,4),color='green',figsize=5)
+ for n in range(20):
+     th = 1
+     if n>45:
+         th = 1.5
+         color='red'
+     elif n < 5:
+         color='blue'
+         th=1.5
+     else:
+         color='grey'
+         th =0.5
+     l1 = line([(x0,x0),(x0,f(x0))],color=color,thickness=th)
+     l2 = line([(x0,f(x0)),(f(x0),f(x0))],color=color,thickness=th)
+     p = p+l1+l2
+     x0 = f(x0)
+ p.axes_labels(["$x_n$","$x_{n+1}$"])
+ p.show()
+\end{verbatim}
+
+
+
+\subsection{Stany stacjonarne (punkty stałe) o okresie 1}
+\label{ch1/chI031:stany-stacjonarne-punkty-stale-o-okresie-1}
+Układ dynamiczny z czasem dyskretnym ma postać równania rekurencyjnego
+\phantomsection\label{ch1/chI031:equation-eqn5}\begin{gather}
+\begin{split}x_{n+1} = f(x_n), \quad \quad x_0  \quad \mbox{znamy}\end{split}\label{ch1/chI031-eqn5}
+\end{gather}
+Wartość funkcji w następnym kroku  $x_{n+1}$  jest obliczana z wartości  funkcji   $x_n$  w kroku poprzednim.
+
+Z punktu widzenia modelowania,  chcielibyśmy wiedzieć, czy układ w trakcie ewolucji dąży do jakiegoś stanu stacjonarnego i czy ten stan stacjonarny jest stabilny. Pojawia się też pytanie, jakiego typu stany stacjonarne mogą pojawiać się dla układów modelowanych równaniami rekurencyjnymi.
+
+
+\subsubsection{A. Stany stacjonarne (punkty stałe o okresie 1)}
+\label{ch1/chI031:a-stany-stacjonarne-punkty-stale-o-okresie-1}
+Przypomnijmy sobie, co oznacza istnienie stanu stacjonarnego dla układów modelowanych równaniem różniczkowym:
+\phantomsection\label{ch1/chI031:equation-eqn6}\begin{gather}
+\begin{split} \frac{dx(t)}{dt} = F(x(t))\end{split}\label{ch1/chI031-eqn6}
+\end{gather}
+Stan stacjonarny to taki stan, który nie zmienia się w trancie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli $x(t) = x_s$ jest wielkością stałą, niezmienną. Skoro tak, to
+\phantomsection\label{ch1/chI031:equation-eqn7}\begin{gather}
+\begin{split} \frac{dx(t)}{dt}  = \frac{dx_s}{dt}  = 0\end{split}\label{ch1/chI031-eqn7}
+\end{gather}
+Aby lewa strona równania różniczkowego była równa prawej stronie, musi zachodzić równość:
+\phantomsection\label{ch1/chI031:equation-eqn8}\begin{gather}
+\begin{split}F(x_s) = 0\end{split}\label{ch1/chI031-eqn8}
+\end{gather}
+To jest równanie (warunek), z którego wyznaczamy stan stacjonarny.
+
+Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucjii (dyskretnej), czyli z punktu $x_s$ otrzymujemy znowu $x_s$. Dla równania dyskretnego ta niezmienność oznacza, że
+\phantomsection\label{ch1/chI031:equation-eqn9}\begin{gather}
+\begin{split}\quad \mbox{jeżeli} \quad x_n = x_s \quad \mbox{to} \quad x_{n+1} = x_s\end{split}\label{ch1/chI031-eqn9}
+\end{gather}
+i równanie rekurencyjne
+\phantomsection\label{ch1/chI031:equation-eqn10}\begin{gather}
+\begin{split}x_{n+1} = f(x_n) \quad \mbox{ma postać} \quad x_s = f(x_s)\end{split}\label{ch1/chI031-eqn10}
+\end{gather}
+Stąd otrzymujemy równanie dla stanu stacjonarnego
+\phantomsection\label{ch1/chI031:equation-eqn11}\begin{gather}
+\begin{split}x_s = f(x_s) \quad \mbox{lub w uproszczonym zapisie} \quad x=f(x)\end{split}\label{ch1/chI031-eqn11}
+\end{gather}
+\emph{Zapamiętajmy to równanie!} Matematycy zamiast nazwy ``stan stacjonarny'' stosują nazwę ``punkt stały odwzorowania'' lub ``punkt stały o okresie 1'' .
+
+Poniżej przedstawiamy to graficznie. Po wielu krokach iteracji obserwujemy powtarzanie się tej samej wartości: kolejna iteracji już nic nie zmienia, jest ta sama, stała.
+
+
+\begin{verbatim}
+def newpop(a,prevpop):
+ return a*prevpop
+#
+def populationhistory(startpop,a,length):
+ history = [startpop]
+ for i in range(length):
+     history.append( newpop(a,history[i]) )
+ return history
+#
+@interact
+def _( a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a') ):
+ myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala
+ myplot.show()
+\end{verbatim}
+
+
+Zobaczmy jak to ``działa'' w przypadku tzw. równania logistycznego gdy $f(x) = ax (1-x)$:
+\phantomsection\label{ch1/chI031:equation-eqn12}\begin{gather}
+\begin{split}x = f(x) \quad \mbox{oznacza} \quad x=ax  = ax - ax^2\end{split}\label{ch1/chI031-eqn12}
+\end{gather}
+Jest to równanie kwadratowe:
+\phantomsection\label{ch1/chI031:equation-eqn13}\begin{gather}
+\begin{split}ax^2 -ax +x = 0 \quad \mbox{czyli} \quad  ax^2 + x  =  x [ax + ] = 0\end{split}\label{ch1/chI031-eqn13}
+\end{gather}
+Otrzymujemy dwa rozwiązania
+\phantomsection\label{ch1/chI031:equation-eqn14}\begin{gather}
+\begin{split}x_1 = 0 \quad \mbox{orax} \quad x_2 = \frac{a-1}{a} = 1 - \frac{1}{a}\end{split}\label{ch1/chI031-eqn14}
+\end{gather}
+Są to dwa stany stacjonarne układu. Występuje tu podobieństwo do ciągłego modelu Verhulsta, które też posiada dwa stany stacjonarne $N_1 = 0$ (niestabilne)  oraz $N_2 = K$ (stabilne).
+
+Który ze stanów stacjonarnych  $x_1$   i   $x_2$  jest stabilny, a który niestabilny.  Zbadamy teraz ten problem.
+
+
+\subsubsection{B. Stabilność stanów stacjonarnych}
+\label{ch1/chI031:b-stabilnosc-stanow-stacjonarnych}
+Stabilność stanu stacjonarnego $x_s$  jest podobnie definiowana jak w przypadku równań różniczkowych zwyczajnych: dowolnie małe odchylenie od stanu stacjonarnego   jest w trakcie ewolucji redukowane i odchylenie dąży do zera. Innymi słowy: jeżeli stan początkowy $x_0$ mało różni się od stany stacjonarnego $x_s$, to ciąg liczb:
+\phantomsection\label{ch1/chI031:equation-eqn15}\begin{gather}
+\begin{split}x_0, \quad x_1=f(x_0), \quad x_2 = f(x_1), \quad x_3 = f(x_2), \quad x_4 = f(x_3), \dots\end{split}\label{ch1/chI031-eqn15}
+\end{gather}
+dąży do stanu stacjonarnego $x_s$.
+
+Innymi słowy, jeżeli $|x_0 - x_s| < \delta$  dla odpowiednio małej liczby $\delta$   to   $|x_n - x_s| \to 0$  gdy $n \to \infty$. Wyprowadzimy kryterium które pozwala badać stabilność $x_s$.
+
+Wprowadzamy oznaczenie dla małego odchylenia od stanu stacjonarnego:
+\phantomsection\label{ch1/chI031:equation-eqn16}\begin{gather}
+\begin{split}y_n = x_n - x_s << 1\end{split}\label{ch1/chI031-eqn16}
+\end{gather}
+stąd
+\phantomsection\label{ch1/chI031:equation-eqn16a}\begin{gather}
+\begin{split}x_n = x_s + y_n.\end{split}\label{ch1/chI031-eqn16a}
+\end{gather}
+Wówczas
+\phantomsection\label{ch1/chI031:equation-eqn17}\begin{gather}
+\begin{split}y_{n+1} = x_{n+1} - x_s = f(x_n) - x_s  = f( x_s + y_n) - x_s\end{split}\label{ch1/chI031-eqn17}
+\end{gather}
+Ponieważ $y_n$ jest małą wielkością, to funkcję $f(x_s + y_n)$ rozwijamy w szereg Taylora:
+\phantomsection\label{ch1/chI031:equation-eqn18}\begin{gather}
+\begin{split}y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  = f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + ...  \quad \quad \mbox{gdzie} \quad  \lambda = f'(x_s) \quad \mbox{jest liczbą}\end{split}\label{ch1/chI031-eqn18}
+\end{gather}
+Wykorzystaliśmy tu równość dla stanu stacjonarnego: $x_s = f(x_s)$.  W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego:
+\phantomsection\label{ch1/chI031:equation-eqn19}\begin{gather}
+\begin{split}y_{n+1} = \lambda y_n\end{split}\label{ch1/chI031-eqn19}
+\end{gather}
+Jeżeli $y_{n} \to 0$  to stan stacjonarny $x_s$ jest stabilny. Musimy teraz zbadać,  dla jakich wartości liczby $\lambda = f'(x_s)$ równanie dla $y_n$  ma rozwiązania dążące do zera dla warunku początkowego $|y_0| << 1$ .
+
+Rozpatrzymy 4 przypadki:
+
+
+\paragraph{1. Przypadek $\lambda  > 1$}
+\label{ch1/chI031:przypadek}
+Aby łatwiej zrozumieć, przyjmiemy  $\lambda =  2$. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać
+\phantomsection\label{ch1/chI031:equation-eqn20}\begin{gather}
+\begin{split}y_{n+1} = 2 y_n\end{split}\label{ch1/chI031-eqn20}
+\end{gather}
+Otrzymamy ciąg liczbowy
+\phantomsection\label{ch1/chI031:equation-eqn21}\begin{gather}
+\begin{split} y_0, \quad y_1 =   2 y_0, \quad y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0, \quad y_3 =  2 y_2 = 2^3 y_0, \quad y_4 =  2 y_3 = 2^4 y_0, ....\end{split}\label{ch1/chI031-eqn21}
+\end{gather}
+Widzimy, że  kolejne  liczby rosną, ponieważ są mnożone przez czynnik 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla $\lambda > 1$, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.
+
+
+\paragraph{2. Przypadek $\lambda < -1$}
+\label{ch1/chI031:id1}
+Aby łatwiej zrozumieć, przyjmiemy  $\lambda = - 2$. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać
+\phantomsection\label{ch1/chI031:equation-eqn22}\begin{gather}
+\begin{split}y_{n+1} = - 2 y_n\end{split}\label{ch1/chI031-eqn22}
+\end{gather}
+Otrzymamy ciąg liczbowy
+\phantomsection\label{ch1/chI031:equation-eqn23}\begin{gather}
+\begin{split} y_0, \quad y_1 = - 2 y_0, \quad y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0, \quad y_3 = (- 2) y_2 =  - 2^3 y_0, \quad y_4 = (- 2) y_3 = 2^4 y_0, ....\end{split}\label{ch1/chI031-eqn23}
+\end{gather}
+Widzimy, że  wartości bezwzględne kolejnych liczby rosną, ponieważ są mnożone przez czynnik - 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla $\lambda < - 1$, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.
+
+
+\paragraph{3. Przypadek $\lambda  \in (-1, 1)$}
+\label{ch1/chI031:id2}
+Aby łatwiej zrozumieć, przyjmiemy  $\lambda =  (1/2)$. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać
+\phantomsection\label{ch1/chI031:equation-eqn24}\begin{gather}
+\begin{split}y_{n+1} = \frac{1}{2}  y_n\end{split}\label{ch1/chI031-eqn24}
+\end{gather}
+Otrzymamy ciąg liczbowy
+\phantomsection\label{ch1/chI031:equation-eqn25}\begin{gather}
+\begin{split} y_0, \quad y_1 =   \frac{1}{2} y_0, \quad y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0, \quad y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0, \quad y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0, ....\end{split}\label{ch1/chI031-eqn25}
+\end{gather}
+Widzimy, że  kolejne  liczby maleją, ponieważ są mnożone przez czynnik $1/2$
+i ciąg liczbowy dąży do zera. Otrzymujemy stąd wniosek, że dla $\lambda  \in (-1, 1)$,
+stan stacjonarny  jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej
+maleje do zera  wraz z kolejnym krokiem iteracji.
+
+Wniosek z tego jest następujący:
+
+\begin{notice}{note}{Uwaga:}
+Stan stacjonarny $x_s$ jest stabilny jeżeli $\lambda = f'(x_s) \in (-1, 1)$.
+\end{notice}
+
+
+\subsection{Stany stacjonarne o okresie 2}
+\label{ch1/chI031:stany-stacjonarne-o-okresie-2}
+Jeżeli dla długich iteracji (formalnie dla $n\to\infty$)  otrzymujemy ciągle tą samą wartość, to mówimy o stanie  stacjonarnym o okresie 1. Pokazano to na powyższym rysunku. Jednakże mogą pojawić się inne stany stacjonarne. Dla przykładu, zobaczmy jak zachowuje się układ dla $n\to\infty$, który jest pokazany poniżej.
+
+
+\begin{verbatim}
+def ne(b,pre):
+ return 1+b*pre*(1-(1/16)*pre)
+#
+def pophis(startp,b,length):
+ his = [startp]
+ for i in range(length):
+     his.append( ne(b,his[i]) )
+ return his
+#
+@interact
+def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
+ aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',ymin=0,ymax=18)##warunek pocz. przed b, skala
+ aplot.show()
+\end{verbatim}
+
+
+Obserwujemy, że dla dużych wartości iteracji $n>>1$, dwie wartości iteracji powtarzają się i układ ``skacze'' pomiędzy dwoma stanami. Mówimy wówczas o stanie stacjonarnym o okresie 2. Możemy także powiedzieć, że jest to stan periodyczny. Jak wyznaczyć takie stany?  Skorzystamy ze wzoru na kolejne iteracje:
+\phantomsection\label{ch1/chI031:equation-eqn26}\begin{gather}
+\begin{split}x_{n+2} = f(x_{n+1}), \qquad x_{n+1} = f(x_{n})\end{split}\label{ch1/chI031-eqn26}
+\end{gather}
+Należy zauważyć, że wartość $x_{n+2} = x_n$ ponieważ co drugi krok jest ten sam stan. Dlatego też
+\phantomsection\label{ch1/chI031:equation-eqn27}\begin{gather}
+\begin{split}x_{n+2} = f(x_{n+1}) = f[f(x_{n})] = x_n\end{split}\label{ch1/chI031-eqn27}
+\end{gather}
+Jeżeli oznaczymy stan stacjonarny $x_s$ o okresie 2 jako $x^*$ to powyższe równanie przepiszemy jako
+\phantomsection\label{ch1/chI031:equation-eqn28}\begin{gather}
+\begin{split}f[f(x^*)] = x^*\end{split}\label{ch1/chI031-eqn28}
+\end{gather}
+Ale to samo zachodzi dla stanu $x_{n+3} = x_{n+1}$. Dlatego równanie powyższe ma 2 rozwiązania $x^* = x^*_1$  oraz  $x^* = x^*_2$.
+
+W praktyce rozwiązujemy równanie w postaci bardziej przyjaznej:
+\phantomsection\label{ch1/chI031:equation-eqn29}\begin{gather}
+\begin{split}x = f[f(x)] \equiv g(x)\end{split}\label{ch1/chI031-eqn29}
+\end{gather}
+Pamiętajmy, że jest to złożenie 2 funkcji (co prawda takich samych funkcji, ale to jest drugorzędne).
+
+\textbf{To jest bardzo ważne równanie!}
+
+Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny bedzie opisany równaniem
+\phantomsection\label{ch1/chI031:equation-eqn30}\begin{gather}
+\begin{split}x_{n+1} = 1- 2 x_n^2, \qquad f(x_n) = 1 - 2 x_n^2 \qquad \mbox{czyli} \qquad f(x) = 1 - 2 x^2\end{split}\label{ch1/chI031-eqn30}
+\end{gather}
+Ile wynosi $f[f(x)]$? Obliczamy
+\phantomsection\label{ch1/chI031:equation-eqn31}\begin{gather}
+\begin{split}f[f(x)] = 1 - 2 [f(x)]^2  =  1 - 2 [1 - 2 x^2]^2 = 1 - 2[1 - 4 x^2 + 4 x^4] = -8 x^4 + 8 x^2 -1\end{split}\label{ch1/chI031-eqn31}
+\end{gather}
+Dlatego równanie które określa stan stacjonarny o okresie 2 ma postać
+\phantomsection\label{ch1/chI031:equation-eqn32}\begin{gather}
+\begin{split}x = -8 x^4 + 8 x^2 -1 = g(x)\end{split}\label{ch1/chI031-eqn32}
+\end{gather}
+Jest to wielomian 4-go stopnia.
+
+
+\subsubsection{Stabilność stanów stacjonarnych o okresie 2}
+\label{ch1/chI031:stabilnosc-stanow-stacjonarnych-o-okresie-2}
+Badanie stabilności stanów o okresie 2 jest analogiczne do badania stabilności stanów stacjonarnych o okresie 1. Jeżeli stan stacjonarny jest określony przez równanie
+\phantomsection\label{ch1/chI031:equation-eqn33}\begin{gather}
+\begin{split}x^*=g(x^*)\end{split}\label{ch1/chI031-eqn33}
+\end{gather}
+to  stan ten jest  stabilny gdy
+\phantomsection\label{ch1/chI031:equation-eqn34}\begin{gather}
+\begin{split}\lambda_2 = g'(x^*) \in (-1, 1)\end{split}\label{ch1/chI031-eqn34}
+\end{gather}
+Ponieważ funkcja $g(x)$ jest funkcją złożoną, więc  należy stosować reguły różniczkowania  funkcji złożonej:
+\phantomsection\label{ch1/chI031:equation-eqn35}\begin{gather}
+\begin{split}  \lambda_2 = g'(x^*)  =  \bigl[\{f[f(x)]\}' \bigr]_{x=x^*} =\biggl[ \frac{df(u)}{du}\biggr]_{u=f(x^*)} \biggl(\frac{df(x)}{dx}\biggr)_{x=x^*}  \in (-1, 1)\end{split}\label{ch1/chI031-eqn35}
+\end{gather}
+Powyższy związek można przepisać  w postaci:
+\phantomsection\label{ch1/chI031:equation-eqn36}\begin{gather}
+\begin{split}  \lambda_2 = f'(u^*) f'(x^*) \in (-1, 1)\end{split}\label{ch1/chI031-eqn36}
+\end{gather}
+gdzie $u^*=f(x^*)$
+
+Warto coś tu zauważyć  i uprościć. Ponieważ stan $x^*$ jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: $x^* = x^*_1$ (np. górny)  oraz $x^* = x^*_2$ (np. doly), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:
+\phantomsection\label{ch1/chI031:equation-eqn37}\begin{gather}
+\begin{split}x_2^* = f(x_1^*), \qquad x_1^* = f(x_2^*)\end{split}\label{ch1/chI031-eqn37}
+\end{gather}
+Stąd otrzymujemy relację:
+\phantomsection\label{ch1/chI031:equation-eqn38}\begin{gather}
+\begin{split}  \lambda_2(x_1^*)  = f'(x^*_2) f'(x^*_1) \in (-1, 1)\end{split}\label{ch1/chI031-eqn38}
+\end{gather}
+Podobna relacja zachodzi dla drugiego stanu
+\phantomsection\label{ch1/chI031:equation-eqn39}\begin{gather}
+\begin{split}  \lambda_2(x_2^*)  = f'(x^*_1) f'(x^*_1) \in (-1, 1)\end{split}\label{ch1/chI031-eqn39}
+\end{gather}
+Jest to ta sama relacja co dla $x^*_1$. Więc oznacza to, że wystarczy zbadać wielkość $f'(x_1)f'(x_2)$, gdzie $x_1$  oraz  $x_2$ to dwa  rozwiązania równania $x=f(f(x))$.
+
+Podobnie można badać  punkty stałe o dowolnym okresie $n$:
+\phantomsection\label{ch1/chI031:equation-eqn40}\begin{gather}
+\begin{split}x^*= f\{f[ .....f(x^*) .....]\}  = G(x^*)\end{split}\label{ch1/chI031-eqn40}
+\end{gather}
+gdzie mamy n-krotne złożenie odwzorowania $f$.
+
+Stan  $x^*$  jest  stabilny gdy
+\phantomsection\label{ch1/chI031:equation-eqn41}\begin{gather}
+\begin{split}\lambda_n = G'(x^*) \in (-1, 1)\end{split}\label{ch1/chI031-eqn41}
+\end{gather}
+Ponieważ funkcja $G(x)$ jest funkcją złożoną, więc  należy stosować reguły różniczkowania  funkcji złożonej, podobnie jak to jest pokazane powyżej w przypadku $n=2$.
 
 
 \chapter{Chaos w układach dynamicznych}

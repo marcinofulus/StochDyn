@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.3.22)  23 OCT 2013 20:04
+This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2013.3.22)  24 OCT 2013 14:11
 entering extended mode
  %&-line parsing enabled.
 **StochDyn_v0.2.tex
@@ -1148,10 +1148,13 @@ Package xcolor Warning: Incompatible color definition on input line 42.
 Package xcolor Warning: Incompatible color definition on input line 47.
 
 
-Package xcolor Warning: Incompatible color definition on input line 48.
+Package xcolor Warning: Incompatible color definition on input line 57.
 
 
-Package xcolor Warning: Incompatible color definition on input line 49.
+Package xcolor Warning: Incompatible color definition on input line 58.
+
+
+Package xcolor Warning: Incompatible color definition on input line 59.
 
 )
 \tf@toc=\write9
@@ -2064,427 +2067,513 @@ Overfull \hbox (57.03212pt too wide) in paragraph at lines 2068--2068
 r='tachyon', figsize=4)[] 
  []
 
+
+Package xcolor Warning: Incompatible color definition on input line 2077.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2077.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2091.
+
+LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2093.
 [46]
-Rozdzia\l  2.
 
-Package xcolor Warning: Incompatible color definition on input line 2080.
+Package xcolor Warning: Incompatible color definition on input line 2141.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2080.
+Package xcolor Warning: Incompatible color definition on input line 2141.
 
-[47
+[47]
+Overfull \hbox (297.03212pt too wide) in paragraph at lines 2169--2169
+[]\T1/pcr/m/n/10 def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,d
+efault=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)[] 
+ []
+
+
+Overfull \hbox (219.03212pt too wide) in paragraph at lines 2171--2171
+[] \T1/pcr/m/n/10 p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color
+='black')+plot(x,(x,-1,4),color='green',figsize=5)[] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2193.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2193.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2204.
+
+[48]
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2249--2249
+[] \T1/pcr/m/n/10 myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,
+marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala[] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2271.
+
+[49]
+Overfull \hbox (202.46042pt too wide) in paragraph at lines 2296--2296
+[] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2306.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2319.
+
+[50]
+Overfull \hbox (80.7585pt too wide) in paragraph at lines 2328--2328
+[] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2332.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2354.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2354.
+
+[51]
+Overfull \hbox (183.03212pt too wide) in paragraph at lines 2371--2371
+[] \T1/pcr/m/n/10 aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',y
+min=0,ymax=18)##warunek pocz. przed b, skala[] 
+ []
+
+
+Package xcolor Warning: Incompatible color definition on input line 2413.
+
+[52] [53] [54
 
 ]
+Rozdzia\l  2.
 
-Package xcolor Warning: Incompatible color definition on input line 2091.
+Package xcolor Warning: Incompatible color definition on input line 2463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2091.
+Package xcolor Warning: Incompatible color definition on input line 2463.
 
-[48] <pendulum.png, id=780, 161.403pt x 138.919pt>
+[55]
+
+Package xcolor Warning: Incompatible color definition on input line 2474.
+
+
+Package xcolor Warning: Incompatible color definition on input line 2474.
+
+[56] <pendulum.png, id=918, 161.403pt x 138.919pt>
 File: pendulum.png Graphic file (type png)
  <use pendulum.png>
 File: pendulum.png Graphic file (type png)
 
 <use pendulum.png>
-Overfull \hbox (165.03212pt too wide) in paragraph at lines 2134--2134
+Overfull \hbox (165.03212pt too wide) in paragraph at lines 2517--2517
 []\T1/pcr/m/n/10 p = plot(0.25*x^4 - 0.5*x^2, (x,-1.6,1.6), figsize=(6,4), axes
 _labels=[r'$x$',r'$V(x)$'], color="blue")[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2142.
+Package xcolor Warning: Incompatible color definition on input line 2525.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2142.
+Package xcolor Warning: Incompatible color definition on input line 2525.
 
-[49 <./pendulum.png>]
+[57 <./pendulum.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 2171.
+Package xcolor Warning: Incompatible color definition on input line 2554.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2171.
+Package xcolor Warning: Incompatible color definition on input line 2554.
 
-[50]
-Overfull \hbox (255.03212pt too wide) in paragraph at lines 2222--2222
+[58]
+Overfull \hbox (255.03212pt too wide) in paragraph at lines 2605--2605
 []\T1/pcr/m/n/10 p0 = point(start_point,size=30) + text(r"$  x_0$",start_point,
 vertical_alignment='bottom',horizontal_alignment='left')[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2232.
+Package xcolor Warning: Incompatible color definition on input line 2615.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2232.
+Package xcolor Warning: Incompatible color definition on input line 2615.
 
-[51] <baseny_tarcie.jpg, id=824, 255.5pt x 255.5pt>
+[59] <baseny_tarcie.jpg, id=962, 255.5pt x 255.5pt>
 File: baseny_tarcie.jpg Graphic file (type jpg)
  <use baseny_tarcie.jpg>
 File: baseny_tarcie.jpg Graphic file (type jpg)
 
-<use baseny_tarcie.jpg> [52 <./baseny_tarcie.jpg>]
-Overfull \hbox (123.03212pt too wide) in paragraph at lines 2287--2287
+<use baseny_tarcie.jpg> [60 <./baseny_tarcie.jpg>]
+Overfull \hbox (123.03212pt too wide) in paragraph at lines 2670--2670
 []\T1/pcr/m/n/10 lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(
 x02)])), color='black', figsize=4)[] 
  []
 
 
-Overfull \hbox (33.03212pt too wide) in paragraph at lines 2288--2288
+Overfull \hbox (33.03212pt too wide) in paragraph at lines 2671--2671
 []\T1/pcr/m/n/10 lt += point((x01,V(x=x01)), color='green', size=50, axes_label
 s=['$x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (99.03212pt too wide) in paragraph at lines 2290--2290
+Overfull \hbox (99.03212pt too wide) in paragraph at lines 2673--2673
 []\T1/pcr/m/n/10 lb  = list_plot(num1.tolist(), plotjoined=1, color='green', ax
 es_labels=['$x(t)$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (153.03212pt too wide) in paragraph at lines 2292--2292
+Overfull \hbox (153.03212pt too wide) in paragraph at lines 2675--2675
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color
 ='green', axes_labels=['$t$','$x(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2293--2293
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2676--2676
 []\T1/pcr/m/n/10 rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
 
-Overfull \hbox (153.03212pt too wide) in paragraph at lines 2294--2294
+Overfull \hbox (153.03212pt too wide) in paragraph at lines 2677--2677
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color
 ='green', axes_labels=['$t$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2295--2295
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2678--2678
 []\T1/pcr/m/n/10 rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
-[53]
-Overfull \hbox (123.03212pt too wide) in paragraph at lines 2331--2331
+[61]
+Overfull \hbox (123.03212pt too wide) in paragraph at lines 2714--2714
 []\T1/pcr/m/n/10 lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(
 x02)])),color='black',  figsize=4)[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2332--2332
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2715--2715
 []\T1/pcr/m/n/10 lt += point((x01,V(x=x01)), color='blue', size=50, axes_labels
 =['$x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (93.03212pt too wide) in paragraph at lines 2334--2334
+Overfull \hbox (93.03212pt too wide) in paragraph at lines 2717--2717
 []\T1/pcr/m/n/10 lb  = list_plot(num1.tolist(), plotjoined=1, color='blue', axe
 s_labels=['$x(t)$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (147.03212pt too wide) in paragraph at lines 2336--2336
+Overfull \hbox (147.03212pt too wide) in paragraph at lines 2719--2719
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color
 ='blue', axes_labels=['$t$','$x(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2337--2337
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2720--2720
 []\T1/pcr/m/n/10 rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
 
-Overfull \hbox (147.03212pt too wide) in paragraph at lines 2338--2338
+Overfull \hbox (147.03212pt too wide) in paragraph at lines 2721--2721
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color
 ='blue', axes_labels=['$t$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2339--2339
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2722--2722
 []\T1/pcr/m/n/10 rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2357.
+Package xcolor Warning: Incompatible color definition on input line 2740.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2357.
+Package xcolor Warning: Incompatible color definition on input line 2740.
 
-[54]
-Overfull \hbox (39.03212pt too wide) in paragraph at lines 2383--2383
+[62]
+Overfull \hbox (39.03212pt too wide) in paragraph at lines 2766--2766
 []\T1/pcr/m/n/10 sol=desolve_odeint( vector([y,x-x^3-0.26*y+0.3*cos(z), 1]), [0
 .1,0.1,0],T,[x,y,z])[] 
  []
 
 
-Overfull \hbox (75.03212pt too wide) in paragraph at lines 2384--2384
+Overfull \hbox (75.03212pt too wide) in paragraph at lines 2767--2767
 []\T1/pcr/m/n/10 t = line(zip(T,sol[:,0]), figsize=(12,4), axes_labels=["$t$","
 $x(t)$"], frame=1, axes=0)[] 
  []
 
 
-Overfull \hbox (135.03212pt too wide) in paragraph at lines 2385--2385
+Overfull \hbox (135.03212pt too wide) in paragraph at lines 2768--2768
 []\T1/pcr/m/n/10 b = line(zip(sol[:,0],sol[:,1]), figsize=(12,4), axes_labels=[
 "$x(t)$","$v(t)$"], frame=1, axes=0)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2391.
+Package xcolor Warning: Incompatible color definition on input line 2774.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2391.
+Package xcolor Warning: Incompatible color definition on input line 2774.
 
-[55]
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2429--2429
+[63]
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2812--2812
 []\T1/pcr/m/n/10 lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['
 $x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (207.03212pt too wide) in paragraph at lines 2430--2430
+Overfull \hbox (207.03212pt too wide) in paragraph at lines 2813--2813
 []\T1/pcr/m/n/10 lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=ko
 lor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2431--2431
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2814--2814
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2432--2432
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2815--2815
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$v(t)$'], figsize=4)[] 
  []
 
-[56]
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2480--2480
+[64]
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2863--2863
 []\T1/pcr/m/n/10 lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (267.03212pt too wide) in paragraph at lines 2482--2482
+Overfull \hbox (267.03212pt too wide) in paragraph at lines 2865--2865
 []\T1/pcr/m/n/10 rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=
 1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (15.03212pt too wide) in paragraph at lines 2483--2483
+Overfull \hbox (15.03212pt too wide) in paragraph at lines 2866--2866
 []\T1/pcr/m/n/10 rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined
 =1, color='red')[] 
  []
 
 
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2484--2484
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2867--2867
 []\T1/pcr/m/n/10 lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (273.03212pt too wide) in paragraph at lines 2486--2486
+Overfull \hbox (273.03212pt too wide) in paragraph at lines 2869--2869
 []\T1/pcr/m/n/10 rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined
 =1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 2487--2487
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 2870--2870
 []\T1/pcr/m/n/10 rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoine
 d=1, color='red')[] 
  []
 
 
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2494--2494
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2877--2877
 []\T1/pcr/m/n/10 <span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2
 f,%.2f)$</span>[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2506.
+Package xcolor Warning: Incompatible color definition on input line 2889.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2506.
+Package xcolor Warning: Incompatible color definition on input line 2889.
 
-[57]
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2542--2542
+[65]
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2925--2925
 []\T1/pcr/m/n/10 lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['
 $x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (207.03212pt too wide) in paragraph at lines 2543--2543
+Overfull \hbox (207.03212pt too wide) in paragraph at lines 2926--2926
 []\T1/pcr/m/n/10 lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=ko
 lor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2544--2544
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2927--2927
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2545--2545
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2928--2928
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$v(t)$'], figsize=4)[] 
  []
 
-[58]
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2593--2593
+[66]
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2976--2976
 []\T1/pcr/m/n/10 lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (267.03212pt too wide) in paragraph at lines 2595--2595
+Overfull \hbox (267.03212pt too wide) in paragraph at lines 2978--2978
 []\T1/pcr/m/n/10 rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=
 1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (15.03212pt too wide) in paragraph at lines 2596--2596
+Overfull \hbox (15.03212pt too wide) in paragraph at lines 2979--2979
 []\T1/pcr/m/n/10 rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined
 =1, color='red')[] 
  []
 
 
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2597--2597
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2980--2980
 []\T1/pcr/m/n/10 lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (273.03212pt too wide) in paragraph at lines 2599--2599
+Overfull \hbox (273.03212pt too wide) in paragraph at lines 2982--2982
 []\T1/pcr/m/n/10 rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined
 =1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 2600--2600
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 2983--2983
 []\T1/pcr/m/n/10 rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoine
 d=1, color='red')[] 
  []
 
 
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2607--2607
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2990--2990
 []\T1/pcr/m/n/10 <span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2
 f,%.2f)$</span>[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2619.
+Package xcolor Warning: Incompatible color definition on input line 3002.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2619.
+Package xcolor Warning: Incompatible color definition on input line 3002.
 
-[59]
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2655--2655
+[67]
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 3038--3038
 []\T1/pcr/m/n/10 lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['
 $x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (207.03212pt too wide) in paragraph at lines 2656--2656
+Overfull \hbox (207.03212pt too wide) in paragraph at lines 3039--3039
 []\T1/pcr/m/n/10 lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=ko
 lor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2657--2657
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 3040--3040
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2658--2658
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 3041--3041
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$v(t)$'], figsize=4)[] 
  []
 
-[60]
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2705--2705
+[68]
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 3088--3088
 []\T1/pcr/m/n/10 lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (267.03212pt too wide) in paragraph at lines 2707--2707
+Overfull \hbox (267.03212pt too wide) in paragraph at lines 3090--3090
 []\T1/pcr/m/n/10 rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=
 1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (15.03212pt too wide) in paragraph at lines 2708--2708
+Overfull \hbox (15.03212pt too wide) in paragraph at lines 3091--3091
 []\T1/pcr/m/n/10 rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined
 =1, color='red')[] 
  []
 
 
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2709--2709
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 3092--3092
 []\T1/pcr/m/n/10 lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (273.03212pt too wide) in paragraph at lines 2711--2711
+Overfull \hbox (273.03212pt too wide) in paragraph at lines 3094--3094
 []\T1/pcr/m/n/10 rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined
 =1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 2712--2712
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 3095--3095
 []\T1/pcr/m/n/10 rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoine
 d=1, color='red')[] 
  []
 
 
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2719--2719
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 3102--3102
 []\T1/pcr/m/n/10 <span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2
 f,%.2f)$</span>[] 
  []
 
-<chaos_traj.png, id=883, 233.673pt x 115.632pt>
+<chaos_traj.png, id=1021, 233.673pt x 115.632pt>
 File: chaos_traj.png Graphic file (type png)
  <use chaos_traj.png>
 File: chaos_traj.png Graphic file (type png)
 
-<use chaos_traj.png> [61 <./chaos_traj.png>]
-Overfull \hbox (14.79999pt too wide) in paragraph at lines 2787--2787
+<use chaos_traj.png> [69 <./chaos_traj.png>]
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 3170--3170
  [] 
  []
 
-(./StochDyn_v0.2.ind) [62] (./StochDyn_v0.2.aux)
+(./StochDyn_v0.2.ind) [70] (./StochDyn_v0.2.aux)
 
 LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 16819 strings out of 493848
- 273253 string characters out of 1152823
- 372702 words of memory out of 3000000
- 19079 multiletter control sequences out of 15000+50000
- 65860 words of font info for 84 fonts, out of 3000000 for 9000
+ 17034 strings out of 493848
+ 277189 string characters out of 1152823
+ 379503 words of memory out of 3000000
+ 19188 multiletter control sequences out of 15000+50000
+ 70176 words of font info for 92 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
  55i,20n,57p,2992b,476s stack positions out of 5000i,500n,10000p,200000b,50000s
 {/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
 ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/
-cmmi8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></
-usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/tex
-mf-texlive/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fo
-nts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/p
-ublic/amsfonts/cm/cmsy8.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier/u
-crr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/s
-hare/texmf-texlive/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-texli
-ve/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/t
-imes/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on StochDyn_v0.2.pdf (66 pages, 559694 bytes).
+pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/
+amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
+/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
+/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
+exmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive
+/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/
+public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
+ts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6
+.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
+hare/texmf-texlive/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive
+/fonts/type1/urw/helvetic/uhvb8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/
+helvetic/uhvbo8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmb8a.pfb
+></usr/share/texmf-texlive/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texmf-
+texlive/fonts/type1/urw/times/utmr8a.pfb></usr/share/texmf-texlive/fonts/type1/
+urw/times/utmri8a.pfb>
+Output written on StochDyn_v0.2.pdf (74 pages, 635860 bytes).
 PDF statistics:
- 1083 PDF objects out of 1200 (max. 8388607)
- 614 named destinations out of 1000 (max. 500000)
- 116 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1255 PDF objects out of 1440 (max. 8388607)
+ 718 named destinations out of 1000 (max. 500000)
+ 124 words of extra memory for PDF output out of 10000 (max. 10000000)
 

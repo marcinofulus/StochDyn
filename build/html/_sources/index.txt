@@ -27,6 +27,7 @@ Dynamika deterministyczna
    ch1/chI022
    ch1/chI023
    ch1/chI024
+   ch1/chI031
 
 
 Chaos w układach dynamicznych

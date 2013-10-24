@@ -44,13 +44,23 @@
 \contentsline {subsection}{\numberline {1.7.2}Przyk\IeC {\l }ad 2: oscylator nieliniowy (bistabilny) t\IeC {\l }umiony}{45}{subsection.1.7.2}
 \contentsline {subsection}{\numberline {1.7.3}Przyk\IeC {\l }ad 3: Cykl graniczny}{45}{subsection.1.7.3}
 \contentsline {subsection}{\numberline {1.7.4}Przyk\IeC {\l }ad 4: Atraktor Lorenza}{46}{subsection.1.7.4}
-\contentsline {chapter}{\numberline {2}Chaos w uk\IeC {\l }adach dynamicznych}{47}{chapter.2}
-\contentsline {section}{\numberline {2.1}Determinizm a przewidywalno\IeC {\'s}\IeC {\'c}}{47}{section.2.1}
-\contentsline {section}{\numberline {2.2}Model chaosu. Uk\IeC {\l }ad bistabilny (oscylator Duffinga)}{48}{section.2.2}
-\contentsline {subsection}{\numberline {2.2.1}Skalowanie}{49}{subsection.2.2.1}
-\contentsline {subsection}{\numberline {2.2.2}Krok 1. Uk\IeC {\l }ad zachowawczy}{50}{subsection.2.2.2}
-\contentsline {subsection}{\numberline {2.2.3}Krok 2. Uk\IeC {\l }ad dysypatywny czyli wp\IeC {\l }yw tarcia.}{51}{subsection.2.2.3}
-\contentsline {subsection}{\numberline {2.2.4}Krok 3. Uk\IeC {\l }ad z tarciem i periodyczn\IeC {\k a} si\IeC {\l }\IeC {\k a}.}{54}{subsection.2.2.4}
-\contentsline {subsection}{\numberline {2.2.5}Ruch periodyczny o okresie 1}{55}{subsection.2.2.5}
-\contentsline {subsection}{\numberline {2.2.6}Ruch periodyczny o okresie 3}{57}{subsection.2.2.6}
-\contentsline {subsection}{\numberline {2.2.7}Ruch chaotyczny}{59}{subsection.2.2.7}
+\contentsline {section}{\numberline {1.8}Dyskretne uk\IeC {\l }ady dynamiczne}{46}{section.1.8}
+\contentsline {subsection}{\numberline {1.8.1}Metoda paj\IeC {\k e}czyny}{47}{subsection.1.8.1}
+\contentsline {subsection}{\numberline {1.8.2}Stany stacjonarne (punkty sta\IeC {\l }e) o okresie 1}{48}{subsection.1.8.2}
+\contentsline {subsubsection}{A. Stany stacjonarne (punkty sta\IeC {\l }e o okresie 1)}{48}{subsubsection*.233}
+\contentsline {subsubsection}{B. Stabilno\IeC {\'s}\IeC {\'c} stan\IeC {\'o}w stacjonarnych}{50}{subsubsection*.243}
+\contentsline {paragraph}{1. Przypadek $\lambda > 1$}{50}{paragraph*.250}
+\contentsline {paragraph}{2. Przypadek $\lambda < -1$}{51}{paragraph*.253}
+\contentsline {paragraph}{3. Przypadek $\lambda \in (-1, 1)$}{51}{paragraph*.256}
+\contentsline {subsection}{\numberline {1.8.3}Stany stacjonarne o okresie 2}{51}{subsection.1.8.3}
+\contentsline {subsubsection}{Stabilno\IeC {\'s}\IeC {\'c} stan\IeC {\'o}w stacjonarnych o okresie 2}{53}{subsubsection*.266}
+\contentsline {chapter}{\numberline {2}Chaos w uk\IeC {\l }adach dynamicznych}{55}{chapter.2}
+\contentsline {section}{\numberline {2.1}Determinizm a przewidywalno\IeC {\'s}\IeC {\'c}}{55}{section.2.1}
+\contentsline {section}{\numberline {2.2}Model chaosu. Uk\IeC {\l }ad bistabilny (oscylator Duffinga)}{56}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Skalowanie}{57}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Krok 1. Uk\IeC {\l }ad zachowawczy}{58}{subsection.2.2.2}
+\contentsline {subsection}{\numberline {2.2.3}Krok 2. Uk\IeC {\l }ad dysypatywny czyli wp\IeC {\l }yw tarcia.}{59}{subsection.2.2.3}
+\contentsline {subsection}{\numberline {2.2.4}Krok 3. Uk\IeC {\l }ad z tarciem i periodyczn\IeC {\k a} si\IeC {\l }\IeC {\k a}.}{62}{subsection.2.2.4}
+\contentsline {subsection}{\numberline {2.2.5}Ruch periodyczny o okresie 1}{63}{subsection.2.2.5}
+\contentsline {subsection}{\numberline {2.2.6}Ruch periodyczny o okresie 3}{65}{subsection.2.2.6}
+\contentsline {subsection}{\numberline {2.2.7}Ruch chaotyczny}{67}{subsection.2.2.7}
