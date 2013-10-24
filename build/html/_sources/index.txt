@@ -37,3 +37,11 @@ Chaos w układach dynamicznych
    :maxdepth: 1
 
    ch2/chII011
+
+Dodatek numeryczny
+==================
+
+.. toctree::
+   :maxdepth: 1
+
+   ch5/chV011
