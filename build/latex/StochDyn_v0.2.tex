@@ -26,7 +26,7 @@
 
 
 \title{Dynamika stochastyczna}
-\date{24/10/2013}
+\date{26/10/2013}
 \release{I}
 \author{Jerzy Łuczka, Łukasz Machura}
 \newcommand{\sphinxlogo}{}
@@ -3170,11 +3170,360 @@ $\gamma = 0.5, \quad A=0.34875, \quad \omega_0 =1, \quad (x_0, y_0, z_0) = (0,  
 \begin{center}\setlength{\fboxsep}{5pt}\shadowbox{\box0}\end{center}
 
 
+\section{Scenariusz przejścia do chaosu}
+\label{ch2/chII012::doc}\label{ch2/chII012:scenariusz-przejscia-do-chaosu}
+Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  200 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają sie różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
+
+Niech $x(t)$  będzie trajektorią z warunkiem początkowym $x(0)$, a $X(t)$  będzie trajektorią z warunkiem początkowym :math:{}` X(0){}`.   Niech dwa warunki początkowe różnią się o małą wielkość:
+\phantomsection\label{ch2/chII012:equation-eqn1}\begin{gather}
+\begin{split}|X(0) - x(0)| = \epsilon_0\end{split}\label{ch2/chII012-eqn1}
+\end{gather}
+gdzie $| ... |$ oznacza odległość przy zadanej metryce.  Jeżeli różnią się o taką wielkość lub mniejszą, wówczas są one  dla nas nierozróżnialne. Traktujemy je jako takie same w ramach błędu pomiarowego. Pytamy, jaka jest różnica
+\phantomsection\label{ch2/chII012:equation-eqn2}\begin{gather}
+\begin{split}|X(t) - x(t)| = \epsilon(t)\end{split}\label{ch2/chII012-eqn2}
+\end{gather}
+po czasie $t$ spowodowana niepewnością warunków początkowych $\epsilon_0$. Wrażliwość na warunki początkowe oznacza, że 2 trajektorie oddalają się od siebie w bardzo szybkim, eksponencjalnym tempie:
+\phantomsection\label{ch2/chII012:equation-eqn3}\begin{gather}
+\begin{split}\epsilon(t) = \epsilon_0  \mbox{e}^{\lambda t}\end{split}\label{ch2/chII012-eqn3}
+\end{gather}
+gdzie $\lambda$ nazywa się wykładnikiem Lapunowa. Jeżeli $\lambda < 0$ to dwie bliskie sobie trajektorie nie oddalają się od siebie. Z kolei jeżeli $\lambda > 0$ to trajektorie rozbiegają się.
+
+Niech $\delta$ będzie dokładnością naszej aparatury do rozróżniania trajektorii.  Jeżeli $\epsilon(t) > \delta$, czyli gdy dwie  trajektorie stają się dla nas rozróżnialne, to nie możemy przewidzieć dalszej ewolucji układu:  która trajektoria jest właściwa, $x(t)$ czy $X(t)$? Po jakim czasie nasze przewidywania tracą sens?  Po takim czasie, że
+\phantomsection\label{ch2/chII012:equation-eqn4}\begin{gather}
+\begin{split}\epsilon(t) = \epsilon_0  \mbox{e}^{\lambda t} > \delta\end{split}\label{ch2/chII012-eqn4}
+\end{gather}
+czyli po czasie
+\phantomsection\label{ch2/chII012:equation-eqn5}\begin{gather}
+\begin{split} t > \frac{1}{\lambda}  \mbox{ln} \left[\frac{\delta}{\epsilon_0}\right]\end{split}\label{ch2/chII012-eqn5}
+\end{gather}
+Załóżmy, że stan początkowy możemy  zadać z dokładnością $\epsilon_0 = 10^{-8}$, a tolerancja $\delta = 10^{-5}$ jest dla nas satysfakcjonująca (chociaż jest to 3 rzędy wielkości gorzej niż dla warunku początkowego).  Jak długo nasze przewidywania  są akceptowalne:
+\phantomsection\label{ch2/chII012:equation-eqn6}\begin{gather}
+\begin{split} t_1  \approx  \frac{1}{\lambda}  \mbox{ln} \left[\frac{\delta}{\epsilon_0}\right]  =  \frac{1}{\lambda}  \mbox{ln} \left[\frac{10^{-5}}{10^{-8}}\right]  = \frac{1}{\lambda}  \mbox{ln} \left[10^3\right] =  \frac{3}{\lambda}  \mbox{ln} 10\end{split}\label{ch2/chII012-eqn6}
+\end{gather}
+Załóżmy,  że ktoś jest w stanie przygotować  stan początkowy  ze znacznie lepszą dokładnością, a mianowicie 1000 razy lepiej, tzn.  $\epsilon_0 = 10^{-11}$.  O ile dłużej możemy przewidywać ewolucję układu:
+\phantomsection\label{ch2/chII012:equation-eqn7}\begin{gather}
+\begin{split} t_2  \approx    \frac{1}{\lambda}  \mbox{ln} \left[\frac{10^{-5}}{10^{-11}}\right]  = \frac{1}{\lambda}  \mbox{ln} \left[10^6\right] =  \frac{6}{\lambda}  \mbox{ln} 10  = 2 t_1\end{split}\label{ch2/chII012-eqn7}
+\end{gather}
+To jest zaledwie 2 razy dłuższy czas!! Widać, że gdy układ jest w reżimie chaotycznym, przewidywalność czasowa jest bardzo ograniczona. Zwiększanie dokładności wyznaczania warunków początkowych  1000-krotnie powoduje wydłużenie  czasu przewidywalności  zaledwie 2 razy. To jest właśnie problem  z prognozą pogody. Możemy zwiększać sieć punktów pomiarowych, a i tak przewidywania pogody są  rozsądne  zaledwie  na kilka dni do przodu.
+
+Problem, czy układ wykazuje własności chaotyczne czy nie, nie jest łatwy do stwierdzenia. Ponieważ układ równań różniczkowych zwykle nie można analitycznie rozwiązać, trzeba bazować na metodach komputerowych. Z jednej strony układ jest czuły na warunki początkowe, z drugiej strony sama metoda numeryczna i obliczenia komputerowe obarczone są błędami, których nie można wyeliminować. Może zdarzyć się, że to nie własność  układu a artefakty komputerowe wytwarzają złudzenie  chaosu. Trzeba na to być czułym. Obecnie istnieją dobre programy komputerowe uwzględniające niedoskonałości o których mowa. Ponadto istnieje kilka charakterystyk,  które mają specyficzne własności  dla układów chaotycznych.  Oto te charaktarystyki:
+\begin{enumerate}
+\item {} 
+Wykładniki Lapunowa $\lambda_i$
+
+\item {} 
+Widmo (spektrum) mocy $P(\omega)$
+
+\item {} 
+Funkcja korelacyjna  $C(\tau)$
+
+\item {} 
+Cięcie Poincarego
+
+\item {} 
+Entropia Kołmogorowa $K$
+
+\end{enumerate}
+
+Badanie wszystkich  charakterystyk jest uciążliwe i czasochłonne, ale eliminuje możliwość pomyłki w stwierdzeniu  chaotyczności. Przedstawimy główne cechy  tych wielkości jakie występują w reżimie chaotycznym i niechaotycznym.
+
+
+\subsection{Scenariusz podwojenia okresu}
+\label{ch2/chII012:scenariusz-podwojenia-okresu}
+Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa się przejściem do chaosu poprzez podwojenie okresu. Jest uniwersalny scenariusz, występujący zarówno w układach z ciągłym czasem jaki i w układach dyskretnych. Został potwierdzony w wielu eksperymentach na różnorodnych układach fizycznych.
+
+
+\begin{verbatim}
+# wykresy dla przypadku z tłumieniem
+var('x y z')
+x0, y0, z0 = -0.5,-0.1,0
+kolor = 'green'
+# siła
+F = x-x^3
+V = -integrate(F,x)
+# tarcie: parametr gamma
+g = 0.5
+w = 1
+#punkty bifurkacji: 0.34357;  0.35506; 0.35785; 0.35846;  ostatni 0.3586
+Akeys = ['$a_1$','$a_2$','$a_3$','$a_4$']
+Aval  = [0.325,0.354,0.357,0.358]
+A = dict(zip(Akeys,Aval))
+p = A
+for a in A.keys():
+ # układ różniczkowych równań ruchu
+ dx = y
+ dy = F - g*y + A[a]*cos(z)
+ dz = w
+ # numeryczne rozwiazanie równań ruchu
+ T = srange(0,100*pi,0.01)
+ num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
+ figsize = [12,3] if a == '$a_4$' else 3.5
+ start, stop = int(len(num[:,0])*0.8), len(num[:,0])
+ p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]), plotjoined=1,\
+ color=kolor, axes_labels=['$x(t)$','$v(t)$'], legend_label='%s=%.5f'%(a,A[a]), figsize=figsize)
+#
+html("""Układ równań różniczkowych
+$\dot{x} = %s$
+$\dot{y} = %s$
+$\dot{z} = %s$
+z warunkami początkowymi
+$(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
+"""%(dx,dy,dz,x0,y0,z0))
+html.table([[p['$a_1$'],p['$a_2$'],p['$a_3$']]])
+p['$a_4$'].show()
+\end{verbatim}
+
+
+
+\subsection{Wykładniki Lapunowa}
+\label{ch2/chII012:wykladniki-lapunowa}
+Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnic ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  $K$ w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla $x(t), y(t), z(t)$ startując z wszystkich warunków początkowych w kuli $K$,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach $(x, y, z)$ w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa $\lambda_1, \lambda_2, \lambda_3$. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniowac trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu.Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
+
+Dwie trajektorię leżące początkowo blisko siebie propagują w czasie w odległości   $l(t)   \propto e^{\lambda_1 t}$, powierzchnia  $S$ zmienia się w tempie $S(t)  \propto e^{(\lambda_1 + \lambda_2) t}$, a objętość  $M$ zmienia się w tempie $M(t)  \propto e^{(\lambda_1 + \lambda_2 + \lambda_3) t}$. W reżimie chaotycznym co najmniej jeden z wykładników Lapunowa jest dodatni. Oznacza to, że w przestrzeni fazowej trajektorie rozbiegają się w jednym kierunku. Jeżeli wszystkie 3 wykładniki są ujemne, układ jest w rteżimie regularnum (periodycznym, quasi-periodycznym). Nie ma metod analitycznych pozwalających obliczyć wykładniki Lapunowa. Metody numeryczne też nie są proste. W literaturze można znaleźć algorytmy służące do wyznaczania $\lambda_1, \lambda_2, \lambda_3$.
+
+W przypadku oscylatora Duffinga można otrzymać cząstkowe  informacje o wykładnikach Lapunowa.
+\begin{enumerate}
+\item {} 
+Trzecie równanie dla pomocniczej zmiennej $z$ można rozwiązać otrzymując funkcję
+
+\end{enumerate}
+\phantomsection\label{ch2/chII012:equation-eqn8}\begin{gather}
+\begin{split}z(t) = \omega t + c\end{split}\label{ch2/chII012-eqn8}
+\end{gather}
+Z pewnością dwie bliskie sobie trajektorie $z_1(t) = \omega t+c_1$ oraz $z_2(t) = \omega t + c_2$ dla chwili   $t=0$ nie rozbiegają się exponencjalnie ponieważ
+\phantomsection\label{ch2/chII012:equation-eqn9}\begin{gather}
+\begin{split}|z_1(t) - z_2(t)| = |c_1 -c_2|\end{split}\label{ch2/chII012-eqn9}
+\end{gather}
+Dlatego też jeden z wykładników wynosi zero, np.
+\phantomsection\label{ch2/chII012:equation-eqn10}\begin{gather}
+\begin{split}\lambda_2 = 0\end{split}\label{ch2/chII012-eqn10}
+\end{gather}\begin{enumerate}
+\setcounter{enumi}{1}
+\item {} 
+Przypomnijmy w tym miejscu, że oscylator Duffinga jest opisany przez układ równań
+
+\end{enumerate}
+\phantomsection\label{ch2/chII012:equation-eqn11}\begin{gather}
+\begin{split}\dot x = F_1 = y , \qquad x(0) = x_0,\end{split}\label{ch2/chII012-eqn11}\\\begin{split}\dot y = F_2 = x - x^3 -\gamma y + A \cos z , \qquad y(0) = y_0,\end{split}\notag\\\begin{split}z = F_3 = \omega, \qquad z(0) = 0.\end{split}\notag
+\end{gather}
+Zbadajmy, jak zmienia się w czasie objętość fazowa układu.  W tym celu musimy obliczyć dywergencję pola wektorowego
+\phantomsection\label{ch2/chII012:equation-eqn12}\begin{gather}
+\begin{split} div  \vec F = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}  = -\gamma < 0\end{split}\label{ch2/chII012-eqn12}
+\end{gather}
+Oznacza to, że objętość fazowa w przestrzeni 3-wymiarowej maleje w tempie (zobacz paragraf o układach dysypatywnych)
+\phantomsection\label{ch2/chII012:equation-eqn13}\begin{gather}
+\begin{split}M(t) \propto e^{-\gamma t}\end{split}\label{ch2/chII012-eqn13}
+\end{gather}
+Z drugiej strony, jak powiedzieliśmy powyżej,
+\phantomsection\label{ch2/chII012:equation-eqn14}\begin{gather}
+\begin{split}M(t)  \propto e^{(\lambda_1 + \lambda_2 + \lambda_3) t}\end{split}\label{ch2/chII012-eqn14}
+\end{gather}
+Wynika stąd, że suma wszystkich wykładników jest stała i wynosi
+\phantomsection\label{ch2/chII012:equation-eqn15}\begin{gather}
+\begin{split}\lambda_1 + \lambda_2 + \lambda_3 = -\gamma  <  0\end{split}\label{ch2/chII012-eqn15}
+\end{gather}
+czyli tylko stała tłumienia $\gamma$ określa tempo malenia objętości fazowej.  Ponieważ $\lambda_2 =0$, otrzymujemy interesujący związek pomiędzy dwoma pozostałymi wykładnikami:
+\phantomsection\label{ch2/chII012:equation-eqn16}\begin{gather}
+\begin{split}\lambda_1 + \lambda_3 = -\gamma\end{split}\label{ch2/chII012-eqn16}
+\end{gather}
+W reżimie chaotycznym jeden z wykładników jest dodatni, np. $\lambda_1 >0$ oraz drugi wykładnik musi być ujemny, np. $\lambda_3 < 0$.  Mamy obecnie następujące informacje o wykładnikach Lapunowa dla oscylatora  Duffinga:
+\phantomsection\label{ch2/chII012:equation-eqn17}\begin{gather}
+\begin{split}\lambda_1  >  \lambda_2  >  \lambda_3, \qquad   \lambda_1 > 0, \qquad \lambda_2  = 0, \qquad   \lambda_3 < 0,  \qquad M(t) =  M(0)  e^{(\lambda_1 + \lambda_2 + \lambda_3) t} = M(0) e^{-\gamma t}\end{split}\label{ch2/chII012-eqn17}
+\end{gather}
+Zwracamy uwgę na to, że elipsoida  w 3-wymiarowej przestrzeni fazowej rozciąga się w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje.Tak to wygląda w reżimie chaotycznym. W reżimie nie-chaotycznym: elipsoida kurczy się  w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Atraktory, które pokazywaliśmy poprzednio, istnieją w 3-wymiarowej przestrzeni fazowej, ale ponieważ objętość fazowa cały czas maleje, wymiar atraktorów musi być mniejszy od 3. W reżimie nie-chaotycznym, n-okresowe atraktory  (krzywe) mają wymiar 1. Atraktory w reżimie chaotycznym mają wymiar większy niż 1, ale mniejszy niż 3. Kaplana i  Yorke (1979) postawili  hipotezę, że  istnieje związek pomiędzy wymiarem fraktalnym atraktora $D_A$  a wykładnikami Lapunowa. Relacja ta ma postać:
+\phantomsection\label{ch2/chII012:equation-eqn18}\begin{gather}
+\begin{split} D_A = 2 +  \frac{\lambda_1}{|\lambda_3|}  >  2\end{split}\label{ch2/chII012-eqn18}
+\end{gather}
+Jeżeli analizujemy wymiar atraktora w odwzorowaniu Poincarego (na płaszczyźnie), to wymiar ten jest o 1 mniejszy:
+\phantomsection\label{ch2/chII012:equation-eqn19}\begin{gather}
+\begin{split}d_A = D_A -1\end{split}\label{ch2/chII012-eqn19}
+\end{gather}
+Do dzisiaj jest to tylko hipoteza, choć w wielu przypadkach potwierdzona przez eksperymenty numeryczne.
+
+
+\subsection{Widmo mocy}
+\label{ch2/chII012:widmo-mocy}
+Jest to kolejna wielkość, która może być indykatorem chaotycznego zachowania sie układu deterministycznego. Pojęcie widma mocy jest dobrze ugruntowane w teorii sygnałów, traktowanych jako nośnik informacji. W ogólności sygnały mogą być deterministyczne (jak w naszym przypadku) i losowe (stochastyczne). W sensie inżynierskim, sygnał to dowolna funkcja czasu.  Jako modele sygnałów wprowadza się również wielkości nazywane dystrybucjami (funkcjami uogólnionymi). Tylko  nieliczne proste sygnały można opisać formułami matematycznymi.  Większość sygnałów, z jakimi spotykamy się w praktyce, ma przebieg na tyle złożony i nieregularny, że ich bezpośredni opis  jako funkcji czasu jest kłopotliwy.  Dlatego też należy posługugiwać się  ich różnego rodzaju reprezentacjami. Reprezentacja sygnału stanowi pewien rodzaj jego symbolicznego opisu, niekiedy o znacznym stopniu abstrakcji. Jej istotą jest to, że zawiera ona pełną informację o sygnale, choć zwykle wyrażoną w innym języku, niż bezpośredni język  w terminach funkcji czasu.  Oznacza to, że znając sygnał, możemy jednoznacznie wyznaczyć jego reprezentację, znając zaś tę reprezentację – odtworzyć jednoznacznie sygnał. Istnieje wiele sposobów reprezentacji sygnałów. Jednym z nich jest analiza furierowska za pomocą transformat Fouriera lub szeregów Fouriera.
+
+Przypomnijmy pojęcie transformacji Fouriera funkcji lub dystrybucji. W najprostszym ujęciu transformatą  Fouriera ${\hat f}(\omega)$  funkcji $f(t)$ nazywamy całkę
+\phantomsection\label{ch2/chII012:equation-eqn20}\begin{gather}
+\begin{split}{\hat f}(\omega) = \int_{-\infty}^{\; \infty}  \mbox{e}^{i \omega t} f(t)  dt\end{split}\label{ch2/chII012-eqn20}
+\end{gather}
+gdzie $\omega$ jest dowolną liczbą rzeczywistą.
+
+Ponieważ nas interesuje ewolucja sygnału czasowego $f(t) = (x(t),  y(t),  z(t), ...)$ dla czasów $t>0$, zdefiniujemy nieco inaczej transformatę  Fouriera  jako graniczną wartość całki:
+\phantomsection\label{ch2/chII012:equation-eqn21}\begin{gather}
+\begin{split}{\hat f}(\omega) = \lim_{T\to\infty}  \; \int_{0}^{\; T}  \mbox{e}^{i \omega t} f(t)  dt\end{split}\label{ch2/chII012-eqn21}
+\end{gather}
+W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy $T\to \infty$, ale rozpatrujemy dostatecznie długi czas, gdy pojawia się stan ustalony i efekty przejściowe w ewolucji zanikają.  Ze względu na występowanie funkcji  podcałkowej  :math:{}` mbox\{e\}\textasciicircum{}\{i omega t\}{}`, transformata Fouriera jest  funkcją  zespoloną. Dlatego też bada się funkcję rzeczywistą w postaci
+\phantomsection\label{ch2/chII012:equation-eqn22}\begin{gather}
+\begin{split}P(\omega) = |{\hat f}(\omega)|^2\end{split}\label{ch2/chII012-eqn22}
+\end{gather}
+Nazywa się ona widmem mocy sygnału czasowego $f(t)$. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  $\omega ` jest częstością, która jest wielkościa dodatnią, :math:$omega \textgreater{} 0{}`.  W dalszym ciągu przyjmiemy to założenie o dodatniości ``częstości''. W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej $C(t)$  procesu stochastycznego.
+
+Aby wyrobić sobie intuicję o własnościach transformaty Fouriera i widma mocy, wystarczy rozpatrzeć kilka  przypadków funkcji $f(t)$.
+\begin{description}
+\item[{Przypadek 1}] \leavevmode
+Jedna harmonika  (fala monochromatyczna)
+\phantomsection\label{ch2/chII012:equation-eqn23}\begin{gather}
+\begin{split}f_1(t) = A \cos (\Omega t), \qquad {\hat f}_1(\omega) = A  \int_{0}^{\; \infty}  \mbox{e}^{i \omega t} \cos(\Omega t)  dt =\frac{\pi }{2}  A  \delta(\omega - \Omega)\end{split}\label{ch2/chII012-eqn23}
+\end{gather}
+Transformatą Fouriera jest delta Diraca $\delta$, czyli w widmie mocy pojawia się jeden pik (który w praktyce jest zawsze skończony).
+
+\item[{Przypadek 2}] \leavevmode
+Kilka harmonik
+\phantomsection\label{ch2/chII012:equation-eqn24}\begin{gather}
+\begin{split}f_2(t) = \sum_{k=1}^{n} A_k \cos (\Omega_k  t), \qquad {\hat f}_2(\omega) = \sum_{k=1}^{n} A_k  \int_{0}^{\; \infty}  \mbox{e}^{i \omega t} \cos(\Omega_k t)  dt = \frac{\pi}{2}  \sum_{k=1}^{n} A_k   \delta(\omega - \Omega_k)\end{split}\label{ch2/chII012-eqn24}
+\end{gather}
+Transformatą Fouriera jest suma przesuniętych delt Diraca $\delta$, czyli w widmie mocy pojawia się szereg  pików (które w praktyce są  zawsze skończone).
+
+\end{description}
+
+Zauważmy, że dla tak zdefiniowanych  transformacji Fouriera nie istnieje widmo mocy, ponieważ w ścisłym sensie matematycznym nie istnieje $\delta^2(\omega -\Omega)$ dla delty Diraca. Jednak nie chodzi o precyzję matematyczną, ale o to że pojawia się pik, który nigdy nie jest nieskończony jak w delcie Diraca. My jednak potrzebujemy praktycznej metody sprawdzania chaotyczności procesu i zwykle sygnał próbkujemy dla dyskretnych wartości czasu t. Dlatego też należy wykorzystać aparat Dyskretnej Transformacji Fouriera, która  skończony ciągu sygnału
+\phantomsection\label{ch2/chII012:equation-eqn25}\begin{gather}
+\begin{split}\{x_0, x_1, x_2, ..., x_{N-1}\}\end{split}\label{ch2/chII012-eqn25}
+\end{gather}
+przekształca w skończony ciąg amplitud
+\phantomsection\label{ch2/chII012:equation-eqn26}\begin{gather}
+\begin{split}\{A_0, A_1, A_2, ..., A_{N-1}\}\end{split}\label{ch2/chII012-eqn26}
+\end{gather}
+odpowiednich harmonik poprzez relacje:
+\phantomsection\label{ch2/chII012:equation-eqn27}\begin{gather}
+\begin{split}A_k = \sum_{n=0}^{N-1}  x_n  \mbox{e}^{- 2\pi i k n/N}, \qquad x_n = \frac{1}{N}  \sum_{k=0}^{N-1}  A_k  \mbox{e}^{2\pi i k n/N}\end{split}\label{ch2/chII012-eqn27}
+\end{gather}
+Dla odpowiednio dużej liczby $N$ (w praktyce rzędu 100), zgodność pomiędzy transformatą Fouriera a Dyskretną Transformatą Fouriera jest zadziwiająco dobra.
+
+
+\subsection{Funkcja korelacyjna}
+\label{ch2/chII012:funkcja-korelacyjna}
+Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości średniej,  w takim sensie jak w teorii procesów stochastycznych lub na wykładach z fizyki statystycznej: średniowanie po realizacjach lub po zespole statystycznym . Ale jeżeli proces deterministyczny jest ergodyczny (trudne pojęcie!), to średnia wartość jest dobrze określona i średnia po zespole  jest równoważna średniej po czasie.  Jeżeli dodatkowo  proces jest stacjonarny, to można zdefiniować funkcję korelacyjną $C(\tau)$  dla procesu deterministycznego. W naszym przypadku: dla położenia lub prędkości, jest ona zdefiniowana przez relacje:
+\phantomsection\label{ch2/chII012:equation-eqn28}\begin{gather}
+\begin{split}C(\tau) = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}  [x(t+\tau) - \langle x(t+\tau)\rangle]  [ x(t) - \langle x(t)\rangle]  dt, \qquad \langle x(t)\rangle = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}   x(t)  dt\end{split}\label{ch2/chII012-eqn28}
+\end{gather}
+
+\subsection{Odwzorowanie (cięcie) Poincarego}
+\label{ch2/chII012:odwzorowanie-ciecie-poincarego}
+Odwzorowanie Poincarego jest innym przedstawieniem dynamiki układu.  Najprościej jest to wytłumaczyć na przykładzie oscylatora Duffinga. Jego przestrzeń fazowa jest 3-wymiarowa. Ruch w trzecim wymiarze jest jednostajny, $z(t) = \omega_0 t$. Rzut orbity na płaszczyznę  $(x, y)$ jest przedstawiony w postaci krzywych fazowych w poprzednich częściach książki.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{poincare_section.png}
+\caption{Konstrukcja cięcia Poincarego.}\end{figure}
+
+Jak widać, we wszystkich przykładach krzywe fazowe na płaszczyźnie są ograniczone na pewnym obszarze $(x, y)$. We wszystkich rozpatrzywanych przypadach ruch wydaje sie być prawie-periodyczny: układ ciągle  powraca w te same obszary. Można zbudować następujące przedstawienie tego ruchu.
+
+Okres siły periodycznej wynosi
+\phantomsection\label{ch2/chII012:equation-eqn29}\begin{gather}
+\begin{split}T = \frac{2\pi}{\omega_0}\end{split}\label{ch2/chII012-eqn29}
+\end{gather}
+Wprowadzamy dyskretny czas
+\phantomsection\label{ch2/chII012:equation-eqn30}\begin{gather}
+\begin{split}t_n = n T, \qquad n=1,  2,  3,  ...\end{split}\label{ch2/chII012-eqn30}
+\end{gather}
+Zapisujemy położenie i prędkość cząstki w dyskretnych chwilach czasu:
+\phantomsection\label{ch2/chII012:equation-eqn31}\begin{gather}
+\begin{split} x_n = x(t_n), \qquad y_n = y(t_n), \qquad x(0) = x_0, \qquad y(0) = y_0\end{split}\label{ch2/chII012-eqn31}
+\end{gather}
+Współrzędne tych punktów nanosimy na płaszczyznę. Otrzymujemy odwzorowanie które nazywamy odwzorowaniem Poincarego. Obrazowo mówiąc można w 3-wymiarowej przestrzeni fazowej wprowadzić płaszczyznę, tak aby nigdzie nie była styczna do trajektorii i była transwersalna do trajektorii (ściślej mówiąc do potoku fazowego), czyli aby trajektoria przecinała płaszczyznę, a nie była równoległa do niej (nie omijała jej).
+
+Odwzorowanie Poincarego to przyporządkowanie:
+\phantomsection\label{ch2/chII012:equation-eqn32}\begin{gather}
+\begin{split}x_{n+1} = \mathcal{G}(x_n)\end{split}\label{ch2/chII012-eqn32}
+\end{gather}
+Jawna konstrukcja tego odwzorowania z wyjściowego układu równań  różniczkowych jest możliwa tylko w bardzo specjalnych przypadkach. W przypadku oscylatora Duffinga, nie można otrzymać jawnej postaci tego odwzorowania. Jedynie użycie komputera pozwala na graficzne przedstawienie funkcji $\mathcal{G}$.
+
+Jakie wnioski płyną z takiego przedstawienia.
+\begin{enumerate}
+\item {} 
+Gdyby trajektoria była krzywą zamkniętą w kształcie elipsy (atraktor o okresie 1) to na cięciu Poincarego otrzymalibyśmy 1 punkt.
+
+\end{enumerate}
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item {} 
+Gdyby trajektoria była atraktorem  o okresie 2  to na cięciu Poincarego otrzymalibyśmy 2 punkty.
+
+\end{enumerate}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item {} 
+Gdyby trajektoria była chaotyczna, to za każdym razem przebiega przez inne punkty płaszczyzny i tworzy zbiór składający sie z nieskończenie wielu punktów. Poniżej pokazano takie odwzorowanie dla oscylatora Duffinga.
+
+\end{enumerate}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{chaotic_duffing.pdf}
+\caption{Dziwny atraktor.}\end{figure}
+
+Jeżeli jesteśmy w stanie zbudować graficznie przedstawienie Poincarego danego układu dynamicznego z ciągłym czasem, wówczas możemy rozpoznać takie reżimy które są ``podejrzane'' o własności chaotyczne.  Numerycznie nie powinno nastręczać to większych problemów. Jeżeli znamy $\omega_0$ bądź okres powrotu do obliczenia cięcia to wystarczy wykorzystać poniższy kod Sage. Zwracamy jedynie uwagę na to, że odpowiednio ``gęsty'' obraz uzyskamy dla bardzo długich przebiegów (dużych T).
+
+
+\begin{verbatim}
+var('x y z')
+# parametry układu równań różniczkowych
+a, g = 0.3, 0.26
+# częstotliwość (do obliczania cięcia Poincarego)
+w0 = 1
+# wartości początkowe
+x0, y0, z0 = 0.1, 0.1, 0
+#układ równań różniczkowych
+dx = y
+dy = x - x**3 - g*y + a*cos(z)
+dz = w0
+#krok co jaki wypełniać się ma nasza lista
+#rozwiązań ustawiamy równy okresowi
+h = 2.0*pi/w0
+###
+#symulacje
+###
+T = 10000
+listT = srange(0,T,float(h), include_endpoint=True)
+sol = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+#i sam rysunek cięcia
+points(zip(sol[:,0],sol[:,1]), figsize=(8,4), axes_labels=["$x(n\cdot2 \pi/\omega)$","$v(n\cdot2 \pi/\omega)$"], frame=1, axes=0, size=1)
+\end{verbatim}
+
+
+
+\subsection{Przykłady chaosu w Naturze}
+\label{ch2/chII012:przyklady-chaosu-w-naturze}
+Należy odróżnić procesy  chaotyczne  od procesów losowych. Procesy chaotyczne są deterministyczne, a procesy stochastyczne są procesami losowymi.  Procesy chaotyczne są badane przez matematyków, fizyków, chemików, biologów, socjologów, meteorologów, astrofizyków, w teorii informacji i neuronauce. We wszystkich tych gałęziach nauki, występują  deterministyczne modele wykazujące własności chaotyczne. Od lat 60-tych XX wieku opublikowano tysiące prac na temat układów chaotycznych.  Matematycy mówią, że prawie wszystkie układy dynamiczne są chaotyczne, a tylko nieliczne układy nie wykazują tej własności. Matematycy dowodzą, że przestrzeń fazowa układu modelowanego przez autonomiczny układ równań różniczkowych musi być co najmniej 3-wymiarowa, aby istniał chaos. Dla układów dyskretnych nie ma takich ograniczeń: jedno równanie  rekurencyjne $x_{n+1} = f(x_n)$  także wykazuje własności chaotyczne.
+
+Poniżej podajemy kilka przykładów rzeczywistych zjawisk wykazujących własności chaotyczne.
+\begin{enumerate}
+\item {} 
+Dynamika cieczy i turbulencja
+
+\item {} 
+Lasery
+
+\item {} 
+Układy elektroniczne
+
+\item {} 
+Plasma
+
+\item {} 
+Reakcje chemiczne
+
+\end{enumerate}
+
+Na stronie internetowej Wikipedii  z hasłem Chaos Theory  można znaleźć dalsze przykłady oraz podstawowe prace na ten temat. Na zakończenie tej części ksiązki musimy wspomnieć o człowieku, który to wszystko zapoczątkował w 1961 roku. Był to Edward Lorenz, matematyk i meteorolog amerykański,  który analizował jeden z najprostszych modeli pozwalających przewidywać pogodę. To z jego nazwiskiem związany jest  ``efekt motyla'' obrazujący niezwykłą czułość dynamiki na zaburzenia warunków  początkowych: czy ruch motyla w Brazylii może spowodować tornado w Teksasie (ściśle rzecz ujmując to Philip Merilees zasugerował  Lorenzowi taki tytuł wykładu podczas posiedzenia American Association for the Advancement of Science w 1972 roku). W tym obrazowym powiedzeniu zawarta jest istota chaosu: Motyl poprzez swój lot zaburza lokalnie ruch powietrza. Ten zaburzony ruch powietrza narasta i powoduje coraz to większe zmiany pogodowe, zmienia radykalnie ``trajektorię''  doprowadzając do tornada, które pojawi się nad Teksasem. Czy faktycznie motyl może być  taki groźny?
+
+
 \chapter{Dodatek numeryczny}
 \label{index:dodatek-numeryczny}
 
-\section{Liczby Losowe}
+\section{Liczby losowe}
 \label{ch5/chV011:liczby-losowe}\label{ch5/chV011::doc}
+\begin{notice}{note}{Uwaga:}
+W tym kursie do numerycznych realizacji używać będziemy pakietu \href{http://sagemath.org/}{Sage}. Jest to dostępny dla
+każdego program typu open-source bazujacy na języku \href{http://python.org/}{Python}.
+\end{notice}
+
 
 \subsection{Liczby losowe i pseudolosowe}
 \label{ch5/chV011:liczby-losowe-i-pseudolosowe}
@@ -3198,12 +3547,9 @@ R, O, R, R, R, R, O, R, O, O, R, R, O, R, O.
 
 W naszym przypadku zapiszemy sobie te liczby od razu do listy w notatniku Sage.
 
-
-\begin{verbatim}
-rzuty = [0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1]
-print rzuty
-\end{verbatim}
-
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{rzuty} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}
+\end{Verbatim}
 
 Mamy teraz je dostępne pod zmienną \code{rzuty}. Do prostych zagadnień, gdzie potrzebne jest nam
 kilka, czy nawet kilkanaście takich liczb, bez problemu możemy poradzić sobie rzucając monetą.
@@ -3241,24 +3587,17 @@ bibliotek.
 W Sage liczby losowe uzyskuje się poprzez funkcję \code{random()}. Zwraca ona liczbę losową z przedziału
 \code{{[}0.0, 1.0)}. Wykorzysując proste wyrażenie listowe możemy przypisać do listy N liczb losowych.
 
-
-\begin{verbatim}
-N = 10
-lista = [random() for i in xrange(N)]
-print lista
-\end{verbatim}
-
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{1000}
+\PYG{n}{lista} \PYG{o}{=} \PYG{p}{[}\PYG{n}{random}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
+\end{Verbatim}
 
 Inna funkcja \code{randint(a, b)}, zwraca liczby całkowite z przedziału \code{{[}a,b{]}}. Czyli symulacja rzutu
 monetą może być zrealizowana poprzez
 
-
-\begin{verbatim}
-N = 10
-rzut_moneta = [randint(0,1) for i in xrange(N)]
-print rzut_moneta
-\end{verbatim}
-
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{rzut\PYGZus{}moneta} \PYG{o}{=} \PYG{p}{[}\PYG{n}{randint}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
+\end{Verbatim}
 \begin{description}
 \item[{Zadanie 2.2.1}] \leavevmode
 \textbf{Zamodeluj w Sage rzut kością.} Wygeneruj listę 1000 liczb odzwierciedlających 1000 rzutów symetryczną
@@ -3360,7 +3699,7 @@ mnożnik ustawimy jako jego pierwiastek pierwotny. Szczególnie ważne wydają s
 $2^p -1$, nazywane liczbami Mersenne'a. Na maszynach 32-bitowych popularnym wyborem bywa para
 $m=2^{31}-1$ i jej pierwiastek pierwotny $a=7^5=16807$.
 
-Implementacja LCG w Sage nie powinna nastręczać zbytnich problemów:
+Implementacja LCG w Sage nie powinna nastręczać zbytnich problemów.
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{k}{def} \PYG{n+nf}{myLCG}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{a}\PYG{o}{=}\PYG{l+m+mi}{1664525}\PYG{p}{,} \PYG{n}{b}\PYG{o}{=}\PYG{l+m+mi}{1013904223}\PYG{p}{,} \PYG{n}{m}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{32}\PYG{p}{)}\PYG{p}{:}
@@ -3378,6 +3717,8 @@ Możemy teraz wygenerować N liczb używając LCG i zmagazynowac je w pythonowsk
 
 \PYG{n}{lcg\PYGZus{}list} \PYG{o}{=} \PYG{n}{get\PYGZus{}from\PYGZus{}LCG}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}
 \end{Verbatim}
+
+Powinniśmy dostać rysunek podobny do tego poniżej.
 \begin{figure}[htbp]
 \centering
 \capstart
@@ -3418,7 +3759,7 @@ wystarczy po prostu pomnożyć liczbę zwracną przez \code{random()} przez praw
 a żeby uzyskać listę 123 liczb z przedziału {[}-13.3, 33.1) należy wykonać
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{p}{[}\PYG{n}{random}\PYG{p}{(}\PYG{l+m+mf}{33.1}\PYG{o}{+}\PYG{l+m+mf}{13.3}\PYG{p}{)} \PYG{o}{-} \PYG{l+m+mf}{13.3} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{l+m+mi}{123}\PYG{p}{)}\PYG{p}{]}
+\PYG{p}{[}\PYG{n}{random}\PYG{p}{(}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mf}{33.1}\PYG{o}{+}\PYG{l+m+mf}{13.3}\PYG{p}{)} \PYG{o}{-} \PYG{l+m+mf}{13.3} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{l+m+mi}{123}\PYG{p}{)}\PYG{p}{]}
 \end{Verbatim}
 
 W ogólności do wygenerowania listy N liczb losowych z przedziału {[}A,B) należy użyć polecenia
@@ -3427,7 +3768,7 @@ W ogólności do wygenerowania listy N liczb losowych z przedziału {[}A,B) nale
 \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{100}
 \PYG{n}{A} \PYG{o}{=} \PYG{o}{-}\PYG{l+m+mi}{10}
 \PYG{n}{B} \PYG{o}{=} \PYG{l+m+mi}{20}
-\PYG{p}{[}\PYG{n}{random}\PYG{p}{(}\PYG{n}{B}\PYG{o}{-}\PYG{n}{A}\PYG{p}{)} \PYG{o}{+} \PYG{n}{A} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
+\PYG{p}{[}\PYG{n}{random}\PYG{p}{(}\PYG{p}{)}\PYG{o}{*}\PYG{p}{(}\PYG{n}{B}\PYG{o}{-}\PYG{n}{A}\PYG{p}{)} \PYG{o}{+} \PYG{n}{A} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
 \end{Verbatim}
 \begin{description}
 \item[{Zadanie 2.2.2}] \leavevmode
@@ -3468,9 +3809,8 @@ klasowych. Jeżeli \emph{n} oznacza liczbę wszystkich obserwacji, a \emph{k} to
 $m_i$ spełnia następujący warunek
 \begin{gather}
 \begin{split}n = \sum_{i=1}^k m_i\end{split}\notag
-\end{gather}\begin{description}
-\item[{Ideę histogramu najlepiej zrozumiec na przykładzie.}] \leavevmode
-Mamy następującą listę liczb
+\end{gather}
+Ideę histogramu najlepiej zrozumiec na przykładzie. Mamy następującą listę liczb
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n}{l} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{-}\PYG{l+m+mi}{4}\PYG{p}{]}
@@ -3548,7 +3888,7 @@ Co pozwoli nam wygenerować taki rysunek:
 \capstart
 
 \includegraphics{bar_chart.png}
-\caption{Prosty wykres liczebności, gdzie wykorzystaliśmy funkcję box\_plot().}\end{figure}
+\caption{Prosty wykres liczebności, gdzie wykorzystaliśmy funkcję bar\_chart().}\end{figure}
 
 Nie jest to prawdziwy histogram, bowiem odłożone na osi OY liczebności powinny odpowiadać rzeczywistym
 wartościom (przedziałom). Możemy skorzystać z pakietu \code{Time Series} dostępnego w Sage. Wystarczą
@@ -3575,9 +3915,7 @@ a aby narysować jego wykres
 \capstart
 
 \includegraphics{histogram.png}
-\caption{Historgam dla listy \code{l} uzyskany z wykorzystaniem pakietu \code{TimeSeries}}\end{figure}
-
-\end{description}
+\caption{Histogram dla listy \code{l} uzyskany z wykorzystaniem pakietu \code{TimeSeries}}\end{figure}
 
 Oczywiście całą procedurę można powtórzyć dla liczb zmiennoprzecinkowych (rzeczywistych, wymiernych). W tym
 wypadku należałoby oczywiście policzyć ile posiadanych liczb wpada do zdefiniowanych ``pudełek''. Zobaczmy drugi
@@ -3602,12 +3940,12 @@ Wygenerujemy 10000 liczb losowych a następnie dla nich obliczymy i narysujemy h
 \PYG{p}{(}\PYG{n}{plot1} \PYG{o}{+} \PYG{n}{plot2}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{r'}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{xi\PYGZdl{}}\PYG{l+s}{'}\PYG{p}{,}\PYG{l+s}{r'}\PYG{l+s}{\PYGZdl{}U(0,1)\PYGZdl{}}\PYG{l+s}{'}\PYG{p}{]}\PYG{p}{)}
 \end{Verbatim}
 
-Ostatnia linia wyrysuje nam obie funkcje na jednym wykresie. Zachęcam czytelnika do poeksperymentowania z
+\end{description}
+
+Ostatnia linia wyrysuje nam obie funkcje na jednym wykresie. Zachęcamy czytelnika do poeksperymentowania z
 powyższym kodem - można zmienić liczbę prób \emph{N} i łatwo zobaczyć jak histogram zaczyna oddalać się od
 teoretycznego rozkładu dla małych N i jak zbliża się dla dużych. Można też zobaczyć jak ilość przedziałów
 (parametr \code{bins}) wpływa na otrzymany histogram.
-
-\end{description}
 \begin{figure}[htbp]
 \centering
 \capstart
@@ -3770,16 +4108,764 @@ Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
 \end{description}
 
 
-\subsection{Zadania}
-\label{ch5/chV011:zadania}\begin{description}
-\item[{Zad}] \leavevmode
-Ile jest 2 + 2
+\bigskip\hrule{}\bigskip
 
-\end{description}
 
 
 \bigskip\hrule{}\bigskip
 
+
+
+\section{Równania różniczkowe zwyczajne}
+\label{ch5/chV012:python}\label{ch5/chV012::doc}\label{ch5/chV012:rownania-rozniczkowe-zwyczajne}
+
+\subsection{Metoda Eulera}
+\label{ch5/chV012:metoda-eulera}
+Jest to bodaj najprostszy sposób na numeryczne rozwiązywanie równań różniczkowych
+zwyczajnych. Technicznie to metoda pierwszego rzędu. Bazuje na prostej interpretacji
+definicji pochodnej. Rozpatrujemy równanie postaci
+\begin{gather}
+\begin{split}\frac{dy}{ds} = y' = f(y,s),\end{split}\notag
+\end{gather}
+z zadanymi warunkami początkowymi $(sx(0), y(0)) = (x_0, y_0)$. Stosując przekształcenie
+\begin{gather}
+\begin{split}\frac{dy}{ds} = \lim_{\Delta s \to 0}\frac{\Delta y}{\Delta s}\end{split}\notag
+\end{gather}
+Na chwilę zapomnijmy o tej granicy. Mamy
+\begin{gather}
+\begin{split}\frac{\Delta y}{\Delta s} = \frac{y(s+\Delta s) - y(s)}{\Delta s}\end{split}\notag
+\end{gather}
+stawiając krok ``czasowy'' $\Delta x = h$ (jak to zwyczajowo w symulacjach komputerowych)
+dostajemy
+\begin{gather}
+\begin{split}\frac{y(s + h) - y(s)}{h} \simeq f(y,s),\end{split}\notag\\\begin{split}y(s+h) \simeq y(s) + f(y,s) h.\end{split}\notag
+\end{gather}
+Oczywiście pełna równość zachodzi tylko w granicy $h \to 0$. Na potrzeby numeryczne jednak
+nie musimy się tym przejmować. Należy mieć tylko świadomość, że zmniejszanie kroku czasowego
+zbliża nas do wyniku dokładnego (zazwyczaj). Jako, że w iteracjach ``czasowych'' wykorzystujemy
+stały krok $h$, więc w danej, powiedzmy \emph{i}-tej iteracji czas rzeczywisty zastąpiony zostanie
+poprzez $s_i = i \cdot h$, możemy równie dobrze wprowadzić indeksowanie nie po czasie \emph{s} ale
+po zmiennej iteracyjnej \emph{i}
+\begin{gather}
+\begin{split}y (s = ih) = y(s_i) = y_i, \quad s_i = i h,\end{split}\notag\\\begin{split}y (i h + h) = y(h(i+1)) = y(ih) + f(y(ih), ih) h,\end{split}\notag\\\begin{split}y_{i+1} = y_i + f(y_i,s_i) h.\end{split}\notag
+\end{gather}
+Dostając tzw. schemat Eulera. Innymi metodami wyprowadzenia tego prostego schematu będzie użycie
+rozwinięcia Tylora lub wycałkowanie równania różniczowego od $s_0$ do :math{}`s\_0 + h{}`
+za pomocą metody prostokątów (uzywając tylko jednego prostokąta na całym przedziale całkowania).
+\begin{description}
+\item[{Zadanie D1.1}] \leavevmode
+Uzyskaj schemat Eulera z rozwinięcia Tylora.
+
+\item[{Zadanie D1.2}] \leavevmode
+Uzyskaj schemat Eulera całkując równanie różniczkowe.
+
+\end{description}
+
+Dokładność metody Eulera mocno zależy od wyboru kroku całkowania \emph{h}. Musimy też na początku zadać
+warunki startowe (początkowe) iteracji, zupełnie jak podczas rozwiązywania równań metodami analitycznymi.
+Dla przykładu obliczmy numerycznie ruch przetłumionego sprężyny o współczynniku sprężystości \emph{k}.
+\begin{gather}
+\begin{split}\dot{x}(t) = -k x(t).\end{split}\notag
+\end{gather}
+Rozwiązaniem jest zanik eksponencjalny $x(t) = x_0 \exp (-k t)$. Wybierzemy sobie warunek początkowy
+$x_0 = 1$ i współczynnik sprężystości $k=0.1$. Policzmy \emph{N} iteracji i narysujmy wykres. Na
+początku napiszemy dyskretną wersję równania ruchu
+\begin{gather}
+\begin{split}x_{i+1} = x_{i} - k x_i h = x_i (1 - kh).\end{split}\notag
+\end{gather}
+Teraz kod Sage
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} liczba iteracji rownania}
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{300}
+\PYG{c}{\PYGZsh{} czas poczatkowy}
+\PYG{n}{t} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{c}{\PYGZsh{} skok czasowy}
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.01}
+\PYG{c}{\PYGZsh{} parametr rownania (sprezystosc)}
+\PYG{n}{k} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{c}{\PYGZsh{} wartosc poczatkowa x(t=0)}
+\PYG{n}{x\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{c}{\PYGZsh{}inicializacja listy poprzez wartosc poczatkowa}
+\PYG{n}{lista\PYGZus{}x} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x\PYGZus{}0}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{lista\PYGZus{}x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lista\PYGZus{}x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{-} \PYG{n}{k}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+
+wynik (rozwiąznanie numeryczne równania) trzymany jest w liście \code{lista\_x}. Wyrysujmy ją standardowo, razem
+z wynikiem analitycznym.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{euler001.png}
+\caption{Rozwiązanie analityczne i numeryczne równania $\dot{x} = -kx$.}\end{figure}
+
+Pomimo użycia prostej metody (pierwszego rzędu), wykresy wyglądają identycznie. No, ale czy na pewno jest tak pięknie?
+Poprawność metody możemy łatwo zbadać obliczając błędy względny ($E_w$) i bezwzględny ($E_b$).
+\begin{gather}
+\begin{split}E_b = \bar{y} - y,\end{split}\notag\\\begin{split}E_w = \frac{\bar{y} - y}{\bar{y}} = \frac{E_b}{\bar{y}}.\end{split}\notag
+\end{gather}
+gdzie $y$ to wielkość obliczona algorytmem a $\bar{y}$ to dokładna wielkość analityczna. Dla jasności -
+nie interesują nas w tym przypadku znaki błędów a jedynie ich wartość bezwzględna (tu proszę zwrócić
+uwage na nomenklaturę, żeby nie pomylić wartości bezwzględnej z błędem bezwzględnym). Dlatego najczęściej
+oblicza się nie $E_w$ a $|E_w|$. Wymaga to drobnej korekty powyższego kodu
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{N}\PYG{p}{,} \PYG{n}{t}\PYG{p}{,} \PYG{n}{h}\PYG{p}{,} \PYG{n}{k}\PYG{p}{,} \PYG{n}{x\PYGZus{}0} \PYG{o}{=} \PYG{l+m+mi}{1000}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{l+m+mf}{0.01}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{1}
+\PYG{n}{g}\PYG{p}{(}\PYG{n}{s}\PYG{p}{)} \PYG{o}{=} \PYG{n}{x\PYGZus{}0}\PYG{o}{*}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{-}\PYG{n}{k}\PYG{o}{*}\PYG{n}{s}\PYG{p}{)}
+\PYG{n}{lista\PYGZus{}x} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x\PYGZus{}0}\PYG{p}{]}
+\PYG{n}{Eb} \PYG{o}{=} \PYG{p}{[}\PYG{n}{g}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{-} \PYG{n}{x\PYGZus{}0}\PYG{p}{]}
+\PYG{n}{Ew} \PYG{o}{=} \PYG{p}{[}\PYG{n}{Ew}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{/}\PYG{n}{g}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{lista\PYGZus{}x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lista\PYGZus{}x}\PYG{p}{[}\PYG{n}{i}\PYG{o}{-}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{*} \PYG{p}{(}\PYG{l+m+mi}{1} \PYG{o}{-} \PYG{n}{k}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)}\PYG{p}{)}
+  \PYG{n}{Eb}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{g}\PYG{p}{(}\PYG{n}{i}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)} \PYG{o}{-} \PYG{n}{lista\PYGZus{}x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+  \PYG{n}{Ew}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{Eb}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{o}{/}\PYG{n}{g}\PYG{p}{(}\PYG{n}{i}\PYG{o}{*}\PYG{n}{h}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{p}{[}\PYG{n}{i}\PYG{o}{*}\PYG{n}{h} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,}\PYG{n}{Eb}\PYG{p}{)}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{p}{[}\PYG{n}{i}\PYG{o}{*}\PYG{n}{h} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,}\PYG{n}{Ew}\PYG{p}{)}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
+
+Spójrzmy. Na pierwszym wykresie odłożony mamy błąd bezwzględny. Widzimy, że dla krótkich czasów odbiega on od wartości
+analitycznej by dla większych czasów zmaleć do zera. Mogą być tego 2 powody: (i) różnica pomiędzy obiema wartościami
+maleje zo zera lub (ii) obie wartości maleją do zera, więc ich różnica też. Jako, że funkcja jest eksponencjalna,
+dużo bardziej prawdopodobny jest ten drugi scenariusz. Aby zobaczyć, czy błąd rośnie z ilością iteracji
+(w czasie) wykreślimy błąd względny. Mówi on nam o stosunku błedu bezwzględnego do wartości analitycznej (rysunek
+po prawej). Tu jak widać rośnie on wraz z czasem, z czego możemy wywnioskować, że wraz z ilością iteracji
+coraz mniej dokładnie obliczamy wartość \emph{y}.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{euler_err.png}
+\caption{Błąd bezwzględny (po lewej) i błąd względny (po prawej).}\end{figure}
+
+Najprosztszą metodą poprawienia jakości rozwiązań jest zmniejszenie kroku całkowania. Zależności pozostaną podobne,
+zmniejszy się jednak wartośc błędów w danej chwli czasowej.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{euler_ebw_h.png}
+\caption{Błąd bezwzględny (po lewej) i błąd względny (po prawej) po czasie $t=10$ dla różnych kroków czasowych
+$h = 1, 0.1, 0.01, 0.001, 0.0001$.}\end{figure}
+
+W tabeli zawarto wartości błędów bezwzględnego i względnego dla różnych wielkości kroku czasowego
+symulacji, po osiągnięciu czasu końcowego $T_E = 10$. Widać, że pomimo, że za każdym zmniejszeniem
+kroku zwiększała się ilość kroków czasowych, dokładność obliczeń rosła - malał zarówno błąd bezwzględny
+jak i względny.
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|}
+\hline
+
+\emph{h}
+ & 
+\emph{N}
+ & 
+$E_b$
+ & 
+$E_w$
+\\\hline
+
+1
+ & 
+100
+ & 
+$3.72 10^{-44}$
+ & 
+1
+\\\hline
+
+0.1
+ & 
+1 000
+ & 
+$3.70 10^{-44}$
+ & 
+0.995
+\\\hline
+
+0.01
+ & 
+10 000
+ & 
+$1.47 10^{-44}$
+ & 
+0.396
+\\\hline
+
+0.001
+ & 
+100 000
+ & 
+$1.82 10^{-45}$
+ & 
+0.0488
+\\\hline
+
+0.0001
+ & 
+1 000 000
+ & 
+$1.86 10^{-46}$
+ & 
+0.0499
+\\\hline
+\end{tabulary}
+
+
+Przejdźmy teraz do rozwiązania równania różniczkowego wyższego stopnia. Znów posłużymy się przykładem
+oscylatora harmonicznego. Tym razem rozwiążemy równanie Newtona dla punktowej cząstki o masie \emph{m}
+w potencjale $U(x) = -k x^2 / 2$. Pominiemy siły tarcia. Również w spokoju zostawimy wymuszenie.
+\begin{gather}
+\begin{split}m \ddot{x}(t) = -kx(t).\end{split}\notag
+\end{gather}
+Równanie to posiada znane
+\href{http://ribes.if.uj.edu.pl/homepage/weblog/Oscylator\_harmoniczny\_rozwiazanie/Oscylator\_harmoniczny\_rozwiazanie.pdf}{analityczne rozwiązanie}.
+Oznaczając $\omega_0^2 = k/m$ dostajemy
+\begin{gather}
+\begin{split}x(t) = A \sin(\omega_0 t) + B \cos(\omega_0 t).\end{split}\notag
+\end{gather}
+Stałe \emph{A, B} (amplitudy) zależne są od wyboru warunków początkowych. Spróbujmy numerycznie
+rozwiązać równanie ruchu tak, aby pokazać zgodność z rozwiązaniem. Aby napisać schemat Eulera dla równania
+drugiego stopnia najpierw trzeba przepisać równanie do układu równań na $x$ i $v = \dot{x}$.
+\begin{gather}
+\begin{split}\dot{x}(t) = v(t),\end{split}\notag\\\begin{split}\dot{v}(t) = -\frac{k}{m} x(t) = - \omega_0^2 x(t).\end{split}\notag
+\end{gather}
+Teraz wystarczy zdyskretyzować te równania, tak samo jak robiliśmy to z równaniem pierwszego rzędu.
+\begin{gather}
+\begin{split}x_{i+1} = x_i + v_i h,\end{split}\notag\\\begin{split}v_{i+1} = v_i - \omega^2_0 x_i h.\end{split}\notag
+\end{gather}
+Po ustaleniu warunków początkowych $x(0) = x_0$ oraz $v(0) = v_0$ możemy rozpocząć normalną
+procedurę symulacji - wybieramy krok czasowy \emph{h}, ustalamy parametry równania i do dzieła.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.01} \PYG{c}{\PYGZsh{} skok}
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{100} \PYG{c}{\PYGZsh{} liczba krokow}
+
+\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{v0} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{omega0} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+\PYG{n}{lista\PYGZus{}x} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{]}
+\PYG{n}{lista\PYGZus{}v} \PYG{o}{=} \PYG{p}{[}\PYG{n}{v0}\PYG{p}{]}
+\PYG{n}{lista\PYGZus{}t} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{lista\PYGZus{}x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lista\PYGZus{}x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{lista\PYGZus{}v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{*} \PYG{n}{h}\PYG{p}{)}
+  \PYG{n}{lista\PYGZus{}v}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lista\PYGZus{}v}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{-} \PYG{n}{omega0}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{lista\PYGZus{}x}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{*} \PYG{n}{h}\PYG{p}{)}
+  \PYG{n}{lista\PYGZus{}t}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{lista\PYGZus{}t}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{h}\PYG{p}{)}
+\end{Verbatim}
+
+Wykorzystamy też Sage do obliczenia rozwiązania analitycznego dla naszego zagadnienia.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{'}\PYG{l+s}{t x omega x\PYGZus{}0 v\PYGZus{}0}\PYG{l+s}{'}\PYG{p}{)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{l+s}{'}\PYG{l+s}{x}\PYG{l+s}{'}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+\PYG{n}{assume}\PYG{p}{(}\PYG{n}{omega}\PYG{o}{\textgreater{}}\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{n}{eq} \PYG{o}{=} \PYG{n}{diff}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,} \PYG{n}{t}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{)} \PYG{o}{+} \PYG{n}{omega}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{*} \PYG{n}{x} \PYG{o}{==} \PYG{l+m+mi}{0}
+\PYG{n}{solx} \PYG{o}{=} \PYG{n}{desolve}\PYG{p}{(}\PYG{n}{eq}\PYG{p}{,} \PYG{n}{x}\PYG{p}{,} \PYG{n}{ivar}\PYG{o}{=}\PYG{n}{t}\PYG{p}{,} \PYG{n}{ics}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{x\PYGZus{}0}\PYG{p}{,} \PYG{n}{v\PYGZus{}0}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{solv} \PYG{o}{=} \PYG{n}{diff}\PYG{p}{(}\PYG{n}{solx}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}
+\end{Verbatim}
+
+Teraz możemy zobaczyć jak dokładna jest metoda Eulera w przypadku równań wyższych rzędów. Poniżej
+znajdziecie wykres rozwiązań dla \emph{h=0.01} i 10000 kroków.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{euler_osc.png}
+\caption{Porównanie numerycznego ($x(t)$ linia niebieska, $v(t)$ linia czerwona)
+i analitycznego ($x(t)$ linia czarna, $v(t)$ linia zielona) rozwiązania zagadnienia
+oscylatora harmonicznego. Jak widać odchylenia od rozwiązań dokładnych zaczynją być
+znaczące już dla kilku kroków symulacji.
+Błąd bezwzględny widnieje na prawym górny panelu; błąd względny wykreślony jest na prawym dolnym
+panelu w skali logarytmicznej dla lepszej czytelności.
+Parametry użyte dla powyższej symulacji: $x_0=1, v_0=0, \omega_0=1, h=0.01, N=10000$.}\end{figure}
+
+Inną, aczkolwiek trudniejszą metodą będzie użycie algorytmów wyższego rzędu takich jak schemat Rungego-Kutty
+(2-giego, 4-tego i wyższych rzędów). Dociekliwy student może zajrzeć
+\href{http://en.wikipedia.org/wiki/List\_of\_Runge\%E2\%80\%93Kutta\_methods}{tutaj}.
+\begin{description}
+\item[{Zadanie D1.3}] \leavevmode
+Przeprowadź podobną symulację dla innych wartości \emph{h}. Wykreśl zależność błędów względnego i bezwzględnego
+w funkcji wartości \emph{h}. Błędy badaj po rzeczywistym czasie symulacji $T_E = 100$.
+
+\item[{Zadanie D1.4}] \leavevmode
+Rozwiązać numerycznie równania
+\begin{enumerate}
+\item {} 
+$\dot{x} (t) = -k x^3$
+
+\item {} 
+$\dot{x} (t) = F$
+
+\item {} 
+$m \ddot{x} (t) = m g$
+
+\item {} 
+$\ddot{r} (t) = 4 \epsilon \left[ \left(\frac{\sigma}{r} \right)^{12}-  \left( \frac{\sigma}{r}\right)^6 \right]$, $r>0$
+
+\item {} 
+$m \ddot{x} (t) = -\gamma \dot{x}(t) - k x(t)$
+
+\item {} 
+$m \ddot{x} (t) =  -k x(t) -\gamma \dot{x}(t) + a \cos(\omega t)$
+
+\end{enumerate}
+
+Dla każdego przypadku (A-F) należy
+\begin{enumerate}
+\item {} 
+narysować \emph{x} (dla D-F również \emph{v}) w funkcji \emph{t} (opisać osie),
+
+\item {} 
+odpowiedzieć na pytanie: z jakim ruchem mamy do czynienia {[}dla jakich parametrow równania ruch
+jest cykliczny (periodyczny), dla jakich rozwiązanie jest stałe (niezmienne w czasie)...{]},
+
+\item {} 
+znaleźć błąd względny i bezwzględny, wykreślić w funkcji czasu.
+
+\end{enumerate}
+
+Pytania:
+\begin{enumerate}
+\item {} 
+Czym różni się przypadek E od F?
+
+\item {} 
+Co opisuje potencjał w D? Jakie ma zastosowanie w fizyce?
+
+\end{enumerate}
+
+\end{description}
+
+
+\section{Stochastyczne równania różniczkowe}
+\label{ch5/chV013:stochastyczne-rownania-rozniczkowe}\label{ch5/chV013::doc}
+Stochastyczne równania różniczkowe (SDE, od angielskiej nazwy Stochastic differential equations)
+są obecnie uważane za standardowe narzędzie wykorzystywane do analizy niektórych wielkości opisujących
+dynamikę rynków finansowych. Do tych wielkości należą ceny aktywów, stopy procentowe czy ich pochodne.
+W przeciwieństwie do zwyczajnych równań różniczkowych, które posiadają jendoznaczne rozwiązanie,
+rozwiązaniami SDE są ciągłe w czasie procesy stochastyczne. Metody komputerowe wykorzystywane do analizy
+SDE bazują na klasycznych metodach wykorzystywanych do rozwiązywania tradycyjnych, deterministycznych
+równań różniczkowych, są jednak uogólnione tak, aby radzić sobie z procesami losowymi.
+
+Zestaw zmiennych losowych $X_t$ indeksowanych liczbami rzeczywistymi \emph{t} nazywamy procesem losowym
+ciągłym (ze względu na czas). Każda \emph{realizacja} procesu losowego to przypadkowa wartość zmiennej
+losowej $X_t$ dla każdego \emph{t}, jest więc funkcją czasu. Co ciekawe, \emph{każda} deterministyczna
+funkcja $f(t)$ może być uważana za proces stochastyczny, którego wariancja znika.
+
+Najbardziej znanym przykładem procesu losowego szeroko występującego w modelach fizyki, chemii ale i
+rynków finansowych jest \emph{proces Wienera} $W(t) = W_t$, ciągły proces stochastyczny posiadający
+nastepujące własności
+\begin{enumerate}
+\item {} 
+jest to proces rzeczywisty,
+
+\item {} 
+startuje z zera ($W_0 = 0$),
+
+\item {} 
+ma stacjonarne i niezależne przyrosty na nieprzekrywających się przedziałach,
+
+\item {} 
+jest procesem Gaussa o zerowej wartości średniej $\langle W_t - W_s \rangle = 0$
+i wariancji przyrostów $\langle [W_t - W_s]^2 \rangle = 2 D (t -s)$,
+
+\item {} 
+proces Wienera może być reprezentowany ciągłymi trajektoriami.
+
+\end{enumerate}
+
+Wynika z tego, że dla każdej różnicy czasów \emph{t - s} zmienna losowa $W_t - W_s$ jest zmienną losową
+gaussowską o zerowej wartości średniej i wariancji $2D(t-s)$. Więc jego rozkład prawdopodobieństwa ma
+postać
+\begin{gather}
+\begin{split}f_{W_t - W_s}(x) = \frac{1}{\sqrt{2 \pi D (t - s)}} \exp \Big[ -\frac{x^2}{4D(t-s)} \Big].\end{split}\notag
+\end{gather}
+Proces taki może być wyprowadzony jako proces graniczny błądzenia przypadkowego. Wystarczy tylko zbadać
+granicę dla której wielkość skoku i czas pomiędzy skokami będą maleć do zera. Tak zdefiniowanym procesem
+posługujemy się zwyczajowo, gdy podczas analizy probalmu pojawia się jakaś nieregularna siła czy zaburzenie
+którego nie możemy opisać równaniami deterministycznymi.
+
+Typowe dla rynków finansowych \emph{równanie dyfuzji} może być modelowane przez równanie różniczkowe posiadające
+część deterministyczną zwaną \textbf{dryftem} oraz część losową zwaną \textbf{dyfuzją}. Ta ostatnia jest bardzo często
+reprezentowana właśnie przez proces Wienera. Możemy sobie napisać ogólne równanie
+\begin{gather}
+\begin{split}dX = a(t, X) dt + b(t,X) dW_t.\end{split}\notag
+\end{gather}
+Jest to postać różniczkowa. W zwykłych równaniach różniczkowych zazwyczaj stosujemu pochodne $dx/dt$. W
+tym przypadku postać różniczkowa ma większy sens, jako, że wiele interesujących nas procesów losowych (jak
+ruch Browna) są procesami ciągłymi aczkolwiek nie są różniczkowalne. Powyższe równanie nabiera większego
+sensu pod znakiem całki
+\begin{gather}
+\begin{split}X(t) = X(0) + \int_0^t a(s,y) ds \int_0^t b(s,y) dW_s.\end{split}\notag
+\end{gather}
+Ostatni wyraz z prawej zwany jest całką Ito.
+
+
+\subsection{Równanie Blacka-Scholesa}
+\label{ch5/chV013:rownanie-blacka-scholesa}
+Jednym z bardziej znanych, historycznym już równaniem stochastycznym, jest równanie opisujące geometryczny
+ruch Browna
+\begin{gather}
+\begin{split}dX = \mu X dt + \sigma X dW_t,\end{split}\notag
+\end{gather}
+gdzie $\mu, \sigma$ to wielkości stałe.
+Równanie to jest jednym z podstawowych elementów modelu wyceny opcji Blacka-Scholesa. Teoria ta została
+nagrodzona Nagrodą Nobla z ekonomii w roku 1997, a opracowana przez absolwenta fizyki i doktora matematyki
+Fischera Blacka oraz ekonomistę Myrona Scholesa. Teoria Blacka-Scholesa pozwala na wycenę wartości tzw.
+finansowych instrumentów pochodnych, czyli opcji, oraz służy do optymalizacji ``bezpiecznego'' portfela
+inwestycyjnego.
+
+Pomimo tego, że równanie to wygląda na proste, żeby nie powiedzieć zbyt proste na to by opisywać jakąkolwiek
+rzeczywistość na rynkach finansowych, ma ono olbrzymie znaczenie, jako, że może być rozwiązane ściśle
+dając wynikowy wzór z którego możemy wyliczyć zmianę cen prostych opcji. Jak już powiedzieliśmy,
+rozwiązanie jest geometrycznym ruchem Browna
+\begin{gather}
+\begin{split}X(t) = X_0 \exp \Big[ \Big( \mu - \frac{\sigma^2}{2} \Big) t + \sigma dW_t \Big].\end{split}\notag
+\end{gather}
+Dzięki zamkniętej postaci rozwiązania mamy możliwość testowania metod numerycznych, które przedstawimy
+poniżej.
+
+
+\subsection{Schemat Eulera-Maruyamy}
+\label{ch5/chV013:schemat-eulera-maruyamy}
+Najprostszą metodą numerycznego rozwiązywania równań różniczkowych zwyczajnych jest metoda Eulera. Bazuje
+ona np. na rozwinięciu Tylora w pierwszym rzędzie przybliżenia. Stochastycznym analogiem tej metody
+jest metoda Eulera-Maruyamy.
+
+Będziemy chcieli podać przybliżone rozwiązanie ogólnej postaci SDE na przedziale czasowym
+$t \in [t_0,t_E]$. Na początku zdyskretyzujemy sobie ów przedział czasowy, ustalając na siatkę
+\emph{N} punktów
+\begin{gather}
+\begin{split}t_0 < t_1 < t_2 < \dots < t_{N-2} < t_E.\end{split}\notag
+\end{gather}
+Dążymy do tego, aby na tej siatce znaleźć przybliżone wartości zmiennej $X$. Oznaczmy je
+\begin{gather}
+\begin{split}w_0 < w_1 < w_2< \dots < w_{N-2} < w_E.\end{split}\notag
+\end{gather}
+Są to oczywiście przybliżone rozwiązania zmiennej $x$ dla odpowiednich czasów z powyższej siatki
+$\{t_i\}$. Zakładając wartość początkową dla SDE $X(t_0) = X_0$ możemy pokusić się
+o rozwiązanie numeryczne w następującej postaci
+\begin{gather}
+\begin{split}w_0 = X_0\end{split}\notag\\\begin{split}w_{i+1} = w_i + a (t_i, w_i) \Delta t_{i+1} + b(t_i, w_i) \Delta W_{i+1}\end{split}\notag\\\begin{split}\Delta t_{i+1} = t_{i+1} - t_i\end{split}\notag\\\begin{split}\Delta W_{i+1} = W(t_{i+1}) - W(t_i).\end{split}\notag
+\end{gather}
+Kluczową sprawą w tym punkcie jest problem: jak zamodelować $\Delta W_i$? Mając do dyspozycji generator
+liczb losowych z rozkładem \emph{N(0,1)} każdą losową liczbę $\Delta W_i$ obliczamy ze wzoru
+\begin{gather}
+\begin{split}\Delta W_i = \sqrt{\Delta t_i} z_i,\end{split}\notag
+\end{gather}
+gdzie $z_i$ jest losowana właśnie z \emph{N(0,1)}.
+Aby scałkować proces stochastyczny użyjemy formuły na przyrost procesu Wienera
+\begin{gather}
+\begin{split}\int_{t_i}^{t_{i+1}} \Gamma(t) dt =
+\int_{t_i}^{t_{i+1}} dW(t) =  W(t_{i+1}) - W(t_i)\end{split}\notag
+\end{gather}
+Z definicji procesu Wienera wiemy, że jest on procesem Gaussa o zerowej średniej i wariancji liniowej w czasie
+$\langle [W(t_{i+1}) - W(t_i)]^2 \rangle = 2 D \Delta t_i$, co daje nam w sensie średnio-kwadratowym
+$\Delta W \propto \sqrt{\langle [\Delta W (t)]^2 \rangle} = \sqrt{\Delta t_i}$. Scałkowanie procesu Wienera
+prowadzi do
+\begin{gather}
+\begin{split}\int_{t_i}^{t_{i + 1}} dW_t = \sqrt{\Delta t_i} z_i.\end{split}\notag
+\end{gather}
+Jeżeli założymy sobie, że krok czasowy (odległości na siatce rozwiązań) jest stały i wynosi
+$\Delta t_i = h$ możemy napisać schemat explicite
+\begin{gather}
+\begin{split}w_{i+1} = w_i + h a(t_i, w_i) + \sqrt{h} b(t_i, w_i) z_i.\end{split}\notag
+\end{gather}
+Jako, że każdy zestaw wartości $\{w_i\}, i=0,\dots,E$ wyprodukowany przez powyższą formułę
+będzie przybliżonym rozwiązaniem procesu losowego, to i każda realizacja (każdy zestaw) będzie
+również losowa, a co za tym idzie - każda realizacja procesu będzie inna.
+
+
+\subsection{Schemat Millsteina}
+\label{ch5/chV013:schemat-millsteina}
+Dodaje on poprawkę do poprzedniego rozwiązania, powodując, że schemat staje się schematem pierwszego rzędu
+w sensie silnym. Dany jest on wzorem iteracyjnym
+\begin{gather}
+\begin{split}w_0 = X_0\end{split}\notag\\\begin{split}w_{i+1} = w_i + a(w_i,t_i) h -
+\frac{h}{2} b(x_i,t_i)\frac{\partial b}{\partial x}'(w_i,t_i)(z_i^2 - 1) +
+\sqrt{h} b(w_i,t_i) z_i.\end{split}\notag
+\end{gather}
+Obie metody (Millsteina i Eulera-Maruyamy) redukują się do tego samego schematu gdy część losowa nie jest
+zależna od zmiennej \emph{x}. Jeżeli zależność istnieje, schemat Millsteina będzie szybciej zbieżny od
+schematu EM.
+
+
+\section{Przykłady całkowania procesów stochastycznych}
+\label{ch5/chV013:przyklady-calkowania-procesow-stochastycznych}
+
+\subsection{Proces dyfuzji}
+\label{ch5/chV013:proces-dyfuzji}
+Jest to prawdopodobnie najprostszy proces stochastyczny wykorzystujący biały szum
+gaussowski jako proces losowy. Przez matematyków nazywany jest po prostu procesem
+Wienera ponieważ prawa strona równania ruchu zawiera tylko i wyłącznie ów proces.
+Z drugiej strony jest obok procesu Poissona najważniejszym procesem losowym
+na bazie którego można zdefiniować całą rodzinę procesów losowych o ciągłych
+realizacjach. Równanie to można przedstawić używając równania Ito
+\begin{gather}
+\begin{split}d x(t) = \sqrt{2 D} dW(t).\end{split}\notag
+\end{gather}
+Realizacja jest funkcją ciągłą, ale nigdzie nieróżniczkowalną (jako że pochodna
+procesu Wienera nie istnieje). Za pomocą znanego już schematu Eulera-Maruyamy (EM)
+możemy sobie wygenerować pojedynczą realizację takiego procesu. Parametr $D$
+reguluje natężenie szumu.
+\begin{gather}
+\begin{split}x_0 = 0\end{split}\notag\\\begin{split}x_{i+1} = x_i + \sqrt{2 h D} N(0,1).\end{split}\notag
+\end{gather}
+Wiemy, że dla
+procesu Wienera $W(0) = 0$, wystartujemy więc z $x(0) = 0$. Weźmy
+krok $h=0.01$ i 5000 kroków czasowych. Dla przejrzystości weźmiemy
+natężenie szumu $D=1$. Jako, że wiemy jak generować zmienne z rozkładem
+\emph{N(0,1)} użyjemy sobie ``symbolicznego'' oznaczenia na funkcję zwracajacą
+takie zmienne. Funkcję taką nazwiemy \code{std\_norm}. Konkretna realizacja
+takiej funkcji może odbywać np: poprzez algorytm Boxa-Mullera. Funkcja ta
+będzie przy wywołaniu zwracała jedną liczbę losową z \emph{N(0,1)}.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.01}
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{5000}
+\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{D} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{n01} \PYG{o}{=} \PYG{n}{std\PYGZus{}norm}\PYG{p}{(}\PYG{p}{)}
+  \PYG{n}{x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{x}\PYG{p}{[}\PYG{n}{i}\PYG{o}{-}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{h}\PYG{o}{*}\PYG{n}{D}\PYG{p}{)} \PYG{o}{*} \PYG{n}{n01}\PYG{p}{)}
+\end{Verbatim}
+
+Teraz narysujmy sobie takie realizacje dla kilku różnych wartości parametru \emph{D}.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{dyf02.png}
+\caption{Proces dyfuzji dla kilku różnych wartości parametru D.}\end{figure}
+
+Na pierwszy rzut oka trajektorie (czy realizacje, przebiegi...) wyglądają kompletnie
+inaczej. Dla małych wartości \emph{D} krzywe są bardziej regularne niż dla tych
+parametryzowanych przez większe wartości \emph{D}, dla których to wykres jest mocno
+poszarpany i nieregularny. Jeżeli jednak narysowalibyśmy je osobno, nie oznaczając
+osi, identyfikacja byłaby niemożliwa - nie widzimy bowiem relacji pomiędzy
+wartościami (przyrostami).
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{dyf.png}
+\caption{Proces dyfuzji dla kilku różnych wartości parametru D. Są to te same przebiegi co
+w poprzednim wykresie. Kolory tu uzyte odpowiadają kolorom z wykresu poprzedniego.}\end{figure}
+
+Jako, że rozwiązanie równania dyfuzji znane jest od dawoen dawna, możemy potestować
+na ile dokładnie rozwiązujemy nasze równanie. Oczywiście jedyne co możemy określić,
+to rozkład gęstości prawdopodobieństwa. Zakładając warunki początkowe
+\begin{gather}
+\begin{split}P(x,0) = \delta (x)\end{split}\notag
+\end{gather}
+co oznacza, że cały zespół cząstek podlegających dyfuzji wystartuje z $x(0)=0$,
+możemy podać odpowiedź, bazując na równaniu dyfuzji
+\begin{gather}
+\begin{split}\frac{\partial P(x,t)}{\partial t} = D\frac{\partial^2 P(x,t)}{\partial x^2}.\end{split}\notag
+\end{gather}
+Wynikiem jest rozkład Gaussa postaci
+\begin{gather}
+\begin{split}P(x,t) = \frac{1}{\sqrt{4 \pi D t}} \exp \Big[ -\frac{x^2}{4 D t} \Big].\end{split}\notag
+\end{gather}
+w którym wariancja rośnie liniowo z czasem a średnia jest równa zero. Zobaczmy, czy jesteśmy w
+stanie zweryfikować powyższy wzór numerycznie. Postaramy się znaleźć histogram
+pozycji 10000 cząstek po 100 krokach i porównamy go z powyższym wynikiem. Założymy sobie
+$D=0.1$ i krok czasowy $h=0.01$. Oznacza to, że po 100 krokach symulacji
+osiągniemy rzeczywisty czas równy 1.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{dyf_100n.png}
+\caption{Proces dyfuzji po 100 krokach symulacji dla $D=0.1$, $h=0.01$, $N=100$
+a co za tym idzie $t=Nh$.}\end{figure}
+\begin{description}
+\item[{Zadanie 6.1.1}] \leavevmode
+Wykonaj w Sage powyższy rysunek. Metodę generowania histogramów znajdziesz w pierwszej
+części skryptu. Listę położeń, którą należy podać do histogramu wygeneruj w podobny
+sposób jak na początku tego rozdziału.
+
+\end{description}
+
+
+\subsection{Dyfuzja ze stałym dryftem}
+\label{ch5/chV013:dyfuzja-ze-stalym-dryftem}
+Proces taki otrzymuje się bezpośrednio jako graniczny przypadek niesymetrycznego błądzenia
+przypadkowego (polecam poczytać \href{http://el.us.edu.pl/ekonofizyka/index.php/PIZL:Proces\_Wienera\_i\_proces\_dyfuzji\#Przypadek\_niesymetryczny:\_dyfuzja\_z\_dryfem}{ten podrozdział}).
+Równanie opisujące ten proces ma postać zbliżoną do poprzedniego, bogatsze jest jednak
+o dodatkowy czynnik, zwany dryftem
+\begin{gather}
+\begin{split}\frac{\partial P(x,t)}{\partial t} = -V\frac{\partial P(x,t)}{\partial x} + D\frac{\partial^2 P(x,t)}{\partial x^2}.\end{split}\notag
+\end{gather}
+Rozwiązaniem równania dyfuzji z dryfem, z takim samym warunkiem początkowym jak poprzednio
+(wszystkie cząstki, bądź realizacje zaczynają z tego samego położenia $x(0)=0$
+jest następujaca funkcja
+\begin{gather}
+\begin{split}P(x,t) = \frac{1}{\sqrt{4 \pi D t}} \exp \Big[ -\frac{(x - Vt)^2}{4 D t} \Big].\end{split}\notag
+\end{gather}
+Jest to funkcja Gaussa opisujaca zmienne losowe normalne, a dwa pierwsze momenty wynoszą
+odpowiednio $\xi(t) = Vt$ oraz $\sigma_{\xi}^2 = 2 D t$. Łatwo zauważyć, że
+zarówno średnia jak i wariancja zależne są liniowo od czasu. Ponadto wariancja jest
+identyczna jak w procesie dyfuzji bez dryftu. Dryft ów stały można z punktu widzenia fizyki
+rozumieć jako stałą siłę przyłożoną do cząstki (coś na kształt cząstki umieszczonej na
+równi pochyłej) - położenie cząstki rośnie liniowo z czasem (jak w ruchu jednostajnie
+prostoliniowym), ale fluktuacje rosną w czasie jak pierwiastek $\sqrt{t}$.
+
+Podobną analizę numeryczną jak poprzednio możemy przeprowadzić i tutaj. Tym razem, wykreślimy
+sobie stroboskopowo histogram położeń po kilku krokach: \emph{N = 10, 100, 200}. Po lekkiej
+modyfikacji numeryczny schemat EM będzie wyglądał tak
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.01}
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{5000}
+\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mi}{0}
+\PYG{n}{V} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{D} \PYG{o}{=} \PYG{l+m+mi}{1}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{n01} \PYG{o}{=} \PYG{n}{std\PYGZus{}norm}\PYG{p}{(}\PYG{p}{)}
+  \PYG{n}{x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{x}\PYG{p}{[}\PYG{n}{i}\PYG{o}{-}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{n}{V}\PYG{o}{*}\PYG{n}{h} \PYG{o}{+} \PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{h}\PYG{o}{*}\PYG{n}{D}\PYG{p}{)} \PYG{o}{*} \PYG{n}{n01}\PYG{p}{)}
+\end{Verbatim}
+
+Teraz wystarczy zobaczyć, czy histogramy położeń po czasie \emph{t=0.1, 1, 2} będą odpowiadały
+obliczonej powyżej funkcji rozkładu.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{dryftdif001.png}
+\caption{Proces dyfuzji ze stałym dryftem po 10, 100 i 200 krokach symulacji dla $D=0.1$,
+$h=0.01$, a co za tym idzie $t=0.1, 1, 2$.}\end{figure}
+
+Możemy policzyć sobie teraz średnie, odchylenie standardowe oraz błędy względny i bezwzględny
+przybliżeń dokładnych rozwiązań procesu dyfuzji z dryftem.
+
+\begin{tabulary}{\linewidth}{|L|L|L|L|L|L|}
+\hline
+\textbf{
+czas
+} & \textbf{} & \textbf{
+teoria
+} & \textbf{
+symulacje
+} & \textbf{
+$E_b$
+} & \textbf{
+$E_w$ {[}\%{]}
+}\\\hline
+ \multirow{2}{*}{
+t=0.1
+} & 
+średnia
+ & 
+0.10
+ & 
+0.09972
+ & 
+0.0002766
+ & 
+0.2766
+\\
+
+std
+ & 
+0.1414
+ & 
+0.1413
+ & 
+0.00007544
+ & 
+0.05335
+\\\hline
+ \multirow{2}{*}{
+t=1
+} & 
+średnia
+ & 
+1.0
+ & 
+1.005
+ & 
+0.005345
+ & 
+0.5345
+\\
+
+std
+ & 
+0.4472
+ & 
+0.444
+ & 
+0.003026
+ & 
+0.6766
+\\\hline
+ \multirow{2}{*}{
+t=2
+} & 
+średnia
+ & 
+2.0
+ & 
+2.001
+ & 
+0.001460
+ & 
+0.07302
+\\
+
+std
+ & 
+0.6324
+ & 
+0.6362
+ & 
+0.003708
+ & 
+0.5863
+\\\hline
+\end{tabulary}
+
+
+Jak widzimy błędy bezwzględne dochodzą do około pół punktu procentowego różnicy dla 10000
+realizacji. Zwiekszenie próby spowoduje jeszcze lepsze dopasowanie, zmniejszenie spowoduje
+większe odchylenia od wartości rzeczywistych.
+\begin{description}
+\item[{Zadanie 6.1.2}] \leavevmode
+Oblicz błędy przybliżenia rozwiazania problemu dyfuzji ze stałym dryftem dla 10, 100, 500 i
+1000 różnych realizacji. Zestawienia podaj w tabeli.
+
+\end{description}
+
+
+\subsection{Proces Ornsteina-Uhlenbecka}
+\label{ch5/chV013:proces-ornsteina-uhlenbecka}
+
+\subsection{Równanie Blacka-Scholesa}
+\label{ch5/chV013:id1}
+
+\section{Lapunov}
+\label{ch5/chV014::doc}\label{ch5/chV014:lapunov}
+
+\section{Bifurkacje}
+\label{ch5/chV014:bifurkacje}
+
+\section{ARMA}
+\label{ch5/chV014:arma}
+Analizując dane pochodzące z szeroko pojętych źródeł rynków finansowych dość często korzysta się z Modeli
+Autoregresyjnych ze Średnią Kroczącą. Angielska nazwa takich modeli to Autoregresive Moving Average Models
+i stąd nazwa ARMA. Zwykle procedura polega na pewnej analizie posiadanych danych i dopasowaniu
+do nich parametrów takiego modelu. Takim zagadnieniem zajmuje się \href{http://el.us.edu.pl/ekonofizyka/index.php/Analiza\_Szeregów\_Czasowych}{Analiza Szeregów Czasowych}. Szeregów dostarcza ``samo życie'',
+czyli np: giełda. Jako, że ten kurs ma na celu modelowanie rynków, czyli ma \emph{generować} takie szeregi,
+pobawimy się teraz w symulowanie rynku.
+
+Model ARMA to nic innego jak układ równań różnicowych ze stałymi współczynnikami.
 
 
 

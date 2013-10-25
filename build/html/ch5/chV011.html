@@ -9,7 +9,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Liczby Losowe &mdash; Dynamika stochastyczna</title>
+    <title>Liczby losowe &mdash; Dynamika stochastyczna</title>
     
     <link rel="stylesheet" href="../_static/cloud.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
@@ -51,7 +51,8 @@
 
     
     <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
-    <link rel="prev" title="Determinizm a przewidywalność" href="../ch2/chII011.html" />
+    <link rel="next" title="Równania różniczkowe zwyczajne" href="chV012.html" />
+    <link rel="prev" title="Scenariusz przejścia do chaosu" href="../ch2/chII012.html" />
  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
   </head>
@@ -65,7 +66,10 @@
           <a href="../genindex.html" title="Indeks ogólny"
              accesskey="I">indeks</a></li>
         <li class="right" >
-          <a href="../ch2/chII011.html" title="Determinizm a przewidywalność"
+          <a href="chV012.html" title="Równania różniczkowe zwyczajne"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ch2/chII012.html" title="Scenariusz przejścia do chaosu"
              accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
   <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
    
@@ -81,7 +85,12 @@
           <div class="body">
             
   <div class="section" id="liczby-losowe">
-<h1>Liczby Losowe<a class="headerlink" href="#liczby-losowe" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<h1>Liczby losowe<a class="headerlink" href="#liczby-losowe" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Uwaga</p>
+<p class="last">W tym kursie do numerycznych realizacji używać będziemy pakietu <a class="reference external" href="http://sagemath.org/">Sage</a>. Jest to dostępny dla
+każdego program typu open-source bazujacy na języku <a class="reference external" href="http://python.org/">Python</a>.</p>
+</div>
 <div class="section" id="liczby-losowe-i-pseudolosowe">
 <h2>Liczby losowe i pseudolosowe<a class="headerlink" href="#liczby-losowe-i-pseudolosowe" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>Intuicyjnie dość dobrze rozumiemy co oznacza termin <em>liczba losowa</em>. Każdy z nas choć
@@ -212,21 +221,19 @@ Inne wartości <span class="math">\(a=1099087573, 2396548189, 3934873077, 230458
 mnożnik ustawimy jako jego pierwiastek pierwotny. Szczególnie ważne wydają się być liczby pierwsze postaci
 <span class="math">\(2^p -1\)</span>, nazywane liczbami Mersenne&#8217;a. Na maszynach 32-bitowych popularnym wyborem bywa para
 <span class="math">\(m=2^{31}-1\)</span> i jej pierwiastek pierwotny <span class="math">\(a=7^5=16807\)</span>.</p>
-<p>Implementacja LCG w Sage nie powinna nastręczać zbytnich problemów:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">myLCG</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">a</span><span class="o">=</span><span class="mi">1664525</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="mi">1013904223</span><span class="p">,</span> <span class="n">m</span><span class="o">=</span><span class="mi">2</span><span class="o">**</span><span class="mi">32</span><span class="p">):</span>
-  <span class="k">return</span> <span class="n">mod</span><span class="p">(</span><span class="n">a</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="n">b</span><span class="p">,</span><span class="n">m</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Możemy teraz wygenerować N liczb używając LCG i zmagazynowac je w pythonowskiej liście.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">get_from_LCG</span><span class="p">(</span><span class="n">n</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">123</span><span class="p">):</span>
-  <span class="n">ret</span> <span class="o">=</span> <span class="p">[</span><span class="n">seed</span><span class="p">]</span>
-  <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">n</span><span class="o">-</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">ret</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">myLCG</span><span class="p">(</span><span class="n">ret</span><span class="p">[</span><span class="n">i</span><span class="p">]))</span>
-  <span class="k">return</span> <span class="n">ret</span>
-
-<span class="n">lcg_list</span> <span class="o">=</span> <span class="n">get_from_LCG</span><span class="p">(</span><span class="n">N</span><span class="p">)</span>
-</pre></div>
-</div>
+<p>Implementacja LCG w Sage nie powinna nastręczać zbytnich problemów.</p>
+<div class='sage'><script type='text/x-sage'>def myLCG(x, a=1664525, b=1013904223, m=2**32):
+  return mod(a*x+b,m)
+#
+def get_from_LCG(n=1, seed=123):
+  ret = [seed]
+  for i in xrange(n-1):
+    ret.append(myLCG(ret[i]))
+  return ret
+#
+N = 1000
+lcg_list = get_from_LCG(N)
+list_plot(lcg_list, figsize=4)</script></div><p>Powinniśmy dostać rysunek podobny do tego poniżej.</p>
 <div class="figure align-center">
 <img alt="liczby losowe wygenerowane przy pomocy mylcg" src="../_images/sage0.png" />
 <p class="caption">1000 liczb losowych wygenerowanych generatorem liniowym LCG</p>
@@ -251,21 +258,12 @@ na odcinku [0,1) (co często oznaczane jest poprzez <span class="math">\(U(0,1)\
 \[\begin{split}U(0,1) = \left\{ \begin{array}{l l} 1 &amp; \quad 0 \le x &lt; 1\\ 0 &amp; \quad \text{poza}\\ \end{array} \right.\end{split}\]</div>
 <p>Aby uzyskać liczbę z przedziału [0,12.76)
 wystarczy po prostu pomnożyć liczbę zwracną przez <tt class="docutils literal"><span class="pre">random()</span></tt> przez prawą granicę</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">random</span><span class="p">()</span><span class="o">*</span><span class="mf">12.76</span>
-</pre></div>
-</div>
-<p>a żeby uzyskać listę 123 liczb z przedziału [-13.3, 33.1) należy wykonać</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="p">[</span><span class="n">random</span><span class="p">(</span><span class="mf">33.1</span><span class="o">+</span><span class="mf">13.3</span><span class="p">)</span> <span class="o">-</span> <span class="mf">13.3</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">123</span><span class="p">)]</span>
-</pre></div>
-</div>
-<p>W ogólności do wygenerowania listy N liczb losowych z przedziału [A,B) należy użyć polecenia</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">N</span> <span class="o">=</span> <span class="mi">100</span>
-<span class="n">A</span> <span class="o">=</span> <span class="o">-</span><span class="mi">10</span>
-<span class="n">B</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="p">[</span><span class="n">random</span><span class="p">(</span><span class="n">B</span><span class="o">-</span><span class="n">A</span><span class="p">)</span> <span class="o">+</span> <span class="n">A</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-</pre></div>
-</div>
-<dl class="docutils">
+<div class='sage'><script type='text/x-sage'>random()*12.76</script></div><p>a żeby uzyskać listę 123 liczb z przedziału [-13.3, 33.1) należy wykonać</p>
+<div class='sage'><script type='text/x-sage'>[random()*(33.1+13.3) - 13.3 for i in xrange(123)]</script></div><p>W ogólności do wygenerowania listy N liczb losowych z przedziału [A,B) należy użyć polecenia</p>
+<div class='sage'><script type='text/x-sage'>N = 100
+A = -10
+B = 20
+[random()*(B-A) + A for i in xrange(N)]</script></div><dl class="docutils">
 <dt>Zadanie 2.2.2</dt>
 <dd>Zmodyfikuj definicję <tt class="docutils literal"><span class="pre">mylcg</span></tt> tak, aby funkcja zwracała liczby losowe z przedziału [0,1).</dd>
 <dt>Zadanie 2.2.3</dt>
@@ -301,9 +299,7 @@ klasowych. Jeżeli <cite>n</cite> oznacza liczbę wszystkich obserwacji, a <cite
 <span class="math">\(m_i\)</span> spełnia następujący warunek</p>
 <div class="math">
 \[n = \sum_{i=1}^k m_i\]</div>
-<dl class="docutils">
-<dt>Ideę histogramu najlepiej zrozumiec na przykładzie.</dt>
-<dd><p class="first">Mamy następującą listę liczb</p>
+<p>Ideę histogramu najlepiej zrozumiec na przykładzie. Mamy następującą listę liczb</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="o">-</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="o">-</span><span class="mi">4</span><span class="p">]</span>
 </pre></div>
 </div>
@@ -358,37 +354,17 @@ zobaczymy, że dostaniemy tą samą liczbę (=20). Pozostaje narysować ów hist
 przedziały klasowe a na rzędnej liczebności danego przedziału. Przyjęło się rysować histogram używając
 słupków. Sage na chwilę obecną posiada kilka metod narysowania takiego histogramu. Jeżeli nie zależy nam na
 poprawnym opisaniu odciętej (np: chcemy tylko zobaczyć kształt histogramu), wystarczy napisać</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span> <span class="o">=</span> <span class="p">[</span><span class="n">l</span><span class="o">.</span><span class="n">count</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">)]</span>
-<span class="n">bar_chart</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">width</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;orangered&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">axes_labels</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;$i$&#39;</span><span class="p">,</span><span class="s">&#39;$\#$&#39;</span><span class="p">],</span> <span class="n">title</span><span class="o">=</span><span class="s">&quot;histogram&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Co pozwoli nam wygenerować taki rysunek:</p>
-<div class="figure align-center">
-<img alt="bar_chart liczebności" src="../_images/bar_chart.png" />
-<p class="caption">Prosty wykres liczebności, gdzie wykorzystaliśmy funkcję box_plot().</p>
-</div>
-<p>Nie jest to prawdziwy histogram, bowiem odłożone na osi OY liczebności powinny odpowiadać rzeczywistym
+<div class='sage'><script type='text/x-sage'>l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+h = [l.count(i) for i in range(-5,6)]
+bar_chart(h, width=1, color="orangered").show(axes_labels=['$i$','$\#$'], title="histogram")</script></div><p>Nie jest to prawdziwy histogram, bowiem odłożone na osi OY liczebności powinny odpowiadać rzeczywistym
 wartościom (przedziałom). Możemy skorzystać z pakietu <tt class="docutils literal"><span class="pre">Time</span> <span class="pre">Series</span></tt> dostępnego w Sage. Wystarczą
 prosta komenda aby uzyskać dostęp do wielu statystycznych funkcji typowych dla analizy szeregu czasowego.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">v</span> <span class="o">=</span> <span class="n">finance</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>I teraz aby obliczyć histogram dla 10 równych przedziałów (od minimalnej do maksymalnej wartości występującej
-w liście <tt class="docutils literal"><span class="pre">l</span></tt>), wystarczy napisać</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">v</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">11</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>a aby narysować jego wykres</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">v</span><span class="o">.</span><span class="n">plot_histogram</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">11</span><span class="p">,</span> <span class="n">normalize</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;orangered&quot;</span><span class="p">,</span> <span class="n">axes_labels</span><span class="o">=</span><span class="p">[</span><span class="s">&#39;$i$&#39;</span><span class="p">,</span><span class="s">&#39;$\#$&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-<div class="last figure align-center">
-<img alt="histogram liczebności" src="../_images/histogram.png" />
-<p class="caption">Historgam dla listy <tt class="docutils literal"><span class="pre">l</span></tt> uzyskany z wykorzystaniem pakietu <tt class="docutils literal"><span class="pre">TimeSeries</span></tt></p>
-</div>
-</dd>
-</dl>
-<p>Oczywiście całą procedurę można powtórzyć dla liczb zmiennoprzecinkowych (rzeczywistych, wymiernych). W tym
+<p>Aby obliczyć histogram dla 10 równych przedziałów (od minimalnej do maksymalnej wartości występującej
+w liście <tt class="docutils literal"><span class="pre">l</span></tt>) i narysować jego wykres, wystarczy napisać</p>
+<div class='sage'><script type='text/x-sage'>l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+v = finance.TimeSeries(l)
+v.histogram(bins=11)
+v.plot_histogram(bins=11, normalize=0, color="orangered", axes_labels=['$i$','$\#$'], figszie=4)</script></div><p>Oczywiście całą procedurę można powtórzyć dla liczb zmiennoprzecinkowych (rzeczywistych, wymiernych). W tym
 wypadku należałoby oczywiście policzyć ile posiadanych liczb wpada do zdefiniowanych &#8220;pudełek&#8221;. Zobaczmy drugi
 przykład, gdzie obliczymy i narysujemy w Sage histogram dla dziesięciu tysięcy liczb z U(0,1). Powinniśmy dostać</p>
 <div class="figure align-center">
@@ -398,21 +374,18 @@ przykład, gdzie obliczymy i narysujemy w Sage histogram dla dziesięciu tysięc
 <dl class="docutils">
 <dt>Przykład 2</dt>
 <dd><p class="first">Wygenerujemy 10000 liczb losowych a następnie dla nich obliczymy i narysujemy histogram.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">N</span> <span class="o">=</span> <span class="mi">10000</span>
-<span class="n">u01</span> <span class="o">=</span> <span class="p">[</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-<span class="n">fu01</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="mi">0</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">1</span>
-<span class="n">v</span> <span class="o">=</span> <span class="n">finance</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">([</span><span class="n">random</span><span class="p">()</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">)])</span>
-<span class="n">plot1</span> <span class="o">=</span> <span class="n">plot</span><span class="p">(</span><span class="n">fu01</span><span class="p">,(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;black&quot;</span><span class="p">)</span>
-<span class="n">plot2</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">plot_histogram</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="s">&quot;orangered&quot;</span><span class="p">)</span>
-<span class="p">(</span><span class="n">plot1</span> <span class="o">+</span> <span class="n">plot2</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">axes_labels</span><span class="o">=</span><span class="p">[</span><span class="s">r&#39;$\xi$&#39;</span><span class="p">,</span><span class="s">r&#39;$U(0,1)$&#39;</span><span class="p">])</span>
-</pre></div>
-</div>
-<p class="last">Ostatnia linia wyrysuje nam obie funkcje na jednym wykresie. Zachęcam czytelnika do poeksperymentowania z
+<div class='sage'><script type='text/x-sage'>N = 10000
+u01 = [random() for i in xrange(N)]
+fu01 = lambda x: 0 if x < 0 or x > 1 else 1
+v = finance.TimeSeries([random() for i in xrange(N)])
+plot1 = plot(fu01,(-1,2), thickness=1, color="black")
+plot2 = v.plot_histogram(bins=10, color="orangered")
+(plot1 + plot2).show(axes_labels=[r'$\xi$',r'$U(0,1)$'])</script></div></dd>
+</dl>
+<p>Ostatnia linia wyrysuje nam obie funkcje na jednym wykresie. Zachęcamy czytelnika do poeksperymentowania z
 powyższym kodem - można zmienić liczbę prób <cite>N</cite> i łatwo zobaczyć jak histogram zaczyna oddalać się od
 teoretycznego rozkładu dla małych N i jak zbliża się dla dużych. Można też zobaczyć jak ilość przedziałów
 (parametr <tt class="docutils literal"><span class="pre">bins</span></tt>) wpływa na otrzymany histogram.</p>
-</dd>
-</dl>
 <div class="figure align-center">
 <img alt="Wykres rozkładu jednorodnego na odcinku [0,1)" src="../_images/u01_hist.png" />
 <p class="caption">Wykres rozkładu U(0,1) + histogram miliona prób.</p>
@@ -468,31 +441,21 @@ takiego rozkładu dana jest wzorem</p>
 \[F^{-1}(u) = -\frac{1}{\lambda} \ln (1-u).\]</div>
 <p>Spróbujmy wygenerować 5000 liczb o rozkładzie wykładniczym. Następnie obliczymy sobie histogram, unormujemy
 go i porównamy z teoretycznym rozkładem dla kilku wartości <span class="math">\(\lambda = 0.5, 1, 1.5\)</span>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="n">a</span> <span class="o">*</span> <span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">a</span> <span class="o">*</span> <span class="n">xi</span><span class="p">)</span>
-<span class="n">F</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span> <span class="o">=</span> <span class="o">-</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">u</span><span class="p">)</span><span class="o">/</span><span class="n">a</span>
-<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
-<span class="n">kolor</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="s">&quot;blue&quot;</span><span class="p">]</span>
-<span class="n">parlist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.5</span><span class="p">]</span>
-<span class="n">p</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">par</span> <span class="ow">in</span> <span class="n">parlist</span><span class="p">:</span>
-  <span class="n">lista</span> <span class="o">=</span> <span class="p">[</span><span class="n">F</span><span class="p">(</span><span class="n">random</span><span class="p">(),</span> <span class="n">par</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="n">N</span><span class="p">)]</span>
-  <span class="n">v</span> <span class="o">=</span> <span class="n">finance</span><span class="o">.</span><span class="n">TimeSeries</span><span class="p">(</span><span class="n">lista</span><span class="p">)</span>
-  <span class="n">P</span> <span class="o">=</span> <span class="n">v</span><span class="o">.</span><span class="n">plot_histogram</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">kolor</span><span class="p">[</span><span class="n">parlist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">par</span><span class="p">)],</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span><span class="p">)</span>
-  <span class="n">P</span><span class="o">.</span><span class="n">set_aspect_ratio</span><span class="p">(</span><span class="s">&quot;automatic&quot;</span><span class="p">)</span>
-  <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">P</span><span class="p">)</span>
-  <span class="n">p</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">plot</span><span class="p">(</span><span class="n">f</span><span class="p">(</span><span class="n">xi</span><span class="p">,</span><span class="n">par</span><span class="p">),</span> <span class="mi">0</span><span class="p">,</span> <span class="nb">max</span><span class="p">(</span><span class="n">lista</span><span class="p">),</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">color</span><span class="o">=</span><span class="n">kolor</span><span class="p">[</span><span class="n">parlist</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="n">par</span><span class="p">)],</span>
-  <span class="n">legend_label</span><span class="o">=</span><span class="s">r&#39;$\lambda = </span><span class="si">%.1f</span><span class="s">$&#39;</span><span class="o">%</span><span class="n">par</span><span class="p">))</span>
-<span class="nb">sum</span><span class="p">(</span><span class="n">p</span><span class="p">)</span><span class="o">.</span><span class="n">show</span><span class="p">(</span><span class="n">xmin</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">xmax</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">figsize</span><span class="o">=</span><span class="mi">5</span><span class="p">,</span> <span class="n">axes_labels</span><span class="o">=</span><span class="p">[</span><span class="s">r&#39;$\xi$&#39;</span><span class="p">,</span><span class="s">r&#39;$\lambda e^{-\lambda \xi}$&#39;</span><span class="p">],</span> <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
-</pre></div>
-</div>
-<p>Jak widać na rysunku liczby losowe przekształcone metodą inwersji w oparciu o odwrotność dystrybuanty, dość dobrze
-odwzorowują rozkład wykładniczy. Lepszy wynik można oczywiście uzyskać zwiększając parametry <tt class="docutils literal"><span class="pre">N</span></tt> oraz <tt class="docutils literal"><span class="pre">bins</span></tt>.</p>
-<div class="figure align-center">
-<img alt="Rozkład wykładniczy." src="../_images/r_exp_hist.png" />
-<p class="caption">Wykres gęstości rozkładu wykładniczego oraz histogram z 5000 prób liczb losowych dla trzech wartości parametru
-<span class="math">\(\lambda\)</span>.</p>
-</div>
-<p>Alternatywnie można wykorzystać przekształcenie bazujące na spostrzeżeniu, że liczby <span class="math">\(1-u\)</span> oraz
+<div class='sage'><script type='text/x-sage'>f(xi, a) = a * exp(-a * xi)
+F(u, a) = -log(1-u)/a
+N = 5000
+kolor = ["red", "green", "blue"]
+parlist = [1.5, 1, 0.5]
+p = []
+for par in parlist:
+  lista = [F(random(), par) for i in xrange(N)]
+  v = finance.TimeSeries(lista)
+  P = v.plot_histogram(bins=100, color=kolor[parlist.index(par)], alpha=0.5)
+  P.set_aspect_ratio("automatic")
+  p.append(P)
+  p.append(plot(f(xi,par), 0, max(lista), thickness=2, color=kolor[parlist.index(par)],
+  legend_label=r'$\lambda = %.1f$'%par))
+sum(p).show(xmin=0, xmax=5, figsize=5, axes_labels=[r'$\xi$',r'$\lambda e^{-\lambda \xi}$'], fontsize=12)</script></div><p>Alternatywnie można wykorzystać przekształcenie bazujące na spostrzeżeniu, że liczby <span class="math">\(1-u\)</span> oraz
 <span class="math">\(u (u \in U(0,1)\)</span> posiadają ten sam rozkład <cite>U(0,1)</cite>.</p>
 </div>
 <div class="section" id="rozklad-cauchy-ego">
@@ -537,15 +500,6 @@ Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.</dd>
 <dd>Wygeneruj 1000 liczb losowych z rozkładem trójkątnym. Narysuj ich unormowany histogram oraz funkcję gęstości.
 Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.</dd>
 </dl>
-</div>
-</div>
-</div>
-<div class="section" id="zadania">
-<h2>Zadania<a class="headerlink" href="#zadania" title="Stały odnośnik do tego nagłówka">¶</a></h2>
-<dl class="docutils">
-<dt>Zad</dt>
-<dd>Ile jest 2 + 2</dd>
-</dl>
 <hr class="docutils" />
 <table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
@@ -561,6 +515,9 @@ Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.</dd>
 chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach losowych.</td></tr>
 </tbody>
 </table>
+<hr class="docutils" />
+</div>
+</div>
 </div>
 </div>
 
@@ -573,7 +530,7 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
   <div class="sphinxlocaltoc">
   <h3><a href="../index.html">Spis treści</a></h3>
   <ul>
-<li><a class="reference internal" href="#">Liczby Losowe</a><ul>
+<li><a class="reference internal" href="#">Liczby losowe</a><ul>
 <li><a class="reference internal" href="#liczby-losowe-i-pseudolosowe">Liczby losowe i pseudolosowe</a></li>
 <li><a class="reference internal" href="#generatory-liczb">Generatory liczb</a><ul>
 <li><a class="reference internal" href="#generatory-sprzetowe">Generatory sprzętowe</a></li>
@@ -596,15 +553,17 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
 </li>
 </ul>
 </li>
-<li><a class="reference internal" href="#zadania">Zadania</a></li>
 </ul>
 </li>
 </ul>
 
   </div>
   <h4>Poprzedni temat</h4>
-  <p class="topless"><a href="../ch2/chII011.html"
-                        title="poprzedni rozdział">Determinizm a przewidywalność</a></p>
+  <p class="topless"><a href="../ch2/chII012.html"
+                        title="poprzedni rozdział">Scenariusz przejścia do chaosu</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="chV012.html"
+                        title="następny rozdział">Równania różniczkowe zwyczajne</a></p>
   <h3>Ta strona</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/ch5/chV011.txt"
@@ -637,7 +596,10 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
           <a href="../genindex.html" title="Indeks ogólny"
              >indeks</a></li>
         <li class="right" >
-          <a href="../ch2/chII011.html" title="Determinizm a przewidywalność"
+          <a href="chV012.html" title="Równania różniczkowe zwyczajne"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ch2/chII012.html" title="Scenariusz przejścia do chaosu"
              >wstecz</a> &nbsp; &nbsp;</li>
   <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
    
@@ -648,7 +610,7 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Oct 24, 2013.
+    Ostatnia modyfikacja Oct 26, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

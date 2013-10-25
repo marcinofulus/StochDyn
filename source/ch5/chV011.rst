@@ -1,8 +1,15 @@
-Liczby Losowe
+.. -*- coding: utf-8 -*-
+
+Liczby losowe
 =============
 
 .. highlight:: python
   :linenothreshold: 5
+
+.. note::
+
+  W tym kursie do numerycznych realizacji używać będziemy pakietu Sage_. Jest to dostępny dla 
+  każdego program typu open-source bazujacy na języku Python_.
 
 Liczby losowe i pseudolosowe
 ----------------------------
@@ -27,13 +34,21 @@ co odpowiada oczywiście wyrzuceniu kolejno
 
 W naszym przypadku zapiszemy sobie te liczby od razu do listy w notatniku Sage. 
 
-.. sagecellserver::
-    :is_verbatim: True
-  
-    rzuty = [0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1]
-    print rzuty
+.. only:: latex
 
-.. end of input
+  .. code-block:: python
+    
+    rzuty = [0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1]
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+    
+      rzuty = [0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1]
+      print rzuty
+
+  .. end of input
 
 Mamy teraz je dostępne pod zmienną ``rzuty``. Do prostych zagadnień, gdzie potrzebne jest nam
 kilka, czy nawet kilkanaście takich liczb, bez problemu możemy poradzić sobie rzucając monetą.
@@ -68,26 +83,43 @@ bibliotek.
 W Sage liczby losowe uzyskuje się poprzez funkcję ``random()``. Zwraca ona liczbę losową z przedziału 
 ``[0.0, 1.0)``. Wykorzysując proste wyrażenie listowe możemy przypisać do listy N liczb losowych.
 
-.. sagecellserver::
-    :is_verbatim: True
-     
-    N = 10
-    lista = [random() for i in xrange(N)]
-    print lista
+.. only:: latex
 
-.. end of input
+  .. code-block:: python
+
+    N = 1000
+    lista = [random() for i in xrange(N)]
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+       
+      N = 10
+      lista = [random() for i in xrange(N)]
+      print lista
+
+  .. end of input
 
 Inna funkcja ``randint(a, b)``, zwraca liczby całkowite z przedziału ``[a,b]``. Czyli symulacja rzutu
 monetą może być zrealizowana poprzez
 
-.. sagecellserver::
-    :is_verbatim: True
-    
-    N = 10
-    rzut_moneta = [randint(0,1) for i in xrange(N)]
-    print rzut_moneta
+.. only:: latex
 
-.. end of input
+  .. code-block:: python
+
+    rzut_moneta = [randint(0,1) for i in xrange(N)]
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+      
+      N = 10
+      rzut_moneta = [randint(0,1) for i in xrange(N)]
+      print rzut_moneta
+
+  .. end of input
 
 Zadanie 2.2.1
   **Zamodeluj w Sage rzut kością.** Wygeneruj listę 1000 liczb odzwierciedlających 1000 rzutów symetryczną
@@ -193,24 +225,50 @@ mnożnik ustawimy jako jego pierwiastek pierwotny. Szczególnie ważne wydają s
 :math:`2^p -1`, nazywane liczbami Mersenne'a. Na maszynach 32-bitowych popularnym wyborem bywa para 
 :math:`m=2^{31}-1` i jej pierwiastek pierwotny :math:`a=7^5=16807`.
 
-Implementacja LCG w Sage nie powinna nastręczać zbytnich problemów:
+Implementacja LCG w Sage nie powinna nastręczać zbytnich problemów.
 
-.. code-block:: python
+.. only:: latex
+
+  .. code-block:: python
+    
+    def myLCG(x, a=1664525, b=1013904223, m=2**32):
+      return mod(a*x+b,m)
+
+  Możemy teraz wygenerować N liczb używając LCG i zmagazynowac je w pythonowskiej liście. 
   
-  def myLCG(x, a=1664525, b=1013904223, m=2**32):
-    return mod(a*x+b,m)
+  .. code-block:: python
 
-Możemy teraz wygenerować N liczb używając LCG i zmagazynowac je w pythonowskiej liście. 
+      def get_from_LCG(n=1, seed=123):
+        ret = [seed]
+        for i in xrange(n-1):
+          ret.append(myLCG(ret[i]))
+        return ret
 
-.. code-block:: python
+      lcg_list = get_from_LCG(N)
 
-  def get_from_LCG(n=1, seed=123):
-    ret = [seed]
-    for i in xrange(n-1):
-      ret.append(myLCG(ret[i]))
-    return ret
 
-  lcg_list = get_from_LCG(N)
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: def myLCG(x, a=1664525, b=1013904223, m=2**32):
+      ...     return mod(a*x+b,m)
+      sage: #
+      sage: def get_from_LCG(n=1, seed=123):
+      ...     ret = [seed]
+      ...     for i in xrange(n-1):
+      ...       ret.append(myLCG(ret[i]))
+      ...     return ret
+      sage: #
+      sage: N = 1000
+      sage: lcg_list = get_from_LCG(N)
+      sage: list_plot(lcg_list, figsize=4)
+
+  .. end of input
+
+
+Powinniśmy dostać rysunek podobny do tego poniżej.
 
 .. figure:: images/01/sage0.png
    :alt: liczby losowe wygenerowane przy pomocy mylcg
@@ -219,6 +277,7 @@ Możemy teraz wygenerować N liczb używając LCG i zmagazynowac je w pythonowsk
    1000 liczb losowych wygenerowanych generatorem liniowym LCG
 
 Jak widać, program generuje liczby losowe z zakresu [0,m). 
+
 
 Rejestr przesuwający z liniowym sprzężeniem zwrotnym
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -246,25 +305,67 @@ na odcinku [0,1) (co często oznaczane jest poprzez :math:`U(0,1)`).
 Aby uzyskać liczbę z przedziału [0,12.76)
 wystarczy po prostu pomnożyć liczbę zwracną przez ``random()`` przez prawą granicę 
 
-.. code-block:: python
+.. only:: html
 
-  random()*12.76
+  .. sagecellserver::
+      :is_verbatim: True
+
+    random()*12.76
+
+  .. end of input  
+
+.. only:: latex
+
+  .. code-block:: python
+
+    random()*12.76
+
 
 a żeby uzyskać listę 123 liczb z przedziału [-13.3, 33.1) należy wykonać
 
-.. code-block:: python
 
-  [random(33.1+13.3) - 13.3 for i in xrange(123)]
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+    [random()*(33.1+13.3) - 13.3 for i in xrange(123)]
+
+  .. end of input  
+
+
+.. only:: latex
+
+  .. code-block:: python
+
+    [random()*(33.1+13.3) - 13.3 for i in xrange(123)]
+
 
 W ogólności do wygenerowania listy N liczb losowych z przedziału [A,B) należy użyć polecenia
 
-.. code-block:: python
 
-  N = 100
-  A = -10
-  B = 20
-  [random(B-A) + A for i in xrange(N)]
+.. only:: latex
+
+  .. code-block:: python
+
+    N = 100
+    A = -10
+    B = 20
+    [random()*(B-A) + A for i in xrange(N)]
   
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+    N = 100
+    A = -10
+    B = 20
+    [random()*(B-A) + A for i in xrange(N)]
+
+  .. end of input  
+
+
 Zadanie 2.2.2
   Zmodyfikuj definicję ``mylcg`` tak, aby funkcja zwracała liczby losowe z przedziału [0,1).
 
@@ -304,33 +405,35 @@ klasowych. Jeżeli `n` oznacza liczbę wszystkich obserwacji, a `k` to liczba pr
 
   n = \sum_{i=1}^k m_i
 
-Ideę histogramu najlepiej zrozumiec na przykładzie.
-  Mamy następującą listę liczb 
+Ideę histogramu najlepiej zrozumiec na przykładzie. Mamy następującą listę liczb 
+
+.. code-block:: python
+
+  l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+
+Budując histogram na początku musimy ustalić szerokość przedziału. Zacznijmy od łatwiejszej wersji: niech
+szerokość będzie stała. Najlepiej podzielić ową listę na przedziały zawierające liczby całkowite. W zasadzie
+wystarczy zliczać ile jest poszczególnych liczb całkowitych w liście l. Zróbmy to. Widzimy, że mamy 
+
+== == == == == == == == == == ==
+-5 -4 -3 -2 -1 0  1  2  3  4  5
+== == == == == == == == == == ==
+1  1  3  1  2  0  3  1  2  4  2
+== == == == == == == == == == ==
+
+W zasadzie mamy już nasz histogram. Jeżeli posumujemy ilość elementów listy (``len(l)``), oraz obliczymy `n` 
+zobaczymy, że dostaniemy tą samą liczbę (=20). Pozostaje narysować ów histogram. Na odciętej musimy odłożyć
+przedziały klasowe a na rzędnej liczebności danego przedziału. Przyjęło się rysować histogram używając
+słupków. Sage na chwilę obecną posiada kilka metod narysowania takiego histogramu. Jeżeli nie zależy nam na
+poprawnym opisaniu odciętej (np: chcemy tylko zobaczyć kształt histogramu), wystarczy napisać
+
+.. only:: latex
 
   .. code-block:: python
 
-    l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
-
-  Budując histogram na początku musimy ustalić szerokość przedziału. Zacznijmy od łatwiejszej wersji: niech
-  szerokość będzie stała. Najlepiej podzielić ową listę na przedziały zawierające liczby całkowite. W zasadzie
-  wystarczy zliczać ile jest poszczególnych liczb całkowitych w liście l. Zróbmy to. Widzimy, że mamy 
-
-  == == == == == == == == == == ==
-  -5 -4 -3 -2 -1 0  1  2  3  4  5
-  == == == == == == == == == == ==
-  1  1  3  1  2  0  3  1  2  4  2
-  == == == == == == == == == == ==
-  
-  W zasadzie mamy już nasz histogram. Jeżeli posumujemy ilość elementów listy (``len(l)``), oraz obliczymy `n` 
-  zobaczymy, że dostaniemy tą samą liczbę (=20). Pozostaje narysować ów histogram. Na odciętej musimy odłożyć
-  przedziały klasowe a na rzędnej liczebności danego przedziału. Przyjęło się rysować histogram używając
-  słupków. Sage na chwilę obecną posiada kilka metod narysowania takiego histogramu. Jeżeli nie zależy nam na
-  poprawnym opisaniu odciętej (np: chcemy tylko zobaczyć kształt histogramu), wystarczy napisać
-
-  .. code-block:: python
-    
     h = [l.count(i) for i in range(-5,6)]
     bar_chart(h, width=1, color="orangered").show(axes_labels=['$i$','$\#$'], title="histogram")
+
 
   Co pozwoli nam wygenerować taki rysunek:
 
@@ -338,21 +441,36 @@ Ideę histogramu najlepiej zrozumiec na przykładzie.
     :alt: bar_chart liczebności
     :align: center
 
-    Prosty wykres liczebności, gdzie wykorzystaliśmy funkcję box_plot().
+    Prosty wykres liczebności, gdzie wykorzystaliśmy funkcję bar_chart().
 
-  Nie jest to prawdziwy histogram, bowiem odłożone na osi OY liczebności powinny odpowiadać rzeczywistym 
-  wartościom (przedziałom). Możemy skorzystać z pakietu ``Time Series`` dostępnego w Sage. Wystarczą
-  prosta komenda aby uzyskać dostęp do wielu statystycznych funkcji typowych dla analizy szeregu czasowego.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+    l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+    h = [l.count(i) for i in range(-5,6)]
+    bar_chart(h, width=1, color="orangered").show(axes_labels=['$i$','$\#$'], title="histogram")
+
+  .. end of input  
+
+
+Nie jest to prawdziwy histogram, bowiem odłożone na osi OY liczebności powinny odpowiadać rzeczywistym 
+wartościom (przedziałom). Możemy skorzystać z pakietu ``Time Series`` dostępnego w Sage. Wystarczą
+prosta komenda aby uzyskać dostęp do wielu statystycznych funkcji typowych dla analizy szeregu czasowego.
+
+.. only:: latex
 
   .. code-block:: python
 
     v = finance.TimeSeries(l)
-  
+
   I teraz aby obliczyć histogram dla 10 równych przedziałów (od minimalnej do maksymalnej wartości występującej
   w liście ``l``), wystarczy napisać
 
   .. code-block:: python
-    
+  
     v.histogram(bins=11)
 
   a aby narysować jego wykres
@@ -365,7 +483,23 @@ Ideę histogramu najlepiej zrozumiec na przykładzie.
     :alt: histogram liczebności
     :align: center
 
-    Historgam dla listy ``l`` uzyskany z wykorzystaniem pakietu ``TimeSeries``
+    Histogram dla listy ``l`` uzyskany z wykorzystaniem pakietu ``TimeSeries``
+
+
+.. only:: html
+
+  Aby obliczyć histogram dla 10 równych przedziałów (od minimalnej do maksymalnej wartości występującej
+  w liście ``l``) i narysować jego wykres, wystarczy napisać
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+      v = finance.TimeSeries(l)
+      v.histogram(bins=11)
+      v.plot_histogram(bins=11, normalize=0, color="orangered", axes_labels=['$i$','$\#$'], figszie=4)
+
+  .. end of input  
 
 Oczywiście całą procedurę można powtórzyć dla liczb zmiennoprzecinkowych (rzeczywistych, wymiernych). W tym
 wypadku należałoby oczywiście policzyć ile posiadanych liczb wpada do zdefiniowanych "pudełek". Zobaczmy drugi
@@ -380,20 +514,38 @@ przykład, gdzie obliczymy i narysujemy w Sage histogram dla dziesięciu tysięc
 Przykład 2
   Wygenerujemy 10000 liczb losowych a następnie dla nich obliczymy i narysujemy histogram.
 
-  .. code-block:: python
-  
-    N = 10000
-    u01 = [random() for i in xrange(N)]
-    fu01 = lambda x: 0 if x < 0 or x > 1 else 1
-    v = finance.TimeSeries([random() for i in xrange(N)])
-    plot1 = plot(fu01,(-1,2), thickness=1, color="black")
-    plot2 = v.plot_histogram(bins=10, color="orangered")
-    (plot1 + plot2).show(axes_labels=[r'$\xi$',r'$U(0,1)$'])
+  .. only:: latex
 
-  Ostatnia linia wyrysuje nam obie funkcje na jednym wykresie. Zachęcam czytelnika do poeksperymentowania z
-  powyższym kodem - można zmienić liczbę prób `N` i łatwo zobaczyć jak histogram zaczyna oddalać się od
-  teoretycznego rozkładu dla małych N i jak zbliża się dla dużych. Można też zobaczyć jak ilość przedziałów
-  (parametr ``bins``) wpływa na otrzymany histogram.
+    .. code-block:: python
+    
+      N = 10000
+      u01 = [random() for i in xrange(N)]
+      fu01 = lambda x: 0 if x < 0 or x > 1 else 1
+      v = finance.TimeSeries([random() for i in xrange(N)])
+      plot1 = plot(fu01,(-1,2), thickness=1, color="black")
+      plot2 = v.plot_histogram(bins=10, color="orangered")
+      (plot1 + plot2).show(axes_labels=[r'$\xi$',r'$U(0,1)$'])
+
+  .. only:: html
+
+    .. sagecellserver::
+      :is_verbatim: True
+
+      N = 10000
+      u01 = [random() for i in xrange(N)]
+      fu01 = lambda x: 0 if x < 0 or x > 1 else 1
+      v = finance.TimeSeries([random() for i in xrange(N)])
+      plot1 = plot(fu01,(-1,2), thickness=1, color="black")
+      plot2 = v.plot_histogram(bins=10, color="orangered")
+      (plot1 + plot2).show(axes_labels=[r'$\xi$',r'$U(0,1)$'])
+
+    .. end of input  
+
+
+Ostatnia linia wyrysuje nam obie funkcje na jednym wykresie. Zachęcamy czytelnika do poeksperymentowania z
+powyższym kodem - można zmienić liczbę prób `N` i łatwo zobaczyć jak histogram zaczyna oddalać się od
+teoretycznego rozkładu dla małych N i jak zbliża się dla dużych. Można też zobaczyć jak ilość przedziałów
+(parametr ``bins``) wpływa na otrzymany histogram.
 
 .. figure:: images/01/u01_hist.png
   :alt: Wykres rozkładu jednorodnego na odcinku [0,1)
@@ -468,33 +620,59 @@ a jej odwrotność
 Spróbujmy wygenerować 5000 liczb o rozkładzie wykładniczym. Następnie obliczymy sobie histogram, unormujemy
 go i porównamy z teoretycznym rozkładem dla kilku wartości :math:`\lambda = 0.5, 1, 1.5`.
 
-.. code-block:: python
+.. only:: latex 
 
-  f(xi, a) = a * exp(-a * xi)
-  F(u, a) = -log(1-u)/a
-  N = 5000
-  kolor = ["red", "green", "blue"]
-  parlist = [1.5, 1, 0.5]
-  p = []
-  for par in parlist:
-    lista = [F(random(), par) for i in xrange(N)]
-    v = finance.TimeSeries(lista)
-    P = v.plot_histogram(bins=100, color=kolor[parlist.index(par)], alpha=0.5)
-    P.set_aspect_ratio("automatic")
-    p.append(P)
-    p.append(plot(f(xi,par), 0, max(lista), thickness=2, color=kolor[parlist.index(par)], 
-    legend_label=r'$\lambda = %.1f$'%par))
-  sum(p).show(xmin=0, xmax=5, figsize=5, axes_labels=[r'$\xi$',r'$\lambda e^{-\lambda \xi}$'], fontsize=12)
+  .. code-block:: python
 
-Jak widać na rysunku liczby losowe przekształcone metodą inwersji w oparciu o odwrotność dystrybuanty, dość dobrze 
-odwzorowują rozkład wykładniczy. Lepszy wynik można oczywiście uzyskać zwiększając parametry ``N`` oraz ``bins``.
+    f(xi, a) = a * exp(-a * xi)
+    F(u, a) = -log(1-u)/a
+    N = 5000
+    kolor = ["red", "green", "blue"]
+    parlist = [1.5, 1, 0.5]
+    p = []
+    for par in parlist:
+      lista = [F(random(), par) for i in xrange(N)]
+      v = finance.TimeSeries(lista)
+      P = v.plot_histogram(bins=100, color=kolor[parlist.index(par)], alpha=0.5)
+      P.set_aspect_ratio("automatic")
+      p.append(P)
+      p.append(plot(f(xi,par), 0, max(lista), thickness=2, color=kolor[parlist.index(par)], 
+      legend_label=r'$\lambda = %.1f$'%par))
+    sum(p).show(xmin=0, xmax=5, figsize=5, axes_labels=[r'$\xi$',r'$\lambda e^{-\lambda \xi}$'], fontsize=12)
 
-.. figure:: images/01/r_exp_hist.png
-  :alt: Rozkład wykładniczy.
-  :align: center
 
-  Wykres gęstości rozkładu wykładniczego oraz histogram z 5000 prób liczb losowych dla trzech wartości parametru 
-  :math:`\lambda`.
+  Jak widać na rysunku liczby losowe przekształcone metodą inwersji w oparciu o odwrotność dystrybuanty, dość dobrze 
+  odwzorowują rozkład wykładniczy. Lepszy wynik można oczywiście uzyskać zwiększając parametry ``N`` oraz ``bins``.
+
+  .. figure:: images/01/r_exp_hist.png
+    :alt: Rozkład wykładniczy.
+    :align: center
+
+    Wykres gęstości rozkładu wykładniczego oraz histogram z 5000 prób liczb losowych dla trzech wartości parametru 
+    :math:`\lambda`.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+    f(xi, a) = a * exp(-a * xi)
+    F(u, a) = -log(1-u)/a
+    N = 5000
+    kolor = ["red", "green", "blue"]
+    parlist = [1.5, 1, 0.5]
+    p = []
+    for par in parlist:
+      lista = [F(random(), par) for i in xrange(N)]
+      v = finance.TimeSeries(lista)
+      P = v.plot_histogram(bins=100, color=kolor[parlist.index(par)], alpha=0.5)
+      P.set_aspect_ratio("automatic")
+      p.append(P)
+      p.append(plot(f(xi,par), 0, max(lista), thickness=2, color=kolor[parlist.index(par)], 
+      legend_label=r'$\lambda = %.1f$'%par))
+    sum(p).show(xmin=0, xmax=5, figsize=5, axes_labels=[r'$\xi$',r'$\lambda e^{-\lambda \xi}$'], fontsize=12)
+
+  .. end of input  
 
 Alternatywnie można wykorzystać przekształcenie bazujące na spostrzeżeniu, że liczby :math:`1-u` oraz
 :math:`u (u \in U(0,1)` posiadają ten sam rozkład `U(0,1)`.
@@ -562,19 +740,6 @@ Zadanie 2.3.2.
   Wygeneruj 1000 liczb losowych z rozkładem trójkątnym. Narysuj ich unormowany histogram oraz funkcję gęstości. 
   Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
 
-Zadania
--------
-
-Zad
-  Ile jest 2 + 2
-
-.. Skąd to Pitagoras wiedział??? :math:`a^2 + b^2 = c^2`
-
-.. .. math::
-
-..   (a + b)^2  &=  (a + b)(a + b) \\
-              &=  a^2 + 2ab + b^2
-
 
 ----------------------------
 
@@ -583,3 +748,13 @@ Zad
 
 .. [#] Od tej chwili będziemy zawsze pisać *liczba losowa* a mieć na myśli *liczbę pseudolosową*, 
    chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach losowych.
+
+
+
+
+----------------
+
+.. _Sage: http://sagemath.org/
+.. _Python: http://python.org/
+
+
