@@ -1,0 +1,2171 @@
+ \documentclass[authoryear,draft,1p,times]{elsarticle}
+%\documentclass[chaos,twocolumn,aps,superscriptaddress,showpacs,floatfix]{revtex4}
+%\documentclass[chaos,aps,doublespace,superscriptaddress,showpacs,floatfix]{revtex4}
+%\documentclass[draft,12pt]{revtex4}
+%\documentclass[aps,pre,twocolumn,groupedaddress,floatfix]{revtex4}
+%\documentstyle[12pt]{article}
+%\usepackage{graphicx}
+
+
+
+
+
+
+
+\usepackage{amssymb}
+
+\usepackage{amsmath}
+\usepackage{bbm}
+\bibliographystyle{apsrev}
+
+%\let\labelm\label\renewcommand{\label}[1]{\fbox{\tt #1}\labelm{#1}}
+\newcommand{\be}{\begin{equation}}
+\newcommand{\ee}{\end{equation}}
+\newcommand{\bea}{\begin{eqnarray}}
+\newcommand{\eea}{\end{eqnarray}}
+
+
+\renewcommand{\=}{\stackrel{\mathrm{d}}{=}}
+\newcommand{\df}{\stackrel{\mathrm{df}}{=}}
+\newcommand{\e}{\mathrm{e}}
+\newcommand{\Ld}{P_{\alpha,\beta}}
+\renewcommand{\S}{S_{\alpha}(\sigma,\beta,\mu)}
+\newcommand{\sign}{\mathrm{sign}}
+\newcommand{\betam}{\beta_{\mathrm{max}}}
+\newcommand{\dpp}{\vec{\partial}_x}
+
+
+\journal{Physics Report}
+
+\begin{document}
+
+\begin{frontmatter}
+
+% Title, authors and addresses
+
+% use the tnoteref command within \title for footnotes;
+% use the tnotetext command for theassociated footnote;
+% use the fnref command within \author or \address for footnotes;
+% use the fntext command for theassociated footnote;
+% use the corref command within \author for corresponding author footnotes;
+% use the cortext command for theassociated footnote;
+% use the ead command for the email address,
+% and the form \ead[url] for the home page:
+% \title{Title\tnoteref{label1}}
+% \tnotetext[label1]{}
+% \author{Name\corref{cor1}\fnref{label2}}
+% \ead{email address}
+% \ead[url]{home page}
+% \fntext[label2]{}
+% \cortext[cor1]{}
+% \address{Address\fnref{label3}}
+% \fntext[label3]{}
+
+\title{Practical algorithms for studying noisy  systems }
+
+% use optional labels to link authors explicitly to addresses:
+% \author[label1,label2]{}
+% \address[label1]{}
+% \address[label2]{}
+
+\author{M. Kostur, J. {\L}uczka and P. H\"anggi}
+
+\address{Institute of Physics, University of Augsburg, Augsburg, Germany}
+
+\begin{abstract}
+% Text of abstract
+
+During  the last decade, modeling of dynamical and nonlinear processes perturbed by random fluctuations and noise have become increasingly popular in various branches in sciences, from physics, through chemistry and biology, to financial data, network traffic, acoustic signals and storage processes, to mention only several.  There are mathematical books, surveys   and thousands papers in all disciplines on stochastic modeling,  
+ tools and methods  which only experts can follow.  It is good time to provide  a self-contained overview,  as simple  as possible in presentation,  on the most popular schemes of modeling in terms of Langevin equations with various noises and practical algorithms to analyze such equations with respect to different aspects: random trajectories, probability distributions, statistical moments,  master equations, etc.  
+We want to acquaint readers with theoretical fundamentals and  numerical methods of analysis of selected classes of   noisy processes. We hope that our presentation will be understandable for nonspecialists and  young researches not only from physics.  Therefore, we want to: \\
+-introduce  only the most exploited  models of fluctuations which have been applied with success in different branches of sciences\\
+- avoid precise  mathematical definitions but our statements are mathematically precise  and   are based  on theorems which we are not going to present them\\
+- provide   comprehensive practical guide for modern numerical methods and  algorithms, which can be available on web-page and which can be modified by other users\\
+-use correct terminology and correct expressions (in literature there is chaos and confusion, 
+in particular on Levy processes, Levy flights, Levy noise, etc).  
+ 
+The paper  is accompanied by numerical library and examples how to use  this library 
+to illustrate each methods, ready to immediate application and further development and research. The library and collection of examples are licenced under GPL and potential users might extent their functionality. The rule is that every algorithm or  method in the paper can be immediately tried our by the reader on PC and fitted or extended to  particular needs.
+We observe extremely fast  development of computers. Therefore  arguments that  some algorithms are better because are faster is not now justified. For example, let 
+there are two algorithms  of the same precision and say,  number 1 is much simpler but is a little bit slower, number 2 is more complicated but a little bit faster, we prefer to present the algorithm number  1.  Non-experts support our choice. Experts can make modifications 
+without any problems. The reader will judge whether we did our work as we promised. \\
+
+%\noindent TECHNICAL REMARKS on SOFTWARE
+
+%Stochastic simulation schemes are implemented with GSL (GNU Scientific Library), as an "extension" and further on may become an integral part of GSL. The aim is to standarize the schemes for  SDE-s  to the same degree as is in done in the case of ODE-s.
+
+%Methods connected with Master equations require some more sophisticated solutions. Promising, and very generic tool for 2D Fokker-Planck type equation is freefrem++ . It can handle variety of schemes like - discontinues Galerkin, SUPG stabilization etc. and moving mesh. Code is portable, win32/mac/linux versions are available. Currently is being tested with FHN/ANM system.
+%Spectral methods will be presented with  the matlab/octave.
+
+\end{abstract}
+
+\begin{keyword}
+nonlinear systems, Langevin equations, master equations, simulations, 
+ numerical algorithms
+% keywords here, in the form: keyword \sep keyword
+
+% PACS codes here, in the form: \PACS code \sep code
+
+% MSC codes here, in the form: \MSC code \sep code
+% or \MSC[2008] code \sep code (2000 is the default)
+
+\end{keyword}
+
+\end{frontmatter}
+
+% main text
+\section*{ Introduction }
+%\label{intro}
+
+\section{Description and modeling of processes by differential equations} 
+
+\section{Classes of stochastic ordinary differential equations}
+
+\subsection{Equations with linear and nonlinear noise}
+\subsection{Differential Langevin equations}
+\subsection{Generalized Langevin equations}
+
+\section{Models of essential random processes and noises}
+
+\subsection{Levy processes and Levy white noise}
+\subsubsection{Gaussian  white  noise}
+\subsubsection{Poissonian white noise}
+\subsubsection{Levy $\alpha$- stable processes} 
+\subsection{Correlated  Markov processes} 
+\subsubsection{Gaussian   noise}
+\subsubsection{Dichotomic  noise}
+\subsubsection{Kangaroo  process}
+
+\section{Langevin equations and corresponding  master equations}
+
+\subsection{Equations with Levy white noise}
+\subsubsection{Gaussian white noise}
+\subsubsection{Poissonian  white noise}
+\subsubsection{Levy $\alpha$-stable noise}
+\subsection{Equations with correlated Markov processes}
+\subsubsection{Gaussian noise}
+\subsubsection{Dichotomic noise}
+\subsubsection{Kangaroo process} 
+
+\section{Systems in contact with thermostat: Generalized Langevin equations}
+
+\section{Random numbers and processes}
+
+\subsection{Uniformly distributed numbers}
+\subsection{Generating arbitrary distribution}
+\subsubsection{Transformation method: Box Mueller}
+\subsubsection{Rejection Method}
+\subsubsection{Efficient algorithms for Gaussian, Poissonian and Levy distributions}
+\subsection{Generation of  correlated noises:  Gaussian, dichotomic, kangaroo}
+\newpage
+
+\section{ Simulations of Langevin equations with various noises}
+
+\subsection{Euler scheme}
+\subsection{Higher order schemes: Milshtein, Heun}
+\subsection{Adaptive schemes: Brownian bridge}
+\subsection{Fourier synthesis of  Gaussian noise with given spectrum}
+\subsection{Special methods of integration dichotomic and Poissonian noises}
+\subsection{Solution near the boundary}
+
+%\newpage
+\section{Numerical  solutions  of master equations} 
+
+\subsection{Finite Element Method}
+\subsubsection{Solving drift dominated problems: upwind schemes}
+\subsubsection{Periodic boundary conditions}
+\subsubsection{Discontinuous Galerkin method}
+\subsection{Finite Difference Method}
+\subsection{Spectral methods}
+\subsubsection{Continued Fractions Methods}
+
+
+\section{Selected  examples of applications }
+
+\subsection{Bistability}
+\subsection{Stochastic resonance}
+\subsection{Brownian Motors}
+\subsection{Ion channels}
+\subsection{Reaction diffusion systems: nonlinear advection-diffusion problem}
+\subsection{Solution of integro-differential mean field equation}
+
+
+\section{Practical computational issues }
+
+\subsection{Program parallalization using MPI system}
+\subsection{Best practices and programming tips}
+
+
+
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%5
+
+
+\newpage
+
+\section*{Introduction}
+
+Each theory has its own  language, tools, concepts and methods. Theory of random processes 
+and fluctuations is based on  theory of stochastic processes which, in turn, is based on the modern probability theory.  So, this theory  seems to be obscure.  On the other hand, random processes and fluctuations are everywhere: we live  close by or with them be aware or more frequently not aware of  their existence and symbiotic or parasitic influence. 
+There is a prevailing opinion that randomness and fluctuations are   undesirable and desctructive, mainly because they are not predictilable.  Nothing the most  fallacious! 
+Our fundamental living processes need fluctuations: thermal, non-termal, equilibrium, and non-equilibrium. In real world, they are surely correlated. However,  if we want to understand 
+influence of fluctuations and random perturbations on processes, in modeling we frequently 
+use the method of idealizations. It is the first step: simplify as much as possible but do not lose 
+indispensable ingredients and feature.  Complications in modeling are always possible but not necessarily lead to  better understanding of phenomena or processes.  Therefore modeling of  fluctuations  is frequently based on non-correlated  (white) noise. Evolution equations with  white noise have played  an extremely important role in development of modern theory of stochastic  processes. 
+
+
+Stochastic differential equations    have been 
+successfully  applied to analysis of a great  number of 
+phenomena and diverse   physical, chemical, biological, 
+sociological and economic systems. 
+It is a frequent case that 
+dynamics of complex and  multicomponent processes
+can  effectively be described
+by stochastic differential equations of the  type 
+%
+\begin{eqnarray}
+\label{1}
+\dot {\vec x} =  {\vec F}({\vec x}, {\vec \xi} (t)), 
+\end{eqnarray}
+%
+where the $n$-dimensional vector ${\vec x} \equiv {\vec x}(t)$ corresponds
+to components of the process and ${\vec \xi} (t)$ is a $k$-dimensional
+set of stochastic processes  which 
+characterizes fluctuations of
+external and/or internal degrees of freedom, random perturbations,  
+ noise and fluctuations of some  parameters characterizing the system.
+In many cases we are not interested in a full and  detailed 
+ description of the process in the
+extended $(n+k)$-dimensional phase space $\{{\vec x}, {\vec \xi}\}$
+but rather in the projected $m$-dimensional subspace, where $m \le n$. 
+It is a long-studied problem
+of contraction of the system description
+which appears in various branches of science. 
+ We  present  different  versions of the above equation in which  random part is 
+reprezented by Gaussian white noise, Poission white noise,  dichotomic noise or kangaroo 
+process.   For a  system in contact with thermostat, 
+dynamics is determined by a generalized Langevin (in a general case integro-differential) 
+equation with additive noise in the form which follows from the fluctuation-dissipation theorem.  Nonequilibrium systems can be modeled by the Langevin-type  equations 
+with the multilpicative noise.  In the paper, we will consider processes described by  
+the equation   
+%
+\begin{eqnarray}
+\label{2}
+\dot {\vec x} =  \vec {\mathbf  F}({\vec x}) + \mathbbm{G}({\vec x}) \ast {\vec \xi} (t), 
+\end{eqnarray}
+%
+where  $ \vec {\mathbf  F}$ is a vector function,   $ {\hat G}$ is a  matrix,  the vector ${\vec \xi}(t)$ is a set of  stochastic processes  and the symbol $\ast$ denotes the matrix multiplication. Noise term  enters linearly into (2).  In some cases, noise can also enter nonlinearly. 
+The equivalent form of the above equation reads 
+%
+\begin{eqnarray}
+\label{2}
+\dot x_i =   F_i(x_1, ..., x_n) + \sum_{j=1}^n G_{ij}(x_1, ...,x_n) \;  \xi_j (t),  
+\quad i=1,2,..., n. 
+\end{eqnarray}
+%
+A variety of methods have been elaborated
+to obtain  master equations coresponding to the system (2). Examples are:
+the Lax-van Kampen approach \cite{lax,van,west},
+projection operators \cite{mar}, functional methods \cite{func1,wio,func2} and
+operator methods \cite{hake,lucz1,lucz2}. Unfortunately, even in the simplified one-dimensional   case, a solution  of an evolution equation for the probability distribution $P(x,t)$ 
+of  the process $x(t)$  is extremely difficult to find. 
+A stationary probability distribution $P_{st}(x)$ is not
+known for an arbitrary form of the vector function ${\vec F}$ and the matrix ${\hat G}$.
+
+
+    This paper is essentially divided into two main parts. In the first, basic information on the most popular noises explioted in  modeling is  presented.  Moreover, Langevin equations with various sources on noise is presented and coreponding master equations are enclosed to each Langevin equation.  In the second, numerical basis is presented. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section*{2. Models of essential processes and noises} 
+
+In a general sense, noise $\xi(t)$ is any stochastic process. 
+Sometimes, this notion is restricted to   stationary 
+stochastic process.  Sometimes we impose the condition  that its mean value is  finite and 
+ by  a re-definition  can always be put zero
+%
+\begin{eqnarray}
+\label{avnoise}
+m(t) = \langle \xi(t)\rangle = 0. 
+\end{eqnarray} 
+%
+Sometimes models of  noise which the first moment (and all moments) diverges are also used in Langevin-type equations. This drawback can be removed by taking symmetrized version of such noises which can be transformed to a process of   zero-mean.  
+We do not demand that $\xi(t)$ is Markovian. It can be non-Markovian as well.
+If we consider $\xi(t)$ to be a stationary process then Its correlation function depends on absolute difference of two time-moments, 
+%
+\begin{eqnarray}
+\label{correl}
+C(t-s)=   \langle \xi(t) \xi(s) \rangle. 
+\end{eqnarray} 
+%
+White noise is defined  as a stationary process with a flat power spectral density (i.e. it d oes not depend on frequency)  and 
+its Fourier transform, which  corresponds to the correlation function 
+of noise, is the Dirac $\delta$-function. 
+On the other hand, for colored noise, the power spectrum contains 
+ a parameter 
+which has the unit of time and it can be identified with the correlation time 
+of noise.  
+Therefore  the term 'colored noise' 
+is equivalent to the  term 'correlated noise' which 
+in the limiting case can tend to the Dirac $\delta$-correlated 
+stochastic process, $C(t) \to \delta (t)$, where $\delta (t)$ is the 
+Dirac delta function.  In this 
+sense, we will use these two terms as synonyms.  In Nature, white 
+noise does not 
+occur. It is  an idealization as  other idealizations used in 
+our imperfect description of real phenomena. 
+More adequate description would be based on correlated noise 
+(correlated fluctuations).  
+However, white noise is a good idealization in such systems 
+for which characteristic 
+time-scales are much greater that the correlation time of noise 
+(fluctuations) and this correlation time is the smallest 
+characteristic time.   
+Below we present several  frequently used (trendy) classes of noise. 
+The presentation starts not from general description of   noises but rather 
+popularity  determine its schedule.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Levy noise} 
+
+There are two 'popular' classes of white noise: Gaussian and Poissonian (shot) noises. 
+Via equations like (\ref{2}), they generate Markov processes. 
+In some sense, the above mentioned white noises are 
+ more stochastic than any correlated noise.  
+In turn, processes driven by correlated noise,   
+like described by (\ref{2}), are non-Markovian processes. 
+Both Gaussian and shot white noise are time-derivative of the Wiener  and 
+ Poisson processes, respectively. Both the Wiener and Poisson processes are 
+particular cases of a huge class of L\'evy processes $L(t)$.  
+It also includes compound Poisson processes, generalized hyperbolic processes
+and $\alpha$-stable motion.    
+This class of processes  
+plays more and more important role, mainly due to relation  
+with anomalous diffusion and its possible applications in other branches 
+of sciences (e.g. financial data, network traffic, acoustic signals, storage processes) .  
+
+The definition of  the Levy process  $L = \{L(t), t\ge 0\}$ is rather simple \cite{levy}: it is a real 
+stochastic process which  everywhere is right-continuous,  has left limits everywhere and : \\
+(I)  $L$  starts from zero,  i.e. $L(0)=0$   \\
+(II)  $L$ has independent  increments, i.e.  $L(t_4) -L(t_3)$ and  $L(t_2) -L(t_1)$ 
+are independent random variables for any non-overlaping intervals $[t_1, t_2]$ and $[t_3, t_4]$ or, 
+ in other words,  for any  $0 \le t_1 \le t_2 \le t_3 \le t_4$ \\
+(III)  $L$ has stationary  increments, i.e.  the probability distribution of the random variable $L(t_2) -L(t_1)$ 
+depends on the time difference $t_2 -t_1$ for any $0 \le t_1 \le t_2$. \\
+(IV) $L$ is stochastically continuous, i.e. for every $t \ge 0$ and $\epsilon > 0$:  
+  \begin{center}
+$ \lim_{s\to t} P(|L(t) -L(s)|>\epsilon)=0$. 
+\end{center}
+
+From  (I) and (II) it follows \cite{papoulis}  that  for any   Levy process its correlation function takes the form 
+
+%
+\bea
+\label{Lcorr}
+\langle L(t) L(s) \rangle = 2D_0 \mbox{min} (t, s) \equiv 2D_0 [t  \theta(s-t) + s \theta(t-s)], 
+\eea
+% 
+where   $D_0 >0$ is constant. 
+
+The Levy process  is an example of random motion whose sample paths are right continuous and have a countable number of random jump discontinuities at random times, on each finite interval. 
+The path of a Levy process can be obtained as the almost-sure limit of a sequence of Brownian motions with drift interspersed with jumps of random size appearing at random times.  
+At any fixed time, $L(t)$ is a random variable which is infinitely divisable. 
+Therefore  its probability distribution is determined by the celebrated Levy-Khintchine formula 
+for the characteristic function 
+%
+\begin{eqnarray}  \label{lev1}
+C(\omega, t) = \langle \mbox{e}^{i\omega L(t)} \rangle = \mbox{e}^{t \psi(\omega)}, 
+\end{eqnarray}
+%
+with the Levy exponent 
+%
+\begin{eqnarray}  \label{lev2}
+ \psi(\omega) = ia_0 \omega -\frac{1}{2} b \omega^2  + 
+\int_{-\infty}^{\infty} \left[\mbox{e}^{i\omega y} - 1 - i\omega y {\mathbbm I}_{(-1,1)}(y) 
+\right]  \nu (dy), 
+\end{eqnarray}
+%
+where $a_0\in  R, b \ge 0, {\mathbbm I}_A(y)$ is the indicator function of the 
+ subset $A$ (or a characteristic function of a set having value 1 if $y \in A$  and 0 otherwise) and  $\nu$ is a Levy measure on  $R-\{0\}$ such that 
+%
+\begin{eqnarray}  \label{lev3}
+\nu (R-[-1, 1]) < \infty, \quad \int_{-1}^1 y^2 \nu(dy) < \infty .
+\end{eqnarray}
+A non-mathematicaly oriented reader can think of a measure $\nu(dy)$ in terms of the more familiar form   $\nu(dy) = h(y) dy$ with a proper nonegative function  $h(y)$. 
+So, the Levy process is fully determined by the Levy-Khinchine triplet $(a_0, b, \nu)$ which 
+contains a drift term  $a_0$, a Brownian motion with the Gaussian coefficient $b$ and a jump component 
+characterized by the Levy measure $\nu$. 
+The triplet $(0, b, 0)$  gives a Gaussian distribution and the corresponding process is 
+a Wiener process.  The triplet $(0, 0, \mu \delta(y-1))$  gives a Poisson  distribution 
+with the parameter $\mu$ and the corresponding process is a Poissson process 
+which makes jumps of size 1 at independent exponential times.  
+A compound Poisson process is obtained  by replacing the jumps of size 1 by independent  
+jumps with  distribution $\nu$ with $\nu(R) <\infty$.   Its  cumulant  characteristic function (\ref{lev2}) takes the form  
+%
+\begin{eqnarray}  \label{lev4}
+ \psi(\omega) = \mu 
+\int_{-\infty}^{\infty} \left[\mbox{e}^{i\omega y} - 1 \right]   \nu (dy). 
+\end{eqnarray}
+%
+If $\nu(R) = \infty$ then $L(t)$ is a purely discontinous jump process which has an infinite number of small jumps in any time interval of positive length.  
+
+From the Levy-Ito decomposition theorem it follows that any Levy process $L(t)$ is composed of four {\it independent}  processes, namely, 
+%
+\begin{eqnarray}  \label{fourL}
+ L(t)=L_1(t) +L_2(t) + L_3(t) + L_4(t), 
+\end{eqnarray}
+%
+where $L_1(t)$ is a constant drift, $L_2(t)$ is a Wiener process, $L_3(t)$ is a compound Poisson process and 
+$L_4(t)$ is a pure jump martingale.   This decomposition  follows from the Levy exponent  (\ref{lev2}), 
+which can be split into four parts, 
+%
+\begin{eqnarray}  \label{fourL}
+\psi(\omega) = \psi_1(\omega)  +\psi_2(\omega) +\psi_3(\omega) +\psi_4(\omega),  
+\end{eqnarray}
+%
+where
+%
+\begin{eqnarray}  \label{fourpsi}
+ \psi_1(\omega)  = i a_0 \omega,  \quad
+\psi_2(\omega) &=& -\frac{1}{2} b \omega^2, \quad 
+\psi_3(\omega) = \int_{|y| \ge 1} \left[\mbox{e}^{i\omega y} - 1 \right]  \nu (dy), \nonumber\\  
+ \psi_4(\omega) &=& \int_{|y| < 1} \left[\mbox{e}^{i\omega y} - 1 - i\omega y  \right]  \nu (dy).  
+\end{eqnarray}
+%
+We remind that linear combination of independent Levy processes is also a Levy process. 
+
+A special class of Levy processes  is  the $\alpha$-stable   process  $L_{\alpha}(t)$  of index $\alpha \in (0, 2]$. 
+It correspond to the triplet $(a, 0, \nu)$ with the Levy measure  
+%
+\begin{eqnarray}  \label{lev5}
+ \nu(y) = \left[ c_{1} {\mathbbm I}_{(0,\infty)}(y) + c_{2} {\mathbbm I}_{(-\infty,0)}(y)  
+\right] |y|^{-\alpha -1}\ dy, 
+\end{eqnarray}
+%
+where $c_1>0$ and  $c_2>0$. 
+The characteristic function  takes the form 
+\be
+\psi(\omega) =
+\left\{
+\begin{array}{ll}
+i a \omega  - c |\omega|^\alpha\left (1-i\beta\mbox{sgn}\omega \tan
+\frac{\pi\alpha}{2} \right), & \mbox{for}\;\;\alpha\neq 1, \\
+i a \omega  -c |\omega|\left (1+i\beta\frac{2}{\pi}\mbox{sgn} \omega \ln|k| \right), & \mbox{for}\;\;\alpha=1, \\
+\end{array}
+\right.
+\label{ch1_charakt}
+\ee
+with $\alpha\in(0, 2], \; \beta =\beta(c_1, c_2) \in [-1, 1],  c = c(\alpha, c_1, c_2)  \in(0, \infty)$  and $a = a(a_0, \alpha, c_1, c_2)$.   The case  $c_1=c_2$  implies $\beta=0$ and the process is symmetric. 
+
+
+
+Levy  white noise $Z(t)$ is  defined as time  derivative of the Levy process, 
+%
+\be
+\label{Lwhite}
+Z(t)=\frac{dL(t)}{dt}. 
+\ee
+%
+From Eq. (\ref{Lcorr}) it follows that the   correlation function of any  Levy white 
+noise $Z(t)$  takes the form 
+%
+\bea
+\label{Ycorr}
+\langle Z(t) Y(s) \rangle = \frac{\partial^2}{\partial t \partial s} \  \langle L(t) L(s) \rangle  
+=  2D_0 \delta (t-s), 
+\eea
+% 
+where   now $D_0 >0$ is called the strength of Levy  white noise.  
+
+  The characteristic 
+ functional of   the  symmetric Levy  $\alpha$-stable  white noise  $Y_{\alpha}(t)$  (when $a=0, \beta=0$ 
+in Eq. (\ref{ch1_charakt}) ) reads 
+%
+\begin{eqnarray}
+\label{whiteY}
+{\cal C}_{Y_{\alpha}}[f]   =\langle {\mbox{exp}}\left[i \int_0^{t} ds\; f(s)  
+Y_{\alpha}(s)  \right] \rangle = 
+ {\mbox{exp}}\left[- c \int_0^{t} dt\; |f(s)|^{\alpha}   \right],
+\end{eqnarray} 
+%
+This notation  emphasizes that the functional ${\cal C}$ depends on the whole test function $f$  
+and not just on the value $f(s)$ it takes at one particular time $s$.  
+If the test function takes a constant value, i.e. $f(s) =\omega$, then it reduces to the 
+characteristic function of the $\alpha$-stable  process  $L_{\alpha}(t)$.  
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Gaussian noise}
+
+It is the most popular and most frequently explioted model of noise. 
+Because of the limiting theorems  of the probability theory, 
+Gaussian noise frequently occurs in systems interacting with surroundings 
+of many-degree of freedom, e.g. with a heat bath (thermostat). 
+Therefore the Gaussian process can describe thermal equilibrium noise. 
+ This noise is completely defined by 
+its mean value $m(t)$  and the correlation function $C(t)$. 
+Equivalently, it can be defined by the functional probability  distribution 
+\cite{hibbs}
+%
+\begin{eqnarray}
+\label{functional}
+{\cal D}P[\xi] = {\cal D}z \; {\mbox{exp}}\left[-\frac{1}{2} \int dt\int ds\; 
+\xi(t)  K(t-s) \xi(s) \right],
+\end{eqnarray} 
+%
+where ${\cal D}\xi$ is a functional measure and the function $K(t)$ is 
+the inverse of the correlation function $C(t)$ in the integral sense,  i.e. the relation 
+%
+\begin{eqnarray}
+\label{inverse}
+\int ds K(t-s) C(s-u) = \delta (t-u) 
+\end{eqnarray} 
+%
+holds. 
+
+The prominent  Gaussian  white  (non-correlated or delta-correlated) noise $\xi(t)=\Gamma(t)$ 
+corresponds to the case when 
+%
+\begin{eqnarray}
+\label{whi}
+C(t)=  2D_0 \delta (t),  
+\end{eqnarray} 
+%
+where $D_0$ is its intensity. In some sense, it is a derivative 
+%
+\begin{eqnarray}
+\label{wien}
+\Gamma(t)= \frac{dW(t)}{dt}  
+\end{eqnarray} 
+%
+of a Wiener process  $W(t)$ (Brownian motion)  even though it  is nowhere differentiable.  
+For the  Gaussian white noise $\Gamma(t)$, the functional distribution takes the form 
+%
+\begin{eqnarray}
+\label{whiteG}
+{\cal D}P[\Gamma] = {\cal D}z \; {\mbox{exp}}\left[-D_0  \int dt\; 
+\Gamma^2(t)  \right],
+\end{eqnarray} 
+%
+The exponentially correlated noise is called Ornstein-Uhlenbeck (O-U) 
+ noise  \cite{ornst} for which  the correlation function takes the form 
+%
+\begin{eqnarray}
+\label{ornst}
+C(t)=   \frac{D_0}{\tau_c} \mbox{exp}\left( -\frac{|t|}{\tau_c}\right), 
+\end{eqnarray} 
+%
+where $D_0$ is  intensity and $\tau_c$ is  correlation time of noise, respectively. 
+
+Another example is the so called  harmonic noise \cite{lutz} 
+%
+\begin{eqnarray}
+\label{harm}
+C(t)=  a_1 \mbox{e}^{-a|t|} \left(\cos \omega t + a_2 \sin \omega t\right)
+\end{eqnarray} 
+%
+with some constants $a_1, a_2$ and $a>0$.  This noise is described in terms of a damped harmonic oscillator 
+driven by Gaussian white noise. 
+
+Other variations of $C(t)$ are also considered, as e.g.  
+a sum of  exponentials \cite{kupfer,bao}. An interesting and very  difficult to handle is a 
+class of  algebraically correlated noise with the correlation function like this:  
+%
+\begin{eqnarray}
+\label{algeb}
+C(t)=   C_0 \left(1+ \frac{|t|}{\tau_c}\right)^{-\kappa}  
+\end{eqnarray} 
+%
+with the exponent $\kappa >0$. 
+
+All the above presented correlated noises can tend in some limiting cases 
+to white noise (the last one only when $\kappa > 1$). 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Poisson white noise} 
+
+%
+ Poisson  white  noise $\xi(t)$ is defined as   time derivative of the (familiar) Poisson  process  \cite{papoulis}.  
+Let $N(t)$ be a Poisson process,  
+%
+\begin{eqnarray} \label{N}
+N(t)  = \sum\limits_i z_i \theta (t-t_i) 
+\end{eqnarray}
+%
+where  $\theta (x)$ is the Heaviside step function and $\{t_i\}$ is a set of Poisson points with average density $\mu$.  It means that the probability 
+$p_k(\tau)$ of having  $k$  points in any  time interval of length $\tau$  is given by the Poisson 
+distribution, 
+%
+%
+\begin{eqnarray} \label{dispo}
+p_k(\tau) = \frac{(\mu \tau)^k}{k!} \exp (-\mu  \tau). 
+\end{eqnarray}
+%
+The  amplitudes $\{z_i\}$   are independent identically distributed 
+random variables (iid RVs) with density $\rho(z)$ and independent  of the points $t_i$. 
+Realizations of the Poisson process are staircase functions with jumps at random points $t_i$  
+and of size $z_i$. 
+Poisson white noise $Y(t)$ is defined as 
+%
+\begin{eqnarray} \label{wpoi}
+Y(t)  = \frac{dN(t)}{dt}= \sum\limits_i z_i \delta (t-t_i) 
+\end{eqnarray}
+The paramter $\mu$  determines a mean number of the
+delta pulses per unit time (or the reciprocal of the average
+sojourn time between two $\delta$-kicks).
+
+Because the mean value of $Y(t)$ in (\ref{wpoi}) is non-zero, the compensated Poisson  white  noise $Y_0(t)$ is introduced by the relation 
+%
+\begin{eqnarray} \label{wpoi0}
+Y_0(t) = \sum\limits_{i} z_i \delta (t-t_i) -\mu <z_i>
+\end{eqnarray}
+%
+The first two moments of compensated Poisson white noise $\xi(t)$ read
+%
+\begin{eqnarray}    \label{S}
+\langle Y_0(t) \rangle  = 0, \quad
+\langle Y_0(t) Y_0(u) \rangle = 2D_S \delta (t-u),
+\end{eqnarray}
+%
+where $D_S=(1/2)\mu <z_i^2>$ is the  noise intensity.
+%The higher order cumulants $c_n(t_1, t_2, ..., t_n)$ are given by
+%
+%\begin{eqnarray}    \label{cu1}
+%c_{2n}(t_1, t_2, ..., t_n) = \mu \langle z_i^{2n} \rangle
+%\delta (t_1-t_2) ... \delta(t_{2n-1}-t_{2n}).
+%\end{eqnarray}
+%
+For symmetric  Poisson noise, the amplitude density $\rho(z)$ 
+is an even function, $\rho(z)=\rho(-z)$. E.g. one can take 
+%
+\begin{eqnarray} \label{rho2}
+\rho(z) = (1/2 A)  \mbox{e}^{- \vert z \vert /A}, 
+ \quad A > 0.
+\end{eqnarray}
+%
+For asymetric noise, the density $\rho(z)\ne \rho(-z)$, e.g. it can have the form 
+%
+\begin{eqnarray} \label{rho1}
+\rho(z) = (1/ A^2) z \mbox{e}^{(- z /A)} \theta(z) , \quad A > 0,
+\end{eqnarray}
+%
+The frequently used example is 
+%
+\begin{eqnarray} \label{ro}
+\rho(z) = (1/A)  e^{-z/A}  \theta (z), \quad A>0. 
+\end{eqnarray}
+In this case, the moments of amplitudes
+$\{z_i\}$,
+according to (\ref{ro}), are given by the relations
+%
+\begin{eqnarray} \label{mom}
+\langle z_i^k \rangle = k!A^k, \qquad k=1,2,3,...
+\end{eqnarray}
+%
+A negative value of the quantity  $a = \mu <z_i>$
+is, according to (\ref{wpoi0}), the bias value of the  Poisson white  noise process between
+$\delta$-pulses.
+
+The density (\ref{rho1}) has a maximum at $z = A$. It determines a characteristic
+length (is x is a position).
+The density (\ref{rho2}) has  maxima at $z =\pm A$ and a
+minimum at $z = 0$.
+For asymmetric noise $<z_i> = 2 A$. For symmetric
+noise $<z_i> = 0$. \\
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Dichotomic noise}
+
+Frequently exploited non-Gaussian (and nonequilibrium) 
+noise is a two-state (dichotomic) 
+noise \cite{hang1}
+%
+\begin{eqnarray} \label{dich}
+\xi(t) = \{-a , b\},  \quad a, b > 0.
+\end{eqnarray}
+%
+Transition probabilities per unit time from one state to the other are
+given by the relations
+%
+\begin{eqnarray} \label{jum}
+ Pr(-a\rightarrow b)=\mu_a = 1/\tau_a,
+\qquad Pr(b\rightarrow -a)=\mu_b = 1/\tau_b, 
+\end{eqnarray}
+%
+where $\tau _a$ and $\tau _b$ are mean waiting times in states $-a$ and $b$, 
+respectively. If one assumes that 
+%
+\begin{equation} \label{zero}
+b \mu_a= a \mu_b
+\end{equation}
+%
+then the process is stationary, of zero mean and correlation 
+%
+\begin{eqnarray} \label{momd}
+C(t)  = a b \:\mbox{exp}\left(-\frac{|t|}{\tau_c} \right), 
+\end{eqnarray}
+%
+where the correlation time $\tau_c$ is given by the formula 
+$1/\tau_c = \mu_a + \mu_b$.  
+
+The symmetric dichotomic noise is for the case when $a=b$  and (\ref{zero})   implies that  
+$\mu_a=\mu_b$. 
+In some limiting cases, this two-state stochastic  process  can describe 
+ transitions between two metastable states in bistable systems, the system 
+which is paradigm of numerous theories.   
+The extension to many-states is straightforward. However, corresponding 
+expressions are tedious.  
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\subsection{Kangaroo noise}
+
+Nonthermal and nonequilibrium noise can also be modeled by
+a kangaroo process.  It is a purely
+discontinuous (Kolmogorov-Feller)
+stationary stochastic process $\xi(t) $ for which the transition
+probability per unit time ${\cal W}(z \vert z_0)$ for a flipping
+from the  state
+$z_0$ into the state $z$ factorizes \cite{kam}, i.e.,
+%
+\begin{eqnarray}  \label{fac}
+{\cal W}(z \vert z_0) = Q(z) \nu (z_0).
+\end{eqnarray}
+%
+It means that the system jumps from the state $z_0$
+with the frequency $\nu(z_0)$.
+The quantity $\tau(z_0) = 1/\nu(z_0)$ is the mean waiting time in the state
+$z_0$. The probability
+that the process jumps into the state $z$ is $Q(z)$ and it is normalized
+over the phase space of $\xi(t) $ to unity.
+The corresponding Kolmogorov-Feller equation for the probability
+density $\rho(z, t)$ of this process takes the form \cite{bri}
+%
+\begin{eqnarray}  \label{for}
+{\frac{\partial \rho(z, t)}{\partial t}} = 
+- \nu (z) \rho(z, t) + Q(z) \int_{-\infty}^{\infty} \nu (\eta) 
+\rho(\eta, t) d\eta
+\equiv (L_z \rho)(z,t).
+\end{eqnarray}
+%
+For the {\it symmetric} kangaroo process,
+its correlation function $C(t)$ is \cite{bri}
+%
+\begin{eqnarray}  \label{cok1}
+C(t) =  2 \int_{0}^{\infty} z^2 \rho(z)
+\mbox{exp}(-\nu(z)\vert t\vert) \;dz,
+\end{eqnarray}
+%
+where $\rho(z) = \rho(-z)$ is a stationary probability
+distribution of $\xi(t) $ and $\nu(z) = \nu(-z)$. In this case it is
+a zero-mean process, $\langle \xi(t) \rangle = 0$.
+
+Kubo-Anderson noise is a particular case of the kangaroo process
+when the jumping frequency is constant, $\nu(z) = \nu_0$
+\cite{bri}.
+Then from (\ref{cok1}) it follows that the Kubo-Anderson process is
+exponentially correlated,
+%
+\begin{eqnarray}  \label{cok2}
+C(t) =  \langle z^2 \rangle 
+\mbox{exp}\left(-\frac{\vert t\vert}{\tau_c}\right)
+\end{eqnarray}
+%
+with the correlation time
+$\tau_c = 1/\nu_0$ and $\langle z^2 \rangle$
+is a mean value of $\xi(t) $ over the stationary probability density
+$\rho(z) = Q(z)$, cf. (\ref{for}). We present two examples
+of this noise: \\
+(i) the process $\xi(t) $ is unbounded, defined on $(-\infty, \infty)$ and
+has the Gaussian stationary distribution \cite{doe},
+%
+\begin{eqnarray}  \label{gaus}
+\rho(z) = Q(z) = \frac{1}{\sqrt{2\pi} \sigma}
+\mbox{exp}(-z^2/2\sigma^2), \quad   \xi(t)  \in (-\infty, \infty).
+\end{eqnarray}
+%
+(ii) The process $\xi(t) $ is bounded, defined on the finite 
+interval  $[-l, l]$ and
+has the uniform stationary distribution \cite{kostur},
+%
+\begin{eqnarray}  \label{uni}
+\rho(z) =  Q(z) = \frac{1}{2l}\theta(z+l)\theta(l-z),
+\quad  \xi(t)  \in [-l, l], 
+\end{eqnarray}
+%
+where $\theta(x)$ is the Heaviside function. 
+A class of algebraically  correlated kangaroo noise  or that   
+with  stretched exponential covariance can also be constructed 
+ \cite{kostur,srok}. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{White vs colored noises } 
+If $\xi(t)$ in (\ref{2}) is Gaussian or Poissonian 
+white noise then the process $x(t)$ is 
+Markovian: it is a content of the Theorem 3.3 in  \cite{doob} 
+and the Theorem 2 (sect.1, Chap.6) in \cite{gih}.   
+A Markovian process is completely described if  the transition 
+(or conditional) probability distribution $p(x,t|y,s)$ 
+and the initial state $P(x,0)$ of $x(t)$ are known \cite{thomas}.  
+ For this class of processes, the Chapman-Kolmogorov equation 
+is fulfilled, from which an evolution equation of the 
+Kramers-Moyal expansion or the Kolmogorov-Feller type 
+can be derived \cite{gar}.   
+
+Non-Markovian processes are  completely described by an infinite set 
+of multi-dimensional probability distributions. The higher-dimensional 
+ distributions cannot be obtained from lower-dimensional ones 
+as it is  for Markovian processes.  
+ This is why a 
+theory of non-Markovian  processes is much more complicated. In practice we do not need 
+all many-dimensional distributions but only a few, mainly a one-dimensional 
+distribution $P(x, t)$ and  a two-dimensional distribution 
+$P(x,t;y,s)$ (or equivalently a conditional probability distribution). 
+The former is applied to determine a mean value $\langle g(x(t))\rangle$ 
+of a  test function $g$  of  the process $x(t)$, in particular its statistical moments. The later is 
+exploited to determine 2-time statistics, e.g. its  correlation 
+function $\langle x(t) x(s)\rangle$.
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Systems in contact with thermostat: Generalized Langevin equations}
+
+The system which is in contact with a heat bath (thermostat, 
+surroundings, environment) 
+of temperature T, approaches with time  an  equilibrium state which, 
+at least in the weak coupling limit, should be  
+a Gibbs state. An archetypal model is a classical (or quantum) particle 
+moving in 1-dimension space and 
+immersed in a heat bath which is a collection  of oscillators. Probably the 
+first paper dealing with the microscopic model was  written 
+by N. N. Bogolubov
+in 1945 \cite{bogol}.   However, the paper by Ford, Kac and 
+Mazur written in 1965 \cite{kac} and the paper by Zwanzig written in 1973 
+\cite{zwan} 
+are much  better known and more frequently cited. There is a huge amount of paper 
+on this model which 
+is defined by the Hamilton function (or Hamiltonian in 
+ quantum case) 
+for the total system: the particle + the heat bath. One of its form  reads 
+%
+\begin{eqnarray}
+\label{H}
+H=\frac{p^2}{2m} + U(x) + \sum_k \left[\frac{p_k^2}{2m_k} 
++ \frac{m_k\omega_k^2}{2}
+\Big(q_k - \frac{\lambda_k}{m_k\omega_k^2} x\Big)^2\right],
+\end{eqnarray}
+%
+where $x$ and $p$ refers to the position and momentum  of the particle 
+of mass $m$ in the potential $U(x)$, 
+the set of variables $\{q_k, p_k\}$ refers 
+to the heat bath oscillators of masses $m_k$ and frequencies $\omega_k$. 
+Finally,  $\lambda_k$ are coupling constants. 
+From the set of  Hamilton equations, after elimination of the 
+heat bath variables, 
+one can get  the equation of motion for the particle only. 
+It has a form of the 
+generalized Langevin equation (for details, see \cite{peter1})
+%
+\begin{eqnarray}
+\label{Gen}
+m\ddot x(t) + \int_0^t \gamma(t-s) \dot x(s)\;ds + U'(x(t))= \xi(t) , 
+\end{eqnarray}
+where the dot denotes the differentiation with respect to time  and 
+the prime denotes the differentiation with respect to  the argument. 
+The integral kernel 
+%
+\begin{eqnarray}
+\label{gamma}
+\gamma(t)= \int_0^\infty \frac{J(\omega)}{\omega} \cos(\omega t) \;d\omega, 
+\end{eqnarray}
+%
+describe damping effects and the so-called spectral density 
+%
+\begin{eqnarray}
+\label{spect}
+J(\omega)= \sum_k \frac{\lambda_k^2}{m_k\omega_k} \delta(\omega-\omega_k).
+\end{eqnarray}
+%
+The force 
+%
+\begin{eqnarray}
+\label{xi}
+\xi(t)  = \sum_k \lambda_k\Big[\Big (q_k(0)- 
+\frac{\lambda_k}{m_k\omega_k^2} x(0)\Big )   \cos \omega_k t  
++ \frac{p_k(0)}{m_k\omega_k} \sin \omega_k t\Big].
+\end{eqnarray}
+%
+The initial positions $q_k(0)$ and momenta $p_k(0)$ 
+for the heat bath oscillators  are 
+ randomly distributed according to the laws of statistical physics.
+In the thermodynamic limit, 
+ the heat bath is in an equilibrium state 
+conditioned by the non-random initial conditions for the particle 
+\cite{peter1,kupfer}. 
+Because the Hamilton function   
+is quadratic in the oscillator variables, 
+it corresponds to the Gaussian distribution. In this case, 
+the random force $\xi(t) $ is a stationary Gaussian stochastic process  
+for which the fluctuation-dissipation relation is satisfied, 
+%
+\begin{eqnarray}
+\label{mom}
+\langle \xi(t) \rangle = 0, \quad
+\langle \xi(t)  z(s)\rangle = k_BT \gamma(t-s),
+\end{eqnarray} 
+%
+where $T$ is temperature of the thermostat and $k_B$ is the 
+Boltzmann constant. 
+
+In the thermodynamic limit, the almost-periodic memory function $\gamma(t)$ 
+should tend to a decaying function of time. 
+What is the form of this function, it depends on the spectrum of oscillators 
+$\omega_k$  and the coupling constants   $\gamma_k$ (which are not known) or on  
+the spectral function $J(\omega)$. 
+
+The question whether the particle motion is a Markovian or non-Markovian 
+stochastic process depends on the form of the function $\gamma(t)$ and on 
+the space in which the motion is considered. To explain this, let us 
+present several cases. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Thermal white noise}
+
+The classical Newton-like (or the standard Langevin) equations  can be 
+obtained from (\ref{Gen}) in the so-called 
+Ohmic case, i.e. when the spectral density $\rho(\omega)=4\gamma \omega$
+and  $\gamma$ is a friction coefficient.  
+ Consequently, Eq. (\ref{Gen}) reduces to the form 
+%
+\begin{eqnarray}
+\label{New}
+m\ddot x(t) +  \gamma \dot x(t) + U'(x(t))= \sqrt{2\gamma k_BT}\;\Gamma(t)
+\end{eqnarray}
+%
+or  we can rewrite it in an equivalent form as a set of equations, namely, 
+%
+\begin{eqnarray}
+\label{Hamilt}
+\dot x(t) &=& \frac{p(t)}{m}, \nonumber\\
+\dot p(t) &=& -\frac{\gamma}{m} p(t) - U'(x(t))
++ \sqrt{2\gamma k_BT}\; \Gamma(t),
+\end{eqnarray}
+%
+where the random force $\xi(t) =\Gamma(t)$ is Gaussian white noise, 
+%
+\begin{eqnarray}
+\label{white}
+\langle \Gamma(t)\rangle = 0, \quad
+\langle \Gamma(t) \Gamma(s)\rangle =  \delta(t-s).
+\end{eqnarray} 
+%
+If  motion of the particle is considered only in the configuration space, 
+i.e. in the space of all possible positions $x(t)$ (cf. Eq. (\ref{New})), 
+then the 1-dimensional 
+process $x(t)$ is 
+non-Markovian. However, if the motion is considered in the phase space, 
+i.e. in the space of all possible positions and momenta 
+(cf.  Eqs (\ref{Hamilt})),  
+then the 2-dimensional stochastic process $\{x(t), p(t)\}$ is Markovian. 
+It is a consequence of the above mentioned Doob and Gihman-Skorohod theorems 
+ \cite{doob,gih} applied to (\ref{Hamilt}). 
+
+In the phase space,  the transition probability density 
+$P\equiv P(x,p,t|x',p',t')$ of the Markovian process $\{x(t), p(t)\}$ obeys 
+the Klein-Kramers equation
+(see e.g. Eq. (1.18) in  \cite{risk})
+%
+\begin{eqnarray}  \label{kk}
+\frac{\partial P}{\partial t} 
+= \Bigg[
+ -\frac{\partial}{\partial  x} \frac{p}{m} +
+\frac{\partial}{\partial p} \left ( \frac{\gamma}{m} p
++ U'(x) \right )
++ \gamma k_B T
+\frac{\partial^2}{\partial p^2}\Bigg] P
+\end{eqnarray}
+%
+and fulfills the Kolmogorov-Chapman equation \cite{gar}. 
+The steady-state solution of   Eq. (\ref{kk}) represents  
+a Gibbs (thermodynamic equilibrium)  state, 
+%
+\begin{eqnarray}  \label{sst}
+P_{st}(x,p) = N_0 \mbox{exp} \left[ -\left ( {p^2/2m}
++ U(x)\right )/k_B T \right ],
+\end{eqnarray}
+%
+where $N_0$ is the normalization constant.  
+If the process $\{x(t), p(t)\}$ is projected onto the configuration space, 
+then the process $x(t)$ is non-Markovian. However, it 
+ approaches a Markovian  process in the limiting case of the 
+overdamped dynamics. This case is described by the stochastic equation
+%
+\begin{eqnarray}
+\label{over}
+\gamma \dot x(t)= - U'(x(t)) + \sqrt{2\gamma k_BT}\;\Gamma(t)
+\end{eqnarray}
+% 
+which is formally obtained from (\ref{New}) by neglecting 
+the inertial term,  $\ddot x(t) = 0$. 
+Then the transition probability density $P \equiv P(x,t|x',t')$ 
+obeys the Fokker-Planck equation
+%
+\begin{eqnarray}  \label{f-p}
+\gamma \frac{\partial P}{\partial t} 
+= \frac{\partial}{\partial  x}  U'(x) f  
++  k_B T
+\frac{\partial^2}{\partial x^2}  P 
+\end{eqnarray}
+%
+and its  stationary solution $P_{st}(x)$  is an equilibrium 
+distribution in the coordinate space, i.e. the Boltzmann distribution 
+$P_{st}(x) = \widetilde N_0 \mbox{exp}(-U(x)/k_BT)$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Thermal colored noise} 
+
+Definite thermal colored noise $\xi(t) $ in (\ref{Gen}) 
+is determined by the memory function 
+$\gamma(t)$.
+If $\xi(t) $  is the  O-U process $\xi(t) =\eta(t)$ 
+then  its correlation function 
+%
+\begin{eqnarray}  \label{o-u}
+\langle \eta(t) \eta(s)\rangle = k_BT \gamma(t-s)  
+=\frac{\gamma k_BT}{\tau_c} \;\mbox{e}^{-|t-s|/\tau_c}
+\end{eqnarray}
+% 
+and $\tau_c$ is the correlation time of  noise. 
+If it  tends to zero, $\tau_c \to 0$, the O-U stochastic 
+process $\eta(t)$ tends to Gaussian white noise. 
+Of course, if $\xi(t)  = \eta(t)$  the resulting process $x(t)$ 
+is non-Markovian. 
+Moreover, the 2-dimensional process $\{x(t), p(t)\}$ in the phase space 
+is non-Markovian as well.   
+We can easily extend the space of variables to a  4-dimensional space 
+in which the 4-component process is Markovian. To this aim, let us 
+introduce an auxiliary  stochastic process $Z(t)$  via the relation    
+%
+\begin{eqnarray}
+\label{Z(t)}
+Z(t) = \frac{\gamma}{m\tau_c} \int_0^t \mbox{e}^{-(t-s)/\tau_c}p(s)\;ds 
+\end{eqnarray}
+%
+which is the integral part of Eq. (\ref{Gen}). 
+Then Eq. (\ref{Gen}) with O-U  noise and 
+the function $\gamma(t)$ in (\ref{o-u}) can be recast to the form  
+%
+\begin{eqnarray}
+\label{4eq}
+\dot x(t)&=& \frac {p(t)}{m},  \\
+\dot p(t)&=& - U'(x(t)) -Z(t) + \eta(t),   \\
+\dot Z(t)&=& -\frac{1}{\tau_c} Z(t) +\frac{\gamma}{m\tau_c} p(t),  \\
+\label{O-U}
+\dot \eta(t)&=& -\frac{1}{\tau_c} \eta(t) 
++\frac{1}{\tau_c} \sqrt{2\gamma k_BT} \;\widetilde\Gamma(t),
+\end{eqnarray} 
+%
+where Gaussian white noise  $\widetilde\Gamma(t)$ has the same statistical
+moments as $\Gamma(t)$ in (\ref{white}) and the last equation describes 
+O-U noise with the correlation function (\ref{o-u}). 
+From the Doob theorem it 
+follows that the four-component process $\{x(t), p(t), Z(t), \eta(t)\}$ 
+is a Markovian diffusion process. Its infinitesimal generator is known 
+and the evolution equation for the  probability density $f(x,p,y,\eta, t)$  
+is the corresponding Fokker-Planck equation. 
+The question is whether it is a  minimal space of variables or not. 
+In the above case with the Ornstein-Uhlenbeck force and for an arbitrary 
+potential $U(x)$, the minimal 
+space is 3-dimensional. Indeed, in \cite{straub86} it was shown that 
+the set of equations 
+%
+\begin{eqnarray}
+\label{3eq}
+\dot x(t) &=& \frac {p(t)}{m},    \\
+\dot p(t) &=&  - U'(x(t)) + Z(t),    \\
+\dot Z(t) &=& -\frac{1}{\tau_c} Z(t) - \frac{\gamma}{m\tau_c} p(t) 
++\frac{1}{\tau_c} \sqrt{2\gamma k_BT}\; \widetilde\Gamma(t)
+\end{eqnarray} 
+%
+also leads to Eq. (\ref{Gen}) and the  three-component 
+process $\{x(t), p(t), Z(t)\}$ is also Markovian. 
+Let us observe that we reduce one variable because  
+the new process $Z(t) = \eta(t)-Z(t)$ is a linear combinations
+of two processes which occur in the system (\ref{4eq})-(\ref{O-U}). 
+
+The above examples show that in some cases, the non-Markovian 
+process induced by the  correlated stochastic force $\xi(t) $  can be 
+reduced to a multi-component Markovian process. 
+This is a case when both 
+thermal colored noise can be generated by a set of Ito-type stochastic 
+ equations  (like the Ornstein-Uhlenbeck process is generated by Eq. 
+(\ref{O-U}))
+and the memory function $\gamma(t)$ fulfills 
+a linear ordinary differential equation (of arbitrary  finite order) 
+with  constant coefficients.   
+If, e.g., the correlation function  of the random force $\xi(t) $ decays 
+according to a power law, $\gamma(t) \sim t^{-\kappa}, \kappa > 0$, then 
+there is no finite-dimension space in which 
+the process is Markovian.  
+ 
+Ending this part, we would like to mention that for any Gaussian 
+random force 
+$\xi(t) $ or for any function $\gamma (t)$, there are always two cases 
+ for which the generalized Langevin equation can be solved:  
+(i) for a free particle, $U(x)=0$;
+(ii) for a particle in a quadratic potential (an oscillator), 
+$U(x)=(1/2)kx^2$. 
+In the first case, the process is non-stationary Gaussian 
+and  purely diffusive: 
+diffusion is normal or anomalous in dependence on the form of the 
+function $\gamma(t)$. In the second case,  the probability distribution 
+approaches the equilibrium Gibbs-Boltzmann distribution as $t \to\infty$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Generating of random variables} 
+
+
+The Box Muller method is elegant and reasonably fast and is is fine for casual com-
+putations, but it may not be the best method for hard core users. Many software
+packages have native standard normal random number generators, which (if they
+are any good) use expertly optimized methods. There is very fast and accurate
+software on the web for directly inverting the normal distribution function N (x).
+This is particularly important for quasi Monte Carlo, which substitutes equidis-
+tributed sequences for random sequences. 
+
+
+
+
+
+\subsection{Gaussian variables and  Brownian motion}
+
+There are many methods to simulate standard normal variables $N(m, \sigma)$  of mean value $m$ and variance $\sigma$.  One of the 
+oldest and the simplest is the Box-Muller method, which allows to simulate two standard normal variables at the same time: \\
+Let U and V be two independent random variables uniformly distributed on the unit interval $[0, 1]$. Then 
+$\sqrt{-2 log U} \ \cos(2\pi V)$ and $\sqrt{-2 log U} \ \sin(2\pi V)$ are independent standard normal variables 
+$N(0, 1)$.  
+The random variable $\sigma N +m$  for any real  numbers $\sigma$ and $m$ has mean value $m$ and variance $\sigma^2$.  
+If we can simulate arbitrary normal  random variables,  we are able to simulate a trajectory of the Brownian motion 
+(the Wiener process) $W(t)$.  \\
+ALGORITHM for discretized trajectory of Wiener process:  \\
+ Simulate $n$ independent standard normal variables $N_1, N_2, ..., N_n$. Set 
+$\Delta W_i  = \sigma N_i \sqrt{t_i - t_{i-1}}$, where $t_0=0$. Then the discretized trajectory of the Wiener process is given by the relation $W(t_k) = \sum_{i=1}^k \Delta W_i$. 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Poisson process}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Levy processes}
+
+ALGORITHM for discretized trajectory of  symmetric $\alpha$-stable  process:  \\
+ Simulate $n$ independent  random variables $\eta_i$  uniformly distributed on the interval $(-\pi/2, \pi/2)$ and n independent standard normal variables $N_1, N_2, ..., N_n$. Set 
+%
+\bea
+\label{alfa}
+\Delta L_i  = (t_i - t_{i-1})^{1/\alpha} \frac{\sin(\alpha \eta_i)}{(\cos \eta_i)^{1/\alpha}} 
+\left(\frac{ \cos [ (1-\alpha) \eta_i]}{N_i}\right)^{(1-\alpha)/\alpha},  
+\eea
+%
+where $t_0=0$. Then the discretized trajectory of the  Levy process is given by the relation 
+$L(t_k) = \sum_{i=1}^k \Delta L_i$. 
+
+
+
+
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Simulations of stochastic differential equations}
+
+ 
+\subsection{Scalar Langevin-type equation} 
+
+We  start with a one dimensional  equation  with multiplicative noise  $\xi(t)$, namely,  
+%
+\begin{eqnarray}
+\label{scalar1}
+\dot x =   F(x, t) + G(x, t) \;  \xi (t).  
+\end{eqnarray}
+%
+In dependence of noise $\xi(t)$, the stochastic process $x(t)$  determined by this equation 
+ can be  Markovian or non-Markovian. But at this stage, it is not important.  
+We can attact the problem of numerical simulation  of this equation in two ways. 
+In the first approach, we rewritte  Eq. (\ref{scalardif})  in the   integral  form 
+%
+\begin{eqnarray}
+\label{inte1}
+x(t_{k+1}) = x(t_k) +  \int_{t_k}^{t_{k+1}}  F(x(s), s) \;ds +  
+\int_{t_k}^{t_{k+1}}  G(x(s), s) \  \xi(s) ds. 
+\end{eqnarray}
+%
+The second approach is based on the assumption that there exists a stochastic process $\Phi(t)$ such that 
+%
+\be
+\label{Phi}
+\xi(t)=\frac{d\Phi(t)}{dt}.
+\ee
+%
+Then Eq. (\ref{scalardif} can be rewritten as  
+%
+\begin{eqnarray}
+\label{inte2}
+x(t_{k+1}) = x(t_k) +  \int_{t_k}^{t_{k+1}}  F(x(s), s) \;ds +  
+\int_{t_k}^{t_{k+1}}  G(x(s), s) \;d\Phi(s).
+\end{eqnarray}
+%
+Eq. (\ref{inte1}) is well defined for non-white noise. If noise is white,  Eq. (\ref{inte2}) should be applied and then  the last integral is defined in the Ito sense.  However, the white-noise case will be considered latter. Now, we present non-white noise case. 
+
+The numerical scheme is based on discretization on a given time interval $[0, T]$. Let 
+$h=T/n$ be the discretization step for a given number $n$ of steps.
+In the simplest Euler scheme,  Eq. (\ref{inte1}) 
+is approximated by the  relation  
+%
+\begin{eqnarray}
+\label{rek1}
+x_{k+1} = x_k + F(x_k, t_k) h + G(x_k, t_k)  \xi(t_k)  h,
+\end{eqnarray}
+%
+where  we  denote $x_k =x(t_k)$.  In turn,  Eq. (\ref{inte2}) 
+is replaced  by the formula  
+%
+\begin{eqnarray}
+\label{rek2}
+x_{k+1} = x_k + F(x_k, t_k) h + G(x_k, t_k)  [ \Phi(t_{k+1}) -\Phi(t_k)] ,
+\end{eqnarray}
+%
+In the first  scheme,  we should know a probability law for the process $\xi(t)$ while in the second scheme - a  probability distribution  of the increments  $ \Phi(t_{k+1}) -\Phi(t_k)$.  
+Although from mathematical point of view, both schemes lead to the same results, in practice  one of them can be better depending on which random variables  $\xi(t_k)$ or $ \Phi(t_{k+1}) -\Phi(t_k)$ 
+can be better simulated in computers. 
+
+Usually we do not need  to know the process $x(t)$ alone but rather some averages with 
+a test function  g(x), i.e. 
+$\langle g(x(t))\rangle$. In the simplest simulations, this average is approximated, 
+%
+\begin{eqnarray}
+\label{apr1}
+\langle g(x(t))\rangle \approx \frac{1}{K} \sum_{i=1}^K \langle g({\hat x}_i(t))\rangle, 
+\end{eqnarray}
+%
+where  ${\hat x}_i(t)$ are simulated, $K$ independent copies of the real process $x(t)$.  Usually it is impossible to simulate exactly the process and it is the first source of errors
+%
+\begin{eqnarray}
+\label{err1}
+\Delta g=\langle g(x(t))\rangle - \frac{1}{K} \sum_{i=1}^K \langle g({\hat x}_i(t))\rangle, 
+\end{eqnarray}
+%
+The second source of errors is descrized time used in simulations. If we denote the simulated process after $n$-steps  as  $x_n$ then  the second error is 
+%
+\begin{eqnarray}
+\label{err2} 
+\Delta_n g=\langle g(x(t))\rangle - \langle g( x_n)\rangle, 
+\end{eqnarray}
+%
+    It is possible to reduce errors and make algorithms more precise, e.g. taking higher order terms. 
+However, in many case it does not allow to improve procedure. The reason is that 
+one has to solve numerically stochastic equations and average the results for
+different realizations of the noise and  initial conditions. This generates
+a source of statistical errors coming from the averages which are in many  situations 
+ greater than the systematic errors due to the order of convergence of the
+numerical method. So it is usually better to spend the computer time in reducing
+the statistical errors by increasing the number of samples in the average rather
+than using a more complicated, higher order, algorithm. 
+
+There  are some algorithms which we have to present. We briefly mention them.  
+
+
+
+One of most explioted is the stochastic Runge-Kutta type methods because, although
+they do not yield better results than the Milshtein method for the convergence
+of the stochastic terms, they do treat better the deterministic terms, increasing
+in many cases the numerical stability. The simplest stochastic Runge-Kutta type
+method is the Heun method which, for Eq.(3.32) reads:
+
+
+
+
+
+
+
+An important aspect is the numerical efficiency of the Euler scheme compared to other approximation methods. 
+The Euler  scheme requires that the probability distribution of the stationary and independent  increments 
+of any  Levy process $L_{k+1} -L_k$  can be simulated on computer. 
+One of the problem when we use Levy processes is that we cannot simulate them in general and therefore  we cannot apply the Euler scheme.  We want to stress that even if we know the Levy measure, it does not  implies that  we know the probability law of the increments of $L(t)$: to derive it is a formidable task. However,  
+we can exactly simulate the drift and  the Brownian part but  in general not the jump part.  
+  The main problem is to simulate a Poisson part component 
+of a Levy process having an infinite measure because then there are infinitely many jumps on each finite  
+(and also arbitrarly small) interval. Of course, exact simulation of such a process is impossible.  
+In practice, we usually simulate not exactly the true increments $L_{k} -L_{k-1}$   but rather exactly simulatable 
+independent, identically distributed random variables (iid RVs) $\zeta_k$ which should be  close enough to the true 
+ increments.  It is also a  source of errors: instead of the genuine Euler scheme, we use an approximate Euler scheme. 
+The problem of rate of convergence of the Euler scheme is discussed in many papers, cf.  \cite{protter} 
+and refs therein. E.g., 
+  it has been  shown that  $\Delta_n g$ is always of order 1/n, irrespective of the characteristics of $L(t)$ 
+provided  $L(t)$  has some properties related to integrability. 
+
+\subsubsection{Special cases} 
+
+We  consider a one dimensional class of equations  with Gaussian $\Gamma(t)$, Poisson $Y(t)$ and Levy $Z(t)$ 
+ white noises (with no Brownian and Poisson parts), namely,  
+%
+\begin{eqnarray}
+\label{scalardif}
+\dot x =   F(x, t) + G_{1}(x, t) \;  \Gamma (t) + G_{2}(x, t) \;  Z (t) +
+G_{3}(x, t) \;  Z(t)   
+\end{eqnarray}
+%
+The stochastic process $x(t)$  determined by this equation is a strong Markov process \cite{jacod}. 
+The integral form of the above  equation reads 
+%
+\begin{eqnarray}
+\label{scalarint}
+x(t_{k+1}) = x(t_k) +  \int_{t_k}^{t_{k+1}}  F(x(s), s) \;ds +  
+\int_{t_k}^{t_{k+1}}  G_{1}(x(s), s) \;dW(s) \nonumber \\
+ +    \int_{t_k}^{t_{k+1}}  G_{2}(x(s), s) \;dN(s)  
++  \int_{t_k}^{t_{k+1}}  G_{3}(x(s), s) \;dL(s)    
+\end{eqnarray}
+%
+All integrals are well defined and interpreted  as Ito integrals with the Wiener $W(t)$, Poisson $N(t)$ and Levy $L(t)$ 
+(with no Wiener  and Poisson parts) processes. 
+The numerical scheme is based on discretization on a given time interval $[0, T]$. Let 
+$h=T/n$ be the discretization step for a given number $n$ of steps and denote $f_k =f(t_k)$. 
+In the simplest Euler scheme,  Eq. (\ref{scalarint}) 
+is approximated by the  relation  
+%
+\begin{eqnarray}
+\label{scalarite}
+x_{k+1} = x_k + F(x_k, t_k) h + G_1(x_k, t_k) \sqrt{h} [W_{k+1} -W_k] \nonumber\\
++ G_2(x_k, t_k) \sqrt{h} [N_{k+1} -N_k]  
++ G_3(x_k, t_k)   [L_{k+1} -L_k]  
+\end{eqnarray}
+%
+
+
+
+
+ There  has been proposed  several  methods to deal with special cases which are well known by 
+specialists but not well known  in general.  Therefore we present them 
+If $L(t)$ is a Levy process with no Brownian part and no drift part and a finite measure $\nu$, namely, 
+%
+\be
+\mu=\nu(R) =\int_{-\infty}^{\infty} \nu(dx)  < \infty, 
+\ee
+%
+ then $L(t)$ is a compound Poisson process with jump arrival rate 
+$\mu$ and its jumps have distribution $p(dx)=\nu(dx)/\mu$ of the jumps size.   In this case we know how  to simulate increments 
+of this process: simulate random variables having  the  distribution $\nu(dx)/\mu$. 
+ If in the same case, we assume that the Levy measure   additionaly  consists of a countable number of point masses (Dirac delta measures),  then truncation of infinite series is needed.  
+
+The case of infinite  Levy measure,  $\nu(R) = \infty$, should be treated moe carefully because  an infinite number of small jumps is expected.    In this case the   approximation is  based on  cutoff of the small jumps of the Levy process \cite{rubenthaler}.  However, in certain cases we know what process corresponds to this measure and also we know how to simulate the increments of such a process. An example is the Gamma process for which 
+%
+\be
+\nu(dy) =\frac{1}{y}  {\mathbbm I}_{y>0}(y) dy.  
+\ee
+%
+In this case one can simulate the increments of $L(t)$ by simulating Gamma random variables. 
+ 
+ One special case is repeatedly exploited:   the Levy  $\alpha$-stable process 
+
+                          
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%s %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Master equations}
+
+There is one fundamental difference between thermal (equilibrium)   
+noise and  nonequilibrium noise: the fluctuation-dissipation relation 
+holds for the former. In consequence, for Langevin equations like 
+(\ref{New}) or (\ref{over}), there is a  relation between noise 
+on the right hand side and parameters on the left hand side of 
+these equations:  the parameter $\gamma$ occurs both in the 
+noise intensity and in the damping term. Note that if $\gamma =0$ 
+then there is no dissipation and there are no fluctuations. 
+On the contrary, for nonequilibrium noise  the fluctuation-dissipation 
+relation  does not hold and there is no a  relation between noise 
+on the right hand side and parameters on the left hand side of 
+the Langevin equation. 
+It means that we are not so  restricted in modeling 
+systems driven by nonequilibrium noise as in the equilibrium-noise-case.  
+For example, the 1-dimensional overdamped motion of  a particle 
+driven by a nonequilibrium force can be represented by a Langevin equation 
+in the form 
+%
+\begin{eqnarray}
+\label{over2}
+ \dot x(t)= F(x(t)) + \xi(t) + \hat\Gamma(t),
+\end{eqnarray}
+% 
+where $\xi(t)$ describes nonequilibrium correlated noise entirely independent 
+on the system and $\hat\Gamma(t)$ mimics thermal noise. 
+   We will consider 
+a little bit simpler case, namely  \cite{moss,jung}
+%
+\begin{eqnarray}
+\label{multi}
+ \dot x= F(x) + G(x) \xi(t), 
+\end{eqnarray}
+% 
+which is called a (Langevin)  equation with multiplicative noise 
+(we have started to use the abbreviation for the stochastic process $x=x(t)$).
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Systems driven by Levy white noise} 
+
+Consider the scalar stochastic equation with additive Levy  white noise  $Z(t)$ characterized by the Levy exponent (\ref{lev2}), namely, 
+%
+\begin{eqnarray}
+\label{MaLev}
+ \dot x= F(x) + Z(t). 
+\end{eqnarray}
+%
+The resulting stochastic process $x=x(t)$ is Markovian and its  properties can be obtained form the evolution equation for the probability density $P(x, t)$. This master equation reads
+%
+\begin{eqnarray} \label{mas}
+ {\partial P(x, t) \over \partial t} =&-&{\partial\over \partial x}
+\left[F(x)+  a_0\right]P(x, t)  + \frac{b}{2} {\partial^2 \over \partial x^2} P(x, t)\nonumber \\
+&+& \int\limits_{- \infty}^{\infty}\nu(dy) \left[P(x-y, t)-P(x, t)  + y 
+{\mathbbm I}_{(-1,1)}(y) 
+\frac{\partial}{\partial x} P(x,t\right]
+\end{eqnarray}
+%QER
+The same form of the infinitesimal generator is  for the  transition (or conditional) 
+probability density. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+\subsection{White noise and Fokker-Planck equation}
+
+
+For a while , let us assume that $\xi(t)$ in (\ref{multi}) 
+is Gaussian white noise with the 
+correlation function (\ref{whi}). Then the process $x(t)$ 
+is Markovian and its 
+probability density $P(x,t)$ (as well as the conditional probability 
+distribution) obeys the Fokker-Planck equation \cite{gar} 
+%
+\begin{eqnarray}  \label{FP}
+ \frac{\partial}{\partial t} P(x,t)
+= -\frac{\partial}{\partial  x}  F(x) P(x,t)
+ +  D_0 \frac{\partial}{\partial x}G(x)\frac{\partial}{\partial x}G(x) P(x,t), 
+\end{eqnarray}
+%
+where the Stratonovich prescription has been used (because we treat 
+this noise as an approximation to  Gaussian correlated one). 
+There are elegant methods of analysis of this equation, 
+see e.g. \cite{risk}.  
+
+Now,  let  $\xi(t)$ be  non-white (then there is no problem with  the 
+Ito-Stratonovich dilemma). 
+Even the above one-dimensional system (\ref{multi}), which seems to 
+be a relatively simple, cannot be analyzed in a mathematically 
+rigorous way (however, there are some exceptions). 
+Only approximate methods, which are more or less 
+correct, have prevailed in the literature. Below, we will present several 
+methods how to deal with such equations \cite{moss,jung}. 
+%
+The general idea is based on the following reasoning:
+Let  colored noise $\xi(t)$ tends to white noise as its correlation 
+time $\tau_c \to 0$. Then the non-Markovian process $\xi(t)$ 
+tends to the corresponding Markovian process, the 
+probability density of which 
+obeys  the Fokker-Planck equation (\ref{FP}). If the correlation time 
+is sufficiently small, 
+the non-Markovian process differs only a little bit from the 
+Markovian one and we hope that its   probability density 
+obeys a Fokker-Planck 
+equation as well. However, the drift $F(x)$ term and diffusion $G(x)$ 
+ term in (\ref{FP})  can be modified due to deviation from 
+the exact Markovian limit.  
+This kind of argumentation need not be correct in general. 
+Fortunately, there are  theorems \cite{strat} which in some cases  
+   support our  reasoning.   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Noise generated by Ito-type equations}
+ 
+In many cases, a stochastic process associated with noise $\xi(t)$, 
+from the mathematical point of view, is determined by a 
+set of $n$ first-order differential  
+ equations of Ito-type \cite{thomas,gar} for variables 
+$\vec \xi =\{\xi, \xi_1, \xi_2, ..., \xi_{n-1}\}$ with some 
+auxiliary variables $\{\xi_i, i=1,2,\cdots n-1\}$. Then 
+ the infinitesimal generator $L_{\vec \xi}$ of the vector process 
+$\vec \xi(t)$ is known and in the extended space $\{x, {\vec \xi}\}$ 
+the process 
+ is Markovian. In consequence, the probability density 
+in the extended space 
+fulfills an evolution ( master) equation of the form \cite{van} 
+ %
+\begin{eqnarray}  \label{master}
+ \frac{\partial}{\partial t} P(x,{\vec \xi}, t)
+= -\frac{\partial}{\partial  x} \left[ F(x)+G(x)\xi\right] P(x,{\vec \xi},t) 
+ +  L_{\vec \xi} P(x, {\vec \xi}, t).
+\end{eqnarray}
+%
+E.g., for Ornstein-Uhlenbeck noise, the noise space is one-dimensional. 
+The infinitesimal generator $L_{\xi}$ is defined by the corresponding 
+Fokker-Planck equation and has the form (cf. (\ref{O-U}) and (\ref{FP}))
+%
+\begin{eqnarray}  \label{genO-U}
+L_{\xi} = \frac{1}{\tau_c} \frac{\partial}{\partial  \xi}  
+ + \frac{D_0}{\tau_c^2} \frac{\partial^2}{\partial \xi^2}. 
+\end{eqnarray}
+% 
+Then $ \vec \xi =\xi$ and $P(x,{\vec \xi}, t)=P(x, \xi, t)$ is a 
+two-dimensional probability density of the joint process $\{x(t), \xi(t)\}$. 
+In this case, Eq. (\ref{master}) is a two-dimensional Fokker-Planck equation. 
+Harmonic noise is determined by a Newton-Langevin equation similar 
+to (\ref{New}) with the harmonic potential $U(x)$ or equivalently  
+by a set of two first-order differential 
+equations. The noise space  is  two-dimensional and 
+Eq. (\ref{master}) is a three-dimensional Fokker-Planck equation \cite{bart}. 
+ For $\xi(t)$ with the  algebraic correlation  
+(\ref{algeb}), there is no a finite-dimensional space!  In consequence, 
+ there is no a finite-dimensional extension where $\xi(t)$ is 
+one of the component of a Markovian process. 
+
+{\it Mutatis mutandis}, the similar rules are also valid for non-Gaussian noise 
+presented above. For the system (\ref{multi}) with $\xi(t)$ being 
+dichotomic noise, the evolution equation (\ref{master}) is a set of two 
+partial differential equations for the probability densities 
+$P(x,-a,t)$ and $P(x,b,t)$. 
+For the kangaroo 
+process, the noise space  is one-dimensional and $P(x,\xi,t)$ 
+fulfills an integro-differential equation (\ref{master}) with the integral 
+operator $L_{\xi}$ defined by (\ref{for}).  
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Systems driven by Poisson noise}
+
+
+Let the system be  modeled by the equation  
+%
+\begin{eqnarray} \label{a}
+\dot x = f(x)  + Y(t) + \Gamma (t).
+\end{eqnarray}
+%
+A master equation for the probability distribution $P(x, t) $ of the process
+$x(t)$ defined by Eq. (\ref{a}) has the form  
+%
+\begin{eqnarray} \label{mas}
+ {\partial P(x, t) \over \partial t} =&-&{\partial\over \partial x}
+[f(x)-\lambda A]P(x, t)  \nonumber \\
+&+&\lambda \int\limits_{- \infty}^{\infty} h(z)[P(x-z, t)-P(x, t) ]\; dz
+\nonumber\\
+&+&D_T {\partial^2 \over \partial x^2} P(x, t)
+\end{eqnarray}
+%
+The right-hand side of this equation consists of three
+parts: The first term denotes the drift, including a Poisson-noise-induced part
+proportional to $\lambda A = \lambda <z_i>$;
+the second term is related to the Poisson process  and
+the third term corresponds to the thermal diffusion process.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Systems driven by dichotomic noise }
+
+For the stochastic differential equation with dichotomic noise  $\xi(t)$ 
+%
+\begin{eqnarray}  \label{las}
+\dot x = f(x) + \xi(t)+ \Gamma (t) 
+\end{eqnarray}
+%
+the output process $x(t)$ in (\ref{las})
+is non-Markovian as driven by correlated noise $\xi(t)$.
+However, the two-dimensional process $\{x(t), \xi(t)\}$ is
+Markovian and its joint probability densities
+%
+\begin{eqnarray}  \label{pra}
+P_{+}(x,t)\equiv p(x,b,t),\quad P_{-}(x,t)\equiv p(x,-a,t)
+\end{eqnarray}
+%
+fulfill a set of equations in the form \cite{bro}
+%
+\begin{eqnarray}  \label{m1}
+{\frac{\partial P_{+}(x,t)}{\partial t}}=&-&{\frac \partial {\partial x}}%
+\left[f(x)+b\right]P_{+}(x,t)+D{\frac{\partial ^2}{\partial x^2}}%
+P_{+}(x,t)\nonumber\\
+&-&\nu P_{+}(x,t)+\mu P_{-}(x,t),
+\end{eqnarray}
+%
+\begin{eqnarray}  \label{m2}
+{\frac{\partial P_{-}(x,t)}{\partial t}}=&-&{\frac \partial {\partial x}}%
+\left[f(x)-a\right]P_{-}(x,t)+D{\frac{\partial ^2}{\partial x^2}}P_{-}(x,t)
+\nonumber\\
+&+&\nu P_{+}(x,t)-\mu P_{-}(x,t).
+\end{eqnarray}
+%
+Solving these equations one can obtain the distribution density
+of the process $x(t)$ alone  from the relation 
+%
+\begin{eqnarray}  \label{pel}
+P(x,t) =  p(x,b,t)+p(x,-a,t)  
+\end{eqnarray}
+%
+On the other hand, one can solve another set of equations, namely,  
+%
+\begin{eqnarray}  \label{part1}
+{\frac{\partial P(x,t)}{\partial t}}=-\frac{\partial} {\partial x} 
+f(x)P(x, t) + D \frac{\partial^2 }{\partial x^2} P(x,t) -\frac{\partial} {\partial x} W(x, t)
+\end{eqnarray}
+%
+%
+\begin{eqnarray}  \label{part2}
+{\frac{\partial W(x, t) }{\partial t}} = &-& {\frac{\partial }{\partial x}}
+\left\{\left[f(x) + \theta\right] W(x, t) -D {\frac{\partial}{\partial x}}
+W(x, t) \right\}  \nonumber \\
+&-& {\frac{1}{\tau}} W(x, t) - {\frac{Q}{\tau}} {\frac{\partial }{%
+\partial x}}P(x, t).\qquad \ \
+\end{eqnarray}
+%
+where he auxiliary distribution
+$W(x,t)\equiv bp(x,b,t)-ap(x,-a,t)$.  
+The parameter $\theta=b-a$ is a measure of asymmetry of
+fluctuations $\xi(t)$:
+If $a=b$ nonequilibrium fluctuations $\xi(t)$ are symmetric. Otherwise,
+they are asymmetric.
+The distributions $P(x, t)$ and $W(x, t)$ are normalized in
+the following way
+%
+\begin{eqnarray}  \label{nor1}
+\int_{-\infty}^{\infty} P(x, t) \;dx = 1, \qquad
+\int_{-\infty}^{\infty} W(x, t) \;dx = <\xi(t)> = 0. 
+\end{eqnarray}
+%
+Eqs. (\ref{part1}) and (\ref{part2}) form a closed set of partial
+differential equations.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Systems driven by kangaroo noise }
+
+Let the system be  modeled by the equation  
+%
+\begin{eqnarray} \label{a}
+\dot x = f(x)  + \xi(t) + \Gamma (t).
+\end{eqnarray}
+%\end{tiny}
+The output process $x(t)$ in (\ref{a})
+is non-Markovian as driven by correlated noise $\xi(t)$.
+However, the two-dimensional process $\{x(t), \xi(t)\}$ is
+Markovian and its joint probability density
+obeys a master equation of the form 
+%
+\begin{eqnarray}  \label{m1}
+{\frac{\partial P(x, \xi, t)}{\partial t}}=
+&-&{\frac \partial {\partial x}}
+[f(x)+\xi] P(x, \xi, t)+D{\frac{\partial ^2}{\partial x^2}}
+P(x,\xi, t)\nonumber\\
+&-&\nu (\xi) P(x, \xi, t) + Q(\xi) \int_{-\infty}^{\infty} \nu (\eta)
+P(x, \eta, t) d\eta.\ \ \
+\end{eqnarray}
+%
+It is not required to know the probability density $P(x,\xi, t)$
+in the extended phase space $\{x(t), \xi(t)\}$.  We are rather interested
+in the probability density ${\cal P}(x, t)$ of the process $x(t)$ only.
+It can be obtained from $P(x, \xi, t)$ by integration it over $\xi$, i.e.,
+%
+\begin{eqnarray}  \label{Px}
+{\cal P}(x, t) =  \int_{-\infty}^{\infty} P(x, \xi, t) d\xi.
+\end{eqnarray}
+%
+Integrating (\ref{m1}) over the noise variable $\xi$ yields the
+continuity equation for the distribution density,
+${\cal P}(x,t)$,
+%
+\begin{eqnarray}  \label{part1}
+{\frac{\partial {\cal P}(x,t)}{\partial t}}
+= -{\frac{\partial J(x,t)}{\partial x}},
+\end{eqnarray}
+%
+here the probability current $J(x, t)$ of the process $x(t)$ reads
+%
+\begin{eqnarray}  \label{jot}
+J(x, t)= f(x){\cal P}(x, t) -
+D \frac{\partial {\cal P}(x,t)}{\partial x} +
+\int_{-\infty}^{\infty} \xi P(x, \xi, t) d\xi.
+\end{eqnarray}
+%
+The probability current $J(x, t)$ characterizes transport
+properties of systems because an average velocity
+of Brownian particles can be expressed by $J(x, t)$ (sec. 6).
+
+The mean first passage time $T(x)$ of the process
+$x(t)$ is one of the most important quantity for bistable processes.
+It is known  that the mean first passage
+time $T(x, \xi)$ of the joint process
+$\{x(t), \xi(t)\}$ is determined by the backward integro-differential
+equation
+%
+\begin{eqnarray}  \label{back1}
+[f(x)+\xi] {\frac \partial {\partial x}} T(x, \xi)
++D{\frac{\partial ^2}{\partial x^2}} T(x, \xi)\nonumber\\
+- \nu (\xi) T(x, \xi) + \nu(\xi) \int_{-\infty}^{\infty} Q (\eta)
+T(x, \eta) d\eta = -1
+\end{eqnarray}
+%
+with specified boundary conditions.
+The mean first passage time $T(x)$ of the process
+$x(t)$ alone can be calculated as follows \cite{luc}
+%
+\begin{eqnarray}  \label{mfpt}
+T(x) = \int_{-\infty}^{\infty} T(x, \xi) p_0(\xi) d\xi
+\end{eqnarray}
+%
+where $p_0(\xi)$ is an initial probability density of noise $\xi(t)$.
+Unfortunately, neither (\ref{m1}) nor (\ref{back1}) can  analytically be
+solved.
+
+
+\section{Theories for systems driven by Ornstein-Uhlenbeck noise} 
+
+
+There are several methods to analyze the system (\ref{multi}) 
+driven by O-U noise. 
+The first method is based on adiabatic elimination of 
+fast variables \cite{jung1}.  We rewrite (\ref{multi}) with 
+noise $\xi = \xi(t)$ as a
+ set of Langevin equations in the extended space, namely,    
+%
+\begin{eqnarray}
+\label{set1}
+ \dot x &=& F(x) + G(x) \xi, \nonumber\\
+\dot \xi &=& -\frac{1}{\tau_c} \xi 
++\frac{1}{\tau_c} \sqrt{2D_0} \;\Gamma(t),
+\end{eqnarray}
+% 
+where the later describes O-U noise and  white noise $\Gamma(t)$ has the 
+properties defined by (\ref{white}). 
+
+  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Numerical solution of master equation}
+
+
+Master equations presented in previous sections determine time evolution of the probability distribution $P(x, t)$ from the initial distribution $P(x, 0)$.  
+in the simpler cases, the master equations are second order, parabolic   partial differential equations  or 
+parabolic integro-differential equations.    
+
+
+
+
+
+
+
+
+\section{Applications}
+
+As we  mentioned,  real noise is always more or less correlated 
+and the system driven by noise is (more or less) non-Markovian. 
+Because in majority cases we simplify the description by using 
+the white-noise approximation and the Markovian approximation, 
+we  should verify to what extend  
+ the simplifications are acceptable.  Moreover,  we should  
+investigate corrections caused by non-zero correlation time  
+checking whether or not they radically change the system  behavior. 
+There is a huge number of papers concerning problems and 
+various aspects of  systems driven by noise of 
+non-zero correlation time and therefore  the reader is asked to consult 
+original papers. Here,  we briefly survey a very small part of 
+these aspects. 
+ 
+First, let us consider thermal equilibrium noise  (section IV). 
+For white noise case,   
+the stationary state is the thermal equilibrium Gibbs state 
+defined by (\ref{sst}) (in the full phase state) or by 
+the Boltzmann distribution (in the configuration space). 
+For colored thermal noise, the system is described by the 
+integro-differential equation (\ref{Gen}) 
+and in a general case even a stationary state is not known. 
+Only under some conditions satisfied by the spectral density (\ref{spect}), 
+one can prove that the stationary state is the Gibbs state, see 
+\cite{jak}.  
+
+The non-Markovian description like (\ref{Gen}) should be used in most 
+chemical situations 
+when rate processes are thermally activated, 
+see the paper by E. Pollak and P. Talkner in  this issue and 
+references therein.  
+E.g. liquid state reactions are often described in terms of (generalized) 
+Langevin equations. The renowned Kramers model is based on the 
+Markovian model, 
+i.e. on Eq. (\ref{New}). In regimes when frequencies related to  
+intramolecular motion are of the same order or larger than intermolecular 
+frequencies, the Markovian description fails and generalization of the 
+Kramers theory is needed \cite{straub86,pol,bor}. It has been shown that  
+in the non-Markovian case, 
+the activation rate can often be much greater than 
+one predicted from the Markovian description. 
+Moreover, in the weak damping regimes,  the memory effects play 
+significant role and modify the activation rate \cite{bor}. 
+
+The subsequent intensively studied subject is related to the above rate 
+processes  but is more general and can be called the noise-assisted 
+escape from metastable states in nonequilibrium systems. It can be 
+re-formulated as the first crossing  time of a boundary and 
+ the  first-passage-time problem. It plays an extremely important role not 
+only in natural sciences but also in  e.g. economic sciences.
+  For Markovian systems, 
+the theory was elaborated  in 1933 by Pontryagin, Andronov and 
+Vitt \cite{pon}. All statistical characteristics of the first passage 
+time are determined by the backward Kolmogorov infinitesimal 
+generator of the Markov semigroup. In this sense, we know 
+how to proceed in the case of nonequilibrium systems described by 
+(\ref{multi}) when noise is generated by the Ito-type equations, 
+i.e. in the case (\ref{master}). From the mathematical point of view, 
+there is a 'technical' 
+problem how to solve a corresponding equation. From a practical point 
+of view, it is a serious problem how to obtain at least an
+approximate formula for the mean first passage time. 
+Still, it is only partially solved problem. 
+In a general case of non-Markovian systems, this problem is not only 
+unsolved but even it is not well formulated (because we do not know 
+infinitesimal generators and there are difficulties with appropriate  
+boundary conditions).  
+ 
+
+The next class of systems we want to mention is 
+a huge class of systems which exhibit the phenomenon of 
+stochastic resonance \cite{reso}, see also the papers 
+on this topic in this issue and references therein. 
+ In a generic case of overdamped 
+dynamics driven by additive colored noise, when $G(x) =1$ in (\ref{multi}), 
+the non-zero correlation time 
+leads to reduction of signal amplification and the peak of stochastic 
+resonance moves to larger noise intensity when the correlation times 
+increases, see e.g. Fig. 51 in \cite{reso}.
+
+The last class of systems we mention is a class of 
+Brownian ratchets and noise-induced transport in spatially periodic 
+structures \cite{ratch}. In such systems, the directed transport of 
+Brownian particles 
+can be induced only by non-thermal fluctuations. In its simplest form, 
+the ratchet system is modeled by Eq. (\ref{multi}) with additive noise, 
+when $G(x) =1$. If non-thermal noise $\xi(t)$ is O-U noise, then 
+the averaged stationary directed motion occurs only when the 
+correlation time $\tau_c$ of noise is non-zero.  When noise 
+becomes Gaussian white, $\tau_c \to 0$, the directed motion vanishes.  
+It is not true if noise is non-Gaussian,  e.g. $\xi(t)$ being 
+ Poissonian 
+white noise can induce transport although it is delta-correlated 
+\cite{bart2}.   
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Final remarks} 
+
+
+
+In summary, we presented generic models of equilibrium and 
+nonequilibrium noise and evolution equations for systems driven by 
+these noise sources. We also 
+ described several  methods of elimination of the noise variables 
+for non-Markovian stochastic processes driven by Ornstein-Uhlenbeck noise. 
+Most of approximations presented here result in a Fokker-Planck equation 
+for  reduced dynamics. In such a case, all powerful methods of analysis 
+of Fokker-Planck equations can be applied to investigate influence of 
+'color' of noise on properties of the systems.  
+ 
+\section{Appendix}
+
+
+
+
+
+
+%
+
+\section*{Acknowledgments}
+The work supported by the KBN-DAAD program: Stochastic Complexity 
+and the ESF program: Stochastic Dynamics.  
+
+\begin{thebibliography}{99}
+
+\bibitem{kamp98} N.G. van Kampen, Braz. J. Phys. {\bf 28}, no.2, 90 (1998).
+%
+\bibitem{lax} M. Lax, Rev. Mod. Phys. {\bf 38}, 541 (1966).
+
+%
+\bibitem{van}  N.G. van Kampen,  Phys. Rep. {\bf 24}, 171 (1976).
+
+%
+\bibitem{west} B.J. West, A.R. Bulsara, K. Lindenberg, 
+V. Seshardi and K.E. Shuler,  Physica A {\bf 97}, 211 (1979).
+%
+\bibitem{mar}F.  Marchesoni and P. Grigolini,  
+ Adv. Chem. Phys. {\bf 62}, 29 (1985).
+%
+%
+\bibitem{func1}
+P. H{\"a}nggi, Z. Phys. B {\bf 31}, 407 (1978).
+
+\bibitem{wio} H. S. Wio, P. Colet, M. San Moguel, L. Pesquera and M.A. Rodriguez, 
+Phys. Rev. A {\bf 40}, 7312 (1989). 
+% 
+\bibitem{func2}
+P. H{\"a}nggi,  
+in {\it Noise in Nonlinear Dynamical System},
+Eds F. Moss and  P.V.E. McClintock 
+(Cambridge University Press, Cambridge, 1989), Vol.1, p.307.
+%
+%
+\bibitem{hake}
+F. Haake,  Z. Phys. B {\bf 48}, 31 (1982). 
+
+%
+\bibitem{lucz1} J. {\L}uczka,  Lect. Notes  Phys. {\bf 484},  32 (1997);
+J. Stat. Phys.  {\bf 47}, 505 (1987);
+  J. Phys. A: Math. Gen. {\bf 21},  3063 (1988). 
+
+\bibitem{lucz2} J. {\L}uczka,  Physica A {\bf 153}, 619 (1988).
+
+\bibitem{doob} J. L.  Doob, {\it Stochastic  Processes} (Wiley, New York, 1953).
+
+\bibitem{gih} I.I. Gihman and A.V. Skorohod, {\it Stochastic Differential 
+Equations and Their Applications} (Naukova Dumka, Kiev, 1982) (in Russian). 
+
+\bibitem{thomas} P. H\"anggi and H. Thomas, Phys. Rep. {\bf 168}, 207 (1982).
+
+\bibitem{gar} C.W. Gardiner, {\it Handbook of Stochastic Methods in Physics, 
+Chemistry and the Natural Sciences} (Springer, Berlin, 1998).
+
+\bibitem{hibbs} R.P. Feynman and A.R. Hibbs, {\it Quantum Mechanics 
+and Path Integrals} (Mc Graw-Hill, New York, 1965). 
+
+\bibitem{ornst} G.E. Uhlenbeck and L.S. Ornstein, Phys. Rev. {\bf 36}, 823 (1930). 
+
+\bibitem{lutz} L. Schimansky-Geier, C. Z\"ulicke,
+Z. Phys. B {\bf 79}, 451 (1990). 
+
+\bibitem{kupfer} R. Kupferman, J. Stat. Phys. {\bf 114}, 291 (2004).
+
+\bibitem{bao} J. -D. Bao,  Phys. Rev. E {\bf 69}, 016124 (2004).
+
+
+\bibitem{hang1} C. Van den Broeck and P. H\"anggi, Phys. Rev.  A {\bf 30}, 
+2730 (1984).
+
+\bibitem{kam} N. G. van Kampen, {\it Stochastic Processes in
+Physics and Chemistry} (Elsevier, Noth-Holland, 1987).
+
+\bibitem{bri} A. Brissaud and U. Frisch, J. Math. Phys. {\bf 15}, 524 (1974).
+
+\bibitem{doe}  C.~R. Doering, W. Horsthemke, and J. Riordan, Phys. Rev.
+Lett.  {\bf 72},  2984 (1994).
+
+%
+\bibitem{kostur} M. Kostur and J. \L uczka, Acta Phys. Polon. B 
+{\bf 30}, 27 (1999).
+
+\bibitem{srok}  M. P\l oszajczak and T. Srokowski,
+Phys. Rev. E {\bf 55},  5126 (1997); 
+T. Srokowski, Phys. Rev. E {\bf 64}, 031102 (2001) and refs therein.
+
+\bibitem{bogol} N.N. Bogolubov, {\it  On some statistical methods in mathematical 
+physics} (Publ. Co. of Acad. of Sci. Ukr. SSR, Kiev, 1945). p.115 (in Russian). 
+
+\bibitem{kac} G.W. Ford, M. Kac and P. Mazur, J. Math. Phys. {\bf 6}, 504 (1965). 
+
+\bibitem{zwan} R. Zwanzig, J. Stat. Phys. {\bf 9}, 215 (1973). 
+
+\bibitem{peter1} P. H\"anggi, Lect. Notes  Phys. {\bf 484},  15 (1997).
+
+\bibitem{risk}  H. Risken, {\it The Fokker-Planck Equation} (Springer, 
+Berlin, 1989).
+%
+
+\bibitem{straub86} J. E. Straub, M. Borkovec, and B. J. Berne, 
+J. Chem. Phys. {\bf 84}, 1788 (1986).
+
+\bibitem{moss}
+ {\it  Noise  in Nonlinear Dynamical Systems: Theory, Experiment},
+Eds  F. Moss and P. V. E. McClintock 
+    (Cambridge University Press, Cambridge, 1989).
+
+\bibitem{jung}
+P. H{\"a}nggi and P. Jung, Adv. Chem. Phys. {\bf 89}, 239 (1994).
+
+
+\bibitem{strat} R.L. Stratonovich, {\it Conditional Markov processes and 
+their application to optimal control} (Elsevier, Amsterdam, 1968). 
+
+\bibitem{bart} R. Bartussek, P. H{\"a}nggi, B. Lindner, and L. Schimansky-Geier,
+Physica D {\bf 109}, 17 (1997).
+
+\bibitem{jung1} P. Jung and  P. H\"anggi, Phys. Rev. A {\bf 35}, 4464 (1987).
+ 
+\bibitem{col} P. Colet, H. S. Wio and M. San Miguel, Phys. Rev. A {\bf 39}, 
+6094 (1989). 
+
+\bibitem{wio2} F. Castro, H.S. Wio and G. Abramson, Phys. Rev. E {\bf 53}, 
+159 (1995);  F. Castro, A.D. Sanchez and H.S. Wio, Phys. Rev. Lett. 
+{\bf 75}, 1691 (1995).  
+ 
+\bibitem{san} J. M. Sancho and M. San Miguel, in  
+{\it  Noise  in Nonlinear Dynamical Systems: Theory, Experiment},
+Eds  F. Moss and P. V. E. McClintock 
+    (Cambridge University Press, Cambridge, 1989), Vol.1, Chap. 3. 
+
+
+\bibitem{ha} P. H\"anggi, in {\it Stochastic Processes Applied to Physics}, 
+Eds  L. Pesquera and M. Rodriguez, (World Scientific, Philadelphia, 1985) 
+p. 69. 
+ 
+\bibitem{nov} K. Furutsu, J. Res. Natl. Bur. Standards {\bf 67D}, 303 (1963);
+E.A. Novikov, Zh. Eksp. Teor. Fiz. {\bf 47}, 1919 (1964);
+M. Donsker, in {\it Proc. Conf. on The theory and applications of 
+analysis in function space} (MIT Press, Cambridge MA, 1964), p.17. 
+
+\bibitem{fox} R. F. Fox, Phys. Rev. A {\bf 34}, 4525 (1986).
+
+\bibitem{davies} E.B. Davies, Commun. Math. Phys. {\bf 39}, 91 (1974).  
+
+\bibitem{luc-pla} J. \L uczka, Phys. Lett. A {\bf 139}, 29 (1989). 
+
+\bibitem{klat} V.I. Klyatskin, Radiofizika {\bf 20}, 562 (1977).
+%
+\bibitem{maso} 
+J. Masoliver, B.J. West and  K. Lindenberg, Phys. Rev. A {\bf 35},
+ 3086 (1987).
+
+\bibitem{marr} P. H\"anggi, F. Marchesoni and P. Grigolini, Z. Phys. B {\bf 56}, 
+333 (1984). 
+
+\bibitem{jak} V. Jaksi{\'c} and C.-A. Pillet, Lett. Math. Phys. 
+{\bf 41}, 49 (1997).
+
+\bibitem{pol} E. Pollak, H. Grabert and P. H\"anggi, J. Chem. Phys. {\bf 91}, 
+4073 (1989).
+
+\bibitem{bor} P. H\"anggi, P. Talkner and M. Borkovec, Rev. Mod. Phys.
+{\bf 62}, 251 (1990).
+
+\bibitem{pon} L.S. Pontryagin, A.A. Andronov and A.A. Vitt, Zh. Eksp. Teor. Fiz. 
+ {\bf 3}, 165 (1933). 
+
+
+\bibitem{reso} L. Gammaitoni, P. H\"anggi and F. Marchesoni, 
+ Rev. Mod. Phys. {\bf 70}, 223 (1998).
+                                                                                
+\bibitem{ratch} R.D. Astumian and  P. H\"anggi, Physics Today  {\bf 55}
+(11), 33 (2002); P. Reimann, Phys. Rep. {\bf 361}, 57 (2002); 
+H. Linke, Appl. Phys. A
+{\bf 75}, 167 (2002), special issue on Brownian motors.
+%
+\bibitem{jacod}  J. Jacod and P. Protter, Lect. Notes in Mathematics {\bf 1485}, 138 (1991). 
+\bibitem{protter} P. Protter and D. Talay, Ann. Prob. {\bf 25}, 393 (1997). 
+\bibitem{papoulis} A. Papoulis, Probabilty, ransom variables, and stochastic processes, 
+McGraw Hill, New York, 1991. 
+
+\bibitem{rubenthaler} S. Rubenthaler, Stoch. Processes and their Appl. {\bf 103}, 311 (2003)
+
+\bibitem{bart2} J. {\L}uczka, R. Bartussek and P. H\"anggi, Europhys. Lett. 
+{\bf 31}, 431 (1995). 
+\bibitem{nolan2002} J. P. Nolan, Stable distributions (Birkhauser, Boston, 2002). 
+\bibitem{levy} O. E. Brandorff-Nielsen, T. Mikosh and S. Resnick, 
+{\it Levy Processes.Theory and Applications} (Springer, New York, 2001); 
+D. Applebaum, Lévy Processes and Stochastic Calculus,Cambridge University Press,(2004).
+\end{thebibliography}
+
+ \end{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+The corresponding probability density is denoted as $\Ld(x, t; a, c)$. The list of other parameterisations, along with the reasoning of their applicability, can be found in \cite{nolan2002}. The parameters $\alpha$ and $\beta$ determine the shape of the probability distribution. The parameter $\alpha$ is called the stability index, $\beta$ describes skewness, i.e. the degree of asymmetry of the distribution, $c$ is responsible for its scaling and $a$ is a location parameter. 
+The probability distrubutions of the stable processes are 
+continuous and  unimodal. For $\beta=0$, stable probability distributions are symmetric around $x=c$.
+For $\beta=\pm1$ and $\alpha\in(0, 1)$, distributions are totally skewed, i.e. $x$ is always larger than $a$ or smaller than $a$ only depending on the sign of the skewness parameter $\beta$ \cite{janicki1994,janicki1996}. For other values of $\beta$, $|\beta|\ne 1$, support of the density  is a whole real line. Stable probability distributions asymptotically behave like 
+$|x|^{-(\alpha+1) }$ ($\alpha<2$) but analytical expressions for their probability distributions are known only in a few cases. For $\alpha=2$ and any $\beta$, the resulting distribution is Gaussian. For $\alpha=1$ and   $\beta=0$, the  Cauchy distribution is obtained. 
+For $\alpha=0.5$ with $\beta=1$,  it is the L\'evy--Smirnoff distribution 
+which describes e. g. return time distribution of a free Brownian random walker \cite{bouchaud1990,woyczynski2001}, and the first passage time distribution of a drift-free Brownian motion \cite{shreve2004}. Another example of a stable distribution, with $\alpha=1.5$ is the Holtsmark distribution \cite{chanrasekhar1943,woyczynski2001,pietronero2002}, which is the distribution of the force acting on a star due to gravitational attraction of stars uniformly distributed in the space.
+
+For $\Ld(x, t; a, c) $ distributions, moments of order $\alpha$ exist, i.e. the integral
+\be
+\langle |L(t)|^\alpha\rangle =\int\limits_{-\infty}^{+\infty} |x|^\alpha \Ld (x, t; a, c)  dx
+\ee
+is finite. For  $\alpha<2$, the variance of a stable distribution does not exist and for $\alpha<1$ the mean  value also diverges. The only stable distribution for which all moments exist is the Gaussian distribution, 
+$L_{2,0}(x, t; a, c)$.
+The stability index $\alpha$ determines the shape of the probability density function, and more precisely, its asymptotic behaviour. Stable probability distributions for a large $x$ behave like $|x|^{-(\alpha+1) }$. With the decreasing value of the stability index $\alpha$ tails become heavier. 
+
+
+
+
+
+
+%
+\begin{document}
+
+%\let\labelm\label\renewcommand{\label}[1]{\fbox{\tt #1}\labelm{#1}}
+
+\title{Numerical analysis of noisy systems }
+\author{M. Kostur,  J. {\L}uczka and P. H\"anggi} 
+\affiliation{ Institute of Physics, University of Silesia,  40-007 Katowice, 
+Poland\\
+ Institute of Physics, University of Augsburg,  D-86135 Augsburg, Germany}
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{abstract}
+
+During  the last decade, modeling of dynamical and nonlinear processes perturbed by random fluctuations and noise have become increasingly popular in various branches in sciences, from physics, throught chemistry and biology, to financial data, network traffic, acoustic signals and storage processes, to mention only several.  There are mathematical books, surveys   and thousands papers in all disciplines on stochastic modeling 
+and  tools which only experts can follow.  It is good time to provide  a self-contained overview,  as simple  as possible in presentation,  on the most popular schemes of modeling in terms of Langevin equations with various noises and practical algorithms to analyze such equations with respect to different aspects: random trajectories, probability distributions, statistical moments,  master equations, etc.  
+We want to acquaint readers with theoretical fundamentals and  numerical methods of analysis of selected classes of   noisy processes. We hope that our presentation will be understandable for nonspecialists and  young researches not only from physics.  Therefore, we want to: \\
+-introduce  only the most exploited  models of fluctuations which have been applied with success in different branches of sciences\\
+- avoid precise  mathematical definitions but our statements are mathematically precise  and   are based  on theorems which we are not going to present them\\
+- provide  numerical implementation  of algorithms, which can be available on web-page and which can be modified by other users\\
+ 
+We observe extremely fast  development of computers. Therefore  arguments that  some algorithms are better because are faster is not now justified. For example, let 
+there are two algorithms  of the same precision and say,  number 1 is much simpler but is a little bit slower, number 2 is more complicated but a little bit faster, we prefere to present the algorithm number  1.  Non-experts support our choice. Experts can make modifications 
+without any problems. The reader will judge whether we did our work as we promised. 
+
+
+
+  which can be modeled by  stochastic differential equations of  Langevin type. The processes can be  driven 
+by thermal equilibrium or/and  nonequilibrium (non-thermal) noise. 
+Examples of  essential noise are presented. 
+
+                                            
+\end{abstract}
+
+\pacs{05.60.Cd, 05.40.-a, 05.45.-a  }
+
+\maketitle
