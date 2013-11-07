@@ -11,9 +11,9 @@ Dynamika stochastyczna
         Jerzy Łuczka, 
         Łukasz Machura
 :Wersja: 
-        0.3 10/2013
+        0.4 11/2013
 :Pobierz:
-        :download:`podręcznik (v0.3, PDF) <pdf/StochDyn_v0.3.pdf>`
+        :download:`podręcznik (v0.4, PDF) <pdf/StochDyn_v0.4.pdf>`
 
 Dynamika deterministyczna
 =========================
@@ -38,6 +38,16 @@ Chaos w układach dynamicznych
 
    ch2/chII011
    ch2/chII012
+
+
+Dynamika stochastyczna
+======================
+
+.. toctree::
+   :maxdepth: 1 
+
+   ch3/chIII011
+
 
 Dodatek numeryczny
 ==================

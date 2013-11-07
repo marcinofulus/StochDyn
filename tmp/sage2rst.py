@@ -17,8 +17,9 @@ i, counter = 0, 0
 eqnlabels, newlabels = [], []
 for l in f.readlines():
   i += 1
-  if l[0:2] == "$$":
-    counter += 1
+  #if l[0:2] == "$$":
+  if "$$" in l:
+    counter += 1 
     newlabel = 'eqn%d'%counter
     if "quad" in l:
       try:
@@ -68,9 +69,16 @@ lines = WHOLETXT.split('\n')
 WHOLETXT = ""
 for l in lines:
   l = l.replace('\quad \quad \quad','\qquad')
+  l = l.replace('\qquad \qquad','\qquad')
+  l = l.replace('   ',' ')
+  l = l.replace('  ',' ')
+  l = l.replace(' .','.')
+  l = l.replace(' ,',',')
+
   for elabel in eqnlabels:
     if elabel in l:      
       l = l.replace(':math:`%s`'%elabel,':eq:`%s`'%dlabels[elabel])
+
   WHOLETXT += l+"\n"
 
 lines = WHOLETXT.split('\n')

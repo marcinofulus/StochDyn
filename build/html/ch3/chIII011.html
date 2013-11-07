@@ -1,0 +1,285 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Równania stochastyczne i ich interpretacja &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Liczby losowe" href="../ch5/chV011.html" />
+    <link rel="prev" title="Scenariusz przejścia do chaosu" href="../ch2/chII012.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="../ch5/chV011.html" title="Liczby losowe"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ch2/chII012.html" title="Scenariusz przejścia do chaosu"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="rownania-stochastyczne-i-ich-interpretacja">
+<h1>Równania stochastyczne i ich interpretacja<a class="headerlink" href="#rownania-stochastyczne-i-ich-interpretacja" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Dotychczas rozważaliśmy modele deterministyczne bazujące na równaniach różniczkowych zwyczajnych. Twierdzenia matematyczne dają nam pewność że przy odpowiednicj założeniach rozwiązania równań różniczkowych są jednoznaczne przy zadanych warunkach początkowych. To jest kluczowe dla szerokiej klasy zjawisk w przyrodzie. Ten determinizm pozwala przewidywać ewolucję układów, pozwala konstruować i używać urządzenia, które pracują zgodnie z jego planowanymi funkcjami. To zapewniają twierdzenia matematyczne. Ale też pokazaliśmy, że matematyczny determinizm może być w praktyce złudny ponieważ dokładne w sensie matematycznym przygotowanie układu w określonych stanach początkowych jest niemożliwe. Niedokładności warunków początkowych mogą w trakcie ewolucji narastać powodując utratę przewidywalności ukrytą w równaniach różniczkowych. Dlatego ten fenomen nazywa się deterministycznym chaosem, czyli czymś co jest nieprzewidywalne ale jednocześnie nie jest losowe. Teraz rozpoczynamy wędrówkę po innej klasie zjawisk i procesów dynamicznych, a mianowicie po krainie procesów losowych. Ta klasa zjawisk bazuje na teorii procesów stochastycznych. To jest teoria matematyczna, której fundamenty oparte są o teorię prawdopodobieństwa. Niewątpliwie procesy stochastyczne nie są procesami deterministycznymi. Ich opis używa takich pojęć jak wartość średnia, fluktuacje czyli niespodziewane odchylania od wartości średniej, korelacja w różnych momentach czasu, charakterystyki spektralne ważne z eksperymentalnego punktu. Opis procesów stochastycznych jest do pewnego stopnia podobny do przedstawionego wcześniej opisu: bazuje on też na równaniach różniczkowych w których pojawiają się wyrażenia mogące przyjmować w sposób losowy różne wartości. Aby to wyjaśnić, posłużmy się przykładem z klasycznej mechaniki Newtona. Ba, możemy przywołać tu równanie Newtona dla cząstki o jednym stopniu swobody w potencjale <span class="math">\(V(x)\)</span>. Jest ono postaci:</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[m \ddot x + \gamma \dot x = -V'(x)\]</div>
+<p>W równaniu tym pojawia się wyraz <span class="math">\(\gamma \dot x\)</span>, który uwzględnia tarcie, tłumienie. Skąd pojawia się tarcie (tłumienie) w układzie? Wywodzi się ono z oddziaływania układu z otoczeniem. Rzeczywiste układy zawsze są w jakimś ośrodku: w powietrzu, wodzie, krysztale, komórce biologicznej. Owo oddziaływanie z otoczeniem jest źródłem tarcia, ale też jest jednym z czynników powodujących losowość. Wpływ otoczenia nie da się przewidzieć ponieważ rzeczywiste otoczenie składa się w bardzo dużej ilości cząstek. Przypomnijmy że w szkance wypełnionej wodą mamy około <span class="math">\(10^{23}\)</span> cząstek. Nie znamy ani położeń tych cząstek, ani prędkości tych cząstek. Ale gdybyśmy nawet znali te wielkości, to co nam z takiej wiedzy. Gdybyśmy chcieli modelować oddziaływanie układu z otoczeniem jako oddziaływanie opisane przez równania Newtona, to liczba równań Newtona rzędu <span class="math">\(10^{23}\)</span> jest przerażająco wielka. Nie bylibyśmy w stanie je zapisać, nie mówiąc o ich rozwiązywaniu. W tej beznadziejnej sytuacji powstaje fizyka statystyczna i teoria procesów stochastycznech. W tych teoriach nie ma determinizmu. Musi nam wystarczyć tylko prawdopodobieństwo tego, że cząstka w chwili <span class="math">\(t=17\)</span> znajduje się w jakimś obszarze <span class="math">\(A\)</span>, że średnia wartość prędkośći w chwili <span class="math">\(t=32 s\)</span> wynosi <span class="math">\(36 m/s\)</span> oraz że cząstka średnio oddaliła się o <span class="math">\(x=2 m\)</span> od położenia początkowego.</p>
+<p>W powyższym równaniu Newtona uwzględniliśmy wyraz opisujący tarcie (czyli oddziaływanie z otoczeniem), ale nie uwzględniliśmy jeszcze jednej siły, siły jaką cząstki otoczenia wywierają na układ. Poprawniejsze równanie miałoby postać:</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[m \ddot x + \gamma \dot x = -V'(x) + \Gamma (t) \qquad\]</div>
+<p>Siła <span class="math">\(\Gamma(t)\)</span> opisuje proces oddziaływania (zderzeń) cząsteczek otoczenia z układem. Dla przykładu, możemy rozpatrywać kulkę polimerową o promieniu mikronów (<span class="math">\(10^{-6}\)</span> metra) zanurzoną w wodzie. Taka kulka bez przerwy zderza się z cząsteczkami wody i porusza się w nieprzewidywalny sposób. Co możemy powiedzieć o sile <span class="math">\(\Gamma(t)\)</span>, która z pewnością jest losowa.</p>
+<ol class="upperalpha simple">
+<li>Po pierwsze, żaden kierunek nie jest uprzywilejowany: kulka jest atakowana ze wszystkich stron i średnia siła jest zerowa:</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[ \langle \Gamma(t) \rangle = 0 \qquad\]</div>
+</div></blockquote>
+<ol class="upperalpha simple" start="2">
+<li>Po drugie, siła w chwili <span class="math">\(t_1\)</span> nie zależy od siły w chwili <span class="math">\(t_2\)</span>, czyli nie jest ona skorelowana w różnych momentach czasu:</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[ \langle \Gamma(t_1) \Gamma(t_2)\rangle = \langle\Gamma(t_1)\rangle \langle\Gamma(t_2)\rangle = 0 \qquad\]</div>
+</div></blockquote>
+<ol class="upperalpha simple" start="3">
+<li>Po trzecie, <span class="math">\(\Gamma(t)\)</span> powinna być wielkością losową o rozkładzie normalnym, co wynika z centralnego twierdzenia granicznego. Mówiąc prosto, jeżeli jakaś wielkość jest wynikiem bardzo wielu drobnych losowych czynników, to niezależnie od rozkładu każdego z tych czynników, jej rozkład będzie zbliżony do normalnego. W rzeczywistości taki rozkład nie jest ściśle realizowany, ale jest to przybliżenie dobrze oddające charakter oddziaływania otoczenia na układ. Pamiętajmy, że centralne twierdzenie graniczne jest jednym z najważniejszych twierdzeń rachunku prawdopodobieństwa, które uzasadnia powszechne występowanie w przyrodzie rozkładów zbliżonych do rozkładu normalnego.</li>
+</ol>
+<p>Modelem siły losowej może być tzw. biały szum gaussowski. Jest to losowy proces, zupełnie taki jak ten opisany powyżej, różni się tylko tym, że funkcja korelacyjna ma postać:</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[ \langle \Gamma(t_1) \Gamma(t_2)\rangle = 2D \delta(t_1 - t_2) \qquad\]</div>
+<p>gdzie <span class="math">\(D\)</span> jest natężeniem szumu, które zależy od temperatury <span class="math">\(T\)</span>: <span class="math">\(D = D(T)\)</span>. W wyższej temperaturze energia kinetyczna cząstek wody jest większa i z większą siłą cząsteczki wody uderzają w kulkę. Z własności dystrybucji delta Diraca wynika własność <a href="#equation-eqn4">(4)</a>. Jedna własność może wydawać się nieuzasadniona, a mianowicie dla tych samych chwil czasu <span class="math">\(t_1 = t_2\)</span> delta Diraca jest nieskończona, co oznacza że drugi moment statystyczny nie istnieje (jak mówią fizycy, jest nieskończony). Ale to nie jest aż takie kłopotliwe. Okazuje się bowiem że równanie Newtona z taką siłą losową, która jest białym szumem gaussowkim, jest w zgodzie z fizyką statystyczną, w szczególności stan stacjonarny <span class="math">\(p(x, \dot x)\)</span> opisany równaniem <a href="#equation-eqn2">(2)</a> jest stanem równowagi termodynamicznej określonym przez rozkład kanoniczny Gibbsa:</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[ p(x, \dot x) = N_0 \exp\left[ - \frac{1}{k_B T}\left(\frac{m\dot x^2}{2} + V(x)\right)\right] \qquad\]</div>
+<p>gdzie <span class="math">\(N_0\)</span> jest stałą normalizacyjną. Otrzymanie powyższej gęstości prawdopodobieństwa z równania <a href="#equation-eqn2">(2)</a> nie jest zadaniem łatwym. W dalszych częściach postaramy się pokazać, dlaczego rów. <a href="#equation-eqn6">(6)</a> wynika z rów. <a href="#equation-eqn2">(2)</a>.</p>
+<p>Rozpatrzmy teraz tzw. reżim przetłumiony, czyli przypadek silnego tłumienia. Jeżeli tarcie jest duże, to trudno jest (prawie niemożliwe) doświadczalnie wyznaczyć przyśpieszenie cząstki. Innymi słowy wyraz <span class="math">\(m \ddot x\)</span> można w równaniu <a href="#equation-eqn2">(2)</a> zaniedbać. W takim reżimie równanie <a href="#equation-eqn2">(2)</a> redukuje się do postaci:</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[ \gamma \dot x = -V'(x) + \Gamma (t) \qquad\]</div>
+<p>lub</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(8)</span>\[ \dot x = -\tilde V'(x) + \tilde \Gamma (t) \qquad\]</div>
+<p>gdzie przeskalowaliśmy potencjał i siłę losową: podzieliliśmy obustronnie prze stałą <span class="math">\(\gamma\)</span> i zdefiniowaliśmy nowe funkcje</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(9)</span>\[\tilde V(x) = \frac{1}{\gamma} V(x), \qquad \tilde\Gamma (t) = \frac{1}{\gamma} \Gamma(t) \qquad\]</div>
+<p>Równanie <a href="#equation-eqn8">(8)</a> jest wyjściowym równaniem do dalszych rozważań i uogólnień. Będziemy badali nieco ugólniejszą postać tego równania, a mianowicie</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(10)</span>\[ \frac{dX}{dt} = F(X) + G(X) \Gamma (t) \qquad\]</div>
+<p>gdzie <span class="math">\(X=X(t)\)</span> jest procesem zależnym od czasu, funkcje <span class="math">\(F(X)\)</span> i <span class="math">\(G(X)\)</span> są (raczej) dowolnymi funkcjami oraz <span class="math">\(\Gamma(t)\)</span> jest białym szumem gaussowskim określonym przez związki <a href="#equation-eqn3">(3)</a> i <a href="#equation-eqn5">(5)</a>. Fizycy nazywają rów. <a href="#equation-eqn10">(10)</a> równaniem Langevina. Matematycy preferują inny zapis tego równania, a mianowicie</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(11)</span>\[ dX = F(X) dt + G(X) dW(t), \qquad dW(t) = \Gamma(t) dt \qquad\]</div>
+<p>gdzie proces losowy <span class="math">\(W(t)\)</span> nazywa się procesem Wienera. Można by zapisać relację</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(12)</span>\[\Gamma(t) = \frac{dW(t)}{dt}\]</div>
+<p>choć matematycy dowodzą, że pochodna nie istnieje w żadnym rozsądnym sensie, co nie przeszkadza fizykom wykorzystywanie tej relacji, głównie w celach rachunkowych. Po raz kolejny uogólnimy równanie <a href="#equation-eqn11">(11)</a> do postaci</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(13)</span>\[ dX = F(X) dt + G(X) d\xi(t) \qquad\]</div>
+<p>gdzie <span class="math">\(\xi(t)\)</span> jest jakimś dopuszczalnym procesem losowym nazywanym szumem, losowymi fluktuacjami, zaburzeniem przypadkowym lub procesem stochastycznym. Wszystkie te nazwy będziemy używali zamiennie. Równanie <a href="#equation-eqn11">(11)</a> nazywa się równaniem Ito. Równanie <a href="#equation-eqn13">(13)</a> też będziemy nazywali równaniem Ito, a równanie</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(14)</span>\[ \frac{dX}{dt} = F(X) + G(X) \eta(t) \qquad\]</div>
+<p>nazywać będziemy równaniem Langevina. W równaniu tym <span class="math">\(\eta(t)\)</span> jest jakimś możliwym procesem losowym. Okazuje się, że równanie <a href="#equation-eqn13">(13)</a> lub <a href="#equation-eqn14">(14)</a> nie jest jednoznacznie zdefiniowane jeżeli funkcja <span class="math">\(G(X)\)</span> zależy od <span class="math">\(X\)</span>. Gdy <span class="math">\(G(X)\)</span> jest funkcją stałą, równanie jest dobrze określone.</p>
+<p>Dlaczego pojawia sie niejednoznaczność w interpretacji tych równań? Przyczyną tego jest proces losowy występujący w ostatnim wyrazie. Niewinnie wyglądająca różniczka <span class="math">\(dW(t)\)</span> lub <span class="math">\(d\xi(t)\)</span> to przyrost procesu losowego:</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(15)</span>\[dW(t) = W(t+dt) - W(t), \qquad d\xi(t) = \xi(t+dt) - \xi(t)\]</div>
+<p>co oznacza, że powinniśmy znać własności procesu <span class="math">\(W\)</span> oraz <span class="math">\(\xi\)</span> w różnych chwilach czasu. Ponadto z punktu widzenia matematyki, powyższe równania rózniczkowe są umownym zapisem całkowej wersji tych równań:</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(16)</span>\[X(t) - X(t_0) = \int_{t_0}^{\; t} F(X(s), s) ds + \int_{t_0}^{\;t} G(X(s), s) d\xi(s)\]</div>
+<p>które powstaje przez obustronne całkowanie w przedziale czasu <span class="math">\([t_0, t]\)</span>. Otrzymujemy równanie całkowe dla procesu <span class="math">\(X(t)\)</span>. W równaniu tym pojawiają się dwa typy całek: &#8220;tradycyjna&#8221; całka Riemanna-Stieltjesa</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(17)</span>\[I_1= \int_{t_0}^{\;t} F(X(s), s) ds\]</div>
+<p>oraz całka, w której występuje proces <span class="math">\(\xi(t)\)</span>:</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(18)</span>\[I_2= \int_{t_0}^{\;t} G(X(s), s) d\xi(s)\]</div>
+<p>Powinniśmy zawsze pamiętać o tym, że całka jest graniczną wartością odpowiedniej sumy. I tak pierwsza całka</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(19)</span>\[I_1= \int_{t_0}^{\;t} F(X(s), s) ds = \lim_{n \to \infty} \sum_{i=0}^{n-1} F(X({\tilde s}_i), {\tilde s}_i) [s_{i+1} -s_i]\]</div>
+<p>gdzie granicę należy rozumieć w sensie średniokwadratowym oraz <span class="math">\({\tilde s}_i \in [s_i, s_{i+1}]\)</span> jest dowolną liczbą z danego przedziału <span class="math">\([s_i, s_{i+1}]\)</span>. W kursie analizy matematycznej wykazuje się, że graniczna wartość sumy (czyli wartość całki) nie zależy od tego gdzie wybieramy wartość <span class="math">\(X({\tilde s}_i)\)</span> dla <span class="math">\({\tilde s}_i\)</span> w przedziale <span class="math">\([s_i, s_{i+1}]\)</span>. Może ona leżeć w lewym końcu przedziału, w prawym końcu przedziału, w środku lub każdym innym punkcie tego przedziału. Okazuje się, że w ogólności tej własności nie ma drugi typ całki!! W takim razie w jakim punkcie przedziału należy wybrać wartość <span class="math">\(\xi({\tilde s}_i)\)</span> w całce, w której pojawia sie proces <span class="math">\(\xi(t)\)</span>? Ogólnej recepty na to nie ma. W literaturze istnieją 2 przepisy, gdzie ma leżeć <span class="math">\(\xi({\tilde s}_i)\)</span>.</p>
+<div class="section" id="calka-ito">
+<h2>Całka Ito<a class="headerlink" href="#calka-ito" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>W tej definicji (preferowanej przez matematyków) wybiera się wartość <span class="math">\(W(s_i)\)</span> z lewej strony przedziału z czysto praktycznej przyczyny (ułatwia to rachunki). Aby wyjaśnic dlaczego tak sie postępuje, rozpatrzmy nieco inną całkę z procesem Wienera, a mianowicie</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(20)</span>\[I_3= \int_{t_0}^{\;t} H(W(s), s) dW(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)] \qquad $\]</div>
+<p>Tak określona całka nazywa się całką Ito i ma &#8220;przyjazne&#8221; własności z tego powodu, że wartości średnie typu</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(21)</span>\[ \langle H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)]^k\rangle = \langle H(W(s_i), {\tilde s}_i)\rangle \cdot \langle [W(s_{i+1}) -W(s_i)]^k\rangle \qquad $\]</div>
+<p>rozbijają się na iloczyny wartości średnich ponieważ proces Wienera jest procesem o niezależnych przyrostach na nieprzekrywających się przedziałach, a wartość średnia iloczynu niezależnych zmiennych losowych jest równa iloczynowi wartości średnich tych zmiennych. Jest to główna przyczyna takiej definicji całek Ito. Należy podkreślić, że dla rzeczywistych procesów losowych taki wybór nie zawsze jest poprawny.</p>
+<p>Teraz możemy zdefiniować całkę</p>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(22)</span>\[I_2=\int_{t_0}^{\;t} G(X(s), s) \xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G(X(s_i), {\tilde s}_i) [\xi(s_{i+1}) -\xi(s_i)] \qquad $\]</div>
+<p>Całki, w definicji których wartości procesu <span class="math">\(X(t)\)</span> lub <span class="math">\(\xi(t)\)</span> należy brać z lewej strony przedziałów <span class="math">\([s_i, s_{i+1}]\)</span>, tzn. dla <span class="math">\(G(X(s_i), {\tilde s}_i)\)</span>, nazywamy &#8216;&#8217;&#8216;całkami Ito&#8217;&#8216;&#8217; lub całkami w interpretacji Ito. Ponieważ jak na razie z czysto matematycznego punktu widzenia wybór punktu z lewej strony przedziału jest arbitralny, każdy inny punkt jest równo uprawniony. Ale należy bezwględnie pamiętać, że zmiana położenia punktu <span class="math">\({\tilde s}_i\)</span> w przedziale <span class="math">\([s_i, s_{i+1}]\)</span> dla <span class="math">\(X(\tilde s_i)\)</span> czy dla <span class="math">\(\xi(\tilde s_i)\)</span> oznacza zmianę wartości całki. To odróżnia całki stochastyczne od &#8220;tradycyjnych&#8221; całek Riemanna. W związku z tym pojawia się poważny problem, gdy chcemy stosować równania stochastyczne do modelowania realnych zjawisk i procesów. Czy istnieją jakieś racjonalne kryteria na wybór punktu pośredniego <span class="math">\(\tilde s_i\)</span>? Dylemat ten przez pewien okres czasu był przedmiotem dyskusji i polemik w literaturze naukowej.</p>
+</div>
+<div class="section" id="calka-stratonowicza">
+<h2>Całka Stratonowicza<a class="headerlink" href="#calka-stratonowicza" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Istnieją także inne definicje całek stochastycznych. Druga, konkurencyjna definicja jest następująca:</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(23)</span>\[I_{\circ}= \int_{t_0}^{\;t} G(X(s), s) \circ \,d\xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G\left(\frac{X(s_{i+1}) + X(s_i)}{2}, {\tilde s}_i\right) [\xi(s_{i+1}) -\xi(s_i)] \qquad\]</div>
+<p>gdzie oznaczenie <span class="math">\(\circ\)</span> w całce ma informować o tym, że wartość funkcji <span class="math">\(G(X(t), t)\)</span> na przedziale <span class="math">\([s_i, s_{i+1}]\)</span> jest brana dla średniej arytmetycznej  <span class="math">\([X(s_{i+1}) + X(s_i)]/2\)</span>. Tak określona całka nazywa się &#8216;&#8217;&#8216;całką Stratonowicza&#8217;&#8216;&#8217; lub całka w sensie Stratonowicza.</p>
+<p>Czytelnik łatwo zauważy, że obie całki są szczególnymi przypadkami takiej oto całki:</p>
+<div class="math" id="equation-eqn24">
+<span class="eqno">(24)</span>\[I_{\bullet}= \int_{t_0}^{\;t} G(X(s), s) \bullet \,d\xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G\left(\lambda X(s_{i+1}) + (1-\lambda) X(s_i), {\tilde s}_i\right) [\xi(s_{i+1}) -\xi(s_i)] \qquad\]</div>
+<p>gdzie <span class="math">\(\lambda \in [0, 1]\)</span> i może przyjmowac dowolną wartość z tego przedziału. Szczególne przypadki to: <span class="math">\(\lambda =0\)</span> (definicja Ito); <span class="math">\(\lambda =1/2\)</span> (definicja Stratonowicza).</p>
+<div class="admonition note">
+<p class="first admonition-title">Uwaga</p>
+<ol class="last arabic simple">
+<li>Istnieją twierdzenia mówiące o tym, że jeżeli proces <span class="math">\(xi(t)\)</span> jest skorelowany, to obie definicje są równoważne. Problem pojawia sie tylko wówczas gdy <span class="math">\(\xi(t)\)</span> jest procesem stochatycznym o niezależnych przyrostach. Takimi procesami są podstawowe modelowe procesy stochastyczne: proces Wienera, proces Poissona i proces Levy&#8217;ego.</li>
+<li>Jeżeli te trzy procesy sa przybliżeniami odpowiednich procesów skorelowanych, to właściwa definicja jest definicją Stratonowicza. Innymi słowy, wyjściowe całki ze skorelowanymi procesami nie zależą od definicji, ale w granicy gdy czas korelacji dąży do zera, wartości całek są takie jak w definicji Stratonowicza.</li>
+<li>Istnieje związek między całkami Ito i Stratonowicza: z całki Ito można otrzymać całkę Stratonowicza i odwrotnie: z całki Stratonowicza można otrzymać całkę Ito. Więc generalnie nie należy się przejmować interpretacją tak długo jak prowadzimy formalne obliczenia, ale w opdowiednim momencie trzeba wybrać odpowiednią interpretację całki, ponieważ końcowe wyniki zależą od tej interpretacji.</li>
+</ol>
+</div>
+</div>
+<div class="section" id="przypadek-wielowymiarowy">
+<h2>Przypadek wielowymiarowy<a class="headerlink" href="#przypadek-wielowymiarowy" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>W przypadku układu <span class="math">\(n\)</span>-równań różniczkowych rozpatrujemy uogólnienie równania <a href="#equation-eqn13">(13)</a> w postaci</p>
+<div class="math" id="equation-eqn25">
+<span class="eqno">(25)</span>\[ dX_i = F_i(X_1, X_2, X_3,..., X_n) dt + \sum_{j=1}^{n} G_{ij}(X_1, X_2, X_3,..., X_n) d\xi_j(t), \quad i, j = 1, 2, 3,..., n \qquad\]</div>
+<p>lub odpowiednik równania <a href="#equation-eqn14">(14)</a> ma postać</p>
+<div class="math" id="equation-eqn26">
+<span class="eqno">(26)</span>\[ \frac{dX_i}{dt} = F_i(X_1, X_2, X_3,..., X_n) + \sum_{j=1}^{n} G_{ij}(X_1, X_2, X_3,..., X_n) \eta_{j} (t), \quad i, j = 1, 2, 3,..., n \qquad\]</div>
+<p>gdzie wielkości losowe <span class="math">\(\xi_i(t)\)</span> oraz <span class="math">\(\eta_i(t)\)</span> są niezależnymi między sobą procesami stochastycznymi.</p>
+<p>Mogą być takie przypadki, gdy wielkości losowe pojawiają sie w nieliniowy sposób, np. w postaci</p>
+<div class="math" id="equation-eqn27">
+<span class="eqno">(27)</span>\[ \frac{dX}{dt} = F(X, \eta(t)) \qquad\]</div>
+<p>Czytelnik sam może napisać odpowiednik wielowymiarowy równania <a href="#equation-eqn27">(27)</a>. Z punktu widzenia zastosowań ważne jest jakie istnieją modele matematyczne zaburzeń losowych <span class="math">\(\{\eta_i(t)\}\)</span> czy <span class="math">\(\{\xi_i(t)\}\)</span>. Mogą to być procesy stacjonarne, procesy Markowa (markowowskie) lub też procesy niemarkowowskie. Mogą to byc procesy skorelowane lub nieskorelowane. W następnej części podamy przykłady najczęściej stosowanych modeli szumu.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Równania stochastyczne i ich interpretacja</a><ul>
+<li><a class="reference internal" href="#calka-ito">Całka Ito</a></li>
+<li><a class="reference internal" href="#calka-stratonowicza">Całka Stratonowicza</a></li>
+<li><a class="reference internal" href="#przypadek-wielowymiarowy">Przypadek wielowymiarowy</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="../ch2/chII012.html"
+                        title="poprzedni rozdział">Scenariusz przejścia do chaosu</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="../ch5/chV011.html"
+                        title="następny rozdział">Liczby losowe</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch3/chIII011.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="../ch5/chV011.html" title="Liczby losowe"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ch2/chII012.html" title="Scenariusz przejścia do chaosu"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Nov 07, 2013.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>
