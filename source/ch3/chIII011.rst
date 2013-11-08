@@ -173,7 +173,7 @@ W tej definicji (preferowanej przez matematyków) wybiera się wartość :math:`
 .. MATH::
  :label: eqn20
 
- I_3= \int_{t_0}^{\;t} H(W(s), s) dW(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)] \qquad $
+ I_3= \int_{t_0}^{\;t} H(W(s), s) dW(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)]
 
 
 Tak określona całka nazywa się całką Ito i ma "przyjazne" własności z tego powodu, że wartości średnie typu 
@@ -181,7 +181,7 @@ Tak określona całka nazywa się całką Ito i ma "przyjazne" własności z teg
 .. MATH::
  :label: eqn21
 
-  \langle H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)]^k\rangle = \langle H(W(s_i), {\tilde s}_i)\rangle \cdot \langle [W(s_{i+1}) -W(s_i)]^k\rangle \qquad $
+  \langle H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)]^k\rangle = \langle H(W(s_i), {\tilde s}_i)\rangle \cdot \langle [W(s_{i+1}) -W(s_i)]^k\rangle
 
 
 rozbijają się na iloczyny wartości średnich ponieważ proces Wienera jest procesem o niezależnych przyrostach na nieprzekrywających się przedziałach, a wartość średnia iloczynu niezależnych zmiennych losowych jest równa iloczynowi wartości średnich tych zmiennych. Jest to główna przyczyna takiej definicji całek Ito. Należy podkreślić, że dla rzeczywistych procesów losowych taki wybór nie zawsze jest poprawny.
@@ -191,7 +191,7 @@ Teraz możemy zdefiniować całkę
 .. MATH::
  :label: eqn22
 
- I_2=\int_{t_0}^{\;t} G(X(s), s) \xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G(X(s_i), {\tilde s}_i) [\xi(s_{i+1}) -\xi(s_i)] \qquad $
+ I_2=\int_{t_0}^{\;t} G(X(s), s) \xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G(X(s_i), {\tilde s}_i) [\xi(s_{i+1}) -\xi(s_i)] 
 
 
 Całki, w definicji których wartości procesu :math:`X(t)` lub :math:`\xi(t)` należy brać z lewej strony przedziałów :math:`[s_i, s_{i+1}]`, tzn. dla :math:`G(X(s_i), {\tilde s}_i)`, nazywamy '''całkami Ito''' lub całkami w interpretacji Ito. Ponieważ jak na razie z czysto matematycznego punktu widzenia wybór punktu z lewej strony przedziału jest arbitralny, każdy inny punkt jest równo uprawniony. Ale należy bezwględnie pamiętać, że zmiana położenia punktu :math:`{\tilde s}_i` w przedziale :math:`[s_i, s_{i+1}]` dla :math:`X(\tilde s_i)` czy dla :math:`\xi(\tilde s_i)` oznacza zmianę wartości całki. To odróżnia całki stochastyczne od "tradycyjnych" całek Riemanna. W związku z tym pojawia się poważny problem, gdy chcemy stosować równania stochastyczne do modelowania realnych zjawisk i procesów. Czy istnieją jakieś racjonalne kryteria na wybór punktu pośredniego :math:`\tilde s_i`? Dylemat ten przez pewien okres czasu był przedmiotem dyskusji i polemik w literaturze naukowej. 

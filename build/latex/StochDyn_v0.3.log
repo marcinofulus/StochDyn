@@ -1,22 +1,16 @@
-This is pdfTeX, Version 3.1415926-1.40.10 (TeX Live 2009/Debian) (format=pdflatex 2012.10.13)  26 OCT 2013 01:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.7)  7 NOV 2013 14:19
 entering extended mode
+ restricted \write18 enabled.
  %&-line parsing enabled.
 **StochDyn_v0.3.tex
 (./StochDyn_v0.3.tex
-LaTeX2e <2009/09/24>
-Babel <v3.8l> and hyphenation patterns for english, usenglishmax, dumylang, noh
-yphenation, farsi, arabic, croatian, bulgarian, ukrainian, russian, czech, slov
-ak, danish, dutch, finnish, french, basque, ngerman, german, german-x-2009-06-1
-9, ngerman-x-2009-06-19, ibycus, monogreek, greek, ancientgreek, hungarian, san
-skrit, italian, latin, latvian, lithuanian, mongolian2a, mongolian, bokmal, nyn
-orsk, romanian, irish, coptic, serbian, turkish, welsh, esperanto, uppersorbian
-, estonian, indonesian, interlingua, icelandic, kurmanji, slovenian, polish, po
-rtuguese, spanish, galician, catalan, swedish, ukenglish, pinyin, loaded.
+LaTeX2e <2011/06/27>
+Babel <3.9f> and hyphenation patterns for 78 languages loaded.
 (./sphinxmanual.cls
 Document Class: sphinxmanual 2009/06/02 Document class (Sphinx manual)
-(/usr/share/texmf-texlive/tex/latex/base/report.cls
+(/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/share/texmf-texlive/tex/latex/base/size12.clo
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
 File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -32,19 +26,19 @@ File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 ))
-(/usr/share/texmf-texlive/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-(/usr/share/texmf-texlive/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
 File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OML ...
 ... no UTF-8 mapping file for font encoding OML
 Now handling font encoding T1 ...
 ... processing UTF-8 mapping file for font encoding T1
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu
 File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -194,7 +188,7 @@ File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OT1 ...
 ... processing UTF-8 mapping file for font encoding OT1
 
-(/usr/share/texmf-texlive/tex/latex/base/ot1enc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu
 File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A1 (decimal 161)
    defining Unicode char U+00A3 (decimal 163)
@@ -225,7 +219,7 @@ File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
 Now handling font encoding OMS ...
 ... processing UTF-8 mapping file for font encoding OMS
 
-(/usr/share/texmf-texlive/tex/latex/base/omsenc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu
 File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A7 (decimal 167)
    defining Unicode char U+00B6 (decimal 182)
@@ -251,14 +245,14 @@ Now handling font encoding U ...
 ))
    defining Unicode char U+00A0 (decimal 160)
 
-(/usr/share/texmf-texlive/tex/latex/base/fontenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/fontenc.sty
 Package: fontenc 2005/09/27 v1.99g Standard LaTeX package
 
-(/usr/share/texmf-texlive/tex/latex/base/t1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.def
 File: t1enc.def 2005/09/27 v1.99g Standard LaTeX file
 LaTeX Font Info:    Redeclaring font encoding T1 on input line 43.
 ))
-(/usr/share/texmf-texlive/tex/latex/psnfss/times.sty
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 ) (./fncychap.sty
 Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
@@ -270,7 +264,7 @@ Package: fncychap 2007/07/30 v1.34 LaTeX package (Revised chapters)
 \pyy=\skip48
 \pxx=\skip49
 )
-(/usr/share/texmf-texlive/tex/latex/tools/longtable.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty
 Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 \LTleft=\skip50
 \LTright=\skip51
@@ -290,7 +284,7 @@ Package: longtable 2004/02/01 v4.11 Multi-page Table package (DPC)
 ) (./sphinx.sty
 Package: sphinx 2010/01/15 LaTeX package (Sphinx markup)
 
-(/usr/share/texmf-texlive/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
 Package: textcomp 2005/09/27 v1.99g Standard LaTeX package
 Package textcomp Info: Sub-encoding information:
 (textcomp)               5 = only ISO-Adobe without \textcurrency
@@ -305,12 +299,12 @@ Package textcomp Info: Sub-encoding information:
 (textcomp)             See the documentation for details.
 Package textcomp Info: Setting ? sub-encoding to TS1/1 on input line 71.
 
-(/usr/share/texmf-texlive/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
 File: ts1enc.def 2001/06/05 v3.0e (jk/car/fm) Standard LaTeX file
 Now handling font encoding TS1 ...
 ... processing UTF-8 mapping file for font encoding TS1
 
-(/usr/share/texmf-texlive/tex/latex/base/ts1enc.dfu
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu
 File: ts1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
    defining Unicode char U+00A2 (decimal 162)
    defining Unicode char U+00A3 (decimal 163)
@@ -414,24 +408,38 @@ Package textcomp Info: Setting pxtt sub-encoding to TS1/0 on input line 307.
 Package textcomp Info: Setting txr sub-encoding to TS1/0 on input line 308.
 Package textcomp Info: Setting txss sub-encoding to TS1/0 on input line 309.
 Package textcomp Info: Setting txtt sub-encoding to TS1/0 on input line 310.
-Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 311.
-Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 312.
-Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 313.
-Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 314.
-Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 315.
-Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 316.
-Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 317.
-Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 318.
-Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 319.
-Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 320.
-Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 321.
-Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 322.
-Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 323.
-Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 324.
-Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 325.
-Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting lmr sub-encoding to TS1/0 on input line 311.
+Package textcomp Info: Setting lmdh sub-encoding to TS1/0 on input line 312.
+Package textcomp Info: Setting lmss sub-encoding to TS1/0 on input line 313.
+Package textcomp Info: Setting lmssq sub-encoding to TS1/0 on input line 314.
+Package textcomp Info: Setting lmvtt sub-encoding to TS1/0 on input line 315.
+Package textcomp Info: Setting qhv sub-encoding to TS1/0 on input line 316.
+Package textcomp Info: Setting qag sub-encoding to TS1/0 on input line 317.
+Package textcomp Info: Setting qbk sub-encoding to TS1/0 on input line 318.
+Package textcomp Info: Setting qcr sub-encoding to TS1/0 on input line 319.
+Package textcomp Info: Setting qcs sub-encoding to TS1/0 on input line 320.
+Package textcomp Info: Setting qpl sub-encoding to TS1/0 on input line 321.
+Package textcomp Info: Setting qtm sub-encoding to TS1/0 on input line 322.
+Package textcomp Info: Setting qzc sub-encoding to TS1/0 on input line 323.
+Package textcomp Info: Setting qhvc sub-encoding to TS1/0 on input line 324.
+Package textcomp Info: Setting futs sub-encoding to TS1/4 on input line 325.
+Package textcomp Info: Setting futx sub-encoding to TS1/4 on input line 326.
+Package textcomp Info: Setting futj sub-encoding to TS1/4 on input line 327.
+Package textcomp Info: Setting hlh sub-encoding to TS1/3 on input line 328.
+Package textcomp Info: Setting hls sub-encoding to TS1/3 on input line 329.
+Package textcomp Info: Setting hlst sub-encoding to TS1/3 on input line 330.
+Package textcomp Info: Setting hlct sub-encoding to TS1/5 on input line 331.
+Package textcomp Info: Setting hlx sub-encoding to TS1/5 on input line 332.
+Package textcomp Info: Setting hlce sub-encoding to TS1/5 on input line 333.
+Package textcomp Info: Setting hlcn sub-encoding to TS1/5 on input line 334.
+Package textcomp Info: Setting hlcw sub-encoding to TS1/5 on input line 335.
+Package textcomp Info: Setting hlcf sub-encoding to TS1/5 on input line 336.
+Package textcomp Info: Setting pplx sub-encoding to TS1/3 on input line 337.
+Package textcomp Info: Setting pplj sub-encoding to TS1/3 on input line 338.
+Package textcomp Info: Setting ptmx sub-encoding to TS1/4 on input line 339.
+Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 340.
 )
-(/usr/share/texmf-texlive/tex/latex/fancyhdr/fancyhdr.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
 \fancy@headwidth=\skip54
 \f@ncyO@elh=\skip55
 \f@ncyO@erh=\skip56
@@ -442,10 +450,10 @@ Package textcomp Info: Setting ptmj sub-encoding to TS1/4 on input line 326.
 \f@ncyO@olf=\skip61
 \f@ncyO@orf=\skip62
 )
-(/usr/share/texmf-texlive/tex/latex/fancybox/fancybox.sty
-Package: fancybox 2000/09/19 1.3
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Package: fancybox 2010/05/15 1.4
 
-Style option: `fancybox' v1.3 <2000/09/19> (tvz)
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
 \@fancybox=\box30
 \shadowsize=\dimen104
 \@Sbox=\box31
@@ -455,8 +463,8 @@ Style option: `fancybox' v1.3 <2000/09/19> (tvz)
 \EndVerbatimTokens=\toks20
 \Verbatim@Outfile=\write3
 \Verbatim@Infile=\read1
-) (/usr/share/texmf-texlive/tex/latex/titlesec/titlesec.sty
-Package: titlesec 2007/08/12 v2.8 Sectioning titles
+) (/usr/share/texlive/texmf-dist/tex/latex/titlesec/titlesec.sty
+Package: titlesec 2011/12/15 v2.10.0 Sectioning titles
 \ttl@box=\box32
 \beforetitleunit=\skip63
 \aftertitleunit=\skip64
@@ -466,10 +474,10 @@ Package: titlesec 2007/08/12 v2.8 Sectioning titles
 \titlewidth=\dimen107
 \titlewidthlast=\dimen108
 \titlewidthfirst=\dimen109
-) (./tabulary.sty
+)
+(./tabulary.sty
 Package: tabulary 2007/10/02 v0.9 tabulary package (DPC)
-
-(/usr/share/texmf-texlive/tex/latex/tools/array.sty
+ (/usr/share/texlive/texmf-dist/tex/latex/tools/array.sty
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen110
 \extrarowheight=\dimen111
@@ -483,41 +491,41 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \tymax=\dimen114
 \TY@tablewidth=\dimen115
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2000/07/18 v2.13 AMS math features
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2013/01/14 v2.14 AMS math features
 \@mathmargin=\skip67
 
 For additional information on amsmath, use the `?' option.
-(/usr/share/texmf-texlive/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
 Package: amstext 2000/06/29 v2.01
 
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsgen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks23
 \ex@=\dimen116
 ))
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsbsy.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen117
 )
-(/usr/share/texmf-texlive/tex/latex/amsmath/amsopn.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count94
-LaTeX Info: Redefining \frac on input line 211.
+LaTeX Info: Redefining \frac on input line 210.
 \uproot@=\count95
 \leftroot@=\count96
-LaTeX Info: Redefining \overline on input line 307.
+LaTeX Info: Redefining \overline on input line 306.
 \classnum@=\count97
 \DOTSCASE@=\count98
-LaTeX Info: Redefining \ldots on input line 379.
-LaTeX Info: Redefining \dots on input line 382.
-LaTeX Info: Redefining \cdots on input line 467.
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
 \Mathstrutbox@=\box33
 \strutbox@=\box34
 \big@size=\dimen118
-LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \macc@depth=\count99
 \c@MaxMatrixCols=\count100
 \dotsspace@=\muskip10
@@ -538,39 +546,47 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 \multlinegap=\skip68
 \multlinetaggap=\skip69
 \mathdisplay@stack=\toks27
-LaTeX Info: Redefining \[ on input line 2666.
-LaTeX Info: Redefining \] on input line 2667.
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
 )
-(/usr/share/texmf-texlive/tex/latex/base/makeidx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty
 Package: makeidx 2000/03/29 v1.0m Standard LaTeX package
 )
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/framed.sty
-Package: framed 2007/10/04 v 0.95: framed or shaded text with page breaks
+(/usr/share/texlive/texmf-dist/tex/latex/framed/framed.sty
+Package: framed 2011/10/22 v 0.96: framed or shaded text with page breaks
+\OuterFrameSep=\skip70
 \fb@frw=\dimen125
 \fb@frh=\dimen126
 \FrameRule=\dimen127
 \FrameSep=\dimen128
 )
-(/usr/share/texmf-texlive/tex/latex/base/ifthen.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/color.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/color.sty
 Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
 
-(/etc/texmf/tex/latex/config/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package color Info: Driver file: pdftex.def on input line 130.
 
-(/usr/share/texmf-texlive/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2010/03/12 v0.04p Graphics/color for pdfTeX
+(/usr/share/texlive/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
 \Gread@gobject=\count106
 ))
-(/usr/share/texmf-texlive/tex/latex/fancyvrb/fancyvrb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
 Package: fancyvrb 2008/02/07
 
 Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
-<2008/02/07> (tvz) (/usr/share/texmf-texlive/tex/latex/graphics/keyval.sty
+<2008/02/07> (tvz) (/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks28
 )
@@ -580,17 +596,16 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \c@FancyVerbLine=\count108
 \FV@StepNumber=\count109
 \FV@OutFile=\write4
-)
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/threeparttable.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/threeparttable/threeparttable.sty
 Package: threeparttable 2003/06/13  v 3.0
 \@tempboxb=\box36
 )
-(/usr/share/texmf-texlive/tex/latex/mdwtools/footnote.sty
+(/usr/share/texlive/texmf-dist/tex/latex/mdwtools/footnote.sty
 Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \fn@notes=\box37
 \fn@width=\dimen129
 )
-(/usr/share/texmf-texlive/tex/latex/wrapfig/wrapfig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty
 \wrapoverhang=\dimen130
 \WF@size=\dimen131
 \c@WF@wrappedlines=\count110
@@ -598,197 +613,200 @@ Package: footnote 1997/01/28 1.13 Save footnotes around boxes
 \WF@everypar=\toks29
 Package: wrapfig 2003/01/31  v 3.6
 )
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/parskip.sty
+(/usr/share/texlive/texmf-dist/tex/latex/parskip/parskip.sty
 Package: parskip 2001/04/09 non-zero parskip adjustments
 )
-(/usr/share/texmf-texlive/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/share/texmf-texlive/tex/latex/graphics/trig.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-(/etc/texmf/tex/latex/config/graphics.cfg
-File: graphics.cfg 2009/08/28 v1.8 graphics configuration of TeX Live
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 )
 \Gin@req@height=\dimen132
 \Gin@req@width=\dimen133
 )
-(/usr/share/texmf-texlive/tex/plain/misc/pdfcolor.tex)
-\distancetoright=\skip70
-\py@argswidth=\skip71
-\py@noticelength=\skip72
-\lineblockindentation=\skip73
+(/usr/share/texlive/texmf-dist/tex/plain/misc/pdfcolor.tex)
+\distancetoright=\skip71
+\py@argswidth=\skip72
+\py@noticelength=\skip73
+\lineblockindentation=\skip74
 \image@box=\box39
 \image@width=\dimen134
 
-(/usr/share/texmf-texlive/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2009/10/09 v6.79a Hypertext links for LaTeX
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
 
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifpdf.sty
-Package: ifpdf 2009/04/10 v2.0 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in pdf mode detected.
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifvtex.sty
-Package: ifvtex 2008/11/04 v1.4 Switches for detecting VTeX and its modes (HO)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-)
-(/usr/share/texmf-texlive/tex/generic/ifxetex/ifxetex.sty
-Package: ifxetex 2009/01/23 v0.5 Provides ifxetex conditional
-)
-(/usr/share/texmf-texlive/tex/latex/oberdiek/hycolor.sty
-Package: hycolor 2009/10/02 v1.5 Code for color options of hyperref/bookmark (H
-O)
-
-(/usr/share/texmf-texlive/tex/latex/oberdiek/xcolor-patch.sty
-Package: xcolor-patch 2009/10/02 xcolor patch
-))
-\@linkdim=\dimen135
-\Hy@linkcounter=\count111
-\Hy@pagecounter=\count112
-
-(/usr/share/texmf-texlive/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2009/10/09 v6.79a Hyperref: PDFDocEncoding definition (HO)
-Now handling font encoding PD1 ...
-... no UTF-8 mapping file for font encoding PD1
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/etexcmds.sty
-Package: etexcmds 2007/12/12 v1.2 Prefix for e-TeX command names (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2007/09/09 v1.2 Providing info/warning/message (HO)
-)
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-)
-(/usr/share/texmf-texlive/tex/latex/latexconfig/hyperref.cfg
-File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
-)
-(/usr/share/texmf-texlive/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2009/08/13 v3.4 Keyval support for LaTeX options (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/kvsetkeys.sty
-Package: kvsetkeys 2009/07/30 v1.5 Key value parser with default handler suppor
-t (HO)
-))
-Package hyperref Info: Option `colorlinks' set `true' on input line 2864.
-Package hyperref Info: Option `breaklinks' set `true' on input line 2864.
-Package hyperref Info: Hyper figures OFF on input line 2975.
-Package hyperref Info: Link nesting OFF on input line 2980.
-Package hyperref Info: Hyper index ON on input line 2983.
-Package hyperref Info: Plain pages OFF on input line 2990.
-Package hyperref Info: Backreferencing OFF on input line 2995.
-
-Implicit mode ON; LaTeX internals redefined
-Package hyperref Info: Bookmarks ON on input line 3191.
-(/usr/share/texmf-texlive/tex/latex/ltxmisc/url.sty
-\Urlmuskip=\muskip11
-Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
-)
-LaTeX Info: Redefining \url on input line 3428.
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/bitset.sty
-Package: bitset 2007/09/28 v1.0 Data type bit set (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/intcalc.sty
-Package: intcalc 2007/09/27 v1.1 Expandable integer calculations (HO)
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/bigintcalc.sty
-Package: bigintcalc 2007/11/11 v1.1 Expandable big integer calculations (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/pdftexcmds.sty
-Package: pdftexcmds 2009/09/23 v0.6 LuaTeX support for pdfTeX utility functions
- (HO)
-
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ifluatex.sty
-Package: ifluatex 2009/04/17 v1.2 Provides the ifluatex switch (HO)
-Package ifluatex Info: LuaTeX not detected.
-)
-(/usr/share/texmf-texlive/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2009/08/05 v1.0 Some LaTeX kernel commands for general use (HO
-)
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
-)))
-\Fld@menulength=\count113
-\Field@Width=\dimen136
-\Fld@charsize=\dimen137
-\Field@toks=\toks30
-Package hyperref Info: Hyper figures OFF on input line 4377.
-Package hyperref Info: Link nesting OFF on input line 4382.
-Package hyperref Info: Hyper index ON on input line 4385.
-Package hyperref Info: backreferencing OFF on input line 4392.
-Package hyperref Info: Link coloring ON on input line 4395.
-Package hyperref Info: Link coloring with OCG OFF on input line 4402.
-Package hyperref Info: PDF/A mode OFF on input line 4407.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen135
+\Hy@linkcounter=\count111
+\Hy@pagecounter=\count112
 
-(/usr/share/texmf-texlive/tex/generic/oberdiek/atbegshi.sty
-Package: atbegshi 2008/07/31 v1.9 At begin shipout hook (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@abspage=\count114
-\c@Item=\count115
-\c@Hfootnote=\count116
-)
-*hyperref using default driver hpdftex*
-(/usr/share/texmf-texlive/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2009/10/09 v6.79a Hyperref driver for pdfTeX
-\Fld@listcount=\count117
-)
-(/usr/share/texmf-texlive/tex/latex/oberdiek/hypcap.sty
-Package: hypcap 2008/09/08 v1.10 Adjusting anchors of captions (HO)
-)
-\DUlineblockindent=\skip74
-)
-(/usr/share/texmf-texlive/tex/latex/multirow/multirow.sty
-\bigstrutjot=\dimen138
-)
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amssymb.sty
-Package: amssymb 2009/06/22 v3.00
+\Hy@SavedSpaceFactor=\count113
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/amsfonts.sty
-Package: amsfonts 2009/06/22 v3.00 Basic AMSFonts support
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
+Package hyperref Info: Option `breaklinks' set `true' on input line 4319.
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count114
+
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip11
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen136
+\Fld@menulength=\count115
+\Field@Width=\dimen137
+\Fld@charsize=\dimen138
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring ON on input line 6313.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count116
+\c@Item=\count117
+\c@Hfootnote=\count118
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count119
+\c@bookmark@seq@number=\count120
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip75
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/hypcap.sty
+Package: hypcap 2011/02/16 v1.11 Adjusting the anchors of captions (HO)
+)
+\DUlineblockindent=\skip76
+)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty
+\bigstrutjot=\dimen139
+)
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amssymb.sty
+Package: amssymb 2013/01/14 v3.01 AMS font symbols
+
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup4
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
-(Font)                  U/euf/m/n --> U/euf/b/n on input line 96.
+(Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/var/lib/texmf/tex/generic/babel/babel.sty
-Package: babel 2008/07/06 v3.8l The Babel package
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+Package: babel 2013/05/16 v3.9f The Babel package
 
-(/usr/share/texmf-texlive/tex/generic/babel/polish.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel-polish/polish.ldf
 Language: polish 2005/03/31 v1.2l Polish support from the babel system
 
-(/usr/share/texmf-texlive/tex/generic/babel/babel.def
-File: babel.def 2008/07/06 v3.8l Babel common definitions
-\babel@savecnt=\count118
-\U@D=\dimen139
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+File: babel.def 2013/05/16 v3.9f Babel common definitions
+\babel@savecnt=\count121
+\U@D=\dimen140
 )
 Package babel Info: Making " an active character on input line 83.
-\pl@left=\dimen140
-\pl@down=\dimen141
-\pl@right=\dimen142
-\pl@temp=\dimen143
+\pl@left=\dimen141
+\pl@down=\dimen142
+\pl@right=\dimen143
+\pl@temp=\dimen144
 ))
-(/usr/share/texmf/tex/latex/tcolorbox/tcolorbox.sty
-Package: tcolorbox 2013/09/16 version 2.51 text color boxes
+(/usr/share/texlive/texmf-dist/tex/latex/tcolorbox/tcolorbox.sty
+Package: tcolorbox 2013/07/15 version 2.40 text color boxes
 
 (/usr/share/texmf/tex/latex/pgf/basiclayer/pgf.sty
 (/usr/share/texmf/tex/latex/pgf/utilities/pgfrcs.sty
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-common.tex
-\pgfutil@everybye=\toks31
+\pgfutil@everybye=\toks30
 )
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfutil-latex.def
 \pgfutil@abb=\box40
 
-(/usr/share/texmf-texlive/tex/latex/ms/everyshi.sty
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty
 Package: everyshi 2001/05/15 v3.00 EveryShipout Package (MS)
 ))
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfrcs.code.tex
@@ -802,26 +820,26 @@ Package: pgf 2008/01/15 v2.10 (rcs-revision 1.12)
 Package: pgfsys 2010/06/30 v2.10 (rcs-revision 1.37)
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks32
-\pgfkeys@temptoks=\toks33
+\pgfkeys@pathtoks=\toks31
+\pgfkeys@temptoks=\toks32
 
 (/usr/share/texmf/tex/generic/pgf/utilities/pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks34
+\pgfkeys@tmptoks=\toks33
 ))
-\pgf@x=\dimen144
-\pgf@y=\dimen145
-\pgf@xa=\dimen146
-\pgf@ya=\dimen147
-\pgf@xb=\dimen148
-\pgf@yb=\dimen149
-\pgf@xc=\dimen150
-\pgf@yc=\dimen151
+\pgf@x=\dimen145
+\pgf@y=\dimen146
+\pgf@xa=\dimen147
+\pgf@ya=\dimen148
+\pgf@xb=\dimen149
+\pgf@yb=\dimen150
+\pgf@xc=\dimen151
+\pgf@yc=\dimen152
 \w@pgf@writea=\write5
 \r@pgf@reada=\read3
-\c@pgf@counta=\count119
-\c@pgf@countb=\count120
-\c@pgf@countc=\count121
-\c@pgf@countd=\count122
+\c@pgf@counta=\count122
+\c@pgf@countb=\count123
+\c@pgf@countc=\count124
+\c@pgf@countd=\count125
 
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgf.cfg
 File: pgf.cfg 2008/05/14  (rcs-revision 1.7)
@@ -836,8 +854,8 @@ File: pgfsys-common-pdf.def 2008/05/19  (rcs-revision 1.10)
 )))
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2008/07/18  (rcs-revision 1.7)
-\pgfsyssoftpath@smallbuffer@items=\count123
-\pgfsyssoftpath@bigbuffer@items=\count124
+\pgfsyssoftpath@smallbuffer@items=\count126
+\pgfsyssoftpath@bigbuffer@items=\count127
 )
 (/usr/share/texmf/tex/generic/pgf/systemlayer/pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
@@ -845,7 +863,7 @@ File: pgfsysprotocol.code.tex 2006/10/16  (rcs-revision 1.4)
 (/usr/share/texmf/tex/latex/xcolor/xcolor.sty
 Package: xcolor 2007/01/21 v2.11 LaTeX color extensions (UK)
 
-(/etc/texmf/tex/latex/config/color.cfg
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/color.cfg
 File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
 )
 Package xcolor Info: Driver file: pdftex.def on input line 225.
@@ -867,12 +885,12 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathcalc.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathutil.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathparser.code.tex
-\pgfmath@dimen=\dimen152
-\pgfmath@count=\count125
+\pgfmath@dimen=\dimen153
+\pgfmath@count=\count128
 \pgfmath@box=\box41
-\pgfmath@toks=\toks35
-\pgfmath@stack@operand=\toks36
-\pgfmath@stack@operation=\toks37
+\pgfmath@toks=\toks34
+\pgfmath@stack@operand=\toks35
+\pgfmath@stack@operation=\toks36
 )
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.code.tex
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.basic.code.tex)
@@ -883,51 +901,51 @@ Package: pgfcore 2010/04/11 v2.10 (rcs-revision 1.7)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.round.code.tex)
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfunctions.misc.code.tex)))
 (/usr/share/texmf/tex/generic/pgf/math/pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count126
+\c@pgfmathroundto@lastzeros=\count129
 ))
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2010/04/09  (rcs-revision 1.20)
-\pgf@picminx=\dimen153
-\pgf@picmaxx=\dimen154
-\pgf@picminy=\dimen155
-\pgf@picmaxy=\dimen156
-\pgf@pathminx=\dimen157
-\pgf@pathmaxx=\dimen158
-\pgf@pathminy=\dimen159
-\pgf@pathmaxy=\dimen160
-\pgf@xx=\dimen161
-\pgf@xy=\dimen162
-\pgf@yx=\dimen163
-\pgf@yy=\dimen164
-\pgf@zx=\dimen165
-\pgf@zy=\dimen166
+\pgf@picminx=\dimen154
+\pgf@picmaxx=\dimen155
+\pgf@picminy=\dimen156
+\pgf@picmaxy=\dimen157
+\pgf@pathminx=\dimen158
+\pgf@pathmaxx=\dimen159
+\pgf@pathminy=\dimen160
+\pgf@pathmaxy=\dimen161
+\pgf@xx=\dimen162
+\pgf@xy=\dimen163
+\pgf@yx=\dimen164
+\pgf@yy=\dimen165
+\pgf@zx=\dimen166
+\pgf@zy=\dimen167
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2010/08/03  (rcs-revision 1.24)
-\pgf@path@lastx=\dimen167
-\pgf@path@lasty=\dimen168
+\pgf@path@lastx=\dimen168
+\pgf@path@lasty=\dimen169
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2008/04/22  (rcs-revision 1.12)
-\pgf@shorten@end@additional=\dimen169
-\pgf@shorten@start@additional=\dimen170
+\pgf@shorten@end@additional=\dimen170
+\pgf@shorten@start@additional=\dimen171
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2010/09/08  (rcs-revision 1.34)
 \pgfpic=\box42
 \pgf@hbox=\box43
 \pgf@layerbox@main=\box44
-\pgf@picture@serial@count=\count127
+\pgf@picture@serial@count=\count130
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2008/04/22  (rcs-revision 1.9)
-\pgflinewidth=\dimen171
+\pgflinewidth=\dimen172
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2009/06/10  (rcs-revision 1.11)
-\pgf@pt@x=\dimen172
-\pgf@pt@y=\dimen173
-\pgf@pt@temp=\dimen174
+\pgf@pt@x=\dimen173
+\pgf@pt@y=\dimen174
+\pgf@pt@temp=\dimen175
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2008/10/09  (rcs-revision 1.3)
@@ -943,8 +961,8 @@ File: pgfcorearrows.code.tex 2008/04/23  (rcs-revision 1.11)
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2008/11/23  (rcs-revision 1.13)
-\pgf@max=\dimen175
-\pgf@sys@shading@range@num=\count128
+\pgf@max=\dimen176
+\pgf@sys@shading@range@num=\count131
 )
 (/usr/share/texmf/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2010/03/25  (rcs-revision 1.16)
@@ -971,48 +989,39 @@ File: pgfmoduleplot.code.tex 2010/10/22  (rcs-revision 1.8)
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2007/07/03 v2.10 (rcs-revision 1.7)
-\pgf@nodesepstart=\dimen176
-\pgf@nodesepend=\dimen177
+\pgf@nodesepstart=\dimen177
+\pgf@nodesepend=\dimen178
 )
 (/usr/share/texmf/tex/latex/pgf/compatibility/pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2007/07/23 v2.10 (rcs-revision 1.1)
 ))
-(/usr/share/texmf-texlive/tex/latex/tools/verbatim.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty
 Package: verbatim 2003/08/22 v1.5q LaTeX2e package for verbatim enhancements
-\every@verbatim=\toks38
-\verbatim@line=\toks39
+\every@verbatim=\toks37
+\verbatim@line=\toks38
 \verbatim@in@stream=\read4
 )
-(/usr/share/texmf-texlive/tex/latex/environ/environ.sty
-Package: environ 2008/06/18 v0.2 A new way to define environments
-)
+(/usr/share/texlive/texmf-dist/tex/latex/environ/environ.sty
+Package: environ 2013/04/01 v0.3 A new environment syntax
 
-LaTeX Warning: You have requested, on input line 26, version
-               `2013/04/01' of package environ,
-               but only version
-               `2008/06/18 v0.2 A new way to define environments'
-               is available.
-
-(/usr/share/texmf-texlive/tex/latex/etoolbox/etoolbox.sty
-Package: etoolbox 2009/08/06 v1.8 e-TeX tools for LaTeX
-
-(/usr/share/texmf-texlive/tex/latex/etex-pkg/etex.sty
-Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
-\et@xins=\count129
+(/usr/share/texlive/texmf-dist/tex/latex/trimspaces/trimspaces.sty
+Package: trimspaces 2009/09/17 v1.1 Trim spaces around a token list
 ))
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2011/01/03 v2.1 e-TeX tools for LaTeX
 
-LaTeX Warning: You have requested, on input line 27, version
-               `2011/01/03' of package etoolbox,
-               but only version
-               `2009/08/06 v1.8 e-TeX tools for LaTeX'
-               is available.
-
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+Package: etex 1998/03/26 v2.0 eTeX basic definition package (PEB)
+\et@xins=\count132
+)
+\etb@tempcnta=\count133
+)
 \tcb@titlebox=\box47
 \tcb@upperbox=\box48
 \tcb@lowerbox=\box49
 \tcb@phantombox=\box50
-\c@tcbbreakpart=\count130
-\c@tcblayer=\count131
+\c@tcbbreakpart=\count134
+\c@tcblayer=\count135
 \tcb@temp=\box51
 \tcb@temp=\box52
 \tcb@temp=\box53
@@ -1027,91 +1036,108 @@ Writing index file StochDyn_v0.3.idx
 (./StochDyn_v0.3.aux)
 \openout1 = `StochDyn_v0.3.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 123.
-LaTeX Font Info:    Try loading font information for TS1+cmr on input line 123.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 129.
+LaTeX Font Info:    Try loading font information for TS1+cmr on input line 129.
 
- (/usr/share/texmf-texlive/tex/latex/base/ts1cmr.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd
 File: ts1cmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 123.
-LaTeX Font Info:    ... okay on input line 123.
-LaTeX Font Info:    Try loading font information for T1+ptm on input line 123.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 129.
+LaTeX Font Info:    ... okay on input line 129.
+LaTeX Font Info:    Try loading font information for T1+ptm on input line 129.
 
-(/usr/share/texmf-texlive/tex/latex/psnfss/t1ptm.fd
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
 )
-(/usr/share/texmf-texlive/tex/context/base/supp-pdf.mkii
+(/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count132
-\scratchdimen=\dimen178
+\scratchcounter=\count136
+\scratchdimen=\dimen179
 \scratchbox=\box55
-\nofMPsegments=\count133
-\nofMParguments=\count134
-\everyMPshowfont=\toks40
-\MPscratchCnt=\count135
-\MPscratchDim=\dimen179
-\MPnumerator=\count136
-\everyMPtoPDFconversion=\toks41
-)
-Package hyperref Info: Link coloring ON on input line 123.
- (/usr/share/texmf-texlive/tex/latex/hyperref/nameref.sty
-Package: nameref 2007/05/29 v2.31 Cross-referencing by name of section
+\nofMPsegments=\count137
+\nofMParguments=\count138
+\everyMPshowfont=\toks39
+\MPscratchCnt=\count139
+\MPscratchDim=\dimen180
+\MPnumerator=\count140
+\makeMPintoPDFobject=\count141
+\everyMPtoPDFconversion=\toks40
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
-(/usr/share/texmf-texlive/tex/latex/oberdiek/refcount.sty
-Package: refcount 2008/08/11 v3.1 Data extraction from references (HO)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
 )
-\c@section@level=\count137
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\AtBeginShipoutBox=\box56
+Package hyperref Info: Link coloring ON on input line 129.
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-LaTeX Info: Redefining \ref on input line 123.
-LaTeX Info: Redefining \pageref on input line 123.
+\c@section@level=\count142
+)
+LaTeX Info: Redefining \ref on input line 129.
+LaTeX Info: Redefining \pageref on input line 129.
+LaTeX Info: Redefining \nameref on input line 129.
 
 (./StochDyn_v0.3.out) (./StochDyn_v0.3.out)
 \@outlinefile=\write8
 \openout8 = `StochDyn_v0.3.out'.
 
-\AtBeginShipoutBox=\box56
 
 ABD: EveryShipout initializing macros
-Underfull \hbox (badness 10000) in paragraph at lines 126--126
+Underfull \hbox (badness 10000) in paragraph at lines 132--132
 
  []
 
-LaTeX Font Info:    Try loading font information for T1+phv on input line 126.
-(/usr/share/texmf-texlive/tex/latex/psnfss/t1phv.fd
+LaTeX Font Info:    Try loading font information for T1+phv on input line 132.
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1phv.fd
 File: t1phv.fd 2001/06/04 scalable font definitions for T1/phv.
 )
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <24.88> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 126.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/m/it' in size <20.74> not available
-(Font)              Font shape `T1/phv/m/sl' tried instead on input line 126.
+(Font)              Font shape `T1/phv/m/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/bx/it' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/it' tried instead on input line 126.
+(Font)              Font shape `T1/phv/b/it' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/b/it' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/sl' tried instead on input line 126.
+(Font)              Font shape `T1/phv/b/sl' tried instead on input line 132.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <20.74> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 126.
-LaTeX Font Info:    Try loading font information for U+msa on input line 126.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 132.
+LaTeX Font Info:    Try loading font information for U+msa on input line 132.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsa.fd
-File: umsa.fd 2009/06/22 v3.00 AMS symbols A
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 126.
+LaTeX Font Info:    Try loading font information for U+msb on input line 132.
 
-(/usr/share/texmf-texlive/tex/latex/amsfonts/umsb.fd
-File: umsb.fd 2009/06/22 v3.00 AMS symbols B
+(/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) [1
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}] [2
@@ -1190,22 +1216,23 @@ Package xcolor Warning: Incompatible color definition on input line 103.
 
 Adding blank page after the table of contents.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <12> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 126.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 132.
 pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.126 \tableofcontents
+l.132 \tableofcontents
                        [1
 
 ]pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) ha
 s been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.126 \tableofcontents
+l.132 \tableofcontents
                        [2]
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 138.
- (/usr/share/texmf-texlive/tex/latex/psnfss/t1pcr.fd
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 144.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
 )
 
@@ -1221,235 +1248,235 @@ Package Fancyhdr Warning: \headheight is too small (12.0pt):
 ]
 Rozdzia\l  1.
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <17.28> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 143.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 149.
 
-Package xcolor Warning: Incompatible color definition on input line 146.
+Package xcolor Warning: Incompatible color definition on input line 152.
 
 
-Package xcolor Warning: Incompatible color definition on input line 146.
+Package xcolor Warning: Incompatible color definition on input line 152.
 
 [3]
 
-Package xcolor Warning: Incompatible color definition on input line 184.
+Package xcolor Warning: Incompatible color definition on input line 190.
 
 [4]
 
-Package xcolor Warning: Incompatible color definition on input line 240.
+Package xcolor Warning: Incompatible color definition on input line 246.
 
 
-Package xcolor Warning: Incompatible color definition on input line 240.
+Package xcolor Warning: Incompatible color definition on input line 246.
 
 
-Package xcolor Warning: Incompatible color definition on input line 241.
+Package xcolor Warning: Incompatible color definition on input line 247.
 
 
-Package xcolor Warning: Incompatible color definition on input line 241.
+Package xcolor Warning: Incompatible color definition on input line 247.
 
 
-Package xcolor Warning: Incompatible color definition on input line 242.
+Package xcolor Warning: Incompatible color definition on input line 248.
 
 [5]
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <14.4> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 249.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 255.
 
 
-Package xcolor Warning: Incompatible color definition on input line 249.
+Package xcolor Warning: Incompatible color definition on input line 255.
 
 
-Package xcolor Warning: Incompatible color definition on input line 249.
+Package xcolor Warning: Incompatible color definition on input line 255.
 
 
-LaTeX Warning: Command \. invalid in math mode on input line 255.
+LaTeX Warning: Command \. invalid in math mode on input line 261.
 
 Missing character: There is no » in font cmr12!
 [6]
-Overfull \hbox (117.03212pt too wide) in paragraph at lines 308--308
+Overfull \hbox (117.03212pt too wide) in paragraph at lines 314--314
 []\T1/pcr/m/n/10 sol=desolve_odeint( vector([x*exp(-0.1*x),  y*exp(-0.2*y),  z*
 exp(-0.3*z)]), [5,5,5],U,[x,y,z])[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 317.
+Package xcolor Warning: Incompatible color definition on input line 323.
 
 
-Package xcolor Warning: Incompatible color definition on input line 317.
+Package xcolor Warning: Incompatible color definition on input line 323.
 
 [7]
 
-Package xcolor Warning: Incompatible color definition on input line 346.
+Package xcolor Warning: Incompatible color definition on input line 352.
 
 
-Package xcolor Warning: Incompatible color definition on input line 346.
+Package xcolor Warning: Incompatible color definition on input line 352.
 
 [8]
 
-Package xcolor Warning: Incompatible color definition on input line 351.
+Package xcolor Warning: Incompatible color definition on input line 357.
 
 
-Package xcolor Warning: Incompatible color definition on input line 351.
+Package xcolor Warning: Incompatible color definition on input line 357.
 
 
-Overfull \hbox (57.03212pt too wide) in paragraph at lines 370--370
+Overfull \hbox (57.03212pt too wide) in paragraph at lines 376--376
 []\T1/pcr/m/n/10 show(p1+p2+p3, figsize=[6,3], axes_labels=[r'$t$',r'$x(t)$'], 
 axes=False, frame=True)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 375.
+Package xcolor Warning: Incompatible color definition on input line 381.
 
 
-Package xcolor Warning: Incompatible color definition on input line 375.
+Package xcolor Warning: Incompatible color definition on input line 381.
 
 
-Overfull \hbox (135.03212pt too wide) in paragraph at lines 390--390
+Overfull \hbox (135.03212pt too wide) in paragraph at lines 396--396
 []\T1/pcr/m/n/10 g  = plot(-4.0/(1 +12*t), (t,0,0.5), detect_poles='show', lege
 nd_label=r'$x(0)=-4$', color='blue')[] 
  []
 
 
-Overfull \hbox (117.03212pt too wide) in paragraph at lines 392--392
+Overfull \hbox (117.03212pt too wide) in paragraph at lines 398--398
 []\T1/pcr/m/n/10 g += plot(1.0/(1-3*t), (t,0,1/3), detect_poles='show', legend_
 label=r'$x(0)=1$', color='green')[] 
  []
 
 
-Overfull \hbox (93.03212pt too wide) in paragraph at lines 393--393
+Overfull \hbox (93.03212pt too wide) in paragraph at lines 399--399
 []\T1/pcr/m/n/10 g.show(axes_labels=[r'$t$',r'$x$'], ymin=-4, ymax=8, figsize=[
 6,3], axes=False, frame=True)[] 
  []
 
 [9]
 
-Package xcolor Warning: Incompatible color definition on input line 400.
+Package xcolor Warning: Incompatible color definition on input line 406.
 
 
-Package xcolor Warning: Incompatible color definition on input line 400.
+Package xcolor Warning: Incompatible color definition on input line 406.
 
 [10]
 
-Package xcolor Warning: Incompatible color definition on input line 457.
+Package xcolor Warning: Incompatible color definition on input line 463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 457.
+Package xcolor Warning: Incompatible color definition on input line 463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 462.
+Package xcolor Warning: Incompatible color definition on input line 468.
 
 
-Overfull \hbox (57.03212pt too wide) in paragraph at lines 485--485
+Overfull \hbox (57.03212pt too wide) in paragraph at lines 491--491
 []\T1/pcr/m/n/10 show(p1+p2+p3, figsize=[6,3], axes_labels=[r'$t$',r'$x(t)$'], 
 axes=False, frame=True)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 490.
+Package xcolor Warning: Incompatible color definition on input line 496.
 
 [11]
-Overfull \hbox (129.03212pt too wide) in paragraph at lines 521--521
+Overfull \hbox (129.03212pt too wide) in paragraph at lines 527--527
 []\T1/pcr/m/n/10 w = plot(rozw2(x_0=x0), (t,0,1), detect_poles='show', legend_l
 abel=r'$x(0)=%d$'%x0, color='blue')[] 
  []
 
 
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 523--523
+Overfull \hbox (3.03212pt too wide) in paragraph at lines 529--529
 []\T1/pcr/m/n/10 w += plot(rozw2(x_0=x0), (t,0,1), legend_label=r'$x(0)=%d$'%x0
 , color='red')[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 525--525
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 531--531
 []\T1/pcr/m/n/10 w += plot(rozw2(x_0=x0), (t,0,1/3), legend_label=r'$x(0)=%d$'%
 x0, color='green')[] 
  []
 
 
-Overfull \hbox (357.03212pt too wide) in paragraph at lines 526--526
+Overfull \hbox (357.03212pt too wide) in paragraph at lines 532--532
 []\T1/pcr/m/n/10 w.show(axes_labels=[r'$t$',r'$x$'], tick_formatter='latex', xm
 in=0, xmax=0.5, ymin=-4.1, ymax=8, figsize=(6,3), axes=False, frame=True)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 531.
+Package xcolor Warning: Incompatible color definition on input line 537.
 
 [12]
 
-Package xcolor Warning: Incompatible color definition on input line 570.
+Package xcolor Warning: Incompatible color definition on input line 576.
 
 
-Package xcolor Warning: Incompatible color definition on input line 570.
+Package xcolor Warning: Incompatible color definition on input line 576.
 
 [13]
 
-Package xcolor Warning: Incompatible color definition on input line 591.
+Package xcolor Warning: Incompatible color definition on input line 597.
 
 
-Package xcolor Warning: Incompatible color definition on input line 591.
+Package xcolor Warning: Incompatible color definition on input line 597.
 
 
-Package xcolor Warning: Incompatible color definition on input line 596.
+Package xcolor Warning: Incompatible color definition on input line 602.
 
 
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 612--612
+Overfull \hbox (3.03212pt too wide) in paragraph at lines 618--618
 []\T1/pcr/m/n/10 p1=plot(g(t,1),(t,0,2),figsize=(6, 3), legend_label="x(0)=1", 
 color='blue' )[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 614--614
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 620--620
 []\T1/pcr/m/n/10 p3=plot(g(t,-1),(t,0,2),figsize=(6, 3), legend_label="x(0)=-1"
 , color='green' )[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 620.
+Package xcolor Warning: Incompatible color definition on input line 626.
 
 [14]
-Overfull \hbox (81.03212pt too wide) in paragraph at lines 636--636
+Overfull \hbox (81.03212pt too wide) in paragraph at lines 642--642
 []\T1/pcr/m/n/10 g=plot(-4.0/(1 +12*t),t,0,5,detect_poles='show',legend_label=r
 '$x(0)= -4$', color='blue')[] 
  []
 
 
-Overfull \hbox (81.03212pt too wide) in paragraph at lines 638--638
+Overfull \hbox (81.03212pt too wide) in paragraph at lines 644--644
 []\T1/pcr/m/n/10 g+=plot(1.0/(1-3*t),t,0,0.33,detect_poles='show', legend_label
 =r'$x(0)=1$',color='green')[] 
  []
 
 
-Overfull \hbox (327.03212pt too wide) in paragraph at lines 639--639
+Overfull \hbox (327.03212pt too wide) in paragraph at lines 645--645
 []\T1/pcr/m/n/10 g.show(axes_labels=[r'$t$',r'$x$'],tick_formatter='latex',xmin
 =0,xmax=0.5,ymin=-4.1,ymax=8, figsize=(7,4), frame=True, axes=False)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 646.
+Package xcolor Warning: Incompatible color definition on input line 652.
 
 [15]
 
-Package xcolor Warning: Incompatible color definition on input line 710.
+Package xcolor Warning: Incompatible color definition on input line 716.
 
 
-Package xcolor Warning: Incompatible color definition on input line 710.
+Package xcolor Warning: Incompatible color definition on input line 716.
 
 
-Package xcolor Warning: Incompatible color definition on input line 712.
+Package xcolor Warning: Incompatible color definition on input line 718.
 
 [16]
 
 LaTeX Warning: Reference `ch1/chI021-eqn24' on page 17 undefined on input line 
-716.
+722.
 
 [17]
 
-Package xcolor Warning: Incompatible color definition on input line 776.
+Package xcolor Warning: Incompatible color definition on input line 782.
 
 LaTeX Font Info:    Font shape `T1/phv/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/phv/b/n' tried instead on input line 779.
+(Font)              Font shape `T1/phv/b/n' tried instead on input line 785.
 
-Package xcolor Warning: Incompatible color definition on input line 779.
+Package xcolor Warning: Incompatible color definition on input line 785.
 
 [18] [19] [20]
-Overfull \hbox (1119.03212pt too wide) in paragraph at lines 920--920
+Overfull \hbox (1119.03212pt too wide) in paragraph at lines 926--926
 []\T1/pcr/m/n/10 def _(title=['a','b'], h=selector(['0.005','0.01','0.05','0.1'
 ,'0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=
 10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=
@@ -1457,73 +1484,73 @@ input_box(1,label=r'$\omega$', width=10)):[]
  []
 
 
-Overfull \hbox (219.03212pt too wide) in paragraph at lines 925--925
+Overfull \hbox (219.03212pt too wide) in paragraph at lines 931--931
 [] \T1/pcr/m/n/10 background = desolve_odeint(vector([y,-omega^2*x]), [x0, y0],
  srange(0,T+0.1,0.1,include_endpoint=True), [x,y])[] 
  []
 
 
-Overfull \hbox (105.03212pt too wide) in paragraph at lines 931--931
+Overfull \hbox (105.03212pt too wide) in paragraph at lines 937--937
 [] \T1/pcr/m/n/10 print '\nDla T=0 lista generowana jest automatycznie dla jedn
 ego okresu wªasnego oscylatora'[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 934--934
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 940--940
 []\T1/pcr/m/n/10 def _(krok=slider(1, len(oscylator_nietlumiony), 1, default=1,
  label=r'krok')):[] 
  []
 
 
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 937--937
+Overfull \hbox (3.03212pt too wide) in paragraph at lines 943--943
 [] \T1/pcr/m/n/10 minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]
 ), max(buf[1])[] 
  []
 
 
-Overfull \hbox (309.03212pt too wide) in paragraph at lines 939--939
+Overfull \hbox (309.03212pt too wide) in paragraph at lines 945--945
 [] \T1/pcr/m/n/10 kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$
 x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)[] 
  []
 
 
-Overfull \hbox (129.03212pt too wide) in paragraph at lines 941--941
+Overfull \hbox (129.03212pt too wide) in paragraph at lines 947--947
 [] \T1/pcr/m/n/10 txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='b
 ottom',horizontal_alignment='left')[] 
  []
 
 
-Overfull \hbox (231.03212pt too wide) in paragraph at lines 943--943
+Overfull \hbox (231.03212pt too wide) in paragraph at lines 949--949
 []     \T1/pcr/m/n/10 txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vert
 ical_alignment='bottom',horizontal_alignment='left')[] 
  []
 
 
-Overfull \hbox (165.03212pt too wide) in paragraph at lines 945--945
+Overfull \hbox (165.03212pt too wide) in paragraph at lines 951--951
 [] \T1/pcr/m/n/10 full_plot = list_plot(oscylator_nietlumiony, plotjoined=1, fi
 gsize=(4,4), axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (45.03212pt too wide) in paragraph at lines 946--946
+Overfull \hbox (45.03212pt too wide) in paragraph at lines 952--952
 [] \T1/pcr/m/n/10 full_plot += list_plot(background.tolist(), plotjoined=1, col
 or='grey', alpha=0.5)[] 
  []
 
 
-Overfull \hbox (171.03212pt too wide) in paragraph at lines 947--947
+Overfull \hbox (171.03212pt too wide) in paragraph at lines 953--953
 [] \T1/pcr/m/n/10 html.table([["krzywe fazowe dla oscylatora bez tarcia",""],[f
 ull_plot+kroki_plot,kroki_plot+txt_plot]])[] 
  []
 
 [21]
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 976--976
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 982--982
 []\T1/pcr/m/n/10 @interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom
 ':[['T','h']]})[] 
  []
 
 
-Overfull \hbox (1377.03212pt too wide) in paragraph at lines 977--977
+Overfull \hbox (1377.03212pt too wide) in paragraph at lines 983--983
 []\T1/pcr/m/n/10 def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','
 1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=
 input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=input_bo
@@ -1532,85 +1559,85 @@ x(1,label=r'$\omega$', width=10), ggamma=input_box(0.5,label=r'$\gamma$', width
  []
 
 
-Overfull \hbox (333.03212pt too wide) in paragraph at lines 984--984
+Overfull \hbox (333.03212pt too wide) in paragraph at lines 990--990
 [] \T1/pcr/m/n/10 background2 = desolve_odeint(vector([y,-omega^2*x-ggamma*y]),
  [x0, y0], srange(0,2*pi/omega+0.1,0.1,include_endpoint=True), [x,y])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 985--985
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 991--991
 [] \T1/pcr/m/n/10 oscylator_tlumiony = schemat_eulera2D([y,-omega^2*x-ggamma*y]
 , [x0, y0], listT)[] 
  []
 
 
-Overfull \hbox (105.03212pt too wide) in paragraph at lines 990--990
+Overfull \hbox (105.03212pt too wide) in paragraph at lines 996--996
 [] \T1/pcr/m/n/10 print '\nDla T=0 lista generowana jest automatycznie dla jedn
 ego okresu wªasnego oscylatora'[] 
  []
 
 
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 993--993
+Overfull \hbox (3.03212pt too wide) in paragraph at lines 999--999
 []\T1/pcr/m/n/10 def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, la
 bel=r'krok')):[] 
  []
 
 
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 995--995
+Overfull \hbox (3.03212pt too wide) in paragraph at lines 1001--1001
 [] \T1/pcr/m/n/10 minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]
 ), max(buf[1])[] 
  []
 
 [22]
-Overfull \hbox (309.03212pt too wide) in paragraph at lines 997--997
+Overfull \hbox (309.03212pt too wide) in paragraph at lines 1003--1003
 [] \T1/pcr/m/n/10 kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$
 x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)[] 
  []
 
 
-Overfull \hbox (129.03212pt too wide) in paragraph at lines 998--998
+Overfull \hbox (129.03212pt too wide) in paragraph at lines 1004--1004
 [] \T1/pcr/m/n/10 txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='b
 ottom',horizontal_alignment='left')[] 
  []
 
 
-Overfull \hbox (231.03212pt too wide) in paragraph at lines 1000--1000
+Overfull \hbox (231.03212pt too wide) in paragraph at lines 1006--1006
 []     \T1/pcr/m/n/10 txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vert
 ical_alignment='bottom',horizontal_alignment='left')[] 
  []
 
 
-Overfull \hbox (147.03212pt too wide) in paragraph at lines 1001--1001
+Overfull \hbox (147.03212pt too wide) in paragraph at lines 1007--1007
 [] \T1/pcr/m/n/10 full_plot = list_plot(oscylator_tlumiony, plotjoined=1, figsi
 ze=(4,4), axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (51.03212pt too wide) in paragraph at lines 1002--1002
+Overfull \hbox (51.03212pt too wide) in paragraph at lines 1008--1008
 [] \T1/pcr/m/n/10 full_plot += list_plot(background2.tolist(), plotjoined=1, co
 lor='grey', alpha=0.5)[] 
  []
 
 
-Overfull \hbox (171.03212pt too wide) in paragraph at lines 1003--1003
+Overfull \hbox (171.03212pt too wide) in paragraph at lines 1009--1009
 [] \T1/pcr/m/n/10 html.table([["krzywe fazowe dla oscylatora tªumionego",""],[f
 ull_plot+kroki_plot,kroki_plot+txt_plot]])[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1008.
+Package xcolor Warning: Incompatible color definition on input line 1014.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1008.
+Package xcolor Warning: Incompatible color definition on input line 1014.
 
 
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 1039--1039
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 1045--1045
 []\T1/pcr/m/n/10 @interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom
 ':[['T','h']]})[] 
  []
 
 
-Overfull \hbox (1383.03212pt too wide) in paragraph at lines 1040--1040
+Overfull \hbox (1383.03212pt too wide) in paragraph at lines 1046--1046
 []\T1/pcr/m/n/10 def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','
 1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=
 input_box(4,label=r'$y_0$', width=10), T=input_box(20, width=10), omega=input_b
@@ -1619,55 +1646,55 @@ h=10)):[]
  []
 
 
-Overfull \hbox (105.03212pt too wide) in paragraph at lines 1045--1045
+Overfull \hbox (105.03212pt too wide) in paragraph at lines 1051--1051
 [] \T1/pcr/m/n/10 oscylator_tlumiony = desolve_odeint(vector([y,-omega^2*x-ggam
 ma*y]), [x0, y0], listT, [x,y])[] 
  []
 
 [23]
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 1053--1053
+Overfull \hbox (3.03212pt too wide) in paragraph at lines 1059--1059
 []\T1/pcr/m/n/10 def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, la
 bel=r'krok')):[] 
  []
 
 
-Overfull \hbox (351.03212pt too wide) in paragraph at lines 1055--1055
+Overfull \hbox (351.03212pt too wide) in paragraph at lines 1061--1061
 [] \T1/pcr/m/n/10 kroki_plot = list_plot(kroki.tolist(), figsize=(4,4), axes_la
 bels=[r'$x$',r'$y$'], size=30, xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5)[] 
  []
 
 
-Overfull \hbox (297.03212pt too wide) in paragraph at lines 1056--1056
+Overfull \hbox (297.03212pt too wide) in paragraph at lines 1062--1062
 [] \T1/pcr/m/n/10 pole_wektorowe = arrow(kroki[0],vf(kroki[0],globomega^2,globg
 gamma),color='red',xmax=vf(kroki[0],globomega^2,globggamma)[0])[] 
  []
 
 
-Overfull \hbox (75.03212pt too wide) in paragraph at lines 1058--1058
+Overfull \hbox (75.03212pt too wide) in paragraph at lines 1064--1064
 []     \T1/pcr/m/n/10 pole_wektorowe += arrow(krok,vf(krok,globomega^2,globggam
 ma),color='red', width=.4)[] 
  []
 
 
-Overfull \hbox (129.03212pt too wide) in paragraph at lines 1059--1059
+Overfull \hbox (129.03212pt too wide) in paragraph at lines 1065--1065
 [] \T1/pcr/m/n/10 txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='b
 ottom',horizontal_alignment='left')[] 
  []
 
 
-Overfull \hbox (231.03212pt too wide) in paragraph at lines 1061--1061
+Overfull \hbox (231.03212pt too wide) in paragraph at lines 1067--1067
 []     \T1/pcr/m/n/10 txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vert
 ical_alignment='bottom',horizontal_alignment='left')[] 
  []
 
 
-Overfull \hbox (273.03212pt too wide) in paragraph at lines 1062--1062
+Overfull \hbox (273.03212pt too wide) in paragraph at lines 1068--1068
 [] \T1/pcr/m/n/10 shadowplot = list_plot(oscylator_tlumiony.tolist(), plotjoine
 d=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], alpha=0.2)[] 
  []
 
 
-Overfull \hbox (891.03212pt too wide) in paragraph at lines 1063--1063
+Overfull \hbox (891.03212pt too wide) in paragraph at lines 1069--1069
 [] \T1/pcr/m/n/10 full_plot = list_plot(oscylator_tlumiony.tolist(), plotjoined
 =1, figsize=(4,4), axes_labels=[r'$x$',r'$y$']) + plot_vector_field([y,-globome
 ga^2*x-globggamma*y], (x, -4.5, 4.5), (y, -4.5, 4.5), plot_points=20, color='li
@@ -1675,251 +1702,251 @@ me')[]
  []
 
 
-Overfull \hbox (327.03212pt too wide) in paragraph at lines 1064--1064
+Overfull \hbox (327.03212pt too wide) in paragraph at lines 1070--1070
 [] \T1/pcr/m/n/10 html.table([["krzywe fazowe dla oscylatora tªumionego",""],[f
 ull_plot+kroki_plot,shadowplot+kroki_plot+txt_plot+pole_wektorowe]])[] 
  []
 
 [24]
-Overfull \hbox (183.03212pt too wide) in paragraph at lines 1107--1107
+Overfull \hbox (183.03212pt too wide) in paragraph at lines 1113--1113
 []\T1/pcr/m/n/10 przestrzen_fazowa = list_plot(numeryka.tolist(), plotjoined=1,
  figsize=(4,4), axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (549.03212pt too wide) in paragraph at lines 1108--1108
+Overfull \hbox (549.03212pt too wide) in paragraph at lines 1114--1114
 []\T1/pcr/m/n/10 pole_wektorowe = plot_vector_field([dx,dy], (x, numeryka[:,0].
 min(), numeryka[:,0].max()), (y, numeryka[:,1].min(), numeryka[:,1].max()), plo
 t_points=10, color='lime')[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1114.
+Package xcolor Warning: Incompatible color definition on input line 1120.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1114.
+Package xcolor Warning: Incompatible color definition on input line 1120.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1117.
+Package xcolor Warning: Incompatible color definition on input line 1123.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1117.
+Package xcolor Warning: Incompatible color definition on input line 1123.
 
 [25]
-Overfull \hbox (405.03212pt too wide) in paragraph at lines 1164--1164
+Overfull \hbox (405.03212pt too wide) in paragraph at lines 1170--1170
 []\T1/pcr/m/n/10 def _(title=['elipsa'], E=input_box(2,label=r'$E$', width=10),
  k=input_box(0.2,label=r'$k$', width=10), m=input_box(1,label=r'$m$', width=10)
 ):[] 
  []
 
 [26]
-Overfull \hbox (165.03212pt too wide) in paragraph at lines 1213--1213
+Overfull \hbox (165.03212pt too wide) in paragraph at lines 1219--1219
 []\T1/pcr/m/n/10 p0 += text(r"  punkt startowy",ball,vertical_alignment='bottom
 ',horizontal_alignment='left',fontsize=8)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 1218--1218
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 1224--1224
 []\T1/pcr/m/n/10 p0 += text("ekstremum_",ball,vertical_alignment='bottom',horiz
 ontal_alignment='right',color='red',fontsize=8)[] 
  []
 
 
-Overfull \hbox (195.03212pt too wide) in paragraph at lines 1222--1222
+Overfull \hbox (195.03212pt too wide) in paragraph at lines 1228--1228
 []\T1/pcr/m/n/10 p0 += text("_ekstremum",ball,vertical_alignment='bottom',horiz
 ontal_alignment='left',color='red',fontsize=8)[] 
  []
 
 [27]
 
-Package xcolor Warning: Incompatible color definition on input line 1245.
+Package xcolor Warning: Incompatible color definition on input line 1251.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1245.
+Package xcolor Warning: Incompatible color definition on input line 1251.
 
 
-Overfull \hbox (39.92679pt too wide) in paragraph at lines 1274--1274
+Overfull \hbox (39.92679pt too wide) in paragraph at lines 1280--1280
 [] 
  []
 
 
-Overfull \hbox (14.79999pt too wide) in paragraph at lines 1281--1281
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 1287--1287
  [] 
  []
 
 [28]
 
-Package xcolor Warning: Incompatible color definition on input line 1290.
+Package xcolor Warning: Incompatible color definition on input line 1296.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1290.
+Package xcolor Warning: Incompatible color definition on input line 1296.
 
 [29]
-Overfull \hbox (42.09123pt too wide) in paragraph at lines 1319--1319
+Overfull \hbox (42.09123pt too wide) in paragraph at lines 1325--1325
 [] 
  []
 
 
-Overfull \hbox (171.03212pt too wide) in paragraph at lines 1350--1350
+Overfull \hbox (171.03212pt too wide) in paragraph at lines 1356--1356
 []     \T1/pcr/m/n/10 J[i,j] = var("d%sd%s"%(v,u),latex_name=r'\displaystyle\fr
 ac{\partial %s_t}{\partial %s_0}'%(lv,lu))[] 
  []
 
 
-Overfull \hbox (123.03212pt too wide) in paragraph at lines 1351--1351
+Overfull \hbox (123.03212pt too wide) in paragraph at lines 1357--1357
 []     \T1/pcr/m/n/10 var("dF%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\part
 ial F_%s}{\partial %s_t}'%(lv,lu))[] 
  []
 
 [30]
-Overfull \hbox (213.03212pt too wide) in paragraph at lines 1364--1364
+Overfull \hbox (213.03212pt too wide) in paragraph at lines 1370--1370
 []     \T1/pcr/m/n/10 to_rhs[vars()["d%sd%sd"%(v,u)]] = sum([vars()["dF%sd%s"%(
 v,w)]*vars()["d%sd%s"%(w,u)] for w,wl in xy_wsp])[] 
  []
 
 
-Overfull \hbox (645.03212pt too wide) in paragraph at lines 1367--1367
+Overfull \hbox (645.03212pt too wide) in paragraph at lines 1373--1373
 []\T1/pcr/m/n/10 print "Wszystkie pochodne cz¡stkowe s¡ reprezentowane przez ni
 ezale»ne zmienne, aby policzyc pochodn¡ wyznacznika, zamieniamy je podstawiaj¡c
  sªownik zamieniaj¡cy zmienne na funkcje:"[] 
  []
 
 
-Overfull \hbox (15.03212pt too wide) in paragraph at lines 1369--1369
+Overfull \hbox (15.03212pt too wide) in paragraph at lines 1375--1375
 []\T1/pcr/m/n/10 print "Liczymy wyznaczniki pochodn¡, oraz wracamy do zmiennych
  symbolicznych:"[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1386.
+Package xcolor Warning: Incompatible color definition on input line 1392.
 
 
-Overfull \hbox (76.93434pt too wide) in paragraph at lines 1389--1389
+Overfull \hbox (76.93434pt too wide) in paragraph at lines 1395--1395
 [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1390.
+Package xcolor Warning: Incompatible color definition on input line 1396.
 
 [31]
 
-Package xcolor Warning: Incompatible color definition on input line 1413.
+Package xcolor Warning: Incompatible color definition on input line 1419.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1420.
+Package xcolor Warning: Incompatible color definition on input line 1426.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1428.
+Package xcolor Warning: Incompatible color definition on input line 1434.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1435.
+Package xcolor Warning: Incompatible color definition on input line 1441.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1448.
+Package xcolor Warning: Incompatible color definition on input line 1454.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1448.
+Package xcolor Warning: Incompatible color definition on input line 1454.
 
 [32]
 
-Package xcolor Warning: Incompatible color definition on input line 1458.
+Package xcolor Warning: Incompatible color definition on input line 1464.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1479.
+Package xcolor Warning: Incompatible color definition on input line 1485.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1479.
+Package xcolor Warning: Incompatible color definition on input line 1485.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1482.
+Package xcolor Warning: Incompatible color definition on input line 1488.
 
 [33]
 
-Package xcolor Warning: Incompatible color definition on input line 1522.
+Package xcolor Warning: Incompatible color definition on input line 1528.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1522.
+Package xcolor Warning: Incompatible color definition on input line 1528.
 
 
-Overfull \hbox (38.22333pt too wide) in paragraph at lines 1535--1535
+Overfull \hbox (38.22333pt too wide) in paragraph at lines 1541--1541
 [] 
  []
 
 [34]
 
-Package xcolor Warning: Incompatible color definition on input line 1563.
+Package xcolor Warning: Incompatible color definition on input line 1569.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1563.
+Package xcolor Warning: Incompatible color definition on input line 1569.
 
 [35]
-Overfull \hbox (14.79999pt too wide) in paragraph at lines 1624--1624
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 1630--1630
  [] 
  []
 
 [36]
-Overfull \hbox (111.03212pt too wide) in paragraph at lines 1637--1637
+Overfull \hbox (111.03212pt too wide) in paragraph at lines 1643--1643
 []\T1/pcr/m/n/10 sol5=desolve_odeint( vector([f11, f12, f13, 0, 0,f15]), [4,0.2
 ,-0.2,2,-2,-4],T0,[x,y,z,Z,Y,u])[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1672.
+Package xcolor Warning: Incompatible color definition on input line 1678.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1672.
+Package xcolor Warning: Incompatible color definition on input line 1678.
 
 [37]
-Overfull \hbox (44.408pt too wide) in paragraph at lines 1689--1689
+Overfull \hbox (44.408pt too wide) in paragraph at lines 1695--1695
 [] 
  []
 
 
-Overfull \hbox (43.87453pt too wide) in paragraph at lines 1691--1691
+Overfull \hbox (43.87453pt too wide) in paragraph at lines 1697--1697
 [] 
  []
 
 
-Overfull \hbox (104.28793pt too wide) in paragraph at lines 1727--1727
+Overfull \hbox (104.28793pt too wide) in paragraph at lines 1733--1733
 [] 
  []
 
 [38]
 
-Package xcolor Warning: Incompatible color definition on input line 1763.
+Package xcolor Warning: Incompatible color definition on input line 1769.
 
 [39]
 
-Package xcolor Warning: Incompatible color definition on input line 1788.
+Package xcolor Warning: Incompatible color definition on input line 1794.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1788.
+Package xcolor Warning: Incompatible color definition on input line 1794.
 
 [40]
 
-Package xcolor Warning: Incompatible color definition on input line 1821.
+Package xcolor Warning: Incompatible color definition on input line 1827.
 
 [41] [42]
 
-Package xcolor Warning: Incompatible color definition on input line 1939.
+Package xcolor Warning: Incompatible color definition on input line 1945.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1939.
+Package xcolor Warning: Incompatible color definition on input line 1945.
 
 
-LaTeX Warning: Command \l invalid in math mode on input line 1941.
+LaTeX Warning: Command \l invalid in math mode on input line 1947.
 
 
-LaTeX Warning: Command \. invalid in math mode on input line 1941.
+LaTeX Warning: Command \. invalid in math mode on input line 1947.
 
 
-LaTeX Warning: Command \k invalid in math mode on input line 1941.
+LaTeX Warning: Command \k invalid in math mode on input line 1947.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1941.
+LaTeX Warning: Command \' invalid in math mode on input line 1947.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 1941.
+LaTeX Warning: Command \' invalid in math mode on input line 1947.
 
 Missing character: There is no ª in font cmr12!
 Missing character: There is no » in font cmr12!
@@ -1928,707 +1955,731 @@ Missing character: There is no ± in font cmr12!
 Missing character: There is no ¢ in font cmr12!
 [43]
 
-Package xcolor Warning: Incompatible color definition on input line 1957.
+Package xcolor Warning: Incompatible color definition on input line 1963.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1957.
+Package xcolor Warning: Incompatible color definition on input line 1963.
 
 
-Overfull \hbox (75.03212pt too wide) in paragraph at lines 1965--1965
+Overfull \hbox (75.03212pt too wide) in paragraph at lines 1971--1971
 []\T1/pcr/m/n/10 sol1=desolve_odeint(vector([y,-x -0.2*y]), [0,1], T, [x,y])##w
 arunek pocz¡tkowy x=2, y=4[] 
  []
 
 
-Overfull \hbox (111.03212pt too wide) in paragraph at lines 1966--1966
+Overfull \hbox (111.03212pt too wide) in paragraph at lines 1972--1972
 []\T1/pcr/m/n/10 sol2=desolve_odeint(vector([y,-x -0.2*y]), [0,0.85], T, [x,y])
 ##warunek pocz¡tkowy x=-1, y=0.5[] 
  []
 
 
-Overfull \hbox (99.03212pt too wide) in paragraph at lines 1967--1967
+Overfull \hbox (99.03212pt too wide) in paragraph at lines 1973--1973
 []\T1/pcr/m/n/10 sol3=desolve_odeint(vector([y,-x -0.2*y]), [0,0.7], T, [x,y])#
 #warunek pocz¡tkowy x=0, y=0.9[] 
  []
 
 
-Overfull \hbox (51.03212pt too wide) in paragraph at lines 1969--1969
+Overfull \hbox (51.03212pt too wide) in paragraph at lines 1975--1975
 []\T1/pcr/m/n/10 g1=list_plot(sol1.tolist(), plotjoined=1, figsize=(6,3),axes_l
 abels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (141.03212pt too wide) in paragraph at lines 1970--1970
+Overfull \hbox (141.03212pt too wide) in paragraph at lines 1976--1976
 []\T1/pcr/m/n/10 g1 +=list_plot(sol2.tolist(), plotjoined=1, figsize=(6,3),colo
 r="red", axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (153.03212pt too wide) in paragraph at lines 1971--1971
+Overfull \hbox (153.03212pt too wide) in paragraph at lines 1977--1977
 []\T1/pcr/m/n/10 g1 +=list_plot(sol3.tolist(), plotjoined=1, figsize=(6,3),colo
 r="green", axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 1978.
+Package xcolor Warning: Incompatible color definition on input line 1984.
 
 
-Package xcolor Warning: Incompatible color definition on input line 1978.
+Package xcolor Warning: Incompatible color definition on input line 1984.
 
 [44]
 
-Package xcolor Warning: Incompatible color definition on input line 1982.
+Package xcolor Warning: Incompatible color definition on input line 1988.
 
 
-Overfull \hbox (129.03212pt too wide) in paragraph at lines 1988--1988
+Overfull \hbox (129.03212pt too wide) in paragraph at lines 1994--1994
 []\T1/pcr/m/n/10 so1=desolve_odeint(vector([y,2*x-1.2*x^3 -0.2*y]), [0,1], T1, 
 [x,y])##warunek pocz¡tkowy x=2, y=4[] 
  []
 
 
-Overfull \hbox (147.03212pt too wide) in paragraph at lines 1989--1989
+Overfull \hbox (147.03212pt too wide) in paragraph at lines 1995--1995
 []\T1/pcr/m/n/10 so2=desolve_odeint(vector([y,2*x-1.2*x^3 -0.2*y]), [0,2], T1, 
 [x,y])##warunek pocz¡tkowy x=-1, y=0.5[] 
  []
 
 
-Overfull \hbox (135.03212pt too wide) in paragraph at lines 1990--1990
+Overfull \hbox (135.03212pt too wide) in paragraph at lines 1996--1996
 []\T1/pcr/m/n/10 so3=desolve_odeint(vector([y,2*x-1.2*x^3-0.2*y]), [0,3], T1, [
 x,y])##warunek pocz¡tkowy x=0, y=0.9[] 
  []
 
 
-Overfull \hbox (135.03212pt too wide) in paragraph at lines 1991--1991
+Overfull \hbox (135.03212pt too wide) in paragraph at lines 1997--1997
 []\T1/pcr/m/n/10 so4=desolve_odeint(vector([y,2*x-1.2*x^3-0.2*y]), [0,4], T1, [
 x,y])##warunek pocz¡tkowy x=0, y=0.9[] 
  []
 
 
-Overfull \hbox (51.03212pt too wide) in paragraph at lines 1993--1993
+Overfull \hbox (51.03212pt too wide) in paragraph at lines 1999--1999
 []\T1/pcr/m/n/10 g11=list_plot(so1.tolist(), plotjoined=1, figsize=(6,3),axes_l
 abels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (141.03212pt too wide) in paragraph at lines 1994--1994
+Overfull \hbox (141.03212pt too wide) in paragraph at lines 2000--2000
 []\T1/pcr/m/n/10 g11 +=list_plot(so2.tolist(), plotjoined=1, figsize=(6,3),colo
 r="red", axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (153.03212pt too wide) in paragraph at lines 1995--1995
+Overfull \hbox (153.03212pt too wide) in paragraph at lines 2001--2001
 []\T1/pcr/m/n/10 g11 +=list_plot(so3.tolist(), plotjoined=1, figsize=(6,3),colo
 r="green", axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (153.03212pt too wide) in paragraph at lines 1996--1996
+Overfull \hbox (153.03212pt too wide) in paragraph at lines 2002--2002
 []\T1/pcr/m/n/10 g11 +=list_plot(so4.tolist(), plotjoined=1, figsize=(6,3),colo
 r="black", axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 1997--1997
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2003--2003
 []\T1/pcr/m/n/10 html.table([["potencjaª bistabilny","oscylator nieliniowy tªum
 iony"],[p11,g11]])[] 
  []
 
 
-Overfull \hbox (141.03212pt too wide) in paragraph at lines 1998--1998
+Overfull \hbox (141.03212pt too wide) in paragraph at lines 2004--2004
 []\T1/pcr/m/n/10 html("<p align='center'> rozwi¡zania d¡»¡ albo do punktu $(-x_
 s,0)$ albo to punktu $(x_s,0)$ </p>")[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2003.
+Package xcolor Warning: Incompatible color definition on input line 2009.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2003.
+Package xcolor Warning: Incompatible color definition on input line 2009.
 
 
-Overfull \hbox (75.03212pt too wide) in paragraph at lines 2013--2013
+Overfull \hbox (75.03212pt too wide) in paragraph at lines 2019--2019
 []\T1/pcr/m/n/10 s1=desolve_odeint(vector([de1, de2]), [0.5,0.5], T3, [x,y])##w
 arunek pocz¡tkowy x=2, y=4[] 
  []
 
 
-Overfull \hbox (93.03212pt too wide) in paragraph at lines 2014--2014
+Overfull \hbox (93.03212pt too wide) in paragraph at lines 2020--2020
 []\T1/pcr/m/n/10 s2=desolve_odeint(vector([de1, de2]), [0.01, 0.01], T3, [x,y])
 ##warunek pocz¡tkowy x=2, y=4[] 
  []
 
 
-Overfull \hbox (111.03212pt too wide) in paragraph at lines 2015--2015
+Overfull \hbox (111.03212pt too wide) in paragraph at lines 2021--2021
 []\T1/pcr/m/n/10 h1=list_plot(s1.tolist(), plotjoined=1, figsize=(6,3),color="r
 ed",axes_labels=[r'$x$',r'$y$'])[] 
  []
 
 
-Overfull \hbox (39.03212pt too wide) in paragraph at lines 2016--2016
+Overfull \hbox (39.03212pt too wide) in paragraph at lines 2022--2022
 []\T1/pcr/m/n/10 h2=list_plot(s2.tolist(), plotjoined=1, figsize=(6,3),axes_lab
 els=[r'$x$',r'$y$'])[] 
  []
 
 [45]
 
-Package xcolor Warning: Incompatible color definition on input line 2052.
+Package xcolor Warning: Incompatible color definition on input line 2058.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2052.
+Package xcolor Warning: Incompatible color definition on input line 2058.
 
 
-Overfull \hbox (3.03212pt too wide) in paragraph at lines 2066--2066
+Overfull \hbox (3.03212pt too wide) in paragraph at lines 2072--2072
 []\T1/pcr/m/n/10 atraktor_lorenza = desolve_odeint(vector([F1,F2,F3]), [0,0.5,1
 ], T, [x,y,z])[] 
  []
 
 
-Overfull \hbox (87.03212pt too wide) in paragraph at lines 2067--2067
+Overfull \hbox (87.03212pt too wide) in paragraph at lines 2073--2073
 []\T1/pcr/m/n/10 p2d = list_plot(zip(atraktor_lorenza[:,0],atraktor_lorenza[:,1
 ]), plotjoined=1, figsize=4)[] 
  []
 
 
-Overfull \hbox (57.03212pt too wide) in paragraph at lines 2068--2068
+Overfull \hbox (57.03212pt too wide) in paragraph at lines 2074--2074
 []\T1/pcr/m/n/10 p3d = list_plot(atraktor_lorenza.tolist(), plotjoined=1, viewe
 r='tachyon', figsize=4)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2077.
+Package xcolor Warning: Incompatible color definition on input line 2083.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2077.
+Package xcolor Warning: Incompatible color definition on input line 2083.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2091.
+Package xcolor Warning: Incompatible color definition on input line 2097.
 
 LaTeX Font Info:    Font shape `T1/ptm/bx/it' in size <12> not available
-(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2093.
+(Font)              Font shape `T1/ptm/b/it' tried instead on input line 2099.
 [46]
 
-Package xcolor Warning: Incompatible color definition on input line 2141.
+Package xcolor Warning: Incompatible color definition on input line 2147.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2141.
+Package xcolor Warning: Incompatible color definition on input line 2147.
 
 [47]
-Overfull \hbox (297.03212pt too wide) in paragraph at lines 2169--2169
+Overfull \hbox (297.03212pt too wide) in paragraph at lines 2175--2175
 []\T1/pcr/m/n/10 def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,d
 efault=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)[] 
  []
 
 
-Overfull \hbox (219.03212pt too wide) in paragraph at lines 2171--2171
+Overfull \hbox (219.03212pt too wide) in paragraph at lines 2177--2177
 [] \T1/pcr/m/n/10 p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color
 ='black')+plot(x,(x,-1,4),color='green',figsize=5)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2193.
+Package xcolor Warning: Incompatible color definition on input line 2199.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2193.
+Package xcolor Warning: Incompatible color definition on input line 2199.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2204.
+Package xcolor Warning: Incompatible color definition on input line 2210.
 
 [48]
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2249--2249
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2255--2255
 [] \T1/pcr/m/n/10 myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,
 marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2271.
+Package xcolor Warning: Incompatible color definition on input line 2277.
 
 [49]
-Overfull \hbox (202.46042pt too wide) in paragraph at lines 2296--2296
+Overfull \hbox (202.46042pt too wide) in paragraph at lines 2302--2302
 [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2306.
+Package xcolor Warning: Incompatible color definition on input line 2312.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2319.
+Package xcolor Warning: Incompatible color definition on input line 2325.
 
 [50]
-Overfull \hbox (80.7585pt too wide) in paragraph at lines 2328--2328
+Overfull \hbox (80.7585pt too wide) in paragraph at lines 2334--2334
 [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2332.
+Package xcolor Warning: Incompatible color definition on input line 2338.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2354.
+Package xcolor Warning: Incompatible color definition on input line 2360.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2354.
+Package xcolor Warning: Incompatible color definition on input line 2360.
 
 [51]
-Overfull \hbox (183.03212pt too wide) in paragraph at lines 2371--2371
+Overfull \hbox (183.03212pt too wide) in paragraph at lines 2377--2377
 [] \T1/pcr/m/n/10 aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',y
 min=0,ymax=18)##warunek pocz. przed b, skala[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2413.
+Package xcolor Warning: Incompatible color definition on input line 2419.
 
 [52] [53] [54
 
 ]
 Rozdzia\l  2.
 
-Package xcolor Warning: Incompatible color definition on input line 2463.
+Package xcolor Warning: Incompatible color definition on input line 2469.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2463.
+Package xcolor Warning: Incompatible color definition on input line 2469.
 
 [55]
 
-Package xcolor Warning: Incompatible color definition on input line 2474.
+Package xcolor Warning: Incompatible color definition on input line 2480.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2474.
+Package xcolor Warning: Incompatible color definition on input line 2480.
 
-[56] <pendulum.png, id=963, 161.403pt x 138.919pt>
+[56] <pendulum.png, id=972, 161.403pt x 138.919pt>
 File: pendulum.png Graphic file (type png)
  <use pendulum.png>
+Package pdftex.def Info: pendulum.png used on input line 2507.
+(pdftex.def)             Requested size: 161.4026pt x 138.91866pt.
 File: pendulum.png Graphic file (type png)
 
 <use pendulum.png>
-Overfull \hbox (165.03212pt too wide) in paragraph at lines 2517--2517
+Package pdftex.def Info: pendulum.png used on input line 2507.
+(pdftex.def)             Requested size: 161.4026pt x 138.91866pt.
+
+Overfull \hbox (165.03212pt too wide) in paragraph at lines 2523--2523
 []\T1/pcr/m/n/10 p = plot(0.25*x^4 - 0.5*x^2, (x,-1.6,1.6), figsize=(6,4), axes
 _labels=[r'$x$',r'$V(x)$'], color="blue")[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2525.
+Package xcolor Warning: Incompatible color definition on input line 2531.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2525.
+Package xcolor Warning: Incompatible color definition on input line 2531.
 
 [57 <./pendulum.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 2554.
+Package xcolor Warning: Incompatible color definition on input line 2560.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2554.
+Package xcolor Warning: Incompatible color definition on input line 2560.
 
 [58]
-Overfull \hbox (255.03212pt too wide) in paragraph at lines 2605--2605
+Overfull \hbox (255.03212pt too wide) in paragraph at lines 2611--2611
 []\T1/pcr/m/n/10 p0 = point(start_point,size=30) + text(r"$  x_0$",start_point,
 vertical_alignment='bottom',horizontal_alignment='left')[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2615.
+Package xcolor Warning: Incompatible color definition on input line 2621.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2615.
+Package xcolor Warning: Incompatible color definition on input line 2621.
 
-[59] <baseny_tarcie.jpg, id=1007, 255.5pt x 255.5pt>
+[59] <baseny_tarcie.jpg, id=1016, 255.5pt x 255.5pt>
 File: baseny_tarcie.jpg Graphic file (type jpg)
  <use baseny_tarcie.jpg>
+Package pdftex.def Info: baseny_tarcie.jpg used on input line 2646.
+(pdftex.def)             Requested size: 255.49936pt x 255.49936pt.
 File: baseny_tarcie.jpg Graphic file (type jpg)
 
-<use baseny_tarcie.jpg> [60 <./baseny_tarcie.jpg>]
-Overfull \hbox (123.03212pt too wide) in paragraph at lines 2670--2670
+<use baseny_tarcie.jpg>
+Package pdftex.def Info: baseny_tarcie.jpg used on input line 2646.
+(pdftex.def)             Requested size: 255.49936pt x 255.49936pt.
+ [60 <./baseny_tarcie.jpg>]
+Overfull \hbox (123.03212pt too wide) in paragraph at lines 2676--2676
 []\T1/pcr/m/n/10 lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(
 x02)])), color='black', figsize=4)[] 
  []
 
 
-Overfull \hbox (33.03212pt too wide) in paragraph at lines 2671--2671
+Overfull \hbox (33.03212pt too wide) in paragraph at lines 2677--2677
 []\T1/pcr/m/n/10 lt += point((x01,V(x=x01)), color='green', size=50, axes_label
 s=['$x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (99.03212pt too wide) in paragraph at lines 2673--2673
+Overfull \hbox (99.03212pt too wide) in paragraph at lines 2679--2679
 []\T1/pcr/m/n/10 lb  = list_plot(num1.tolist(), plotjoined=1, color='green', ax
 es_labels=['$x(t)$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (153.03212pt too wide) in paragraph at lines 2675--2675
+Overfull \hbox (153.03212pt too wide) in paragraph at lines 2681--2681
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color
 ='green', axes_labels=['$t$','$x(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2676--2676
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2682--2682
 []\T1/pcr/m/n/10 rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
 
-Overfull \hbox (153.03212pt too wide) in paragraph at lines 2677--2677
+Overfull \hbox (153.03212pt too wide) in paragraph at lines 2683--2683
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color
 ='green', axes_labels=['$t$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2678--2678
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2684--2684
 []\T1/pcr/m/n/10 rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
 [61]
-Overfull \hbox (123.03212pt too wide) in paragraph at lines 2714--2714
+Overfull \hbox (123.03212pt too wide) in paragraph at lines 2720--2720
 []\T1/pcr/m/n/10 lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(
 x02)])),color='black',  figsize=4)[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2715--2715
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2721--2721
 []\T1/pcr/m/n/10 lt += point((x01,V(x=x01)), color='blue', size=50, axes_labels
 =['$x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (93.03212pt too wide) in paragraph at lines 2717--2717
+Overfull \hbox (93.03212pt too wide) in paragraph at lines 2723--2723
 []\T1/pcr/m/n/10 lb  = list_plot(num1.tolist(), plotjoined=1, color='blue', axe
 s_labels=['$x(t)$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (147.03212pt too wide) in paragraph at lines 2719--2719
+Overfull \hbox (147.03212pt too wide) in paragraph at lines 2725--2725
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color
 ='blue', axes_labels=['$t$','$x(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2720--2720
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2726--2726
 []\T1/pcr/m/n/10 rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
 
-Overfull \hbox (147.03212pt too wide) in paragraph at lines 2721--2721
+Overfull \hbox (147.03212pt too wide) in paragraph at lines 2727--2727
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color
 ='blue', axes_labels=['$t$','$v(t)$'])[] 
  []
 
 
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 2722--2722
+Overfull \hbox (27.03212pt too wide) in paragraph at lines 2728--2728
 []\T1/pcr/m/n/10 rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color
 ='red', figsize=4)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2740.
+Package xcolor Warning: Incompatible color definition on input line 2746.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2740.
+Package xcolor Warning: Incompatible color definition on input line 2746.
 
 [62]
-Overfull \hbox (39.03212pt too wide) in paragraph at lines 2766--2766
+Overfull \hbox (39.03212pt too wide) in paragraph at lines 2772--2772
 []\T1/pcr/m/n/10 sol=desolve_odeint( vector([y,x-x^3-0.26*y+0.3*cos(z), 1]), [0
 .1,0.1,0],T,[x,y,z])[] 
  []
 
 
-Overfull \hbox (75.03212pt too wide) in paragraph at lines 2767--2767
+Overfull \hbox (75.03212pt too wide) in paragraph at lines 2773--2773
 []\T1/pcr/m/n/10 t = line(zip(T,sol[:,0]), figsize=(12,4), axes_labels=["$t$","
 $x(t)$"], frame=1, axes=0)[] 
  []
 
 
-Overfull \hbox (135.03212pt too wide) in paragraph at lines 2768--2768
+Overfull \hbox (135.03212pt too wide) in paragraph at lines 2774--2774
 []\T1/pcr/m/n/10 b = line(zip(sol[:,0],sol[:,1]), figsize=(12,4), axes_labels=[
 "$x(t)$","$v(t)$"], frame=1, axes=0)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2774.
+Package xcolor Warning: Incompatible color definition on input line 2780.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2774.
+Package xcolor Warning: Incompatible color definition on input line 2780.
 
 [63]
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2812--2812
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2818--2818
 []\T1/pcr/m/n/10 lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['
 $x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (207.03212pt too wide) in paragraph at lines 2813--2813
+Overfull \hbox (207.03212pt too wide) in paragraph at lines 2819--2819
 []\T1/pcr/m/n/10 lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=ko
 lor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2814--2814
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2820--2820
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2815--2815
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2821--2821
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$v(t)$'], figsize=4)[] 
  []
 
 [64]
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2863--2863
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2869--2869
 []\T1/pcr/m/n/10 lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (267.03212pt too wide) in paragraph at lines 2865--2865
+Overfull \hbox (267.03212pt too wide) in paragraph at lines 2871--2871
 []\T1/pcr/m/n/10 rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=
 1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (15.03212pt too wide) in paragraph at lines 2866--2866
+Overfull \hbox (15.03212pt too wide) in paragraph at lines 2872--2872
 []\T1/pcr/m/n/10 rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined
 =1, color='red')[] 
  []
 
 
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2867--2867
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2873--2873
 []\T1/pcr/m/n/10 lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (273.03212pt too wide) in paragraph at lines 2869--2869
+Overfull \hbox (273.03212pt too wide) in paragraph at lines 2875--2875
 []\T1/pcr/m/n/10 rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined
 =1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 2870--2870
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 2876--2876
 []\T1/pcr/m/n/10 rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoine
 d=1, color='red')[] 
  []
 
 
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2877--2877
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2883--2883
 []\T1/pcr/m/n/10 <span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2
 f,%.2f)$</span>[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 2889.
+Package xcolor Warning: Incompatible color definition on input line 2895.
 
 
-Package xcolor Warning: Incompatible color definition on input line 2889.
+Package xcolor Warning: Incompatible color definition on input line 2895.
 
 [65]
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2925--2925
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2931--2931
 []\T1/pcr/m/n/10 lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['
 $x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (207.03212pt too wide) in paragraph at lines 2926--2926
+Overfull \hbox (207.03212pt too wide) in paragraph at lines 2932--2932
 []\T1/pcr/m/n/10 lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=ko
 lor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2927--2927
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2933--2933
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 2928--2928
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 2934--2934
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$v(t)$'], figsize=4)[] 
  []
 
 [66]
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2976--2976
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2982--2982
 []\T1/pcr/m/n/10 lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (267.03212pt too wide) in paragraph at lines 2978--2978
+Overfull \hbox (267.03212pt too wide) in paragraph at lines 2984--2984
 []\T1/pcr/m/n/10 rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=
 1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (15.03212pt too wide) in paragraph at lines 2979--2979
+Overfull \hbox (15.03212pt too wide) in paragraph at lines 2985--2985
 []\T1/pcr/m/n/10 rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined
 =1, color='red')[] 
  []
 
 
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 2980--2980
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 2986--2986
 []\T1/pcr/m/n/10 lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (273.03212pt too wide) in paragraph at lines 2982--2982
+Overfull \hbox (273.03212pt too wide) in paragraph at lines 2988--2988
 []\T1/pcr/m/n/10 rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined
 =1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 2983--2983
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 2989--2989
 []\T1/pcr/m/n/10 rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoine
 d=1, color='red')[] 
  []
 
 
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 2990--2990
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 2996--2996
 []\T1/pcr/m/n/10 <span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2
 f,%.2f)$</span>[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3002.
+Package xcolor Warning: Incompatible color definition on input line 3008.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3002.
+Package xcolor Warning: Incompatible color definition on input line 3008.
 
 [67]
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 3038--3038
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 3044--3044
 []\T1/pcr/m/n/10 lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['
 $x$','$V(x)$'])[] 
  []
 
 
-Overfull \hbox (207.03212pt too wide) in paragraph at lines 3039--3039
+Overfull \hbox (207.03212pt too wide) in paragraph at lines 3045--3045
 []\T1/pcr/m/n/10 lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=ko
 lor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 3040--3040
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 3046--3046
 []\T1/pcr/m/n/10 rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (201.03212pt too wide) in paragraph at lines 3041--3041
+Overfull \hbox (201.03212pt too wide) in paragraph at lines 3047--3047
 []\T1/pcr/m/n/10 rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=
 kolor, axes_labels=['$t$','$v(t)$'], figsize=4)[] 
  []
 
 [68]
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 3088--3088
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 3094--3094
 []\T1/pcr/m/n/10 lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (267.03212pt too wide) in paragraph at lines 3090--3090
+Overfull \hbox (267.03212pt too wide) in paragraph at lines 3096--3096
 []\T1/pcr/m/n/10 rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=
 1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (15.03212pt too wide) in paragraph at lines 3091--3091
+Overfull \hbox (15.03212pt too wide) in paragraph at lines 3097--3097
 []\T1/pcr/m/n/10 rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined
 =1, color='red')[] 
  []
 
 
-Overfull \hbox (249.03212pt too wide) in paragraph at lines 3092--3092
+Overfull \hbox (249.03212pt too wide) in paragraph at lines 3098--3098
 []\T1/pcr/m/n/10 lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, col
 or='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (273.03212pt too wide) in paragraph at lines 3094--3094
+Overfull \hbox (273.03212pt too wide) in paragraph at lines 3100--3100
 []\T1/pcr/m/n/10 rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined
 =1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)[] 
  []
 
 
-Overfull \hbox (21.03212pt too wide) in paragraph at lines 3095--3095
+Overfull \hbox (21.03212pt too wide) in paragraph at lines 3101--3101
 []\T1/pcr/m/n/10 rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoine
 d=1, color='red')[] 
  []
 
 
-Overfull \hbox (9.03212pt too wide) in paragraph at lines 3102--3102
+Overfull \hbox (9.03212pt too wide) in paragraph at lines 3108--3108
 []\T1/pcr/m/n/10 <span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2
 f,%.2f)$</span>[] 
  []
 
-<chaos_traj.png, id=1066, 233.673pt x 115.632pt>
+<chaos_traj.png, id=1076, 233.673pt x 115.632pt>
 File: chaos_traj.png Graphic file (type png)
  <use chaos_traj.png>
+Package pdftex.def Info: chaos_traj.png used on input line 3120.
+(pdftex.def)             Requested size: 233.67242pt x 115.63171pt.
 File: chaos_traj.png Graphic file (type png)
 
-<use chaos_traj.png> [69 <./chaos_traj.png>]
-Overfull \hbox (14.79999pt too wide) in paragraph at lines 3170--3170
+<use chaos_traj.png>
+Package pdftex.def Info: chaos_traj.png used on input line 3120.
+(pdftex.def)             Requested size: 233.67242pt x 115.63171pt.
+ [69 <./chaos_traj.png>]
+Overfull \hbox (14.79999pt too wide) in paragraph at lines 3176--3176
  [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3173.
+Package xcolor Warning: Incompatible color definition on input line 3179.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3173.
+Package xcolor Warning: Incompatible color definition on input line 3179.
 
 [70] [71]
 
-Package xcolor Warning: Incompatible color definition on input line 3231.
+Package xcolor Warning: Incompatible color definition on input line 3237.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3231.
+Package xcolor Warning: Incompatible color definition on input line 3237.
 
 [72]
-Overfull \hbox (27.03212pt too wide) in paragraph at lines 3262--3262
-[] \T1/pcr/m/n/10 p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop
-]), plotjoined=1,\[] 
+Overfull \hbox (45.03212pt too wide) in paragraph at lines 3268--3268
+[]\T1/pcr/m/n/10 ... p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:s
+top]), plotjoined=1,\[] 
  []
 
 
-Overfull \hbox (123.03212pt too wide) in paragraph at lines 3263--3263
-[] \T1/pcr/m/n/10 color=kolor, axes_labels=['$x(t)$','$v(t)$'], legend_label='%
-s=%.5f'%(a,A[a]), figsize=figsize)[] 
+Overfull \hbox (141.03212pt too wide) in paragraph at lines 3269--3269
+[]\T1/pcr/m/n/10 ... color=kolor, axes_labels=['$x(t)$','$v(t)$'], legend_label
+='%s=%.5f'%(a,A[a]), figsize=figsize)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3278.
+Package xcolor Warning: Incompatible color definition on input line 3284.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3278.
+Package xcolor Warning: Incompatible color definition on input line 3284.
 
-[73]
-Overfull \hbox (19.9469pt too wide) in paragraph at lines 3332--3332
+<phspace.png, id=1128, 503.481pt x 146.949pt>
+File: phspace.png Graphic file (type png)
+ <use phspace.png>
+Package pdftex.def Info: phspace.png used on input line 3291.
+(pdftex.def)             Requested size: 503.47977pt x 146.94864pt.
+File: phspace.png Graphic file (type png)
+
+<use phspace.png>
+Package pdftex.def Info: phspace.png used on input line 3291.
+(pdftex.def)             Requested size: 452.96788pt x 132.20802pt.
+ [73] [74 <./phspace.png>]
+Overfull \hbox (19.9469pt too wide) in paragraph at lines 3344--3344
 [] 
  []
 
-[74]
 
-Package xcolor Warning: Incompatible color definition on input line 3344.
+Package xcolor Warning: Incompatible color definition on input line 3356.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3344.
+Package xcolor Warning: Incompatible color definition on input line 3356.
 
 [75]
 
-LaTeX Warning: Command \k invalid in math mode on input line 3362.
+LaTeX Warning: Command \k invalid in math mode on input line 3374.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 3362.
+LaTeX Warning: Command \' invalid in math mode on input line 3374.
 
 
-LaTeX Warning: Command \k invalid in math mode on input line 3362.
+LaTeX Warning: Command \k invalid in math mode on input line 3374.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 3362.
+LaTeX Warning: Command \' invalid in math mode on input line 3374.
 
 
-LaTeX Warning: Command \' invalid in math mode on input line 3362.
+LaTeX Warning: Command \' invalid in math mode on input line 3374.
 
 
-LaTeX Warning: Command \k invalid in math mode on input line 3362.
+LaTeX Warning: Command \k invalid in math mode on input line 3374.
 
 Missing character: There is no ¦ in font cmr12!
 Missing character: There is no ± in font cmr12!
@@ -2637,7 +2688,7 @@ Missing character: There is no ó in font cmr12!
 Missing character: There is no ± in font cmr12!
 Missing character: There is no ¡ in font cmr12!
 
-Underfull \hbox (badness 7576) in paragraph at lines 3361--3363
+Underfull \hbox (badness 7576) in paragraph at lines 3373--3375
 \T1/ptm/m/n/12 Nazywa si¦ ona wid-mem mocy sy-gnaªu cza-so-wego $\OML/cmm/m/it/
 12 f\OT1/cmr/m/n/12 (\OML/cmm/m/it/12 t\OT1/cmr/m/n/12 )$\T1/ptm/m/n/12 . W pew
 -nych przy-
@@ -2645,119 +2696,90 @@ Underfull \hbox (badness 7576) in paragraph at lines 3361--3363
 
 [76]
 
-Package xcolor Warning: Incompatible color definition on input line 3397.
+Package xcolor Warning: Incompatible color definition on input line 3409.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3397.
+Package xcolor Warning: Incompatible color definition on input line 3409.
 
 
-Overfull \hbox (6.10255pt too wide) in paragraph at lines 3402--3402
+Overfull \hbox (6.10255pt too wide) in paragraph at lines 3414--3414
 [] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3404.
+Package xcolor Warning: Incompatible color definition on input line 3416.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3404.
+Package xcolor Warning: Incompatible color definition on input line 3416.
 
-<poincare_section.png, id=1177, 380.622pt x 386.243pt>
+<poincare_section.png, id=1187, 380.622pt x 386.243pt>
 File: poincare_section.png Graphic file (type png)
 
 <use poincare_section.png>
+Package pdftex.def Info: poincare_section.png used on input line 3423.
+(pdftex.def)             Requested size: 380.62105pt x 386.24205pt.
 File: poincare_section.png Graphic file (type png)
- <use poincare_section.png> [77] [78 <./poincare_section.png>] <poincare_period
-1.png, id=1200, 375.001pt x 252.945pt>
+ <use poincare_section.png>
+Package pdftex.def Info: poincare_section.png used on input line 3423.
+(pdftex.def)             Requested size: 380.62105pt x 386.24205pt.
+ [77] [78 <./poincare_section.png>] <poincare_period1.png, id=1208, 375.001pt x
+ 252.945pt>
 File: poincare_period1.png Graphic file (type png)
 
 <use poincare_period1.png>
+Package pdftex.def Info: poincare_period1.png used on input line 3458.
+(pdftex.def)             Requested size: 375.00008pt x 252.94438pt.
 File: poincare_period1.png Graphic file (type png)
  <use poincare_period1.png>
-<poincare_period2.png, id=1201, 429.605pt x 273.823pt>
+Package pdftex.def Info: poincare_period1.png used on input line 3458.
+(pdftex.def)             Requested size: 375.00008pt x 252.94438pt.
+
+<poincare_period2.png, id=1209, 429.605pt x 273.823pt>
 File: poincare_period2.png Graphic file (type png)
 
 <use poincare_period2.png>
+Package pdftex.def Info: poincare_period2.png used on input line 3470.
+(pdftex.def)             Requested size: 429.60394pt x 273.82233pt.
 File: poincare_period2.png Graphic file (type png)
  <use poincare_period2.png>
-<chaotic_duffing.pdf, id=1202, 563.21696pt x 274.46791pt>
+Package pdftex.def Info: poincare_period2.png used on input line 3470.
+(pdftex.def)             Requested size: 429.60394pt x 273.82233pt.
+
+<chaotic_duffing.pdf, id=1210, 563.21696pt x 274.46791pt>
 File: chaotic_duffing.pdf Graphic file (type pdf)
 
 <use chaotic_duffing.pdf>
+Package pdftex.def Info: chaotic_duffing.pdf used on input line 3482.
+(pdftex.def)             Requested size: 563.21558pt x 274.46724pt.
 File: chaotic_duffing.pdf Graphic file (type pdf)
- <use chaotic_duffing.pdf> [79 <./poincare_period1.png>] [80 <./poincare_period
-2.png> <./chaotic_duffing.pdf>]
-Overfull \hbox (369.03212pt too wide) in paragraph at lines 3498--3498
+ <use chaotic_duffing.pdf>
+Package pdftex.def Info: chaotic_duffing.pdf used on input line 3482.
+(pdftex.def)             Requested size: 452.96788pt x 220.75146pt.
+ [79] [80 <./poincare_period1.png> <./poincare_period2.png>]
+Overfull \hbox (369.03212pt too wide) in paragraph at lines 3510--3510
 []\T1/pcr/m/n/10 points(zip(sol[:,0],sol[:,1]), figsize=(8,4), axes_labels=["$x
 (n\cdot2 \pi/\omega)$","$v(n\cdot2 \pi/\omega)$"], frame=1, axes=0, size=1)[] 
  []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3503.
+Package xcolor Warning: Incompatible color definition on input line 3515.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3503.
+Package xcolor Warning: Incompatible color definition on input line 3515.
 
-[81] [82]
+[81 <./chaotic_duffing.pdf>] [82]
 Rozdzia\l  3.
 
-Package xcolor Warning: Incompatible color definition on input line 3532.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3532.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3535.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3536.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3540.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3540.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3550.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3550.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3552.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3552.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3552.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3552.
-
-
 Package xcolor Warning: Incompatible color definition on input line 3556.
 
 
 Package xcolor Warning: Incompatible color definition on input line 3556.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3558.
+Package xcolor Warning: Incompatible color definition on input line 3559.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3558.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3558.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3558.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3562.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3562.
+Package xcolor Warning: Incompatible color definition on input line 3560.
 
 
 Package xcolor Warning: Incompatible color definition on input line 3564.
@@ -2766,751 +2788,892 @@ Package xcolor Warning: Incompatible color definition on input line 3564.
 Package xcolor Warning: Incompatible color definition on input line 3564.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3564.
+Package xcolor Warning: Incompatible color definition on input line 3574.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3564.
+Package xcolor Warning: Incompatible color definition on input line 3574.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3572.
+Package xcolor Warning: Incompatible color definition on input line 3576.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3572.
+Package xcolor Warning: Incompatible color definition on input line 3576.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3576.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3576.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3580.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3580.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3582.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3582.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3582.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3582.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3586.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3586.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3588.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3588.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3588.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3588.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3596.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3596.
 
 [83
 
 ]
 LaTeX Font Info:    Font shape `T1/pcr/m/it' in size <10.95> not available
-(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 3573.
+(Font)              Font shape `T1/pcr/m/sl' tried instead on input line 3597.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3575.
+Package xcolor Warning: Incompatible color definition on input line 3599.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3575.
+Package xcolor Warning: Incompatible color definition on input line 3599.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3575.
+Package xcolor Warning: Incompatible color definition on input line 3599.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3575.
+Package xcolor Warning: Incompatible color definition on input line 3599.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3577.
+Package xcolor Warning: Incompatible color definition on input line 3601.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3577.
+Package xcolor Warning: Incompatible color definition on input line 3601.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3580.
+Package xcolor Warning: Incompatible color definition on input line 3604.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3580.
+Package xcolor Warning: Incompatible color definition on input line 3604.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3580.
+Package xcolor Warning: Incompatible color definition on input line 3604.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3580.
+Package xcolor Warning: Incompatible color definition on input line 3604.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3590.
+Package xcolor Warning: Incompatible color definition on input line 3614.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3593.
+Package xcolor Warning: Incompatible color definition on input line 3617.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3602.
+Package xcolor Warning: Incompatible color definition on input line 3626.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3602.
+Package xcolor Warning: Incompatible color definition on input line 3626.
 
 LaTeX Font Info:    Font shape `T1/pcr/bx/n' in size <10.95> not available
-(Font)              Font shape `T1/pcr/b/n' tried instead on input line 3604.
+(Font)              Font shape `T1/pcr/b/n' tried instead on input line 3628.
 
-Package xcolor Warning: Incompatible color definition on input line 3605.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3605.
+Package xcolor Warning: Incompatible color definition on input line 3629.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3605.
+Package xcolor Warning: Incompatible color definition on input line 3629.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3605.
+Package xcolor Warning: Incompatible color definition on input line 3629.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3610.
+Package xcolor Warning: Incompatible color definition on input line 3629.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3610.
+Package xcolor Warning: Incompatible color definition on input line 3634.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3612.
+Package xcolor Warning: Incompatible color definition on input line 3634.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3612.
+Package xcolor Warning: Incompatible color definition on input line 3636.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3612.
+Package xcolor Warning: Incompatible color definition on input line 3636.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3612.
+Package xcolor Warning: Incompatible color definition on input line 3636.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3622.
+Package xcolor Warning: Incompatible color definition on input line 3636.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3633.
+Package xcolor Warning: Incompatible color definition on input line 3646.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3633.
+Package xcolor Warning: Incompatible color definition on input line 3657.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3657.
 
 [84]
 
-Package xcolor Warning: Incompatible color definition on input line 3641.
+Package xcolor Warning: Incompatible color definition on input line 3665.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3648.
+Package xcolor Warning: Incompatible color definition on input line 3672.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3655.
+Package xcolor Warning: Incompatible color definition on input line 3679.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3661.
+Package xcolor Warning: Incompatible color definition on input line 3685.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3678.
+Package xcolor Warning: Incompatible color definition on input line 3702.
 
 [85]
 
-Package xcolor Warning: Incompatible color definition on input line 3716.
+Package xcolor Warning: Incompatible color definition on input line 3740.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3716.
+Package xcolor Warning: Incompatible color definition on input line 3740.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3719.
+Package xcolor Warning: Incompatible color definition on input line 3743.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3719.
+Package xcolor Warning: Incompatible color definition on input line 3743.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3719.
+Package xcolor Warning: Incompatible color definition on input line 3743.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3719.
+Package xcolor Warning: Incompatible color definition on input line 3743.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3723.
+Package xcolor Warning: Incompatible color definition on input line 3747.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3723.
+Package xcolor Warning: Incompatible color definition on input line 3747.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3731.
+Package xcolor Warning: Incompatible color definition on input line 3755.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3731.
+Package xcolor Warning: Incompatible color definition on input line 3755.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3731.
+Package xcolor Warning: Incompatible color definition on input line 3755.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3731.
+Package xcolor Warning: Incompatible color definition on input line 3755.
 
-<sage0.png, id=1301, 347.6187pt x 258.7266pt>
+<sage0.png, id=1316, 347.6187pt x 258.7266pt>
 File: sage0.png Graphic file (type png)
  <use sage0.png>
+Package pdftex.def Info: sage0.png used on input line 3762.
+(pdftex.def)             Requested size: 347.61784pt x 258.72594pt.
 File: sage0.png Graphic file (type png)
  <use sage0.png>
+Package pdftex.def Info: sage0.png used on input line 3762.
+(pdftex.def)             Requested size: 347.61784pt x 258.72594pt.
 
-Package xcolor Warning: Incompatible color definition on input line 3744.
+
+Package xcolor Warning: Incompatible color definition on input line 3768.
 
 [86]
 
-Package xcolor Warning: Incompatible color definition on input line 3749.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3754.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3767.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3767.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3769.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3769.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3769.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3769.
-
-
 Package xcolor Warning: Incompatible color definition on input line 3773.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3773.
+Package xcolor Warning: Incompatible color definition on input line 3778.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3791.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3791.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3793.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3793.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3793.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3793.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3797.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3797.
 
 [87 <./sage0.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3775.
+Package xcolor Warning: Incompatible color definition on input line 3799.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3775.
+Package xcolor Warning: Incompatible color definition on input line 3799.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3775.
+Package xcolor Warning: Incompatible color definition on input line 3799.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3775.
+Package xcolor Warning: Incompatible color definition on input line 3799.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3779.
+Package xcolor Warning: Incompatible color definition on input line 3803.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3779.
+Package xcolor Warning: Incompatible color definition on input line 3803.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3784.
+Package xcolor Warning: Incompatible color definition on input line 3808.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3784.
+Package xcolor Warning: Incompatible color definition on input line 3808.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3784.
+Package xcolor Warning: Incompatible color definition on input line 3808.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3784.
+Package xcolor Warning: Incompatible color definition on input line 3808.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3801.
+Package xcolor Warning: Incompatible color definition on input line 3825.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3801.
+Package xcolor Warning: Incompatible color definition on input line 3825.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3814.
+Package xcolor Warning: Incompatible color definition on input line 3838.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3827.
+Package xcolor Warning: Incompatible color definition on input line 3851.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3827.
+Package xcolor Warning: Incompatible color definition on input line 3851.
 
 [88]
 
-Package xcolor Warning: Incompatible color definition on input line 3829.
+Package xcolor Warning: Incompatible color definition on input line 3853.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3829.
+Package xcolor Warning: Incompatible color definition on input line 3853.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3829.
+Package xcolor Warning: Incompatible color definition on input line 3853.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3829.
+Package xcolor Warning: Incompatible color definition on input line 3853.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3892.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3892.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3895.
+Package xcolor Warning: Incompatible color definition on input line 3919.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3895.
+Package xcolor Warning: Incompatible color definition on input line 3919.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3895.
+Package xcolor Warning: Incompatible color definition on input line 3919.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3895.
+Package xcolor Warning: Incompatible color definition on input line 3919.
 
-<bar_chart.png, id=1323, 348.3414pt x 258.0039pt>
+<bar_chart.png, id=1338, 348.3414pt x 258.0039pt>
 File: bar_chart.png Graphic file (type png)
  <use bar_chart.png>
+Package pdftex.def Info: bar_chart.png used on input line 3926.
+(pdftex.def)             Requested size: 348.34055pt x 258.00327pt.
 File: bar_chart.png Graphic file (type png)
 
 <use bar_chart.png>
-
-Package xcolor Warning: Incompatible color definition on input line 3909.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3909.
+Package pdftex.def Info: bar_chart.png used on input line 3926.
+(pdftex.def)             Requested size: 348.34055pt x 258.00327pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3911.
+Package xcolor Warning: Incompatible color definition on input line 3933.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3911.
+Package xcolor Warning: Incompatible color definition on input line 3933.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3911.
+Package xcolor Warning: Incompatible color definition on input line 3935.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3911.
+Package xcolor Warning: Incompatible color definition on input line 3935.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3935.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3935.
 
 [89 <./bar_chart.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 3916.
+Package xcolor Warning: Incompatible color definition on input line 3940.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3916.
+Package xcolor Warning: Incompatible color definition on input line 3940.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3918.
+Package xcolor Warning: Incompatible color definition on input line 3942.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3918.
+Package xcolor Warning: Incompatible color definition on input line 3942.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3918.
+Package xcolor Warning: Incompatible color definition on input line 3942.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3918.
+Package xcolor Warning: Incompatible color definition on input line 3942.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3922.
+Package xcolor Warning: Incompatible color definition on input line 3946.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3922.
+Package xcolor Warning: Incompatible color definition on input line 3946.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3924.
+Package xcolor Warning: Incompatible color definition on input line 3948.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3924.
+Package xcolor Warning: Incompatible color definition on input line 3948.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3924.
+Package xcolor Warning: Incompatible color definition on input line 3948.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3924.
+Package xcolor Warning: Incompatible color definition on input line 3948.
 
-<histogram.png, id=1330, 349.0641pt x 171.2799pt>
+<histogram.png, id=1345, 349.0641pt x 171.2799pt>
 File: histogram.png Graphic file (type png)
  <use histogram.png>
+Package pdftex.def Info: histogram.png used on input line 3953.
+(pdftex.def)             Requested size: 349.06325pt x 171.27948pt.
 File: histogram.png Graphic file (type png)
 
-<use histogram.png> <u01.png, id=1331, 308.5929pt x 159.7167pt>
+<use histogram.png>
+Package pdftex.def Info: histogram.png used on input line 3953.
+(pdftex.def)             Requested size: 349.06325pt x 171.27948pt.
+ <u01.png, id=1346, 308.5929pt x 159.7167pt>
 File: u01.png Graphic file (type png)
  <use u01.png>
+Package pdftex.def Info: u01.png used on input line 3963.
+(pdftex.def)             Requested size: 308.59213pt x 159.71631pt.
 File: u01.png Graphic file (type png)
 
 <use u01.png>
+Package pdftex.def Info: u01.png used on input line 3963.
+(pdftex.def)             Requested size: 308.59213pt x 159.71631pt.
 
-Package xcolor Warning: Incompatible color definition on input line 3945.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3945.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-[90 <./histogram.png> <./u01.png>]
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3953.
-
-<u01_hist.png, id=1340, 349.7868pt x 156.1032pt>
-File: u01_hist.png Graphic file (type png)
- <use u01_hist.png>
-File: u01_hist.png Graphic file (type png)
-
-<use u01_hist.png>
 
 Package xcolor Warning: Incompatible color definition on input line 3969.
 
+
+Package xcolor Warning: Incompatible color definition on input line 3969.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+[90 <./histogram.png> <./u01.png>]
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3977.
+
+<u01_hist.png, id=1355, 349.7868pt x 156.1032pt>
+File: u01_hist.png Graphic file (type png)
+ <use u01_hist.png>
+Package pdftex.def Info: u01_hist.png used on input line 3989.
+(pdftex.def)             Requested size: 349.78595pt x 156.1028pt.
+File: u01_hist.png Graphic file (type png)
+
+<use u01_hist.png>
+Package pdftex.def Info: u01_hist.png used on input line 3989.
+(pdftex.def)             Requested size: 349.78595pt x 156.1028pt.
+
+
+Package xcolor Warning: Incompatible color definition on input line 3993.
+
 [91 <./u01_hist.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4016.
+Package xcolor Warning: Incompatible color definition on input line 4040.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4035.
+Package xcolor Warning: Incompatible color definition on input line 4059.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4035.
+Package xcolor Warning: Incompatible color definition on input line 4059.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4051.
+Package xcolor Warning: Incompatible color definition on input line 4075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4051.
+Package xcolor Warning: Incompatible color definition on input line 4075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4051.
+Package xcolor Warning: Incompatible color definition on input line 4075.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4051.
+Package xcolor Warning: Incompatible color definition on input line 4075.
 
-<r_exp_hist.png, id=1350, 349.0641pt x 259.4493pt>
+<r_exp_hist.png, id=1365, 349.0641pt x 259.4493pt>
 File: r_exp_hist.png Graphic file (type png)
  <use r_exp_hist.png>
+Package pdftex.def Info: r_exp_hist.png used on input line 4083.
+(pdftex.def)             Requested size: 349.06325pt x 259.44864pt.
 File: r_exp_hist.png Graphic file (type png)
 
 <use r_exp_hist.png>
+Package pdftex.def Info: r_exp_hist.png used on input line 4083.
+(pdftex.def)             Requested size: 349.06325pt x 259.44864pt.
 
-Package xcolor Warning: Incompatible color definition on input line 4067.
 
-[92] <r_cauchy_hist.png, id=1356, 349.0641pt x 260.8947pt>
+Package xcolor Warning: Incompatible color definition on input line 4091.
+
+[92] <r_cauchy_hist.png, id=1371, 349.0641pt x 260.8947pt>
 File: r_cauchy_hist.png Graphic file (type png)
 
 <use r_cauchy_hist.png>
+Package pdftex.def Info: r_cauchy_hist.png used on input line 4112.
+(pdftex.def)             Requested size: 349.06325pt x 260.89404pt.
 File: r_cauchy_hist.png Graphic file (type png)
  <use r_cauchy_hist.png>
+Package pdftex.def Info: r_cauchy_hist.png used on input line 4112.
+(pdftex.def)             Requested size: 349.06325pt x 260.89404pt.
 
-Package xcolor Warning: Incompatible color definition on input line 4093.
 
-[93 <./r_exp_hist.png>] <r_logist_hist.png, id=1366, 349.0641pt x 258.7266pt>
+Package xcolor Warning: Incompatible color definition on input line 4117.
+
+[93 <./r_exp_hist.png>] <r_logist_hist.png, id=1381, 349.0641pt x 258.7266pt>
 File: r_logist_hist.png Graphic file (type png)
 
 <use r_logist_hist.png>
+Package pdftex.def Info: r_logist_hist.png used on input line 4133.
+(pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
 File: r_logist_hist.png Graphic file (type png)
  <use r_logist_hist.png>
-
-Package xcolor Warning: Incompatible color definition on input line 4131.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4131.
+Package pdftex.def Info: r_logist_hist.png used on input line 4133.
+(pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4134.
+Package xcolor Warning: Incompatible color definition on input line 4155.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4134.
+Package xcolor Warning: Incompatible color definition on input line 4155.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4158.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4158.
 
 [94 <./r_cauchy_hist.png>] [95 <./r_logist_hist.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4190.
+Package xcolor Warning: Incompatible color definition on input line 4214.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4190.
+Package xcolor Warning: Incompatible color definition on input line 4214.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4205.
+Package xcolor Warning: Incompatible color definition on input line 4229.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4205.
+Package xcolor Warning: Incompatible color definition on input line 4229.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4205.
+Package xcolor Warning: Incompatible color definition on input line 4229.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4205.
+Package xcolor Warning: Incompatible color definition on input line 4229.
 
-<euler001.png, id=1380, 349.0641pt x 258.7266pt>
+<euler001.png, id=1395, 349.0641pt x 258.7266pt>
 File: euler001.png Graphic file (type png)
  <use euler001.png>
+Package pdftex.def Info: euler001.png used on input line 4237.
+(pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
 File: euler001.png Graphic file (type png)
 
 <use euler001.png>
+Package pdftex.def Info: euler001.png used on input line 4237.
+(pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
 
-Package xcolor Warning: Incompatible color definition on input line 4226.
+
+Package xcolor Warning: Incompatible color definition on input line 4250.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4226.
+Package xcolor Warning: Incompatible color definition on input line 4250.
 
 [96]
 
-Package xcolor Warning: Incompatible color definition on input line 4238.
+Package xcolor Warning: Incompatible color definition on input line 4262.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4238.
+Package xcolor Warning: Incompatible color definition on input line 4262.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4238.
+Package xcolor Warning: Incompatible color definition on input line 4262.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4238.
+Package xcolor Warning: Incompatible color definition on input line 4262.
 
-<euler_err.png, id=1385, 971.63pt x 359.3425pt>
+<euler_err.png, id=1400, 971.63pt x 359.3425pt>
 File: euler_err.png Graphic file (type png)
  <use euler_err.png>
+Package pdftex.def Info: euler_err.png used on input line 4275.
+(pdftex.def)             Requested size: 971.62764pt x 359.34161pt.
 File: euler_err.png Graphic file (type png)
 
-<use euler_err.png> <euler_ebw_h.png, id=1386, 971.63pt x 359.3425pt>
+<use euler_err.png>
+Package pdftex.def Info: euler_err.png used on input line 4275.
+(pdftex.def)             Requested size: 452.96788pt x 167.5202pt.
+ <euler_ebw_h.png, id=1401, 971.63pt x 359.3425pt>
 File: euler_ebw_h.png Graphic file (type png)
 
 <use euler_ebw_h.png>
+Package pdftex.def Info: euler_ebw_h.png used on input line 4284.
+(pdftex.def)             Requested size: 971.62764pt x 359.34161pt.
 File: euler_ebw_h.png Graphic file (type png)
- <use euler_ebw_h.png> [97 <./euler001.png>] [98 <./euler_err.png (PNG copy)> <
-./euler_ebw_h.png>]
+ <use euler_ebw_h.png>
+Package pdftex.def Info: euler_ebw_h.png used on input line 4284.
+(pdftex.def)             Requested size: 452.96788pt x 167.5202pt.
+ [97 <./euler001.png>] [98 <./euler_err.png> <./euler_ebw_h.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4335.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4353.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4353.
+Package xcolor Warning: Incompatible color definition on input line 4359.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4377.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4377.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4392.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 [99]
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4368.
+Package xcolor Warning: Incompatible color definition on input line 4392.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4372.
+Package xcolor Warning: Incompatible color definition on input line 4396.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4372.
+Package xcolor Warning: Incompatible color definition on input line 4396.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4379.
+Package xcolor Warning: Incompatible color definition on input line 4403.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4379.
+Package xcolor Warning: Incompatible color definition on input line 4403.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4379.
+Package xcolor Warning: Incompatible color definition on input line 4403.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4379.
+Package xcolor Warning: Incompatible color definition on input line 4403.
 
-<euler_osc.png, id=1405, 516.7305pt x 258.7266pt>
+<euler_osc.png, id=1420, 516.7305pt x 258.7266pt>
 File: euler_osc.png Graphic file (type png)
  <use euler_osc.png>
+Package pdftex.def Info: euler_osc.png used on input line 4411.
+(pdftex.def)             Requested size: 516.72923pt x 258.72594pt.
 File: euler_osc.png Graphic file (type png)
 
 <use euler_osc.png>
+Package pdftex.def Info: euler_osc.png used on input line 4411.
+(pdftex.def)             Requested size: 452.96788pt x 226.80367pt.
 
-Package xcolor Warning: Incompatible color definition on input line 4398.
+
+Package xcolor Warning: Incompatible color definition on input line 4422.
 
 [100 <./euler_osc.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4454.
+Package xcolor Warning: Incompatible color definition on input line 4478.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4454.
+Package xcolor Warning: Incompatible color definition on input line 4478.
 
 [101]
 
-Package xcolor Warning: Incompatible color definition on input line 4518.
+Package xcolor Warning: Incompatible color definition on input line 4542.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4518.
+Package xcolor Warning: Incompatible color definition on input line 4542.
 
 [102]
 
-Package xcolor Warning: Incompatible color definition on input line 4543.
+Package xcolor Warning: Incompatible color definition on input line 4567.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4543.
+Package xcolor Warning: Incompatible color definition on input line 4567.
 
 [103]
 
-Package xcolor Warning: Incompatible color definition on input line 4593.
+Package xcolor Warning: Incompatible color definition on input line 4617.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4593.
+Package xcolor Warning: Incompatible color definition on input line 4617.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4607.
+Package xcolor Warning: Incompatible color definition on input line 4631.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4607.
+Package xcolor Warning: Incompatible color definition on input line 4631.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4610.
+Package xcolor Warning: Incompatible color definition on input line 4634.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4610.
+Package xcolor Warning: Incompatible color definition on input line 4634.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4637.
+Package xcolor Warning: Incompatible color definition on input line 4661.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4637.
+Package xcolor Warning: Incompatible color definition on input line 4661.
 
 [104]
 
-Package xcolor Warning: Incompatible color definition on input line 4647.
+Package xcolor Warning: Incompatible color definition on input line 4671.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4647.
+Package xcolor Warning: Incompatible color definition on input line 4671.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4647.
+Package xcolor Warning: Incompatible color definition on input line 4671.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4647.
+Package xcolor Warning: Incompatible color definition on input line 4671.
 
-<dyf02.png, id=1449, 276.7941pt x 204.5241pt>
+<dyf02.png, id=1465, 276.7941pt x 204.5241pt>
 File: dyf02.png Graphic file (type png)
  <use dyf02.png>
+Package pdftex.def Info: dyf02.png used on input line 4678.
+(pdftex.def)             Requested size: 276.79341pt x 204.52357pt.
 File: dyf02.png Graphic file (type png)
  <use dyf02.png>
-<dyf.png, id=1450, 465.74pt x 339.2675pt>
+Package pdftex.def Info: dyf02.png used on input line 4678.
+(pdftex.def)             Requested size: 276.79341pt x 204.52357pt.
+
+<dyf.png, id=1466, 465.74pt x 339.2675pt>
 File: dyf.png Graphic file (type png)
  <use dyf.png>
+Package pdftex.def Info: dyf.png used on input line 4691.
+(pdftex.def)             Requested size: 465.73886pt x 339.26666pt.
 File: dyf.png Graphic file (type png)
  <use dyf.png>
-<dyf_100n.png, id=1451, 348.3414pt x 257.2812pt>
+Package pdftex.def Info: dyf.png used on input line 4691.
+(pdftex.def)             Requested size: 452.96788pt x 329.9743pt.
+
+<dyf_100n.png, id=1467, 348.3414pt x 257.2812pt>
 File: dyf_100n.png Graphic file (type png)
  <use dyf_100n.png>
+Package pdftex.def Info: dyf_100n.png used on input line 4719.
+(pdftex.def)             Requested size: 348.34055pt x 257.28058pt.
 File: dyf_100n.png Graphic file (type png)
 
-<use dyf_100n.png> [105 <./dyf02.png>] [106 <./dyf.png (PNG copy)>]
+<use dyf_100n.png>
+Package pdftex.def Info: dyf_100n.png used on input line 4719.
+(pdftex.def)             Requested size: 348.34055pt x 257.28058pt.
+ [105 <./dyf02.png>] [106 <./dyf.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4707.
+Package xcolor Warning: Incompatible color definition on input line 4731.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4707.
+Package xcolor Warning: Incompatible color definition on input line 4731.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4710.
+Package xcolor Warning: Incompatible color definition on input line 4734.
 
 [107 <./dyf_100n.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4734.
+Package xcolor Warning: Incompatible color definition on input line 4758.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4734.
+Package xcolor Warning: Incompatible color definition on input line 4758.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4745.
+Package xcolor Warning: Incompatible color definition on input line 4769.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4745.
+Package xcolor Warning: Incompatible color definition on input line 4769.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4745.
+Package xcolor Warning: Incompatible color definition on input line 4769.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4745.
+Package xcolor Warning: Incompatible color definition on input line 4769.
 
-<dryftdif001.png, id=1472, 348.3414pt x 259.4493pt>
+<dryftdif001.png, id=1488, 348.3414pt x 259.4493pt>
 File: dryftdif001.png Graphic file (type png)
  <use dryftdif001.png>
+Package pdftex.def Info: dryftdif001.png used on input line 4777.
+(pdftex.def)             Requested size: 348.34055pt x 259.44864pt.
 File: dryftdif001.png Graphic file (type png)
 
-<use dryftdif001.png> [108 <./dryftdif001.png>]
+<use dryftdif001.png>
+Package pdftex.def Info: dryftdif001.png used on input line 4777.
+(pdftex.def)             Requested size: 348.34055pt x 259.44864pt.
+ [108 <./dryftdif001.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4859.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4859.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4862.
+Package xcolor Warning: Incompatible color definition on input line 4883.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4862.
+Package xcolor Warning: Incompatible color definition on input line 4883.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4865.
+Package xcolor Warning: Incompatible color definition on input line 4886.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4865.
+Package xcolor Warning: Incompatible color definition on input line 4886.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4868.
+Package xcolor Warning: Incompatible color definition on input line 4889.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4868.
+Package xcolor Warning: Incompatible color definition on input line 4889.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4871.
+Package xcolor Warning: Incompatible color definition on input line 4892.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4871.
+Package xcolor Warning: Incompatible color definition on input line 4892.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4876.
+Package xcolor Warning: Incompatible color definition on input line 4895.
 
-(./StochDyn_v0.3.ind) [109] (./StochDyn_v0.3.aux)
+
+Package xcolor Warning: Incompatible color definition on input line 4895.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4900.
+
+(./StochDyn_v0.3.ind)
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 4910.
+ [109]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 4910.
+ (./StochDyn_v0.3.aux)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 4910.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 4910.
+
+Package rerunfilecheck Info: File `StochDyn_v0.3.out' has not changed.
+(rerunfilecheck)             Checksum: EE53F809AA2C1B7DFF113F5632FC6D94;1607.
+
 
 LaTeX Warning: There were undefined references.
 
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 4910.
  ) 
 Here is how much of TeX's memory you used:
- 17523 strings out of 493848
- 284667 string characters out of 1152822
- 385436 words of memory out of 3000000
- 19451 multiletter control sequences out of 15000+50000
- 84868 words of font info for 114 fonts, out of 3000000 for 9000
- 715 hyphenation exceptions out of 8191
- 55i,22n,57p,2992b,476s stack positions out of 5000i,500n,10000p,200000b,50000s
-{/usr/share/texmf-texlive/fonts/enc/dvips/base/8r.enc}</usr/share/texmf-texli
-ve/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-texlive/fonts/ty
-pe1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-texlive/fonts/type1/public/
-amsfonts/cm/cmmi12.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm
-/cmmi6.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmmi8.pfb><
-/usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/t
-exmf-texlive/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texmf-texlive
-/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/share/texmf-texlive/fonts/type1/
-public/amsfonts/cm/cmr8.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfon
-ts/cm/cmsy10.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy6
-.pfb></usr/share/texmf-texlive/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/s
-hare/texmf-texlive/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/t
-exmf-texlive/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texmf-texlive/fonts
-/type1/urw/courier/ucrr8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/courier
-/ucrro8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/helvetic/uhvb8a.pfb></us
-r/share/texmf-texlive/fonts/type1/urw/helvetic/uhvbo8a.pfb></usr/share/texmf-te
-xlive/fonts/type1/urw/times/utmb8a.pfb></usr/share/texmf-texlive/fonts/type1/ur
-w/times/utmbi8a.pfb></usr/share/texmf-texlive/fonts/type1/urw/times/utmr8a.pfb>
-</usr/share/texmf-texlive/fonts/type1/urw/times/utmri8a.pfb>
-Output written on StochDyn_v0.3.pdf (113 pages, 1603951 bytes).
+ 18629 strings out of 493307
+ 302769 string characters out of 6139905
+ 411655 words of memory out of 5000000
+ 20740 multiletter control sequences out of 15000+600000
+ 84868 words of font info for 114 fonts, out of 8000000 for 9000
+ 958 hyphenation exceptions out of 8191
+ 55i,22n,57p,2992b,503s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/
+public/amsfonts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/
+amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
+s/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
+r6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><
+/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texlive/t
+exmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/urw/courier/ucrb8a.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/c
+ourier/ucrro8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvbo8a.pfb></us
+r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
+/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fo
+nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
+imes/utmri8a.pfb>
+Output written on StochDyn_v0.3.pdf (113 pages, 1460610 bytes).
 PDF statistics:
- 1746 PDF objects out of 2073 (max. 8388607)
- 913 named destinations out of 1000 (max. 500000)
- 296 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1766 PDF objects out of 2073 (max. 8388607)
+ 1551 compressed objects within 16 object streams
+ 914 named destinations out of 1000 (max. 500000)
+ 301 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,0 +1,181 @@
+    sage: # wykresy dla przypadku z tłumieniem
+    sage: var('x y z')
+    sage: x0, y0, z0 = -0.5,-0.1,0
+    sage: kolor = ['blue','red','green','black','orange']
+    sage: # siła
+    sage: F = x-x^3
+    sage: V = -integrate(F,x)
+    sage: # tarcie: parametr gamma
+    sage: g = 0.5
+    sage: w = 1
+    sage: #punkty bifurkacji: 0.34357;  0.35506; 0.35785; 0.35846;  ostatni 0.3586
+    sage: Akeys = ['$a_1$','$a_2$','$a_3$','$a_4$']
+    sage: Aval  = [0.325,0.354,0.357,0.358]
+    sage: A = dict(zip(Akeys,Aval))
+    sage: p = A
+    sage: j=0
+    sage: for a in A.keys():
+    ...    # układ różniczkowych równań ruchu
+    ...    dx = y
+    ...    dy = F - g*y + A[a]*cos(z)
+    ...    dz = w
+    ...    # numeryczne rozwiazanie równań ruchu
+    ...    T = srange(0,100*pi,0.01)
+    ...    num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
+    ...    figsize = [12,3] if a == '$a_4$' else 3.5
+    ...    start, stop = int(len(num[:,0])*0.8), len(num[:,0])
+    ...    p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]), plotjoined=1, color=kolor[j], axes_labels=['$x(t)$','$v(t)$'], legend_label='%s=%.5f'%(a,A[a]), figsize=figsize)
+    ...    j+=1
+    sage: html("""Układ równań różniczkowych
+    sage: $\dot{x} = %s$
+    sage: $\dot{y} = %s$
+    sage: $\dot{z} = %s$
+    sage: z warunkami początkowymi
+    sage: $(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
+    sage: """%(dx,dy,dz,x0,y0,z0))
+    sage: html.table([[p['$a_1$'],p['$a_2$'],p['$a_3$']]])
+    sage: p['$a_4$'].show()
+    sage: #
+    sage: PunktyBifurkacji = [0.34357,0.35506,0.35785,0.35846]
+    sage: i = 2
+    sage: delta_2 = (PunktyBifurkacji[i-1] - PunktyBifurkacji[i-2])/(PunktyBifurkacji[i] - PunktyBifurkacji[i-1])
+    sage: i = 3
+    sage: delta_3 = (PunktyBifurkacji[i-1] - PunktyBifurkacji[i-2])/(PunktyBifurkacji[i] - PunktyBifurkacji[i-1])
+    sage: html.table([['$\delta_2$',delta_2],['$\delta_3$',delta_3],['$\dots$',''],['$\lim_{n \to \infty} \delta_n$',4.6692]])
+    sage: 
+    sage: 
+    sage: 
+    sage: 
+    sage: var('x y z')
+    sage: g, w0 = 0.5, 1
+    sage: x0, y0, z0 = 0.1, 0.1, 0
+    sage: Aval = [0.325,0.354,0.357,0.358,0.4]
+    sage: kolor = ['blue','red','green','black','orange']
+    sage: p = []
+    sage: j = 0
+    sage: for a in Aval:
+    ...    dx = y
+    ...    dy = x - x**3 - g*y + a*cos(z)
+    ...    dz = w0
+    ...    h = 0.1
+    ...    T = 1100
+    ...    skip = 100
+    ...    iskip = int(skip/h)
+    ...    listT = srange(0,T,h, include_endpoint=0)
+    ...    num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])        
+    ...    iks = num[:,0].tolist()[iskip:]
+    ...    freq = [i/(T-skip) for i in range(len(iks)/2)] +\
+    ...           [-len(iks)/(T-skip) + i/(T-skip) for i in range(len(iks)/2,len(iks))]
+    ...    freq = [f*2.*n(pi)/w0 for f in freq]
+    ...    vx = vector(iks)
+    ...    A = vx.fft().apply_map(lambda x:x.abs2())
+    ...    p.append(list_plot(zip(freq,A.apply_map(lambda x:x.log())),plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a,figsize=[10,3]))
+    ...    j += 1
+    sage: #
+    sage: xx = 1.1
+    sage: sum(p).show(figsize=[10,3],xmin=-xx,xmax=xx,axes_labels=[r'$k 2 \pi/\omega$',r'$A_k$'])
+    sage: for _p in p:
+    ...    show(_p,xmin=0,xmax=xx,axes_labels=[r'$k 2 \pi/\omega$',r'$A_k$'])
+    sage: 
+    sage: 
+    sage: 
+    sage: 
+    sage: 
+    sage: # samodzielna definicja
+    sage: def korelator(dane, tau=0):
+    ...    ret = None
+    ...    if tau == 0:
+    ...        return 1
+    ...    else:
+    ...        # funkcja autokorelacji jest symetryczna
+    ...        tau = abs(tau)
+    ...        # odjęcie średniej
+    ...        m = mean(dane)
+    ...        dane = [dane[i] - m for i in xrange(len(dane))]
+    ...        v = vector(dane)    
+    ...        sigma = v.dot_product(v)
+    ...        if tau < len(dane):
+    ...            ret = v[:-tau].dot_product(v[tau:])
+    ...        ret /= sigma
+    ...    return ret
+    sage: 
+    sage: 
+    sage: 
+    sage: var('x y z')
+    sage: a, g, w0 = 0.3, 0.26, 1
+    sage: x0, y0, z0 = 0.1, 0.1, 0
+    sage: dx = y
+    sage: dy = x - x**3 - g*y + a*cos(z)
+    sage: dz = w0
+    sage: h = 0.1
+    sage: T = 1000
+    sage: listT = srange(0,T,float(h), include_endpoint=True)
+    sage: num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+    sage: #x
+    sage: dane = num[:,0].tolist()
+    sage: # nasz korelator
+    sage: my_acorr = [korelator(dane,i*10) for i in range(33)]
+    sage: # funkcja SAGE
+    sage: v = finance.TimeSeries(dane)
+    sage: sage_acorr = [v.autocorrelation(i*10) for i in range(33)]
+    sage: (list_plot(my_acorr, plotjoined=1) + list_plot(sage_acorr, plotjoined=0, size=30, color='red')).show(figsize=[8,3], axes_labels=[r"$\tau$",r"$C(\tau)$"])
+    sage: 
+    sage: 
+    sage: 
+    sage: 
+    sage: 
+    sage: var('x y z')
+    sage: g, w0 = 0.5, 1
+    sage: x0, y0, z0 = 0.1, 0.1, 0
+    sage: Aval = [0.325,0.354,0.357,0.358,0.4]
+    sage: p, ps = [], []
+    sage: kolor = ['blue','red','green','black','orange']
+    sage: j = 0
+    sage: for a in Aval:
+    ...    dx = y
+    ...    dy = x - x**3 - g*y + a*cos(z)
+    ...    dz = w0
+    ...    h = 0.1
+    ...    T = 2000
+    ...    listT = srange(0,T,h, include_endpoint=True)
+    ...    num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+    ...    d = (num[:,0]-mean(num[:,0])).tolist()
+    ...    v = finance.TimeSeries(d)
+    ...    kor = [v.autocorrelation(i*5) for i in range(len(d)/5)]
+    ...    p.append(list_plot(kor, plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+    ...    ps.append(list_plot(kor[:len(kor)/20], plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+    ...    #list_plot(zip(d,num[:,1].tolist()),plotjoined=1,color='red').show()
+    ...    j += 1
+    sage: #wykresy    
+    sage: sum(p).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])
+    sage: sum(ps).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])
+    sage: 
+    sage: 
+    sage: 
+    sage: 
+    sage: reset()
+    sage: var('x y z')
+    sage: # parametry układu równań różniczkowych
+    sage: a, g = 0.3, 0.26
+    sage: # częstotliwość (do obliczania cięcia Poincarego)
+    sage: w0 = 1
+    sage: # wartości początkowe
+    sage: x0, y0, z0 = 0.1, 0.1, 0
+    sage: #układ równań różniczkowych
+    sage: dx = y
+    sage: dy = x - x**3 - g*y + a*cos(z)
+    sage: dz = w0
+    sage: #krok co jaki wypełniać się ma nasza lista 
+    sage: #rozwiązań ustawiamy równy okresowi
+    sage: h = 2.0*pi/w0
+    sage: ###
+    sage: #symulacje
+    sage: ###
+    sage: T = 10000
+    sage: listT = srange(0,T,float(h), include_endpoint=True)
+    sage: sol = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+    sage: #i sam rysunek cięcia
+    sage: points(zip(sol[:,0],sol[:,1]), figsize=(8,4), axes_labels=["$x(n\cdot2 \pi/\omega)$","$v(n\cdot2 \pi/\omega)$"], frame=1, axes=0, size=1)
+    sage: 
+    sage: 
+    sage: 

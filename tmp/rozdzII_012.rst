@@ -1,5 +1,10 @@
- SCENARIUSZ PRZEJŚCIA DO CHAOSU
-===============================
+.. -*- coding: utf-8 -*-
+
+Scenariusz przejścia do chaosu
+==============================
+
+.. highlight:: python
+  :linenothreshold: 5
 
 Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  200 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają sie różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
 
@@ -83,13 +88,62 @@ Scenariusz podwojenia okresu
 
 Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa się przejściem do chaosu poprzez podwojenie okresu. Jest uniwersalny scenariusz, występujący zarówno w układach z ciągłym czasem jaki i w układach dyskretnych. Został potwierdzony w wielu eksperymentach na różnorodnych układach fizycznych.
 
-.. sagecellserver::
-    :is_verbatim: True
+
+.. only:: latex
+
+  .. code-block:: python
+
+    var('x y z')
+    x0, y0, z0 = -0.5,-0.1,0
+    kolor = ['blue','red','green','black','orange']
+
+    #model
+    F = x-x^3
+    V = -integrate(F,x)
+    g = 0.5
+    w = 1
+
+    #punkty bifurkacji: 0.34357;  0.35506; 0.35785; 0.35846;  ostatni 0.3586
+    Akeys = ['$a_1$','$a_2$','$a_3$','$a_4$']
+    Aval  = [0.325,0.354,0.357,0.358]
+    A = dict(zip(Akeys,Aval))
+
+    p = A
+    j=0
+    for a in A.keys():
+        # układ rozniczkowych rownan ruchu
+        dx = y
+        dy = F - g*y + A[a]*cos(z)
+        dz = w
+        
+        # numeryczne rozwiazanie
+        T = srange(0,100*pi,0.01)
+        num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
+        figsize = [12,3] if a == '$a_4$' else 3.5
+        start, stop = int(len(num[:,0])*0.8), len(num[:,0])
+        p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]), plotjoined=1, color=kolor[j], axes_labels=['$x(t)$','$v(t)$'], legend_label='%s=%.5f'%(a,A[a]), figsize=figsize)
+        j+=1
+        
+  Wystarczy teraz tylko narysować wykresy zmagazynowane w liście ``p``.
+
+  .. code-block:: python
+
+    bif_p = [0.34357,0.35506,0.35785,0.35846]
+    i = 2
+    delta_2 = (bif_p[i-1] - bif_p[i-2])/(bif_p[i] - bif_p[i-1])
+    i = 3
+    delta_3 = (bif_p[i-1] - bif_p[i-2])/(bif_p[i] - bif_p[i-1])
+
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
 
     sage: # wykresy dla przypadku z tłumieniem
     sage: var('x y z')
     sage: x0, y0, z0 = -0.5,-0.1,0
-    sage: kolor = 'green'
+    sage: kolor = ['blue','red','green','black','orange']
     sage: # siła
     sage: F = x-x^3
     sage: V = -integrate(F,x)
@@ -101,6 +155,7 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
     sage: Aval  = [0.325,0.354,0.357,0.358]
     sage: A = dict(zip(Akeys,Aval))
     sage: p = A
+    sage: j=0
     sage: for a in A.keys():
     ...    # układ różniczkowych równań ruchu
     ...    dx = y
@@ -111,9 +166,8 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
     ...    num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
     ...    figsize = [12,3] if a == '$a_4$' else 3.5
     ...    start, stop = int(len(num[:,0])*0.8), len(num[:,0])
-    ...    p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]), plotjoined=1,\
-    ...    color=kolor, axes_labels=['$x(t)$','$v(t)$'], legend_label='%s=%.5f'%(a,A[a]), figsize=figsize)
-    sage: #
+    ...    p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]), plotjoined=1, color=kolor[j], axes_labels=['$x(t)$','$v(t)$'], legend_label='%s=%.5f'%(a,A[a]), figsize=figsize)
+    ...    j+=1
     sage: html("""Układ równań różniczkowych
     sage: $\dot{x} = %s$
     sage: $\dot{y} = %s$
@@ -123,15 +177,20 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
     sage: """%(dx,dy,dz,x0,y0,z0))
     sage: html.table([[p['$a_1$'],p['$a_2$'],p['$a_3$']]])
     sage: p['$a_4$'].show()
+    sage: #
+    sage: bif_p = [0.34357,0.35506,0.35785,0.35846]
+    sage: i = 2
+    sage: delta_2 = (bif_p[i-1] - bif_p[i-2])/(bif_p[i] - bif_p[i-1])
+    sage: i = 3
+    sage: delta_3 = (bif_p[i-1] - bif_p[i-2])/(bif_p[i] - bif_p[i-1])
+    sage: html.table([['$\delta_2$',delta_2],['$\delta_3$',delta_3],['$\dots$',''],['$\lim_{n \to \infty} \delta_n$',4.6692]])
 
-.. end of input
+  .. end of input
 
 
 
 Wykładniki Lapunowa
 -------------------
-
-
 
 Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnic ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  :math:`K` w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla :math:`x(t), y(t), z(t)` startując z wszystkich warunków początkowych w kuli :math:`K`,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach :math:`(x, y, z)` w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa :math:`\lambda_1, \lambda_2, \lambda_3`. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniowac trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu.Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
 
@@ -141,52 +200,54 @@ W przypadku oscylatora Duffinga można otrzymać cząstkowe  informacje o wykła
 
 1. Trzecie równanie dla pomocniczej zmiennej :math:`z` można rozwiązać otrzymując funkcję
 
-.. MATH::
-    :label: eqn8
+  .. MATH::
+      :label: eqn8
 
-    z(t) = \omega t + c 
-
-
-Z pewnością dwie bliskie sobie trajektorie :math:`z_1(t) = \omega t+c_1` oraz :math:`z_2(t) = \omega t + c_2` dla chwili   :math:`t=0` nie rozbiegają się exponencjalnie ponieważ
-
-.. MATH::
-    :label: eqn9
-
-    |z_1(t) - z_2(t)| = |c_1 -c_2| 
+      z(t) = \omega t + c 
 
 
-Dlatego też jeden z wykładników wynosi zero, np.
+  Z pewnością dwie bliskie sobie trajektorie :math:`z_1(t) = \omega t+c_1` oraz :math:`z_2(t) = \omega t + c_2` dla chwili   :math:`t=0` nie rozbiegają się exponencjalnie ponieważ
 
-.. MATH::
-    :label: eqn10
+  .. MATH::
+      :label: eqn9
 
-    \lambda_2 = 0
+      |z_1(t) - z_2(t)| = |c_1 -c_2| 
+
+
+  Dlatego też jeden z wykładników wynosi zero, np.
+
+  .. MATH::
+      :label: eqn10
+
+      \lambda_2 = 0
 
 
 2. Przypomnijmy w tym miejscu, że oscylator Duffinga jest opisany przez układ równań
 
-.. MATH::
-    :label: eqn11
+  .. MATH::
+      :label: eqn11
 
-    \dot x = F_1 = y , \qquad x(0) = x_0,
-    
-    \dot y = F_2 = x - x^3 -\gamma y + A \cos z , \qquad y(0) = y_0$$ $$z = F_3 = \omega, \qquad z(0) = 0.
-
-
-Zbadajmy, jak zmienia się w czasie objętość fazowa układu.  W tym celu musimy obliczyć dywergencję pola wektorowego
-
-.. MATH::
-    :label: eqn12
-
-     div  \vec F = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}  = -\gamma < 0
+      \dot x = F_1 = y , \qquad x(0) = x_0,
+      
+      \dot y = F_2 = x - x^3 -\gamma y + A \cos z , \qquad y(0) = y_0,
+      
+      z = F_3 = \omega, \qquad z(0) = 0.
 
 
-Oznacza to, że objętość fazowa w przestrzeni 3-wymiarowej maleje w tempie (zobacz paragraf o układach dysypatywnych)
+  Zbadajmy, jak zmienia się w czasie objętość fazowa układu.  W tym celu musimy obliczyć dywergencję pola wektorowego
 
-.. MATH::
-    :label: eqn13
+  .. MATH::
+      :label: eqn12
 
-    M(t) \propto e^{-\gamma t}
+       div  \vec F = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}  = -\gamma < 0
+
+
+  Oznacza to, że objętość fazowa w przestrzeni 3-wymiarowej maleje w tempie (zobacz paragraf o układach dysypatywnych)
+
+  .. MATH::
+      :label: eqn13
+
+      M(t) \propto e^{-\gamma t}
 
 
 Z drugiej strony, jak powiedzieliśmy powyżej, 
@@ -268,10 +329,10 @@ W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy :math
 .. MATH::
     :label: eqn22
 
-    P(\omega) = |{\hat f}(\omega)|^2
+    P(\omega) = \lvert {\hat f}(\omega) \rvert^2
 
 
-Nazywa się ona widmem mocy sygnału czasowego :math:`f(t)`. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  :math:`\omega ` jest częstością, która jest wielkościa dodatnią, :math:`\omega > 0`.  W dalszym ciągu przyjmiemy to założenie o dodatniości "częstości". W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej :math:`C(t)`  procesu stochastycznego.
+Nazywa się ona widmem mocy sygnału czasowego :math:`f(t)`. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  :math:`\omega` jest częstością, która jest wielkościa dodatnią, :math:`\omega > 0`.  W dalszym ciągu przyjmiemy to założenie o dodatniości "częstości". W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej :math:`C(t)`  procesu stochastycznego.
 
 Aby wyrobić sobie intuicję o własnościach transformaty Fouriera i widma mocy, wystarczy rozpatrzeć kilka  przypadków funkcji :math:`f(t)`.
 
@@ -323,6 +384,80 @@ odpowiednich harmonik poprzez relacje:
 
 Dla odpowiednio dużej liczby :math:`N` (w praktyce rzędu 100), zgodność pomiędzy transformatą Fouriera a Dyskretną Transformatą Fouriera jest zadziwiająco dobra. 
 
+.. only:: html 
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('x y z')
+      sage: g, w0 = 0.5, 1
+      sage: x0, y0, z0 = 0.1, 0.1, 0
+      sage: Aval = [0.325,0.354,0.357,0.358,0.4]
+      sage: kolor = ['blue','red','green','black','orange']
+      sage: p = []
+      sage: j = 0
+      sage: for a in Aval:
+      ...    dx = y
+      ...    dy = x - x**3 - g*y + a*cos(z)
+      ...    dz = w0
+      ...    h = 0.1
+      ...    T = 1100
+      ...    skip = 100
+      ...    iskip = int(skip/h)
+      ...    listT = srange(0,T,h, include_endpoint=0)
+      ...    num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])        
+      ...    iks = num[:,0].tolist()[iskip:]
+      ...    freq = [i/(T-skip) for i in range(len(iks)/2)] +\
+      ...           [-len(iks)/(T-skip) + i/(T-skip) for i in range(len(iks)/2,len(iks))]
+      ...    freq = [f*2.*n(pi)/w0 for f in freq]
+      ...    vx = vector(iks)
+      ...    A = vx.fft().apply_map(lambda x:x.abs2())
+      ...    p.append(list_plot(zip(freq,A.apply_map(lambda x:x.log())),plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a,figsize=[10,3]))
+      ...    j += 1
+      sage: #
+      sage: xx = 1.1
+      sage: sum(p).show(figsize=[10,3],xmin=-xx,xmax=xx,axes_labels=[r'$k 2 \pi/\omega$',r'$A_k$'])
+      sage: for _p in p:
+      ...    show(_p,xmin=0,xmax=xx,axes_labels=[r'$k 2 \pi/\omega$',r'$A_k$'])
+
+
+  .. end of input
+
+.. only:: latex
+
+  .. code-block:: python
+
+    var('x y z')
+    g, w0 = 0.5, 1
+    x0, y0, z0 = 0.1, 0.1, 0
+
+    Aval = [0.325,0.354,0.357,0.358,0.4]
+    kolor = ['blue','red','green','black','orange']
+    p = []
+
+    j = 0
+    for a in Aval:
+        dx = y
+        dy = x - x**3 - g*y + a*cos(z)
+        dz = w0
+        
+        h = 0.1
+        T = 1100
+        skip = 100
+        iskip = int(skip/h)
+        listT = srange(0,T,h, include_endpoint=0)
+        num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])        
+        iks = num[:,0].tolist()[iskip:]
+        
+        freq = [i/(T-skip) for i in range(len(iks)/2)] +\
+               [-len(iks)/(T-skip) + i/(T-skip) for i in range(len(iks)/2,len(iks))]
+        freq = [f*2.*n(pi)/w0 for f in freq]
+
+        vx = vector(iks)
+        A = vx.fft().apply_map(lambda x:x.abs2())
+        p.append(list_plot(zip(freq,A.apply_map(lambda x:x.log()))))
+
+        j += 1
 
 
 Funkcja korelacyjna
@@ -335,6 +470,160 @@ Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości
 
     C(\tau) = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}  [x(t+\tau) - \langle x(t+\tau)\rangle]  [ x(t) - \langle x(t)\rangle]  dt, \qquad \langle x(t)\rangle = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}   x(t)  dt 
 
+Jeżeli mamy rozwiązanie równania ruchu :math:`x(t)`, to w zależności od postaci tego rozwiązania również SAGE poradzi sobie z rozwiązaniem całki. Jeżeli analityczny wzór będzie poza możliwościami obliczeń symbolicznych, zawsze możemy wygenerować sobie szereg czasowy :math:`x = \{x_1, x_2, \dots \}`. Realizacja funkcji korelacyjnej w SAGE nie będzie stanowić problemu numerycznego. Możemy pokusić się o samodzielne sformułowanie problemu, lub skorzystać z metod pakietu ``finance``.
+
+.. code-block:: python
+
+    def korelator(dane, tau=0):
+        ret = None
+        if tau == 0:
+            return 1
+        else:
+            tau = abs(tau)
+            m = mean(dane)
+            dane = [dane[i] - m for i in xrange(len(dane))]
+            v = vector(dane)    
+            sigma = v.dot_product(v)
+            if tau < len(dane):
+                ret = v[:-tau].dot_product(v[tau:])
+            ret /= sigma
+        return ret
+
+
+Teraz obliczymy sobie ową funkcję korelacji dla oscylatora Duffinga.
+
+.. only:: latex
+
+  .. code-block:: python
+
+    var('x y z')
+    a, g, w0 = 0.3, 0.26, 1
+    x0, y0, z0 = 0.1, 0.1, 0
+
+    dx = y
+    dy = x - x**3 - g*y + a*cos(z)
+    dz = w0
+
+    h = 0.1
+    T = 1000
+    listT = srange(0,T,float(h), include_endpoint=True)
+    num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+
+
+
+
+Skorzystamy zarówno z naszej funkcji jak i z wbudowanego w SAGE pakietu ``finance``, 
+obliczając funkcję (auto)korelacji dla położenia i dla prędkości.
+
+
+.. only:: latex
+
+  .. code-block:: python
+
+    #x
+    dane = num[:,0].tolist()
+
+    # nasz korelator
+    my_acorr = [korelator(dane,i*10) for i in range(33)]
+
+    # funkcja SAGE
+    v = finance.TimeSeries(dane)
+    sage_acorr = [v.autocorrelation(i*10) for i in range(33)]
+
+
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('x y z')
+      sage: a, g, w0 = 0.3, 0.26, 1
+      sage: x0, y0, z0 = 0.1, 0.1, 0
+      sage: dx = y
+      sage: dy = x - x**3 - g*y + a*cos(z)
+      sage: dz = w0
+      sage: h = 0.1
+      sage: T = 1000
+      sage: listT = srange(0,T,float(h), include_endpoint=True)
+      sage: num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+      sage: #x
+      sage: dane = num[:,0].tolist()
+      sage: # nasz korelator
+      sage: my_acorr = [korelator(dane,i*10) for i in range(33)]
+      sage: # funkcja SAGE
+      sage: v = finance.TimeSeries(dane)
+      sage: sage_acorr = [v.autocorrelation(i*10) for i in range(33)]
+      sage: (list_plot(my_acorr, plotjoined=1) + list_plot(sage_acorr, plotjoined=0, size=30, color='red')).show(figsize=[8,3], axes_labels=[r"$\tau$",r"$C(\tau)$"])
+
+  .. end of input
+
+Powyższe rachunki możemy powtórzyć dla wszystkich punktów o których była mowa przy omawianiu bifurkacji.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+     sage: var('x y z')
+      sage: g, w0 = 0.5, 1
+      sage: x0, y0, z0 = 0.1, 0.1, 0
+      sage: Aval = [0.325,0.354,0.357,0.358,0.4]
+      sage: p, ps = [], []
+      sage: kolor = ['blue','red','green','black','orange']
+      sage: j = 0
+      sage: for a in Aval:
+      ...    dx = y
+      ...    dy = x - x**3 - g*y + a*cos(z)
+      ...    dz = w0
+      ...    h = 0.1
+      ...    T = 2000
+      ...    listT = srange(0,T,h, include_endpoint=True)
+      ...    num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+      ...    d = (num[:,0]-mean(num[:,0])).tolist()
+      ...    v = finance.TimeSeries(d)
+      ...    kor = [v.autocorrelation(i*5) for i in range(len(d)/5)]
+      ...    p.append(list_plot(kor, plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+      ...    ps.append(list_plot(kor[:len(kor)/20], plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+      ...    #list_plot(zip(d,num[:,1].tolist()),plotjoined=1,color='red').show()
+      ...    j += 1
+      sage: #wykresy    
+      sage: sum(p).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])
+      sage: sum(ps).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])
+
+  .. end of input
+
+.. only:: latex
+
+  .. code-block:: python
+
+    var('x y z')
+    g, w0 = 0.5, 1
+    x0, y0, z0 = 0.1, 0.1, 0
+
+    Aval = [0.325,0.354,0.357,0.358,0.4]
+    p, ps = [], []
+    kolor = ['blue','red','green','black','orange']
+    j = 0
+    for a in Aval:
+        dx = y
+        dy = x - x**3 - g*y + a*cos(z)
+        dz = w0
+        
+        h = 0.1
+        T = 2000
+        listT = srange(0,T,h, include_endpoint=True)
+        num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+        
+        d = (num[:,0]-mean(num[:,0])).tolist()
+        v = finance.TimeSeries(d)
+        kor = [v.autocorrelation(i*5) for i in range(len(d)/5)]
+        p.append(list_plot(kor, plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+        ps.append(list_plot(kor[:len(kor)/20], plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+        
+        #list_plot(zip(d,num[:,1].tolist()),plotjoined=1,color='red').show()
+        j += 1
+    
 
 
 
@@ -378,12 +667,13 @@ Zapisujemy położenie i prędkość cząstki w dyskretnych chwilach czasu:
 
 Współrzędne tych punktów nanosimy na płaszczyznę. Otrzymujemy odwzorowanie które nazywamy odwzorowaniem Poincarego. Obrazowo mówiąc można w 3-wymiarowej przestrzeni fazowej wprowadzić płaszczyznę, tak aby nigdzie nie była styczna do trajektorii i była transwersalna do trajektorii (ściślej mówiąc do potoku fazowego), czyli aby trajektoria przecinała płaszczyznę, a nie była równoległa do niej (nie omijała jej).
 
+.. only:: html
 
-.. figure:: images/poincare_animate.gif
-   :align: center
-   :alt: 
+  .. figure:: images/poincare_animate.gif
+     :align: center
+     :alt: 
 
-   Konstrukcja cięcia Poincarego.
+     Konstrukcja cięcia Poincarego.
 
 
 
@@ -436,34 +726,65 @@ Jakie wnioski płyną z takiego przedstawienia.
 
 Jeżeli jesteśmy w stanie zbudować graficznie przedstawienie Poincarego danego układu dynamicznego z ciągłym czasem, wówczas możemy rozpoznać takie reżimy które są "podejrzane" o własności chaotyczne.  Numerycznie nie powinno nastręczać to większych problemów. Jeżeli znamy :math:`\omega_0` bądź okres powrotu do obliczenia cięcia to wystarczy wykorzystać poniższy kod Sage. Zwracamy jedynie uwagę na to, że odpowiednio "gęsty" obraz uzyskamy dla bardzo długich przebiegów (dużych T).
 
+.. only:: latex
 
-.. sagecellserver::
-    :is_verbatim: True
+  .. code-block:: python
 
-    sage: var('x y z')
-    sage: # parametry układu równań różniczkowych
-    sage: a, g = 0.3, 0.26
-    sage: # częstotliwość (do obliczania cięcia Poincarego)
-    sage: w0 = 1
-    sage: # wartości początkowe
-    sage: x0, y0, z0 = 0.1, 0.1, 0
-    sage: #układ równań różniczkowych
-    sage: dx = y
-    sage: dy = x - x**3 - g*y + a*cos(z)
-    sage: dz = w0
-    sage: #krok co jaki wypełniać się ma nasza lista 
-    sage: #rozwiązań ustawiamy równy okresowi
-    sage: h = 2.0*pi/w0
-    sage: ###
-    sage: #symulacje
-    sage: ###
-    sage: T = 10000
-    sage: listT = srange(0,T,float(h), include_endpoint=True)
-    sage: sol = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
-    sage: #i sam rysunek cięcia
-    sage: points(zip(sol[:,0],sol[:,1]), figsize=(8,4), axes_labels=["$x(n\cdot2 \pi/\omega)$","$v(n\cdot2 \pi/\omega)$"], frame=1, axes=0, size=1)
+    # parametry układu równań różniczkowych
+    a, g = 0.3, 0.26
 
-.. end of input
+    # częstotliwość (do obliczania cięcia Poincarego)
+    w0 = 1
+
+    # wartości początkowe
+    x0, y0, z0 = 0.1, 0.1, 0
+
+    #układ równań różniczkowych
+    dx = y
+    dy = x - x**3 - g*y + a*cos(z)
+    dz = w0
+
+    #krok co jaki wypełniać się ma nasza lista 
+    #rozwiązań ustawiamy równy okresowi
+    h = 2.0*pi/w0
+
+    ###
+    #symulacje
+    ###
+    T = 10000
+    listT = srange(0,T,float(h), include_endpoint=True)
+    sol = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('x y z')
+      sage: # parametry układu równań różniczkowych
+      sage: a, g = 0.3, 0.26
+      sage: # częstotliwość (do obliczania cięcia Poincarego)
+      sage: w0 = 1
+      sage: # wartości początkowe
+      sage: x0, y0, z0 = 0.1, 0.1, 0
+      sage: #układ równań różniczkowych
+      sage: dx = y
+      sage: dy = x - x**3 - g*y + a*cos(z)
+      sage: dz = w0
+      sage: #krok co jaki wypełniać się ma nasza lista 
+      sage: #rozwiązań ustawiamy równy okresowi
+      sage: h = 2.0*pi/w0
+      sage: ###
+      sage: #symulacje
+      sage: ###
+      sage: T = 10000
+      sage: listT = srange(0,T,float(h), include_endpoint=True)
+      sage: sol = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+      sage: #i sam rysunek cięcia
+      sage: points(zip(sol[:,0],sol[:,1]), figsize=(8,4), axes_labels=["$x(n\cdot2 \pi/\omega)$","$v(n\cdot2 \pi/\omega)$"], frame=1, axes=0, size=1)
+
+  .. end of input
 
 
 Przykłady chaosu w Naturze

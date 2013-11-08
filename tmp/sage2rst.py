@@ -40,9 +40,12 @@ for l in f.readlines():
     #o.write(l.replace("$$","ALA"))
     #o.write("Title%d="%(101-i)+l.split('/')[-1][:-5]+"\n")
   elif 'SAGECELL' in l:
-    WHOLETXT += '.. sagecellserver::\n'
-    WHOLETXT += '    :is_verbatim: True\n\n\n'
-    WHOLETXT += '.. end of input\n'
+    WHOLETXT += '.. only:: latex\n\n'
+    WHOLETXT += '  .. code-block:: python\n\n\n\n'
+    WHOLETXT += '.. only:: html\n\n'
+    WHOLETXT += '  .. sagecellserver::\n'
+    WHOLETXT += '      :is_verbatim: True\n\n\n\n'
+    WHOLETXT += '  .. end of input\n\n'
   elif 'IMAGE' in l:
     WHOLETXT += '.. figure:: images/\n'
     WHOLETXT += '   :align: center\n'

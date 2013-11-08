@@ -1,79 +1,49 @@
-    sage: # warunek początkowy 
-    sage: x0 = 1
-    sage: # tu można wstawić dowolną funkcję f(x)
-    sage: f(x) = x - 0.5*x*x+1.7
-    sage: for i in range(20):
-    ...    print x0
-    ...    x0 = f(x0)
-    ...    
-    sage: def ne(b,X):
-    ...    return X - b*X*X +1.7
-    sage: #
-    sage: def pophis(startp,b,length):
-    ...    his = [startp]
-    ...    for i in range(length):
-    ...        his.append( ne(b,his[i]) )
-    ...    return his
-    sage: #
-    sage: #warunek pocz. przed b, 
-    sage: #po b ilość iteracji, 
-    sage: #skala wykresu podana w ymin, ymax
-    sage: @interact
-    sage: def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
-    ...    show(list_plot(pophis(1,b,35),plotjoined=True,marker='o',ymin=0.5,ymax=3))
-    ...    
-    ...    
-    sage: var('r,x0,n')
-    sage: @interact
-    sage: def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)
-    ...    f(x)=x - a*x*x+1.7    ## postać funkcji f(x), która mozna zmieniać
-    ...    p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color='black')+plot(x,(x,-1,4),color='green',figsize=5)
-    ...    for n in range(20):
-    ...        th = 1
-    ...        if n>45:
-    ...            th = 1.5
-    ...            color='red'
-    ...        elif n < 5:
-    ...            color='blue'
-    ...            th=1.5    
-    ...        else:
-    ...            color='grey'
-    ...            th =0.5        
-    ...        l1 = line([(x0,x0),(x0,f(x0))],color=color,thickness=th)
-    ...        l2 = line([(x0,f(x0)),(f(x0),f(x0))],color=color,thickness=th)
-    ...        p = p+l1+l2
-    ...        x0 = f(x0)
-    ...    p.axes_labels(["$x_n$","$x_{n+1}$"])     
-    ...    p.show()
+    sage: # wykresy dla przypadku z tłumieniem
+    sage: var('x y z')
+    sage: x0, y0, z0 = -0.5,-0.1,0
+    sage: kolor = ['blue','red','green','black','orange']
     sage: 
+    sage: # siła
+    sage: F = x-x^3
+    sage: V = -integrate(F,x)
     sage: 
-    sage: def newpop(a,prevpop):
-    ...    return a*prevpop
-    sage: 
-    sage: def populationhistory(startpop,a,length):
-    ...    history = [startpop]
-    ...    for i in range(length):
-    ...        history.append( newpop(a,history[i]) )
-    ...    return history
-    sage: 
-    sage: @interact
-    sage: def _( a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a') ):
-    ...    myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala
-    ...    myplot.show()
+    sage: # tarcie: parametr gamma
+    sage: g = 0.5
+    sage: w = 1
+    sage: #punkty bifurkacji: 0.34357;  0.35506; 0.35785; 0.35846;  ostatni 0.3586
+    sage: Akeys = ['$a_1$','$a_2$','$a_3$','$a_4$']
+    sage: Aval  = [0.325,0.354,0.357,0.358]
+    sage: A = dict(zip(Akeys,Aval))
+    sage: p = A
+    sage: j=0
+    sage: for a in A.keys():
+    ...    # układ różniczkowych równań ruchu
+    ...    dx = y
+    ...    dy = F - g*y + A[a]*cos(z)
+    ...    dz = w
     ...    
+    ...    # numeryczne rozwiazanie równań ruchu
+    ...    T = srange(0,100*pi,0.01)
+    ...    num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
+    ...    figsize = [12,3] if a == '$a_4$' else 3.5
+    ...    start, stop = int(len(num[:,0])*0.8), len(num[:,0])
+    ...    p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]), plotjoined=1, color=kolor[j], axes_labels=['$x(t)$','$v(t)$'], legend_label='%s=%.5f'%(a,A[a]), figsize=figsize)
+    ...    j+=1
     ...    
-    sage: def ne(b,pre):
-    ...    return 1+b*pre*(1-(1/16)*pre)
+    sage: html("""Układ równań różniczkowych
+    sage: $\dot{x} = %s$
+    sage: $\dot{y} = %s$
+    sage: $\dot{z} = %s$
+    sage: z warunkami początkowymi
+    sage: $(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
+    sage: """%(dx,dy,dz,x0,y0,z0))
+    sage: html.table([[p['$a_1$'],p['$a_2$'],p['$a_3$']]])
+    sage: p['$a_4$'].show()
     sage: 
-    sage: def pophis(startp,b,length):
-    ...    his = [startp]
-    ...    for i in range(length):
-    ...        his.append( ne(b,his[i]) )
-    ...    return his
+    sage: PunktyBifurkacji = [0.34357,0.35506,0.35785,0.35846]
+    sage: i = 2
+    sage: delta_2 = (PunktyBifurkacji[i-1] - PunktyBifurkacji[i-2])/(PunktyBifurkacji[i] - PunktyBifurkacji[i-1])
+    sage: i = 3
+    sage: delta_3 = (PunktyBifurkacji[i-1] - PunktyBifurkacji[i-2])/(PunktyBifurkacji[i] - PunktyBifurkacji[i-1])
     sage: 
-    sage: @interact
-    sage: def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
-    ...    aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',ymin=0,ymax=18)##warunek pocz. przed b, skala
-    ...    aplot.show()
-    ...    
-    ...                
+    sage: html.table([['$\delta_2$',delta_2],['$\delta_3$',delta_3],['$\dots$',''],['$\lim_{n \to \infty} \delta_n$',4.6692]])

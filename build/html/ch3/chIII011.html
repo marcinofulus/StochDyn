@@ -163,14 +163,14 @@
 <h2>Całka Ito<a class="headerlink" href="#calka-ito" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>W tej definicji (preferowanej przez matematyków) wybiera się wartość <span class="math">\(W(s_i)\)</span> z lewej strony przedziału z czysto praktycznej przyczyny (ułatwia to rachunki). Aby wyjaśnic dlaczego tak sie postępuje, rozpatrzmy nieco inną całkę z procesem Wienera, a mianowicie</p>
 <div class="math" id="equation-eqn20">
-<span class="eqno">(20)</span>\[I_3= \int_{t_0}^{\;t} H(W(s), s) dW(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)] \qquad $\]</div>
+<span class="eqno">(20)</span>\[I_3= \int_{t_0}^{\;t} H(W(s), s) dW(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)]\]</div>
 <p>Tak określona całka nazywa się całką Ito i ma &#8220;przyjazne&#8221; własności z tego powodu, że wartości średnie typu</p>
 <div class="math" id="equation-eqn21">
-<span class="eqno">(21)</span>\[ \langle H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)]^k\rangle = \langle H(W(s_i), {\tilde s}_i)\rangle \cdot \langle [W(s_{i+1}) -W(s_i)]^k\rangle \qquad $\]</div>
+<span class="eqno">(21)</span>\[ \langle H(W(s_i), {\tilde s}_i) [W(s_{i+1}) -W(s_i)]^k\rangle = \langle H(W(s_i), {\tilde s}_i)\rangle \cdot \langle [W(s_{i+1}) -W(s_i)]^k\rangle\]</div>
 <p>rozbijają się na iloczyny wartości średnich ponieważ proces Wienera jest procesem o niezależnych przyrostach na nieprzekrywających się przedziałach, a wartość średnia iloczynu niezależnych zmiennych losowych jest równa iloczynowi wartości średnich tych zmiennych. Jest to główna przyczyna takiej definicji całek Ito. Należy podkreślić, że dla rzeczywistych procesów losowych taki wybór nie zawsze jest poprawny.</p>
 <p>Teraz możemy zdefiniować całkę</p>
 <div class="math" id="equation-eqn22">
-<span class="eqno">(22)</span>\[I_2=\int_{t_0}^{\;t} G(X(s), s) \xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G(X(s_i), {\tilde s}_i) [\xi(s_{i+1}) -\xi(s_i)] \qquad $\]</div>
+<span class="eqno">(22)</span>\[I_2=\int_{t_0}^{\;t} G(X(s), s) \xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G(X(s_i), {\tilde s}_i) [\xi(s_{i+1}) -\xi(s_i)]\]</div>
 <p>Całki, w definicji których wartości procesu <span class="math">\(X(t)\)</span> lub <span class="math">\(\xi(t)\)</span> należy brać z lewej strony przedziałów <span class="math">\([s_i, s_{i+1}]\)</span>, tzn. dla <span class="math">\(G(X(s_i), {\tilde s}_i)\)</span>, nazywamy &#8216;&#8217;&#8216;całkami Ito&#8217;&#8216;&#8217; lub całkami w interpretacji Ito. Ponieważ jak na razie z czysto matematycznego punktu widzenia wybór punktu z lewej strony przedziału jest arbitralny, każdy inny punkt jest równo uprawniony. Ale należy bezwględnie pamiętać, że zmiana położenia punktu <span class="math">\({\tilde s}_i\)</span> w przedziale <span class="math">\([s_i, s_{i+1}]\)</span> dla <span class="math">\(X(\tilde s_i)\)</span> czy dla <span class="math">\(\xi(\tilde s_i)\)</span> oznacza zmianę wartości całki. To odróżnia całki stochastyczne od &#8220;tradycyjnych&#8221; całek Riemanna. W związku z tym pojawia się poważny problem, gdy chcemy stosować równania stochastyczne do modelowania realnych zjawisk i procesów. Czy istnieją jakieś racjonalne kryteria na wybór punktu pośredniego <span class="math">\(\tilde s_i\)</span>? Dylemat ten przez pewien okres czasu był przedmiotem dyskusji i polemik w literaturze naukowej.</p>
 </div>
 <div class="section" id="calka-stratonowicza">
@@ -278,7 +278,7 @@
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 07, 2013.
+    Ostatnia modyfikacja Nov 08, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>
