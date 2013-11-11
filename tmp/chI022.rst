@@ -12,7 +12,7 @@ Niektóre układy równań różniczkowych mają specyficzną strukturę i ukryt
     m\ddot x = F(x) = -\frac{dV(x)}{dx} = - V'(x)
 
 
-gdzie siła :math:`F(x)` jest potencjalna, tzn.  istnieje taka funkcja :math:`V(x)`, że :math:`F(x) = -V'(x)`.  Oznaczenie :math:`V'(x)` jest pochodną funkcji :math:`V(x)` względem zmiennej :math:`x`. Funkcja  :math:`V(x)` nazywa się energią potencjalną, ale my będziemy pisali krótko - potencjał. Jeżeli znamy siłę :math:`F(x)` to potencjał można znależć obliczając całkę: 
+gdzie siła :math:`F(x)` jest potencjalna, tzn.  istnieje taka funkcja :math:`V(x)`, że :math:`F(x) = -V'(x)`.  Oznaczenie :math:`V'(x)` jest pochodną funkcji :math:`V(x)` względem zmiennej :math:`x`. Funkcja  :math:`V(x)` nazywa się energią potencjalną, ale my będziemy pisali krótko - potencjał. Jeżeli znamy siłę :math:`F(x)` to potencjał można znaleźć obliczając całkę: 
 
 .. MATH::
     :label: eqn2
@@ -27,11 +27,11 @@ Równanie Newtona jest równaniem 2-go rzędu, autonomicznym.   Zapiszemy je w p
 .. MATH::
     :label: eqn3
 
-    \dot x = v, \quad \quad x(0)=x_0, 
+    \dot x = v, \qquad x(0)=x_0, 
     
     m\dot v = F(x) = -V'(x),  \qquad v(0)=v_0.
 
-Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa :math:`\{x, v\}`. W tej przestrzeni fazowej może analizować krzywe fazowe. Można zauważyć, że położenie :math:`x(t)` oraz prędkość :math:`v(t)` icząstki zmieniają się w czasie zgodnie z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji :math:`x(t)` oraz :math:`v(t)`, która nie zmienia się w czasie:
+Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa :math:`\{x, v\}`. W tej przestrzeni fazowej może analizować krzywe fazowe. Można zauważyć, że położenie :math:`x(t)` oraz prędkość :math:`v(t)` cząstki zmieniają się w czasie zgodnie z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji :math:`x(t)` oraz :math:`v(t)`, która nie zmienia się w czasie:
 
 .. MATH::
     :label: eqn4
@@ -39,7 +39,7 @@ Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa :math:`\{x, v\}`.
     E[x(t), v(t)] = \frac{1}{2} m v^2(t) + V(x(t)) = \frac{1}{2} m v^2(0) + V(x(0)) = E[x(0), v(0)]
 
 
-Wielkość :math:`E` nazywa się  w fizyce całkowitą energią układu i składa się z 2 części: energii kinetycznej cząstki :math:`E_k=mv^2/2` oraz energii potencjalnej  cząstki :math:`E_p = V(x)`. Jeżeli :math:`E` nie zmienia się w czasie, to znaczy że jest to funkcja stała ze względu na czas i pochodna wzgledem czasu powinna być zero. Sprawdźmy to:
+Wielkość :math:`E` nazywa się  w fizyce całkowitą energią układu i składa się z 2 części: energii kinetycznej cząstki :math:`E_k=mv^2/2` oraz energii potencjalnej  cząstki :math:`E_p = V(x)`. Jeżeli :math:`E` nie zmienia się w czasie, to znaczy że jest to funkcja stała ze względu na czas i pochodna względem czasu powinna być zero. Sprawdźmy to:
 
 .. MATH::
     :label: eqn5
@@ -54,7 +54,7 @@ Ponieważ :math:`E` nie zmienia się w czasie, to mówimy że jest to stała ruc
 .. MATH::
     :label: eqn6
 
-    F(x) = - k x = - m\omega^2 x, \qquad V(x) = \frac{1}{2} k  x^2  = \frac{1}{2} m\omega^2 x^2, \quad \quad \omega^2 = \frac{k}{m}
+    F(x) = - k x = - m\omega^2 x, \qquad V(x) = \frac{1}{2} k  x^2  = \frac{1}{2} m\omega^2 x^2, \qquad \omega^2 = \frac{k}{m}
 
 
 Prawo zachowania energii mówi, że
@@ -81,22 +81,36 @@ Jest to równanie elipsy:
     \frac{x^2}{(2E/k)} + \frac{y^2}{(2E/m)} = 1
 
 
-o osiach :math:`a=2E/k` oraz :math:`b=2E/m`. Narysujmy sobie takę elipsę dla, powiedzmy, :math:`E = 2, k = 0.2` oraz :math:`m=1`. Wiadomo, że każdy wie jak taka elipsa będzie wyglądać, ale zrobimy to bardziej po to, żeby wyrobić sobie naturalną umiejętność używania programów typu Sage do wizualizacji i interpretacji wyników.
+o osiach :math:`a=2E/k` oraz :math:`b=2E/m`. 
 
-.. sagecellserver::
-    :is_verbatim: True
+.. only:: html
 
-    sage: @interact(layout={'top':[['E','k','m']],})
-    sage: def _(title=['elipsa'], E=input_box(2,label=r'$E$', width=10), k=input_box(0.2,label=r'$k$', width=10), m=input_box(1,label=r'$m$', width=10)):
-    ...    a = 2*E/k
-    ...    b = 2*E/m
-    ...    ellipse((0,0),a,b,0,fill=True,alpha=0.3).show()
+  Narysujmy sobie taką elipsę dla, powiedzmy, :math:`E = 2, k = 0.2` oraz :math:`m=1`. 
+  Wiadomo, że każdy wie jak taka elipsa będzie wyglądać, ale zrobimy to bardziej po to, 
+  żeby wyrobić sobie naturalną umiejętność używania programów typu Sage do wizualizacji i interpretacji wyników.
 
-.. end of input
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: @interact(layout={'top':[['E','k','m']],})
+      sage: def _(title=['elipsa'], E=input_box(2,label=r'$E$', width=10), k=input_box(0.2,label=r'$k$', width=10), m=input_box(1,label=r'$m$', width=10)):
+      ...    a = 2*E/k
+      ...    b = 2*E/m
+      ...    ellipse((0,0),a,b,0,fill=True,alpha=0.3).show()
+
+  .. end of input
+
+.. only:: latex
+
+  .. figure:: images/sage_chI022_01.*
+     :align: center
+     :alt: figI21_01
+
+     Krzywa fazowa :eq:`eqn9` dla :math:`k=0.2, E=2, m=1`.
 
 Elipsa jest krzywą zamkniętą, więc ruch jest periodyczny. Można sobie wyobrażać, że ruch cząstki w potencjale :math:`V(x)` jest  podobny do  ruchu cząstki we wnętrzu połówki sfery (w czasze). Nie jest to prawdą, ale takie wyobrażenie wyrabia w nas intuicję o własnościach ruchu. Poniżej przedstawiamy krok po kroku co zrobić, aby narysować krzywe fazowe układu.
 
-Rysujemy wykres przedstawiający potencjal :math:`V(x)`. Poniżej tego wykresu, z osią pionową ustawioną jak w wykresie dla potencjału, rysujemy 2 symetryczne krzywe zadane przez prawo zachowania energii :math:`\frac{1}{2}m v^2 + V(x) = E` czyli stąd wynika że :math:`v = \pm \sqrt{\frac{2}{m}[(E-V(x)]}`. Te dwie krzywe :math:`v=v(x, E)` są krzywymi fazowymi.
+Rysujemy wykres przedstawiający potencjał :math:`V(x)`. Poniżej tego wykresu, z osią pionową ustawioną jak w wykresie dla potencjału, rysujemy 2 symetryczne krzywe zadane przez prawo zachowania energii :math:`\frac{1}{2}m v^2 + V(x) = E` czyli stąd wynika że :math:`v = \pm \sqrt{\frac{2}{m}[(E-V(x)]}`. Te dwie krzywe :math:`v=v(x, E)` są krzywymi fazowymi.
 Cząstka porusza się w prawo gdy prędkość jest dodatnia :math:`v>0` (zielona krzywa) i w lewo gdy prędkość jest ujemna :math:`v<0` (czerwona krzywa). Prędkość jest zero wówczas, gdy :math:`V(x) = E`. Wynika to z prawa zachowania energii (podstaw tam :math:`v=0`). Równanie :math:`V(x) = E` wyznacza punkty zwrotu :math:`x_i` : cząstka w tych punktach ma zerową prędkość i zmienia kierunek ruch (zawraca). 
 
 Spróbujemy, krok po kroku zanalizować równanie Newtona aby uzyskać krzywe fazowe.
@@ -107,70 +121,108 @@ Spróbujemy, krok po kroku zanalizować równanie Newtona aby uzyskać krzywe fa
     m \ddot{x} = F
 
 
-Jeżeli siła bedzie liniowa :math:`F=-kx` to dostaniemy wyżej opisane zagadnienie oscylatora harmonicznego. Na początku musimy zadeklarować nazwy zmiennych oraz parametrów użytych w modelu. Pamiętaj - każdorazowo, jeżeli chcesz obliczac coś symbolicznie, trzeba taką linijkę napisać i ją wykonać. W kolejnych linijkach ustalimy parametry układu, zdefiniujemy siły z jakimi mamy do czynienia i obliczymy potencjał (całka z siły brana ze znakiem minus). W następnym kroku, z prawa zachowania energii, obliczymy teraz jak prędkość zależy od położenia (owe krzywe fazowe). 
+Jeżeli siła będzie liniowa :math:`F=-kx` to dostaniemy wyżej opisane zagadnienie oscylatora harmonicznego. Na początku musimy zadeklarować nazwy zmiennych oraz parametrów użytych w modelu. Pamiętaj - każdorazowo, jeżeli chcesz obliczać coś symbolicznie, trzeba taką linijkę napisać i ją wykonać. W kolejnych linijkach ustalimy parametry układu, zdefiniujemy siły z jakimi mamy do czynienia i obliczymy potencjał (całka z siły brana ze znakiem minus). W następnym kroku, z prawa zachowania energii, obliczymy teraz jak prędkość zależy od położenia (owe krzywe fazowe). 
 
-.. sagecellserver::
-    :is_verbatim: True
+.. only:: latex
 
-    sage: #0 (kilka zmiennych)
-    sage: var('x v')
-    sage: #parametry dla wizualizacji
-    sage: x0 = 1.3
-    sage: v0 = 0.3
-    sage: k = 0.2
-    sage: m = 1
-    sage: F = -k*x
-    sage: #1
-    sage: V = -integral(F,x)
-    sage: p1 = plot(V, xmin=-x0, xmax=x0)
-    sage: p1.show(figsize=4, axes_labels=[r'$x$',r'$V(x)=%s$'%V])
-    sage: #
-    sage: #prawo zachowania energii
-    sage: E = m*v0^2 + V(x=x0)
-    sage: PZE = m*v^2 + V == E
-    sage: #i jego rozwiązanie
-    sage: rozw = solve(PZE, v); show(rozw)
-    sage: v1=rozw[0].rhs()
-    sage: v2=rozw[1].rhs()
-    sage: #
-    sage: #ekstremalne wychylenie 
-    sage: #prawo zachowania energii dla v=0
-    sage: rozw = solve(PZE(v=0), x); show(rozw)
-    sage: xmin = rozw[0].rhs()
-    sage: xmax = rozw[1].rhs()
-    sage: #punkt początkowy (tak jak powyżej)
-    sage: ball = (x0,V(x=x0))
-    sage: p0  = point(ball,size=30) 
-    sage: p0 += text(r"  punkt startowy",ball,vertical_alignment='bottom',horizontal_alignment='left',fontsize=8)
-    sage: #
-    sage: #ekstrema
-    sage: ball = (xmax,V(x=xmax))
-    sage: p0 += point(ball,size=30,color='red') 
-    sage: p0 += text("ekstremum_",ball,vertical_alignment='bottom',horizontal_alignment='right',color='red',fontsize=8)
-    sage: p12a = line((ball,(xmax,0)),linestyle='dotted',color='grey')
-    sage: ball = (xmin,V(x=xmin))
-    sage: p0 += point(ball,size=30,color='red') 
-    sage: p0 += text("_ekstremum",ball,vertical_alignment='bottom',horizontal_alignment='left',color='red',fontsize=8)
-    sage: p12a += line((ball,(xmin,0)),linestyle='dotted',color='grey')
-    sage: #
-    sage: #potencjał
-    sage: p1 = plot(V, xmin=xmin, xmax=xmax)
-    sage: #
-    sage: #krzywe fazowe
-    sage: p12b = line(((xmin,0),(xmin,v2(x=0))),linestyle='dotted',color='grey')
-    sage: p12b += line(((xmax,0),(xmax,v2(x=0))),linestyle='dotted',color='grey')
-    sage: p2 =  plot(v1, (x,xmin,xmax), color='red')
-    sage: p2 += plot(v2, (x,xmin,xmax), color='green')
-    sage: #
-    sage: (p0+p1+p12a).show(figsize=4, axes_labels=['$x$','$V(x)$'])
-    sage: (p12b+p2).show(figsize=4,xmax=xmax)
-    sage: 
-    sage: var('x y z t')
-    sage: xy_wsp = [('x','x'),('y','y')]+[('z','z')]
-    sage: N = len(xy_wsp)
-    sage: J  = matrix(SR,N)
+  .. code-block:: python
 
-.. end of input
+    var('x y')
+    # parametry wizualizacji
+    x0, v0, k, m = 1.3, 0.3, 0.2, 1
+    # siły
+    F = -k*x
+    # krok 1 - wykres potencjału
+    V = -integral(F,x)
+    p1 = plot(V, xmin=-x0, xmax=x0)
+    #prawo zachowania energii
+    E = m*v0^2 + V(x=x0)
+    PZE = m*v^2 + V == E
+    #i jego rozwiązanie
+    rozw = solve(PZE, v)
+    v1=rozw[0].rhs()
+    v2=rozw[1].rhs()
+    #maksymalne wychylenia
+    rozw = solve(PZE(v=0), x)
+    xmin = rozw[0].rhs()
+    xmax = rozw[1].rhs()
+    #krzywe fazowe
+    p2 =  plot(v1, (x,xmin,xmax), color='red')
+    p2 += plot(v2, (x,xmin,xmax), color='green')
+
+  .. figure:: images/sage_chI022_02.*
+     :align: center
+     :alt: figI21_02
+
+     Krzywe fazowa oscylatora harmonicznego.
+
+
+
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: #0 (kilka zmiennych)
+      sage: var('x v')
+      sage: #parametry dla wizualizacji
+      sage: x0 = 1.3
+      sage: v0 = 0.3
+      sage: k = 0.2
+      sage: m = 1
+      sage: F = -k*x
+      sage: #1
+      sage: V = -integral(F,x)
+      sage: p1 = plot(V, xmin=-x0, xmax=x0)
+      sage: p1.show(figsize=4, axes_labels=[r'$x$',r'$V(x)=%s$'%V])
+      sage: #
+      sage: #prawo zachowania energii
+      sage: E = m*v0^2 + V(x=x0)
+      sage: PZE = m*v^2 + V == E
+      sage: #i jego rozwiązanie
+      sage: rozw = solve(PZE, v); show(rozw)
+      sage: v1=rozw[0].rhs()
+      sage: v2=rozw[1].rhs()
+      sage: #
+      sage: #ekstremalne wychylenie 
+      sage: #prawo zachowania energii dla v=0
+      sage: rozw = solve(PZE(v=0), x); show(rozw)
+      sage: xmin = rozw[0].rhs()
+      sage: xmax = rozw[1].rhs()
+      sage: #punkt początkowy (tak jak powyżej)
+      sage: ball = (x0,V(x=x0))
+      sage: p0  = point(ball,size=30) 
+      sage: p0 += text(r"  punkt startowy",ball,vertical_alignment='bottom',horizontal_alignment='left',fontsize=8)
+      sage: #
+      sage: #ekstrema
+      sage: ball = (xmax,V(x=xmax))
+      sage: p0 += point(ball,size=30,color='red') 
+      sage: p0 += text("ekstremum_",ball,vertical_alignment='bottom',horizontal_alignment='right',color='red',fontsize=8)
+      sage: p12a = line((ball,(xmax,0)),linestyle='dotted',color='grey')
+      sage: ball = (xmin,V(x=xmin))
+      sage: p0 += point(ball,size=30,color='red') 
+      sage: p0 += text("_ekstremum",ball,vertical_alignment='bottom',horizontal_alignment='left',color='red',fontsize=8)
+      sage: p12a += line((ball,(xmin,0)),linestyle='dotted',color='grey')
+      sage: #
+      sage: #potencjał
+      sage: p1 = plot(V, xmin=xmin, xmax=xmax)
+      sage: #
+      sage: #krzywe fazowe
+      sage: p12b = line(((xmin,0),(xmin,v2(x=0))),linestyle='dotted',color='grey')
+      sage: p12b += line(((xmax,0),(xmax,v2(x=0))),linestyle='dotted',color='grey')
+      sage: p2 =  plot(v1, (x,xmin,xmax), color='red')
+      sage: p2 += plot(v2, (x,xmin,xmax), color='green')
+      sage: #
+      sage: (p0+p1+p12a).show(figsize=4, axes_labels=['$x$','$V(x)$'])
+      sage: (p12b+p2).show(figsize=4,xmax=xmax)
+      sage: 
+      sage: var('x y z t')
+      sage: xy_wsp = [('x','x'),('y','y')]+[('z','z')]
+      sage: N = len(xy_wsp)
+      sage: J  = matrix(SR,N)
+
+  .. end of input
 
 Układy potencjalne
 ------------------
@@ -217,27 +269,29 @@ Wystarczy zatem sprawdzić, czy rotacja pola sił  :math:`\vec F`  jest 0.
 
 .. topic:: Zadanie
     
-    Sprawdzić, czy  siły :math:`\vec F(x, y, z)` o składowych
+    Sprawdzić, czy  siły :math:`\vec F(x, y, z)` o zadanych składowych 
+    :math:`F_i = F_i(x,y,z)` są potencjalne.
 
-    .. MATH::
-        :label: eqn15
+    1. Układ 1.
 
-         1.  \quad \quad F_1(x, y,z) = \frac{y}{x^2 + y^2 + z^2},  \quad F_2(x, y,z) = - \frac{x}{x^2 + y^2 + z^2},  \quad F_3(x, y,z) = \frac{z}{x^2 + y^2 + z^2}
+      .. MATH::
+          :label: eqn15
 
+          F_1 = \frac{y}{x^2 + y^2 + z^2},  \quad F_2 = - \frac{x}{x^2 + y^2 + z^2},  \quad F_3 = \frac{z}{x^2 + y^2 + z^2}
 
-    .. MATH::
-        :label: eqn16
+    2. Układ 2.
 
-         2.  \quad \quad F_1(x, y,z) = \frac{x-z}{x^2 + y^2 },  \quad F_2(x, y,z) = x e^{-y^2},  \quad F_3(x, y,z) = z+5
+      .. MATH::
+          :label: eqn16
 
+          F_1 = \frac{x-z}{x^2 + y^2 },  \quad F_2 = x e^{-y^2},  \quad F_3 = z+5
 
-    .. MATH::
-        :label: eqn17
+    3. Układ 3.
 
-        3. \quad \quad F_1(x, y,z) = 25 x^4 y - 3y^2,  \quad F_2(x, y,z) = 5x^5 -6xy -5,  \quad F_3(x, y,z) =0
+      .. MATH::
+          :label: eqn17
 
-
-    są potencjalne
+           F_1 = 25 x^4 y - 3y^2,  \quad F_2 = 5x^5 -6xy -5,  \quad F_3 =0
 
  
 
@@ -246,7 +300,7 @@ Jeżeli układ jest potencjalny to łatwo sprawdzić, podobnie jak wyżej w przy
 .. MATH::
     :label: eqn18
 
-    E = \sum_i \frac{m\vec v^2}{2} + V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)  = constant, \qquad \frac{dE}{dt} = 0
+    E = \sum_i \frac{m\vec v^2}{2} + V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)  = cons., \qquad \frac{dE}{dt} = 0
 
 
 Dlatego  takie pole sił nazywa się zachowawczym polem sił.  Wszystkie siły związane z potencjalnym polem sił są siłami zachowawczymi. Istnieją jednak siły, które nie są siłami potencjalnymi, mimo to pozostają siłami zachowawczymi. Przykładem może być siła Lorentza działająca na naładowaną cząstkę poruszającą się w polu magnetycznym. Nie należy tego mylić z zachowawczymi układami dynamicznymi. Tę kwestię postaramy się teraz wyjaśnić.
@@ -254,7 +308,7 @@ Dlatego  takie pole sił nazywa się zachowawczym polem sił.  Wszystkie siły z
 Dynamiczne układy zachowawcze i dysypatywne
 -------------------------------------------
 
-W teorii układów dynamicznych ważną rolę pełnią dwa pojęcia: zachowawcze układy dynamiczne i dysypatywne układy dynamiczne.  Znowu dla jasności wywodu rozpatrzymy przykład układu o 3-wymiarowej przestrzeni fazowej:
+W teorii układów dynamicznych ważną rolę pełnią dwa pojęcia: zachowawcze układy dynamiczne i dyssypatywne układy dynamiczne.  Znowu dla jasności wywodu rozpatrzymy przykład układu o 3-wymiarowej przestrzeni fazowej:
 
 .. MATH::
     :label: eqn19
@@ -287,7 +341,7 @@ Innymi słowy, kiedy układ dynamiczny zachowuje objętość fazową. Zbadamy te
 .. MATH::
     :label: eqn22
 
-    x_t = x(t), \quad \quad y_t = y(t), \quad \quad z(t) = z_t
+    x_t = x(t), \qquad y_t = y(t), \qquad z(t) = z_t
 
 
 Objętość fazowa warunków początkowych w chwili :math:`t=0` wynosi
@@ -354,9 +408,10 @@ zależą od warunków początkowych :math:`\{x_0, y_0, z_0\}`.  Po rozwinięciu 
     \frac{d}{dt}  \frac{ \partial x_t}{\partial z_0} = \frac{ \partial }{\partial z_0} \frac{dx_t}{dt} = \frac{ \partial }{\partial z_0} \dot x_t = \frac{ \partial }{\partial z_0} F_1(x_t, y_t, z_t) = \frac{ \partial F_1}{\partial x_t}  \frac{ \partial x_t}{\partial z_0} +  \frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  +\frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  
 
 
-Jak widać, w tym prostym przypadku musimy przeprowadzić uciążliwe rachunki. Znacznie lepiej jest posłużyć się rachunkiem symbolicznym z wykorzystaniem SAGE.
-
-Aby przeprowadzić dowód, najlepiej jest obejść  ograniczenia operacji na wyrazeniach z pochodnymi w Sage.Pochodna wyznacznika jest zrobiona automatycznie, potem jest recznie wykonane podstawienie:
+Jak widać, w tym prostym przypadku musimy przeprowadzić uciążliwe rachunki. Znacznie 
+lepiej jest posłużyć się rachunkiem symbolicznym z wykorzystaniem SAGE. Aby przeprowadzić 
+dowód, najlepiej jest obejść ograniczenia operacji na wyrażeniach z pochodnymi w Sage.
+Pochodna wyznacznika jest zrobiona automatycznie, potem jest ręcznie wykonane podstawienie:
 
 .. MATH::
     :label: eqn31
@@ -364,42 +419,93 @@ Aby przeprowadzić dowód, najlepiej jest obejść  ograniczenia operacji na wyr
      \frac{ \partial }{\partial z_0} \dot x_t = \frac{ \partial F_1}{\partial x_t}  \frac{ \partial x_t}{\partial z_0} +  \frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  +\frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  
 
 
-.. sagecellserver::
-    :is_verbatim: True
+.. only:: latex
 
-    sage: for i,(v,lv) in enumerate(xy_wsp):
-    ...   for j,(u,lu) in enumerate(xy_wsp):
-    ...        J[i,j] = var("d%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial %s_t}{\partial %s_0}'%(lv,lu))
-    ...        var("dF%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial F_%s}{\partial %s_t}'%(lv,lu))
-    sage: #
-    sage: to_fun = dict()
-    sage: for v in J.list():
-    ...    vars()[str(v).capitalize()] = function(str(v).capitalize(),t)
-    ...    var("%sd"%str(v))
-    ...    to_fun[v]=vars()[str(v).capitalize()]
-    ...    to_fun[vars()[str(v)+"d"]]=vars()[str(v).capitalize()].diff()
-    sage: to_var = dict((v,k) for k,v in to_fun.items())
-    sage: #
-    sage: to_rhs = dict()
-    sage: for i,(v,lv) in enumerate(xy_wsp):
-    ...    for j,(u,lu) in enumerate(xy_wsp):      
-    ...        to_rhs[vars()["d%sd%sd"%(v,u)]] = sum([vars()["dF%sd%s"%(v,w)]*vars()["d%sd%s"%(w,u)] for w,wl in xy_wsp])
-    sage: print "Zaczynamy od macierzy Jacobiego:"
-    sage: show(J)
-    sage: print "Wszystkie pochodne cząstkowe są reprezentowane przez niezależne zmienne, aby policzyc pochodną wyznacznika, zamieniamy je podstawiając słownik zamieniający zmienne na funkcje:"
-    sage: show(J.subs(to_fun))
-    sage: print "Liczymy wyznaczniki pochodną, oraz wracamy do zmiennych symbolicznych:"
-    sage: J.subs(to_fun).det().diff(t).subs(to_var).show()
-    sage: #
-    sage: print "Uzywając słownika to_rhs, podstawiamy prawe strony ODE:"
-    sage: J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs).show()
-    sage: #
-    sage: print "Ostatecznie dzielimy otrzymany wzór przez Jacobian:"
-    sage: #
-    sage: final = J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs)/J.det()
-    sage: final.simplify_full().show()
+  .. code-block:: python
 
-.. end of input
+      for i,(v,lv) in enumerate(xy_wsp):
+        for j,(u,lu) in enumerate(xy_wsp):
+          J[i,j] = var("d%sd%s"%(v,u),
+          latex_name =\
+          r'\displaystyle\frac{\partial %s_t}{\partial %s_0}'%(lv,lu)
+          )
+          var("dF%sd%s"%(v,u),
+          latex_name =\
+          r'\displaystyle\frac{\partial F_%s}{\partial %s_t}'%(lv,lu)
+          )
+      #
+      to_fun = dict()
+      for v in J.list():
+        vars()[str(v).capitalize()] = function(str(v).capitalize(),t)
+        var("%sd"%str(v))
+        to_fun[v]=vars()[str(v).capitalize()]
+        to_fun[vars()[str(v)+"d"]]=vars()[str(v).capitalize()].diff()
+      to_var = dict((v,k) for k,v in to_fun.items())
+      #
+      to_rhs = dict()
+      for i,(v,lv) in enumerate(xy_wsp):
+       for j,(u,lu) in enumerate(xy_wsp):      
+        to_rhs[vars()["d%sd%sd"%(v,u)]] =\
+        sum([vars()["dF%sd%s"%(v,w)]*vars()["d%sd%s"%(w,u)] \
+                                         for w,wl in xy_wsp])
+      #macierz Jakobiego
+      show(J)
+      #Wszystkie pochodne cząstkowe są reprezentowane przez niezależne 
+      #zmienne, aby policzyc pochodną wyznacznika, zamieniamy je 
+      #podstawiając słownik zamieniający zmienne na funkcje:
+      show(J.subs(to_fun))
+      #Liczymy wyznaczniki pochodną, oraz wracamy do zmiennych 
+      #symbolicznych
+      J.subs(to_fun).det().diff(t).subs(to_var).show()
+      #
+      #Uzywając słownika to_rhs, podstawiamy prawe strony ODE
+      J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs).show()
+      #
+      #Ostatecznie dzielimy otrzymany wzór przez Jacobian
+      final =\
+         J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs)/J.det()
+      final.simplify_full().show()
+
+ 
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: for i,(v,lv) in enumerate(xy_wsp):
+      ...   for j,(u,lu) in enumerate(xy_wsp):
+      ...        J[i,j] = var("d%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial %s_t}{\partial %s_0}'%(lv,lu))
+      ...        var("dF%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial F_%s}{\partial %s_t}'%(lv,lu))
+      sage: #
+      sage: to_fun = dict()
+      sage: for v in J.list():
+      ...    vars()[str(v).capitalize()] = function(str(v).capitalize(),t)
+      ...    var("%sd"%str(v))
+      ...    to_fun[v]=vars()[str(v).capitalize()]
+      ...    to_fun[vars()[str(v)+"d"]]=vars()[str(v).capitalize()].diff()
+      sage: to_var = dict((v,k) for k,v in to_fun.items())
+      sage: #
+      sage: to_rhs = dict()
+      sage: for i,(v,lv) in enumerate(xy_wsp):
+      ...    for j,(u,lu) in enumerate(xy_wsp):      
+      ...        to_rhs[vars()["d%sd%sd"%(v,u)]] = sum([vars()["dF%sd%s"%(v,w)]*vars()["d%sd%s"%(w,u)] for w,wl in xy_wsp])
+      sage: print "Zaczynamy od macierzy Jacobiego:"
+      sage: show(J)
+      sage: print "Wszystkie pochodne cząstkowe są reprezentowane przez niezależne zmienne, aby policzyc pochodną wyznacznika, zamieniamy je podstawiając słownik zamieniający zmienne na funkcje:"
+      sage: show(J.subs(to_fun))
+      sage: print "Liczymy wyznaczniki pochodną, oraz wracamy do zmiennych symbolicznych:"
+      sage: J.subs(to_fun).det().diff(t).subs(to_var).show()
+      sage: #
+      sage: print "Uzywając słownika to_rhs, podstawiamy prawe strony ODE:"
+      sage: J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs).show()
+      sage: #
+      sage: print "Ostatecznie dzielimy otrzymany wzór przez Jacobian:"
+      sage: #
+      sage: final = J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs)/J.det()
+      sage: final.simplify_full().show()
+
+  .. end of input
 
 Ostatecznie otrzymamy wyrażenie
 
@@ -409,12 +515,16 @@ Ostatecznie otrzymamy wyrażenie
     \frac{dJ(t)}{dt} = J(t) \left[\frac{\partial F_1}{\partial  x_t} + \frac{\partial  F_2}{\partial  y_t} + \frac{\partial F_3}{\partial z_t} \right]  = J(t)\; \mbox{ div} \vec F
 
 
-To, co jest w nawiasie kwadratowym  nazywa się dywergencją pola wektorowego :math:`\vec F`. Wstawiamy to wyrażemie do równania :eq:`eqn26` i otrzymamy
+To, co jest w nawiasie kwadratowym  nazywa się dywergencją pola wektorowego :math:`\vec F`. Wstawiamy to wyrażenie do równania :eq:`eqn26` i otrzymamy
 
 .. MATH::
     :label: eqn33
 
-    \frac{dM(t)}{dt} = \int \int \int_{D(0)}  \frac{ dJ(t)}{dt}  dx_0 dy_0 dz_0   = \int \int \int_{D(0)} J(t)\; \mbox{ div} \vec F  dx_0 dy_0 dz_0  =  \int \int \int_{D(t)} \; \mbox{ div} \vec F  dx_t dy_t dz_t \qquad  
+    \frac{dM(t)}{dt} = \int \int \int_{D(0)}  \frac{ dJ(t)}{dt}  dx_0 dy_0 dz_0 = 
+    
+    = \int \int \int_{D(0)} J(t)\; \mbox{ div} \vec F  dx_0 dy_0 dz_0 = 
+    
+    =  \int \int \int_{D(t)} \; \mbox{ div} \vec F  dx_t dy_t dz_t 
 
 
 gdzie dokonaliśmy odwrotnego przejścia  ( z prawej strony na lewą stronę) jak  w równaniu :eq:`eqn25`.
@@ -424,7 +534,7 @@ Można teraz uogólnić ten wynik na dowolną ilość wymiarów przestrzeni fazo
 .. MATH::
     :label: eqn34
 
-    \frac{d\vec x}{dt} = \vec F (\vec x), \quad \quad \vec x = [x_1, x_2, x_3, ...., x_n], \quad \quad \vec F = [F_1, F_2, F_3, ..., F_n]
+    \frac{d\vec x}{dt} = \vec F (\vec x), \qquad \vec x = [x_1, x_2, x_3, ...., x_n], \qquad \vec F = [F_1, F_2, F_3, ..., F_n]
 
 
 i otrzymamy
@@ -438,7 +548,7 @@ Twierdzenie
     \mbox{ div} \vec F = \sum_i \frac{\partial F_i}{\partial x_i} = 0
 
 
-wówczas objętość fazowa jest zachowana, :math:`M(t) = M(0)`. Takie układy dynamiczne nazywamy zachowawczymi. Jeżeli objętość fazowa maleje w czasie, to układ nazywamy dysypatywnym. Innymi słowy, układ jest dysypatywny gdy objętość :math:`M(t) < M(0)` dla :math:`t>0`. Oznacza to, że dla układów dysypatywnych
+wówczas objętość fazowa jest zachowana, :math:`M(t) = M(0)`. Takie układy dynamiczne nazywamy zachowawczymi. Jeżeli objętość fazowa maleje w czasie, to układ nazywamy dyssypatywnym. Innymi słowy, układ jest dyssypatywny gdy objętość :math:`M(t) < M(0)` dla :math:`t>0`. Oznacza to, że dla układów dyssypatywnych
 
 .. MATH::
     :label: eqn36
@@ -462,7 +572,7 @@ wówczas z równania :eq:`eqn33` otrzymujemy prostą relację
     \frac{dM(t)}{dt} = C_0 M(t)
 
 
-która pozwala rozstrzygnąć czy układ jest dysypatywny.
+która pozwala rozstrzygnąć czy układ jest dyssypatywny.
 
  
 
@@ -472,9 +582,9 @@ Przykład 1: Oscylator harmoniczny tłumiony
 .. MATH::
     :label: eqn39
 
-    \dot x = y = F_1(x, y), \quad \quad x(0) = x_0,
+    \dot x = y = F_1(x, y), \qquad x(0) = x_0,
     
-    \dot y = -\gamma y -\omega^2 x = F_2(x, y), \quad \quad y(0) = y_0.
+    \dot y = -\gamma y -\omega^2 x = F_2(x, y), \qquad y(0) = y_0.
 
 
 Łatwo obliczyć dywergencję pola
@@ -493,7 +603,7 @@ Równanie :eq:`eqn37` przyjmuje postać
     \frac{dM(t)}{dt} = -\gamma  M(t),  \qquad \mbox{ jego rozwiązaniem jest funkcja malejąca } \qquad M(t) = M(0) e^{-\gamma t}
 
 
-czyli  objętość fazowa (w tym przypadku powierzchnia fazowa) maleje  w czasie i dlatego jest to dysypatywny układ dynamiczny.
+czyli  objętość fazowa (w tym przypadku powierzchnia fazowa) maleje  w czasie i dlatego jest to dyssypatywny układ dynamiczny.
 
  
 Przykład 2: Model Lorenza
@@ -502,11 +612,11 @@ Przykład 2: Model Lorenza
 .. MATH::
     :label: eqn42
 
-    \dot x = \sigma (y-x) = F_1(x, y,  z), \quad \quad x(0) = x_0,
+    \dot x = \sigma (y-x) = F_1(x, y,  z), \qquad x(0) = x_0,
     
-    \dot y = x(\rho - z) -y = F_2(x, y,  z),  \quad \quad y(0) = y_0,
+    \dot y = x(\rho - z) -y = F_2(x, y,  z),  \qquad y(0) = y_0,
     
-    \dot z = x y - \beta z = F_3(x, y,  z), , \quad \quad z(0) = z_0.
+    \dot z = x y - \beta z = F_3(x, y,  z), , \qquad z(0) = z_0.
 
 
 gdzie wszystkie parametry są dodatnie: :math:`\sigma, \rho, \beta > 0`. 
@@ -521,6 +631,6 @@ Obliczymy  dywergencję 3-wymiarowego pola :math:`\vec F = [F_1, F_2, F_3]`. Pro
     \mbox{ div} \vec F =  \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y}   + \frac{\partial F_3}{\partial z}  = -\sigma -1 - \beta <0
 
 
-Objętość fazowa (w tym przypadku faktycznie objętość w 3 wymiarowej przestrzeni) maleje  eksponencjalnie w czasie, podobnie jak w poprzednim przykładzie.  Dlatego też jest to dysypatywny układ dynamiczny.
+Objętość fazowa (w tym przypadku faktycznie objętość w 3 wymiarowej przestrzeni) maleje  eksponencjalnie w czasie, podobnie jak w poprzednim przykładzie.  Dlatego też jest to dyssypatywny układ dynamiczny.
  
 

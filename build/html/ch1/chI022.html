@@ -91,23 +91,23 @@
 <p>Niektóre układy równań różniczkowych mają specyficzną strukturę i ukryte własności. Przykłady z fizyki mają taką specyficzną strukturę. Rozpatrzmy równanie Newtona dla cząstki o jednym stopniu swobody w postaci:</p>
 <div class="math" id="equation-eqn1">
 <span class="eqno">(1)</span>\[m\ddot x = F(x) = -\frac{dV(x)}{dx} = - V'(x)\]</div>
-<p>gdzie siła <span class="math">\(F(x)\)</span> jest potencjalna, tzn.  istnieje taka funkcja <span class="math">\(V(x)\)</span>, że <span class="math">\(F(x) = -V'(x)\)</span>.  Oznaczenie <span class="math">\(V'(x)\)</span> jest pochodną funkcji <span class="math">\(V(x)\)</span> względem zmiennej <span class="math">\(x\)</span>. Funkcja  <span class="math">\(V(x)\)</span> nazywa się energią potencjalną, ale my będziemy pisali krótko - potencjał. Jeżeli znamy siłę <span class="math">\(F(x)\)</span> to potencjał można znależć obliczając całkę:</p>
+<p>gdzie siła <span class="math">\(F(x)\)</span> jest potencjalna, tzn.  istnieje taka funkcja <span class="math">\(V(x)\)</span>, że <span class="math">\(F(x) = -V'(x)\)</span>.  Oznaczenie <span class="math">\(V'(x)\)</span> jest pochodną funkcji <span class="math">\(V(x)\)</span> względem zmiennej <span class="math">\(x\)</span>. Funkcja  <span class="math">\(V(x)\)</span> nazywa się energią potencjalną, ale my będziemy pisali krótko - potencjał. Jeżeli znamy siłę <span class="math">\(F(x)\)</span> to potencjał można znaleźć obliczając całkę:</p>
 <div class="math" id="equation-eqn2">
 <span class="eqno">(2)</span>\[V(x) = - \int_a^{\,x}  F(y) dy\]</div>
 <p>gdzie <span class="math">\(a\)</span> jest dowolną liczbą wybieraną tak jak nam wygodnie. Np. możemy wybrać tak, aby w pewnym punkcie potencjał był zerowy lub nieskończony.</p>
 <p>Równanie Newtona jest równaniem 2-go rzędu, autonomicznym.   Zapiszemy je w postaci</p>
 <div class="math" id="equation-eqn3">
-<span class="eqno">(3)</span>\[\dot x = v, \quad \quad x(0)=x_0,\]\[m\dot v = F(x) = -V'(x),  \qquad v(0)=v_0.\]</div>
-<p>Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa <span class="math">\(\{x, v\}\)</span>. W tej przestrzeni fazowej może analizować krzywe fazowe. Można zauważyć, że położenie <span class="math">\(x(t)\)</span> oraz prędkość <span class="math">\(v(t)\)</span> icząstki zmieniają się w czasie zgodnie z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji <span class="math">\(x(t)\)</span> oraz <span class="math">\(v(t)\)</span>, która nie zmienia się w czasie:</p>
+<span class="eqno">(3)</span>\[\dot x = v, \qquad x(0)=x_0,\]\[m\dot v = F(x) = -V'(x),  \qquad v(0)=v_0.\]</div>
+<p>Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa <span class="math">\(\{x, v\}\)</span>. W tej przestrzeni fazowej może analizować krzywe fazowe. Można zauważyć, że położenie <span class="math">\(x(t)\)</span> oraz prędkość <span class="math">\(v(t)\)</span> cząstki zmieniają się w czasie zgodnie z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji <span class="math">\(x(t)\)</span> oraz <span class="math">\(v(t)\)</span>, która nie zmienia się w czasie:</p>
 <div class="math" id="equation-eqn4">
 <span class="eqno">(4)</span>\[E[x(t), v(t)] = \frac{1}{2} m v^2(t) + V(x(t)) = \frac{1}{2} m v^2(0) + V(x(0)) = E[x(0), v(0)]\]</div>
-<p>Wielkość <span class="math">\(E\)</span> nazywa się  w fizyce całkowitą energią układu i składa się z 2 części: energii kinetycznej cząstki <span class="math">\(E_k=mv^2/2\)</span> oraz energii potencjalnej  cząstki <span class="math">\(E_p = V(x)\)</span>. Jeżeli <span class="math">\(E\)</span> nie zmienia się w czasie, to znaczy że jest to funkcja stała ze względu na czas i pochodna wzgledem czasu powinna być zero. Sprawdźmy to:</p>
+<p>Wielkość <span class="math">\(E\)</span> nazywa się  w fizyce całkowitą energią układu i składa się z 2 części: energii kinetycznej cząstki <span class="math">\(E_k=mv^2/2\)</span> oraz energii potencjalnej  cząstki <span class="math">\(E_p = V(x)\)</span>. Jeżeli <span class="math">\(E\)</span> nie zmienia się w czasie, to znaczy że jest to funkcja stała ze względu na czas i pochodna względem czasu powinna być zero. Sprawdźmy to:</p>
 <div class="math" id="equation-eqn5">
 <span class="eqno">(5)</span>\[\frac{dE}{dt} = \frac{d}{dt}  E[x(t), v(t)] = \frac{\partial E}{\partial x}  \frac{dx}{dt} + \frac{\partial E}{\partial v}  \frac{dv}{dt} =  V'(x)  \dot x +  mv \dot v = -F(x) v + v F(x)\]</div>
 <p>gdzie skorzystaliśmy ze związku pomiędzy siłą i energią potencjalną oraz z równania Newtona.</p>
 <p>Ponieważ <span class="math">\(E\)</span> nie zmienia się w czasie, to mówimy że jest to stała ruchu lub całka ruchu, lub całka pierwsza układu (ostatnie nazwy wydają  się być dziwaczne, bo w wyrażeniu dla <span class="math">\(E\)</span> nie widać żadnej całki).  Istnienie stałych czy też całek ruchu ułatwia analizę układów. Pokażemy to na przykładzie oscylatora harmonicznego  dla którego postać siły jest dobrze znana:</p>
 <div class="math" id="equation-eqn6">
-<span class="eqno">(6)</span>\[F(x) = - k x = - m\omega^2 x, \qquad V(x) = \frac{1}{2} k  x^2  = \frac{1}{2} m\omega^2 x^2, \quad \quad \omega^2 = \frac{k}{m}\]</div>
+<span class="eqno">(6)</span>\[F(x) = - k x = - m\omega^2 x, \qquad V(x) = \frac{1}{2} k  x^2  = \frac{1}{2} m\omega^2 x^2, \qquad \omega^2 = \frac{k}{m}\]</div>
 <p>Prawo zachowania energii mówi, że</p>
 <div class="math" id="equation-eqn7">
 <span class="eqno">(7)</span>\[E = \frac{1}{2} m v^2(t) + \frac{1}{2} k x^2(t) = const. = \frac{1}{2} m v^2(0) + \frac{1}{2} k x^2(0)\]</div>
@@ -117,18 +117,21 @@
 <p>Jest to równanie elipsy:</p>
 <div class="math" id="equation-eqn9">
 <span class="eqno">(9)</span>\[\frac{x^2}{(2E/k)} + \frac{y^2}{(2E/m)} = 1\]</div>
-<p>o osiach <span class="math">\(a=2E/k\)</span> oraz <span class="math">\(b=2E/m\)</span>. Narysujmy sobie takę elipsę dla, powiedzmy, <span class="math">\(E = 2, k = 0.2\)</span> oraz <span class="math">\(m=1\)</span>. Wiadomo, że każdy wie jak taka elipsa będzie wyglądać, ale zrobimy to bardziej po to, żeby wyrobić sobie naturalną umiejętność używania programów typu Sage do wizualizacji i interpretacji wyników.</p>
+<p>o osiach <span class="math">\(a=2E/k\)</span> oraz <span class="math">\(b=2E/m\)</span>.</p>
+<p>Narysujmy sobie taką elipsę dla, powiedzmy, <span class="math">\(E = 2, k = 0.2\)</span> oraz <span class="math">\(m=1\)</span>.
+Wiadomo, że każdy wie jak taka elipsa będzie wyglądać, ale zrobimy to bardziej po to,
+żeby wyrobić sobie naturalną umiejętność używania programów typu Sage do wizualizacji i interpretacji wyników.</p>
 <div class='sage'><script type='text/x-sage'>@interact(layout={'top':[['E','k','m']],})
 def _(title=['elipsa'], E=input_box(2,label=r'$E$', width=10), k=input_box(0.2,label=r'$k$', width=10), m=input_box(1,label=r'$m$', width=10)):
  a = 2*E/k
  b = 2*E/m
  ellipse((0,0),a,b,0,fill=True,alpha=0.3).show()</script></div><p>Elipsa jest krzywą zamkniętą, więc ruch jest periodyczny. Można sobie wyobrażać, że ruch cząstki w potencjale <span class="math">\(V(x)\)</span> jest  podobny do  ruchu cząstki we wnętrzu połówki sfery (w czasze). Nie jest to prawdą, ale takie wyobrażenie wyrabia w nas intuicję o własnościach ruchu. Poniżej przedstawiamy krok po kroku co zrobić, aby narysować krzywe fazowe układu.</p>
-<p>Rysujemy wykres przedstawiający potencjal <span class="math">\(V(x)\)</span>. Poniżej tego wykresu, z osią pionową ustawioną jak w wykresie dla potencjału, rysujemy 2 symetryczne krzywe zadane przez prawo zachowania energii <span class="math">\(\frac{1}{2}m v^2 + V(x) = E\)</span> czyli stąd wynika że <span class="math">\(v = \pm \sqrt{\frac{2}{m}[(E-V(x)]}\)</span>. Te dwie krzywe <span class="math">\(v=v(x, E)\)</span> są krzywymi fazowymi.
+<p>Rysujemy wykres przedstawiający potencjał <span class="math">\(V(x)\)</span>. Poniżej tego wykresu, z osią pionową ustawioną jak w wykresie dla potencjału, rysujemy 2 symetryczne krzywe zadane przez prawo zachowania energii <span class="math">\(\frac{1}{2}m v^2 + V(x) = E\)</span> czyli stąd wynika że <span class="math">\(v = \pm \sqrt{\frac{2}{m}[(E-V(x)]}\)</span>. Te dwie krzywe <span class="math">\(v=v(x, E)\)</span> są krzywymi fazowymi.
 Cząstka porusza się w prawo gdy prędkość jest dodatnia <span class="math">\(v&gt;0\)</span> (zielona krzywa) i w lewo gdy prędkość jest ujemna <span class="math">\(v&lt;0\)</span> (czerwona krzywa). Prędkość jest zero wówczas, gdy <span class="math">\(V(x) = E\)</span>. Wynika to z prawa zachowania energii (podstaw tam <span class="math">\(v=0\)</span>). Równanie <span class="math">\(V(x) = E\)</span> wyznacza punkty zwrotu <span class="math">\(x_i\)</span> : cząstka w tych punktach ma zerową prędkość i zmienia kierunek ruch (zawraca).</p>
 <p>Spróbujemy, krok po kroku zanalizować równanie Newtona aby uzyskać krzywe fazowe.</p>
 <div class="math" id="equation-eqn10">
 <span class="eqno">(10)</span>\[m \ddot{x} = F\]</div>
-<p>Jeżeli siła bedzie liniowa <span class="math">\(F=-kx\)</span> to dostaniemy wyżej opisane zagadnienie oscylatora harmonicznego. Na początku musimy zadeklarować nazwy zmiennych oraz parametrów użytych w modelu. Pamiętaj - każdorazowo, jeżeli chcesz obliczac coś symbolicznie, trzeba taką linijkę napisać i ją wykonać. W kolejnych linijkach ustalimy parametry układu, zdefiniujemy siły z jakimi mamy do czynienia i obliczymy potencjał (całka z siły brana ze znakiem minus). W następnym kroku, z prawa zachowania energii, obliczymy teraz jak prędkość zależy od położenia (owe krzywe fazowe).</p>
+<p>Jeżeli siła będzie liniowa <span class="math">\(F=-kx\)</span> to dostaniemy wyżej opisane zagadnienie oscylatora harmonicznego. Na początku musimy zadeklarować nazwy zmiennych oraz parametrów użytych w modelu. Pamiętaj - każdorazowo, jeżeli chcesz obliczać coś symbolicznie, trzeba taką linijkę napisać i ją wykonać. W kolejnych linijkach ustalimy parametry układu, zdefiniujemy siły z jakimi mamy do czynienia i obliczymy potencjał (całka z siły brana ze znakiem minus). W następnym kroku, z prawa zachowania energii, obliczymy teraz jak prędkość zależy od położenia (owe krzywe fazowe).</p>
 <div class='sage'><script type='text/x-sage'>#0 (kilka zmiennych)
 var('x v')
 #parametry dla wizualizacji
@@ -203,23 +206,38 @@ J  = matrix(SR,N)</script></div></div>
 <p>Wystarczy zatem sprawdzić, czy rotacja pola sił  <span class="math">\(\vec F\)</span>  jest 0.</p>
 <div class="topic">
 <p class="topic-title first">Zadanie</p>
-<p>Sprawdzić, czy  siły <span class="math">\(\vec F(x, y, z)\)</span> o składowych</p>
-<div class="math" id="equation-eqn15">
-<span class="eqno">(15)</span>\[ 1.  \quad \quad F_1(x, y,z) = \frac{y}{x^2 + y^2 + z^2},  \quad F_2(x, y,z) = - \frac{x}{x^2 + y^2 + z^2},  \quad F_3(x, y,z) = \frac{z}{x^2 + y^2 + z^2}\]</div>
-<div class="math" id="equation-eqn16">
-<span class="eqno">(16)</span>\[ 2.  \quad \quad F_1(x, y,z) = \frac{x-z}{x^2 + y^2 },  \quad F_2(x, y,z) = x e^{-y^2},  \quad F_3(x, y,z) = z+5\]</div>
-<div class="math" id="equation-eqn17">
-<span class="eqno">(17)</span>\[3. \quad \quad F_1(x, y,z) = 25 x^4 y - 3y^2,  \quad F_2(x, y,z) = 5x^5 -6xy -5,  \quad F_3(x, y,z) =0\]</div>
-<p>są potencjalne</p>
+<p>Sprawdzić, czy  siły <span class="math">\(\vec F(x, y, z)\)</span> o zadanych składowych
+<span class="math">\(F_i = F_i(x,y,z)\)</span> są potencjalne.</p>
+<ol class="arabic simple">
+<li>Układ 1.</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn15">
+<span class="eqno">(15)</span>\[F_1 = \frac{y}{x^2 + y^2 + z^2},  \quad F_2 = - \frac{x}{x^2 + y^2 + z^2},  \quad F_3 = \frac{z}{x^2 + y^2 + z^2}\]</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Układ 2.</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn16">
+<span class="eqno">(16)</span>\[F_1 = \frac{x-z}{x^2 + y^2 },  \quad F_2 = x e^{-y^2},  \quad F_3 = z+5\]</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Układ 3.</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn17">
+<span class="eqno">(17)</span>\[ F_1 = 25 x^4 y - 3y^2,  \quad F_2 = 5x^5 -6xy -5,  \quad F_3 =0\]</div>
+</div></blockquote>
 </div>
 <p>Jeżeli układ jest potencjalny to łatwo sprawdzić, podobnie jak wyżej w przypadku układu o 1-stopniu swobody,  że istnieje stała ruchu - całkowita energia układu:</p>
 <div class="math" id="equation-eqn18">
-<span class="eqno">(18)</span>\[E = \sum_i \frac{m\vec v^2}{2} + V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)  = constant, \qquad \frac{dE}{dt} = 0\]</div>
+<span class="eqno">(18)</span>\[E = \sum_i \frac{m\vec v^2}{2} + V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)  = cons., \qquad \frac{dE}{dt} = 0\]</div>
 <p>Dlatego  takie pole sił nazywa się zachowawczym polem sił.  Wszystkie siły związane z potencjalnym polem sił są siłami zachowawczymi. Istnieją jednak siły, które nie są siłami potencjalnymi, mimo to pozostają siłami zachowawczymi. Przykładem może być siła Lorentza działająca na naładowaną cząstkę poruszającą się w polu magnetycznym. Nie należy tego mylić z zachowawczymi układami dynamicznymi. Tę kwestię postaramy się teraz wyjaśnić.</p>
 </div>
 <div class="section" id="id1">
 <h2>Dynamiczne układy zachowawcze i dysypatywne<a class="headerlink" href="#id1" title="Stały odnośnik do tego nagłówka">¶</a></h2>
-<p>W teorii układów dynamicznych ważną rolę pełnią dwa pojęcia: zachowawcze układy dynamiczne i dysypatywne układy dynamiczne.  Znowu dla jasności wywodu rozpatrzymy przykład układu o 3-wymiarowej przestrzeni fazowej:</p>
+<p>W teorii układów dynamicznych ważną rolę pełnią dwa pojęcia: zachowawcze układy dynamiczne i dyssypatywne układy dynamiczne.  Znowu dla jasności wywodu rozpatrzymy przykład układu o 3-wymiarowej przestrzeni fazowej:</p>
 <div class="math" id="equation-eqn19">
 <span class="eqno">(19)</span>\[\dot x = F_1(x, y, z), \quad x(0) = x_0,\]\[\dot y = F_2(x, y, z),  \quad x(0) = x_0,\]\[\dot z = F_3(x, y, z),  \quad x(0) = x_0.\]</div>
 <p>Wybieramy w przestrzeni fazowej obszar <span class="math">\(D(0)\)</span>  o objętości <span class="math">\(M(0)\)</span>. Zawiera on wszystkie możliwe warunki początkowe</p>
@@ -230,7 +248,7 @@ J  = matrix(SR,N)</script></div></div>
 <span class="eqno">(21)</span>\[ \mbox{w jakich przypadkach} \quad M(t) = M(0)\]</div>
 <p>Innymi słowy, kiedy układ dynamiczny zachowuje objętość fazową. Zbadamy ten problem. Wprowadzimy nowe oznaczenia, aby ułatwić notację:</p>
 <div class="math" id="equation-eqn22">
-<span class="eqno">(22)</span>\[x_t = x(t), \quad \quad y_t = y(t), \quad \quad z(t) = z_t\]</div>
+<span class="eqno">(22)</span>\[x_t = x(t), \qquad y_t = y(t), \qquad z(t) = z_t\]</div>
 <p>Objętość fazowa warunków początkowych w chwili <span class="math">\(t=0\)</span> wynosi</p>
 <div class="math" id="equation-eqn23">
 <span class="eqno">(23)</span>\[M(0) = \int \int \int_{D(0)}  dx_0 dy_0 dz_0\]</div>
@@ -255,8 +273,10 @@ J  = matrix(SR,N)</script></div></div>
 <p>zależą od warunków początkowych <span class="math">\(\{x_0, y_0, z_0\}\)</span>.  Po rozwinięciu wyznacznika pojawiają się wyrażenia typu</p>
 <div class="math" id="equation-eqn30">
 <span class="eqno">(30)</span>\[\frac{d}{dt}  \frac{ \partial x_t}{\partial z_0} = \frac{ \partial }{\partial z_0} \frac{dx_t}{dt} = \frac{ \partial }{\partial z_0} \dot x_t = \frac{ \partial }{\partial z_0} F_1(x_t, y_t, z_t) = \frac{ \partial F_1}{\partial x_t}  \frac{ \partial x_t}{\partial z_0} +  \frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  +\frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}\]</div>
-<p>Jak widać, w tym prostym przypadku musimy przeprowadzić uciążliwe rachunki. Znacznie lepiej jest posłużyć się rachunkiem symbolicznym z wykorzystaniem SAGE.</p>
-<p>Aby przeprowadzić dowód, najlepiej jest obejść  ograniczenia operacji na wyrazeniach z pochodnymi w Sage.Pochodna wyznacznika jest zrobiona automatycznie, potem jest recznie wykonane podstawienie:</p>
+<p>Jak widać, w tym prostym przypadku musimy przeprowadzić uciążliwe rachunki. Znacznie
+lepiej jest posłużyć się rachunkiem symbolicznym z wykorzystaniem SAGE. Aby przeprowadzić
+dowód, najlepiej jest obejść ograniczenia operacji na wyrażeniach z pochodnymi w Sage.
+Pochodna wyznacznika jest zrobiona automatycznie, potem jest ręcznie wykonane podstawienie:</p>
 <div class="math" id="equation-eqn31">
 <span class="eqno">(31)</span>\[ \frac{ \partial }{\partial z_0} \dot x_t = \frac{ \partial F_1}{\partial x_t}  \frac{ \partial x_t}{\partial z_0} +  \frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  +\frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}\]</div>
 <div class='sage'><script type='text/x-sage'>for i,(v,lv) in enumerate(xy_wsp):
@@ -292,13 +312,13 @@ final = J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs)/J.det()
 final.simplify_full().show()</script></div><p>Ostatecznie otrzymamy wyrażenie</p>
 <div class="math" id="equation-eqn32">
 <span class="eqno">(32)</span>\[\frac{dJ(t)}{dt} = J(t) \left[\frac{\partial F_1}{\partial  x_t} + \frac{\partial  F_2}{\partial  y_t} + \frac{\partial F_3}{\partial z_t} \right]  = J(t)\; \mbox{ div} \vec F\]</div>
-<p>To, co jest w nawiasie kwadratowym  nazywa się dywergencją pola wektorowego <span class="math">\(\vec F\)</span>. Wstawiamy to wyrażemie do równania <a href="#equation-eqn26">(26)</a> i otrzymamy</p>
+<p>To, co jest w nawiasie kwadratowym  nazywa się dywergencją pola wektorowego <span class="math">\(\vec F\)</span>. Wstawiamy to wyrażenie do równania <a href="#equation-eqn26">(26)</a> i otrzymamy</p>
 <div class="math" id="equation-eqn33">
-<span class="eqno">(33)</span>\[\frac{dM(t)}{dt} = \int \int \int_{D(0)}  \frac{ dJ(t)}{dt}  dx_0 dy_0 dz_0   = \int \int \int_{D(0)} J(t)\; \mbox{ div} \vec F  dx_0 dy_0 dz_0  =  \int \int \int_{D(t)} \; \mbox{ div} \vec F  dx_t dy_t dz_t \qquad\]</div>
+<span class="eqno">(33)</span>\[\frac{dM(t)}{dt} = \int \int \int_{D(0)}  \frac{ dJ(t)}{dt}  dx_0 dy_0 dz_0 =\]\[= \int \int \int_{D(0)} J(t)\; \mbox{ div} \vec F  dx_0 dy_0 dz_0 =\]\[=  \int \int \int_{D(t)} \; \mbox{ div} \vec F  dx_t dy_t dz_t\]</div>
 <p>gdzie dokonaliśmy odwrotnego przejścia  ( z prawej strony na lewą stronę) jak  w równaniu <a href="#equation-eqn25">(25)</a>.</p>
 <p>Można teraz uogólnić ten wynik na dowolną ilość wymiarów przestrzeni fazowej  dla układu równań</p>
 <div class="math" id="equation-eqn34">
-<span class="eqno">(34)</span>\[\frac{d\vec x}{dt} = \vec F (\vec x), \quad \quad \vec x = [x_1, x_2, x_3, ...., x_n], \quad \quad \vec F = [F_1, F_2, F_3, ..., F_n]\]</div>
+<span class="eqno">(34)</span>\[\frac{d\vec x}{dt} = \vec F (\vec x), \qquad \vec x = [x_1, x_2, x_3, ...., x_n], \qquad \vec F = [F_1, F_2, F_3, ..., F_n]\]</div>
 <p>i otrzymamy</p>
 <dl class="docutils">
 <dt>Twierdzenie</dt>
@@ -306,7 +326,7 @@ final.simplify_full().show()</script></div><p>Ostatecznie otrzymamy wyrażenie</
 </dl>
 <div class="math" id="equation-eqn35">
 <span class="eqno">(35)</span>\[\mbox{ div} \vec F = \sum_i \frac{\partial F_i}{\partial x_i} = 0\]</div>
-<p>wówczas objętość fazowa jest zachowana, <span class="math">\(M(t) = M(0)\)</span>. Takie układy dynamiczne nazywamy zachowawczymi. Jeżeli objętość fazowa maleje w czasie, to układ nazywamy dysypatywnym. Innymi słowy, układ jest dysypatywny gdy objętość <span class="math">\(M(t) &lt; M(0)\)</span> dla <span class="math">\(t&gt;0\)</span>. Oznacza to, że dla układów dysypatywnych</p>
+<p>wówczas objętość fazowa jest zachowana, <span class="math">\(M(t) = M(0)\)</span>. Takie układy dynamiczne nazywamy zachowawczymi. Jeżeli objętość fazowa maleje w czasie, to układ nazywamy dyssypatywnym. Innymi słowy, układ jest dyssypatywny gdy objętość <span class="math">\(M(t) &lt; M(0)\)</span> dla <span class="math">\(t&gt;0\)</span>. Oznacza to, że dla układów dyssypatywnych</p>
 <div class="math" id="equation-eqn36">
 <span class="eqno">(36)</span>\[\begin{split}\frac{dM(t)}{dt} &lt; 0\end{split}\]</div>
 <p>Gdyby</p>
@@ -315,28 +335,28 @@ final.simplify_full().show()</script></div><p>Ostatecznie otrzymamy wyrażenie</
 <p>wówczas z równania <a href="#equation-eqn33">(33)</a> otrzymujemy prostą relację</p>
 <div class="math" id="equation-eqn38">
 <span class="eqno">(38)</span>\[\frac{dM(t)}{dt} = C_0 M(t)\]</div>
-<p>która pozwala rozstrzygnąć czy układ jest dysypatywny.</p>
+<p>która pozwala rozstrzygnąć czy układ jest dyssypatywny.</p>
 <div class="section" id="przyklad-1-oscylator-harmoniczny-tlumiony">
 <h3>Przykład 1: Oscylator harmoniczny tłumiony<a class="headerlink" href="#przyklad-1-oscylator-harmoniczny-tlumiony" title="Stały odnośnik do tego nagłówka">¶</a></h3>
 <div class="math" id="equation-eqn39">
-<span class="eqno">(39)</span>\[\dot x = y = F_1(x, y), \quad \quad x(0) = x_0,\]\[\dot y = -\gamma y -\omega^2 x = F_2(x, y), \quad \quad y(0) = y_0.\]</div>
+<span class="eqno">(39)</span>\[\dot x = y = F_1(x, y), \qquad x(0) = x_0,\]\[\dot y = -\gamma y -\omega^2 x = F_2(x, y), \qquad y(0) = y_0.\]</div>
 <p>Łatwo obliczyć dywergencję pola</p>
 <div class="math" id="equation-eqn40">
 <span class="eqno">(40)</span>\[\begin{split}\mbox{ div} \vec F =  \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} = -\gamma &lt;0\end{split}\]</div>
 <p>Równanie <a href="#equation-eqn37">(37)</a> przyjmuje postać</p>
 <div class="math" id="equation-eqn41">
 <span class="eqno">(41)</span>\[\frac{dM(t)}{dt} = -\gamma  M(t),  \qquad \mbox{ jego rozwiązaniem jest funkcja malejąca } \qquad M(t) = M(0) e^{-\gamma t}\]</div>
-<p>czyli  objętość fazowa (w tym przypadku powierzchnia fazowa) maleje  w czasie i dlatego jest to dysypatywny układ dynamiczny.</p>
+<p>czyli  objętość fazowa (w tym przypadku powierzchnia fazowa) maleje  w czasie i dlatego jest to dyssypatywny układ dynamiczny.</p>
 </div>
 <div class="section" id="przyklad-2-model-lorenza">
 <h3>Przykład 2: Model Lorenza<a class="headerlink" href="#przyklad-2-model-lorenza" title="Stały odnośnik do tego nagłówka">¶</a></h3>
 <div class="math" id="equation-eqn42">
-<span class="eqno">(42)</span>\[\dot x = \sigma (y-x) = F_1(x, y,  z), \quad \quad x(0) = x_0,\]\[\dot y = x(\rho - z) -y = F_2(x, y,  z),  \quad \quad y(0) = y_0,\]\[\dot z = x y - \beta z = F_3(x, y,  z), , \quad \quad z(0) = z_0.\]</div>
+<span class="eqno">(42)</span>\[\dot x = \sigma (y-x) = F_1(x, y,  z), \qquad x(0) = x_0,\]\[\dot y = x(\rho - z) -y = F_2(x, y,  z),  \qquad y(0) = y_0,\]\[\dot z = x y - \beta z = F_3(x, y,  z), , \qquad z(0) = z_0.\]</div>
 <p>gdzie wszystkie parametry są dodatnie: <span class="math">\(\sigma, \rho, \beta &gt; 0\)</span>.</p>
 <p>Obliczymy  dywergencję 3-wymiarowego pola <span class="math">\(\vec F = [F_1, F_2, F_3]\)</span>. Proste rachunki pokazują, że</p>
 <div class="math" id="equation-eqn43">
 <span class="eqno">(43)</span>\[\begin{split}\mbox{ div} \vec F =  \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y}   + \frac{\partial F_3}{\partial z}  = -\sigma -1 - \beta &lt;0\end{split}\]</div>
-<p>Objętość fazowa (w tym przypadku faktycznie objętość w 3 wymiarowej przestrzeni) maleje  eksponencjalnie w czasie, podobnie jak w poprzednim przykładzie.  Dlatego też jest to dysypatywny układ dynamiczny.</p>
+<p>Objętość fazowa (w tym przypadku faktycznie objętość w 3 wymiarowej przestrzeni) maleje  eksponencjalnie w czasie, podobnie jak w poprzednim przykładzie.  Dlatego też jest to dyssypatywny układ dynamiczny.</p>
 </div>
 </div>
 </div>
@@ -415,7 +435,7 @@ final.simplify_full().show()</script></div><p>Ostatecznie otrzymamy wyrażenie</
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 08, 2013.
+    Ostatnia modyfikacja Nov 11, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

@@ -89,7 +89,7 @@
 <p>We Wprowadzeniu pokazaliśmy w jaki sposób mogą pojawiać się zagadnienia modelowane równaniami rekurencyjnymi</p>
 <div class="math" id="equation-eqn1">
 <span class="eqno">(1)</span>\[x_{n+1} = f(x_n), \quad \quad x_0 = c\qquad\]</div>
-<p>Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykladem jest algorytm Newtona pozwalający znajdować rekurencyjnie  pierwiastki równania</p>
+<p>Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykładem jest algorytm Newtona pozwalający rekurencyjnie znajdować pierwiastki równania</p>
 <div class="math" id="equation-eqn2">
 <span class="eqno">(2)</span>\[F(x) = 0\]</div>
 <p>W metodzie  Newtona  kolejne przybliżenie pierwiastka dane jest przez równanie</p>
@@ -130,7 +130,7 @@ def pophis(startp,b,length):
 def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
  show(list_plot(pophis(1,b,35),plotjoined=True,marker='o',ymin=0.5,ymax=3))</script></div><div class="section" id="metoda-pajeczyny">
 <h2>Metoda pajęczyny<a class="headerlink" href="#metoda-pajeczyny" title="Stały odnośnik do tego nagłówka">¶</a></h2>
-<p>Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można oberwować kolejne kroki iteracji.</p>
+<p>Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można obserwować kolejne kroki iteracji.</p>
 <p>Sposób rysowania:</p>
 <dl class="docutils">
 <dt># Dla danego równania  <span class="math">\(x_{n+1} = f(x_n)\)</span>, rysujemy wykres funkcji</dt>
@@ -179,14 +179,14 @@ def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmi
 <p>Przypomnijmy sobie, co oznacza istnienie stanu stacjonarnego dla układów modelowanych równaniem różniczkowym:</p>
 <div class="math" id="equation-eqn6">
 <span class="eqno">(7)</span>\[ \frac{dx(t)}{dt} = F(x(t))\]</div>
-<p>Stan stacjonarny to taki stan, który nie zmienia się w trancie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli <span class="math">\(x(t) = x_s\)</span> jest wielkością stałą, niezmienną. Skoro tak, to</p>
+<p>Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli <span class="math">\(x(t) = x_s\)</span> jest wielkością stałą, niezmienną. Skoro tak, to</p>
 <div class="math" id="equation-eqn7">
 <span class="eqno">(8)</span>\[ \frac{dx(t)}{dt}  = \frac{dx_s}{dt}  = 0\]</div>
 <p>Aby lewa strona równania różniczkowego była równa prawej stronie, musi zachodzić równość:</p>
 <div class="math" id="equation-eqn8">
 <span class="eqno">(9)</span>\[F(x_s) = 0\]</div>
 <p>To jest równanie (warunek), z którego wyznaczamy stan stacjonarny.</p>
-<p>Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucjii (dyskretnej), czyli z punktu <span class="math">\(x_s\)</span> otrzymujemy znowu <span class="math">\(x_s\)</span>. Dla równania dyskretnego ta niezmienność oznacza, że</p>
+<p>Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji (dyskretnej), czyli z punktu <span class="math">\(x_s\)</span> otrzymujemy znowu <span class="math">\(x_s\)</span>. Dla równania dyskretnego ta niezmienność oznacza, że</p>
 <div class="math" id="equation-eqn9">
 <span class="eqno">(10)</span>\[\quad \mbox{jeżeli} \quad x_n = x_s \quad \mbox{to} \quad x_{n+1} = x_s\]</div>
 <p>i równanie rekurencyjne</p>
@@ -315,7 +315,7 @@ def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
 <span class="eqno">(31)</span>\[x = f[f(x)] \equiv g(x)\]</div>
 <p>Pamiętajmy, że jest to złożenie 2 funkcji (co prawda takich samych funkcji, ale to jest drugorzędne).</p>
 <p><strong>To jest bardzo ważne równanie!</strong></p>
-<p>Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny bedzie opisany równaniem</p>
+<p>Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny będzie opisany równaniem</p>
 <div class="math" id="equation-eqn30">
 <span class="eqno">(32)</span>\[x_{n+1} = 1- 2 x_n^2, \qquad f(x_n) = 1 - 2 x_n^2 \qquad \mbox{czyli} \qquad f(x) = 1 - 2 x^2\]</div>
 <p>Ile wynosi <span class="math">\(f[f(x)]\)</span>? Obliczamy</p>
@@ -340,7 +340,7 @@ def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
 <div class="math" id="equation-eqn36">
 <span class="eqno">(38)</span>\[  \lambda_2 = f'(u^*) f'(x^*) \in (-1, 1)\]</div>
 <p>gdzie <span class="math">\(u^*=f(x^*)\)</span></p>
-<p>Warto coś tu zauważyć  i uprościć. Ponieważ stan <span class="math">\(x^*\)</span> jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: <span class="math">\(x^* = x^*_1\)</span> (np. górny)  oraz <span class="math">\(x^* = x^*_2\)</span> (np. doly), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:</p>
+<p>Warto coś tu zauważyć  i uprościć. Ponieważ stan <span class="math">\(x^*\)</span> jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: <span class="math">\(x^* = x^*_1\)</span> (np. górny)  oraz <span class="math">\(x^* = x^*_2\)</span> (np. dolny), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:</p>
 <div class="math" id="equation-eqn37">
 <span class="eqno">(39)</span>\[x_2^* = f(x_1^*), \qquad x_1^* = f(x_2^*)\]</div>
 <p>Stąd otrzymujemy relację:</p>
@@ -444,7 +444,7 @@ def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 08, 2013.
+    Ostatnia modyfikacja Nov 11, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

@@ -26,7 +26,7 @@
 
 
 \title{Dynamika stochastyczna}
-\date{08/11/2013}
+\date{11/11/2013}
 \release{I}
 \author{Jerzy Łuczka, Łukasz Machura}
 \newcommand{\sphinxlogo}{}
@@ -165,10 +165,10 @@ W równaniu tym występują trzy wielkości:
 
 $m$  to masa cząstki
 $a$ jest przyśpieszeniem cząstki
-$F$ jest siłą działającą na czastkę.
+$F$ jest siłą działającą na cząstkę.
 Ponieważ ruch zachodzi tylko wzdłuż osi OX (tak zakładamy dla prostoty), siła  $F$  działa tylko w kierunku OX oraz przyśpieszenie $a$ jest wzdłuż osi OX.
 
-Wiemy z kursu fizyki, że przyśpieszenie cząstki jest pochodną ( względem czasu) pierwszego rzędu prędkości $v$ cząstki. Z kolei prędkość cząstki $v$ jest pochodną pierwszego rzędu położenia czastki $x$.
+Wiemy z kursu fizyki, że przyśpieszenie cząstki jest pochodną ( względem czasu) pierwszego rzędu prędkości $v$ cząstki. Z kolei prędkość cząstki $v$ jest pochodną pierwszego rzędu położenia cząstki $x$.
 \phantomsection\label{ch1/chI011:equation-eqn2}\begin{gather}
 \begin{split}a= \frac{d}{dt} v= \frac{d}{dt} \frac{d}{dt} x = \frac{d^2x}{dt^2}\end{split}\label{ch1/chI011-eqn2}
 \end{gather}
@@ -245,16 +245,16 @@ Równoważność  pokazujemy  w następujący sposób:
 
 w równaniu  \eqref{ch1/chI011-eqn18}  należy zastąpić $v$   z równania \eqref{ch1/chI011-eqn17} wyrażeniem   $v=\dot x$ pamiętając jednocześnie że $\dot v = \ddot x$
 równanie \eqref{ch1/chI011-eqn19} można scałkować i otrzymamy $z=\omega t$; wstawiamy to wyrażenie do równania \eqref{ch1/chI011-eqn18}.
-W ten sposób otrzymujemy znowu równanie \eqref{ch1/chI011-eqn15}. Tak więc jedno równanie różniczkowe nieutonomiczne 2-rzędu jest równoważne układowi 3 równań różniczkowych 1-rzędu. Odpowiadająca temu układowi przestrzeń fazowa jest 3-wymiarowa.  Z przykładu tego płynie ważna wskazówka, jak otrzymywać autonomiczny układ równań różniczkowych 1-rzędu. Liczba tych równań definiuje przestrzeń fazową układu. Wymiar tej przestrzeni jest jedną z najważniejszych charakterystyk. Proszę to zapamiętać!
+W ten sposób otrzymujemy znowu równanie \eqref{ch1/chI011-eqn15}. Tak więc jedno równanie różniczkowe nieautonomiczne 2-rzędu jest równoważne układowi 3 równań różniczkowych 1-rzędu. Odpowiadająca temu układowi przestrzeń fazowa jest 3-wymiarowa.  Z przykładu tego płynie ważna wskazówka, jak otrzymywać autonomiczny układ równań różniczkowych 1-rzędu. Liczba tych równań definiuje przestrzeń fazową układu. Wymiar tej przestrzeni jest jedną z najważniejszych charakterystyk. Proszę to zapamiętać!
 
-Fizyka stosuje też aparat równań różniczkowych cząstkowych. Studenci kierunku fizyka i pokrewnych kierunków znają przykłady takich równań. Równanie Schrodingera, równanie falowe, równanie dyfuzji, równania Maxwela to są równania różniczkowe cząstkowe. Ich analiza jest znacznie trudniejsza. Istnieją specjalne i specyficzne  metody matematyczne pozwalające otrzymać informację o własnościach układów opisywanych takimi równaniami.
+Fizyka stosuje też aparat równań różniczkowych cząstkowych. Studenci kierunku fizyka i pokrewnych kierunków znają przykłady takich równań. Równanie Schrödingera, równanie falowe, równanie dyfuzji, równania Maxwela to są równania różniczkowe cząstkowe. Ich analiza jest znacznie trudniejsza. Istnieją specjalne i specyficzne  metody matematyczne pozwalające otrzymać informację o własnościach układów opisywanych takimi równaniami.
 
 W wielu dziedzinach nauki (chemia, biologia, socjologia, nauki ekonomiczne) stosuje się fenomenologiczny sposób modelowania.  Aby uzmysłowić, jak go stosować podamy jeden przykład.
 
 
 \subsection{Modelowanie procesu wzrostu}
 \label{ch1/chI011:modelowanie-procesu-wzrostu}
-Procesy wzrostu pojawiają się na wielu obszarach. Nie trzeba być bystrym obserwatorem, aby zauważyć co wokół nas może wzrastać. My rozważamy jedną  z możliwych klas procesów wzrosu: wzrost populacji zajęcy czy  bakterii, wzrost depozytów pieniężnych na lokatach bankowych, wzrost stężenia substancji w reakcjach chemicznych  czy  wzrost liczby komórek nowotworowych. Często procesom wzrostu towarzyszą procesy malenia (zaniku, śmierci, ...). My je będziemy pomijać. Rozpatrzmy konkretny przykład: wzrost pieniędzy na lokacie bankowej. Załóżmy, żę w chwili czasu $t$ jest na lokacie $x(t)$ (np. złotych polskich). Pytamy, ile pieniędzy przyrośnie  po pewnym czasie $h$, czyli ile pieniędzy będzie w chwili $t+h$. Zaczynamy modelować ten proces. Oznaczmy, że w chwili $t+h$ jest $x(t+h)$ pieniędzy. Na tę kwotę składają się pieniądze $x(t)$ oraz przyrost $\delta$ z odsetek, czyli
+Procesy wzrostu pojawiają się na wielu obszarach. Nie trzeba być bystrym obserwatorem, aby zauważyć co wokół nas może wzrastać. My rozważamy jedną  z możliwych klas procesów wzrostu: wzrost populacji zajęcy czy  bakterii, wzrost depozytów pieniężnych na lokatach bankowych, wzrost stężenia substancji w reakcjach chemicznych  czy  wzrost liczby komórek nowotworowych. Często procesom wzrostu towarzyszą procesy malenia (zaniku, śmierci, ...). My je będziemy pomijać. Rozpatrzmy konkretny przykład: wzrost pieniędzy na lokacie bankowej. Załóżmy, że w chwili czasu $t$ jest na lokacie $x(t)$ (np. złotych polskich). Pytamy, ile pieniędzy przyrośnie  po pewnym czasie $h$, czyli ile pieniędzy będzie w chwili $t+h$. Zaczynamy modelować ten proces. Oznaczmy, że w chwili $t+h$ jest $x(t+h)$ pieniędzy. Na tę kwotę składają się pieniądze $x(t)$ oraz przyrost $\delta$ z odsetek, czyli
 \phantomsection\label{ch1/chI011:equation-eqn20}\begin{gather}
 \begin{split}x(t+h)  =  x(t) + \delta\end{split}\label{ch1/chI011-eqn20}
 \end{gather}
@@ -282,18 +282,19 @@ gdzie $x_0$ jest wartością początkową naszej lokaty. W ten oto sposób otrzy
 
 Poniżej pokazujemy  rozwiązania tego równania dla 3 różnych wartości $k$.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{N1,N2,N3}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} rozwiązania dla różnych wartości k=0, 0.1, 0.2}
+\PYG{n}{de} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{o}{*}\PYG{n}{N2}\PYG{p}{,}\PYG{l+m+mf}{0.2}\PYG{o}{*}\PYG{n}{N3}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{sol}\PYG{o}{=}\PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{N1}\PYG{p}{,}\PYG{n}{N2}\PYG{p}{,}\PYG{n}{N3}\PYG{p}{]}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('N1,N2,N3')
-T = srange(0,3,0.01)
-## rozwiązania dla różnych wartości k=0, 0.1, 0.2
-sol=desolve_odeint( vector([0, 0.1*N2,  0.2*N3]), [5,5,5],T,[N1,N2,N3])
-## wykresy rozwiązań dla różnych wartości k=-1, 0, 0.5
-line(zip(T,sol[:,0]), figsize=(5, 3), legend_label="k=0") +\
- line(zip(T,sol[:,1]), color='red', legend_label="k=0.1")+\
- line(zip(T,sol[:,2]), color='green', legend_label="k=0.2")
-\end{verbatim}
-
+\includegraphics{sage_chI011_01.pdf}
+\caption{Rozwiązania równania \eqref{ch1/chI011-eqn25}.}\end{figure}
 
 Inne procesy wzrostu także można modelować tym równaniem. Równanie to jest też punktem wyjściowym do modyfikacji, uogólnień, rozszerzeń, itp.  Proste rozszerzenie polega na uzależnieniu współczynnika tempa wzrostu k od dodatkowych czynników. Na przykład przy modelowaniu wzrostu populacji zajęcy, możemy uzależnić tempo wzrostu k od liczby zajęcy  w populacji: duża ilość zajęcy powoduje dużą konsumpcję pożywienia, a to z kolei skutkuje zmaleniem ilości pożywienia i utrudnieniami w zdobywaniu pożywienia. W efekcie zmniejsza się tempo wzrostu k. Innymi słowy, $k$ powinno być malejącą funkcją $x(t)$ liczebników w populacji.  Istnieje nieskończenie wiele takich funkcji.  Na przykład
 \phantomsection\label{ch1/chI011:equation-eqn26}\begin{gather}
@@ -307,17 +308,18 @@ Jakie są skutki takiej zmiany? Pokazujemy to na poniższym rysunku. Zauważamy,
 
 Model można rozszerzyć uwzględniając procesy śmierci: te naturalne i te wskutek istnienia drapieżników, które zjadają  osobników populacji. Prosty model  ofiara-drapieżca  jest 2-wymiarowy: opisuje zmiany w populacji ofiar i zmiany w populacji drapieżników. Jest to autonomiczny układ 2 równań różniczkowych zwyczajnych.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x,y,z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{U} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{300}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{de} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{x}\PYG{o}{*}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.1}\PYG{o}{*}\PYG{n}{x}\PYG{p}{)}\PYG{p}{,}\PYG{n}{y}\PYG{o}{*}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.2}\PYG{o}{*}\PYG{n}{y}\PYG{p}{)}\PYG{p}{,}\PYG{n}{z}\PYG{o}{*}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.3}\PYG{o}{*}\PYG{n}{z}\PYG{p}{)}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{sol}\PYG{o}{=}\PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{]}\PYG{p}{,}\PYG{n}{U}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('x,y,z')
-U = srange(0,300,0.01)
-sol=desolve_odeint( vector([x*exp(-0.1*x),  y*exp(-0.2*y),  z*exp(-0.3*z)]), [5,5,5],U,[x,y,z])
-## pokazujemy rozwiązania dla różnych wartości k=-1, 0, 0.5
-line(zip(U,sol[:,0]), figsize=(5, 3), legend_label="k=0")+\
- line(zip(U,sol[:,1]), color='red', legend_label="k=0.1")+\
- line(zip(U,sol[:,2]), color='green', legend_label="k=0.2")
-\end{verbatim}
-
+\includegraphics{sage_chI011_02.pdf}
+\caption{Rozwiązania równania \eqref{ch1/chI011-eqn27}.}\end{figure}
 
 
 \section{Modelowanie z czasem dyskretnym}
@@ -326,7 +328,7 @@ Powyżej otrzymaliśmy takie oto wyrażenie na przyrost:
 \phantomsection\label{ch1/chI011:equation-eqn28}\begin{gather}
 \begin{split}x(t+h) = x(t) + k h x(t)\end{split}\label{ch1/chI011-eqn28}
 \end{gather}
-Jeżeli zmiany następowałyby nie w sposób ciągły  lecz dyskretny (np.  co 1 dzien, co jedną godzinę) wówczas  krok czasowy $h$ jest dyskretny. Można wprowadzić oznaczenia
+Jeżeli zmiany następowałyby nie w sposób ciągły  lecz dyskretny (np.  co 1 dzień, co jedną godzinę) wówczas  krok czasowy $h$ jest dyskretny. Można wprowadzić oznaczenia
 \phantomsection\label{ch1/chI011:equation-eqn29}\begin{gather}
 \begin{split}x_n = x(t), \quad \quad x_{n+1} = x(t+h)\end{split}\label{ch1/chI011-eqn29}
 \end{gather}
@@ -351,7 +353,7 @@ Analiza jakościowa takiego układu jest bardzo trudna. Czasami  nieumiejętne s
 
 \section{Istnienie i jednoznaczność rozwiązań}
 \label{ch1/chI012:istnienie-i-jednoznacznosc-rozwiazan}\label{ch1/chI012::doc}
-Do opisu  realnych zjawisk przy pomocy równań różniczkowych zwyczajnych z warunkami początkowymi zadanymi w chwili  czasu $t=0$, potrzebne nam są rozwiązania dla czasów $t>0$ (ewolucja czasowa).  Można też rozpatrywać przypadek $t<0$ ale to zaliczyłbym do ćwiczeń matematycznych.  Ważnym zagadnieniem jest istnienie rozwiązań równań różniczkowych. Możemy zapytać, czy zawsze rozwiązania równań różniczkowych istnieją i jeżeli istnieją, to czy to są jedyne rozwiązania z warunkiem początkowym. Oczywiście dla różnych warunków początkowych układ może różnie ewoluować, ale gdy startuje  zawsze z tego samego  stanu (warunku) początkowego to czy ewolucja jest taka sama? Na tym polega problem jednoznaczności rozwiązań. Jeżeli dla danego warunku początkowego istnieją  np. 3 rozwiązania, to jak ewoluuje układ: istnieją 3 możliwości i którą możliwość wybiera układ? Gdyby tak było dla realnych układów to nie moglibyśmy przewidywać ewolucji układu, nie moglibyśmy sterować układami, brak byłoby determinizmu.  W rozwoju nauk ścisłych to właśnie determinizm stał się kołem napędowym rozwoju cywilzacyjnego ludzkości. To determinizm pozwala budować urządzenia, które działają tak jak my sobie tego życzymy: telewizor odbiera wybrany przeze mnie program, używam telefonu do komunikacji  z moją rodziną, wystrzelona rakieta ma taką trajektorię jaką zaplanowałem, itd.  Zbadamy 3 przykłady, które przybliżą nam powyższą problematykę. Źródło tych przykładów jest w  książce: J. Hale, H. Kocak, ``Dynamics and Bifurcations''. Ksiązka jest znakomita.
+Do opisu  realnych zjawisk przy pomocy równań różniczkowych zwyczajnych z warunkami początkowymi zadanymi w chwili  czasu $t=0$, potrzebne nam są rozwiązania dla czasów $t>0$ (ewolucja czasowa).  Można też rozpatrywać przypadek $t<0$ ale to zaliczyłbym do ćwiczeń matematycznych.  Ważnym zagadnieniem jest istnienie rozwiązań równań różniczkowych. Możemy zapytać, czy zawsze rozwiązania równań różniczkowych istnieją i jeżeli istnieją, to czy to są jedyne rozwiązania z warunkiem początkowym. Oczywiście dla różnych warunków początkowych układ może różnie ewoluować, ale gdy startuje  zawsze z tego samego  stanu (warunku) początkowego to czy ewolucja jest taka sama? Na tym polega problem jednoznaczności rozwiązań. Jeżeli dla danego warunku początkowego istnieją  np. 3 rozwiązania, to jak ewoluuje układ: istnieją 3 możliwości i którą możliwość wybiera układ? Gdyby tak było dla realnych układów to nie moglibyśmy przewidywać ewolucji układu, nie moglibyśmy sterować układami, brak byłoby determinizmu.  W rozwoju nauk ścisłych to właśnie determinizm stał się kołem napędowym rozwoju cywilizacyjnego ludzkości. To determinizm pozwala budować urządzenia, które działają tak jak my sobie tego życzymy: telewizor odbiera wybrany przeze mnie program, używam telefonu do komunikacji  z moją rodziną, wystrzelona rakieta ma taką trajektorię jaką zaplanowałem, itd.  Zbadamy 3 przykłady, które przybliżą nam powyższą problematykę. Źródło tych przykładów jest w  książce: J. Hale, H. Kocak, ``Dynamics and Bifurcations''. Książka jest znakomita.
 
 
 \subsection{Przykład 1}
@@ -366,16 +368,20 @@ jest równaniem różniczkowym liniowym. Jest to jedno z najprostszych równań 
 \end{gather}
 jest rozwiązaniem i spełnia warunek początkowy $x(0) = x_0$. Funkcja ta jest dobrze określona dla wszystkich skończonych  wartości czasu $t \in (-\infty, \infty)$.  Nie ma tu większych ograniczeń.  Jest to jedyne rozwiązanie.  Poniższy rysunek daje wyobrażenie o rozwiązaniach $x(t)$ dla 3 różnych warunków początkowych. Przy okazji zauważmy, że wszystkie trzy rozwiązania dążą do tego samego stanu $x=0$  dla długich czasów $t\to \infty$.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{t}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{g}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{a}\PYG{p}{)}\PYG{o}{=}\PYG{n}{a}\PYG{o}{*}\PYG{n}{exp}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{g}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{a}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=1\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{g}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{a}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=0\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{g}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{n}{a}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=\PYGZhy{}1\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('t')
-g(t,a) = a*exp(-2*t)
-p1 = plot(g(t,a=1), (t,0,2), legend_label=r"$x(0)=1$", color='blue')
-p2 = plot(g(t,a=0), (t,0,2), legend_label=r"$x(0)=0$", color='red')
-p3 = plot(g(t,a=-1), (t,0,2), legend_label=r"$x(0)=-1$", color='green')
-show(p1+p2+p3, figsize=[6,3], axes_labels=[r'$t$',r'$x(t)$'], axes=False, frame=True)
-\end{verbatim}
-
+\includegraphics{sage_chI012_01.pdf}
+\caption{Rozwiązania \eqref{ch1/chI012-eqn1} liniowego równania różniczkowego \eqref{ch1/chI012-eqn1}.}\end{figure}
 
 
 \subsection{Przykład 2}
@@ -390,17 +396,21 @@ jest równaniem różniczkowym nieliniowym.   Prawa strona tego równania jest o
 \end{gather}
 która jest rozwiązaniem i spełnia warunek początkowy. Funkcja ta nie jest określona dla wszystkich skończonych  wartości czasu $t \in (-\infty, \infty)$.  Istnieją  ograniczenia dla wartości czasu $t$. Ale jest to jedyne rozwiązanie.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{t}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{g}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{4.0}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{+}\PYG{l+m+mi}{12}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}x(0)=\PYGZhy{}4\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{g}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{t}\PYG{p}{:} \PYG{l+m+mf}{0.0}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.5}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}x(0)=0\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{g}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{l+m+mf}{1.0}\PYG{o}{/}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{o}{*}\PYG{n}{t}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}x(0)=1\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{g}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('t')
-g  = plot(-4.0/(1 +12*t), (t,0,0.5), detect_poles='show', legend_label=r'$x(0)=-4$', color='blue')
-g += plot(lambda t: 0.0, (t,0,0.5), legend_label=r'$x(0)=0$', color='red')
-g += plot(1.0/(1-3*t), (t,0,1/3), detect_poles='show', legend_label=r'$x(0)=1$', color='green')
-g.show(axes_labels=[r'$t$',r'$x$'], ymin=-4, ymax=8, figsize=[6,3], axes=False, frame=True)
-\end{verbatim}
+\includegraphics{sage_chI012_02.pdf}
+\caption{Rozwiązania \eqref{ch1/chI012-eqn4} równania różniczkowego \eqref{ch1/chI012-eqn3}.}\end{figure}
 
-
-Wszystkie rozwiązania z ujemnym warunkiem początkowym $x(0) < 0$ sa dobrze zdefiniowane dla wszystkich czasów $t>0$ (krzywa niebieska). Podobnie jest z rozwiązaniem $x(t) = 0$ dla warunku początkowego $x(0)=0$ (krzywa czerwona). Natomiast rozwiązanie z  dodatnim warunkiem początkowym $x(0) > 0$ rozbiega się w skończonym czasie $t< 1/3x_0$ . Gdyby to równanie miało opisywać ruch cząstki, to oznacza że w skończonym czasie cząstka przebywa nieskończoną odległość. To jest niefizyczne. Równanie  to mogłoby   opisywać proces wybuchu  substancji: $x$ mogłoby być objętością pęczniejącej substancji która  wybucha po skończonym czasie.
+Wszystkie rozwiązania z ujemnym warunkiem początkowym $x(0) < 0$ są dobrze zdefiniowane dla wszystkich czasów $t>0$ (krzywa niebieska). Podobnie jest z rozwiązaniem $x(t) = 0$ dla warunku początkowego $x(0)=0$ (krzywa czerwona). Natomiast rozwiązanie z  dodatnim warunkiem początkowym $x(0) > 0$ rozbiega się w skończonym czasie $t< 1/3x_0$ . Gdyby to równanie miało opisywać ruch cząstki, to oznacza że w skończonym czasie cząstka przebywa nieskończoną odległość. To jest niefizyczne. Równanie  to mogłoby   opisywać proces wybuchu  substancji: $x$ mogłoby być objętością pęczniejącej substancji która  wybucha po skończonym czasie.
 
 
 \subsection{Przykład 3}
@@ -419,14 +429,18 @@ Funkcja ta jest określona dla wszystkich wartości czasu $t >0$.   Jest to jedy
 \end{gather}
 Jak przebiega ewolucja, gdy układ startuje ze stanu początkowego $x(0) = 0$ ? W tym przypadku rozwiązania są niejednoznaczne.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{t}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p} \PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{t}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,} \PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=1\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,} \PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=0\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('t')
-p1=plot(t**2,(t,0,1), legend_label=r"$x(0)=1$", color='blue')
-p2=plot(0,(t,0,1), legend_label=r"$x(0)=0$", color='red')
-show(p1+p2, figsize=[6,3], axes=False, frame=True)
-\end{verbatim}
-
+\includegraphics{sage_chI012_03.pdf}
+\caption{Rozwiązania równania \eqref{ch1/chI012-eqn5}.}\end{figure}
 
 Co jest takiego charakterystycznego w ostatnim przykładzie, że pojawia się niejednoznaczność rozwiązania równania różniczkowego?  Na to pytanie daje odpowiedź  twierdzenie o jednoznaczności rozwiązania równania różniczkowego. Potrzebna nam będzie własność funkcji:
 
@@ -443,7 +457,7 @@ Warunek Lipschitza można zapisać w postaci
 Z tego wynika że jeżeli  $f(x)$ ma ograniczoną pochodną, to spełnia warunek Lipschitza. Są  oczywiście nieróżniczkowalne funkcje, które spełniają warunek Lipschitza.
 \begin{description}
 \item[{Twierdzenie Picarda}] \leavevmode
-Jeżeli funkcja $f(x)$ jest ciągła w $U$ oraz spełnia warunek Lipschtza w  $U$ wówczas równanie różniczkowe
+Jeżeli funkcja $f(x)$ jest ciągła w $U$ oraz spełnia warunek Lipschitza w  $U$ wówczas równanie różniczkowe
 
 \end{description}
 \phantomsection\label{ch1/chI012:equation-eqn10}\begin{gather}
@@ -474,23 +488,25 @@ z rozwiązaniem
 \begin{split}x(t) = x_0   e^{-2t}.\end{split}\label{ch1/chI012-eqn13}
 \end{gather}
 Na początek zadamy sobie zmienne. Druga linijka mówi o tym, że zmienna $x$ będzie funkcją parametru $t$ (czasu). Zamiast
-używac nazwy \code{g} użyjemy świerzo obliczonego rozwiązania \code{rozw}.
+używać nazwy \code{g} użyjemy świeżo obliczonego rozwiązania \code{rozw}.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{t x\PYGZus{}0}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+\PYG{n}{rrz} \PYG{o}{=} \PYG{n}{diff}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}
+\PYG{n}{rozw} \PYG{o}{=} \PYG{n}{desolve}\PYG{p}{(}\PYG{n}{rrz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{n}{rozw} \PYG{o}{=} \PYG{n}{rozw}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{c}\PYG{o}{=}\PYG{n}{x\PYGZus{}0}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{rozw}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=1\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{rozw}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=0\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{rozw}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{,}\PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x(0)=\PYGZhy{}1\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{show}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('t x_0')
-x = function('x', t)
-rrz = diff(x,t) == -2*x
-rozw = desolve(rrz, x)
-rozw = rozw.subs(c=x_0)
-print "rozwiązanie równania"
-show(rozw)
-p1 = plot(rozw(x_0=1), (t,0,2), legend_label=r"$x(0)=1$", color='blue')
-p2 = plot(rozw(x_0=0), (t,0,2), legend_label=r"$x(0)=0$", color='red')
-p3 = plot(rozw(x_0=-1), (t,0,2), legend_label=r"$x(0)=-1$", color='green')
-show(p1+p2+p3, figsize=[6,3], axes_labels=[r'$t$',r'$x(t)$'], axes=False, frame=True)
-\end{verbatim}
-
+\includegraphics{sage_chI012_04.pdf}
+\caption{Rozwiązania równania \eqref{ch1/chI012-eqn12}.}\end{figure}
 
 
 \subsubsection{Przykład 2}
@@ -501,37 +517,33 @@ z rozwiązaniem
 \phantomsection\label{ch1/chI012:equation-eqn15}\begin{gather}
 \begin{split}x(t) = \frac{x_0}{1-3 x_0 t}.\end{split}\label{ch1/chI012-eqn15}
 \end{gather}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{t x\PYGZus{}0 c}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}Definiujemy równanie różniczkowe}
+\PYG{n}{rrz} \PYG{o}{=} \PYG{n}{diff}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{3}\PYG{o}{*}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}
+\PYG{n}{rozw2} \PYG{o}{=} \PYG{n}{desolve}\PYG{p}{(}\PYG{n}{rrz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}i je rozwiązujemy...}
+\PYG{c}{\PYGZsh{}krok 1\PYGZbs{}n obliczamy x(t) z poprzedniego kroku}
+\PYG{n}{rozw2} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{rozw2}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}krok 2\PYGZbs{}n obliczamy x(0)}
+\PYG{n}{buf} \PYG{o}{=} \PYG{n}{rozw2}\PYG{p}{(}\PYG{n}{t}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)} \PYG{o}{==} \PYG{n}{x\PYGZus{}0}
+\PYG{n}{show}\PYG{p}{(}\PYG{n}{buf}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}krok 3\PYGZbs{}n wyznaczamy stałą c}
+\PYG{n}{buf} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{buf}\PYG{p}{,}\PYG{n}{c}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}krok 4\PYGZbs{}n wstawiamy c do równania}
+\PYG{n}{rozw2} \PYG{o}{=} \PYG{n}{rozw2}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{c}\PYG{o}{=}\PYG{n}{buf}\PYG{p}{)}\PYG{o}{.}\PYG{n}{full\PYGZus{}simplify}\PYG{p}{(}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}wyniki}
+\PYG{n}{w}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{rozw2}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{w}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{rozw2}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{w}\PYG{o}{+}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{rozw2}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('t x_0 c')
-x = function('x', t)
-print "Definiujemy równanie różniczkowe"
-rrz = diff(x,t) == 3*x^2
-rozw2 = desolve(rrz, x)
-print "i je rozwiązujemy..."
-show(rozw2)
-print "krok 1\n obliczamy x(t) z poprzedniego kroku"
-rozw2 = solve(rozw2,x)[0].rhs()
-show(rozw2)
-print "krok 2\n obliczamy x(0)"
-buf = rozw2(t=0) == x_0
-show(buf)
-print "krok 3\n wyznaczamy stałą c"
-buf = solve(buf,c)[0].rhs()
-show(buf)
-print "krok 4\n wstawiamy c do równania"
-rozw2 = rozw2.subs(c=buf).full_simplify()
-show(rozw2)
-print "I na koniec prezentujemy wyniki"
-x0 = -4
-w = plot(rozw2(x_0=x0), (t,0,1), detect_poles='show', legend_label=r'$x(0)=%d$'%x0, color='blue')
-x0 = 0
-w += plot(rozw2(x_0=x0), (t,0,1), legend_label=r'$x(0)=%d$'%x0, color='red')
-x0 = 1
-w += plot(rozw2(x_0=x0), (t,0,1/3), legend_label=r'$x(0)=%d$'%x0, color='green')
-w.show(axes_labels=[r'$t$',r'$x$'], tick_formatter='latex', xmin=0, xmax=0.5, ymin=-4.1, ymax=8, figsize=(6,3), axes=False, frame=True)
-\end{verbatim}
-
+\includegraphics{sage_chI012_05.pdf}
+\caption{Rozwiązania równania \eqref{ch1/chI012-eqn14}.}\end{figure}
 
 
 \subsubsection{Przykład 2}
@@ -542,40 +554,38 @@ z rozwiązaniem
 \phantomsection\label{ch1/chI012:equation-eqn17}\begin{gather}
 \begin{split}x(t) = (t +  \sqrt x_0)^2\end{split}\label{ch1/chI012-eqn17}
 \end{gather}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{t x\PYGZus{}0 c}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{forget}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{assume}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{\PYGZgt{}}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{n}{assume}\PYG{p}{(}\PYG{n}{t}\PYG{o}{+}\PYG{n}{c}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{0}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}równanie}
+\PYG{n}{x} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{t}\PYG{p}{)}
+\PYG{n}{rrz} \PYG{o}{=} \PYG{n}{diff}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{sqrt}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}i jego rozwiązanie}
+\PYG{n}{rozw3} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{desolve}\PYG{p}{(}\PYG{n}{rrz}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}
+\PYG{c}{\PYGZsh{}stała całkowania}
+\PYG{n}{buf} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{x\PYGZus{}0} \PYG{o}{==} \PYG{n}{rozw3}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}\PYG{p}{(}\PYG{n}{t}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}\PYG{n}{c}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}mamy dwa możliwe rozwiązania, wybieramy to z dodatnim c}
+\PYG{n}{buf} \PYG{o}{=} \PYG{n}{buf}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}
+\PYG{c}{\PYGZsh{}i dostajemy ostatecznie}
+\PYG{n}{rozw3} \PYG{o}{=} \PYG{n}{rozw3}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{c}\PYG{o}{=}\PYG{n}{buf}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}wyniki}
+\PYG{n}{p1}\PYG{o}{=}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{rozw3}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}\PYG{p}{(}\PYG{n}{x\PYGZus{}0}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{t}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('t x_0 c')
-forget()
-assume(x_0>=0)
-assume(t+c>0)
-print "równanie"
-x = function('x', t)
-rrz = diff(x,t) == 2*sqrt(x)
-show(rrz)
-print "i jego rozwiązanie"
-rozw3 = solve(desolve(rrz, x),x)[0]
-show(rozw3)
-print "stała całkowania"
-buf = solve(x_0 == rozw3.rhs()(t=0),c)
-show(buf)
-print "mamy dwa możliwe rozwiązania, wybieramy to z dodatnim c"
-buf = buf[1]
-show(buf)
-print "i dostajemy ostatecznie"
-rozw3 = rozw3.subs(c=buf.rhs())
-show(rozw3)
-print "I na koniec prezentujemy wyniki"
-p1=plot(rozw3.rhs()(x_0=0),(t,0,1), legend_label=r"$x(0)=1$", color='blue')
-show(p1, figsize=[6,3], axes=False, frame=True)
-\end{verbatim}
-
+\includegraphics{sage_chI012_06.pdf}
+\caption{Rozwiązania równania \eqref{ch1/chI012-eqn16}.}\end{figure}
 
 No tak, ale gdzie jest rozwiązanie $x(t) = 0$? Na chwilę obecną Sage nie rozróżni obu możliwych rozwiązań. Dlatego umiejętność analitycznego rozwiązania takich problemów wciąż jest niezbędna!
 
 
 \section{Układy dynamiczne z czasem ciągłym}
 \label{ch1/chI021::doc}\label{ch1/chI021:uklady-dynamiczne-z-czasem-ciaglym}
-We Wstępie podaliśmy kilka przykładów układów opisanych za pomocą równań różniczkowych zwyczajnych. Pierwsza klasa układów to  układy opisywane przez  mechanikę klasyczną i jej  równania Newtona. Inna klasa układów to równania fenomenologiczne opisujące procesy wzrostu, procesy kinetyki chemicznej, dynamiki populacyjnej w układach biologicznych, itd. Te dwie klasy układów opisywane są układem równań różniczkowych zwyczajnych zapisanych w ogolnej postaci jako układ
+We Wstępie podaliśmy kilka przykładów układów opisanych za pomocą równań różniczkowych zwyczajnych. Pierwsza klasa układów to  układy opisywane przez  mechanikę klasyczną i jej  równania Newtona. Inna klasa układów to równania fenomenologiczne opisujące procesy wzrostu, procesy kinetyki chemicznej, dynamiki populacyjnej w układach biologicznych, itd. Te dwie klasy układów opisywane są układem równań różniczkowych zwyczajnych zapisanych w ogólnej postaci jako układ
 \phantomsection\label{ch1/chI021:equation-eqn1}\begin{gather}
 \begin{split}\frac{dx_1}{dt} = F_1(x_1, x_2, x_3, ..., x_n)\end{split}\label{ch1/chI021-eqn1}\\\begin{split}\frac{dx_2}{dt} = F_2(x_1, x_2, x_3, ..., x_n)\end{split}\notag\\\begin{split}\vdots\end{split}\notag\\\begin{split}\frac{dx_n}{dt} = F_n(x_1, x_2, x_3, ..., x_n)\end{split}\notag
 \end{gather}
@@ -591,126 +601,7 @@ oraz dany jest zbiór warunków początkowych
 \phantomsection\label{ch1/chI021:equation-eqn7}\begin{gather}
 \begin{split}\vec x(0) = [x_1(0), x_2(0), x_3(0), ... , x_n(0)] = \vec x_0 = [x_1^{(0)}, x_2^{(0)}, x_3^{(0)}, ... ,  x_n^{(0)}]\end{split}\label{ch1/chI021-eqn7}
 \end{gather}
-Wskaźnik $n$ mówi, ile równań różniczkowych jest ``ukrytych'' w powyższym zapisie wektorowym. Innymi słowy, rozważamy układ $n$ równań różniczkowych scharaktaryzowanych przez $n$ funkcji skalarnych $F_i(x_1, x_2, x_3, ..., x_n), (i=1,2,3, ..., n)$. Zauważmy, że rozważamy funkcje $F_i$ które nie zależą w sposób jawny od czasu. W takim przypadku mówimy, że jest to układ autonomiczny $n$ równań  różniczkowych zwyczajnych. Ponadto wektor $\vec F$ można traktowac jako pole wektorowe stowarzyszone z układem równań różniczkowych lub pole wektorowe generowane przez układ równań różniczkowych. Do tej kwestii powrócimy jeszcze.
-
-
-\subsection{Istnienie i jednoznaczność rozwiązań}
-\label{ch1/chI021:istnienie-i-jednoznacznosc-rozwiazan}
-Do opisu  realnych zjawisk przy pomocy równań różniczkowych zwyczajnych z warunkami początkowymi zadanymi w chwili  czasu $t=0$, potrzebne nam są rozwiązania dla czasów $t>0$ (ewolucja czasowa).  Można też rozpatrywać przypadek $t<0$ ale to zaliczyłbym do ćwiczeń matematycznych.  Ważnym zagadnieniem jest istnienie rozwiązań równań różniczkowych. Możemy zapytać, czy zawsze rozwiązania równań różniczkowych istnieją i jeżeli istnieją, to czy to są jedyne rozwiązania z warunkiem początkowym. Oczywiście dla różnych warunków początkowych układ może różnie ewoluować, ale gdy startuje  zawsze z tego samego  stanu (warunku) początkowego to czy ewolucja jest taka sama? Na tym polega problem jednoznaczności rozwiązań. Jeżeli dla danego warunku początkowego istnieją  np. 3 rozwiązania, to jak ewoluuje układ: istnieją 3 możliwości i którą możliwość wybiera układ? Gdyby tak było dla realnych układów to nie moglibyśmy przewidywać ewolucji układu, nie moglibyśmy sterować układami, brak byłoby determinizmu.  W rozwoju nauk ścisłych to właśnie determinizm stał się kołem napędowym rozwoju cywilzacyjnego ludzkości. To determinizm pozwala budować urządzenia, które działają tak jak my sobie tego życzymy: telewizor odbiera wybrany przeze mnie program, używam telefonu do komunikacji  z moją rodziną, wystrzelona rakieta ma taką trajektorię jaką zaplanowałem, itd.  Zbadamy 3 przykłady, które przybliżą nam powyższą problematykę. Źródło tych przykładów jest w  książce: J. Hale, H. Kocak, ``Dynamics and Bifurcations''. Książka jest znakomita.
-
-
-\subsubsection{Przykład 1}
-\label{ch1/chI021:przyklad-1}
-Równanie
-\phantomsection\label{ch1/chI021:equation-eqn8}\begin{gather}
-\begin{split}\frac{dx}{dt}=-2x, \qquad x(0) = x_0\end{split}\label{ch1/chI021-eqn8}
-\end{gather}
-jest równaniem różniczkowym liniowym. Jest to jedno z najprostszych równań różniczkowych.  Można łatwo sprawdzić, że funkcja
-\phantomsection\label{ch1/chI021:equation-eqn9}\begin{gather}
-\begin{split}x(t) = x_0   e^{-2t}\end{split}\label{ch1/chI021-eqn9}
-\end{gather}
-jest rozwiązaniem i spełnia warunek początkowy $x(0) = x_0$. Funkcja ta jest dobrze określona dla wszystkich skończonych  wartości czasu $t \in (-\infty, \infty)$.  Nie ma tu większych ograniczeń.  Jest to jedyne rozwiązanie.  Poniższy rysunek daje wyobrażenie o rozwiązaniach $x(t)$ dla 3 różnych warunków początkowych. Przy okazji zauważmy, że wszystkie trzy rozwiązania dążą do tego samego stanu $x=0$  dla długich czasów $t\to \infty$.
-
-
-\begin{verbatim}
-var('t')
-g(t,a) = a*exp(-2*t)
-p1=plot(g(t,1),(t,0,2),figsize=(6, 3), legend_label="x(0)=1", color='blue' )
-p2=plot(g(t,0),(t,0,2),figsize=(6, 3), legend_label="x(0)=0", color='red' )
-p3=plot(g(t,-1),(t,0,2),figsize=(6, 3), legend_label="x(0)=-1", color='green' )
-show(p1+p2+p3, axes_labels=[r'$t$',r'$x(t)$'], frame=True, axes=False)
-\end{verbatim}
-
-
-
-\subsubsection{Przykład 2}
-\label{ch1/chI021:przyklad-2}
-Równanie
-\phantomsection\label{ch1/chI021:equation-eqn10}\begin{gather}
-\begin{split}\frac{dx}{dt}= 3 x^2, \qquad x(0) = x_0\end{split}\label{ch1/chI021-eqn10}
-\end{gather}
-jest równaniem różniczkowym nieliniowym.   Prawa strona tego równania jest określona dla wszystkich wartości $x$. Podobnie jak poprzednie równanie, można  je rozwiązać metodą separacji zmiennych. Otrzymamy funkcję
-\phantomsection\label{ch1/chI021:equation-eqn11}\begin{gather}
-\begin{split}x(t) = \frac{x_0}{1-3 x_0 t}\end{split}\label{ch1/chI021-eqn11}
-\end{gather}
-która jest rozwiązaniem i spełnia warunek początkowy. Funkcja ta nie jest określona dla wszystkich skończonych  wartości czasu $t \in (-\infty, \infty)$.  Istnieją  ograniczenia dla wartości czasu $t$. Ale jest to jedyne rozwiązanie.
-
-
-\begin{verbatim}
-var('t')
-#detect_poles - wykrywanie i rysowanie biegunów
-g=plot(-4.0/(1 +12*t),t,0,5,detect_poles='show',legend_label=r'$x(0)= -4$', color='blue')
-g+=plot(lambda t: 0.0,t,0,5,legend_label=r'$x(0)=0$',color='red')
-g+=plot(1.0/(1-3*t),t,0,0.33,detect_poles='show', legend_label=r'$x(0)=1$',color='green')
-g.show(axes_labels=[r'$t$',r'$x$'],tick_formatter='latex',xmin=0,xmax=0.5,ymin=-4.1,ymax=8, figsize=(7,4), frame=True, axes=False)
-\end{verbatim}
-
-
-Wszystkie rozwiązania z ujemnym warunkiem początkowym $x(0) < 0$ sa dobrze zdefiniowane dla wszystkich czasów $t>0$ (krzywa niebieska). Podobnie jest z rozwiązaniem $x(t) = 0$ dla warunku początkowego $x(0)=0$ (krzywa czerwona). Natomiast rozwiązanie z  dodatnim warunkiem początkowym $x(0) > 0$ rozbiega się w skończonym czasie $t< 1/3x_0$ . Gdyby to równanie miało opisywać ruch cząstki, to oznacza że w skończonym czasie cząstka przebywa nieskończoną odległość. To jest niefizyczne. Równanie  to mogłoby   opisywać proces wybuchu  substancji: $x$ mogłoby być objętością pęczniejącej substancji która  wybucha po skończonym czasie.
-
-
-\subsubsection{Przykład 3}
-\label{ch1/chI021:przyklad-3}
-Równanie
-\phantomsection\label{ch1/chI021:equation-eqn12}\begin{gather}
-\begin{split}\frac{dx}{dt}=  2 \sqrt x, \qquad x(0) = x_0 \ge 0\end{split}\label{ch1/chI021-eqn12}
-\end{gather}
-jest równaniem różniczkowym nieliniowym.  Prawa strona tego równania jest określona dla nieujemnych wartości $x \ge 0$.  Podobnie jak  2 poprzednie równania, można  je rozwiązać metodą separacji zmiennych. Otrzymamy rozwiązanie
-\phantomsection\label{ch1/chI021:equation-eqn13}\begin{gather}
-\begin{split}x(t) = (t +  \sqrt x_0)^2\end{split}\label{ch1/chI021-eqn13}
-\end{gather}
-Funkcja ta jest określona dla wszystkich wartości czasu $t >0$.   Jest to jedyne  rozwiązanie  z wyjątkiem jednego warunku początkowego: $x(0) = 0$. Dla tego warunku początkowego istnieje jeszcze jedno rozwiązanie, a mianowicie $x(t) = 0$. Tak więc dla $x(0) = 0$ mamy  2 różne rozwiązania
-\phantomsection\label{ch1/chI021:equation-eqn14}\begin{gather}
-\begin{split}x(t) = t^2, \qquad x(t) = 0\end{split}\label{ch1/chI021-eqn14}
-\end{gather}
-Jak przebiega ewolucja, gdy układ startuje ze stanu początkowego $x(0) = 0$ ? W tym przypadku rozwiązania są niejednoznaczne.
-
-
-\begin{verbatim}
-var('t')
-p1=plot(t*t,(t,0,1),figsize=(6, 3), legend_label="x(0)=1", color='blue' )
-p2=plot(0,(t,0,1),figsize=(6, 3), legend_label="x(0)=0", color='red' )
-show(p1+p2, frame=True, axes=False)
-\end{verbatim}
-
-
-Co jest takiego charakterystycznego w ostatnim przykładzie, że pojawia się niejednoznaczność rozwiązania równania różniczkowego?  Na to pytanie daje odpowiedź  twierdzenie o jednoznaczności rozwiązania równania różniczkowego. Potrzebna nam będzie własność funkcji:
-
-Mówimy, że funkcja $f(x)$ spełnia  warunek Lipschitza na zbiorze otwartym $U$ jeżeli istnieje taka stała $L > 0$,  że
-\phantomsection\label{ch1/chI021:equation-eqn15}\begin{gather}
-\begin{split}|f(x) -f(y)| \le L|x- y|\end{split}\label{ch1/chI021-eqn15}
-\end{gather}
-dla wszystkich $x, y2 \in U$.
-
-Warunek Lipschitza można zapisać w postaci
-\phantomsection\label{ch1/chI021:equation-eqn16}\begin{gather}
-\begin{split}|f(x+h) -f(x)| \le L h \quad \quad \mbox{lub jako} \quad \quad \frac{f(x+h) - f(x)}{h}| \le L\end{split}\label{ch1/chI021-eqn16}
-\end{gather}
-Z tego wynika że jeżeli  $f(x)$ ma ograniczoną pochodną, to spełnia warunek Lipschitza. Są  oczywiście nieróżniczkowalne funkcje, które spełniają warunek Lipschitza.
-
-Twierdzenie Picarda: Jeżeli funkcja $f(x)$ jest ciągła w $U$ oraz spełnia warunek Lipschtza w  $U$ wówczas równanie różniczkowe
-\phantomsection\label{ch1/chI021:equation-eqn17}\begin{gather}
-\begin{split}\frac{dx}{dt} = f(x), \qquad x(0) = x_0\end{split}\label{ch1/chI021-eqn17}
-\end{gather}
-ma dokładnie jedno rozwiązanie w $U$.
-
-Istnieje kilka  modyfikacji tego twierdzenia, ale na nasze potrzeby ta najprostsza wersja jest wystarczająca.
-
-W przypadku układu równań różniczkowych, warunek Lipschitza ma postać
-\phantomsection\label{ch1/chI021:equation-eqn18}\begin{gather}
-\begin{split}|F_i(x_1, x_2, x_3, ..., x_n) - F_i(y_1, y_2, y_3, ..., y_n)| \le L  \sum_{k=1}^n|x_k-y_k|\end{split}\label{ch1/chI021-eqn18}
-\end{gather}
-Nierówność ta musi  być spełniona dla wszystkich funkcji $F_i$ i twierdzenie Picarda brzmi podobnie. Warunek Lipschitza jest spełniony gdy pochodne cząstkowe są ograniczone,
-\phantomsection\label{ch1/chI021:equation-eqn19}\begin{gather}
-\begin{split}\lvert\frac{\partial F_i}{\partial x_k}\rvert \le K\end{split}\label{ch1/chI021-eqn19}
-\end{gather}
-dla dodatnich $K$.
-
-Teraz możemy odpowiedzieć, dlaczego w 3 przykładzie rozwiązanie jest niejednoznaczne: funkcja $f(x) = 2\sqrt x$ nie spełnia warunku Lipschitza ponieważ pochodna
-\phantomsection\label{ch1/chI021:equation-eqn20}\begin{gather}
-\begin{split}\frac{df(x)}{dx} = \frac{1}{\sqrt x}\end{split}\label{ch1/chI021-eqn20}
-\end{gather}
-w punkcie $x=0$ jest rozbieżna. W punktach $x>0$  pochodna ma wartość skończoną i jest spełnione twierdzenie Picarda. Dlatego też  rozwiązania są jednoznaczne dla $x(0) > 0$.
+Wskaźnik $n$ mówi, ile równań różniczkowych jest ``ukrytych'' w powyższym zapisie wektorowym. Innymi słowy, rozważamy układ $n$ równań różniczkowych scharakteryzowanych przez $n$ funkcji skalarnych $F_i(x_1, x_2, x_3, ..., x_n), (i=1,2,3, ..., n)$. Zauważmy, że rozważamy funkcje $F_i$ które nie zależą w sposób jawny od czasu. W takim przypadku mówimy, że jest to układ autonomiczny $n$ równań  różniczkowych zwyczajnych. Ponadto wektor $\vec F$ można traktować jako pole wektorowe stowarzyszone z układem równań różniczkowych lub pole wektorowe generowane przez układ równań różniczkowych. Do tej kwestii powrócimy jeszcze.
 
 
 \subsection{Przestrzeń fazowa}
@@ -769,7 +660,7 @@ Równanie Newtona dla cząstki poruszającej się tylko wzdłuż osi $OX$ na kt�
 \phantomsection\label{ch1/chI021:equation-eqn31}\begin{gather}
 \begin{split}m \ddot x= F(x)\end{split}\label{ch1/chI021-eqn31}
 \end{gather}
-gdzie $m$ jest masą czastki. Jest to równanie różniczkowe 2-go rzędu i jest ono  równoważne układowi 2 równań różniczkowych 1-go rzędu:
+gdzie $m$ jest masą cząstki. Jest to równanie różniczkowe 2-go rzędu i jest ono  równoważne układowi 2 równań różniczkowych 1-go rzędu:
 \phantomsection\label{ch1/chI021:equation-eqn32}\begin{gather}
 \begin{split}\dot x = v\end{split}\label{ch1/chI021-eqn32}\\\begin{split}\dot v = \frac{1}{m} F(x)\end{split}\notag
 \end{gather}
@@ -788,7 +679,7 @@ Aby uniknąć na tym etapie abstrakcyjnych definicji, będziemy rozważać dla p
 \phantomsection\label{ch1/chI021:equation-eqn33}\begin{gather}
 \begin{split} \dot x = f(x, y), \quad \quad x(0) = x_0\end{split}\label{ch1/chI021-eqn33}\\\begin{split} \dot y= g(x, y),\quad \quad y(0) = y_0\end{split}\notag
 \end{gather}
-Przestrzeń fazowa jest 2-wymiarowa. Może to być płaszczyzna lub jej część. Ale może to być bardziej skomplikowany zbiór 2-wymiarowy. Na przykład może to być sfera (podobna do  powierzchnii piłki), może to być torus (podobny do dętki rowerowej). Mogą to być jeszcze bardziej skomplikowane obiekty 2-wymiarowe. Ale dla naszych celów wystarczy rozważać płaszczyznę. Na płaszczyźnie można estetycznie przedstawiać coś w formie rysunków. Wprowadzamy na płaszczyźnie kartezjański układ współrzędnych o osiach OX i OY. Warunek początkowy $\{x_0=x(0), y_0=y(0)\}$ jest punktem o odpowiednich współrzędnych. Rozwiązyjemy powyższy układ równań różniczkowych numerycznie przy pomocy najprostszego schematu:
+Przestrzeń fazowa jest 2-wymiarowa. Może to być płaszczyzna lub jej część. Ale może to być bardziej skomplikowany zbiór 2-wymiarowy. Na przykład może to być sfera (podobna do  powierzchni piłki), może to być torus (podobny do dętki rowerowej). Mogą to być jeszcze bardziej skomplikowane obiekty 2-wymiarowe. Ale dla naszych celów wystarczy rozważać płaszczyznę. Na płaszczyźnie można estetycznie przedstawiać coś w formie rysunków. Wprowadzamy na płaszczyźnie kartezjański układ współrzędnych o osiach OX i OY. Warunek początkowy $\{x_0=x(0), y_0=y(0)\}$ jest punktem o odpowiednich współrzędnych. Rozwiązujemy powyższy układ równań różniczkowych numerycznie przy pomocy najprostszego schematu:
 \phantomsection\label{ch1/chI021:equation-eqn35}\begin{gather}
 \begin{split}\frac{x(t+h) - x(t)}{h} = f(x(t), y(t))\end{split}\label{ch1/chI021-eqn35}\\\begin{split}\frac{y(t+h) - y(t)}{h} = g(x(t), y(t))\end{split}\notag
 \end{gather}
@@ -804,7 +695,7 @@ Obliczenia numeryczne musimy zacząć od warunku początkowego w chwili $t=0$, c
 \phantomsection\label{ch1/chI021:equation-eqn39}\begin{gather}
 \begin{split}x_1 =x(h) = x(0) + f(x(0), y(0)) h\end{split}\label{ch1/chI021-eqn39}\\\begin{split}y_1 = y(h) = y(0) + g(x(0), y(0)) h\end{split}\notag
 \end{gather}
-Na płaszczyżnie otrzymujemy punkt o współrzędnych $\{x_1, y_1\}$. Zaznaczmy go na płaszczyźnie. Teraz mamy już 2 punkty:
+Na płaszczyźnie otrzymujemy punkt o współrzędnych $\{x_1, y_1\}$. Zaznaczmy go na płaszczyźnie. Teraz mamy już 2 punkty:
 \phantomsection\label{ch1/chI021:equation-eqn41}\begin{gather}
 \begin{split}\{x_0, y_0\}, \quad \quad \{x_1, y_1\}\end{split}\label{ch1/chI021-eqn41}
 \end{gather}\end{quote}
@@ -818,11 +709,11 @@ W następnym kroku wybieramy czas $t=h$:
 \phantomsection\label{ch1/chI021:equation-eqn42}\begin{gather}
 \begin{split}x_2 =x(h+h) = x(2h) =  x(h) + f(x(h), y(h)) h\end{split}\label{ch1/chI021-eqn42}\\\begin{split}y_2 = y(h+h) = y(2h) =  y(h) + g(x(h), y(h)) h\end{split}\notag
 \end{gather}
-Wykorzystamy oznaczenie jek wyżej: $x_1 =  x(h),  y_1 = y(h)$ i przepiszemy te równania w postaci
+Wykorzystamy oznaczenie jak wyżej: $x_1 =  x(h),  y_1 = y(h)$ i przepiszemy te równania w postaci
 \phantomsection\label{ch1/chI021:equation-eqn43}\begin{gather}
 \begin{split}x_2 =  x_1 + f(x_1, y_1) h\end{split}\label{ch1/chI021-eqn43}\\\begin{split}y_2 =  y_1 + g(x_1, y_1) h\end{split}\notag
 \end{gather}
-Na płaszczyżnie otrzymujemy punkt o współrzędnych $\{x_2, y_2\}$. Zaznaczmy go na płaszczyźnie. Teraz mamy już 3 punkty:
+Na płaszczyźnie otrzymujemy punkt o współrzędnych $\{x_2, y_2\}$. Zaznaczmy go na płaszczyźnie. Teraz mamy już 3 punkty:
 \phantomsection\label{ch1/chI021:equation-eqn45}\begin{gather}
 \begin{split}\{x_0, y_0\}, \quad \quad \{x_1, y_1\},  \quad \quad \{x_2, y_2\}\end{split}\label{ch1/chI021-eqn45}
 \end{gather}\end{quote}
@@ -849,7 +740,7 @@ Zauważamy, że w n-tym kroku otrzymujemy równania
 \begin{split}x_n =  x_{n-1} + f(x_{n-1}, y_{n-1}) h\end{split}\label{ch1/chI021-eqn48}\\\begin{split}y_n =  y_{n-1} + g(x_{n-1}, y_{n-1}) h\end{split}\notag
 \end{gather}\end{quote}
 \begin{enumerate}
-\setcounter{enumi}{21}
+\setcounter{enumi}{4}
 \item {} 
 Częściej pisze się, co się otrzymuje w następnym kroku, czyli n+1 :
 
@@ -859,7 +750,7 @@ Częściej pisze się, co się otrzymuje w następnym kroku, czyli n+1 :
 \begin{split}x_{n+1} =  x_n + f(x_n, y_n) h\end{split}\label{ch1/chI021-eqn50}\\\begin{split}y_{n+1} =  y_n + g(x_n, y_n) h\end{split}\notag
 \end{gather}\end{quote}
 
-Otrzymujemy równania rekurencyjne, które pozwalają wyznaczyć ewolucję układu, czyli rozwiązanie numeryczne układu równań różniczkowych. Na płaszczyżnie $XY$ otrzymujemy ciąg punktów o współrzędnych
+Otrzymujemy równania rekurencyjne, które pozwalają wyznaczyć ewolucję układu, czyli rozwiązanie numeryczne układu równań różniczkowych. Na płaszczyźnie $XY$ otrzymujemy ciąg punktów o współrzędnych
 \phantomsection\label{ch1/chI021:equation-eqn52}\begin{gather}
 \begin{split}\{x_n, y_n\}\end{split}\label{ch1/chI021-eqn52}
 \end{gather}
@@ -887,13 +778,17 @@ Jeżeli w poprzednim przykładzie założymy bardziej realistyczną sytuację, w
 \phantomsection\label{ch1/chI021:equation-eqn57}\begin{gather}
 \begin{split}F_d = -\gamma_0 v = -\gamma_0 \dot x\end{split}\label{ch1/chI021-eqn57}
 \end{gather}
-gdzie $\gamma_0$ nazywa sie współczynnikiem tarcia (tłumienia).
+gdzie $\gamma_0$ nazywa się współczynnikiem tarcia (tłumienia).
 
 Siła tarcia jest związana z oddziaływaniem ciała z cząsteczkami otoczenia. Otoczenie stawia opór gdy ciało porusza się w nim i im większa jest prędkość ciała tym większy jest opór otoczenia. Doświadczamy to, gdy biegniemy cali zanurzeni w wodzie.
 
 Uwzględniając siłę tarcia, równanie Newtona przyjmuje postać
 \phantomsection\label{ch1/chI021:equation-eqn58}\begin{gather}
-\begin{split}m\ddot x = -kx - \gamma_0 \dot x, \quad \quad \mbox{lub w postaci} \quad \quad \ddot x = -\frac{k}{m} x - \frac{\gamma_0}{m} x = -\omega^2 x - \gamma \dot x\end{split}\label{ch1/chI021-eqn58}
+\begin{split}m\ddot x = -kx - \gamma_0 \dot x\end{split}\label{ch1/chI021-eqn58}
+\end{gather}
+lub w postaci
+\phantomsection\label{ch1/chI021:equation-eqn58a}\begin{gather}
+\begin{split}\ddot x = -\frac{k}{m} x - \frac{\gamma_0}{m} x = -\omega^2 x - \gamma \dot x\end{split}\label{ch1/chI021-eqn58a}
 \end{gather}
 gdzie $\omega^2 = k/m$  oraz $\gamma = \gamma_0/m$. Równanie  powyższe  jest równoważne 2 równaniom pierwszego rzędu:
 \phantomsection\label{ch1/chI021:equation-eqn59}\begin{gather}
@@ -906,109 +801,86 @@ Poniżej przedstawiamy krzywe fazowe dla tych 2 przykładów.
 
 \subparagraph{Oscylator harmoniczny bez tarcia}
 \label{ch1/chI021:oscylator-harmoniczny-bez-tarcia}
+Przede wszystkim napiszemy funkcję realizującą schemat Eulera rozwiązywania (iterowania)
+równań różniczkowych zupełnie tak jak przedstawiono powyżej.
 
-\begin{verbatim}
-var('x y')
-def schemat_eulera2D(vec, ics, Tlist):
- i = 0
- dx = [ics[0]]
- dy = [ics[1]]
- h = Tlist[i+1] - Tlist[i]
- iks(x,y) = vec[0R]*h
- igrek(x,y) = vec[1R]*h
- for time in Tlist:
-     dx.append(dx[i] + iks(dx[i],dy[i]))
-     dy.append(dy[i] + igrek(dx[i],dy[i]))
-     i += 1
- return zip(dx,dy)
-#
-@interact(layout={'top':[['omega','x0','y0']],'bottom':[['T','h']]})
-def _(title=['a','b'], h=selector(['0.005','0.01','0.05','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=input_box(1,label=r'$\omega$', width=10)):
- global oscylator_nietlumiony, background
- if T == 0:
-     T = 2*pi/omega
- listT = srange(0,T,float(h), include_endpoint=True)
- background = desolve_odeint(vector([y,-omega^2*x]), [x0, y0], srange(0,T+0.1,0.1,include_endpoint=True), [x,y])
- oscylator_nietlumiony = schemat_eulera2D([y,-omega^2*x], [x0, y0], listT)
- print r'Parametry modelu'
- html(r'$\omega=%s, x_0=%s, y_0=%s$'%(omega,x0,y0))
- print r'Parametry symulacji'
- html(r'$h=%s, T=%s$'%(h,T))
- print '\nDla T=0 lista generowana jest automatycznie dla jednego okresu własnego oscylatora'
-#
-@interact
-def _(krok=slider(1, len(oscylator_nietlumiony), 1, default=1, label=r'krok')):
-...
- buf = zip(*oscylator_nietlumiony)
- minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]), max(buf[1])
- kroki = oscylator_nietlumiony[:krok]
- kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)
-...
- txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
- for i in range(1,len(kroki)):
-     txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
-...
- full_plot = list_plot(oscylator_nietlumiony, plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
- full_plot += list_plot(background.tolist(), plotjoined=1, color='grey', alpha=0.5)
- html.table([["krzywe fazowe dla oscylatora bez tarcia",""],[full_plot+kroki_plot,kroki_plot+txt_plot]])
-\end{verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{schemat\PYGZus{}eulera2D}\PYG{p}{(}\PYG{n}{vec}\PYG{p}{,} \PYG{n}{ics}\PYG{p}{,} \PYG{n}{Tlist}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}
+  \PYG{n}{dx} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ics}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{]}
+  \PYG{n}{dy} \PYG{o}{=} \PYG{p}{[}\PYG{n}{ics}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{]}
+  \PYG{n}{h} \PYG{o}{=} \PYG{n}{Tlist}\PYG{p}{[}\PYG{n}{i}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{\PYGZhy{}} \PYG{n}{Tlist}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}
 
+  \PYG{n}{iks}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{vec}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{n}{R}\PYG{p}{]}\PYG{o}{*}\PYG{n}{h}
+  \PYG{n}{igrek}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{vec}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{n}{R}\PYG{p}{]}\PYG{o}{*}\PYG{n}{h}
+
+  \PYG{k}{for} \PYG{n}{time} \PYG{o+ow}{in} \PYG{n}{Tlist}\PYG{p}{:}
+      \PYG{n}{dx}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{dx}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{iks}\PYG{p}{(}\PYG{n}{dx}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+      \PYG{n}{dy}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{dy}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]} \PYG{o}{+} \PYG{n}{igrek}\PYG{p}{(}\PYG{n}{dx}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+      \PYG{n}{i} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
+
+  \PYG{k}{return} \PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{dx}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{)}
+\end{Verbatim}
+
+Jak widać funkcj ta nie jest ani zbytnio trudna do zrozumienia, ani przesadnie optymalnie
+napisana. Jako argumenty wejściowe pobierzemy wektor prawych stron układu dwóch równań
+różniczkowych (np: oscylatora harmonicznego), wartości początkowe obu zmiennych oraz listę
+punktów czasowych w jakich dynamika ma być próbkowana. Aby ów algorytm zadziałał, odległości
+pomiędzy poszczególnymi chwilami czasowymi muszą być stałe. Tak zdefiniowana funkcja
+pozwoli nam na praktyczne takie samo wywołanie jak oryginalna funkcja Sage
+\code{desolve\_odeint}.
+
+Następnie wykonamy symulacje dla konkretnego układu, tzn: dla ustalonych parametrów
+$\omega, x_0, y_0$.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{omega} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.1}
+\PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{pi}\PYG{o}{/}\PYG{n}{omega}
+\PYG{n}{l1T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n}{h}\PYG{p}{,}\PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+\PYG{n}{l2T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n}{h}\PYG{p}{,}\PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+\PYG{n}{de} \PYG{o}{=} \PYG{p}{[}\PYG{n}{y}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{n}{omega}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{p}{]}
+\PYG{n}{bgr} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{n}{de}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{y0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{l2T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{oscylator} \PYG{o}{=} \PYG{n}{schemat\PYGZus{}eulera2D}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{y0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{l1T}\PYG{p}{)}
+\end{Verbatim}
+
+Teraz pozostaje nam już tylko wykreślić odpowiednie listy. Formę wizualizacji pozostawiamy
+czytelnikom, poniżej prezentując wyniki obliczeń. Krzywa zaprezentowana w tle to wynik użycia
+zaawansowanych algorytmów adaptatywnych. Krzywa bardziej widoczna to efekt obliczeń prostym
+schematem Eulera, który to pozostawia wiele do życzenia...
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chI021_01.pdf}
+\caption{Numeryczne rozwiązania oscylatora harmonicznego.}\end{figure}
 
 W przypadku oscylatora nietłumionego, krzywe fazowe są zamknięte. Cząstka z biegiem czasu porusza się tak, że położenie $x$ i prędkość $v=y$  leżą na krzywej fazowej. Ponieważ jest to krzywa zamknięta, to po pewnym czasie cząstka znowu ``przebiega'' punkty, które się powtarzają. Powtarzanie się jest cechą charakterystyczną ruchu okresowego. Tak więc krzywa fazowa zamknięta przedstawia ruch okresowy (periodyczny). Okres takiego ruchu periodycznego to czas potrzebny na to, aby cząstka startując od punktu np. $\{x_0, y_0\}$ i  poruszając się po krzywej fazowej dotarła znowu do tego samego punktu  $\{x_0, y_0\}$.
 
-W przypadku oscylatora tłumionego, krzywą fazową jest spirala zwijająca sie do punktu $\{0, 0\}$. Ruch po spirali oznacza, że zarówno $x$ jak i $v=y$ maleją w czasie i dla długich czasów położenie $x$ oraz prędkość $v$ dążą do zera, czyli cząstka zwalnia i na końcu zatrzymuje się. To jest ruch tłumiony: amplituda drgań maleje w czasie. To jest to, co obserwujemy w ruchu kulki zawieszonej na nitce: kulka wukonuje coraz to mniejsze drgania i po długim czasie wisi pionowo ( to jest coś co nazywa sie stanem równowagi lub położeniem stacjonarnym).
+W przypadku oscylatora tłumionego, krzywą fazową jest spirala zwijająca się do punktu $\{0, 0\}$. Ruch po spirali oznacza, że zarówno $x$ jak i $v=y$ maleją w czasie i dla długich czasów położenie $x$ oraz prędkość $v$ dążą do zera, czyli cząstka zwalnia i na końcu zatrzymuje się. To jest ruch tłumiony: amplituda drgań maleje w czasie. To jest to, co obserwujemy w ruchu kulki zawieszonej na nitce: kulka wykonuje coraz to mniejsze drgania i po długim czasie wisi pionowo ( to jest coś co nazywa się stanem równowagi lub położeniem stacjonarnym).
 
 Gdy mamy bardziej skomplikowane krzywe fazowe, ich ``rozszyfrowanie'' może być trudniejsze. Ale ogólna zasada jest taka: gdy $x$ rośnie to oznacza wzrost położenia cząstki. Gdy $y$ maleje to oznacza, że maleje prędkość cząstki.  Gdy $x$ maleje to maleje współrzędna położenia cząstki. Gdy $y$ rośnie to rośnie prędkość cząstki.
 
 
 \subparagraph{Tłumiony oscylator harmoniczny}
 \label{ch1/chI021:id1}
+Powtórzymy dokładnie te same obliczenia co wcześniej. W zasadzie wystarczy tylko dodać
+parametr \code{gama} opisujący tłumienie oraz przemodelować lekko linijkę definiującą
+równania różniczkowe.
 
-\begin{verbatim}
-var('x y')
-def schemat_eulera2D(vec, ics, Tlist):
- i = 0
- dx = [ics[0]]
- dy = [ics[1]]
- h = Tlist[i+1] - Tlist[i]
- iks(x,y) = vec[0R]*h
- igrek(x,y) = vec[1R]*h
- for time in Tlist:
-     dx.append(dx[i] + iks(dx[i],dy[i]))
-     dy.append(dy[i] + igrek(dx[i],dy[i]))
-     i += 1
- return zip(dx,dy)
-#
-@interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom':[['T','h']]})
-def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=input_box(1,label=r'$\omega$', width=10), ggamma=input_box(0.5,label=r'$\gamma$', width=10)):
- global oscylator_tlumiony, globggamma, globomega, background2
- globggamma = ggamma
- globomega = omega
- if T == 0:
-     T = 2*pi/omega
- listT = srange(0,T,float(h),include_endpoint=True)
- background2 = desolve_odeint(vector([y,-omega^2*x-ggamma*y]), [x0, y0], srange(0,2*pi/omega+0.1,0.1,include_endpoint=True), [x,y])
- oscylator_tlumiony = schemat_eulera2D([y,-omega^2*x-ggamma*y], [x0, y0], listT)
- print r'Parametry modelu'
- html(r'$\gamma=%s, \omega=%s, x_0=%s, y_0=%s$'%(ggamma,omega,x0,y0))
- print r'Parametry symulacji'
- html(r'$h=%s, T=%s$'%(h,T))
- print '\nDla T=0 lista generowana jest automatycznie dla jednego okresu własnego oscylatora'
-#
-@interact
-def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, label=r'krok')):
- buf = zip(*oscylator_tlumiony)
- minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]), max(buf[1])
- kroki = oscylator_tlumiony[:krok]
- kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)
- txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
- for i in range(1,len(kroki)):
-     txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
- full_plot = list_plot(oscylator_tlumiony, plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
- full_plot += list_plot(background2.tolist(), plotjoined=1, color='grey', alpha=0.5)
- html.table([["krzywe fazowe dla oscylatora tłumionego",""],[full_plot+kroki_plot,kroki_plot+txt_plot]])
-\end{verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{gama} \PYG{o}{=} \PYG{l+m+mf}{0.5}
+\PYG{n}{de} \PYG{o}{=} \PYG{p}{[}\PYG{n}{y}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{n}{omega}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{gama}\PYG{o}{*}\PYG{n}{y}\PYG{p}{]}
+\end{Verbatim}
 
+Cała reszta wykonuje się identycznie. Poniżej prezentujemy wyniki zabaw numerycznych.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chI021_02.pdf}
+\caption{Numeryczne rozwiązania tłumionego oscylatora harmonicznego.}\end{figure}
 
 
 \subsection{Pole wektorowe}
@@ -1039,82 +911,28 @@ W n-tym kroku iteracji obliczamy  $\{x_n, y_n\}$:
 \end{gather}
 Ponieważ wszystkie powyższe punkty  $\{x_i, y_i\}$ leżą na krzywej fazowej, to wektory $[f(x_i, y_i), g(x_i, y_i)]$  są przyczepione do tych krzywych fazowych. Zauważamy, że wektory te są styczne do krzywej fazowej. Jeżeli $\{x_i, y_i\}$ miały by interpretacje położenia cząstki na płaszczyźnie, to wektory  $[f(x_i, y_i), g(x_i, y_i)]$ miały by interpretację prędkości ponieważ $\dot x = f(x, y)$ oraz $\dot y = g(x, y)$. Wiemy, że $\dot x = v_x$ jest x-ową składową prędkości, z kolei $\dot y = v_y$ jest y-ową składową prędkości. Innymi słowy, otrzymane pole wektorowe to pole prędkości fikcyjnej cząstki.
 
+Wizualizacja pola wektorowego w systemie Sage może być dość prosto wykonane za pomocą wbudowanej funkcji
+\code{plot\_vector\_field}. Funkcja zwraca wykres unormowanego pola dla zadanego równania różniczkowego. My
+jednak zobrazujemy też powyższe idee i wykreślimy (w Sage oczywiście) pole dla kilku kolejnych kroków iteracji
+numerycznej.
 
-\begin{verbatim}
-var('x y')
-@interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom':[['T','h']]})
-def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(20, width=10), omega=input_box(1,label=r'$\omega$', width=10), ggamma=input_box(0.5,label=r'$\gamma$', width=10)):
- global oscylator_tlumiony, globggamma, globomega
- globggamma = ggamma
- globomega = omega
- listT = srange(0,T,float(h))
- oscylator_tlumiony = desolve_odeint(vector([y,-omega^2*x-ggamma*y]), [x0, y0], listT, [x,y])
- print r'Parametry modelu'
- html(r'$\gamma=%s, \omega=%s, x_0=%s, y_0=%s$'%(ggamma,omega,x0,y0))
- print r'Parametry symulacji'
- html(r'$h=%s, T=%s$'%(h,T))
-vf = lambda u,a,b: (u[0]+u[1],u[1]-a*u[0]-b*u[1])
-#
-@interact
-def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, label=r'krok')):
- kroki = oscylator_tlumiony[:krok]
- kroki_plot = list_plot(kroki.tolist(), figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5)
- pole_wektorowe = arrow(kroki[0],vf(kroki[0],globomega^2,globggamma),color='red',xmax=vf(kroki[0],globomega^2,globggamma)[0])
- for krok in kroki[1:]:
-     pole_wektorowe += arrow(krok,vf(krok,globomega^2,globggamma),color='red', width=.4)
- txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
- for i in range(1,len(kroki)):
-     txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
- shadowplot = list_plot(oscylator_tlumiony.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], alpha=0.2)
- full_plot = list_plot(oscylator_tlumiony.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$']) + plot_vector_field([y,-globomega^2*x-globggamma*y], (x, -4.5, 4.5), (y, -4.5, 4.5), plot_points=20, color='lime')
- html.table([["krzywe fazowe dla oscylatora tłumionego",""],[full_plot+kroki_plot,shadowplot+kroki_plot+txt_plot+pole_wektorowe]])
-\end{verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{omega}\PYG{p}{,} \PYG{n}{gama} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mf}{0.5}
+\PYG{n}{xm}\PYG{p}{,} \PYG{n}{ym} \PYG{o}{=} \PYG{l+m+mf}{4.5}\PYG{p}{,} \PYG{l+m+mf}{4.5}
+\PYG{n}{de} \PYG{o}{=} \PYG{p}{[}\PYG{n}{y}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{n}{omega}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{gama}\PYG{o}{*}\PYG{n}{y}\PYG{p}{]}
+\PYG{n}{plot\PYGZus{}vector\PYGZus{}field}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{n}{xm}\PYG{p}{,}\PYG{n}{xm}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{y}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{n}{ym}\PYG{p}{,}\PYG{n}{ym}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
+\includegraphics{sage_chI021_03.pdf}
+\caption{Pole wektorowe oraz krzywe fazowe dla oscylatora tłumionego.}\end{figure}
 
-Poniżej znajdziecie komórkę, w której zachęcamy wszystkich do poeksperymentowania z różnymi modelami. Miłej zabawy...
-
-\begin{notice}{tip}{Wskazówka:}
-Aby całość zadziałała poprawnie musicie zadeklarować model podając \code{dx} i \code{dy},
-podać wartości wszystkich parametrów (teraz jest tylko \code{alpha})
-oraz warunki początkowe \code{x0} i \code{y0}.
-Na koniec zdecudujcie jaki okres dynamiki punktu chcecie symulować
-przypisując do zmiennej \code{T} odpowiednią wartość.
-\end{notice}
-
-
-\begin{verbatim}
-#########
-# Model #
-#########
-# zmienne
-var('x y')
-#
-# parametry
-# UWAGA: jeżeli Twój model będzie zależny od innych parametrów
-#        tu właśnie musisz je wszystkie wyspecyfikować
-alpha = 1
-#
-# warunki początkowe
-x0 = 1
-y0 = 1
-#
-# model
-dx = y
-dy = -alpha*x - y
-#
-# czas (T) symulacji
-T = 12
-#
-###################################################
-# Symulacje + wizualizacja                        #
-###################################################
-listT = srange(0,T,0.1,include_endpoint=True)
-numeryka = desolve_odeint(vector([dx, dy]), [x0, y0], listT, [x,y])
-przestrzen_fazowa = list_plot(numeryka.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
-pole_wektorowe = plot_vector_field([dx,dy], (x, numeryka[:,0].min(), numeryka[:,0].max()), (y, numeryka[:,1].min(), numeryka[:,1].max()), plot_points=10, color='lime')
-show(przestrzen_fazowa+pole_wektorowe)
-\end{verbatim}
-
+Zachęcamy do eksperymentowania z różnymi modelami czy też układami fizycznymi. Proszę
+tylko pamiętać, że aby powyższa numeryka zadziałała poprawnie należy poprawnie
+zdefiniować model fizyczny: ustalić wszystkie parametry i zmienne. Inwencja mile
+widziana (może warto wykorzystać dekorator \code{interact})!
 
 
 \section{Dynamiczne układy zachowawcze i dysypatywne}
@@ -1126,7 +944,7 @@ Niektóre układy równań różniczkowych mają specyficzną strukturę i ukryt
 \phantomsection\label{ch1/chI022:equation-eqn1}\begin{gather}
 \begin{split}m\ddot x = F(x) = -\frac{dV(x)}{dx} = - V'(x)\end{split}\label{ch1/chI022-eqn1}
 \end{gather}
-gdzie siła $F(x)$ jest potencjalna, tzn.  istnieje taka funkcja $V(x)$, że $F(x) = -V'(x)$.  Oznaczenie $V'(x)$ jest pochodną funkcji $V(x)$ względem zmiennej $x$. Funkcja  $V(x)$ nazywa się energią potencjalną, ale my będziemy pisali krótko - potencjał. Jeżeli znamy siłę $F(x)$ to potencjał można znależć obliczając całkę:
+gdzie siła $F(x)$ jest potencjalna, tzn.  istnieje taka funkcja $V(x)$, że $F(x) = -V'(x)$.  Oznaczenie $V'(x)$ jest pochodną funkcji $V(x)$ względem zmiennej $x$. Funkcja  $V(x)$ nazywa się energią potencjalną, ale my będziemy pisali krótko - potencjał. Jeżeli znamy siłę $F(x)$ to potencjał można znaleźć obliczając całkę:
 \phantomsection\label{ch1/chI022:equation-eqn2}\begin{gather}
 \begin{split}V(x) = - \int_a^{\,x}  F(y) dy\end{split}\label{ch1/chI022-eqn2}
 \end{gather}
@@ -1134,13 +952,13 @@ gdzie $a$ jest dowolną liczbą wybieraną tak jak nam wygodnie. Np. możemy wyb
 
 Równanie Newtona jest równaniem 2-go rzędu, autonomicznym.   Zapiszemy je w postaci
 \phantomsection\label{ch1/chI022:equation-eqn3}\begin{gather}
-\begin{split}\dot x = v, \quad \quad x(0)=x_0,\end{split}\label{ch1/chI022-eqn3}\\\begin{split}m\dot v = F(x) = -V'(x),  \qquad v(0)=v_0.\end{split}\notag
+\begin{split}\dot x = v, \qquad x(0)=x_0,\end{split}\label{ch1/chI022-eqn3}\\\begin{split}m\dot v = F(x) = -V'(x),  \qquad v(0)=v_0.\end{split}\notag
 \end{gather}
-Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa $\{x, v\}$. W tej przestrzeni fazowej może analizować krzywe fazowe. Można zauważyć, że położenie $x(t)$ oraz prędkość $v(t)$ icząstki zmieniają się w czasie zgodnie z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji $x(t)$ oraz $v(t)$, która nie zmienia się w czasie:
+Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa $\{x, v\}$. W tej przestrzeni fazowej może analizować krzywe fazowe. Można zauważyć, że położenie $x(t)$ oraz prędkość $v(t)$ cząstki zmieniają się w czasie zgodnie z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji $x(t)$ oraz $v(t)$, która nie zmienia się w czasie:
 \phantomsection\label{ch1/chI022:equation-eqn4}\begin{gather}
 \begin{split}E[x(t), v(t)] = \frac{1}{2} m v^2(t) + V(x(t)) = \frac{1}{2} m v^2(0) + V(x(0)) = E[x(0), v(0)]\end{split}\label{ch1/chI022-eqn4}
 \end{gather}
-Wielkość $E$ nazywa się  w fizyce całkowitą energią układu i składa się z 2 części: energii kinetycznej cząstki $E_k=mv^2/2$ oraz energii potencjalnej  cząstki $E_p = V(x)$. Jeżeli $E$ nie zmienia się w czasie, to znaczy że jest to funkcja stała ze względu na czas i pochodna wzgledem czasu powinna być zero. Sprawdźmy to:
+Wielkość $E$ nazywa się  w fizyce całkowitą energią układu i składa się z 2 części: energii kinetycznej cząstki $E_k=mv^2/2$ oraz energii potencjalnej  cząstki $E_p = V(x)$. Jeżeli $E$ nie zmienia się w czasie, to znaczy że jest to funkcja stała ze względu na czas i pochodna względem czasu powinna być zero. Sprawdźmy to:
 \phantomsection\label{ch1/chI022:equation-eqn5}\begin{gather}
 \begin{split}\frac{dE}{dt} = \frac{d}{dt}  E[x(t), v(t)] = \frac{\partial E}{\partial x}  \frac{dx}{dt} + \frac{\partial E}{\partial v}  \frac{dv}{dt} =  V'(x)  \dot x +  mv \dot v = -F(x) v + v F(x)\end{split}\label{ch1/chI022-eqn5}
 \end{gather}
@@ -1148,7 +966,7 @@ gdzie skorzystaliśmy ze związku pomiędzy siłą i energią potencjalną oraz 
 
 Ponieważ $E$ nie zmienia się w czasie, to mówimy że jest to stała ruchu lub całka ruchu, lub całka pierwsza układu (ostatnie nazwy wydają  się być dziwaczne, bo w wyrażeniu dla $E$ nie widać żadnej całki).  Istnienie stałych czy też całek ruchu ułatwia analizę układów. Pokażemy to na przykładzie oscylatora harmonicznego  dla którego postać siły jest dobrze znana:
 \phantomsection\label{ch1/chI022:equation-eqn6}\begin{gather}
-\begin{split}F(x) = - k x = - m\omega^2 x, \qquad V(x) = \frac{1}{2} k  x^2  = \frac{1}{2} m\omega^2 x^2, \quad \quad \omega^2 = \frac{k}{m}\end{split}\label{ch1/chI022-eqn6}
+\begin{split}F(x) = - k x = - m\omega^2 x, \qquad V(x) = \frac{1}{2} k  x^2  = \frac{1}{2} m\omega^2 x^2, \qquad \omega^2 = \frac{k}{m}\end{split}\label{ch1/chI022-eqn6}
 \end{gather}
 Prawo zachowania energii mówi, że
 \phantomsection\label{ch1/chI022:equation-eqn7}\begin{gather}
@@ -1162,90 +980,55 @@ Jest to równanie elipsy:
 \phantomsection\label{ch1/chI022:equation-eqn9}\begin{gather}
 \begin{split}\frac{x^2}{(2E/k)} + \frac{y^2}{(2E/m)} = 1\end{split}\label{ch1/chI022-eqn9}
 \end{gather}
-o osiach $a=2E/k$ oraz $b=2E/m$. Narysujmy sobie takę elipsę dla, powiedzmy, $E = 2, k = 0.2$ oraz $m=1$. Wiadomo, że każdy wie jak taka elipsa będzie wyglądać, ale zrobimy to bardziej po to, żeby wyrobić sobie naturalną umiejętność używania programów typu Sage do wizualizacji i interpretacji wyników.
+o osiach $a=2E/k$ oraz $b=2E/m$.
+\begin{figure}[htbp]
+\centering
+\capstart
 
-
-\begin{verbatim}
-@interact(layout={'top':[['E','k','m']],})
-def _(title=['elipsa'], E=input_box(2,label=r'$E$', width=10), k=input_box(0.2,label=r'$k$', width=10), m=input_box(1,label=r'$m$', width=10)):
- a = 2*E/k
- b = 2*E/m
- ellipse((0,0),a,b,0,fill=True,alpha=0.3).show()
-\end{verbatim}
-
+\includegraphics{sage_chI022_01.pdf}
+\caption{Krzywa fazowa \eqref{ch1/chI022-eqn9} dla $k=0.2, E=2, m=1$.}\end{figure}
 
 Elipsa jest krzywą zamkniętą, więc ruch jest periodyczny. Można sobie wyobrażać, że ruch cząstki w potencjale $V(x)$ jest  podobny do  ruchu cząstki we wnętrzu połówki sfery (w czasze). Nie jest to prawdą, ale takie wyobrażenie wyrabia w nas intuicję o własnościach ruchu. Poniżej przedstawiamy krok po kroku co zrobić, aby narysować krzywe fazowe układu.
 
-Rysujemy wykres przedstawiający potencjal $V(x)$. Poniżej tego wykresu, z osią pionową ustawioną jak w wykresie dla potencjału, rysujemy 2 symetryczne krzywe zadane przez prawo zachowania energii $\frac{1}{2}m v^2 + V(x) = E$ czyli stąd wynika że $v = \pm \sqrt{\frac{2}{m}[(E-V(x)]}$. Te dwie krzywe $v=v(x, E)$ są krzywymi fazowymi.
+Rysujemy wykres przedstawiający potencjał $V(x)$. Poniżej tego wykresu, z osią pionową ustawioną jak w wykresie dla potencjału, rysujemy 2 symetryczne krzywe zadane przez prawo zachowania energii $\frac{1}{2}m v^2 + V(x) = E$ czyli stąd wynika że $v = \pm \sqrt{\frac{2}{m}[(E-V(x)]}$. Te dwie krzywe $v=v(x, E)$ są krzywymi fazowymi.
 Cząstka porusza się w prawo gdy prędkość jest dodatnia $v>0$ (zielona krzywa) i w lewo gdy prędkość jest ujemna $v<0$ (czerwona krzywa). Prędkość jest zero wówczas, gdy $V(x) = E$. Wynika to z prawa zachowania energii (podstaw tam $v=0$). Równanie $V(x) = E$ wyznacza punkty zwrotu $x_i$ : cząstka w tych punktach ma zerową prędkość i zmienia kierunek ruch (zawraca).
 
 Spróbujemy, krok po kroku zanalizować równanie Newtona aby uzyskać krzywe fazowe.
 \phantomsection\label{ch1/chI022:equation-eqn10}\begin{gather}
 \begin{split}m \ddot{x} = F\end{split}\label{ch1/chI022-eqn10}
 \end{gather}
-Jeżeli siła bedzie liniowa $F=-kx$ to dostaniemy wyżej opisane zagadnienie oscylatora harmonicznego. Na początku musimy zadeklarować nazwy zmiennych oraz parametrów użytych w modelu. Pamiętaj - każdorazowo, jeżeli chcesz obliczac coś symbolicznie, trzeba taką linijkę napisać i ją wykonać. W kolejnych linijkach ustalimy parametry układu, zdefiniujemy siły z jakimi mamy do czynienia i obliczymy potencjał (całka z siły brana ze znakiem minus). W następnym kroku, z prawa zachowania energii, obliczymy teraz jak prędkość zależy od położenia (owe krzywe fazowe).
+Jeżeli siła będzie liniowa $F=-kx$ to dostaniemy wyżej opisane zagadnienie oscylatora harmonicznego. Na początku musimy zadeklarować nazwy zmiennych oraz parametrów użytych w modelu. Pamiętaj - każdorazowo, jeżeli chcesz obliczać coś symbolicznie, trzeba taką linijkę napisać i ją wykonać. W kolejnych linijkach ustalimy parametry układu, zdefiniujemy siły z jakimi mamy do czynienia i obliczymy potencjał (całka z siły brana ze znakiem minus). W następnym kroku, z prawa zachowania energii, obliczymy teraz jak prędkość zależy od położenia (owe krzywe fazowe).
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} parametry wizualizacji}
+\PYG{n}{x0}\PYG{p}{,} \PYG{n}{v0}\PYG{p}{,} \PYG{n}{k}\PYG{p}{,} \PYG{n}{m} \PYG{o}{=} \PYG{l+m+mf}{1.3}\PYG{p}{,} \PYG{l+m+mf}{0.3}\PYG{p}{,} \PYG{l+m+mf}{0.2}\PYG{p}{,} \PYG{l+m+mi}{1}
+\PYG{c}{\PYGZsh{} siły}
+\PYG{n}{F} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{k}\PYG{o}{*}\PYG{n}{x}
+\PYG{c}{\PYGZsh{} krok 1 \PYGZhy{} wykres potencjału}
+\PYG{n}{V} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{integral}\PYG{p}{(}\PYG{n}{F}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{p1} \PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{V}\PYG{p}{,} \PYG{n}{xmin}\PYG{o}{=}\PYG{o}{\PYGZhy{}}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{xmax}\PYG{o}{=}\PYG{n}{x0}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}prawo zachowania energii}
+\PYG{n}{E} \PYG{o}{=} \PYG{n}{m}\PYG{o}{*}\PYG{n}{v0}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{V}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{n}{x0}\PYG{p}{)}
+\PYG{n}{PZE} \PYG{o}{=} \PYG{n}{m}\PYG{o}{*}\PYG{n}{v}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{V} \PYG{o}{==} \PYG{n}{E}
+\PYG{c}{\PYGZsh{}i jego rozwiązanie}
+\PYG{n}{rozw} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{PZE}\PYG{p}{,} \PYG{n}{v}\PYG{p}{)}
+\PYG{n}{v1}\PYG{o}{=}\PYG{n}{rozw}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{v2}\PYG{o}{=}\PYG{n}{rozw}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}maksymalne wychylenia}
+\PYG{n}{rozw} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{PZE}\PYG{p}{(}\PYG{n}{v}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{n}{xmin} \PYG{o}{=} \PYG{n}{rozw}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{xmax} \PYG{o}{=} \PYG{n}{rozw}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}krzywe fazowe}
+\PYG{n}{p2} \PYG{o}{=}  \PYG{n}{plot}\PYG{p}{(}\PYG{n}{v1}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{xmin}\PYG{p}{,}\PYG{n}{xmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p2} \PYG{o}{+}\PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{v2}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{xmin}\PYG{p}{,}\PYG{n}{xmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-#0 (kilka zmiennych)
-var('x v')
-#parametry dla wizualizacji
-x0 = 1.3
-v0 = 0.3
-k = 0.2
-m = 1
-F = -k*x
-#1
-V = -integral(F,x)
-p1 = plot(V, xmin=-x0, xmax=x0)
-p1.show(figsize=4, axes_labels=[r'$x$',r'$V(x)=%s$'%V])
-#
-#prawo zachowania energii
-E = m*v0^2 + V(x=x0)
-PZE = m*v^2 + V == E
-#i jego rozwiązanie
-rozw = solve(PZE, v); show(rozw)
-v1=rozw[0].rhs()
-v2=rozw[1].rhs()
-#
-#ekstremalne wychylenie
-#prawo zachowania energii dla v=0
-rozw = solve(PZE(v=0), x); show(rozw)
-xmin = rozw[0].rhs()
-xmax = rozw[1].rhs()
-#punkt początkowy (tak jak powyżej)
-ball = (x0,V(x=x0))
-p0  = point(ball,size=30)
-p0 += text(r"  punkt startowy",ball,vertical_alignment='bottom',horizontal_alignment='left',fontsize=8)
-#
-#ekstrema
-ball = (xmax,V(x=xmax))
-p0 += point(ball,size=30,color='red')
-p0 += text("ekstremum_",ball,vertical_alignment='bottom',horizontal_alignment='right',color='red',fontsize=8)
-p12a = line((ball,(xmax,0)),linestyle='dotted',color='grey')
-ball = (xmin,V(x=xmin))
-p0 += point(ball,size=30,color='red')
-p0 += text("_ekstremum",ball,vertical_alignment='bottom',horizontal_alignment='left',color='red',fontsize=8)
-p12a += line((ball,(xmin,0)),linestyle='dotted',color='grey')
-#
-#potencjał
-p1 = plot(V, xmin=xmin, xmax=xmax)
-#
-#krzywe fazowe
-p12b = line(((xmin,0),(xmin,v2(x=0))),linestyle='dotted',color='grey')
-p12b += line(((xmax,0),(xmax,v2(x=0))),linestyle='dotted',color='grey')
-p2 =  plot(v1, (x,xmin,xmax), color='red')
-p2 += plot(v2, (x,xmin,xmax), color='green')
-#
-(p0+p1+p12a).show(figsize=4, axes_labels=['$x$','$V(x)$'])
-(p12b+p2).show(figsize=4,xmax=xmax)
-sage:
-var('x y z t')
-xy_wsp = [('x','x'),('y','y')]+[('z','z')]
-N = len(xy_wsp)
-J  = matrix(SR,N)
-\end{verbatim}
-
+\includegraphics{sage_chI022_02.pdf}
+\caption{Krzywe fazowa oscylatora harmonicznego.}\end{figure}
 
 
 \subsection{Układy potencjalne}
@@ -1274,28 +1057,50 @@ Wystarczy zatem sprawdzić, czy rotacja pola sił  $\vec F$  jest 0.
 \medskip
 
 
-Sprawdzić, czy  siły $\vec F(x, y, z)$ o składowych
+Sprawdzić, czy  siły $\vec F(x, y, z)$ o zadanych składowych
+$F_i = F_i(x,y,z)$ są potencjalne.
+\begin{enumerate}
+\item {} 
+Układ 1.
+
+\end{enumerate}
+\begin{quote}
 \phantomsection\label{ch1/chI022:equation-eqn15}\begin{gather}
-\begin{split} 1.  \quad \quad F_1(x, y,z) = \frac{y}{x^2 + y^2 + z^2},  \quad F_2(x, y,z) = - \frac{x}{x^2 + y^2 + z^2},  \quad F_3(x, y,z) = \frac{z}{x^2 + y^2 + z^2}\end{split}\label{ch1/chI022-eqn15}
-\end{gather}\phantomsection\label{ch1/chI022:equation-eqn16}\begin{gather}
-\begin{split} 2.  \quad \quad F_1(x, y,z) = \frac{x-z}{x^2 + y^2 },  \quad F_2(x, y,z) = x e^{-y^2},  \quad F_3(x, y,z) = z+5\end{split}\label{ch1/chI022-eqn16}
-\end{gather}\phantomsection\label{ch1/chI022:equation-eqn17}\begin{gather}
-\begin{split}3. \quad \quad F_1(x, y,z) = 25 x^4 y - 3y^2,  \quad F_2(x, y,z) = 5x^5 -6xy -5,  \quad F_3(x, y,z) =0\end{split}\label{ch1/chI022-eqn17}
-\end{gather}
-są potencjalne
+\begin{split}F_1 = \frac{y}{x^2 + y^2 + z^2},  \quad F_2 = - \frac{x}{x^2 + y^2 + z^2},  \quad F_3 = \frac{z}{x^2 + y^2 + z^2}\end{split}\label{ch1/chI022-eqn15}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item {} 
+Układ 2.
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch1/chI022:equation-eqn16}\begin{gather}
+\begin{split}F_1 = \frac{x-z}{x^2 + y^2 },  \quad F_2 = x e^{-y^2},  \quad F_3 = z+5\end{split}\label{ch1/chI022-eqn16}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item {} 
+Układ 3.
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch1/chI022:equation-eqn17}\begin{gather}
+\begin{split} F_1 = 25 x^4 y - 3y^2,  \quad F_2 = 5x^5 -6xy -5,  \quad F_3 =0\end{split}\label{ch1/chI022-eqn17}
+\end{gather}\end{quote}
 \end{minipage}}
 \begin{center}\setlength{\fboxsep}{5pt}\shadowbox{\box0}\end{center}
 
 Jeżeli układ jest potencjalny to łatwo sprawdzić, podobnie jak wyżej w przypadku układu o 1-stopniu swobody,  że istnieje stała ruchu - całkowita energia układu:
 \phantomsection\label{ch1/chI022:equation-eqn18}\begin{gather}
-\begin{split}E = \sum_i \frac{m\vec v^2}{2} + V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)  = constant, \qquad \frac{dE}{dt} = 0\end{split}\label{ch1/chI022-eqn18}
+\begin{split}E = \sum_i \frac{m\vec v^2}{2} + V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)  = cons., \qquad \frac{dE}{dt} = 0\end{split}\label{ch1/chI022-eqn18}
 \end{gather}
 Dlatego  takie pole sił nazywa się zachowawczym polem sił.  Wszystkie siły związane z potencjalnym polem sił są siłami zachowawczymi. Istnieją jednak siły, które nie są siłami potencjalnymi, mimo to pozostają siłami zachowawczymi. Przykładem może być siła Lorentza działająca na naładowaną cząstkę poruszającą się w polu magnetycznym. Nie należy tego mylić z zachowawczymi układami dynamicznymi. Tę kwestię postaramy się teraz wyjaśnić.
 
 
 \subsection{Dynamiczne układy zachowawcze i dysypatywne}
 \label{ch1/chI022:id1}
-W teorii układów dynamicznych ważną rolę pełnią dwa pojęcia: zachowawcze układy dynamiczne i dysypatywne układy dynamiczne.  Znowu dla jasności wywodu rozpatrzymy przykład układu o 3-wymiarowej przestrzeni fazowej:
+W teorii układów dynamicznych ważną rolę pełnią dwa pojęcia: zachowawcze układy dynamiczne i dyssypatywne układy dynamiczne.  Znowu dla jasności wywodu rozpatrzymy przykład układu o 3-wymiarowej przestrzeni fazowej:
 \phantomsection\label{ch1/chI022:equation-eqn19}\begin{gather}
 \begin{split}\dot x = F_1(x, y, z), \quad x(0) = x_0,\end{split}\label{ch1/chI022-eqn19}\\\begin{split}\dot y = F_2(x, y, z),  \quad x(0) = x_0,\end{split}\notag\\\begin{split}\dot z = F_3(x, y, z),  \quad x(0) = x_0.\end{split}\notag
 \end{gather}
@@ -1309,7 +1114,7 @@ Pod wpływem ewolucji każdy punkt $(x_0, y_0, z_0)$  z tego obszaru przejdzie p
 \end{gather}
 Innymi słowy, kiedy układ dynamiczny zachowuje objętość fazową. Zbadamy ten problem. Wprowadzimy nowe oznaczenia, aby ułatwić notację:
 \phantomsection\label{ch1/chI022:equation-eqn22}\begin{gather}
-\begin{split}x_t = x(t), \quad \quad y_t = y(t), \quad \quad z(t) = z_t\end{split}\label{ch1/chI022-eqn22}
+\begin{split}x_t = x(t), \qquad y_t = y(t), \qquad z(t) = z_t\end{split}\label{ch1/chI022-eqn22}
 \end{gather}
 Objętość fazowa warunków początkowych w chwili $t=0$ wynosi
 \phantomsection\label{ch1/chI022:equation-eqn23}\begin{gather}
@@ -1343,61 +1148,71 @@ zależą od warunków początkowych $\{x_0, y_0, z_0\}$.  Po rozwinięciu wyznac
 \phantomsection\label{ch1/chI022:equation-eqn30}\begin{gather}
 \begin{split}\frac{d}{dt}  \frac{ \partial x_t}{\partial z_0} = \frac{ \partial }{\partial z_0} \frac{dx_t}{dt} = \frac{ \partial }{\partial z_0} \dot x_t = \frac{ \partial }{\partial z_0} F_1(x_t, y_t, z_t) = \frac{ \partial F_1}{\partial x_t}  \frac{ \partial x_t}{\partial z_0} +  \frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  +\frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}\end{split}\label{ch1/chI022-eqn30}
 \end{gather}
-Jak widać, w tym prostym przypadku musimy przeprowadzić uciążliwe rachunki. Znacznie lepiej jest posłużyć się rachunkiem symbolicznym z wykorzystaniem SAGE.
-
-Aby przeprowadzić dowód, najlepiej jest obejść  ograniczenia operacji na wyrazeniach z pochodnymi w Sage.Pochodna wyznacznika jest zrobiona automatycznie, potem jest recznie wykonane podstawienie:
+Jak widać, w tym prostym przypadku musimy przeprowadzić uciążliwe rachunki. Znacznie
+lepiej jest posłużyć się rachunkiem symbolicznym z wykorzystaniem SAGE. Aby przeprowadzić
+dowód, najlepiej jest obejść ograniczenia operacji na wyrażeniach z pochodnymi w Sage.
+Pochodna wyznacznika jest zrobiona automatycznie, potem jest ręcznie wykonane podstawienie:
 \phantomsection\label{ch1/chI022:equation-eqn31}\begin{gather}
 \begin{split} \frac{ \partial }{\partial z_0} \dot x_t = \frac{ \partial F_1}{\partial x_t}  \frac{ \partial x_t}{\partial z_0} +  \frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  +\frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}\end{split}\label{ch1/chI022-eqn31}
 \end{gather}
-
-\begin{verbatim}
-for i,(v,lv) in enumerate(xy_wsp):
-for j,(u,lu) in enumerate(xy_wsp):
-     J[i,j] = var("d%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial %s_t}{\partial %s_0}'%(lv,lu))
-     var("dF%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial F_%s}{\partial %s_t}'%(lv,lu))
-#
-to_fun = dict()
-for v in J.list():
- vars()[str(v).capitalize()] = function(str(v).capitalize(),t)
- var("%sd"%str(v))
- to_fun[v]=vars()[str(v).capitalize()]
- to_fun[vars()[str(v)+"d"]]=vars()[str(v).capitalize()].diff()
-to_var = dict((v,k) for k,v in to_fun.items())
-#
-to_rhs = dict()
-for i,(v,lv) in enumerate(xy_wsp):
- for j,(u,lu) in enumerate(xy_wsp):
-     to_rhs[vars()["d%sd%sd"%(v,u)]] = sum([vars()["dF%sd%s"%(v,w)]*vars()["d%sd%s"%(w,u)] for w,wl in xy_wsp])
-print "Zaczynamy od macierzy Jacobiego:"
-show(J)
-print "Wszystkie pochodne cząstkowe są reprezentowane przez niezależne zmienne, aby policzyc pochodną wyznacznika, zamieniamy je podstawiając słownik zamieniający zmienne na funkcje:"
-show(J.subs(to_fun))
-print "Liczymy wyznaczniki pochodną, oraz wracamy do zmiennych symbolicznych:"
-J.subs(to_fun).det().diff(t).subs(to_var).show()
-#
-print "Uzywając słownika to_rhs, podstawiamy prawe strony ODE:"
-J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs).show()
-#
-print "Ostatecznie dzielimy otrzymany wzór przez Jacobian:"
-#
-final = J.subs(to_fun).det().diff(t).subs(to_var).subs(to_rhs)/J.det()
-final.simplify_full().show()
-\end{verbatim}
-
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{for} \PYG{n}{i}\PYG{p}{,}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{lv}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{xy\PYGZus{}wsp}\PYG{p}{)}\PYG{p}{:}
+  \PYG{k}{for} \PYG{n}{j}\PYG{p}{,}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{lu}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{xy\PYGZus{}wsp}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{J}\PYG{p}{[}\PYG{n}{i}\PYG{p}{,}\PYG{n}{j}\PYG{p}{]} \PYG{o}{=} \PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{u}\PYG{p}{)}\PYG{p}{,}
+    \PYG{n}{latex\PYGZus{}name} \PYG{o}{=}\PYGZbs{}
+    \PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{displaystyle}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{frac\PYGZob{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{partial }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZus{}t\PYGZcb{}\PYGZob{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{partial }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZus{}0\PYGZcb{}}\PYG{l+s}{\PYGZsq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{lv}\PYG{p}{,}\PYG{n}{lu}\PYG{p}{)}
+    \PYG{p}{)}
+    \PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{dF}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{u}\PYG{p}{)}\PYG{p}{,}
+    \PYG{n}{latex\PYGZus{}name} \PYG{o}{=}\PYGZbs{}
+    \PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{displaystyle}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{frac\PYGZob{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{partial F\PYGZus{}}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZcb{}\PYGZob{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{partial }\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZus{}t\PYGZcb{}}\PYG{l+s}{\PYGZsq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{lv}\PYG{p}{,}\PYG{n}{lu}\PYG{p}{)}
+    \PYG{p}{)}
+\PYG{c}{\PYGZsh{}}
+\PYG{n}{to\PYGZus{}fun} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{J}\PYG{o}{.}\PYG{n}{list}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n+nb}{vars}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}\PYG{o}{.}\PYG{n}{capitalize}\PYG{p}{(}\PYG{p}{)}\PYG{p}{]} \PYG{o}{=} \PYG{n}{function}\PYG{p}{(}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}\PYG{o}{.}\PYG{n}{capitalize}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,}\PYG{n}{t}\PYG{p}{)}
+  \PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{d}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}\PYG{p}{)}
+  \PYG{n}{to\PYGZus{}fun}\PYG{p}{[}\PYG{n}{v}\PYG{p}{]}\PYG{o}{=}\PYG{n+nb}{vars}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}\PYG{o}{.}\PYG{n}{capitalize}\PYG{p}{(}\PYG{p}{)}\PYG{p}{]}
+  \PYG{n}{to\PYGZus{}fun}\PYG{p}{[}\PYG{n+nb}{vars}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}\PYG{o}{+}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{d}\PYG{l+s}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{]}\PYG{o}{=}\PYG{n+nb}{vars}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{n+nb}{str}\PYG{p}{(}\PYG{n}{v}\PYG{p}{)}\PYG{o}{.}\PYG{n}{capitalize}\PYG{p}{(}\PYG{p}{)}\PYG{p}{]}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{to\PYGZus{}var} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{k}\PYG{p}{)} \PYG{k}{for} \PYG{n}{k}\PYG{p}{,}\PYG{n}{v} \PYG{o+ow}{in} \PYG{n}{to\PYGZus{}fun}\PYG{o}{.}\PYG{n}{items}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}}
+\PYG{n}{to\PYGZus{}rhs} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{p}{)}
+\PYG{k}{for} \PYG{n}{i}\PYG{p}{,}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{lv}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{xy\PYGZus{}wsp}\PYG{p}{)}\PYG{p}{:}
+ \PYG{k}{for} \PYG{n}{j}\PYG{p}{,}\PYG{p}{(}\PYG{n}{u}\PYG{p}{,}\PYG{n}{lu}\PYG{p}{)} \PYG{o+ow}{in} \PYG{n+nb}{enumerate}\PYG{p}{(}\PYG{n}{xy\PYGZus{}wsp}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{to\PYGZus{}rhs}\PYG{p}{[}\PYG{n+nb}{vars}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{d}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{u}\PYG{p}{)}\PYG{p}{]}\PYG{p}{]} \PYG{o}{=}\PYGZbs{}
+  \PYG{n+nb}{sum}\PYG{p}{(}\PYG{p}{[}\PYG{n+nb}{vars}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{dF}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{v}\PYG{p}{,}\PYG{n}{w}\PYG{p}{)}\PYG{p}{]}\PYG{o}{*}\PYG{n+nb}{vars}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{d}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{w}\PYG{p}{,}\PYG{n}{u}\PYG{p}{)}\PYG{p}{]} \PYGZbs{}
+                                   \PYG{k}{for} \PYG{n}{w}\PYG{p}{,}\PYG{n}{wl} \PYG{o+ow}{in} \PYG{n}{xy\PYGZus{}wsp}\PYG{p}{]}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}macierz Jakobiego}
+\PYG{n}{show}\PYG{p}{(}\PYG{n}{J}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}Wszystkie pochodne cząstkowe są reprezentowane przez niezależne}
+\PYG{c}{\PYGZsh{}zmienne, aby policzyc pochodną wyznacznika, zamieniamy je}
+\PYG{c}{\PYGZsh{}podstawiając słownik zamieniający zmienne na funkcje:}
+\PYG{n}{show}\PYG{p}{(}\PYG{n}{J}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}fun}\PYG{p}{)}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}Liczymy wyznaczniki pochodną, oraz wracamy do zmiennych}
+\PYG{c}{\PYGZsh{}symbolicznych}
+\PYG{n}{J}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}fun}\PYG{p}{)}\PYG{o}{.}\PYG{n}{det}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}var}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}}
+\PYG{c}{\PYGZsh{}Uzywając słownika to\PYGZus{}rhs, podstawiamy prawe strony ODE}
+\PYG{n}{J}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}fun}\PYG{p}{)}\PYG{o}{.}\PYG{n}{det}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}var}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}rhs}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}}
+\PYG{c}{\PYGZsh{}Ostatecznie dzielimy otrzymany wzór przez Jacobian}
+\PYG{n}{final} \PYG{o}{=}\PYGZbs{}
+   \PYG{n}{J}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}fun}\PYG{p}{)}\PYG{o}{.}\PYG{n}{det}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{diff}\PYG{p}{(}\PYG{n}{t}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}var}\PYG{p}{)}\PYG{o}{.}\PYG{n}{subs}\PYG{p}{(}\PYG{n}{to\PYGZus{}rhs}\PYG{p}{)}\PYG{o}{/}\PYG{n}{J}\PYG{o}{.}\PYG{n}{det}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{final}\PYG{o}{.}\PYG{n}{simplify\PYGZus{}full}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
 
 Ostatecznie otrzymamy wyrażenie
 \phantomsection\label{ch1/chI022:equation-eqn32}\begin{gather}
 \begin{split}\frac{dJ(t)}{dt} = J(t) \left[\frac{\partial F_1}{\partial  x_t} + \frac{\partial  F_2}{\partial  y_t} + \frac{\partial F_3}{\partial z_t} \right]  = J(t)\; \mbox{ div} \vec F\end{split}\label{ch1/chI022-eqn32}
 \end{gather}
-To, co jest w nawiasie kwadratowym  nazywa się dywergencją pola wektorowego $\vec F$. Wstawiamy to wyrażemie do równania \eqref{ch1/chI022-eqn26} i otrzymamy
+To, co jest w nawiasie kwadratowym  nazywa się dywergencją pola wektorowego $\vec F$. Wstawiamy to wyrażenie do równania \eqref{ch1/chI022-eqn26} i otrzymamy
 \phantomsection\label{ch1/chI022:equation-eqn33}\begin{gather}
-\begin{split}\frac{dM(t)}{dt} = \int \int \int_{D(0)}  \frac{ dJ(t)}{dt}  dx_0 dy_0 dz_0   = \int \int \int_{D(0)} J(t)\; \mbox{ div} \vec F  dx_0 dy_0 dz_0  =  \int \int \int_{D(t)} \; \mbox{ div} \vec F  dx_t dy_t dz_t \qquad\end{split}\label{ch1/chI022-eqn33}
+\begin{split}\frac{dM(t)}{dt} = \int \int \int_{D(0)}  \frac{ dJ(t)}{dt}  dx_0 dy_0 dz_0 =\end{split}\label{ch1/chI022-eqn33}\\\begin{split}= \int \int \int_{D(0)} J(t)\; \mbox{ div} \vec F  dx_0 dy_0 dz_0 =\end{split}\notag\\\begin{split}=  \int \int \int_{D(t)} \; \mbox{ div} \vec F  dx_t dy_t dz_t\end{split}\notag
 \end{gather}
 gdzie dokonaliśmy odwrotnego przejścia  ( z prawej strony na lewą stronę) jak  w równaniu \eqref{ch1/chI022-eqn25}.
 
 Można teraz uogólnić ten wynik na dowolną ilość wymiarów przestrzeni fazowej  dla układu równań
 \phantomsection\label{ch1/chI022:equation-eqn34}\begin{gather}
-\begin{split}\frac{d\vec x}{dt} = \vec F (\vec x), \quad \quad \vec x = [x_1, x_2, x_3, ...., x_n], \quad \quad \vec F = [F_1, F_2, F_3, ..., F_n]\end{split}\label{ch1/chI022-eqn34}
+\begin{split}\frac{d\vec x}{dt} = \vec F (\vec x), \qquad \vec x = [x_1, x_2, x_3, ...., x_n], \qquad \vec F = [F_1, F_2, F_3, ..., F_n]\end{split}\label{ch1/chI022-eqn34}
 \end{gather}
 i otrzymamy
 \begin{description}
@@ -1408,7 +1223,7 @@ Jeżeli dywergencja pola wektorowego $\vec F$  danego równania różniczkowego 
 \phantomsection\label{ch1/chI022:equation-eqn35}\begin{gather}
 \begin{split}\mbox{ div} \vec F = \sum_i \frac{\partial F_i}{\partial x_i} = 0\end{split}\label{ch1/chI022-eqn35}
 \end{gather}
-wówczas objętość fazowa jest zachowana, $M(t) = M(0)$. Takie układy dynamiczne nazywamy zachowawczymi. Jeżeli objętość fazowa maleje w czasie, to układ nazywamy dysypatywnym. Innymi słowy, układ jest dysypatywny gdy objętość $M(t) < M(0)$ dla $t>0$. Oznacza to, że dla układów dysypatywnych
+wówczas objętość fazowa jest zachowana, $M(t) = M(0)$. Takie układy dynamiczne nazywamy zachowawczymi. Jeżeli objętość fazowa maleje w czasie, to układ nazywamy dyssypatywnym. Innymi słowy, układ jest dyssypatywny gdy objętość $M(t) < M(0)$ dla $t>0$. Oznacza to, że dla układów dyssypatywnych
 \phantomsection\label{ch1/chI022:equation-eqn36}\begin{gather}
 \begin{split}\frac{dM(t)}{dt} < 0\end{split}\label{ch1/chI022-eqn36}
 \end{gather}
@@ -1420,12 +1235,12 @@ wówczas z równania \eqref{ch1/chI022-eqn33} otrzymujemy prostą relację
 \phantomsection\label{ch1/chI022:equation-eqn38}\begin{gather}
 \begin{split}\frac{dM(t)}{dt} = C_0 M(t)\end{split}\label{ch1/chI022-eqn38}
 \end{gather}
-która pozwala rozstrzygnąć czy układ jest dysypatywny.
+która pozwala rozstrzygnąć czy układ jest dyssypatywny.
 
 
 \subsubsection{Przykład 1: Oscylator harmoniczny tłumiony}
 \label{ch1/chI022:przyklad-1-oscylator-harmoniczny-tlumiony}\phantomsection\label{ch1/chI022:equation-eqn39}\begin{gather}
-\begin{split}\dot x = y = F_1(x, y), \quad \quad x(0) = x_0,\end{split}\label{ch1/chI022-eqn39}\\\begin{split}\dot y = -\gamma y -\omega^2 x = F_2(x, y), \quad \quad y(0) = y_0.\end{split}\notag
+\begin{split}\dot x = y = F_1(x, y), \qquad x(0) = x_0,\end{split}\label{ch1/chI022-eqn39}\\\begin{split}\dot y = -\gamma y -\omega^2 x = F_2(x, y), \qquad y(0) = y_0.\end{split}\notag
 \end{gather}
 Łatwo obliczyć dywergencję pola
 \phantomsection\label{ch1/chI022:equation-eqn40}\begin{gather}
@@ -1435,12 +1250,12 @@ Równanie \eqref{ch1/chI022-eqn37} przyjmuje postać
 \phantomsection\label{ch1/chI022:equation-eqn41}\begin{gather}
 \begin{split}\frac{dM(t)}{dt} = -\gamma  M(t),  \qquad \mbox{ jego rozwiązaniem jest funkcja malejąca } \qquad M(t) = M(0) e^{-\gamma t}\end{split}\label{ch1/chI022-eqn41}
 \end{gather}
-czyli  objętość fazowa (w tym przypadku powierzchnia fazowa) maleje  w czasie i dlatego jest to dysypatywny układ dynamiczny.
+czyli  objętość fazowa (w tym przypadku powierzchnia fazowa) maleje  w czasie i dlatego jest to dyssypatywny układ dynamiczny.
 
 
 \subsubsection{Przykład 2: Model Lorenza}
 \label{ch1/chI022:przyklad-2-model-lorenza}\phantomsection\label{ch1/chI022:equation-eqn42}\begin{gather}
-\begin{split}\dot x = \sigma (y-x) = F_1(x, y,  z), \quad \quad x(0) = x_0,\end{split}\label{ch1/chI022-eqn42}\\\begin{split}\dot y = x(\rho - z) -y = F_2(x, y,  z),  \quad \quad y(0) = y_0,\end{split}\notag\\\begin{split}\dot z = x y - \beta z = F_3(x, y,  z), , \quad \quad z(0) = z_0.\end{split}\notag
+\begin{split}\dot x = \sigma (y-x) = F_1(x, y,  z), \qquad x(0) = x_0,\end{split}\label{ch1/chI022-eqn42}\\\begin{split}\dot y = x(\rho - z) -y = F_2(x, y,  z),  \qquad y(0) = y_0,\end{split}\notag\\\begin{split}\dot z = x y - \beta z = F_3(x, y,  z), , \qquad z(0) = z_0.\end{split}\notag
 \end{gather}
 gdzie wszystkie parametry są dodatnie: $\sigma, \rho, \beta > 0$.
 
@@ -1448,7 +1263,7 @@ Obliczymy  dywergencję 3-wymiarowego pola $\vec F = [F_1, F_2, F_3]$. Proste ra
 \phantomsection\label{ch1/chI022:equation-eqn43}\begin{gather}
 \begin{split}\mbox{ div} \vec F =  \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y}   + \frac{\partial F_3}{\partial z}  = -\sigma -1 - \beta <0\end{split}\label{ch1/chI022-eqn43}
 \end{gather}
-Objętość fazowa (w tym przypadku faktycznie objętość w 3 wymiarowej przestrzeni) maleje  eksponencjalnie w czasie, podobnie jak w poprzednim przykładzie.  Dlatego też jest to dysypatywny układ dynamiczny.
+Objętość fazowa (w tym przypadku faktycznie objętość w 3 wymiarowej przestrzeni) maleje  eksponencjalnie w czasie, podobnie jak w poprzednim przykładzie.  Dlatego też jest to dyssypatywny układ dynamiczny.
 
 
 \section{Stany stacjonarne i ich stabilność}
@@ -1459,17 +1274,17 @@ Czasami rozwiązanie równań różniczkowych dąży do stałej wartości dla d�
 \end{gather}
 Może istnieć kilka stanów stacjonarnych, a nawet nieskończenie wiele stanów stacjonarnych. Który z tych stanów się realizuje,  zależy to od warunku początkowego $\vec x(0) = \vec x_0$. Rozwiązanie stacjonarne $\vec x_s$ nie zależy od czasu. Nazwa ``rozwiązanie stacjonarne'' nie jest bezpodstawne. Faktycznie jest to rozwiązanie układu równań  różniczkowych
 \phantomsection\label{ch1/chI023:equation-eqn2}\begin{gather}
-\begin{split}\frac{d\vec x}{dt} = \vec F(\vec x), \quad \quad \vec x(0)  = \vec x_0\end{split}\label{ch1/chI023-eqn2}
+\begin{split}\frac{d\vec x}{dt} = \vec F(\vec x), \qquad \vec x(0)  = \vec x_0\end{split}\label{ch1/chI023-eqn2}
 \end{gather}
 z warunkiem początkowym $\vec x(0) = \vec x_s$. Jeżeli  $\vec x(t) = \vec x_s$ jest rozwiązaniem stacjonarnym to musi spełniać układ \eqref{ch1/chI023-eqn2}., czyli
 \phantomsection\label{ch1/chI023:equation-eqn3}\begin{gather}
-\begin{split}\mbox{jeżeli}  \quad \quad \vec x(t) = \vec x_s \quad \quad\mbox{to} \quad \quad\frac{d\vec x(t)}{dt} = \frac{d\vec x_s}{dt}=0 = \vec F(\vec x(t)) = \vec F(\vec x_s)) = 0\end{split}\label{ch1/chI023-eqn3}
+\begin{split}\mbox{jeżeli} \qquad \vec x(t) = \vec x_s \qquad \mbox{to} \qquad \frac{d\vec x(t)}{dt} = \frac{d\vec x_s}{dt}=0 = \vec F(\vec x(t)) = \vec F(\vec x_s)) = 0\end{split}\label{ch1/chI023-eqn3}
 \end{gather}
-Innymi słowy, stan stacjonarny wyznaczny jest z warunku:
+Innymi słowy, stan stacjonarny wyznaczany jest z warunku:
 \phantomsection\label{ch1/chI023:equation-eqn4}\begin{gather}
 \begin{split}\vec F(\vec x_s)) = 0\end{split}\label{ch1/chI023-eqn4}
 \end{gather}
-Powyższy warunek to układ $n$-równań algebraicznych. Zwykle udaje  nam się go rozwiązać analitycznie w niewielu przypadkach,  w szczególności gdy wymiar przestrzeni fazowej  $n >1$.  Natomiast możemy taki układ rozwiązywać numerycznie. Jeżeli już wyznaczymy stan stacjonarny, to nasuwa się pytanie na ile jest on stabily, tzn. gdy nieco wytrącimy układ z tego stanu to czy powróci on do poprzedniego stanu stacjonarnego czy też oddali się od niego.  Na przykład stanem stacjonarnym kulki poruszającej się na nitce w polu ziemskim jest położenie pionowe. Gdy kulkę wychylimy z tego położenia, po dostatecznie długim czasie powróci ona do pozycji pionowej i tak tam pozostanie nieruchoma. Jest to stabilny stan równowagi. Rozważmy teraz kulkę mogącą poruszać się tylko po sferze. Gdy umieścimy kulkę na  biegunie północnym sfery w polu ziemskim to nieskończenie małe zaburzenie spowoduje, że kulka spadnie z tego położenie i nigdy do niego nie powróci. W obu tych przypadkach zakładamy  rzeczywiste warunki ruchu z tarciem. Pominięcie tarcia spowoduje radykalnie różne zachowanie. Te dwa przyklady pozwalają nabyć intuicję, co to znaczy że stan stacjonarny jest stabilny lub jest niestabilny.  Z grubsza można powiedzieć, że stan stacjonarny  $\vec x_s$ jest stabilny jeśli każda trajektoria startującego z punktu bliskiego $\vec x_s$ pozostaje blisko $\vec x_s$ wraz z upływem czasu. Natomiast  $\vec x_s$ jest niestabilny gdy  każda każda trajektoria startującego z punktu bliskiego $\vec x_s$ oddala się od tego punktu gdy $t\to \infty$.  Można podać bardziej precyzyjne definicje.
+Powyższy warunek to układ $n$-równań algebraicznych. Zwykle udaje  nam się go rozwiązać analitycznie w niewielu przypadkach,  w szczególności gdy wymiar przestrzeni fazowej  $n >1$.  Natomiast możemy taki układ rozwiązywać numerycznie. Jeżeli już wyznaczymy stan stacjonarny, to nasuwa się pytanie na ile jest on stabilny, tzn. gdy nieco wytrącimy układ z tego stanu to czy powróci on do poprzedniego stanu stacjonarnego czy też oddali się od niego.  Na przykład stanem stacjonarnym kulki poruszającej się na nitce w polu ziemskim jest położenie pionowe. Gdy kulkę wychylimy z tego położenia, po dostatecznie długim czasie powróci ona do pozycji pionowej i tak tam pozostanie nieruchoma. Jest to stabilny stan równowagi. Rozważmy teraz kulkę mogącą poruszać się tylko po sferze. Gdy umieścimy kulkę na  biegunie północnym sfery w polu ziemskim to nieskończenie małe zaburzenie spowoduje, że kulka spadnie z tego położenie i nigdy do niego nie powróci. W obu tych przypadkach zakładamy  rzeczywiste warunki ruchu z tarciem. Pominięcie tarcia spowoduje radykalnie różne zachowanie. Te dwa przykłady pozwalają nabyć intuicję, co to znaczy że stan stacjonarny jest stabilny lub jest niestabilny.  Z grubsza można powiedzieć, że stan stacjonarny  $\vec x_s$ jest stabilny jeśli każda trajektoria startującego z punktu bliskiego $\vec x_s$ pozostaje blisko $\vec x_s$ wraz z upływem czasu. Natomiast  $\vec x_s$ jest niestabilny gdy  każda każda trajektoria startującego z punktu bliskiego $\vec x_s$ oddala się od tego punktu gdy $t\to \infty$.  Można podać bardziej precyzyjne definicje.
 \begin{description}
 \item[{\textbf{Definicja}}] \leavevmode
 Mówimy, że stan stacjonarny  $\vec x_s$ jest stabilny jeżeli  dla dowolnego $\epsilon >0$ istnieje
@@ -1489,7 +1304,7 @@ Innymi słowy dla stabilnych stanów rozwiązanie $\vec x(t)$ jest cały czas bl
 \label{ch1/chI023:przyklad-rownanie-rozniczkowe-liniowe}\phantomsection\label{ch1/chI023:equation-eqn5}\begin{gather}
 \begin{split}\dot x = \lambda x = f(x), \qquad \lambda  \in R\end{split}\label{ch1/chI023-eqn5}
 \end{gather}
-Stan stacjonarny znajdujemy jako rozwiazanie równania
+Stan stacjonarny znajdujemy jako rozwiązanie równania
 \phantomsection\label{ch1/chI023:equation-eqn6}\begin{gather}
 \begin{split}f(x_s) = \lambda x_s =0 \qquad \mbox{stąd otrzymujemy stan stacjonarny} \qquad x_s = 0\end{split}\label{ch1/chI023-eqn6}
 \end{gather}
@@ -1499,13 +1314,13 @@ Pytamy, czy ten stan jest stabilny. Musimy zaburzyć rozwiązanie stacjonarne $x
 \end{gather}
 Jeżeli
 \phantomsection\label{ch1/chI023:equation-eqn8}\begin{gather}
-\begin{split}\lambda  < 0  \quad \quad \mbox{ to} \quad \quad x(t) \to 0 \quad \quad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0\end{split}\label{ch1/chI023-eqn8}
+\begin{split}\lambda  < 0  \qquad \mbox{ to} \qquad x(t) \to 0 \qquad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0\end{split}\label{ch1/chI023-eqn8}
 \end{gather}
 Wówczas stan stacjonarny $x_s=0$ jest stabilny i dodatkowo jest asymptotycznie stabilny ponieważ rozwiązanie to dąży do $x_s =0$  gdy  $t\to \infty$ .
 
 Jeżeli
 \phantomsection\label{ch1/chI023:equation-eqn9}\begin{gather}
-\begin{split}\lambda >0  \quad \quad \mbox{ to} \quad \quad x(t) \to \infty  \quad \quad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0\end{split}\label{ch1/chI023-eqn9}
+\begin{split}\lambda >0  \qquad \mbox{ to} \qquad x(t) \to \infty  \qquad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0\end{split}\label{ch1/chI023-eqn9}
 \end{gather}
 Wówczas stan stacjonarny $x_s=0$ jest niestabilny.
 
@@ -1520,7 +1335,7 @@ Wówczas stan stacjonarny $x_s=0$ jest niestabilny.
 \centering
 \capstart
 
-\includegraphics{sage_chI023_01.png}
+\includegraphics{sage_chI023_01.pdf}
 \caption{Stabilość punktów stacjonarnych}\end{figure}
 
 Na rysunku przedstawiono zagadnienie stabilności:  czerwone krzywe dążą do 0 gdy $t\to \infty$. Niebieskie  krzywe rozbiegają się (uciekają od   0) gdy $t\to \infty$.
@@ -1532,15 +1347,15 @@ Warunki początkowe $x(0)=\pm 0.05$ są blisko stanu stacjonarnego $x_s=0$. Przy
 \label{ch1/chI023:metoda-linearyzacji-badania-stabilnosci}
 Rozpatrujemy układ 1-wymiarowy:
 \phantomsection\label{ch1/chI023:equation-eqn10}\begin{gather}
-\begin{split}\frac{dx}{dt} = \dot x = f(x), \quad \quad f(x_s) = 0\end{split}\label{ch1/chI023-eqn10}
+\begin{split}\frac{dx}{dt} = \dot x = f(x), \qquad f(x_s) = 0\end{split}\label{ch1/chI023-eqn10}
 \end{gather}
 Aby zbadać stabilność stanu  $x_s$, analizujemy zaburzenie
 \phantomsection\label{ch1/chI023:equation-eqn11}\begin{gather}
-\begin{split}h(t) = x(t) - x_s,  \quad \quad  |h(0)| = |x(0) - x_s| < \delta\end{split}\label{ch1/chI023-eqn11}
+\begin{split}h(t) = x(t) - x_s,  \qquad  |h(0)| = |x(0) - x_s| < \delta\end{split}\label{ch1/chI023-eqn11}
 \end{gather}
 Funkcja $h(t)$ powinna być mała, gdy stan $x_s$ jest stabilny. Jak daleko jest rozwiązanie $x(t)$ od rozwiązania $x_s$. Zobaczmy, jakie równanie różniczkowe spełnia $h(t)$:
 \phantomsection\label{ch1/chI023:equation-eqn12}\begin{gather}
-\begin{split}\frac{dh}{dt} = \frac{d}{dt} [x(t) - x_s] = \frac{dx}{dt} = f(x) = f( x_s +h)  = f(x_s) + f'(x_s) h + \frac{1}{2} f''(x_s) h^2 + \frac{1}{3!} f'''(x_s) h^3+ ....\end{split}\label{ch1/chI023-eqn12}
+\begin{split}\frac{dh}{dt} = \frac{d}{dt} [x(t) - x_s]\end{split}\label{ch1/chI023-eqn12}\\\begin{split}= \frac{dx}{dt} = f(x) = f( x_s +h)  = f(x_s) + f'(x_s) h + \frac{1}{2} f''(x_s) h^2 + \frac{1}{3!} f'''(x_s) h^3+ \dots\end{split}\notag
 \end{gather}
 Ponieważ $f(x_s)=0$, otrzymujemy równanie różniczkowe dla odchylenia $h(t)$ od stanu stacjonarnego
 \phantomsection\label{ch1/chI023:equation-eqn13}\begin{gather}
@@ -1552,13 +1367,13 @@ Jeżeli np. $h =10^{-2}$ to  $h^2 = 10^{-4},  h^3 = 10^{-6}$. Wówczas
 $h^2,  h^3$ i wyższe potęgi $h$  można pominąć jako bardzo małe.
 Otrzymujemy równanie różniczkowe liniowe
 \phantomsection\label{ch1/chI023:equation-eqn14}\begin{gather}
-\begin{split}\frac{dh}{dt} =\lambda h, \quad \quad \lambda = f'(x_s)\end{split}\label{ch1/chI023-eqn14}
+\begin{split}\frac{dh}{dt} =\lambda h, \qquad \lambda = f'(x_s)\end{split}\label{ch1/chI023-eqn14}
 \end{gather}
 z rozwiązaniem
 \phantomsection\label{ch1/chI023:equation-eqn15}\begin{gather}
 \begin{split}h(t) = h(0)  e^{\lambda t}\end{split}\label{ch1/chI023-eqn15}
 \end{gather}
-Wiemy już z powyższego przykładu, że gdy $\lambda < 0$ to $h(t) \to 0$ gdy $t\to \infty$. To oznacza, że  zaburzenie $x(t) \to x_s$ gdy  $t \to \infty$  i wówczas stan stacjonarny $x_s$ jest stabilny.  Jeżeli  $\lambda > 0$ to $|h(t)| \to \infty$ gdy $t\to \infty$. To oznacza, że  zaburzenie x(t) ucieka od $x_s$ gdy  $t \to \infty$  i wówczas stan stacjonarny $x_s$ jest niestabilny. Otrzymujemy następujące kryterium na stabilność stanu stacjonarnego:
+Wiemy już z powyższego przykładu, że gdy $\lambda < 0$ to $h(t) \to 0$ gdy $t\to \infty$. To oznacza, że  zaburzenie $x(t) \to x_s$ gdy  $t \to \infty$  i wówczas stan stacjonarny $x_s$ jest stabilny.  Jeżeli  $\lambda > 0$ to $|h(t)| \to \infty$ gdy $t\to \infty$. To oznacza, że  zaburzenie $x(t)$ ucieka od $x_s$ gdy  $t \to \infty$  i wówczas stan stacjonarny $x_s$ jest niestabilny. Otrzymujemy następujące kryterium na stabilność stanu stacjonarnego:
 \begin{itemize}
 \item {} 
 Jeżeli $\lambda = f'(x_s) < 0$ to  stan stacjonarny jest stabilny,
@@ -1569,11 +1384,11 @@ jeżeli $\lambda = f'(x_s) > 0$ to  stan stacjonarny jest niestabilny,
 \item {} 
 jeżeli $\lambda = f'(x_s) = 0$ to  nie wiem nic na temat stabilności. Musimy badać następne niezerowe wyrazy.  Jeżeli $f''(x_s) \ne 0$ zatrzymujemy pierwszy nieznikający wyraz czyli  badamy równanie
 \phantomsection\label{ch1/chI023:equation-eqn16}\begin{gather}
-\begin{split}\frac{dh}{dt} =\gamma h^2, \quad \quad \gamma  =  \frac{1}{2}f''(x_s)\end{split}\label{ch1/chI023-eqn16}
+\begin{split}\frac{dh}{dt} =\gamma h^2, \qquad \gamma  =  \frac{1}{2}f''(x_s)\end{split}\label{ch1/chI023-eqn16}
 \end{gather}
 Jeżeli  $f'(x_s) =0$ oraz $f''(x_s) =0$ to  bierzemy następny nieznikający wyraz i badamy równanie
 \phantomsection\label{ch1/chI023:equation-eqn17}\begin{gather}
-\begin{split} \frac{dh}{dt} =\nu h^3, \quad \quad \nu  =    \frac{1}{3!} f'''(x_s)\end{split}\label{ch1/chI023-eqn17}
+\begin{split} \frac{dh}{dt} =\nu h^3, \qquad \nu  =    \frac{1}{3!} f'''(x_s)\end{split}\label{ch1/chI023-eqn17}
 \end{gather}
 Jeżeli w tych przypadkach $h(t) \to 0$ gdy $t\to \infty$, to  stan stacjonarny $x_s$ jest stabilny. W przeciwnym przypadku  - nie jest stabilny.
 
@@ -1584,7 +1399,7 @@ Jeżeli w tych przypadkach $h(t) \to 0$ gdy $t\to \infty$, to  stan stacjonarny 
 \label{ch1/chI023:metoda-potencjalu-badania-stabilnosci}
 W jednym wymiarze, równanie różniczkowe  zawsze można przedstawić w postaci
 \phantomsection\label{ch1/chI023:equation-eqn18}\begin{gather}
-\begin{split}\frac{dx}{dt} = \dot x = f(x) = -\frac{dV(x)}{dx} = -V'(x), \quad \quad f(x_s) = 0\end{split}\label{ch1/chI023-eqn18}
+\begin{split}\frac{dx}{dt} = \dot x = f(x) = -\frac{dV(x)}{dx} = -V'(x), \qquad f(x_s) = 0\end{split}\label{ch1/chI023-eqn18}
 \end{gather}
 gdzie funkcja
 \phantomsection\label{ch1/chI023:equation-eqn19}\begin{gather}
@@ -1602,7 +1417,7 @@ które po przeskalowaniu ma postać:
 \phantomsection\label{ch1/chI023:equation-eqn22}\begin{gather}
 \begin{split}\dot x = -\frac{1}{\gamma} V'(x) = - {\tilde V} '(x)\end{split}\label{ch1/chI023-eqn22}
 \end{gather}
-Stąd też ``historycznie'' wywodzi sią nazwa potencjał dla abstrakcyjnego układu dynamicznego:
+Stąd też ``historycznie'' wywodzi się nazwa potencjał dla abstrakcyjnego układu dynamicznego:
 \phantomsection\label{ch1/chI023:equation-eqn23}\begin{gather}
 \begin{split} \dot x = f(x) =  = -V'(x)\end{split}\label{ch1/chI023-eqn23}
 \end{gather}
@@ -1614,7 +1429,7 @@ to punkt ekstremalny potencjału (o ile  pochodna parzystego rzędu $V^{(2k)}(x_
 \phantomsection\label{ch1/chI023:equation-eqn25}\begin{gather}
 \begin{split}\lambda = f'(x_s) = - V''(x_s) < 0\end{split}\label{ch1/chI023-eqn25}
 \end{gather}
-czyli $V''(x_s) > 0$. To odpowiada minimum potencjału. Natomiast punkt $x_s$  niestabily odpowiada maksimum potencjału. Mamy więc klarowny obraz: Rysujemy potencjał $V(x)$. Minima potencjału to stabilne stany stacjonarne; maksima potencjału to niestabilne stany stacjonarne.
+czyli $V''(x_s) > 0$. To odpowiada minimum potencjału. Natomiast punkt $x_s$  niestabilny odpowiada maksimum potencjału. Mamy więc klarowny obraz: Rysujemy potencjał $V(x)$. Minima potencjału to stabilne stany stacjonarne; maksima potencjału to niestabilne stany stacjonarne.
 \setbox0\vbox{
 \begin{minipage}{0.95\linewidth}
 \textbf{Zadania}
@@ -1671,7 +1486,7 @@ uciekają od tego stanu).
 \centering
 \capstart
 
-\includegraphics{sage_chI023_02.png}
+\includegraphics{sage_chI023_02.pdf}
 \caption{Stabilość punktów stacjonarnych}\end{figure}
 
 Z powyższego przykładu zauważmy następujące cechy:
@@ -1715,9 +1530,9 @@ Gdyby istniał potencjał $V(x, y)$, powyżej przedstawione wnioski otrzymane z 
 \end{gather}
 Charakteryzują one odchylenie od stanu stacjonarnego, które są małe gdy stan stacjonarny jest stabilny. Zobaczymy, jakie równania różniczkowe spełniają te funkcje:
 \phantomsection\label{ch1/chI023:equation-eqn29}\begin{gather}
-\begin{split}\dot X(t) = \dot x(t) - \dot x_s  = \dot x(t) =  f(x(t), y(t)) = f(x_s +X(t), y_s + Y(t))  = f(x_s, y_s) + \frac{\partial f}{\partial x}  X + \frac{\partial f}{\partial y} Y+ ...\end{split}\label{ch1/chI023-eqn29}
+\begin{split}\dot X(t) = \dot x(t) - \dot x_s  = \dot x(t) =\end{split}\label{ch1/chI023-eqn29}\\\begin{split}= f(x(t), y(t)) = f(x_s +X(t), y_s + Y(t))  = f(x_s, y_s) + \frac{\partial f}{\partial x}  X + \frac{\partial f}{\partial y} Y+ ...\end{split}\notag
 \end{gather}\phantomsection\label{ch1/chI023:equation-eqn30}\begin{gather}
-\begin{split} \dot Y(t)= \dot y(t) - \dot y_s  = \dot y(t) =  g(x(t), y(t)) =g(x_s +X(t), y_s + Y(t))  = gf(x_s, y_s) + \frac{\partial g}{\partial x}  X + \frac{\partial g}{\partial y} Y + ...\end{split}\label{ch1/chI023-eqn30}
+\begin{split} \dot Y(t)= \dot y(t) - \dot y_s  = \dot y(t) =\end{split}\label{ch1/chI023-eqn30}\\\begin{split} =  g(x(t), y(t)) =g(x_s +X(t), y_s + Y(t))  = gf(x_s, y_s) + \frac{\partial g}{\partial x}  X + \frac{\partial g}{\partial y} Y + ...\end{split}\notag
 \end{gather}
 Wszystkie pochodne cząstkowe są obliczane w punkcie $(x_s, y_s)$. Ponieważ w punkcie stacjonarnym $f(x_s, y_s)=g(x_s, y_s)=0$ otrzymujemy zlinearyzowane równania różniczkowe w postaci
 \phantomsection\label{ch1/chI023:equation-eqn31}\begin{gather}
@@ -1727,17 +1542,17 @@ Wszystkie pochodne cząstkowe są obliczane w punkcie $(x_s, y_s)$. Ponieważ w 
 \end{gather}
 gdzie macierz współczynników
 \phantomsection\label{ch1/chI023:equation-eqn33}\begin{gather}
-\begin{split} \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}a_{11} &  a_{12} \\ a_{21}& a_{22}  \end{bmatrix}   \quad \quad \mbox{obliczona w punkcie} \quad (x_s, y_s)\end{split}\label{ch1/chI023-eqn33}
+\begin{split} \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}a_{11} &  a_{12} \\ a_{21}& a_{22}  \end{bmatrix}   \qquad \mbox{obliczona w punkcie} \quad (x_s, y_s)\end{split}\label{ch1/chI023-eqn33}
 \end{gather}
 jest macierzą Jacobiego. Ponieważ otrzymaliśmy liniowy układ równań różniczkowych,  jego rozwiązania poszukujemy w postaci funkcji
 \phantomsection\label{ch1/chI023:equation-eqn34}\begin{gather}
-\begin{split}X(t) = A e^{\lambda t}, \quad \quad  Y(t) = B e^{\lambda t}\end{split}\label{ch1/chI023-eqn34}
+\begin{split}X(t) = A e^{\lambda t}, \qquad  Y(t) = B e^{\lambda t}\end{split}\label{ch1/chI023-eqn34}
 \end{gather}
 gdzie stałe $A$ oraz $B$ są określone przez warunki początkowe $(X(0), Y(0))$.
 
 Zauważamy, że
 \phantomsection\label{ch1/chI023:equation-eqn35}\begin{gather}
-\begin{split} \dot X = \lambda X, \quad \quad \dot Y = \lambda  Y\end{split}\label{ch1/chI023-eqn35}
+\begin{split} \dot X = \lambda X, \qquad \dot Y = \lambda  Y\end{split}\label{ch1/chI023-eqn35}
 \end{gather}
 Wstawiamy te relacje do  układu równań zlinearyzowanych:
 \phantomsection\label{ch1/chI023:equation-eqn36}\begin{gather}
@@ -1753,25 +1568,25 @@ Jest to zagadnienie własne dla macierzy Jacobiego, gdzie $\lambda$ to są warto
 \end{gather}
 Taki układ ma niezerowe rozwiązanie dla $A$ oraz $B$ gdy wyznacznik
 \phantomsection\label{ch1/chI023:equation-eqn40}\begin{gather}
-\begin{split}\det (J-\lambda I) = \left| \begin{array}{cc} a_{11} -\lambda &  a_{12} \\ a_{21}& a_{22} - \lambda  \end{array} \right| = (a_{11} -\lambda) ( a_{22} -\lambda) -a_{12} a_{21} = \lambda^2  - (a_{11} +a_{22} ) \lambda +a_{11} a_{22} -a_{12} a_{21} = 0\end{split}\label{ch1/chI023-eqn40}
+\begin{split}\det (J-\lambda I) = \left| \begin{array}{cc} a_{11} -\lambda &  a_{12} \\ a_{21}& a_{22} - \lambda  \end{array} \right| = (a_{11} -\lambda) ( a_{22} -\lambda) -a_{12} a_{21} =\end{split}\label{ch1/chI023-eqn40}\\\begin{split}= \lambda^2  - (a_{11} +a_{22} ) \lambda +a_{11} a_{22} -a_{12} a_{21} = 0\end{split}\notag
 \end{gather}
 Macierz $I$ jest macierzą jednostkową, tzn. diagonalną $2\times 2$ i wszystkie elementy diagonalne to 1. Z powyższej relacji  otrzymujemy równanie kwadratowe dla nieznanych wartości  własnych $\lambda = \lambda_1$  oraz $\lambda = \lambda_2$.
 
 Rozwiązanie zlinearyzowanego układu jest w postaci kombinacji liniowej :
 \phantomsection\label{ch1/chI023:equation-eqn41}\begin{gather}
-\begin{split}X(t) = A_1  e^{\lambda_1 t} + A_2 e^{\lambda_2 t}, \quad \quad  Y(t) = B_1 e^{\lambda_1 t} +  B_2 e^{\lambda_2 t}\end{split}\label{ch1/chI023-eqn41}
+\begin{split}X(t) = A_1  e^{\lambda_1 t} + A_2 e^{\lambda_2 t}, \qquad  Y(t) = B_1 e^{\lambda_1 t} +  B_2 e^{\lambda_2 t}\end{split}\label{ch1/chI023-eqn41}
 \end{gather}
 Pytanie o stabilność stanu stacjonarnego $(x_s, y_s)$ jest równoważne pytaniu: kiedy
 \phantomsection\label{ch1/chI023:equation-eqn42}\begin{gather}
-\begin{split}\lim_{t\to \infty} X(t) = 0  \quad \quad \lim_{t\to \infty} Y(t) = 0\end{split}\label{ch1/chI023-eqn42}
+\begin{split}\lim_{t\to \infty} X(t) = 0  \qquad \lim_{t\to \infty} Y(t) = 0\end{split}\label{ch1/chI023-eqn42}
 \end{gather}
-Funkcje exponencjalne dążą do zera jeżeli część rzeczywista  wartości własnych macierzy Jacobiego $\lambda_i$ są  ujemne:
+Funkcje eksponencjalne dążą do zera jeżeli część rzeczywista  wartości własnych macierzy Jacobiego $\lambda_i$ są  ujemne:
 \phantomsection\label{ch1/chI023:equation-eqn43}\begin{gather}
-\begin{split} Re(\lambda_1) < 0, \quad \quad Re(\lambda_2) < 0\end{split}\label{ch1/chI023-eqn43}
+\begin{split} Re(\lambda_1) < 0, \qquad Re(\lambda_2) < 0\end{split}\label{ch1/chI023-eqn43}
 \end{gather}
 Wówczas stan stacjonarny jest asymptotycznie stabilny. Jeżeli
 \phantomsection\label{ch1/chI023:equation-eqn44}\begin{gather}
-\begin{split} Re(\lambda_1) > 0, \quad \quad \mbox{i/lub} \quad \quad Re(\lambda_2) >  0\end{split}\label{ch1/chI023-eqn44}
+\begin{split} Re(\lambda_1) > 0, \qquad \mbox{i/lub} \qquad Re(\lambda_2) >  0\end{split}\label{ch1/chI023-eqn44}
 \end{gather}
 to stan stacjonarny jest niestabilny. Jeżeli
 \phantomsection\label{ch1/chI023:equation-eqn45}\begin{gather}
@@ -1785,9 +1600,9 @@ Zamiast wyznaczyć wartości własne $(\lambda_{1}, \lambda_{2})$ tej macierzy, 
 \end{gather}
 to oznacza że
 \phantomsection\label{ch1/chI023:equation-eqn46a}\begin{gather}
-\begin{split}\mbox{Tr} \, J < 0, \quad \quad \det \,J > 0\end{split}\label{ch1/chI023-eqn46a}
+\begin{split}\mbox{Tr} \, J < 0, \qquad \det \,J > 0\end{split}\label{ch1/chI023-eqn46a}
 \end{gather}
-gdzie Tr oznacza ślad macierzy, czyli sumę elementów diagonalnych macierzy oraz $\det$ jest wyznacznikiem macierzy.
+gdzie \code{Tr} oznacza ślad macierzy, czyli sumę elementów diagonalnych macierzy oraz $\det$ jest wyznacznikiem macierzy.
 
 
 \subsubsection{Przykład 1}
@@ -1806,13 +1621,13 @@ Z drugiego równania $x=y^2$ wstawiamy do pierwszego równania: $1-y^3=0$ czyli 
 \end{gather}
 Obliczmy elementy macierzy Jacobiego
 \phantomsection\label{ch1/chI023:equation-eqn50}\begin{gather}
-\begin{split} \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}-y & -x \\ 1& -2y  \end{bmatrix}    =  \begin{bmatrix}-1 & -1 \\ 1& -2  \end{bmatrix}\quad \quad \mbox{w punkcie} \quad (x=1, y=1)\end{split}\label{ch1/chI023-eqn50}
+\begin{split} \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}-y & -x \\ 1& -2y  \end{bmatrix}    =  \begin{bmatrix}-1 & -1 \\ 1& -2  \end{bmatrix}\qquad \mbox{w punkcie} \quad (x=1, y=1)\end{split}\label{ch1/chI023-eqn50}
 \end{gather}
 Ślad macierz $J$, czyli suma elementów diagonalnych $\mbox{Tr} J = -3 < 0$ oraz wyznacznik $\det(J) = 3 > 0$. Spełnione są relacje dla stany stacjonarnego który jest asymptotycznie stabilny. Wniosek: stan stacjonarny $(x_s, y_s) = (1, 1)$ jest asymptotycznie stabilny.
 
 Można sprawdzić to, wyliczając explicite wartości własne macierzy Jacobiego:
 \phantomsection\label{ch1/chI023:equation-eqn51}\begin{gather}
-\begin{split}\lambda_1 = \frac{1}{2} (-3+i \sqrt 3), \quad \quad \lambda_1 = \frac{1}{2} (-3-i \sqrt 3)\end{split}\label{ch1/chI023-eqn51}
+\begin{split}\lambda_1 = \frac{1}{2} (-3+i \sqrt 3), \qquad \lambda_1 = \frac{1}{2} (-3-i \sqrt 3)\end{split}\label{ch1/chI023-eqn51}
 \end{gather}
 Ich części rzeczywiste są ujemne:  $\Re(\lambda_1) = -3/2,  \Re(\lambda_2) = -3/2$.
 
@@ -1839,11 +1654,11 @@ Macierz $I$ jest macierzą jednostkową, tzn. diagonalną $3\times 3$ i wszystki
 
 Jeżeli części  rzeczywiste  wszystkich wartości własnych macierzy Jacobiego $\lambda_i$ są  ujemne:
 \phantomsection\label{ch1/chI023:equation-eqn56}\begin{gather}
-\begin{split} \Re(\lambda_1) < 0, \quad \quad \Re(\lambda_2) < 0, \quad \quad \Re(\lambda_3) < 0\end{split}\label{ch1/chI023-eqn56}
+\begin{split} \Re(\lambda_1) < 0, \qquad \Re(\lambda_2) < 0, \qquad \Re(\lambda_3) < 0\end{split}\label{ch1/chI023-eqn56}
 \end{gather}
 to  stan stacjonarny jest asymptotycznie stabilny. Jeżeli  chociaż jedna z wartości własnych $\lambda_i$ ma część rzeczywistą dodatnią
 \phantomsection\label{ch1/chI023:equation-eqn57}\begin{gather}
-\begin{split} \Re(\lambda_1) > 0, \quad \quad \mbox{i/lub} \quad \quad \Re(\lambda_2) >  0, \quad \quad \mbox{i/lub} \quad \quad \Re(\lambda_3) >  0\end{split}\label{ch1/chI023-eqn57}
+\begin{split} \Re(\lambda_1) > 0, \qquad \mbox{i/lub} \qquad \Re(\lambda_2) >  0, \qquad \mbox{i/lub} \qquad \Re(\lambda_3) >  0\end{split}\label{ch1/chI023-eqn57}
 \end{gather}
 to stan stacjonarny jest niestabilny.
 
@@ -1950,7 +1765,7 @@ Atraktor $A$ to taki zbiór w przestrzeni fazowej układu dynamicznego, że wiel
 Podamy teraz bardziej formalną definicję.
 \begin{description}
 \item[{Atraktor}] \leavevmode
-Atraktorem nazywamy ograniczony zbiór w przestrzeni fazowej, do którego dążą asymptotycznie w czasie (tzn. gdy $t \to \infty$) obszary warunków początkowych o niezerowej objętości  w przestrzeni fazowej. Atraktor to inaczej zbiór przyciągający: przyciąga on trajektorie o różnych warunkach początkowych.  Ale nie musi on przyciągać wszystkich trajektorii. Dla danego układu dynamicznego może istnieć wiele atraktorów, nawet nieskończenie wiele. Atroktory mogą mieć  nieskomplikowaną strukturę: to może być  punkt, kilka piunktów, krzywa taka jak okrąg czy zdeformowana elipsa, część płaszczyzny, torus (podobny do dętki),  część przestrzeni. Atraktory mogą też  mieć skomplikowaną strukturę: może to być zbiór fraktalny, tzn. zbiór o niecałkowitym wymiarze, np. 0.63, 2.06. Taki atraktor nazywa się \emph{dziwnym atraktorem}.
+Atraktorem nazywamy ograniczony zbiór w przestrzeni fazowej, do którego dążą asymptotycznie w czasie (tzn. gdy $t \to \infty$) obszary warunków początkowych o niezerowej objętości  w przestrzeni fazowej. Atraktor to inaczej zbiór przyciągający: przyciąga on trajektorie o różnych warunkach początkowych.  Ale nie musi on przyciągać wszystkich trajektorii. Dla danego układu dynamicznego może istnieć wiele atraktorów, nawet nieskończenie wiele. Atraktory mogą mieć  nieskomplikowaną strukturę: to może być  punkt, kilka punktów, krzywa taka jak okrąg czy zdeformowana elipsa, część płaszczyzny, torus (podobny do dętki),  część przestrzeni. Atraktory mogą też  mieć skomplikowaną strukturę: może to być zbiór fraktalny, tzn. zbiór o niecałkowitym wymiarze, np. 0.63, 2.06. Taki atraktor nazywa się \emph{dziwnym atraktorem}.
 
 \end{description}
 
@@ -1965,100 +1780,134 @@ gdzie $x(t; x_0)$ jest trajektorią startującą z warunku początkowego $x_0$, 
 \label{ch1/chI024:przyklad-1-oscylator-harmoniczny-tlumiony}
 Jest tylko jeden atraktor: to punkt (0, 0). Basenem przyciągania jest cała płaszczyzna fazowa.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x,y}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{50}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{de} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{y}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{n}{x} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.2}\PYG{o}{*}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{sol1} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{sol2} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.85}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{sol3} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.7}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{p} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{sol1}\PYG{p}{)} \PYG{o}{+}\PYGZbs{}
+    \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{sol2}\PYG{p}{)} \PYG{o}{+}\PYGZbs{}
+    \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{sol3}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('x,y')
-T = srange(0,50,0.01)
-sol1=desolve_odeint(vector([y,-x -0.2*y]), [0,1], T, [x,y])##warunek początkowy x=2, y=4
-sol2=desolve_odeint(vector([y,-x -0.2*y]), [0,0.85], T, [x,y])##warunek początkowy x=-1, y=0.5
-sol3=desolve_odeint(vector([y,-x -0.2*y]), [0,0.7], T, [x,y])##warunek początkowy x=0, y=0.9
-p1=plot(x^2, -2, 2,figsize=(6,3), )
-g1=list_plot(sol1.tolist(), plotjoined=1, figsize=(6,3),axes_labels=[r'$x$',r'$y$'])
-g1 +=list_plot(sol2.tolist(), plotjoined=1, figsize=(6,3),color="red", axes_labels=[r'$x$',r'$y$'])
-g1 +=list_plot(sol3.tolist(), plotjoined=1, figsize=(6,3),color="green", axes_labels=[r'$x$',r'$y$'])
-html.table([["potencjał kwadratowy","oscylator tłumiony"],[p1,g1]])
-html("<p align='center'>wszystkie rozwiązania dążą do punktu (0,0) </p>")
-\end{verbatim}
-
+\includegraphics{sage_chI024_01.pdf}
+\caption{Trajektorie zbiegają się do jednego basenu przyciągania
+$(x,y) = (0,0)$.}\end{figure}
 
 
 \subsection{Przykład 2: oscylator nieliniowy (bistabilny)  tłumiony}
 \label{ch1/chI024:przyklad-2-oscylator-nieliniowy-bistabilny-tlumiony}
-Są dwa  atraktory:  punkt $(-x_s, 0)$ oraz symetryczny punkt $(x_s, 0)$, gdzie $x_s$ jest stanem stacjonarnym. Płaszczyzna fazowa dzieli się na 2 baseny przyciągania, które są ``pasiastymi'' naprzemiennymi zbiorami.Przejrzysta wizualizacja jest opracowana na naszej stronie internetowej:
+Są dwa  atraktory:  punkt $(-x_s, 0)$ oraz symetryczny punkt $(x_s, 0)$,
+gdzie $x_s$ jest stanem stacjonarnym. Płaszczyzna fazowa dzieli się na 2
+baseny przyciągania, które są ``pasiastymi'' naprzemiennymi zbiorami. Przejrzysta
+wizualizacja jest opracowana na
+\href{http://visual.icse.us.edu.pl/wizualizacje/mechanika-teoretyczna/zobacz/BasenyPrzyciagania/}{naszej stronie internetowej}.
 
-\href{http://visual.icse.us.edu.pl/wizualizacje/mechanika-teoretyczna/zobacz/BasenyPrzyciagania/}{http://visual.icse.us.edu.pl/wizualizacje/mechanika-teoretyczna/zobacz/BasenyPrzyciagania/}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x,y}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{30}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{de} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{y}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.2}\PYG{o}{*}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{3} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.2}\PYG{o}{*}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{so1}\PYG{o}{=}\PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{so2}\PYG{o}{=}\PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{so3}\PYG{o}{=}\PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{so4}\PYG{o}{=}\PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de} \PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{g} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{so1}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+}\PYGZbs{}
+    \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{so2}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+}\PYGZbs{}
+    \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{so3}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{+}\PYGZbs{}
+    \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{so4}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
+\includegraphics{sage_chI024_02.pdf}
+\caption{Trajektorie zbiegają się do dwóch basenów przyciągania
+usytuowanych w dwóch minimach potencjału bistabilnego
+$(-x_s, 0)$ oraz $(x_s, 0)$.}\end{figure}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-var('x,y')
-T1 = srange(0,30,0.01)
-so1=desolve_odeint(vector([y,2*x-1.2*x^3 -0.2*y]), [0,1], T1, [x,y])##warunek początkowy x=2, y=4
-so2=desolve_odeint(vector([y,2*x-1.2*x^3 -0.2*y]), [0,2], T1, [x,y])##warunek początkowy x=-1, y=0.5
-so3=desolve_odeint(vector([y,2*x-1.2*x^3-0.2*y]), [0,3], T1, [x,y])##warunek początkowy x=0, y=0.9
-so4=desolve_odeint(vector([y,2*x-1.2*x^3-0.2*y]), [0,4], T1, [x,y])##warunek początkowy x=0, y=0.9
-p11=plot(0.3*x^4 - x^2, -2, 2,figsize=(6,3), )
-g11=list_plot(so1.tolist(), plotjoined=1, figsize=(6,3),axes_labels=[r'$x$',r'$y$'])
-g11 +=list_plot(so2.tolist(), plotjoined=1, figsize=(6,3),color="red", axes_labels=[r'$x$',r'$y$'])
-g11 +=list_plot(so3.tolist(), plotjoined=1, figsize=(6,3),color="green", axes_labels=[r'$x$',r'$y$'])
-g11 +=list_plot(so4.tolist(), plotjoined=1, figsize=(6,3),color="black", axes_labels=[r'$x$',r'$y$'])
-html.table([["potencjał bistabilny","oscylator nieliniowy tłumiony"],[p11,g11]])
-html("<p align='center'> rozwiązania dążą albo do punktu $(-x_s,0)$ albo to punktu $(x_s,0)$ </p>")
-\end{verbatim}
+\includegraphics{baseny_bistabilny.jpg}
+\caption{Dwa obszary przyciągania dla układu bistabilnego}\end{figure}
 
+Jeżeli warunek początkowy leży w obszarze o kolorze niebieskim, trajektorie dążą do prawego
+minimum potencjału; dokładniej do stanu stacjonarnego $(x_s,0)$ który jest atraktorem.
+Jeżeli warunek początkowy leży w obszarze o kolorze czerwonym, trajektorie dążą do lewego
+minimum potencjału; dokładniej do stanu stacjonarnego $(-x_s,0)$ który jest atraktorem.
 
 
 \subsection{Przykład 3: Cykl graniczny}
 \label{ch1/chI024:przyklad-3-cykl-graniczny}
-Atraktorem jest krzywa zamknięta (okrąg, elipsa, inne dowolne krzywe zamknięte).  Poniżej przedstawiamy dwa przykłady zaczerpnięte z modeli biologicznych.
+Atraktorem jest krzywa zamknięta (okrąg, elipsa, inne dowolne krzywe zamknięte).
+Poniżej przedstawiamy dwa przykłady zaczerpnięte z modeli biologicznych.
 
+\textbf{Przykład 1}
 
-\begin{verbatim}
-var('x,y')
-T3 = srange(0,50,0.01)
-de1=y+x*(0.2-(x^2+y^2))
-de2=-x+y*(0.2-(x^2+y^2))
-s1=desolve_odeint(vector([de1, de2]), [0.5,0.5], T3, [x,y])##warunek początkowy x=2, y=4
-s2=desolve_odeint(vector([de1, de2]), [0.01, 0.01], T3, [x,y])##warunek początkowy x=2, y=4
-h1=list_plot(s1.tolist(), plotjoined=1, figsize=(6,3),color="red",axes_labels=[r'$x$',r'$y$'])
-h2=list_plot(s2.tolist(), plotjoined=1, figsize=(6,3),axes_labels=[r'$x$',r'$y$'])
-show(h1+h2)
-\end{verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x,y}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{50}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{de1} \PYG{o}{=}  \PYG{n}{y} \PYG{o}{+} \PYG{n}{x}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mf}{0.2} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{y}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{de2} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{x} \PYG{o}{+} \PYG{n}{y}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mf}{0.2} \PYG{o}{\PYGZhy{}} \PYG{p}{(}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{y}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{s1} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{de1}\PYG{p}{,}\PYG{n}{de2}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{l+m+mf}{0.5}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{s2} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{de1}\PYG{p}{,}\PYG{n}{de2}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mf}{0.01}\PYG{p}{,} \PYG{l+m+mf}{0.01}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{p1} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{s1}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{p2} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{s2}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
+\includegraphics{sage_chI024_03.pdf}
+\caption{Cykl graniczny.}\end{figure}
 
+\textbf{Przykład 2}
 
-\begin{verbatim}
-var('x,y')
-a, b, d = 1.3, 0.33, 0.1
-F(x,y)=x*(1-x) - a*x*y/(x+d)
-G(x,y)= b*y*(1-y/x)
-T = srange(0,80,0.01)
-sl1=desolve_odeint(vector([F,G]), [0.2,0.3], T, [x,y])
-sl2=desolve_odeint(vector([F,G]), [0.2,0.2], T, [x,y])
-j1=list_plot(sl1.tolist(), plotjoined=1, color="red", figsize=(6, 3))
-j2=list_plot(sl2.tolist(), plotjoined=1,  figsize=(6, 3))
-show(j1+j2)
-\end{verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x,y}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{a}\PYG{p}{,} \PYG{n}{b}\PYG{p}{,} \PYG{n}{d} \PYG{o}{=} \PYG{l+m+mf}{1.3}\PYG{p}{,} \PYG{l+m+mf}{0.33}\PYG{p}{,} \PYG{l+m+mf}{0.1}
+\PYG{n}{F}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{x}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{n}{y}\PYG{o}{/}\PYG{p}{(}\PYG{n}{x}\PYG{o}{+}\PYG{n}{d}\PYG{p}{)}
+\PYG{n}{G}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{)} \PYG{o}{=} \PYG{n}{b}\PYG{o}{*}\PYG{n}{y}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{n}{y}\PYG{o}{/}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{80}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{sl1} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{F}\PYG{p}{,}\PYG{n}{G}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mf}{0.2}\PYG{p}{,}\PYG{l+m+mf}{0.3}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{sl2} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{F}\PYG{p}{,}\PYG{n}{G}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mf}{0.2}\PYG{p}{,}\PYG{l+m+mf}{0.2}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{j1} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{sl1}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{j2} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{sl2}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-
-
-\begin{verbatim}
-var('x,y')
-a, b, d = 1.3, 0.33, 0.1
-F(x,y)=x*(1-x) - a*x*y/(x+d)
-G(x,y)= b*y*(1-y/x)
-T = srange(0,200,0.01)
-sl1=desolve_odeint(vector([F,G]), [0.2,0.3], T, [x,y])
-sl2=desolve_odeint(vector([F,G]), [0.2,0.2], T, [x,y])
-j1=list_plot(sl1.tolist(), plotjoined=1, color="red", figsize=(6, 3))
-j2=list_plot(sl2.tolist(), plotjoined=1,  figsize=(6, 3))
-show(j1+j2)
-\end{verbatim}
-
+\includegraphics{sage_chI024_04.pdf}
+\caption{Cykl graniczny.}\end{figure}
 
 
 \subsection{Przykład 4: Atraktor Lorenza}
 \label{ch1/chI024:przyklad-4-atraktor-lorenza}
 Jest to przykład tak zwanego dziwnego atraktora. Najprostsza jego definicja to taka, że posiada on strukturę fraktala. O układzie Lorenza generującym ten fraktal można poczytać w poprzednim rozdziale tego skryptu, traktującym o stanach stacjonarnych.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{rho}\PYG{p}{,} \PYG{n}{sigma}\PYG{p}{,} \PYG{n}{beta} \PYG{o}{=} \PYG{l+m+mi}{28}\PYG{p}{,} \PYG{l+m+mi}{10}\PYG{p}{,} \PYG{l+m+mi}{8}\PYG{o}{/}\PYG{l+m+mi}{3}
+\PYG{n}{F1} \PYG{o}{=} \PYG{n}{sigma}\PYG{o}{*}\PYG{p}{(}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{)}
+\PYG{n}{F2} \PYG{o}{=} \PYG{n}{x}\PYG{o}{*}\PYG{p}{(}\PYG{n}{rho}\PYG{o}{\PYGZhy{}}\PYG{n}{z}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{y}
+\PYG{n}{F3} \PYG{o}{=} \PYG{n}{x}\PYG{o}{*}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{beta}\PYG{o}{*}\PYG{n}{z}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{atraktor\PYGZus{}lorenza} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{F1}\PYG{p}{,}\PYG{n}{F2}\PYG{p}{,}\PYG{n}{F3}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{p2d} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{atraktor\PYGZus{}lorenza}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{atraktor\PYGZus{}lorenza}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{p3d} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{atraktor\PYGZus{}lorenza}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{viewer}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{tachyon}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chI024_05.pdf}
+\caption{Atraktor Lorenza.}\end{figure}
 
 
 \begin{verbatim}
@@ -2087,7 +1936,7 @@ We Wprowadzeniu pokazaliśmy w jaki sposób mogą pojawiać się zagadnienia mod
 \phantomsection\label{ch1/chI031:equation-eqn1}\begin{gather}
 \begin{split}x_{n+1} = f(x_n), \quad \quad x_0 = c\qquad\end{split}\label{ch1/chI031-eqn1}
 \end{gather}
-Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykladem jest algorytm Newtona pozwalający znajdować rekurencyjnie  pierwiastki równania
+Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykładem jest algorytm Newtona pozwalający rekurencyjnie znajdować pierwiastki równania
 \phantomsection\label{ch1/chI031:equation-eqn2}\begin{gather}
 \begin{split}F(x) = 0\end{split}\label{ch1/chI031-eqn2}
 \end{gather}
@@ -2147,7 +1996,7 @@ def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
 
 \subsection{Metoda pajęczyny}
 \label{ch1/chI031:metoda-pajeczyny}
-Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można oberwować kolejne kroki iteracji.
+Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można obserwować kolejne kroki iteracji.
 
 Sposób rysowania:
 \begin{description}
@@ -2214,7 +2063,7 @@ Przypomnijmy sobie, co oznacza istnienie stanu stacjonarnego dla układów model
 \phantomsection\label{ch1/chI031:equation-eqn6}\begin{gather}
 \begin{split} \frac{dx(t)}{dt} = F(x(t))\end{split}\label{ch1/chI031-eqn6}
 \end{gather}
-Stan stacjonarny to taki stan, który nie zmienia się w trancie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli $x(t) = x_s$ jest wielkością stałą, niezmienną. Skoro tak, to
+Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli $x(t) = x_s$ jest wielkością stałą, niezmienną. Skoro tak, to
 \phantomsection\label{ch1/chI031:equation-eqn7}\begin{gather}
 \begin{split} \frac{dx(t)}{dt}  = \frac{dx_s}{dt}  = 0\end{split}\label{ch1/chI031-eqn7}
 \end{gather}
@@ -2224,7 +2073,7 @@ Aby lewa strona równania różniczkowego była równa prawej stronie, musi zach
 \end{gather}
 To jest równanie (warunek), z którego wyznaczamy stan stacjonarny.
 
-Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucjii (dyskretnej), czyli z punktu $x_s$ otrzymujemy znowu $x_s$. Dla równania dyskretnego ta niezmienność oznacza, że
+Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji (dyskretnej), czyli z punktu $x_s$ otrzymujemy znowu $x_s$. Dla równania dyskretnego ta niezmienność oznacza, że
 \phantomsection\label{ch1/chI031:equation-eqn9}\begin{gather}
 \begin{split}\quad \mbox{jeżeli} \quad x_n = x_s \quad \mbox{to} \quad x_{n+1} = x_s\end{split}\label{ch1/chI031-eqn9}
 \end{gather}
@@ -2402,7 +2251,7 @@ Pamiętajmy, że jest to złożenie 2 funkcji (co prawda takich samych funkcji, 
 
 \textbf{To jest bardzo ważne równanie!}
 
-Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny bedzie opisany równaniem
+Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny będzie opisany równaniem
 \phantomsection\label{ch1/chI031:equation-eqn30}\begin{gather}
 \begin{split}x_{n+1} = 1- 2 x_n^2, \qquad f(x_n) = 1 - 2 x_n^2 \qquad \mbox{czyli} \qquad f(x) = 1 - 2 x^2\end{split}\label{ch1/chI031-eqn30}
 \end{gather}
@@ -2437,7 +2286,7 @@ Powyższy związek można przepisać  w postaci:
 \end{gather}
 gdzie $u^*=f(x^*)$
 
-Warto coś tu zauważyć  i uprościć. Ponieważ stan $x^*$ jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: $x^* = x^*_1$ (np. górny)  oraz $x^* = x^*_2$ (np. doly), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:
+Warto coś tu zauważyć  i uprościć. Ponieważ stan $x^*$ jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: $x^* = x^*_1$ (np. górny)  oraz $x^* = x^*_2$ (np. dolny), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:
 \phantomsection\label{ch1/chI031:equation-eqn37}\begin{gather}
 \begin{split}x_2^* = f(x_1^*), \qquad x_1^* = f(x_2^*)\end{split}\label{ch1/chI031-eqn37}
 \end{gather}

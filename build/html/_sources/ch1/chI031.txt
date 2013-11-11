@@ -9,7 +9,7 @@ We Wprowadzeniu pokazaliśmy w jaki sposób mogą pojawiać się zagadnienia mod
     x_{n+1} = f(x_n), \quad \quad x_0 = c\qquad 
 
 
-Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykladem jest algorytm Newtona pozwalający znajdować rekurencyjnie  pierwiastki równania
+Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykładem jest algorytm Newtona pozwalający rekurencyjnie znajdować pierwiastki równania
 
 .. MATH::
     :label: eqn2
@@ -86,7 +86,7 @@ z dowolnym parametrem :math:`b`. Zachęcamy do zabawy: zmieniajcie wartość par
 Metoda pajęczyny
 ----------------
 
-Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można oberwować kolejne kroki iteracji. 
+Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można obserwować kolejne kroki iteracji. 
 
 Sposób rysowania:
 
@@ -164,7 +164,7 @@ Przypomnijmy sobie, co oznacza istnienie stanu stacjonarnego dla układów model
      \frac{dx(t)}{dt} = F(x(t))
 
 
-Stan stacjonarny to taki stan, który nie zmienia się w trancie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli :math:`x(t) = x_s` jest wielkością stałą, niezmienną. Skoro tak, to 
+Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli :math:`x(t) = x_s` jest wielkością stałą, niezmienną. Skoro tak, to 
 
 .. MATH::
     :label: eqn7
@@ -182,7 +182,7 @@ Aby lewa strona równania różniczkowego była równa prawej stronie, musi zach
 
 To jest równanie (warunek), z którego wyznaczamy stan stacjonarny. 
 
-Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucjii (dyskretnej), czyli z punktu :math:`x_s` otrzymujemy znowu :math:`x_s`. Dla równania dyskretnego ta niezmienność oznacza, że 
+Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji (dyskretnej), czyli z punktu :math:`x_s` otrzymujemy znowu :math:`x_s`. Dla równania dyskretnego ta niezmienność oznacza, że 
 
 .. MATH::
     :label: eqn9
@@ -452,7 +452,7 @@ Pamiętajmy, że jest to złożenie 2 funkcji (co prawda takich samych funkcji, 
 
 **To jest bardzo ważne równanie!**
 
-Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny bedzie opisany równaniem 
+Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny będzie opisany równaniem 
 
 .. MATH::
     :label: eqn30
@@ -515,7 +515,7 @@ Powyższy związek można przepisać  w postaci:
 
 gdzie :math:`u^*=f(x^*)`
 
-Warto coś tu zauważyć  i uprościć. Ponieważ stan :math:`x^*` jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: :math:`x^* = x^*_1` (np. górny)  oraz :math:`x^* = x^*_2` (np. doly), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:
+Warto coś tu zauważyć  i uprościć. Ponieważ stan :math:`x^*` jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: :math:`x^* = x^*_1` (np. górny)  oraz :math:`x^* = x^*_2` (np. dolny), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:
 
 .. MATH::
     :label: eqn37

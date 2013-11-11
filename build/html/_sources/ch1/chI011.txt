@@ -23,10 +23,10 @@ W równaniu tym występują trzy wielkości:
 
 :math:`m`  to masa cząstki
 :math:`a` jest przyśpieszeniem cząstki
-:math:`F` jest siłą działającą na czastkę.
+:math:`F` jest siłą działającą na cząstkę.
 Ponieważ ruch zachodzi tylko wzdłuż osi OX (tak zakładamy dla prostoty), siła  :math:`F`  działa tylko w kierunku OX oraz przyśpieszenie :math:`a` jest wzdłuż osi OX.
 
-Wiemy z kursu fizyki, że przyśpieszenie cząstki jest pochodną ( względem czasu) pierwszego rzędu prędkości :math:`v` cząstki. Z kolei prędkość cząstki :math:`v` jest pochodną pierwszego rzędu położenia czastki :math:`x`. 
+Wiemy z kursu fizyki, że przyśpieszenie cząstki jest pochodną ( względem czasu) pierwszego rzędu prędkości :math:`v` cząstki. Z kolei prędkość cząstki :math:`v` jest pochodną pierwszego rzędu położenia cząstki :math:`x`. 
 
 .. MATH::
     :label: eqn2
@@ -157,16 +157,16 @@ Równoważność  pokazujemy  w następujący sposób:
 
 w równaniu  :eq:`eqn18`  należy zastąpić :math:`v`   z równania :eq:`eqn17` wyrażeniem   :math:`v=\dot x` pamiętając jednocześnie że :math:`\dot v = \ddot x`
 równanie :eq:`eqn19` można scałkować i otrzymamy :math:`z=\omega t`; wstawiamy to wyrażenie do równania :eq:`eqn18`.
-W ten sposób otrzymujemy znowu równanie :eq:`eqn15`. Tak więc jedno równanie różniczkowe nieutonomiczne 2-rzędu jest równoważne układowi 3 równań różniczkowych 1-rzędu. Odpowiadająca temu układowi przestrzeń fazowa jest 3-wymiarowa.  Z przykładu tego płynie ważna wskazówka, jak otrzymywać autonomiczny układ równań różniczkowych 1-rzędu. Liczba tych równań definiuje przestrzeń fazową układu. Wymiar tej przestrzeni jest jedną z najważniejszych charakterystyk. Proszę to zapamiętać!
+W ten sposób otrzymujemy znowu równanie :eq:`eqn15`. Tak więc jedno równanie różniczkowe nieautonomiczne 2-rzędu jest równoważne układowi 3 równań różniczkowych 1-rzędu. Odpowiadająca temu układowi przestrzeń fazowa jest 3-wymiarowa.  Z przykładu tego płynie ważna wskazówka, jak otrzymywać autonomiczny układ równań różniczkowych 1-rzędu. Liczba tych równań definiuje przestrzeń fazową układu. Wymiar tej przestrzeni jest jedną z najważniejszych charakterystyk. Proszę to zapamiętać!
 
-Fizyka stosuje też aparat równań różniczkowych cząstkowych. Studenci kierunku fizyka i pokrewnych kierunków znają przykłady takich równań. Równanie Schrodingera, równanie falowe, równanie dyfuzji, równania Maxwela to są równania różniczkowe cząstkowe. Ich analiza jest znacznie trudniejsza. Istnieją specjalne i specyficzne  metody matematyczne pozwalające otrzymać informację o własnościach układów opisywanych takimi równaniami.
+Fizyka stosuje też aparat równań różniczkowych cząstkowych. Studenci kierunku fizyka i pokrewnych kierunków znają przykłady takich równań. Równanie Schrödingera, równanie falowe, równanie dyfuzji, równania Maxwela to są równania różniczkowe cząstkowe. Ich analiza jest znacznie trudniejsza. Istnieją specjalne i specyficzne  metody matematyczne pozwalające otrzymać informację o własnościach układów opisywanych takimi równaniami.
 
 W wielu dziedzinach nauki (chemia, biologia, socjologia, nauki ekonomiczne) stosuje się fenomenologiczny sposób modelowania.  Aby uzmysłowić, jak go stosować podamy jeden przykład.
 
 Modelowanie procesu wzrostu
 """""""""""""""""""""""""""
 
-Procesy wzrostu pojawiają się na wielu obszarach. Nie trzeba być bystrym obserwatorem, aby zauważyć co wokół nas może wzrastać. My rozważamy jedną  z możliwych klas procesów wzrosu: wzrost populacji zajęcy czy  bakterii, wzrost depozytów pieniężnych na lokatach bankowych, wzrost stężenia substancji w reakcjach chemicznych  czy  wzrost liczby komórek nowotworowych. Często procesom wzrostu towarzyszą procesy malenia (zaniku, śmierci, ...). My je będziemy pomijać. Rozpatrzmy konkretny przykład: wzrost pieniędzy na lokacie bankowej. Załóżmy, żę w chwili czasu :math:`t` jest na lokacie :math:`x(t)` (np. złotych polskich). Pytamy, ile pieniędzy przyrośnie  po pewnym czasie :math:`h`, czyli ile pieniędzy będzie w chwili :math:`t+h`. Zaczynamy modelować ten proces. Oznaczmy, że w chwili :math:`t+h` jest :math:`x(t+h)` pieniędzy. Na tę kwotę składają się pieniądze :math:`x(t)` oraz przyrost :math:`\delta` z odsetek, czyli
+Procesy wzrostu pojawiają się na wielu obszarach. Nie trzeba być bystrym obserwatorem, aby zauważyć co wokół nas może wzrastać. My rozważamy jedną  z możliwych klas procesów wzrostu: wzrost populacji zajęcy czy  bakterii, wzrost depozytów pieniężnych na lokatach bankowych, wzrost stężenia substancji w reakcjach chemicznych  czy  wzrost liczby komórek nowotworowych. Często procesom wzrostu towarzyszą procesy malenia (zaniku, śmierci, ...). My je będziemy pomijać. Rozpatrzmy konkretny przykład: wzrost pieniędzy na lokacie bankowej. Załóżmy, że w chwili czasu :math:`t` jest na lokacie :math:`x(t)` (np. złotych polskich). Pytamy, ile pieniędzy przyrośnie  po pewnym czasie :math:`h`, czyli ile pieniędzy będzie w chwili :math:`t+h`. Zaczynamy modelować ten proces. Oznaczmy, że w chwili :math:`t+h` jest :math:`x(t+h)` pieniędzy. Na tę kwotę składają się pieniądze :math:`x(t)` oraz przyrost :math:`\delta` z odsetek, czyli
 
 .. MATH::
     :label: eqn20
@@ -212,19 +212,38 @@ gdzie :math:`x_0` jest wartością początkową naszej lokaty. W ten oto sposób
 
 Poniżej pokazujemy  rozwiązania tego równania dla 3 różnych wartości :math:`k`. 
 
-.. sagecellserver::
-    :is_verbatim: True
+.. only:: latex
 
-    sage: var('N1,N2,N3')
-    sage: T = srange(0,3,0.01)
-    sage: ## rozwiązania dla różnych wartości k=0, 0.1, 0.2
-    sage: sol=desolve_odeint( vector([0, 0.1*N2,  0.2*N3]), [5,5,5],T,[N1,N2,N3])
-    sage: ## wykresy rozwiązań dla różnych wartości k=-1, 0, 0.5
-    sage: line(zip(T,sol[:,0]), figsize=(5, 3), legend_label="k=0") +\
-    sage:  line(zip(T,sol[:,1]), color='red', legend_label="k=0.1")+\
-    sage:  line(zip(T,sol[:,2]), color='green', legend_label="k=0.2") 
+  .. code-block:: python
 
-.. end of output
+      var('N1,N2,N3')
+      T = srange(0,3,0.01)
+      # rozwiązania dla różnych wartości k=0, 0.1, 0.2
+      de = vector([0,0.1*N2,0.2*N3])
+      sol=desolve_odeint(de,[5,5,5],T,[N1,N2,N3])
+
+  .. figure:: images/sage_chI011_01.*
+     :align: center
+     :alt: fig1
+
+     Rozwiązania równania :eq:`eqn25`.
+
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('N1,N2,N3')
+      sage: T = srange(0,3,0.01)
+      sage: ## rozwiązania dla różnych wartości k=0, 0.1, 0.2
+      sage: sol=desolve_odeint( vector([0, 0.1*N2,  0.2*N3]), [5,5,5],T,[N1,N2,N3])
+      sage: ## wykresy rozwiązań dla różnych wartości k=-1, 0, 0.5
+      sage: line(zip(T,sol[:,0]), figsize=(5, 3), legend_label="k=0") +\
+      sage:  line(zip(T,sol[:,1]), color='red', legend_label="k=0.1")+\
+      sage:  line(zip(T,sol[:,2]), color='green', legend_label="k=0.2",axes_labels=['t','x(t)']) 
+
+  .. end of output
 
 Inne procesy wzrostu także można modelować tym równaniem. Równanie to jest też punktem wyjściowym do modyfikacji, uogólnień, rozszerzeń, itp.  Proste rozszerzenie polega na uzależnieniu współczynnika tempa wzrostu k od dodatkowych czynników. Na przykład przy modelowaniu wzrostu populacji zajęcy, możemy uzależnić tempo wzrostu k od liczby zajęcy  w populacji: duża ilość zajęcy powoduje dużą konsumpcję pożywienia, a to z kolei skutkuje zmaleniem ilości pożywienia i utrudnieniami w zdobywaniu pożywienia. W efekcie zmniejsza się tempo wzrostu k. Innymi słowy, :math:`k` powinno być malejącą funkcją :math:`x(t)` liczebników w populacji.  Istnieje nieskończenie wiele takich funkcji.  Na przykład
 
@@ -244,18 +263,38 @@ Jakie są skutki takiej zmiany? Pokazujemy to na poniższym rysunku. Zauważamy,
 
 Model można rozszerzyć uwzględniając procesy śmierci: te naturalne i te wskutek istnienia drapieżników, które zjadają  osobników populacji. Prosty model  ofiara-drapieżca  jest 2-wymiarowy: opisuje zmiany w populacji ofiar i zmiany w populacji drapieżników. Jest to autonomiczny układ 2 równań różniczkowych zwyczajnych. 
 
-.. sagecellserver::
-    :is_verbatim: True
+.. only:: latex
 
-    sage: var('x,y,z')
-    sage: U = srange(0,300,0.01)
-    sage: sol=desolve_odeint( vector([x*exp(-0.1*x),  y*exp(-0.2*y),  z*exp(-0.3*z)]), [5,5,5],U,[x,y,z])
-    sage: ## pokazujemy rozwiązania dla różnych wartości k=-1, 0, 0.5
-    sage: line(zip(U,sol[:,0]), figsize=(5, 3), legend_label="k=0")+\
-    sage:  line(zip(U,sol[:,1]), color='red', legend_label="k=0.1")+\
-    sage:  line(zip(U,sol[:,2]), color='green', legend_label="k=0.2")
+  .. code-block:: python
 
-.. end of output
+      var('x,y,z')
+      U = srange(0,300,0.01)
+      de = vector([x*exp(-0.1*x),y*exp(-0.2*y),z*exp(-0.3*z)])
+      sol=desolve_odeint(de, [5,5,5],U,[x,y,z])
+
+  .. figure:: images/sage_chI011_02.*
+     :align: center
+     :alt: fig1
+
+     Rozwiązania równania :eq:`eqn27`.
+
+
+
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('x,y,z')
+      sage: U = srange(0,300,0.01)
+      sage: sol=desolve_odeint( vector([x*exp(-0.1*x),  y*exp(-0.2*y),  z*exp(-0.3*z)]), [5,5,5],U,[x,y,z])
+      sage: ## pokazujemy rozwiązania dla różnych wartości k=-1, 0, 0.5
+      sage: line(zip(U,sol[:,0]), figsize=(5, 3), legend_label="k=0")+\
+      sage:  line(zip(U,sol[:,1]), color='red', legend_label="k=0.1")+\
+      sage:  line(zip(U,sol[:,2]), color='green', legend_label="k=0.2",axes_labels=['t','x(t)'])
+
+  .. end of output
 
 Modelowanie z czasem dyskretnym
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -267,7 +306,7 @@ Powyżej otrzymaliśmy takie oto wyrażenie na przyrost:
 
     x(t+h) = x(t) + k h x(t)
 
-Jeżeli zmiany następowałyby nie w sposób ciągły  lecz dyskretny (np.  co 1 dzien, co jedną godzinę) wówczas  krok czasowy :math:`h` jest dyskretny. Można wprowadzić oznaczenia
+Jeżeli zmiany następowałyby nie w sposób ciągły  lecz dyskretny (np.  co 1 dzień, co jedną godzinę) wówczas  krok czasowy :math:`h` jest dyskretny. Można wprowadzić oznaczenia
 
 .. MATH::
     :label: eqn29

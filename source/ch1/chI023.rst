@@ -13,7 +13,7 @@ Może istnieć kilka stanów stacjonarnych, a nawet nieskończenie wiele stanów
 .. MATH::
     :label: eqn2
 
-    \frac{d\vec x}{dt} = \vec F(\vec x), \quad \quad \vec x(0)  = \vec x_0
+    \frac{d\vec x}{dt} = \vec F(\vec x), \qquad \vec x(0)  = \vec x_0
 
 
 z warunkiem początkowym :math:`\vec x(0) = \vec x_s`. Jeżeli  :math:`\vec x(t) = \vec x_s` jest rozwiązaniem stacjonarnym to musi spełniać układ :eq:`eqn2`., czyli
@@ -21,10 +21,10 @@ z warunkiem początkowym :math:`\vec x(0) = \vec x_s`. Jeżeli  :math:`\vec x(t)
 .. MATH::
     :label: eqn3
 
-    \mbox{jeżeli}  \quad \quad \vec x(t) = \vec x_s \quad \quad\mbox{to} \quad \quad\frac{d\vec x(t)}{dt} = \frac{d\vec x_s}{dt}=0 = \vec F(\vec x(t)) = \vec F(\vec x_s)) = 0
+    \mbox{jeżeli} \qquad \vec x(t) = \vec x_s \qquad \mbox{to} \qquad \frac{d\vec x(t)}{dt} = \frac{d\vec x_s}{dt}=0 = \vec F(\vec x(t)) = \vec F(\vec x_s)) = 0
 
 
-Innymi słowy, stan stacjonarny wyznaczny jest z warunku:
+Innymi słowy, stan stacjonarny wyznaczany jest z warunku:
 
 .. MATH::
     :label: eqn4
@@ -32,7 +32,7 @@ Innymi słowy, stan stacjonarny wyznaczny jest z warunku:
     \vec F(\vec x_s)) = 0
 
 
-Powyższy warunek to układ :math:`n`-równań algebraicznych. Zwykle udaje  nam się go rozwiązać analitycznie w niewielu przypadkach,  w szczególności gdy wymiar przestrzeni fazowej  :math:`n >1`.  Natomiast możemy taki układ rozwiązywać numerycznie. Jeżeli już wyznaczymy stan stacjonarny, to nasuwa się pytanie na ile jest on stabily, tzn. gdy nieco wytrącimy układ z tego stanu to czy powróci on do poprzedniego stanu stacjonarnego czy też oddali się od niego.  Na przykład stanem stacjonarnym kulki poruszającej się na nitce w polu ziemskim jest położenie pionowe. Gdy kulkę wychylimy z tego położenia, po dostatecznie długim czasie powróci ona do pozycji pionowej i tak tam pozostanie nieruchoma. Jest to stabilny stan równowagi. Rozważmy teraz kulkę mogącą poruszać się tylko po sferze. Gdy umieścimy kulkę na  biegunie północnym sfery w polu ziemskim to nieskończenie małe zaburzenie spowoduje, że kulka spadnie z tego położenie i nigdy do niego nie powróci. W obu tych przypadkach zakładamy  rzeczywiste warunki ruchu z tarciem. Pominięcie tarcia spowoduje radykalnie różne zachowanie. Te dwa przyklady pozwalają nabyć intuicję, co to znaczy że stan stacjonarny jest stabilny lub jest niestabilny.  Z grubsza można powiedzieć, że stan stacjonarny  :math:`\vec x_s` jest stabilny jeśli każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` pozostaje blisko :math:`\vec x_s` wraz z upływem czasu. Natomiast  :math:`\vec x_s` jest niestabilny gdy  każda każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` oddala się od tego punktu gdy :math:`t\to \infty`.  Można podać bardziej precyzyjne definicje.
+Powyższy warunek to układ :math:`n`-równań algebraicznych. Zwykle udaje  nam się go rozwiązać analitycznie w niewielu przypadkach,  w szczególności gdy wymiar przestrzeni fazowej  :math:`n >1`.  Natomiast możemy taki układ rozwiązywać numerycznie. Jeżeli już wyznaczymy stan stacjonarny, to nasuwa się pytanie na ile jest on stabilny, tzn. gdy nieco wytrącimy układ z tego stanu to czy powróci on do poprzedniego stanu stacjonarnego czy też oddali się od niego.  Na przykład stanem stacjonarnym kulki poruszającej się na nitce w polu ziemskim jest położenie pionowe. Gdy kulkę wychylimy z tego położenia, po dostatecznie długim czasie powróci ona do pozycji pionowej i tak tam pozostanie nieruchoma. Jest to stabilny stan równowagi. Rozważmy teraz kulkę mogącą poruszać się tylko po sferze. Gdy umieścimy kulkę na  biegunie północnym sfery w polu ziemskim to nieskończenie małe zaburzenie spowoduje, że kulka spadnie z tego położenie i nigdy do niego nie powróci. W obu tych przypadkach zakładamy  rzeczywiste warunki ruchu z tarciem. Pominięcie tarcia spowoduje radykalnie różne zachowanie. Te dwa przykłady pozwalają nabyć intuicję, co to znaczy że stan stacjonarny jest stabilny lub jest niestabilny.  Z grubsza można powiedzieć, że stan stacjonarny  :math:`\vec x_s` jest stabilny jeśli każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` pozostaje blisko :math:`\vec x_s` wraz z upływem czasu. Natomiast  :math:`\vec x_s` jest niestabilny gdy  każda każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` oddala się od tego punktu gdy :math:`t\to \infty`.  Można podać bardziej precyzyjne definicje.
 
 **Definicja**
   Mówimy, że stan stacjonarny  :math:`\vec x_s` jest stabilny jeżeli  dla dowolnego :math:`\epsilon >0` istnieje 
@@ -56,7 +56,7 @@ Przykład: Równanie różniczkowe liniowe
     \dot x = \lambda x = f(x), \qquad \lambda  \in R
 
 
-Stan stacjonarny znajdujemy jako rozwiazanie równania
+Stan stacjonarny znajdujemy jako rozwiązanie równania
 
 .. MATH::
     :label: eqn6
@@ -77,7 +77,7 @@ Jeżeli
 .. MATH::
     :label: eqn8
 
-    \lambda  < 0  \quad \quad \mbox{ to} \quad \quad x(t) \to 0 \quad \quad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0
+    \lambda  < 0  \qquad \mbox{ to} \qquad x(t) \to 0 \qquad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0
 
 
 Wówczas stan stacjonarny :math:`x_s=0` jest stabilny i dodatkowo jest asymptotycznie stabilny ponieważ rozwiązanie to dąży do :math:`x_s =0`  gdy  :math:`t\to \infty` .
@@ -87,7 +87,7 @@ Jeżeli
 .. MATH::
     :label: eqn9
 
-    \lambda >0  \quad \quad \mbox{ to} \quad \quad x(t) \to \infty  \quad \quad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0
+    \lambda >0  \qquad \mbox{ to} \qquad x(t) \to \infty  \qquad \mbox{dla wszystkich}  \;   X_0  \;  \mbox{bliskich} \; 0
 
 
 Wówczas stan stacjonarny :math:`x_s=0` jest niestabilny.
@@ -102,7 +102,7 @@ Wówczas stan stacjonarny :math:`x_s=0` jest niestabilny.
       p4=plot(-exp(x),(x,0,1))
       show(p1+p2+p3+p4,axes_labels=['t','x(t)'])
 
-  .. figure:: images/sage_chI023_01.png
+  .. figure:: images/sage_chI023_01.*
      :align: center
      :alt: fig1
 
@@ -136,7 +136,7 @@ Rozpatrujemy układ 1-wymiarowy:
 .. MATH::
     :label: eqn10
 
-    \frac{dx}{dt} = \dot x = f(x), \quad \quad f(x_s) = 0
+    \frac{dx}{dt} = \dot x = f(x), \qquad f(x_s) = 0
 
 
 Aby zbadać stabilność stanu  :math:`x_s`, analizujemy zaburzenie
@@ -144,7 +144,7 @@ Aby zbadać stabilność stanu  :math:`x_s`, analizujemy zaburzenie
 .. MATH::
     :label: eqn11
 
-    h(t) = x(t) - x_s,  \quad \quad  |h(0)| = |x(0) - x_s| < \delta
+    h(t) = x(t) - x_s,  \qquad  |h(0)| = |x(0) - x_s| < \delta
 
 
 Funkcja :math:`h(t)` powinna być mała, gdy stan :math:`x_s` jest stabilny. Jak daleko jest rozwiązanie :math:`x(t)` od rozwiązania :math:`x_s`. Zobaczmy, jakie równanie różniczkowe spełnia :math:`h(t)`:
@@ -152,7 +152,9 @@ Funkcja :math:`h(t)` powinna być mała, gdy stan :math:`x_s` jest stabilny. Jak
 .. MATH::
     :label: eqn12
 
-    \frac{dh}{dt} = \frac{d}{dt} [x(t) - x_s] = \frac{dx}{dt} = f(x) = f( x_s +h)  = f(x_s) + f'(x_s) h + \frac{1}{2} f''(x_s) h^2 + \frac{1}{3!} f'''(x_s) h^3+ ....
+    \frac{dh}{dt} = \frac{d}{dt} [x(t) - x_s]
+    
+    = \frac{dx}{dt} = f(x) = f( x_s +h)  = f(x_s) + f'(x_s) h + \frac{1}{2} f''(x_s) h^2 + \frac{1}{3!} f'''(x_s) h^3+ \dots
 
 
 Ponieważ :math:`f(x_s)=0`, otrzymujemy równanie różniczkowe dla odchylenia :math:`h(t)` od stanu stacjonarnego
@@ -172,7 +174,7 @@ Otrzymujemy równanie różniczkowe liniowe
 .. MATH::
     :label: eqn14
 
-    \frac{dh}{dt} =\lambda h, \quad \quad \lambda = f'(x_s)
+    \frac{dh}{dt} =\lambda h, \qquad \lambda = f'(x_s)
 
 
 z rozwiązaniem
@@ -183,7 +185,7 @@ z rozwiązaniem
     h(t) = h(0)  e^{\lambda t}
 
 
-Wiemy już z powyższego przykładu, że gdy :math:`\lambda < 0` to :math:`h(t) \to 0` gdy :math:`t\to \infty`. To oznacza, że  zaburzenie :math:`x(t) \to x_s` gdy  :math:`t \to \infty`  i wówczas stan stacjonarny :math:`x_s` jest stabilny.  Jeżeli  :math:`\lambda > 0` to :math:`|h(t)| \to \infty` gdy :math:`t\to \infty`. To oznacza, że  zaburzenie x(t) ucieka od :math:`x_s` gdy  :math:`t \to \infty`  i wówczas stan stacjonarny :math:`x_s` jest niestabilny. Otrzymujemy następujące kryterium na stabilność stanu stacjonarnego:
+Wiemy już z powyższego przykładu, że gdy :math:`\lambda < 0` to :math:`h(t) \to 0` gdy :math:`t\to \infty`. To oznacza, że  zaburzenie :math:`x(t) \to x_s` gdy  :math:`t \to \infty`  i wówczas stan stacjonarny :math:`x_s` jest stabilny.  Jeżeli  :math:`\lambda > 0` to :math:`|h(t)| \to \infty` gdy :math:`t\to \infty`. To oznacza, że  zaburzenie :math:`x(t)` ucieka od :math:`x_s` gdy  :math:`t \to \infty`  i wówczas stan stacjonarny :math:`x_s` jest niestabilny. Otrzymujemy następujące kryterium na stabilność stanu stacjonarnego:
 
   * Jeżeli :math:`\lambda = f'(x_s) < 0` to  stan stacjonarny jest stabilny,
 
@@ -194,7 +196,7 @@ Wiemy już z powyższego przykładu, że gdy :math:`\lambda < 0` to :math:`h(t) 
     .. MATH::
         :label: eqn16
 
-        \frac{dh}{dt} =\gamma h^2, \quad \quad \gamma  =  \frac{1}{2}f''(x_s)
+        \frac{dh}{dt} =\gamma h^2, \qquad \gamma  =  \frac{1}{2}f''(x_s)
 
 
     Jeżeli  :math:`f'(x_s) =0` oraz :math:`f''(x_s) =0` to  bierzemy następny nieznikający wyraz i badamy równanie
@@ -202,7 +204,7 @@ Wiemy już z powyższego przykładu, że gdy :math:`\lambda < 0` to :math:`h(t) 
     .. MATH::
         :label: eqn17
 
-         \frac{dh}{dt} =\nu h^3, \quad \quad \nu  =    \frac{1}{3!} f'''(x_s) 
+         \frac{dh}{dt} =\nu h^3, \qquad \nu  =    \frac{1}{3!} f'''(x_s) 
 
 
     Jeżeli w tych przypadkach :math:`h(t) \to 0` gdy :math:`t\to \infty`, to  stan stacjonarny :math:`x_s` jest stabilny. W przeciwnym przypadku  - nie jest stabilny.
@@ -217,7 +219,7 @@ W jednym wymiarze, równanie różniczkowe  zawsze można przedstawić w postaci
 .. MATH::
     :label: eqn18
 
-    \frac{dx}{dt} = \dot x = f(x) = -\frac{dV(x)}{dx} = -V'(x), \quad \quad f(x_s) = 0
+    \frac{dx}{dt} = \dot x = f(x) = -\frac{dV(x)}{dx} = -V'(x), \qquad f(x_s) = 0
 
 
 gdzie funkcja
@@ -252,7 +254,7 @@ które po przeskalowaniu ma postać:
     \dot x = -\frac{1}{\gamma} V'(x) = - {\tilde V} '(x)
 
 
-Stąd też "historycznie" wywodzi sią nazwa potencjał dla abstrakcyjnego układu dynamicznego: 
+Stąd też "historycznie" wywodzi się nazwa potencjał dla abstrakcyjnego układu dynamicznego: 
 
 .. MATH::
     :label: eqn23
@@ -276,7 +278,7 @@ to punkt ekstremalny potencjału (o ile  pochodna parzystego rzędu :math:`V^{(2
     \lambda = f'(x_s) = - V''(x_s) < 0
 
 
-czyli :math:`V''(x_s) > 0`. To odpowiada minimum potencjału. Natomiast punkt :math:`x_s`  niestabily odpowiada maksimum potencjału. Mamy więc klarowny obraz: Rysujemy potencjał :math:`V(x)`. Minima potencjału to stabilne stany stacjonarne; maksima potencjału to niestabilne stany stacjonarne.
+czyli :math:`V''(x_s) > 0`. To odpowiada minimum potencjału. Natomiast punkt :math:`x_s`  niestabilny odpowiada maksimum potencjału. Mamy więc klarowny obraz: Rysujemy potencjał :math:`V(x)`. Minima potencjału to stabilne stany stacjonarne; maksima potencjału to niestabilne stany stacjonarne.
 
 .. topic:: Zadania
 
@@ -319,7 +321,7 @@ uciekają od tego stanu).
        line(zip(T0,sol5[:,5]),color='black')+\
        line(zip(T0,sol5[:,3]),color='violet')
 
-  .. figure:: images/sage_chI023_02.png
+  .. figure:: images/sage_chI023_02.*
      :align: center
      :alt: fig1
 
@@ -401,13 +403,17 @@ Charakteryzują one odchylenie od stanu stacjonarnego, które są małe gdy stan
 .. MATH::
     :label: eqn29
 
-    \dot X(t) = \dot x(t) - \dot x_s  = \dot x(t) =  f(x(t), y(t)) = f(x_s +X(t), y_s + Y(t))  = f(x_s, y_s) + \frac{\partial f}{\partial x}  X + \frac{\partial f}{\partial y} Y+ ...
+    \dot X(t) = \dot x(t) - \dot x_s  = \dot x(t) =
+    
+    = f(x(t), y(t)) = f(x_s +X(t), y_s + Y(t))  = f(x_s, y_s) + \frac{\partial f}{\partial x}  X + \frac{\partial f}{\partial y} Y+ ...
 
 
 .. MATH::
     :label: eqn30
 
-     \dot Y(t)= \dot y(t) - \dot y_s  = \dot y(t) =  g(x(t), y(t)) =g(x_s +X(t), y_s + Y(t))  = gf(x_s, y_s) + \frac{\partial g}{\partial x}  X + \frac{\partial g}{\partial y} Y + ...
+     \dot Y(t)= \dot y(t) - \dot y_s  = \dot y(t) =
+     
+     =  g(x(t), y(t)) =g(x_s +X(t), y_s + Y(t))  = gf(x_s, y_s) + \frac{\partial g}{\partial x}  X + \frac{\partial g}{\partial y} Y + ...
 
 
 Wszystkie pochodne cząstkowe są obliczane w punkcie :math:`(x_s, y_s)`. Ponieważ w punkcie stacjonarnym :math:`f(x_s, y_s)=g(x_s, y_s)=0` otrzymujemy zlinearyzowane równania różniczkowe w postaci
@@ -429,7 +435,7 @@ gdzie macierz współczynników
 .. MATH::
     :label: eqn33
 
-     \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}a_{11} &  a_{12} \\ a_{21}& a_{22}  \end{bmatrix}   \quad \quad \mbox{obliczona w punkcie} \quad (x_s, y_s)
+     \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}a_{11} &  a_{12} \\ a_{21}& a_{22}  \end{bmatrix}   \qquad \mbox{obliczona w punkcie} \quad (x_s, y_s)
 
 
 jest macierzą Jacobiego. Ponieważ otrzymaliśmy liniowy układ równań różniczkowych,  jego rozwiązania poszukujemy w postaci funkcji
@@ -437,7 +443,7 @@ jest macierzą Jacobiego. Ponieważ otrzymaliśmy liniowy układ równań różn
 .. MATH::
     :label: eqn34
 
-    X(t) = A e^{\lambda t}, \quad \quad  Y(t) = B e^{\lambda t}
+    X(t) = A e^{\lambda t}, \qquad  Y(t) = B e^{\lambda t}
 
 
 gdzie stałe :math:`A` oraz :math:`B` są określone przez warunki początkowe :math:`(X(0), Y(0))`.
@@ -447,7 +453,7 @@ Zauważamy, że
 .. MATH::
     :label: eqn35
 
-     \dot X = \lambda X, \quad \quad \dot Y = \lambda  Y
+     \dot X = \lambda X, \qquad \dot Y = \lambda  Y
 
 
 Wstawiamy te relacje do  układu równań zlinearyzowanych:
@@ -483,7 +489,9 @@ Taki układ ma niezerowe rozwiązanie dla :math:`A` oraz :math:`B` gdy wyznaczni
 .. MATH::
     :label: eqn40
 
-    \det (J-\lambda I) = \left| \begin{array}{cc} a_{11} -\lambda &  a_{12} \\ a_{21}& a_{22} - \lambda  \end{array} \right| = (a_{11} -\lambda) ( a_{22} -\lambda) -a_{12} a_{21} = \lambda^2  - (a_{11} +a_{22} ) \lambda +a_{11} a_{22} -a_{12} a_{21} = 0
+    \det (J-\lambda I) = \left| \begin{array}{cc} a_{11} -\lambda &  a_{12} \\ a_{21}& a_{22} - \lambda  \end{array} \right| = (a_{11} -\lambda) ( a_{22} -\lambda) -a_{12} a_{21} =
+    
+    = \lambda^2  - (a_{11} +a_{22} ) \lambda +a_{11} a_{22} -a_{12} a_{21} = 0
 
 
 Macierz :math:`I` jest macierzą jednostkową, tzn. diagonalną :math:`2\times 2` i wszystkie elementy diagonalne to 1. Z powyższej relacji  otrzymujemy równanie kwadratowe dla nieznanych wartości  własnych :math:`\lambda = \lambda_1`  oraz :math:`\lambda = \lambda_2`. 
@@ -493,7 +501,7 @@ Rozwiązanie zlinearyzowanego układu jest w postaci kombinacji liniowej :
 .. MATH::
     :label: eqn41
 
-    X(t) = A_1  e^{\lambda_1 t} + A_2 e^{\lambda_2 t}, \quad \quad  Y(t) = B_1 e^{\lambda_1 t} +  B_2 e^{\lambda_2 t}
+    X(t) = A_1  e^{\lambda_1 t} + A_2 e^{\lambda_2 t}, \qquad  Y(t) = B_1 e^{\lambda_1 t} +  B_2 e^{\lambda_2 t}
 
 
 Pytanie o stabilność stanu stacjonarnego :math:`(x_s, y_s)` jest równoważne pytaniu: kiedy
@@ -501,15 +509,15 @@ Pytanie o stabilność stanu stacjonarnego :math:`(x_s, y_s)` jest równoważne 
 .. MATH::
     :label: eqn42
 
-    \lim_{t\to \infty} X(t) = 0  \quad \quad \lim_{t\to \infty} Y(t) = 0
+    \lim_{t\to \infty} X(t) = 0  \qquad \lim_{t\to \infty} Y(t) = 0
 
 
-Funkcje exponencjalne dążą do zera jeżeli część rzeczywista  wartości własnych macierzy Jacobiego :math:`\lambda_i` są  ujemne:
+Funkcje eksponencjalne dążą do zera jeżeli część rzeczywista  wartości własnych macierzy Jacobiego :math:`\lambda_i` są  ujemne:
 
 .. MATH::
     :label: eqn43
 
-     Re(\lambda_1) < 0, \quad \quad Re(\lambda_2) < 0
+     Re(\lambda_1) < 0, \qquad Re(\lambda_2) < 0
 
 
 Wówczas stan stacjonarny jest asymptotycznie stabilny. Jeżeli 
@@ -517,7 +525,7 @@ Wówczas stan stacjonarny jest asymptotycznie stabilny. Jeżeli
 .. MATH::
     :label: eqn44
 
-     Re(\lambda_1) > 0, \quad \quad \mbox{i/lub} \quad \quad Re(\lambda_2) >  0
+     Re(\lambda_1) > 0, \qquad \mbox{i/lub} \qquad Re(\lambda_2) >  0
 
 
 to stan stacjonarny jest niestabilny. Jeżeli 
@@ -542,10 +550,10 @@ to oznacza że
 .. MATH::
     :label: eqn46a
      
-    \mbox{Tr} \, J < 0, \quad \quad \det \,J > 0
+    \mbox{Tr} \, J < 0, \qquad \det \,J > 0
 
 
-gdzie Tr oznacza ślad macierzy, czyli sumę elementów diagonalnych macierzy oraz :math:`\det` jest wyznacznikiem macierzy.
+gdzie ``Tr`` oznacza ślad macierzy, czyli sumę elementów diagonalnych macierzy oraz :math:`\det` jest wyznacznikiem macierzy.
 
  
 
@@ -585,7 +593,7 @@ Obliczmy elementy macierzy Jacobiego
 .. MATH::
     :label: eqn50
 
-     \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}-y & -x \\ 1& -2y  \end{bmatrix}    =  \begin{bmatrix}-1 & -1 \\ 1& -2  \end{bmatrix}\quad \quad \mbox{w punkcie} \quad (x=1, y=1)
+     \qquad \quad J = \begin{bmatrix}\frac{ \partial f}{\partial x}& \frac{\partial f}{\partial y}\\ \frac{\partial g}{\partial x}& \frac{\partial g}{\partial y}  \end{bmatrix}  =   \begin{bmatrix}-y & -x \\ 1& -2y  \end{bmatrix}    =  \begin{bmatrix}-1 & -1 \\ 1& -2  \end{bmatrix}\qquad \mbox{w punkcie} \quad (x=1, y=1)
 
 
 Ślad macierz :math:`J`, czyli suma elementów diagonalnych :math:`\mbox{Tr} J = -3 < 0` oraz wyznacznik :math:`\det(J) = 3 > 0`. Spełnione są relacje dla stany stacjonarnego który jest asymptotycznie stabilny. Wniosek: stan stacjonarny :math:`(x_s, y_s) = (1, 1)` jest asymptotycznie stabilny.
@@ -595,7 +603,7 @@ Można sprawdzić to, wyliczając explicite wartości własne macierzy Jacobiego
 .. MATH::
     :label: eqn51
 
-    \lambda_1 = \frac{1}{2} (-3+i \sqrt 3), \quad \quad \lambda_1 = \frac{1}{2} (-3-i \sqrt 3)
+    \lambda_1 = \frac{1}{2} (-3+i \sqrt 3), \qquad \lambda_1 = \frac{1}{2} (-3-i \sqrt 3)
 
 
 Ich części rzeczywiste są ujemne:  :math:`\Re(\lambda_1) = -3/2,  \Re(\lambda_2) = -3/2`. 
@@ -647,7 +655,7 @@ Jeżeli części  rzeczywiste  wszystkich wartości własnych macierzy Jacobiego
 .. MATH::
     :label: eqn56
 
-     \Re(\lambda_1) < 0, \quad \quad \Re(\lambda_2) < 0, \quad \quad \Re(\lambda_3) < 0
+     \Re(\lambda_1) < 0, \qquad \Re(\lambda_2) < 0, \qquad \Re(\lambda_3) < 0
 
 
 to  stan stacjonarny jest asymptotycznie stabilny. Jeżeli  chociaż jedna z wartości własnych :math:`\lambda_i` ma część rzeczywistą dodatnią
@@ -655,7 +663,7 @@ to  stan stacjonarny jest asymptotycznie stabilny. Jeżeli  chociaż jedna z war
 .. MATH::
     :label: eqn57
 
-     \Re(\lambda_1) > 0, \quad \quad \mbox{i/lub} \quad \quad \Re(\lambda_2) >  0, \quad \quad \mbox{i/lub} \quad \quad \Re(\lambda_3) >  0
+     \Re(\lambda_1) > 0, \qquad \mbox{i/lub} \qquad \Re(\lambda_2) >  0, \qquad \mbox{i/lub} \qquad \Re(\lambda_3) >  0
 
 
 to stan stacjonarny jest niestabilny.
