@@ -47,6 +47,7 @@ Dynamika stochastyczna
    :maxdepth: 1 
 
    ch3/chIII011
+   ch3/chIII021
 
 
 Dodatek numeryczny

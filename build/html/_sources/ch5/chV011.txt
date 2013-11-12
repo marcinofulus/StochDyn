@@ -409,7 +409,7 @@ Ideę histogramu najlepiej zrozumiec na przykładzie. Mamy następującą listę
 
 .. code-block:: python
 
-  l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+  l = [1,-3,-5,-1,-3,1,5,1,3,-3,4,2,4,-1,4,5,-2,4,3,-4]
 
 Budując histogram na początku musimy ustalić szerokość przedziału. Zacznijmy od łatwiejszej wersji: niech
 szerokość będzie stała. Najlepiej podzielić ową listę na przedziały zawierające liczby całkowite. W zasadzie
@@ -432,7 +432,8 @@ poprawnym opisaniu odciętej (np: chcemy tylko zobaczyć kształt histogramu), w
   .. code-block:: python
 
     h = [l.count(i) for i in range(-5,6)]
-    bar_chart(h, width=1, color="orangered").show(axes_labels=['$i$','$\#$'], title="histogram")
+    b = bar_chart(h, width=1, color="orangered")
+    b.show(axes_labels=['$i$','$\#$'], title="histogram")
 
 
   Co pozwoli nam wygenerować taki rysunek:
@@ -477,7 +478,7 @@ prosta komenda aby uzyskać dostęp do wielu statystycznych funkcji typowych dla
 
   .. code-block:: python
 
-    v.plot_histogram(bins=11, normalize=0, color="orangered", axes_labels=['$i$','$\#$'])
+    v.plot_histogram(bins=11, normalize=0, axes_labels=['$i$','$\#$'])
 
   .. figure:: images/01/histogram.png
     :alt: histogram liczebności
@@ -630,15 +631,20 @@ go i porównamy z teoretycznym rozkładem dla kilku wartości :math:`\lambda = 0
     kolor = ["red", "green", "blue"]
     parlist = [1.5, 1, 0.5]
     p = []
+    i = 0
     for par in parlist:
-      lista = [F(random(), par) for i in xrange(N)]
+      lista = [F(random(), par) for j in xrange(N)]
       v = finance.TimeSeries(lista)
-      P = v.plot_histogram(bins=100, color=kolor[parlist.index(par)], alpha=0.5)
+      P = v.plot_histogram(bins=100, color=kolor[i], alpha=0.5)
       P.set_aspect_ratio("automatic")
       p.append(P)
-      p.append(plot(f(xi,par), 0, max(lista), thickness=2, color=kolor[parlist.index(par)], 
-      legend_label=r'$\lambda = %.1f$'%par))
-    sum(p).show(xmin=0, xmax=5, figsize=5, axes_labels=[r'$\xi$',r'$\lambda e^{-\lambda \xi}$'], fontsize=12)
+      p.append(plot(f(xi,par), 0, max(lista), 
+        thickness=2, color=kolor[i], 
+        legend_label=r'$\lambda = %.1f$'%par))
+      i += 1
+    pl = sum(p)
+    pl.axes_labels([r'$\xi$',r'$\lambda e^{-\lambda \xi}$'])
+    pl.show(xmin=0, xmax=5, figsize=5, fontsize=12)
 
 
   Jak widać na rysunku liczby losowe przekształcone metodą inwersji w oparciu o odwrotność dystrybuanty, dość dobrze 
@@ -741,7 +747,6 @@ Zadanie 2.3.2.
   Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
 
 
-----------------------------
 
 .. [#] Generator liczb pseudolosowych można napisać nawet dla tak egzotycznych języków jak 
    `Brainf*ck <http://esolangs.org/wiki/brainfuck_algorithms#x_.3D_pseudo-random_number>`_.
@@ -749,10 +754,6 @@ Zadanie 2.3.2.
 .. [#] Od tej chwili będziemy zawsze pisać *liczba losowa* a mieć na myśli *liczbę pseudolosową*, 
    chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach losowych.
 
-
-
-
-----------------
 
 .. _Sage: http://sagemath.org/
 .. _Python: http://python.org/

@@ -3494,6 +3494,610 @@ Mogą być takie przypadki, gdy wielkości losowe pojawiają sie w nieliniowy sp
 Czytelnik sam może napisać odpowiednik wielowymiarowy równania \eqref{ch3/chIII011-eqn27}. Z punktu widzenia zastosowań ważne jest jakie istnieją modele matematyczne zaburzeń losowych $\{\eta_i(t)\}$ czy $\{\xi_i(t)\}$. Mogą to być procesy stacjonarne, procesy Markowa (markowowskie) lub też procesy niemarkowowskie. Mogą to byc procesy skorelowane lub nieskorelowane. W następnej części podamy przykłady najczęściej stosowanych modeli szumu.
 
 
+\section{Podstawowe procesy stochastyczne}
+\label{ch3/chIII021::doc}\label{ch3/chIII021:podstawowe-procesy-stochastyczne}
+W wielkim skrócie przedstawimy 3 podstawowe rodzaje procesów stochastycznych. Ich transformacje służą do definicji szumów, fluktuacji i zaburzeń losowych. Czytelnik znajdzie szczegóły i więcej informacji w podręczniku ``Procesy i zjawiska losowe''.  W sensie matematycznym, większość podstawowych procesów losowych wywodzi się z prób Bernoulliego i uogólnionych prób Bernoulliego. Można by powiedzieć, że dwie próby Bernoulliego odgrywają kluczową role:
+\begin{enumerate}
+\item {} 
+wielokrotny rzut monetą
+
+\item {} 
+losowe wybieranie punktów z pewnego przedziału liczbowego
+
+\end{enumerate}
+
+Pierwszy rodzaj prób Bernoulliego w granicy prowadzi do procesu Wienera, drugi - w granicy prowadzi do procesu Poissona. Obie te granice są różne i odpowiadają dwóm klasom procesów stochastycznych. Oba te procesy są szczególnym przypadkiem procesu, który nazywa się procesem Levy'ego. Byłoby trudno wyprowadzić ogólny proces Levy'ego z prób Bernoulliego.
+
+Jako model zaburzeń losowych, w ogólności możemy wybierać dowolny proces stochastyczny. Czasami nakładane są różne ograniczenia jak np. aby był to proces stacjonarny, albo proces o skończonej wartości średniej, albo proces o zerowej wartości średniej, albo proces Markowa, albo proces nieskorelowany, itd. Często zakłada się, że zaburzenie losowe jest o zerowej wartości średniej:
+\phantomsection\label{ch3/chIII021:equation-eqn1}\begin{gather}
+\begin{split}\langle \eta(t)\rangle = 0\end{split}\label{ch3/chIII021-eqn1}
+\end{gather}
+Jeżeli jest to proces stacjonarny to jego funkcja korelacyjna
+\phantomsection\label{ch3/chIII021:equation-eqn2}\begin{gather}
+\begin{split}\langle \eta(t) \eta(s)\rangle = C(t-s)\end{split}\label{ch3/chIII021-eqn2}
+\end{gather}
+zależy tylko od różnicy czasów $t$ oraz $s$. Jeżeli jest to proces nieskorelowany to jego funkcja korelacyjna
+\phantomsection\label{ch3/chIII021:equation-eqn3}\begin{gather}
+\begin{split}C(t-s) = 2D_0 \delta(t-s)\end{split}\label{ch3/chIII021-eqn3}
+\end{gather}
+modelowana jest przez deltę Diraca $\delta(t)$, gdzie wielkość $D_0$ nazywa się natężeniem lub intensywnością procesy stochastycznego. Dlaczego jest to proces nieskorelowany? Ponieważ dla dwóch różnych chwil czasu $t \ne s$ delta Diraca $\delta(t-s) = 0$. Oczywiście są inne, bardziej ogólne definicje procesu nieskorelowanego, ale dla naszych potrzeb powyższa definicja wykorzystująca deltę Diraca jest wystarczająca.
+
+Z kolei przez szum rozumiemy zwykle stacjonarny proces stochastyczny. Dla procesu stacjonarnego możemy wprowadzić pojęcie widma mocy szumu (gęstość spektralna szumu) $S(\omega)$ jako transformata Fouriera jego funkcji korelacyjnej, tzn.
+\phantomsection\label{ch3/chIII021:equation-eqn4}\begin{gather}
+\begin{split}S(\omega) = \int_{-\infty}^{ \; \infty} \mbox{e}^{i\omega \tau} C(\tau) d\tau\end{split}\label{ch3/chIII021-eqn4}
+\end{gather}
+gdzie wprowadziliśmy oznaczenie $\tau = t- s$.
+
+Gdy funkcja korelacyjna jest deltą Diraca to widmo mocy
+\phantomsection\label{ch3/chIII021:equation-eqn5}\begin{gather}
+\begin{split}S(\omega) = \int_{-\infty}^{ \; \infty} \mbox{e}^{i\omega \tau} 2D_0 \delta(\tau) d\tau = 2 D_0\end{split}\label{ch3/chIII021-eqn5}
+\end{gather}
+nie zależy od częstości $\omega$.W optyce widmo mocy niezależne od częstości jest charakterystyczne dla światła białego (jest to mieszanka wszystkich barw, czyli wszystkich częstości). Dlatego taki szum nazywa się białym szumem. Jeżeli szum jest skorelowany, to niektórzy autorzy nazywają taki szum szumem kolorowym, aby go odróżnić od szumu białego. Często taki kolorowy szum jest scharakteryzowany przez czas korelacji i jego widmo mocy zależy od częstości $\omega$. Należy jednak powiedzieć, że szum skorelowany i szum kolorowy są synonimami tego samego pojęcia.
+
+W Naturze biały szum nie występuje. Jest on kolejną idealizacją opisu rzeczywistych procesów. Jest to dobra idealizacja gdy czas korelacji szumu jest najmniejszym charakterystycznym czasem w badanym układzie. Poniżej prezentujemy kilka najbardziej popularnych modeli procesów stochastycznych oraz białego i kolorowego szumu losowego.
+
+
+\subsection{Proces Wienera}
+\label{ch3/chIII021:proces-wienera}
+Dyskretne błądzenie przypadkowe jest jedną z realizacji wielokrotnego rzutu monetą: w losowy sposób cząstka błądząca wykonuje krok o długości $L$ w prawo z prawdopodobieństwem $p$ lub krok o długości $L$ w lewo z prawdopodobieństwem $q$. przy czym $p+q=1$. Cząstka wykonuje kroki w odstępach czasu $T$.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.800\linewidth]{randomwalk.png}
+\caption{Błądzenie przypadkowe.}\end{figure}
+
+Pytamy, jakie jest prawdopodobieństwo tego, że po wykonaniu $n$ kroków, cząstka będzie w położeniu $r = \{-n, -n+1, -n+2,..., 0, 1, 2,..., n-1, n\}$; dokładniej mówiąc, po czasie $t=nT$ będzie w położeniu $x=rL$. W granicy
+\phantomsection\label{ch3/chIII021:equation-eqn6}\begin{gather}
+\begin{split}L\to 0, \quad, T\to 0, \quad \mbox{w taki sposób, aby} \quad \frac{L^2}{T} = const. = 2D\end{split}\label{ch3/chIII021-eqn6}
+\end{gather}
+gdzie stałą $D$ nazywa się współczynnikiem dyfuzji lub natężeniem (intensywnością) procesu stochastycznego.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.800\linewidth]{brownian_walk.png}
+\caption{Dwie realizacje błądzenia przypadkowego.}\end{figure}
+
+Innymi słowy, cząstka wykonuje coraz to mniejsze kroki z coraz to większą częstotliwością. W granicy otrzymujemy ciągły proces błądzenia przypadkowego. Jeżeli prawdopodobieństwa $p=q=1/2$, błądzenie jest symetryczne i nazywa się procesem Wienera. Ma on następujące własności:
+\begin{enumerate}
+\item {} 
+Proces stochastyczny Wienera $W(t)$ jest procesem rzeczywistym.
+
+\item {} 
+$W(0)=0$ (proces startuje z zera, ale to nie jest istotne; jest to wygodne).
+
+\item {} 
+Proces $W(t)$ ma stacjonarne i niezależne przyrosty na nieprzekrywających się przedziałach.
+
+\end{enumerate}
+\begin{quote}
+
+Oznacza to, że 2 przyrosty procesu Wienera $W(t_4) - W(t_3)$ oraz $W(t_2) - W(t_1)$ są niezależne dla dowolnych chwil czasu takich że $t_1 \le t_2 \le t_3 \le t_4$. Innymi słowy wartość średnia
+\phantomsection\label{ch3/chIII021:equation-eqn7}\begin{gather}
+\begin{split}\langle [W(t_4) - W(t_3)] [W(t_2) - W(t_1)] \rangle = \langle W(t_4) - W(t_3)\rangle\langle W(t_2) - W(t_1)\rangle\end{split}\label{ch3/chIII021-eqn7}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item {} 
+$W(t)$ jest procesem Gaussa o zerowej wartości średniej
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn8}\begin{gather}
+\begin{split}\langle W(t_2) - W(t_1) \rangle = 0\end{split}\label{ch3/chIII021-eqn8}
+\end{gather}
+i wariancji przyrostów
+\phantomsection\label{ch3/chIII021:equation-eqn9}\begin{gather}
+\begin{split}\langle [W(t_2) - W(t_1)]^2 \rangle = 2D(t_2 - t_1), \; \; \; \; t_2 > t_1\end{split}\label{ch3/chIII021-eqn9}
+\end{gather}\end{quote}
+
+Korzystając z własności 3 można obliczyć funkcję korelacyjną procesy Wienera:
+\phantomsection\label{ch3/chIII021:equation-eqn10}\begin{gather}
+\begin{split}\langle W(t_2) W(t_1) \rangle = 2D \mbox{min} (t_2, t_1) = 2D [ t_1 \theta(t_2 - t_1) + t_2 \theta(t_1 -t_2)]\end{split}\label{ch3/chIII021-eqn10}
+\end{gather}
+gdzie funkcja $\mbox{min}(t,s)$ oznacza mniejszą z 2 wartości $t$ i $s$. Funkcję te można wyrazić w matematycznym zapisie korzystając z funkcji skokowej Heaviside'a $\theta(x)$. Przyrost $W(t_2) - W(t_1)$ jest zmienna losową gaussowską o zerowej wartości średniej i wariancji $\sigma^2 = 2D(t_2 - t_1)$. Więc jego rozkład prawdopodobieństwa ma postać
+\phantomsection\label{ch3/chIII021:equation-eqn11}\begin{gather}
+\begin{split}f_{W(t_2) - W(t_1)}(x) = \frac{1}{\sqrt{4\pi D (t_2 - t_1)} }\; \exp \left[ - \frac{x^2}{4D(t_2 - t_1)}\right]\end{split}\label{ch3/chIII021-eqn11}
+\end{gather}
+Przyjmując $t_1=0$ oraz $t_2=t$ otrzymamy gęstość prawdopodobieństwa w postaci
+\phantomsection\label{ch3/chIII021:equation-eqn12}\begin{gather}
+\begin{split}f_{W(t)}(x) = f(x, t) = \frac{1}{\sqrt{4\pi D t} }\; \exp \left[ - \frac{x^2}{4Dt}\right]\;\end{split}\label{ch3/chIII021-eqn12}
+\end{gather}
+Funkcja charakterystyczna $C(\omega, t)$ procesu Wienera ma postać:
+\phantomsection\label{ch3/chIII021:equation-eqn13}\begin{gather}
+\begin{split}C(\omega, t) = \langle \mbox{e}^{i\omega W(t)} \rangle = \int_{-\infty}^{\; \infty} \mbox{e}^{i\omega x} f(x, t)\; dx  = \mbox{e}^{-Dt \omega^2}\end{split}\label{ch3/chIII021-eqn13}
+\end{gather}
+Prawdopodobieństwo tego, że w chwili $t$ cząstka jest w przedziale $[a, b]$ dane jest przez wzór
+\phantomsection\label{ch3/chIII021:equation-eqn14}\begin{gather}
+\begin{split}Pr\{W(t) \in (a, b)\} = \int_a^{\; b} f(x, t) \; dx = \frac{1}{\sqrt{4\pi D t} }\; \int_a^{\; b} \exp \left[ - \frac{x^2}{4Dt}\right] \; dx\end{split}\label{ch3/chIII021-eqn14}
+\end{gather}
+Czytelnik zauważy, że niekonsekwentnie piszemy czasami przedział domknięty $[a, b]$, a czasami przedział otwarty $(a, b)$. W tym przypadku jest to bez różnicy ponieważ
+\phantomsection\label{ch3/chIII021:equation-eqn15}\begin{gather}
+\begin{split}Pr\{W(t) \in (a, b)\} = Pr\{W(t) \in [a, b]\} = Pr\{W(t) \in [a, b)\} = Pr\{W(t) \in (a, b])\}\end{split}\label{ch3/chIII021-eqn15}
+\end{gather}
+Proszę zwrócić uwagę na 4 możliwe przedziały w tych wyrażeniach.
+Proces Wienera jest granicznym przypadkiem błądzenia losowego : kroki są coraz mniejsze i coraz częstsze. Rozpatrzmy realizacje błądzenia przypadkowego w określonym przedziale czasu $[0, t]$. W przedziale tym wybrana realizacja posiada określoną ilość skoków w których funkcja ta jest nieróżniczkowalna. Przy skalowaniu skoki są coraz mniejsze, ale jest ich znacznie więcej. Więc w przedziale czasu $[0, t]$ realizacja posiada znaczniej więcej punktów, w których jest nieróżniczkowalna. W granicy, wielkość skoków dąży do zera, ale ich ilość dąży do nieskończoności. Oznacza to, że realizacja staje się funkcją ciągłą (wysokość skoków dąży do zera), ale jednocześnie nigdzie nie jest różniczkowalna (liczba skoków dąży do nieskończoności). Jest to przykład wyjątkowo dziwnej funkcji. Takiej funkcji nie możemy narysować, ale to co opisano powyżej powinno wyrobić w nas intuicję o własnościach realizacji procesu Wienera. Matematycy (jak zwykle) dowodzą to ściśle, a fizycy to czują i wiedzą dlaczego tak jest. Należy także pamiętać, że taki graniczny proces nie istnieje w rzeczywistości. Rzeczywiste procesy błądzenia przypadkowego mają różne długości (ale nie nieskończenie małe) oraz odbywają się z niezerową częstotliwością ($T$ nie jest nieskończenie małe). Jednak gdy $T$ jest najmniejszą skalą czasową w badanym układzie, a każde inne czasy charakterystyczne są znacznie większe, to przybliżenie otrzymane po operacji dokonania granic jest rozsądne. To jest przykład kolejnej idealizacji, jaką stosują fizycy do opisu rzeczywistości.
+
+Proces Wienera jest procesem gaussowskim (normalnym), co jest konsekwencją centralnego twierdzenia granicznego: proces jest wynikiem bardzo wielu niezależnych losowych zdarzeń, dlatego niezależnie od rozkładu prawdopodobieństwa każdego z tych zdarzeń, jego rozkład będzie zbliżony do normalnego.
+
+Poniżej pokazujemy jedną z możliwych  realizacji (trajektorii) procesu Wienera. Czytelnik może sam wygenerować inne realizacje, zmieniając parametry pojawiające się w programie.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} parametry symulacji}
+\PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.01} \PYG{c}{\PYGZsh{}krok}
+\PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{5000} \PYG{c}{\PYGZsh{}ilosc krokow}
+
+\PYG{c}{\PYGZsh{} parametry SDE}
+\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{c}{\PYGZsh{}wartosc poczatkowa}
+\PYG{n}{D} \PYG{o}{=} \PYG{l+m+mf}{0.01} \PYG{c}{\PYGZsh{}wspolczynnik dyfuzji}
+
+\PYG{n}{x} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{]}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{n01} \PYG{o}{=} \PYG{n}{normalvariate}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{)}
+  \PYG{n}{x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{x}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{n}{sqrt}\PYG{p}{(}\PYG{l+m+mi}{2}\PYG{o}{*}\PYG{n}{h}\PYG{o}{*}\PYG{n}{D}\PYG{p}{)} \PYG{o}{*} \PYG{n}{n01}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.800\linewidth]{sage_chIII02_01.pdf}
+\caption{Relizacja procesu Wienera.}\end{figure}
+
+
+\subsection{Proces Poissona}
+\label{ch3/chIII021:proces-poissona}
+Rozważamy przedział liczbowy $[0, T]$. Z przedziału tego wybieramy losowo jeden punkt, jedną liczbę. Ponieważ wszystkie liczby są ``równo rozłożone'', więc prawdopodobieństwo tego, że punkt ten jest w przedziale $(t_1, t_2)\subset [0, T]$ wynosi
+\phantomsection\label{ch3/chIII021:equation-eqn16}\begin{gather}
+\begin{split}P(A)= p = \frac{t_2 -t_1}{T}\end{split}\label{ch3/chIII021-eqn16}
+\end{gather}
+Jeżeli wylosowany punkt jest w tym przedziale, uważam to za sukces. Wybieramy teraz losowo n punktów z przedziału $[0, T]$. Prawdopodobieństwo tego, że k z tych wszystkich n-punktów będzie w przedziale $(t_1, t_2)\subset [0, T]$ jest określone przez rozkład dwumianowy $p_n(k)$. Jeżeli przedział $[0, T]$ będzie przedziałem czasowym, to w przedziale tym mamy $n$ losowych chwil czasu oraz $k \le n$ losowych chwil czasu w przedziale $(t_1, t_2)\subset [0, T]$. Teraz wykonujemy przejście graniczne:
+\phantomsection\label{ch3/chIII021:equation-eqn17}\begin{gather}
+\begin{split}n \to \infty, \;\;\; p \to 0 \;\;\;\; \mbox{ale} \;\;n\cdot p = \frac{n(t_2 - t_1)}{T} = \lambda\end{split}\label{ch3/chIII021-eqn17}
+\end{gather}
+co da się osiągnąć gdy założymy że $T \to \infty$ przy czym
+\phantomsection\label{ch3/chIII021:equation-eqn18}\begin{gather}
+\begin{split}\mu = \frac{n}{T}\end{split}\label{ch3/chIII021-eqn18}
+\end{gather}
+jest stałą wielkością i oznacza ilość losowych punktów w jednostkowym przedziale, czyli gęstość losowo wybranych punktów na osi czasu.
+Przy takim skalowaniu otrzymamy wyrażenie na parametr
+\phantomsection\label{ch3/chIII021:equation-eqn19}\begin{gather}
+\begin{split}\lambda = \mu (t_2 -t_1)\end{split}\label{ch3/chIII021-eqn19}
+\end{gather}
+Przypiszmy teraz każdej losowej chwili czasu akt narodzin dziecka. Prawdopodobieństwo tego że
+w przedziale $(t_1, t_2)$ jest k-punktów odpowiada prawdopodobieństwu tego że w przedziale
+czasu $(t_1, t_2)$ urodziło się k dzieci. W ten sposób otrzymujemy losowy proces urodzin.
+Elementem losowym jest czas narodzin. Wynikiem jest liczba dzieci $N(t)$ w pewnej chwili
+czasu $t$. Rozkład prawdopodobieństwa jest dany przez rozkład Poissona:
+\phantomsection\label{ch3/chIII021:equation-eqn20}\begin{gather}
+\begin{split} Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (t_1, t_2)\} = Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}\end{split}\label{ch3/chIII021-eqn20}
+\end{gather}
+Przyjmijmy teraz, że $t_1 = 0$ i $t_2 =t$. Wówczas $t_2 - t_1 =t-0=t$ oraz
+\phantomsection\label{ch3/chIII021:equation-eqn21}\begin{gather}
+\begin{split} p_k(t) = Pr\{N(t) = k\} = Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (0, t)\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}\end{split}\label{ch3/chIII021-eqn21}
+\end{gather}
+jest prawdopodobieństwem tego, że w przedziale czasu $(0, t)$ urodziło się k dzieci. Jeżeli liczbę urodzonych dzieci oznaczymy przez $N(t)$ to otrzymamy proces stochastyczny nazywany procesem urodzin. Założymy, że $N(0) = 0$. Oczywiście nie jest to bezwzględny wymóg, ale konwencja. Równie dobrze mógłbym badać dowolny inny stan początkowy $N(0)$. Proces urodzin tak jak każda zmienna losowa o rozkładzie Poissona przyjmuje wartości całkowite nieujemne:
+\phantomsection\label{ch3/chIII021:equation-eqn22}\begin{gather}
+\begin{split}N(t) = \{0, 1, 2, \dots\}\end{split}\label{ch3/chIII021-eqn22}
+\end{gather}
+Jeżeli $N(t) = k$ to mówimy, że układ jest w stanie $k$.
+Takie sformułowanie jest często stosowane przez fizyków, zwłaszcza w
+kontekście fizyki kwantowej, gdzie stanami mogą być poziomy energetyczne
+układów kwantowych. Proces urodzin odpowiadałby przejściu z jednego
+poziomu energetycznego do najbliższego wyższego poziomu energetycznego.
+Przejście do stanu o niższej energii nie jest opisane procesem urodzin,
+ale procesem urodzin i śmierci.
+
+Można udowodnić, że przyrosty procesu urodzin $N(t_2) - N(t_1)$ oraz $N(t_4) - N(t_3)$ na \emph{nieprzekrywających się przedziałach} $(t_1, t_2)$ oraz $(t_3, t_4)$ są zmiennymi losowymi niezależnymi. Jest to bardzo ważna własność procesu urodzin o poissonowskiej statystyce losowych chwil urodzin $t_i$. Przyrost procesu urodzin $N(t_2) - N(t_1)$ jest stacjonarny, to znaczy, że prawdopodobieństwu tego że w przedziale czasu $(t_1, t_2)$ urodziło się k dzieci zależy od różnicy
+czasów $t_2-t_1$, a nie zależy od tego gdzie te chwile czasu $t_1$ i $t_2$ są na osi czasu. Jeżeli tak jest, to w ogólnym przypadku mówimy, że \emph{proces stochastyczny ma przyrosty stacjonarne}. Uwaga: sam proces nie jest stacjonarny ponieważ rozkład prawdopodobieństwa zależy od czasu ale proces ma stacjonarne przyrosty!
+Realizacje procesu są \emph{nieciągłymi} i niemalejącymi funkcjami czasu i są to funkcje schodkowe o skoku 1, przy czym skok następuje w losowych chwilach czasu $t_i$ (zakładamy, że tylko jeden osobnik rodzi się w danym momencie czasu $t_i$ i w rzeczywistości jest to prawda abstrahując od kwestii spornych przy cesarskim cięciu w przypadku wielodzietnych ciąży). Funkcje schodkowe można zapisać przy pomocy funkcji theta Heaviside'a, więc proces urodzin $N(t)$ można przedstawić w eleganckiej matematycznej postaci:
+\phantomsection\label{ch3/chIII021:equation-eqn23}\begin{gather}
+\begin{split}N(t) = \sum_{i=1}^{\infty} \theta(t-t_i)\end{split}\label{ch3/chIII021-eqn23}
+\end{gather}
+Aby otrzymać jedną realizację procesu urodzin w przedziale czasu $[0, T]$, należy losowo wybrać w tym przedziale punkty $t_i$ które są momentami urodzenia. Mówimy, że punkty te mają statystykę Poissona, mając na myśli ich jednorodne (ale losowe) rozłożenie na osi czasu. Mimo że realizacje są funkcjami nieciągłymi (punktami nieciągłości są skoki), proces ten \emph{jest procesem ciągłym} w sensie średnio-kwadratowym! Co to oznacza? Poglądowo oznacza to tyle, że jeżeli wybiorę jakiś punkt $t$ na osi czasu, to realizacje będą ciągłe w tym punkcie. Inaczej mówiąc, prawdopodobieństwo tego, że punkt $t$ ``trafi'' w nieciągłość (w skok schodka) jest zerowe! Podsumowując, możemy to wszystko zebrać w matematyczną definicję procesu stochastycznego Poissona (lub poissonowskiego procesu urodzin).
+\begin{description}
+\item[{\textbf{Definicja}}] \leavevmode
+Procesem Poissona $N(t)$ nazywamy proces stochastyczny o następujących własnościach:
+\begin{enumerate}
+\item {} 
+Przestrzenią stanów jest zbiór liczb całkowitych nieujemnych, $X=\{k\}_0^{\infty}\; = \{0, 1, 2, \dots \}$
+
+\item {} 
+$N(0) = 0$ (proces startujący z zera)
+
+\item {} 
+$N(t_2) - N(t_1)$ jest liczbą punktów w przedziale $(t_1, t_2)$
+
+\item {} 
+$N(t)$ ma stacjonarne i niezależne przyrosty na nieprzekrywających się przedziałach o rozkładzie prawdopodobieństwa
+
+\end{enumerate}
+
+\end{description}
+\phantomsection\label{ch3/chIII021:equation-eqn24}\begin{gather}
+\begin{split}  Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}\end{split}\label{ch3/chIII021-eqn24}
+\end{gather}
+
+\subsubsection{Własności procesu Poissona}
+\label{ch3/chIII021:wlasnosci-procesu-poissona}\begin{enumerate}
+\item {} 
+Wartość średnia
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn25}\begin{gather}
+\begin{split}m(t) = \langle N(t) \rangle = \mu t\end{split}\label{ch3/chIII021-eqn25}
+\end{gather}
+Z tej relacji mamy interpretację parametru
+\phantomsection\label{ch3/chIII021:equation-eqn26}\begin{gather}
+\begin{split}\mu = \frac{\langle N(t) \rangle}{t}\end{split}\label{ch3/chIII021-eqn26}
+\end{gather}
+Parametr $\mu$ to średnia liczba punktów w jednostce czasu lub średnia liczba urodzeń w jednostce czasu. Ten parametr może być
+oszacowany z danych statystycznych czy też z danych doświadczalnych.
+\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item {} 
+Moment statystyczny drugiego rzędu
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn27}\begin{gather}
+\begin{split}\langle N^2(t) \rangle = \mu^2 t^2 + \mu t\;\end{split}\label{ch3/chIII021-eqn27}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item {} 
+Stąd mamy relację dla fluktuacji procesu
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn28}\begin{gather}
+\begin{split}\sigma^2(t) = \langle N^2(t) \rangle - \langle N(t) \rangle^2 = \mu t \;\end{split}\label{ch3/chIII021-eqn28}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{3}
+\item {} 
+Funkcja charakterystyczna $C(\omega, t)$ procesu Poissona ma postać:
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn29}\begin{gather}
+\begin{split}C(\omega, t) = \langle \mbox{e}^{i\omega N(t)} \rangle = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} p_k(t) = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!} = \mbox{e}^{-\mu t} \; \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \; \frac{(\mu t)^k}{k!} = \mbox{exp}\left[\mu t \left(\mbox{e}^{i\omega} -1\right)\right]\end{split}\label{ch3/chIII021-eqn29}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{4}
+\item {} 
+Z p. 3 wynika, że średnio-kwadratowe odchylenie
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn30}\begin{gather}
+\begin{split}\sigma(t) = \sqrt{\mu t} \;\end{split}\label{ch3/chIII021-eqn30}
+\end{gather}\end{quote}
+
+Ważna jest interpretacja tego wyniku: Fluktuacje procesu narastają liniowo w czasie. To oznacza, że im dłuższy jest czas tym odchylenia od wartości średniej mogą być coraz większe. Można przeprowadzić następujące dywagacje:
+
+Badamy proces urodzin i przeprowadzamy szereg symulacji komputerowych tego procesu. Otrzymujemy wiele realizacji procesu urodzin. Z analizy tych realizacji możemy metodami statystyki otrzymać wartość średnią procesu. Oczekujmy (coś to ma wspólnego z wartością oczekiwaną czyli wartością średnią), że wiele realizacji będzie przebiegać w pobliżu wartości średniej. Owszem to prawda, ale jednocześnie pojawiają się realizacje które daleko odbiegają od wartości średniej. Im dłuższy jest ten czas, tym większe odchylenia od wartości średniej mogę zaobserwować. Jest to własność, która w deterministycznym świecie nie występuje (deterministyczny świat nie jest światem rzeczywistym, jest jego idealizacją, bardziej lub mniej adekwatną).
+
+Oczywiście powyższe relacje można podać dla przyrostów procesu Poissona:
+\begin{enumerate}
+\item {} 
+Wartość średnia przyrostów procesu Poissona
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn31}\begin{gather}
+\begin{split}\langle N(t_2) - N(t_1)\rangle = \mu (t_2-t_1)\end{split}\label{ch3/chIII021-eqn31}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item {} 
+Moment statystyczny drugiego rzędu dla przyrostów procesu Poissona
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn32}\begin{gather}
+\begin{split}\langle [N(t_2) - N(t_1)]^2 \rangle = \mu^2 (t_2-t_1)^2 + \mu (t_2-t_1) \;\end{split}\label{ch3/chIII021-eqn32}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{2}
+\item {} 
+Funkcja korelacyjna procesu Poissona
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn33}\begin{gather}
+\begin{split}R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \;t_2 \;t_1 + \mu \; \mbox{min}(t_2, t_1) = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \; \mbox{min}(t_2, t_1)\end{split}\label{ch3/chIII021-eqn33}
+\end{gather}
+gdzie funkcja dwóch zmiennych $\mbox{min}(x, y)$ oznacza wartość mniejszej liczby z dwóch liczb $x$ i $y$:
+\phantomsection\label{ch3/chIII021:equation-eqn34}\begin{gather}
+\begin{split}\mbox{min} (x, y) = \left\{ {{x \; \; \mbox{if}\; \; x < y} \atop {y \; \; \mbox{if} \; \; y<x}}\right\}\end{split}\label{ch3/chIII021-eqn34}
+\end{gather}\end{quote}
+
+Z powyższych relacji wynika, że \emph{proces urodzin jest procesem skorelowanym}.
+
+Pokażemy, w jaki sposób można wyznaczyć postać funkcji korelacyjnej. Tą samą metodę stosuje się do obliczenia funkcji korelacyjnej procesu Wienera i procesu Levy'ego. Dlatego w tych przypadkach czytelnik sam powtórzy wszystkie kroki obliczeń. Rozpatrzymy dwa przypadki pamiętając że $N(t_0) = N(0) =0$:
+\begin{enumerate}
+\item {} 
+Niech $t_2 > t_1 > t_0=0$. Przyrosty $N(t_2) - N(t_1)$ oraz $N(t_1) - N(t_0)$ są zmiennymi losowymi niezależnymi dla których
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn35}\begin{gather}
+\begin{split}\langle[N(t_2) - N(t_1)] [ N(t_1) - N(t_0)] \rangle = \langle N(t_2) - N(t_1) \rangle \cdot \langle N(t_1) - N(t_0) \rangle = \mu (t_2 -t_1) \; \mu t_1.\end{split}\label{ch3/chIII021-eqn35}
+\end{gather}
+Skorzystaliśmy tu z tego, że wartość średnia iloczynu zmiennych losowych niezależnych jest iloczynem wartości średnich zmiennych losowych niezależnych. Z drugiej strony, wymnożymy wyrażenia w nawiasach pamiętając, że $N(t_0) = N(0) = 0$ (proces Poissona startuje z zera). Wówczas otrzymamy
+\phantomsection\label{ch3/chIII021:equation-eqn36}\begin{gather}
+\begin{split}\langle N(t_2) N(t_1) - N^2(t_1) \rangle = \langle N(t_2) N(t_1) \rangle - \langle N^2(t_1)\rangle =\mu (t_2 -t_1) \; \mu t_1\end{split}\label{ch3/chIII021-eqn36}
+\end{gather}
+Stąd wynika, że
+\phantomsection\label{ch3/chIII021:equation-eqn37}\begin{gather}
+\begin{split}\langle N(t_2) N(t_1) \rangle = \mu (t_2 -t_1) \; \mu t_1 +\langle N^2(t_1)\rangle = \mu (t_2 -t_1) \; \mu t_1 + \mu^2 t_1^2 + \mu t_1\end{split}\label{ch3/chIII021-eqn37}
+\end{gather}\phantomsection\label{ch3/chIII021:equation-eqn38}\begin{gather}
+\begin{split}\mu^2 t_2 t_1 + \mu t_1 \; \; \; \; \mbox{dla} \; \; \; t_2 > t_1\end{split}\label{ch3/chIII021-eqn38}
+\end{gather}\end{quote}
+\begin{enumerate}
+\setcounter{enumi}{1}
+\item {} 
+Niech $t_1 > t_2 > t_0=0$. Przyrosty $N(t_1) - N(t_2)$ oraz $N(t_2) - N(t_0)$ są zmiennymi losowymi niezależnymi. Możemy powtórzyć trzy kroki analogiczne do tych w powyższych trzech równaniach otrzymując
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn39}\begin{gather}
+\begin{split}\langle N(t_1) N(t_2)\rangle = \mu (t_1 -t_2) \; \mu t_2 + \langle N^2(t_2)\rangle = \mu^2 t_1 t_2 + \mu t_2\; \; \; \; \mbox{dla} \; \; \; t_1 > t_2\end{split}\label{ch3/chIII021-eqn39}
+\end{gather}
+Ponieważ
+\phantomsection\label{ch3/chIII021:equation-eqn40}\begin{gather}
+\begin{split}\langle N(t_2) N(t_1)\rangle = \langle N(t_1) N(t_2)\rangle\end{split}\label{ch3/chIII021-eqn40}
+\end{gather}
+to z powyższych równań otrzymujemy tezę.
+\end{quote}
+
+Rozkład prawdopodobieństwa Poissona
+\phantomsection\label{ch3/chIII021:equation-eqn41}\begin{gather}
+\begin{split} p_k(t) = Pr\{N(t) = k\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}\end{split}\label{ch3/chIII021-eqn41}
+\end{gather}
+spełnia następujący układ równań ewolucji (ang. master equations)
+\phantomsection\label{ch3/chIII021:equation-eqn42}\begin{gather}
+\begin{split}\frac{dp_0(t)}{dt} = -\mu p_0(t), \; \; \; p_0(0) = 1\end{split}\label{ch3/chIII021-eqn42}
+\end{gather}\phantomsection\label{ch3/chIII021:equation-eqn43}\begin{gather}
+\begin{split}\frac{dp_k(t)}{dt} = \mu p_{k-1}(t) -\mu p_k(t), \; \; \; p_k(0) = 0, \; \; \; k=1, 2, 3, \dots\end{split}\label{ch3/chIII021-eqn43}
+\end{gather}
+Słuszność tego układu równań można sprawdzić bezpośrednim rachunkiem, z jednej strony różniczkując wyrażenie dla $p_k(t)$, z drugiej strony wstawiając wrażenia na $p_k(t)$ oraz $p_{k-1}(t)$. Równania te mają też jasną interpretację. W tym celu spojrzymy nieco inaczej na nasz proces. Mówimy, że układ jest w stanie $k$ jeżeli
+\phantomsection\label{ch3/chIII021:equation-eqn44}\begin{gather}
+\begin{split}N(t) =k\;\end{split}\label{ch3/chIII021-eqn44}
+\end{gather}
+Stan układu jest określony przez możliwe wartości populacji w danej chwili czasu, $k=0, 1, 2,....$.
+Zmiana stanu k układu w danej chwili czasu, opisywana przez tempo zmian czyli pochodną $dp_k(t)/dt$, może zachodzić z dwóch powodów: albo stan k pojawia się ze stanu (k-1) ponieważ następuje akt narodzin, albo stan k znika i układ przechodzi do stanu k+1 (ponieważ następuje akt narodzin). W wyrażeniu powyższym
+wyraz $\mu p_{k-1}(t)\;$ wchodzi ze znakiem dodatnim ponieważ stan k pojawia się ze stanu k-1; wyraz $\mu p_{k}(t)\;$ wchodzi ze znakiem ujemnym ponieważ stan k znika i układ przechodzi w stan k+1 (ponieważ ktoś się urodził). Jest to nic innego jak równanie bilansu.
+
+Proces Poissona można uogólnić tak, aby skok nie był tylko w górę o 1. Można modelować skoki w górę i w dół o dowolne wielkości. Mogą to być skoki deterministyczne lub losowe. Oto jedno z możliwych uogólnień:
+\phantomsection\label{ch3/chIII021:equation-eqn45}\begin{gather}
+\begin{split}N(t) = \sum\limits_i z_i \theta (t-t_i), \qquad\end{split}\label{ch3/chIII021-eqn45}
+\end{gather}
+gdzie $\theta (x)$ jest funkcją schodkową Heaviside'a oraz $\{t_i\}$ jest zbiorem losowych chwil skoków o średniej gęstości $\mu$. Amplitudy skoków $\{z_i\}$ są niezależnymi zmiennymi losowymi o tym samym rozkładzie prawdopodobieństwa $\rho(z)$ i są niezależne od $t_i$. Realizacjami takiego procesu są funkcje schodkowe o skokach w losowych chwilach czasu $t_i$ i o losowych wielkościach skoku $z_i$. Wartość średnia takiego procesu Poissona wynosi
+\phantomsection\label{ch3/chIII021:equation-eqn46}\begin{gather}
+\begin{split}\langle N(t)\rangle = \mu\langle z_i\rangle t\end{split}\label{ch3/chIII021-eqn46}
+\end{gather}
+gdzie
+\phantomsection\label{ch3/chIII021:equation-eqn47}\begin{gather}
+\begin{split}\langle z_i \rangle = \int_{-\infty}^{\infty} z \rho(z) dz\end{split}\label{ch3/chIII021-eqn47}
+\end{gather}
+Funkcja korelacyjna tego procesu Poissona ma postać:
+.. MATH:
+
+\begin{Verbatim}[commandchars=\\\{\}]
+:label: eqn48
+
+R(t\_2, t\_1) = \PYGZbs{}langle N(t\_2) N(t\_1)\PYGZbs{}rangle = \PYGZbs{}mu\textasciicircum{}2 \PYGZbs{}langle z\_i\PYGZbs{}rangle\textasciicircum{}2 \PYGZbs{};t\_2 \PYGZbs{};t\_1 + \PYGZbs{}mu \PYGZbs{}langle z\_i\PYGZbs{}rangle\PYGZbs{}; \PYGZbs{}mbox\PYGZob{}min\PYGZcb{}(t\_2, t\_1) = \PYGZbs{}langle N(t\_2)\PYGZbs{}rangle\PYGZbs{}langle N(t\_1)\PYGZbs{}rangle+ \PYGZbs{}mu \PYGZbs{};\PYGZbs{}langle z\_i\PYGZbs{}rangle \PYGZbs{}mbox\PYGZob{}min\PYGZcb{}(t\_2, t\_1)
+\end{Verbatim}
+
+Pojedynczą Realizację procesu Poissona można uzyskać poprzez wygenerowanie \code{N} niezależnych
+punktów losowo rozłożonych na osi czasu na odcinku $[0,T]$. Ilość punktów generujemy z
+rozkładu Poissona a ich położenie na osi czasu zgodnie z rozkładem jednorodnym $U(0,N)$.
+Najprościej będzie posłużyć się dwoma pakietami. Pakietem \code{scipy}, aby wygenerować
+ilość punktów korzystając z rozkładu Poissona. Natomiast pakiet \code{matplotlib} posłuży nam
+funkcją step do narysowania funkcji schodkowej. Punkty czasowe, w których nastąpi skok
+uzyskamy wykorzystując podstawową funkcję \code{random()}.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k+kn}{from} \PYG{n+nn}{scipy} \PYG{k+kn}{import} \PYG{n}{stats}
+\PYG{k+kn}{import} \PYG{n+nn}{matplotlib.pyplot} \PYG{k+kn}{as} \PYG{n+nn}{plt}
+
+\PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{15}
+\PYG{n}{mu} \PYG{o}{=} \PYG{l+m+mf}{1.3}
+\PYG{n}{N} \PYG{o}{=} \PYG{n}{stats}\PYG{o}{.}\PYG{n}{poisson}\PYG{o}{.}\PYG{n}{rvs}\PYG{p}{(}\PYG{n}{T}\PYG{o}{*}\PYG{n}{mu}\PYG{p}{)}
+\PYG{n}{steps} \PYG{o}{=} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{N}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{)}
+
+\PYG{n}{points} \PYG{o}{=} \PYG{n+nb}{sorted}\PYG{p}{(}\PYG{p}{[}\PYG{n}{random}\PYG{p}{(}\PYG{p}{)}\PYG{o}{*}\PYG{n}{T} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{steps}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{step}\PYG{p}{(}\PYG{n}{points}\PYG{p}{,}\PYG{n}{steps}\PYG{p}{,}\PYG{n}{linewidth}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{n}{R}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{xlabel}\PYG{p}{(}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}t\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{ylabel}\PYG{p}{(}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}N(t)\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{sage\PYGZus{}chIII02\PYGZus{}02.pdf}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{savefig}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{sage\PYGZus{}chIII02\PYGZus{}02.png}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{plt}\PYG{o}{.}\PYG{n}{clf}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.800\linewidth]{sage_chIII02_02.pdf}
+\caption{Relizacja procesu Poissona.}\end{figure}
+
+
+\subsection{Proces Levy-ego}
+\label{ch3/chIII021:proces-levy-ego}
+Uogólnimy dwa powyższe procesy: Wienera i Poissona, które w potocznym sensie są jednocześnie najbardziej losowe. Są też procesami Markowa. Podkreślamy, że są to podstawowe procesy stochastyczne, ale nie powinno się je nazywać szumem ponieważ nie są to procesy stacjonarne. Są one najbardziej losowe, ponieważ następujące po sobie przyrosty tych procesów są niezależne.
+
+Powyższe dwa procesy są szczególnymi przypadkami procesu który nazywa się procesem Levy'ego. Wiele innych procesów są albo funkcjami procesu Levy'ego albo funkcjonałami (trochę ogólniejszymi zależnościami) tego procesu.
+
+Definicja procesu Levy'ego $L(t)$ jest relatywnie prosta: jest to rzeczywisty proces stochastyczny, prawostronnie ciągły o skończonych granicach lewostronnych oraz
+\begin{enumerate}
+\item {} 
+$L(t)$ startuje z zera, tzn. $L(0)=0$
+
+\item {} 
+$L(t)$ ma niezależne przyrosty na nieprzekrywających się przedziałach, tzn. przyrosty $L(t_4) -L(t_3)$ oraz $L(t_2) -L(t_1)$ są niezależnymi zmiennymi losowymi na nieprzekrywających się przedziałach $[t_1, t_2]$ and $[t_3, t_4]$ dla dowolnych chwil czasu takich że $0 \le t_1 \le t_2 \le t_3 \le t_4$
+
+\item {} 
+$L(t)$ ma stacjonarne przyrosty, tzn. rozkład prawdopodobieństwa zmiennych losowych $L(t_2) -L(t_1)$ zależy od różnicy czasów $t_2 -t_1$ dla dowolnych $0 \le t_1 \le t_2$.
+
+\item {} 
+$L(t)$ jest stochastycznie ciągły, tzn. dla dowolnych $t \ge 0$ oraz $\epsilon > 0$:
+
+\end{enumerate}
+\begin{quote}
+\phantomsection\label{ch3/chIII021:equation-eqn49}\begin{gather}
+\begin{split}\lim_{s\to t} P(|L(t) -L(s)|>\epsilon)=0\end{split}\label{ch3/chIII021-eqn49}
+\end{gather}\end{quote}
+
+Własności te są takie same jak dla procesu Wienera i procesu Poissona. Ale istnieją jeszcze inne procesy, które mają te same własności. Dlatego włączenie tych innych procesów do procesu Wienera i Poissona daje w rezultacie proces Levy'ego.
+
+Z własności (1) i (2) wynika, że funkcja korelacyjna procesu Levy'ego ma postać (patrz wykłady: Procesy i zjawiska losowe)
+\phantomsection\label{ch3/chIII021:equation-eqn50}\begin{gather}
+\begin{split}\langle L(t) L(s) \rangle = 2D_0 \mbox{min} (t, s) \equiv 2D_0 [t \theta(s-t) + s \theta(t-s)], \qquad\end{split}\label{ch3/chIII021-eqn50}
+\end{gather}
+gdzie $D_0 >0$ jest intensywnością (natężeniem) procesu Levy'ego.
+
+Własności probabilistyczne tego procesu można wyznaczyć np. z jego funkcji charakterystycznej, która zgodnie z twierdzeniem Levy'ego-Chinczyna ma postać
+\phantomsection\label{ch3/chIII021:equation-eqn51}\begin{gather}
+\begin{split}C(\omega, t) = \langle \mbox{e}^{i\omega L(t)} \rangle = \mbox{e}^{t \psi(\omega)}, \qquad\end{split}\label{ch3/chIII021-eqn51}
+\end{gather}
+gdzie eksponenta Levy'ego ma postać
+\phantomsection\label{ch3/chIII021:equation-eqn52}\begin{gather}
+\begin{split}\psi(\omega) = ia_0 \omega -\frac{1}{2} b \omega^2+\int_{-\infty}^{\infty} \left[\mbox{e}^{i\omega y} - 1 - i\omega y I_{(-1,1)}(y) \right] \nu (dy), \qquad\end{split}\label{ch3/chIII021-eqn52}
+\end{gather}
+Stałe $a_0\in R, b \ge 0. Oznaczenie I_A(y)$ jest tzw. indykatorem zbioru $A$: jest to funkcja o własności:
+\phantomsection\label{ch3/chIII021:equation-eqn53}\begin{gather}
+\begin{split} I_A(y) =1 \quad \mbox{gdy} \quad y\in A \quad \mbox{oraz} \quad I_A(y) = 0 \quad \mbox{w pozostałych przypadkach}\end{split}\label{ch3/chIII021-eqn53}
+\end{gather}
+$\nu(dy)$ jest tzw. miarą Levy'ego o własności
+\phantomsection\label{ch3/chIII021:equation-eqn54}\begin{gather}
+\begin{split}\nu (R-[-1, 1]) < \infty, \quad \int_{-1}^1 y^2 \nu(dy) < \infty. \qquad\end{split}\label{ch3/chIII021-eqn54}
+\end{gather}
+Dla niewtajemniczonych i nie-ekspertów matematycznych: zamiast tajemniczego zapisu $\nu(dy)$ można używać zapisu $\nu(dy) = h(y) dy$ gdzie $h(y)$ jest nieujemną funkcją. Z powyższego przedstawienia funkcji charakterystycznej wynika, że proces Levy'ego jest określony przez 3 liczby, tzw. tryplet Levy'ego-Chinczyna $(a_0, b, \nu)$, gdzie $a_0$ charakteryzuje dryf, $b$ to parametr procesu Wienera oraz $\nu$ charakteryzuje skoki procesu. Tryplet $(0, b, 0)$ to rozkład Gaussa dla procesu Wienera. Tryplet $(0, 0, \mu \delta(y-1))$ to rozkład Poissona z parametrem $\mu$ który opisuje proces Poissona o skokach 1 w chwilach o równomiernym rozkładzie. Tzw. złożony proces Poissona to proces o losowych skokach o różnej wielkości z rozkładem prawdopodobieństwa $\nu$ z $\nu(R) <\infty$. Eksponenta Levy'ego przyjmuje wówczas postać
+\phantomsection\label{ch3/chIII021:equation-eqn55}\begin{gather}
+\begin{split}\psi(\omega) = \mu \int_{-\infty}^{\infty} \left[\mbox{e}^{i\omega y} - 1 \right] \nu (dy). \qquad\end{split}\label{ch3/chIII021-eqn55}
+\end{gather}
+Jeżeli $\nu(R) = \infty$ wówczas $L(t)$ jest skokowym procesem o nieskończonej liczbie małych skoków w dowolnie małym przedziale czasu. W rzeczywistości taki proces nie istnieje, ale jeżeli pojawia się bardzo duża ilość skoków w małych przedziałach czasu, to przybliżenie takie dobrze modeluje układ.
+
+Z twierdzenia Levy'ego-Ito wynika, że proces Levy'ego $L(t)$ składa się z 4 niezależnych procesów elementarnych:
+\phantomsection\label{ch3/chIII021:equation-eqn56}\begin{gather}
+\begin{split}L(t)=L_1(t) +L_2(t) + L_3(t) + L_4(t), \qquad\end{split}\label{ch3/chIII021-eqn56}
+\end{gather}
+gdzie $L_1(t)$ to dryf, $L_2(t)$ to proces Wienera, $L_3(t)$ to złożony proces Poissona oraz $L_4(t)$ to czysto skokowy proces zwany martngałem (a pure jump martingale). Mówiąc w prosty sposób, martyngał to taki proces stochastyczny, że warunkowa wartość średnia
+\phantomsection\label{ch3/chIII021:equation-eqn57}\begin{gather}
+\begin{split}\langle L(t_{n+1})|L(t_{1}) L(t_{2})... L(t_{n})\rangle = L(t_{n})\end{split}\label{ch3/chIII021-eqn57}
+\end{gather}
+Innymi słowy, to taki proces w którym warunkowa wartość średnia procesu w momencie $t+1$, gdy znamy jego wartości do jakiegoś wcześniejszego momentu $t$, jest równa wartości procesu w momencie $t$.
+
+Taka dekompozycja wynika z eksponenty Levy'ego, która może być przedstawiona w postaci 4 wyrażeń:
+\phantomsection\label{ch3/chIII021:equation-eqn58}\begin{gather}
+\begin{split}\psi(\omega) = \psi_1(\omega) +\psi_2(\omega) +\psi_3(\omega) +\psi_4(\omega), \qquad\end{split}\label{ch3/chIII021-eqn58}
+\end{gather}
+gdzie
+\phantomsection\label{ch3/chIII021:equation-eqn59}\begin{gather}
+\begin{split}\psi_1(\omega) = i a_0 \omega, \quad \psi_2(\omega) = -\frac{1}{2} b \omega^2, \quad \psi_3(\omega) = \int_{|y| \ge 1} \left[\mbox{e}^{i\omega y} - 1 \right] \nu (dy), \qquad\end{split}\label{ch3/chIII021-eqn59}
+\end{gather}\phantomsection\label{ch3/chIII021:equation-eqn60}\begin{gather}
+\begin{split}\psi_4(\omega) = \int_{|y| < 1} \left[\mbox{e}^{i\omega y} - 1 - i\omega y \right] \nu (dy).\end{split}\label{ch3/chIII021-eqn60}
+\end{gather}
+Warto podkreślić, że liniowa kombinacja niezależnych procesów Levy'ego jest także procesem Levy'ego.
+
+Szczególny, ale bardzo ważnym przypadkiem procesu Levy'ego jest tzw. $\alpha$-stabilny proces $L_{\alpha}(t)$ 0 indeksie $\alpha \in (0, 2]$. To jest przypadek trypletu $(a, 0, \nu)$ z miarą Levy'ego w postaci
+\phantomsection\label{ch3/chIII021:equation-eqn61}\begin{gather}
+\begin{split}\nu(y) = \left[ c_{1} I_{(0,\infty)}(y) + c_{2} I_{(-\infty,0)}(y) \right] | y|^{-\alpha -1}\ dy, \qquad\end{split}\label{ch3/chIII021-eqn61}
+\end{gather}
+gdzie $c_1>0$ i $c_2>0$. Funkcja charakterystyczna jest postaci
+\phantomsection\label{ch3/chIII021:equation-eqn62}\begin{gather}
+\begin{split}\psi(\omega)=\left\{\begin{array}{ll}i a \omega - c | \omega|^\alpha\left (1-i\beta\mbox{sgn}\omega \tan\frac{\pi\alpha}{2} \right), & \mbox{for}\;\;\alpha\neq 1, \\i a \omega -c | \omega|\left (1+i\beta\frac{2}{\pi}\mbox{sgn} \omega \ln|k| \right), & \mbox{for}\;\;\alpha=1, \\\end{array}\right. \qquad\end{split}\label{ch3/chIII021-eqn62}
+\end{gather}
+gdzie
+\phantomsection\label{ch3/chIII021:equation-eqn63}\begin{gather}
+\begin{split}\alpha\in(0, 2], \; \beta =\beta(c_1, c_2) \in [-1, 1], c = c(\alpha, c_1, c_2) \in(0, \infty)\end{split}\label{ch3/chIII021-eqn63}
+\end{gather}
+oraz $a = a(a_0, \alpha, c_1, c_2)$. Przypadek $c_1=c_2$ implikuje $\beta=0$ i wówczas proces jest symetryczny.
+
+Tzw. charakterystyczny funkcjonał (pewien szczególny rodzaj odwzorowania, funkcji) symetrycznego $\alpha$- stabilnego białego szumu Levy'ego $Y_{\alpha}(t)$ (gdy $a=0, \beta=0$ w równaniu \eqref{ch3/chIII021-eqn62} ) jest w postaci
+\phantomsection\label{ch3/chIII021:equation-eqn64}\begin{gather}
+\begin{split}{\cal C}_{Y_{\alpha}}[f] =\langle {\mbox{exp}}\left[i \int_0^{t} ds\; f(s) Y_{\alpha}(s) \right] \rangle = {\mbox{exp}}\left[- c \int_0^{t} dt\; | (s)|^{\alpha} \right], \qquad\end{split}\label{ch3/chIII021-eqn64}
+\end{gather}
+Ten zapis ma uzmysłowić, że funkcjonał ${\cal C}$ zależy od historii na przedziale $(0, t)$. Funkcja $f$ jest dowolną funkcją. Jeżeli testowa funkcja $f(t)$ jest stała, $f(s) =\omega$, to funkcjonał redukuje się do funkcji charakterystycznej.
+
+Generowanie realizacji procesu Levy'ego wymaga nieco większego nakładu pracy.
+Metoda generowania zmiennych z rozkładu $\alpha-$ stabilnego opisana jest w
+dodatku numerycznym na końcu tego podręcznika. Sama realizacja procesu przebiega
+identycznie jak w przypadku procesu Wienera. Jedynymi różnicami są wykładnik
+stojący przy prefaktorze zmiennej losowej oraz rozkład którym posługujemy się
+do generowania liczb losowych.
+
+Posłużymy się metodą \code{rvs} funkcji \code{levy\_stable} wbudowaną w pakiet \code{stats} biblioteki
+\code{scipy}. Pobiera ona 5 argumentów
+\begin{quote}
+
+\code{stats.levy\_stable(alpha, beta, loc=0, scale=1, size=1)}
+\end{quote}
+
+gdzie
+\begin{itemize}
+\item {} 
+\code{alpha}, \code{beta} - to parametry rozkładu Levy'ego
+
+\item {} 
+\code{loc=0}, \code{scale=1} - to odpowiednio średnia i odchylenie standardowe (wraz z domyślnymi wartościami)
+
+\item {} 
+\code{size=1} - to ilość zmiennych losowych generowanych jednorazowym wywołaniem
+
+\end{itemize}
+
+Więcej informacji uzyskamy w pomocy (wpisując stats.levy\_stable?)
+
+\begin{Verbatim}[commandchars=\\\{\}]
+  \PYG{c}{\PYGZsh{} kilka importów}
+  \PYG{k+kn}{import} \PYG{n+nn}{numpy} \PYG{k+kn}{as} \PYG{n+nn}{np}
+  \PYG{k+kn}{from} \PYG{n+nn}{scipy} \PYG{k+kn}{import} \PYG{n}{stats}
+  \PYG{k+kn}{import} \PYG{n+nn}{warnings}
+  \PYG{n}{warnings}\PYG{o}{.}\PYG{n}{simplefilter}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{ignore}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,} \PYG{n+ne}{DeprecationWarning}\PYG{p}{)}
+
+  \PYG{c}{\PYGZsh{} parametry symulacji}
+  \PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.01} \PYG{c}{\PYGZsh{}krok}
+  \PYG{n}{N} \PYG{o}{=} \PYG{l+m+mi}{5000} \PYG{c}{\PYGZsh{}ilosc krokow}
+
+  \PYG{c}{\PYGZsh{} parametry SDE}
+  \PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mi}{0} \PYG{c}{\PYGZsh{}wartosc poczatkowa}
+
+  \PYG{c}{\PYGZsh{}Levy \PYGZhy{} Smirnoff}
+  \PYG{n}{alpha} \PYG{o}{=} \PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{2}
+  \PYG{n}{beta} \PYG{o}{=} \PYG{l+m+mi}{1}
+  \PYG{n}{mu} \PYG{o}{=} \PYG{l+m+mi}{0}
+  \PYG{n}{sigma} \PYG{o}{=} \PYG{l+m+mf}{0.1}
+
+  \PYG{n}{x} \PYG{o}{=} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{]}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{N}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{lab} \PYG{o}{=} \PYG{n}{stats}\PYG{o}{.}\PYG{n}{levy\PYGZus{}stable}\PYG{o}{.}\PYG{n}{rvs}\PYG{p}{(}\PYG{n}{alpha}\PYG{p}{,} \PYG{n}{beta}\PYG{p}{,} \PYG{n}{loc}\PYG{o}{=}\PYG{n}{mu}\PYG{p}{,} \PYG{n}{scale}\PYG{o}{=}\PYG{n}{sigma}\PYG{p}{)}
+    \PYG{n}{x}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{x}\PYG{p}{[}\PYG{n}{i}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{]} \PYG{o}{+} \PYG{n}{h}\PYG{o}{*}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{n}{alpha}\PYG{p}{)} \PYG{o}{*} \PYG{n}{lab}\PYG{p}{)}
+
+
+\PYG{o}{.}\PYG{o}{.} \PYG{n}{figure}\PYG{p}{:}\PYG{p}{:} \PYG{n}{images}\PYG{o}{/}\PYG{n}{sage\PYGZus{}chIII02\PYGZus{}03}\PYG{o}{.}\PYG{o}{*}
+  \PYG{p}{:}\PYG{n}{align}\PYG{p}{:} \PYG{n}{center}
+  \PYG{p}{:}\PYG{n}{width}\PYG{p}{:} \PYG{l+m+mi}{80}\PYG{o}{\PYGZpc{}}
+  \PYG{p}{:}\PYG{n}{alt}\PYG{p}{:} \PYG{n}{figchIII0203}
+
+  \PYG{n}{Relizacja} \PYG{n}{procesu} \PYG{n}{Levy}\PYG{o}{\PYGZhy{}}\PYG{n}{Smirnoffa}\PYG{o}{.}
+\end{Verbatim}
+
+Korzystając z rozkładu Levy'ego możemy oczywiście uzyskać zmienne normalne
+$N(0,1)$ kładąc $\alpha=2, \beta=0, \sigma = 1/\sqrt(2), \mu=0$.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.800\linewidth]{sage_chIII02_04.pdf}
+\caption{Relizacja procesu Wienera uzyskana z rozkładu Levy'ego.}\end{figure}
+
+
 \chapter{Dodatek numeryczny}
 \label{index:dodatek-numeryczny}
 
@@ -3793,7 +4397,7 @@ $m_i$ spełnia następujący warunek
 Ideę histogramu najlepiej zrozumiec na przykładzie. Mamy następującą listę liczb
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n}{l} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{5}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{l+m+mi}{4}\PYG{p}{,} \PYG{l+m+mi}{3}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{p}{]}
+\PYG{n}{l} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{4}\PYG{p}{]}
 \end{Verbatim}
 
 Budując histogram na początku musimy ustalić szerokość przedziału. Zacznijmy od łatwiejszej wersji: niech
@@ -3859,7 +4463,8 @@ poprawnym opisaniu odciętej (np: chcemy tylko zobaczyć kształt histogramu), w
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n}{h} \PYG{o}{=} \PYG{p}{[}\PYG{n}{l}\PYG{o}{.}\PYG{n}{count}\PYG{p}{(}\PYG{n}{i}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{5}\PYG{p}{,}\PYG{l+m+mi}{6}\PYG{p}{)}\PYG{p}{]}
-\PYG{n}{bar\PYGZus{}chart}\PYG{p}{(}\PYG{n}{h}\PYG{p}{,} \PYG{n}{width}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{orangered}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}i\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{\PYGZsh{}\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{title}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{histogram}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{b} \PYG{o}{=} \PYG{n}{bar\PYGZus{}chart}\PYG{p}{(}\PYG{n}{h}\PYG{p}{,} \PYG{n}{width}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{orangered}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
+\PYG{n}{b}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}i\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{\PYGZsh{}\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{title}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{histogram}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
 \end{Verbatim}
 
 Co pozwoli nam wygenerować taki rysunek:
@@ -3888,7 +4493,7 @@ w liście \code{l}), wystarczy napisać
 a aby narysować jego wykres
 
 \begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n}{v}\PYG{o}{.}\PYG{n}{plot\PYGZus{}histogram}\PYG{p}{(}\PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{11}\PYG{p}{,} \PYG{n}{normalize}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{orangered}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}i\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{\PYGZsh{}\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{v}\PYG{o}{.}\PYG{n}{plot\PYGZus{}histogram}\PYG{p}{(}\PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{11}\PYG{p}{,} \PYG{n}{normalize}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}i\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{\PYGZsh{}\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}
 \end{Verbatim}
 \begin{figure}[htbp]
 \centering
@@ -4007,15 +4612,20 @@ go i porównamy z teoretycznym rozkładem dla kilku wartości $\lambda = 0.5, 1,
 \PYG{n}{kolor} \PYG{o}{=} \PYG{p}{[}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,} \PYG{l+s}{\PYGZdq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZdq{}}\PYG{p}{]}
 \PYG{n}{parlist} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{,} \PYG{l+m+mf}{0.5}\PYG{p}{]}
 \PYG{n}{p} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
+\PYG{n}{i} \PYG{o}{=} \PYG{l+m+mi}{0}
 \PYG{k}{for} \PYG{n}{par} \PYG{o+ow}{in} \PYG{n}{parlist}\PYG{p}{:}
-  \PYG{n}{lista} \PYG{o}{=} \PYG{p}{[}\PYG{n}{F}\PYG{p}{(}\PYG{n}{random}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{par}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
+  \PYG{n}{lista} \PYG{o}{=} \PYG{p}{[}\PYG{n}{F}\PYG{p}{(}\PYG{n}{random}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{par}\PYG{p}{)} \PYG{k}{for} \PYG{n}{j} \PYG{o+ow}{in} \PYG{n+nb}{xrange}\PYG{p}{(}\PYG{n}{N}\PYG{p}{)}\PYG{p}{]}
   \PYG{n}{v} \PYG{o}{=} \PYG{n}{finance}\PYG{o}{.}\PYG{n}{TimeSeries}\PYG{p}{(}\PYG{n}{lista}\PYG{p}{)}
-  \PYG{n}{P} \PYG{o}{=} \PYG{n}{v}\PYG{o}{.}\PYG{n}{plot\PYGZus{}histogram}\PYG{p}{(}\PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{kolor}\PYG{p}{[}\PYG{n}{parlist}\PYG{o}{.}\PYG{n}{index}\PYG{p}{(}\PYG{n}{par}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,} \PYG{n}{alpha}\PYG{o}{=}\PYG{l+m+mf}{0.5}\PYG{p}{)}
+  \PYG{n}{P} \PYG{o}{=} \PYG{n}{v}\PYG{o}{.}\PYG{n}{plot\PYGZus{}histogram}\PYG{p}{(}\PYG{n}{bins}\PYG{o}{=}\PYG{l+m+mi}{100}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{kolor}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{,} \PYG{n}{alpha}\PYG{o}{=}\PYG{l+m+mf}{0.5}\PYG{p}{)}
   \PYG{n}{P}\PYG{o}{.}\PYG{n}{set\PYGZus{}aspect\PYGZus{}ratio}\PYG{p}{(}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{automatic}\PYG{l+s}{\PYGZdq{}}\PYG{p}{)}
   \PYG{n}{p}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{P}\PYG{p}{)}
-  \PYG{n}{p}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{xi}\PYG{p}{,}\PYG{n}{par}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{lista}\PYG{p}{)}\PYG{p}{,} \PYG{n}{thickness}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{kolor}\PYG{p}{[}\PYG{n}{parlist}\PYG{o}{.}\PYG{n}{index}\PYG{p}{(}\PYG{n}{par}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,}
-  \PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{lambda = }\PYG{l+s+si}{\PYGZpc{}.1f}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{o}{\PYGZpc{}}\PYG{n}{par}\PYG{p}{)}\PYG{p}{)}
-\PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{xmin}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{xmax}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{figsize}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{xi\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{lambda e\PYGZca{}\PYGZob{}\PYGZhy{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{lambda }\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{xi\PYGZcb{}\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{12}\PYG{p}{)}
+  \PYG{n}{p}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{plot}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{xi}\PYG{p}{,}\PYG{n}{par}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n+nb}{max}\PYG{p}{(}\PYG{n}{lista}\PYG{p}{)}\PYG{p}{,}
+    \PYG{n}{thickness}\PYG{o}{=}\PYG{l+m+mi}{2}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{kolor}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{,}
+    \PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{lambda = }\PYG{l+s+si}{\PYGZpc{}.1f}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{o}{\PYGZpc{}}\PYG{n}{par}\PYG{p}{)}\PYG{p}{)}
+  \PYG{n}{i} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{pl} \PYG{o}{=} \PYG{n+nb}{sum}\PYG{p}{(}\PYG{n}{p}\PYG{p}{)}
+\PYG{n}{pl}\PYG{o}{.}\PYG{n}{axes\PYGZus{}labels}\PYG{p}{(}\PYG{p}{[}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{xi\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{lambda e\PYGZca{}\PYGZob{}\PYGZhy{}}\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{lambda }\PYG{l+s}{\PYGZbs{}}\PYG{l+s}{xi\PYGZcb{}\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{pl}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{xmin}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{,} \PYG{n}{xmax}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{figsize}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{,} \PYG{n}{fontsize}\PYG{o}{=}\PYG{l+m+mi}{12}\PYG{p}{)}
 \end{Verbatim}
 
 Jak widać na rysunku liczby losowe przekształcone metodą inwersji w oparciu o odwrotność dystrybuanty, dość dobrze
@@ -4086,14 +4696,6 @@ Wygeneruj 1000 liczb losowych z rozkładem trójkątnym. Narysuj ich unormowany 
 Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
 
 \end{description}
-
-
-\bigskip\hrule{}\bigskip
-
-
-
-\bigskip\hrule{}\bigskip
-
 
 
 \section{Równania różniczkowe zwyczajne}

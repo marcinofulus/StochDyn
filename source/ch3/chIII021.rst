@@ -161,7 +161,7 @@ Prawdopodobieństwo tego, że w chwili :math:`t` cząstka jest w przedziale :mat
 .. MATH::
  :label: eqn14
 
- Pr\{W(t) \in (a, b)\} = \int_a^{\; b} f(x, t) \; dx = \frac{1}{\sqrt{4\pi D t} }\; \int_a^{\; b} \exp \left[ - \frac{x^2}{4Dt}\right] \; dx$$
+ Pr\{W(t) \in (a, b)\} = \int_a^{\; b} f(x, t) \; dx = \frac{1}{\sqrt{4\pi D t} }\; \int_a^{\; b} \exp \left[ - \frac{x^2}{4Dt}\right] \; dx
 
 
 Czytelnik zauważy, że niekonsekwentnie piszemy czasami przedział domknięty :math:`[a, b]`, a czasami przedział otwarty :math:`(a, b)`. W tym przypadku jest to bez różnicy ponieważ 
@@ -183,7 +183,6 @@ Poniżej pokazujemy jedną z możliwych  realizacji (trajektorii) procesu Wiene
 
   .. code-block:: python
 
-    reset()
     # parametry symulacji
     h = 0.01 #krok
     N = 5000 #ilosc krokow
@@ -237,7 +236,7 @@ Rozważamy przedział liczbowy :math:`[0, T]`. Z przedziału tego wybieramy loso
 .. MATH::
  :label: eqn16
 
- P(A)= p = \frac{t_2 -t_1}{T}$
+ P(A)= p = \frac{t_2 -t_1}{T}
 
 
 Jeżeli wylosowany punkt jest w tym przedziale, uważam to za sukces. Wybieramy teraz losowo n punktów z przedziału :math:`[0, T]`. Prawdopodobieństwo tego, że k z tych wszystkich n-punktów będzie w przedziale :math:`(t_1, t_2)\subset [0, T]` jest określone przez rozkład dwumianowy :math:`p_n(k)`. Jeżeli przedział :math:`[0, T]` będzie przedziałem czasowym, to w przedziale tym mamy :math:`n` losowych chwil czasu oraz :math:`k \le n` losowych chwil czasu w przedziale :math:`(t_1, t_2)\subset [0, T]`. Teraz wykonujemy przejście graniczne: 
@@ -245,7 +244,7 @@ Jeżeli wylosowany punkt jest w tym przedziale, uważam to za sukces. Wybieramy 
 .. MATH::
  :label: eqn17
 
- n \to \infty, \;\;\; p \to 0 \;\;\;\; \mbox{ale} \;\;n\cdot p = \frac{n(t_2 - t_1)}{T} = \lambda $
+ n \to \infty, \;\;\; p \to 0 \;\;\;\; \mbox{ale} \;\;n\cdot p = \frac{n(t_2 - t_1)}{T} = \lambda 
 
 
 co da się osiągnąć gdy założymy że :math:`T \to \infty` przy czym 
@@ -253,7 +252,7 @@ co da się osiągnąć gdy założymy że :math:`T \to \infty` przy czym
 .. MATH::
  :label: eqn18
 
- \mu = \frac{n}{T}$
+ \mu = \frac{n}{T}
 
 
 jest stałą wielkością i oznacza ilość losowych punktów w jednostkowym przedziale, czyli gęstość losowo wybranych punktów na osi czasu. 
@@ -262,7 +261,7 @@ Przy takim skalowaniu otrzymamy wyrażenie na parametr
 .. MATH::
  :label: eqn19
 
- \lambda = \mu (t_2 -t_1) \;$
+ \lambda = \mu (t_2 -t_1)
 
 
 Przypiszmy teraz każdej losowej chwili czasu akt narodzin dziecka. Prawdopodobieństwo tego że 
@@ -282,7 +281,7 @@ Przyjmijmy teraz, że :math:`t_1 = 0` i :math:`t_2 =t`. Wówczas :math:`t_2 - t_
 .. MATH::
  :label: eqn21
 
-  p_k(t) = Pr\{N(t) = k\} = Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (0, t)\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}$
+  p_k(t) = Pr\{N(t) = k\} = Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (0, t)\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}
 
  
 jest prawdopodobieństwem tego, że w przedziale czasu :math:`(0, t)` urodziło się k dzieci. Jeżeli liczbę urodzonych dzieci oznaczymy przez :math:`N(t)` to otrzymamy proces stochastyczny nazywany procesem urodzin. Założymy, że :math:`N(0) = 0`. Oczywiście nie jest to bezwzględny wymóg, ale konwencja. Równie dobrze mógłbym badać dowolny inny stan początkowy :math:`N(0)`. Proces urodzin tak jak każda zmienna losowa o rozkładzie Poissona przyjmuje wartości całkowite nieujemne: 
@@ -290,13 +289,17 @@ jest prawdopodobieństwem tego, że w przedziale czasu :math:`(0, t)` urodziło 
 .. MATH::
  :label: eqn22
 
- N(t) = \{0, 1, 2, \dots\} $
+ N(t) = \{0, 1, 2, \dots\} 
 
 
 
- Jeżeli :math:`N(t) = k` to mówimy, że układ jest w stanie :math:`k`. 
-
-Takie sformułowanie jest często stosowane przez fizyków, zwłaszcza w kontekście fizyki kwantowej, gdzie stanami mogą być poziomy energetyczne układów kwantowych. Proces urodzin odpowiadałby przejściu z jednego poziomu energetycznego do najbliższego wyższego poziomu energetycznego.Przejście do stanu o niższej energii nie jest opisane procesem urodzin, ale procesem urodzin i śmierci. 
+Jeżeli :math:`N(t) = k` to mówimy, że układ jest w stanie :math:`k`. 
+Takie sformułowanie jest często stosowane przez fizyków, zwłaszcza w 
+kontekście fizyki kwantowej, gdzie stanami mogą być poziomy energetyczne 
+układów kwantowych. Proces urodzin odpowiadałby przejściu z jednego 
+poziomu energetycznego do najbliższego wyższego poziomu energetycznego.
+Przejście do stanu o niższej energii nie jest opisane procesem urodzin, 
+ale procesem urodzin i śmierci. 
 
 Można udowodnić, że przyrosty procesu urodzin :math:`N(t_2) - N(t_1)` oraz :math:`N(t_4) - N(t_3)` na *nieprzekrywających się przedziałach* :math:`(t_1, t_2)` oraz :math:`(t_3, t_4)` są zmiennymi losowymi niezależnymi. Jest to bardzo ważna własność procesu urodzin o poissonowskiej statystyce losowych chwil urodzin :math:`t_i`. Przyrost procesu urodzin :math:`N(t_2) - N(t_1)` jest stacjonarny, to znaczy, że prawdopodobieństwu tego że w przedziale czasu :math:`(t_1, t_2)` urodziło się k dzieci zależy od różnicy 
 czasów :math:`t_2-t_1`, a nie zależy od tego gdzie te chwile czasu :math:`t_1` i :math:`t_2` są na osi czasu. Jeżeli tak jest, to w ogólnym przypadku mówimy, że *proces stochastyczny ma przyrosty stacjonarne*. Uwaga: sam proces nie jest stacjonarny ponieważ rozkład prawdopodobieństwa zależy od czasu ale proces ma stacjonarne przyrosty! 
@@ -323,7 +326,7 @@ Aby otrzymać jedną realizację procesu urodzin w przedziale czasu :math:`[0, T
 .. MATH::
  :label: eqn24
 
-   $$ Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}
+   Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}
 
 
 
@@ -401,7 +404,7 @@ Oczywiście powyższe relacje można podać dla przyrostów procesu Poissona:
   .. MATH::
    :label: eqn32
 
-   \langle [N(t_2) - N(t_1)]^2 \rangle = \mu^2 (t_2-t_1)^2 + \mu (t_2-t_1) \; $
+   \langle [N(t_2) - N(t_1)]^2 \rangle = \mu^2 (t_2-t_1)^2 + \mu (t_2-t_1) \; 
 
 
 3. Funkcja korelacyjna procesu Poissona 
@@ -466,7 +469,7 @@ Pokażemy, w jaki sposób można wyznaczyć postać funkcji korelacyjnej. Tą sa
   .. MATH::
    :label: eqn40
 
-   \langle N(t_2) N(t_1)\rangle = \langle N(t_1) N(t_2)\rangle$
+   \langle N(t_2) N(t_1)\rangle = \langle N(t_1) N(t_2)\rangle
 
 
   to z powyższych równań otrzymujemy tezę.
@@ -476,7 +479,7 @@ Rozkład prawdopodobieństwa Poissona
 .. MATH::
  :label: eqn41
 
-  p_k(t) = Pr\{N(t) = k\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}$
+  p_k(t) = Pr\{N(t) = k\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}
 
 
 spełnia następujący układ równań ewolucji (ang. master equations)
@@ -518,7 +521,7 @@ gdzie :math:`\theta (x)` jest funkcją schodkową Heaviside'a oraz :math:`\{t_i\
 .. MATH::
  :label: eqn46
 
- \langle N(t)\rangle = \mu\langle z_i\rangle t$$
+ \langle N(t)\rangle = \mu\langle z_i\rangle t
 
 
 gdzie
@@ -749,7 +752,7 @@ Tzw. charakterystyczny funkcjonał (pewien szczególny rodzaj odwzorowania, funk
 Ten zapis ma uzmysłowić, że funkcjonał :math:`{\cal C}` zależy od historii na przedziale :math:`(0, t)`. Funkcja :math:`f` jest dowolną funkcją. Jeżeli testowa funkcja :math:`f(t)` jest stała, :math:`f(s) =\omega`, to funkcjonał redukuje się do funkcji charakterystycznej.
 
 Generowanie realizacji procesu Levy'ego wymaga nieco większego nakładu pracy. 
-Metoda generowania zmiennych z rozkładu $\alpha-$stabilnego opisana jest w 
+Metoda generowania zmiennych z rozkładu :math:`\alpha-` stabilnego opisana jest w 
 dodatku numerycznym na końcu tego podręcznika. Sama realizacja procesu przebiega 
 identycznie jak w przypadku procesu Wienera. Jedynymi różnicami są wykładnik 
 stojący przy prefaktorze zmiennej losowej oraz rozkład którym posługujemy się 
@@ -838,7 +841,7 @@ Więcej informacji uzyskamy w pomocy (wpisując stats.levy_stable?)
   .. end of input
 
 Korzystając z rozkładu Levy'ego możemy oczywiście uzyskać zmienne normalne 
-:math:`N(0,1)` kładąc :math:`$\alpha=2, \beta=0, \sigma = 1/\sqrt(2), \mu=0`.
+:math:`N(0,1)` kładąc :math:`\alpha=2, \beta=0, \sigma = 1/\sqrt(2), \mu=0`.
 
 .. only:: latex
 
