@@ -95,7 +95,7 @@
 <p>W metodzie  Newtona  kolejne przybliżenie pierwiastka dane jest przez równanie</p>
 <div class="math" id="equation-eqn2a">
 <span class="eqno">(3)</span>\[x_{n+1} = x_n + \frac{F(x_n)}{F'(x_n)}\equiv f(x_n)\]</div>
-<p>gdzie zakładamy, że pochodna <span class="math">\(F'(x)\)</span> istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji <span class="math">\(F(x)\)</span>.  W szczególności dla <span class="math">\(F(x)=x^2-2\)</span> ciąg <a href="#equation-eqn2a">(3)</a> w zależności od warunku początkowego zmierza do liczby <span class="math">\(x_{+}=\sqrt{2}\)</span> lub <span class="math">\(x_{-}=\sqrt{2}\)</span>  (co jest oczywiste skądinąd).</p>
+<p>gdzie zakładamy, że pochodna <span class="math">\(F'(x)\)</span> istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji <span class="math">\(F(x)\)</span>.  W szczególności dla <span class="math">\(F(x)=x^2-2\)</span> ciąg <a href="#equation-eqn2a">(3)</a> w zależności od warunku początkowego zmierza do liczby <span class="math">\(x_{+}=\sqrt{2}\)</span> lub <span class="math">\(x_{-}=-\sqrt{2}\)</span>  (co jest oczywiste skądinąd).</p>
 <dl class="docutils">
 <dt><em>Wizualizacja iteracji</em></dt>
 <dd><p class="first">Używając komputera, kolejne wyrazy <span class="math">\(x_n\)</span> jest łatwo uzyskać. Dla przykładu, niech</p>
@@ -120,7 +120,7 @@ for i in range(20):
 def pophis(startp,b,length):
  his = [startp]
  for i in range(length):
-     his.append( ne(b,his[i]) )
+     his.append(ne(b,his[i]))
  return his
 #
 #warunek pocz. przed b,
@@ -132,23 +132,30 @@ def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
 <h2>Metoda pajęczyny<a class="headerlink" href="#metoda-pajeczyny" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można obserwować kolejne kroki iteracji.</p>
 <p>Sposób rysowania:</p>
-<dl class="docutils">
-<dt># Dla danego równania  <span class="math">\(x_{n+1} = f(x_n)\)</span>, rysujemy wykres funkcji</dt>
-<dd><span class="math">\(y = f (x)\)</span> oraz  linię prostą <span class="math">\(y  = x\)</span>. Prosta ta pozwala
-przenosić wartość <span class="math">\(x_{n+1}\)</span>  z osi OY na oś OX.</dd>
-<dt># Na osi OX zaznaczamy warunek początkowy <span class="math">\(x_0\)</span>. Znajdujemy</dt>
-<dd>graficznie punkt <span class="math">\(x_1 = f(x_0)\)</span>, który jest na osi OY.</dd>
-</dl>
-<p># Przy pomocy prostej <span class="math">\(y=x\)</span> przenosimy teraz  punkt <span class="math">\(x_1\)</span> na oś OX.</p>
-<dl class="docutils">
-<dt># Mając na osi OX punkt <span class="math">\(x_1\)</span>, traktujemy go jako następny warunek</dt>
-<dd>początkowy i znajdujemy graficznie na osi OY punkt <span class="math">\(x_2=f(x_1)\)</span>.</dd>
-</dl>
-<p># Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym <span class="math">\(x_0\)</span>.</p>
+<ol class="arabic simple">
+<li>Dla danego równania  <span class="math">\(x_{n+1} = f(x_n)\)</span>, rysujemy wykres funkcji</li>
+</ol>
+<blockquote>
+<div><span class="math">\(y = f (x)\)</span> oraz  linię prostą <span class="math">\(y  = x\)</span>. Prosta ta pozwala
+przenosić wartość <span class="math">\(x_{n+1}\)</span>  z osi OY na oś OX.</div></blockquote>
+<ol class="arabic simple">
+<li>Na osi OX zaznaczamy warunek początkowy <span class="math">\(x_0\)</span>. Znajdujemy</li>
+</ol>
+<blockquote>
+<div>graficznie punkt <span class="math">\(x_1 = f(x_0)\)</span>, który jest na osi OY.</div></blockquote>
+<ol class="arabic simple">
+<li>Przy pomocy prostej <span class="math">\(y=x\)</span> przenosimy teraz  punkt <span class="math">\(x_1\)</span> na oś OX.</li>
+<li>Mając na osi OX punkt <span class="math">\(x_1\)</span>, traktujemy go jako następny warunek</li>
+</ol>
+<blockquote>
+<div>początkowy i znajdujemy graficznie na osi OY punkt <span class="math">\(x_2=f(x_1)\)</span>.</div></blockquote>
+<ol class="arabic simple">
+<li>Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym <span class="math">\(x_0\)</span>.</li>
+</ol>
 <div class='sage'><script type='text/x-sage'>var('r,x0,n')
 @interact
 def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)
- f(x)=x - a*x*x+1.7    ## postać funkcji f(x), która mozna zmieniać
+ f(x)=x - a*x*x + 1.7    ## postać funkcji f(x), która mozna zmieniać
  p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color='black')+plot(x,(x,-1,4),color='green',figsize=5)
  for n in range(20):
      th = 1
@@ -239,40 +246,44 @@ def _( a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a') ):
 <span class="eqno">(19)</span>\[y_{n+1} = x_{n+1} - x_s = f(x_n) - x_s  = f( x_s + y_n) - x_s\]</div>
 <p>Ponieważ <span class="math">\(y_n\)</span> jest małą wielkością, to funkcję <span class="math">\(f(x_s + y_n)\)</span> rozwijamy w szereg Taylora:</p>
 <div class="math" id="equation-eqn18">
-<span class="eqno">(20)</span>\[y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  = f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + ...  \quad \quad \mbox{gdzie} \quad  \lambda = f'(x_s) \quad \mbox{jest liczbą}\]</div>
-<p>Wykorzystaliśmy tu równość dla stanu stacjonarnego: <span class="math">\(x_s = f(x_s)\)</span>.  W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego:</p>
+<span class="eqno">(20)</span>\[y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  =\]\[= f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + \dots,\]</div>
+<p>gdzie</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(21)</span>\[\lambda = f'(x_s)\]</div>
+<p>jest liczbą. Wykorzystaliśmy tu równość dla stanu stacjonarnego: <span class="math">\(x_s = f(x_s)\)</span>.
+W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego:</p>
 <div class="math" id="equation-eqn19">
-<span class="eqno">(21)</span>\[y_{n+1} = \lambda y_n\]</div>
+<span class="eqno">(22)</span>\[y_{n+1} = \lambda y_n\]</div>
 <p>Jeżeli <span class="math">\(y_{n} \to 0\)</span>  to stan stacjonarny <span class="math">\(x_s\)</span> jest stabilny. Musimy teraz zbadać,  dla jakich wartości liczby <span class="math">\(\lambda = f'(x_s)\)</span> równanie dla <span class="math">\(y_n\)</span>  ma rozwiązania dążące do zera dla warunku początkowego <span class="math">\(|y_0| &lt;&lt; 1\)</span> .</p>
 <p>Rozpatrzymy 4 przypadki:</p>
 <div class="section" id="przypadek">
 <h4>1. Przypadek <span class="math">\(\lambda  &gt; 1\)</span><a class="headerlink" href="#przypadek" title="Stały odnośnik do tego nagłówka">¶</a></h4>
 <p>Aby łatwiej zrozumieć, przyjmiemy  <span class="math">\(\lambda =  2\)</span>. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać</p>
 <div class="math" id="equation-eqn20">
-<span class="eqno">(22)</span>\[y_{n+1} = 2 y_n\]</div>
+<span class="eqno">(23)</span>\[y_{n+1} = 2 y_n\]</div>
 <p>Otrzymamy ciąg liczbowy</p>
 <div class="math" id="equation-eqn21">
-<span class="eqno">(23)</span>\[ y_0, \quad y_1 =   2 y_0, \quad y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0, \quad y_3 =  2 y_2 = 2^3 y_0, \quad y_4 =  2 y_3 = 2^4 y_0, ....\]</div>
+<span class="eqno">(24)</span>\[ y_0,\]\[ y_1 =   2 y_0,\]\[ y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0,\]\[ y_3 =  2 y_2 = 2^3 y_0,\]\[ y_4 =  2 y_3 = 2^4 y_0,\]\[ \dots\]</div>
 <p>Widzimy, że  kolejne  liczby rosną, ponieważ są mnożone przez czynnik 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla <span class="math">\(\lambda &gt; 1\)</span>, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.</p>
 </div>
 <div class="section" id="id1">
 <h4>2. Przypadek <span class="math">\(\lambda &lt; -1\)</span><a class="headerlink" href="#id1" title="Stały odnośnik do tego nagłówka">¶</a></h4>
 <p>Aby łatwiej zrozumieć, przyjmiemy  <span class="math">\(\lambda = - 2\)</span>. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać</p>
 <div class="math" id="equation-eqn22">
-<span class="eqno">(24)</span>\[y_{n+1} = - 2 y_n\]</div>
+<span class="eqno">(25)</span>\[y_{n+1} = - 2 y_n\]</div>
 <p>Otrzymamy ciąg liczbowy</p>
 <div class="math" id="equation-eqn23">
-<span class="eqno">(25)</span>\[ y_0, \quad y_1 = - 2 y_0, \quad y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0, \quad y_3 = (- 2) y_2 =  - 2^3 y_0, \quad y_4 = (- 2) y_3 = 2^4 y_0, ....\]</div>
+<span class="eqno">(26)</span>\[ y_0,\]\[ y_1 = - 2 y_0,\]\[ y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0,\]\[ y_3 = (- 2) y_2 =  - 2^3 y_0,\]\[ y_4 = (- 2) y_3 = 2^4 y_0,\]\[ \dots\]</div>
 <p>Widzimy, że  wartości bezwzględne kolejnych liczby rosną, ponieważ są mnożone przez czynnik - 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla <span class="math">\(\lambda &lt; - 1\)</span>, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.</p>
 </div>
 <div class="section" id="id2">
 <h4>3. Przypadek <span class="math">\(\lambda  \in (-1, 1)\)</span><a class="headerlink" href="#id2" title="Stały odnośnik do tego nagłówka">¶</a></h4>
 <p>Aby łatwiej zrozumieć, przyjmiemy  <span class="math">\(\lambda =  (1/2)\)</span>. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać</p>
 <div class="math" id="equation-eqn24">
-<span class="eqno">(26)</span>\[y_{n+1} = \frac{1}{2}  y_n\]</div>
+<span class="eqno">(27)</span>\[y_{n+1} = \frac{1}{2}  y_n\]</div>
 <p>Otrzymamy ciąg liczbowy</p>
 <div class="math" id="equation-eqn25">
-<span class="eqno">(27)</span>\[ y_0, \quad y_1 =   \frac{1}{2} y_0, \quad y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0, \quad y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0, \quad y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0, ....\]</div>
+<span class="eqno">(28)</span>\[ y_0,\]\[ y_1 =   \frac{1}{2} y_0,\]\[ y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0,\]\[ y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0,\]\[ y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0,\]\[ \dots\]</div>
 <p>Widzimy, że  kolejne  liczby maleją, ponieważ są mnożone przez czynnik <span class="math">\(1/2\)</span>
 i ciąg liczbowy dąży do zera. Otrzymujemy stąd wniosek, że dla <span class="math">\(\lambda  \in (-1, 1)\)</span>,
 stan stacjonarny  jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej
@@ -302,61 +313,61 @@ def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
  aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',ymin=0,ymax=18)##warunek pocz. przed b, skala
  aplot.show()</script></div><p>Obserwujemy, że dla dużych wartości iteracji <span class="math">\(n&gt;&gt;1\)</span>, dwie wartości iteracji powtarzają się i układ &#8220;skacze&#8221; pomiędzy dwoma stanami. Mówimy wówczas o stanie stacjonarnym o okresie 2. Możemy także powiedzieć, że jest to stan periodyczny. Jak wyznaczyć takie stany?  Skorzystamy ze wzoru na kolejne iteracje:</p>
 <div class="math" id="equation-eqn26">
-<span class="eqno">(28)</span>\[x_{n+2} = f(x_{n+1}), \qquad x_{n+1} = f(x_{n})\]</div>
+<span class="eqno">(29)</span>\[x_{n+2} = f(x_{n+1}), \qquad x_{n+1} = f(x_{n})\]</div>
 <p>Należy zauważyć, że wartość <span class="math">\(x_{n+2} = x_n\)</span> ponieważ co drugi krok jest ten sam stan. Dlatego też</p>
 <div class="math" id="equation-eqn27">
-<span class="eqno">(29)</span>\[x_{n+2} = f(x_{n+1}) = f[f(x_{n})] = x_n\]</div>
+<span class="eqno">(30)</span>\[x_{n+2} = f(x_{n+1}) = f[f(x_{n})] = x_n\]</div>
 <p>Jeżeli oznaczymy stan stacjonarny <span class="math">\(x_s\)</span> o okresie 2 jako <span class="math">\(x^*\)</span> to powyższe równanie przepiszemy jako</p>
 <div class="math" id="equation-eqn28">
-<span class="eqno">(30)</span>\[f[f(x^*)] = x^*\]</div>
+<span class="eqno">(31)</span>\[f[f(x^*)] = x^*\]</div>
 <p>Ale to samo zachodzi dla stanu <span class="math">\(x_{n+3} = x_{n+1}\)</span>. Dlatego równanie powyższe ma 2 rozwiązania <span class="math">\(x^* = x^*_1\)</span>  oraz  <span class="math">\(x^* = x^*_2\)</span>.</p>
 <p>W praktyce rozwiązujemy równanie w postaci bardziej przyjaznej:</p>
 <div class="math" id="equation-eqn29">
-<span class="eqno">(31)</span>\[x = f[f(x)] \equiv g(x)\]</div>
+<span class="eqno">(32)</span>\[x = f[f(x)] \equiv g(x)\]</div>
 <p>Pamiętajmy, że jest to złożenie 2 funkcji (co prawda takich samych funkcji, ale to jest drugorzędne).</p>
 <p><strong>To jest bardzo ważne równanie!</strong></p>
 <p>Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny będzie opisany równaniem</p>
 <div class="math" id="equation-eqn30">
-<span class="eqno">(32)</span>\[x_{n+1} = 1- 2 x_n^2, \qquad f(x_n) = 1 - 2 x_n^2 \qquad \mbox{czyli} \qquad f(x) = 1 - 2 x^2\]</div>
+<span class="eqno">(33)</span>\[x_{n+1} = 1- 2 x_n^2, \qquad f(x_n) = 1 - 2 x_n^2 \qquad \mbox{czyli} \qquad f(x) = 1 - 2 x^2\]</div>
 <p>Ile wynosi <span class="math">\(f[f(x)]\)</span>? Obliczamy</p>
 <div class="math" id="equation-eqn31">
-<span class="eqno">(33)</span>\[f[f(x)] = 1 - 2 [f(x)]^2  =  1 - 2 [1 - 2 x^2]^2 = 1 - 2[1 - 4 x^2 + 4 x^4] = -8 x^4 + 8 x^2 -1\]</div>
+<span class="eqno">(34)</span>\[f[f(x)] = 1 - 2 [f(x)]^2  =  1 - 2 [1 - 2 x^2]^2 = 1 - 2[1 - 4 x^2 + 4 x^4] = -8 x^4 + 8 x^2 -1\]</div>
 <p>Dlatego równanie które określa stan stacjonarny o okresie 2 ma postać</p>
 <div class="math" id="equation-eqn32">
-<span class="eqno">(34)</span>\[x = -8 x^4 + 8 x^2 -1 = g(x)\]</div>
+<span class="eqno">(35)</span>\[x = -8 x^4 + 8 x^2 -1 = g(x)\]</div>
 <p>Jest to wielomian 4-go stopnia.</p>
 <div class="section" id="stabilnosc-stanow-stacjonarnych-o-okresie-2">
 <h3>Stabilność stanów stacjonarnych o okresie 2<a class="headerlink" href="#stabilnosc-stanow-stacjonarnych-o-okresie-2" title="Stały odnośnik do tego nagłówka">¶</a></h3>
 <p>Badanie stabilności stanów o okresie 2 jest analogiczne do badania stabilności stanów stacjonarnych o okresie 1. Jeżeli stan stacjonarny jest określony przez równanie</p>
 <div class="math" id="equation-eqn33">
-<span class="eqno">(35)</span>\[x^*=g(x^*)\]</div>
+<span class="eqno">(36)</span>\[x^*=g(x^*)\]</div>
 <p>to  stan ten jest  stabilny gdy</p>
 <div class="math" id="equation-eqn34">
-<span class="eqno">(36)</span>\[\lambda_2 = g'(x^*) \in (-1, 1)\]</div>
+<span class="eqno">(37)</span>\[\lambda_2 = g'(x^*) \in (-1, 1)\]</div>
 <p>Ponieważ funkcja <span class="math">\(g(x)\)</span> jest funkcją złożoną, więc  należy stosować reguły różniczkowania  funkcji złożonej:</p>
 <div class="math" id="equation-eqn35">
-<span class="eqno">(37)</span>\[  \lambda_2 = g'(x^*)  =  \bigl[\{f[f(x)]\}' \bigr]_{x=x^*} =\biggl[ \frac{df(u)}{du}\biggr]_{u=f(x^*)} \biggl(\frac{df(x)}{dx}\biggr)_{x=x^*}  \in (-1, 1)\]</div>
+<span class="eqno">(38)</span>\[  \lambda_2 = g'(x^*)  =  \bigl[\{f[f(x)]\}' \bigr]_{x=x^*} =\biggl[ \frac{df(u)}{du}\biggr]_{u=f(x^*)} \biggl(\frac{df(x)}{dx}\biggr)_{x=x^*}  \in (-1, 1)\]</div>
 <p>Powyższy związek można przepisać  w postaci:</p>
 <div class="math" id="equation-eqn36">
-<span class="eqno">(38)</span>\[  \lambda_2 = f'(u^*) f'(x^*) \in (-1, 1)\]</div>
+<span class="eqno">(39)</span>\[  \lambda_2 = f'(u^*) f'(x^*) \in (-1, 1)\]</div>
 <p>gdzie <span class="math">\(u^*=f(x^*)\)</span></p>
 <p>Warto coś tu zauważyć  i uprościć. Ponieważ stan <span class="math">\(x^*\)</span> jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: <span class="math">\(x^* = x^*_1\)</span> (np. górny)  oraz <span class="math">\(x^* = x^*_2\)</span> (np. dolny), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:</p>
 <div class="math" id="equation-eqn37">
-<span class="eqno">(39)</span>\[x_2^* = f(x_1^*), \qquad x_1^* = f(x_2^*)\]</div>
+<span class="eqno">(40)</span>\[x_2^* = f(x_1^*), \qquad x_1^* = f(x_2^*)\]</div>
 <p>Stąd otrzymujemy relację:</p>
 <div class="math" id="equation-eqn38">
-<span class="eqno">(40)</span>\[  \lambda_2(x_1^*)  = f'(x^*_2) f'(x^*_1) \in (-1, 1)\]</div>
+<span class="eqno">(41)</span>\[  \lambda_2(x_1^*)  = f'(x^*_2) f'(x^*_1) \in (-1, 1)\]</div>
 <p>Podobna relacja zachodzi dla drugiego stanu</p>
 <div class="math" id="equation-eqn39">
-<span class="eqno">(41)</span>\[  \lambda_2(x_2^*)  = f'(x^*_1) f'(x^*_1) \in (-1, 1)\]</div>
+<span class="eqno">(42)</span>\[  \lambda_2(x_2^*)  = f'(x^*_1) f'(x^*_1) \in (-1, 1)\]</div>
 <p>Jest to ta sama relacja co dla <span class="math">\(x^*_1\)</span>. Więc oznacza to, że wystarczy zbadać wielkość <span class="math">\(f'(x_1)f'(x_2)\)</span>, gdzie <span class="math">\(x_1\)</span>  oraz  <span class="math">\(x_2\)</span> to dwa  rozwiązania równania <span class="math">\(x=f(f(x))\)</span>.</p>
 <p>Podobnie można badać  punkty stałe o dowolnym okresie <span class="math">\(n\)</span>:</p>
 <div class="math" id="equation-eqn40">
-<span class="eqno">(42)</span>\[x^*= f\{f[ .....f(x^*) .....]\}  = G(x^*)\]</div>
+<span class="eqno">(43)</span>\[x^*= f\{f[ .....f(x^*) .....]\}  = G(x^*)\]</div>
 <p>gdzie mamy n-krotne złożenie odwzorowania <span class="math">\(f\)</span>.</p>
 <p>Stan  <span class="math">\(x^*\)</span>  jest  stabilny gdy</p>
 <div class="math" id="equation-eqn41">
-<span class="eqno">(43)</span>\[\lambda_n = G'(x^*) \in (-1, 1)\]</div>
+<span class="eqno">(44)</span>\[\lambda_n = G'(x^*) \in (-1, 1)\]</div>
 <p>Ponieważ funkcja <span class="math">\(G(x)\)</span> jest funkcją złożoną, więc  należy stosować reguły różniczkowania  funkcji złożonej, podobnie jak to jest pokazane powyżej w przypadku <span class="math">\(n=2\)</span>.</p>
 </div>
 </div>
@@ -444,7 +455,7 @@ def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 11, 2013.
+    Ostatnia modyfikacja Nov 12, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

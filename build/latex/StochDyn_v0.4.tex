@@ -26,7 +26,7 @@
 
 
 \title{Dynamika stochastyczna}
-\date{11/11/2013}
+\date{12/11/2013}
 \release{I}
 \author{Jerzy Łuczka, Łukasz Machura}
 \newcommand{\sphinxlogo}{}
@@ -1126,7 +1126,7 @@ Objętość fazowa w chwili $t$ wynosi
 \end{gather}
 Ewolucja układu to nic innego jak zamiana zmiennych $(x_0, y_0, z_0) \to (x_t, y_t, z_t)$. Dokonajmy tej zamiany zmiennych w drugiej całce:
 \phantomsection\label{ch1/chI022:equation-eqn25}\begin{gather}
-\begin{split}M(t) = \int \int \int_{D(t)}  dx_t dy_t dz_t   =  \int \int \int_{D(0)}  \frac{\partial (x_t, y_t, z_t)}{\partial (x_0, y_0, z_0)} \; dx_0 dy_0 dz_0  = \int \int \int_{D(0)}   J(t)  dx_0 dy_0 dz_0 \qquad\end{split}\label{ch1/chI022-eqn25}
+\begin{split}M(t) = \int \int \int_{D(t)}  dx_t dy_t dz_t  =\end{split}\label{ch1/chI022-eqn25}\\\begin{split}=  \int \int \int_{D(0)}  \frac{\partial (x_t, y_t, z_t)}{\partial (x_0, y_0, z_0)} \; dx_0 dy_0 dz_0  = \int \int \int_{D(0)}   J(t)  dx_0 dy_0 dz_0 \qquad\end{split}\notag
 \end{gather}
 gdzie $J$ jest jakobianem transformacji  $(x_t, y_t, z_t) \to (x_0, y_0, z_0)$. Jeżeli objętość fazowa nie zmienia się w czasie (jest funkcją stałą), to jej pochodna
 \phantomsection\label{ch1/chI022:equation-eqn26}\begin{gather}
@@ -1883,7 +1883,7 @@ Poniżej przedstawiamy dwa przykłady zaczerpnięte z modeli biologicznych.
 \centering
 \capstart
 
-\includegraphics{sage_chI024_04.pdf}
+\includegraphics{sage_chI024_05.pdf}
 \caption{Cykl graniczny.}\end{figure}
 
 
@@ -1897,8 +1897,9 @@ Jest to przykład tak zwanego dziwnego atraktora. Najprostsza jego definicja to 
 \PYG{n}{F1} \PYG{o}{=} \PYG{n}{sigma}\PYG{o}{*}\PYG{p}{(}\PYG{n}{y}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{p}{)}
 \PYG{n}{F2} \PYG{o}{=} \PYG{n}{x}\PYG{o}{*}\PYG{p}{(}\PYG{n}{rho}\PYG{o}{\PYGZhy{}}\PYG{n}{z}\PYG{p}{)} \PYG{o}{\PYGZhy{}} \PYG{n}{y}
 \PYG{n}{F3} \PYG{o}{=} \PYG{n}{x}\PYG{o}{*}\PYG{n}{y} \PYG{o}{\PYGZhy{}} \PYG{n}{beta}\PYG{o}{*}\PYG{n}{z}
+\PYG{n}{de} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{F1}\PYG{p}{,}\PYG{n}{F2}\PYG{p}{,}\PYG{n}{F3}\PYG{p}{]}\PYG{p}{)}
 \PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
-\PYG{n}{atraktor\PYGZus{}lorenza} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{F1}\PYG{p}{,}\PYG{n}{F2}\PYG{p}{,}\PYG{n}{F3}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{atraktor\PYGZus{}lorenza} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
 \PYG{n}{p2d} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{atraktor\PYGZus{}lorenza}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{atraktor\PYGZus{}lorenza}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
 \PYG{n}{p3d} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{atraktor\PYGZus{}lorenza}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{,} \PYG{n}{viewer}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{tachyon}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
 \end{Verbatim}
@@ -1906,28 +1907,8 @@ Jest to przykład tak zwanego dziwnego atraktora. Najprostsza jego definicja to 
 \centering
 \capstart
 
-\includegraphics{sage_chI024_05.pdf}
+\includegraphics{sage_chI024_06.pdf}
 \caption{Atraktor Lorenza.}\end{figure}
-
-
-\begin{verbatim}
-var('x y z')
-rho=28
-sigma=10
-beta=8/3
-F1 = sigma*(y-x)
-F2 = x*(rho-z) - y
-F3 = x*y - beta*z
-T = srange(0,100,0.01)
-atraktor_lorenza = desolve_odeint(vector([F1,F2,F3]), [0,0.5,1], T, [x,y,z])
-p2d = list_plot(zip(atraktor_lorenza[:,0],atraktor_lorenza[:,1]), plotjoined=1, figsize=4)
-p3d = list_plot(atraktor_lorenza.tolist(), plotjoined=1, viewer='tachyon', figsize=4)
-print "2D rysunek atraktora Lorenza"
-p2d.show()
-print "3D rysunek atraktora Lorenza"
-p3d.show()
-\end{verbatim}
-
 
 
 \section{Dyskretne układy dynamiczne}
@@ -1944,7 +1925,7 @@ W metodzie  Newtona  kolejne przybliżenie pierwiastka dane jest przez równanie
 \phantomsection\label{ch1/chI031:equation-eqn2a}\begin{gather}
 \begin{split}x_{n+1} = x_n + \frac{F(x_n)}{F'(x_n)}\equiv f(x_n)\end{split}\label{ch1/chI031-eqn2a}
 \end{gather}
-gdzie zakładamy, że pochodna $F'(x)$ istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji $F(x)$.  W szczególności dla $F(x)=x^2-2$ ciąg \eqref{ch1/chI031-eqn2a} w zależności od warunku początkowego zmierza do liczby $x_{+}=\sqrt{2}$ lub $x_{-}=\sqrt{2}$  (co jest oczywiste skądinąd).
+gdzie zakładamy, że pochodna $F'(x)$ istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji $F(x)$.  W szczególności dla $F(x)=x^2-2$ ciąg \eqref{ch1/chI031-eqn2a} w zależności od warunku początkowego zmierza do liczby $x_{+}=\sqrt{2}$ lub $x_{-}=-\sqrt{2}$  (co jest oczywiste skądinąd).
 \begin{description}
 \item[{\emph{Wizualizacja iteracji}}] \leavevmode
 Używając komputera, kolejne wyrazy $x_n$ jest łatwo uzyskać. Dla przykładu, niech
@@ -1955,17 +1936,40 @@ Poniżej prezentujemy program w SAGE:
 
 \end{description}
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} warunek początkowy}
+\PYG{n}{x0} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{c}{\PYGZsh{} tu można wstawić dowolną funkcję f(x)}
+\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{l+m+mf}{0.5}\PYG{o}{*}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mf}{1.7}
+\PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{20}\PYG{p}{)}\PYG{p}{:}
+  \PYG{k}{print} \PYG{n}{x0}
+  \PYG{n}{x0} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}
+\end{Verbatim}
 
-\begin{verbatim}
-# warunek początkowy
-x0 = 1
-# tu można wstawić dowolną funkcję f(x)
-f(x) = x - 0.5*x*x+1.7
-for i in range(20):
- print x0
- x0 = f(x0)
-\end{verbatim}
+który wyprodukuje iteracyjnie nastepujące liczby
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{l+m+mi}{1}
+\PYG{l+m+mf}{2.20000000000000}
+\PYG{l+m+mf}{1.48000000000000}
+\PYG{l+m+mf}{2.08480000000000}
+\PYG{l+m+mf}{1.61160448000000}
+\PYG{l+m+mf}{2.01296998002196}
+\PYG{l+m+mf}{1.68694590978715}
+\PYG{l+m+mf}{1.96405265851335}
+\PYG{l+m+mf}{1.73530123580667}
+\PYG{l+m+mf}{1.92966604631059}
+\PYG{l+m+mf}{1.76786052116862}
+\PYG{l+m+mf}{1.90519511001533}
+\PYG{l+m+mf}{1.79031090640217}
+\PYG{l+m+mf}{1.88770433561089}
+\PYG{l+m+mf}{1.80599050626881}
+\PYG{l+m+mf}{1.87518965190227}
+\PYG{l+m+mf}{1.81702153660159}
+\PYG{l+m+mf}{1.86623790436459}
+\PYG{l+m+mf}{1.82481594652102}
+\PYG{l+m+mf}{1.85983932718231}
+\end{Verbatim}
 
 Poniżej jest prezentacja graficzna dla ogólniejszego przypadku
 \phantomsection\label{ch1/chI031:equation-eqn4}\begin{gather}
@@ -1973,25 +1977,26 @@ Poniżej jest prezentacja graficzna dla ogólniejszego przypadku
 \end{gather}
 z dowolnym parametrem $b$. Zachęcamy do zabawy: zmieniajcie wartość parametru $b$ oraz warunek początkowy. Czytelnik łatwo może podać swoje własne równanie, zmieniając odpowiednie wyrażenia w programie.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{ne}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{n}{X}\PYG{p}{)}\PYG{p}{:}
+  \PYG{k}{return} \PYG{n}{X} \PYG{o}{\PYGZhy{}} \PYG{n}{b}\PYG{o}{*}\PYG{n}{X}\PYG{o}{*}\PYG{n}{X} \PYG{o}{+} \PYG{l+m+mf}{1.7}
 
-\begin{verbatim}
-def ne(b,X):
- return X - b*X*X +1.7
-#
-def pophis(startp,b,length):
- his = [startp]
- for i in range(length):
-     his.append( ne(b,his[i]) )
- return his
-#
-#warunek pocz. przed b,
-#po b ilość iteracji,
-#skala wykresu podana w ymin, ymax
-@interact
-def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
- show(list_plot(pophis(1,b,35),plotjoined=True,marker='o',ymin=0.5,ymax=3))
-\end{verbatim}
+\PYG{k}{def} \PYG{n+nf}{pophis}\PYG{p}{(}\PYG{n}{startp}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{n}{length}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{his} \PYG{o}{=} \PYG{p}{[}\PYG{n}{startp}\PYG{p}{]}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{length}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{his}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{ne}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{n}{his}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+  \PYG{k}{return} \PYG{n}{his}
 
+\PYG{n+nd}{@interact}
+\PYG{k}{def} \PYG{n+nf}{\PYGZus{}}\PYG{p}{(}\PYG{n}{b}\PYG{o}{=}\PYG{n}{slider}\PYG{p}{(}\PYG{l+m+mf}{0.05}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{,}\PYG{l+m+mf}{0.05}\PYG{p}{,}\PYG{n}{default}\PYG{o}{=}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{n}{label}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Factor b}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{show}\PYG{p}{(}\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{pophis}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{l+m+mi}{35}\PYG{p}{)}\PYG{p}{,}\PYG{n}{plotjoined}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{,}\PYG{n}{marker}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{o}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chI031_01.pdf}
+\caption{Graficzna prezentacja równania \eqref{ch1/chI031-eqn4}, dla $b = 0.5$.}\end{figure}
 
 
 \subsection{Metoda pajęczyny}
@@ -1999,51 +2004,73 @@ def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
 Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można obserwować kolejne kroki iteracji.
 
 Sposób rysowania:
-\begin{description}
-\item[{\# Dla danego równania  $x_{n+1} = f(x_n)$, rysujemy wykres funkcji}] \leavevmode
+\begin{enumerate}
+\item {} 
+Dla danego równania  $x_{n+1} = f(x_n)$, rysujemy wykres funkcji
+
+\end{enumerate}
+\begin{quote}
+
 $y = f (x)$ oraz  linię prostą $y  = x$. Prosta ta pozwala
 przenosić wartość $x_{n+1}$  z osi OY na oś OX.
+\end{quote}
+\begin{enumerate}
+\item {} 
+Na osi OX zaznaczamy warunek początkowy $x_0$. Znajdujemy
 
-\item[{\# Na osi OX zaznaczamy warunek początkowy $x_0$. Znajdujemy}] \leavevmode
+\end{enumerate}
+\begin{quote}
+
 graficznie punkt $x_1 = f(x_0)$, który jest na osi OY.
+\end{quote}
+\begin{enumerate}
+\item {} 
+Przy pomocy prostej $y=x$ przenosimy teraz  punkt $x_1$ na oś OX.
 
-\end{description}
+\item {} 
+Mając na osi OX punkt $x_1$, traktujemy go jako następny warunek
 
-\# Przy pomocy prostej $y=x$ przenosimy teraz  punkt $x_1$ na oś OX.
-\begin{description}
-\item[{\# Mając na osi OX punkt $x_1$, traktujemy go jako następny warunek}] \leavevmode
+\end{enumerate}
+\begin{quote}
+
 początkowy i znajdujemy graficznie na osi OY punkt $x_2=f(x_1)$.
+\end{quote}
+\begin{enumerate}
+\item {} 
+Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym $x_0$.
 
-\end{description}
+\end{enumerate}
 
-\# Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym $x_0$.
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{r,x0}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n+nd}{@interact}
+\PYG{k}{def} \PYG{n+nf}{cobweb}\PYG{p}{(}\PYG{n}{a}\PYG{o}{=}\PYG{n}{slider}\PYG{p}{(}\PYG{l+m+mf}{0.4}\PYG{p}{,}\PYG{l+m+mf}{1.4}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{n}{default}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{,}
+           \PYG{n}{x0}\PYG{o}{=}\PYG{n}{slider}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{n}{default}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{a}\PYG{o}{*}\PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{l+m+mf}{1.7}
+  \PYG{n}{p} \PYG{o}{=}  \PYG{n}{plot}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x}\PYG{p}{)}\PYG{o}{==}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{)}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{black}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+  \PYG{n}{p} \PYG{o}{+}\PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{l+m+mi}{4}\PYG{p}{)}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{figsize}\PYG{o}{=}\PYG{l+m+mi}{5}\PYG{p}{)}
+  \PYG{k}{for} \PYG{n}{k} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{20}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{th} \PYG{o}{=} \PYG{l+m+mi}{1}
+    \PYG{k}{if} \PYG{n}{k}\PYG{o}{\PYGZgt{}}\PYG{l+m+mi}{45}\PYG{p}{:}
+      \PYG{n}{th}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}
+    \PYG{k}{elif} \PYG{n}{k} \PYG{o}{\PYGZlt{}} \PYG{l+m+mi}{5}\PYG{p}{:}
+      \PYG{n}{th}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}
+    \PYG{k}{else}\PYG{p}{:}
+      \PYG{n}{th}\PYG{p}{,} \PYG{n}{color} \PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}}\PYG{l+s}{grey}\PYG{l+s}{\PYGZsq{}}
+    \PYG{n}{l1} \PYG{o}{=} \PYG{n}{line}\PYG{p}{(}\PYG{p}{[}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{x0}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{n}{color}\PYG{p}{,}\PYG{n}{thickness}\PYG{o}{=}\PYG{n}{th}\PYG{p}{)}
+    \PYG{n}{l2} \PYG{o}{=} \PYG{n}{line}\PYG{p}{(}\PYG{p}{[}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{,}\PYG{p}{(}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}\PYG{p}{,}\PYG{n}{f}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}\PYG{p}{)}\PYG{p}{]}\PYG{p}{,}\PYG{n}{color}\PYG{o}{=}\PYG{n}{color}\PYG{p}{,}\PYG{n}{thickness}\PYG{o}{=}\PYG{n}{th}\PYG{p}{)}
+    \PYG{n}{p} \PYG{o}{+}\PYG{o}{=} \PYG{n}{l1} \PYG{o}{+} \PYG{n}{l2}
+    \PYG{n}{x0} \PYG{o}{=} \PYG{n}{f}\PYG{p}{(}\PYG{n}{x0}\PYG{p}{)}
+  \PYG{n}{p}\PYG{o}{.}\PYG{n}{axes\PYGZus{}labels}\PYG{p}{(}\PYG{p}{[}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x\PYGZus{}k\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{,}\PYG{l+s}{\PYGZdq{}}\PYG{l+s}{\PYGZdl{}x\PYGZus{}\PYGZob{}k+1\PYGZcb{}\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{p}{]}\PYG{p}{)}
+  \PYG{n}{p}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-
-\begin{verbatim}
-var('r,x0,n')
-@interact
-def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)
- f(x)=x - a*x*x+1.7    ## postać funkcji f(x), która mozna zmieniać
- p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color='black')+plot(x,(x,-1,4),color='green',figsize=5)
- for n in range(20):
-     th = 1
-     if n>45:
-         th = 1.5
-         color='red'
-     elif n < 5:
-         color='blue'
-         th=1.5
-     else:
-         color='grey'
-         th =0.5
-     l1 = line([(x0,x0),(x0,f(x0))],color=color,thickness=th)
-     l2 = line([(x0,f(x0)),(f(x0),f(x0))],color=color,thickness=th)
-     p = p+l1+l2
-     x0 = f(x0)
- p.axes_labels(["$x_n$","$x_{n+1}$"])
- p.show()
-\end{verbatim}
-
+\includegraphics{sage_chI031_02.pdf}
+\caption{Przykład wykorzystania metody pajęczyny dla \eqref{ch1/chI031-eqn4} dla
+domyślnych parametrów $a=1, x_0=1$ z \code{interact}.}\end{figure}
 
 
 \subsection{Stany stacjonarne (punkty stałe) o okresie 1}
@@ -2089,23 +2116,27 @@ Stąd otrzymujemy równanie dla stanu stacjonarnego
 
 Poniżej przedstawiamy to graficznie. Po wielu krokach iteracji obserwujemy powtarzanie się tej samej wartości: kolejna iteracji już nic nie zmienia, jest ta sama, stała.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{newpop}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{prevpop}\PYG{p}{)}\PYG{p}{:}
+  \PYG{k}{return} \PYG{n}{a} \PYG{o}{*} \PYG{n}{prevpop}
 
-\begin{verbatim}
-def newpop(a,prevpop):
- return a*prevpop
-#
-def populationhistory(startpop,a,length):
- history = [startpop]
- for i in range(length):
-     history.append( newpop(a,history[i]) )
- return history
-#
-@interact
-def _( a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a') ):
- myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala
- myplot.show()
-\end{verbatim}
+\PYG{k}{def} \PYG{n+nf}{p\PYGZus{}history}\PYG{p}{(}\PYG{n}{startpop}\PYG{p}{,}\PYG{n}{a}\PYG{p}{,}\PYG{n}{length}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{history} \PYG{o}{=} \PYG{p}{[}\PYG{n}{startpop}\PYG{p}{]}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{length}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{history}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{newpop}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{history}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+  \PYG{k}{return} \PYG{n}{history}
 
+\PYG{n+nd}{@interact}
+\PYG{k}{def} \PYG{n+nf}{\PYGZus{}}\PYG{p}{(}\PYG{n}{a}\PYG{o}{=}\PYG{n}{slider}\PYG{p}{(}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{l+m+mf}{1.1}\PYG{p}{,}\PYG{l+m+mf}{0.05}\PYG{p}{,}\PYG{n}{default}\PYG{o}{=}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{n}{label}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Malthus Factor a}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{myplot}\PYG{o}{=}\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{p\PYGZus{}history}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{p}{,}\PYG{n}{a}\PYG{p}{,}\PYG{l+m+mi}{30}\PYG{p}{)}\PYG{p}{,}\PYG{n}{plotjoined}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{,}\PYG{n}{marker}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{o}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+  \PYG{n}{myplot}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chI031_03.pdf}
+\caption{Punkt stały odwzorowania.}\end{figure}
 
 Zobaczmy jak to ``działa'' w przypadku tzw. równania logistycznego gdy $f(x) = ax (1-x)$:
 \phantomsection\label{ch1/chI031:equation-eqn12}\begin{gather}
@@ -2148,9 +2179,14 @@ Wówczas
 \end{gather}
 Ponieważ $y_n$ jest małą wielkością, to funkcję $f(x_s + y_n)$ rozwijamy w szereg Taylora:
 \phantomsection\label{ch1/chI031:equation-eqn18}\begin{gather}
-\begin{split}y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  = f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + ...  \quad \quad \mbox{gdzie} \quad  \lambda = f'(x_s) \quad \mbox{jest liczbą}\end{split}\label{ch1/chI031-eqn18}
+\begin{split}y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  =\end{split}\label{ch1/chI031-eqn18}\\\begin{split}= f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + \dots,\end{split}\notag
 \end{gather}
-Wykorzystaliśmy tu równość dla stanu stacjonarnego: $x_s = f(x_s)$.  W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego:
+gdzie
+\phantomsection\label{ch1/chI031:equation-eqn18}\begin{gather}
+\begin{split}\lambda = f'(x_s)\end{split}\label{ch1/chI031-eqn18}
+\end{gather}
+jest liczbą. Wykorzystaliśmy tu równość dla stanu stacjonarnego: $x_s = f(x_s)$.
+W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego:
 \phantomsection\label{ch1/chI031:equation-eqn19}\begin{gather}
 \begin{split}y_{n+1} = \lambda y_n\end{split}\label{ch1/chI031-eqn19}
 \end{gather}
@@ -2167,7 +2203,7 @@ Aby łatwiej zrozumieć, przyjmiemy  $\lambda =  2$. Wówczas równanie na odchy
 \end{gather}
 Otrzymamy ciąg liczbowy
 \phantomsection\label{ch1/chI031:equation-eqn21}\begin{gather}
-\begin{split} y_0, \quad y_1 =   2 y_0, \quad y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0, \quad y_3 =  2 y_2 = 2^3 y_0, \quad y_4 =  2 y_3 = 2^4 y_0, ....\end{split}\label{ch1/chI031-eqn21}
+\begin{split} y_0,\end{split}\label{ch1/chI031-eqn21}\\\begin{split} y_1 =   2 y_0,\end{split}\notag\\\begin{split} y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0,\end{split}\notag\\\begin{split} y_3 =  2 y_2 = 2^3 y_0,\end{split}\notag\\\begin{split} y_4 =  2 y_3 = 2^4 y_0,\end{split}\notag\\\begin{split} \dots\end{split}\notag
 \end{gather}
 Widzimy, że  kolejne  liczby rosną, ponieważ są mnożone przez czynnik 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla $\lambda > 1$, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.
 
@@ -2180,7 +2216,7 @@ Aby łatwiej zrozumieć, przyjmiemy  $\lambda = - 2$. Wówczas równanie na odch
 \end{gather}
 Otrzymamy ciąg liczbowy
 \phantomsection\label{ch1/chI031:equation-eqn23}\begin{gather}
-\begin{split} y_0, \quad y_1 = - 2 y_0, \quad y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0, \quad y_3 = (- 2) y_2 =  - 2^3 y_0, \quad y_4 = (- 2) y_3 = 2^4 y_0, ....\end{split}\label{ch1/chI031-eqn23}
+\begin{split} y_0,\end{split}\label{ch1/chI031-eqn23}\\\begin{split} y_1 = - 2 y_0,\end{split}\notag\\\begin{split} y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0,\end{split}\notag\\\begin{split} y_3 = (- 2) y_2 =  - 2^3 y_0,\end{split}\notag\\\begin{split} y_4 = (- 2) y_3 = 2^4 y_0,\end{split}\notag\\\begin{split} \dots\end{split}\notag
 \end{gather}
 Widzimy, że  wartości bezwzględne kolejnych liczby rosną, ponieważ są mnożone przez czynnik - 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla $\lambda < - 1$, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.
 
@@ -2193,7 +2229,7 @@ Aby łatwiej zrozumieć, przyjmiemy  $\lambda =  (1/2)$. Wówczas równanie na o
 \end{gather}
 Otrzymamy ciąg liczbowy
 \phantomsection\label{ch1/chI031:equation-eqn25}\begin{gather}
-\begin{split} y_0, \quad y_1 =   \frac{1}{2} y_0, \quad y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0, \quad y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0, \quad y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0, ....\end{split}\label{ch1/chI031-eqn25}
+\begin{split} y_0,\end{split}\label{ch1/chI031-eqn25}\\\begin{split} y_1 =   \frac{1}{2} y_0,\end{split}\notag\\\begin{split} y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0,\end{split}\notag\\\begin{split} y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0,\end{split}\notag\\\begin{split} y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0,\end{split}\notag\\\begin{split} \dots\end{split}\notag
 \end{gather}
 Widzimy, że  kolejne  liczby maleją, ponieważ są mnożone przez czynnik $1/2$
 i ciąg liczbowy dąży do zera. Otrzymujemy stąd wniosek, że dla $\lambda  \in (-1, 1)$,
@@ -2211,23 +2247,27 @@ Stan stacjonarny $x_s$ jest stabilny jeżeli $\lambda = f'(x_s) \in (-1, 1)$.
 \label{ch1/chI031:stany-stacjonarne-o-okresie-2}
 Jeżeli dla długich iteracji (formalnie dla $n\to\infty$)  otrzymujemy ciągle tą samą wartość, to mówimy o stanie  stacjonarnym o okresie 1. Pokazano to na powyższym rysunku. Jednakże mogą pojawić się inne stany stacjonarne. Dla przykładu, zobaczmy jak zachowuje się układ dla $n\to\infty$, który jest pokazany poniżej.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{k}{def} \PYG{n+nf}{ne}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{n}{pre}\PYG{p}{)}\PYG{p}{:}
+  \PYG{k}{return} \PYG{l+m+mi}{1} \PYG{o}{+} \PYG{n}{b}\PYG{o}{*}\PYG{n}{pre}\PYG{o}{*}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{\PYGZhy{}}\PYG{p}{(}\PYG{l+m+mi}{1}\PYG{o}{/}\PYG{l+m+mi}{16}\PYG{p}{)}\PYG{o}{*}\PYG{n}{pre}\PYG{p}{)}
 
-\begin{verbatim}
-def ne(b,pre):
- return 1+b*pre*(1-(1/16)*pre)
-#
-def pophis(startp,b,length):
- his = [startp]
- for i in range(length):
-     his.append( ne(b,his[i]) )
- return his
-#
-@interact
-def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
- aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',ymin=0,ymax=18)##warunek pocz. przed b, skala
- aplot.show()
-\end{verbatim}
+\PYG{k}{def} \PYG{n+nf}{pophis}\PYG{p}{(}\PYG{n}{startp}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{n}{length}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{his} \PYG{o}{=} \PYG{p}{[}\PYG{n}{startp}\PYG{p}{]}
+  \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{length}\PYG{p}{)}\PYG{p}{:}
+    \PYG{n}{his}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{ne}\PYG{p}{(}\PYG{n}{b}\PYG{p}{,}\PYG{n}{his}\PYG{p}{[}\PYG{n}{i}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+  \PYG{k}{return} \PYG{n}{his}
 
+\PYG{n+nd}{@interact}
+\PYG{k}{def} \PYG{n+nf}{\PYGZus{}}\PYG{p}{(}\PYG{n}{b}\PYG{o}{=}\PYG{n}{slider}\PYG{p}{(}\PYG{l+m+mf}{0.05}\PYG{p}{,}\PYG{l+m+mf}{3.8}\PYG{p}{,}\PYG{l+m+mf}{0.05}\PYG{p}{,}\PYG{n}{default}\PYG{o}{=}\PYG{l+m+mf}{3.05}\PYG{p}{,}\PYG{n}{label}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{Factor b}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}\PYG{p}{)}\PYG{p}{:}
+  \PYG{n}{p} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{pophis}\PYG{p}{(}\PYG{l+m+mi}{4}\PYG{p}{,}\PYG{n}{b}\PYG{p}{,}\PYG{l+m+mi}{35}\PYG{p}{)}\PYG{p}{,}\PYG{n}{plotjoined}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{,}\PYG{n}{marker}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{o}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+  \PYG{n}{p}\PYG{o}{.}\PYG{n}{show}\PYG{p}{(}\PYG{n}{figsize}\PYG{o}{=}\PYG{p}{[}\PYG{l+m+mi}{8}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]}\PYG{p}{,}\PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}x\PYGZus{}s\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{r\PYGZsq{}}\PYG{l+s}{\PYGZdl{}f(x\PYGZus{}s)\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chI031_04.pdf}
+\caption{Stany stacjonarne o okresie 2.}\end{figure}
 
 Obserwujemy, że dla dużych wartości iteracji $n>>1$, dwie wartości iteracji powtarzają się i układ ``skacze'' pomiędzy dwoma stanami. Mówimy wówczas o stanie stacjonarnym o okresie 2. Możemy także powiedzieć, że jest to stan periodyczny. Jak wyznaczyć takie stany?  Skorzystamy ze wzoru na kolejne iteracje:
 \phantomsection\label{ch1/chI031:equation-eqn26}\begin{gather}
@@ -2324,7 +2364,7 @@ Każde zjawisko jest wyznaczone przez swoje przyczyny i całokształt warunków.
 Każde zjawisko podlega prawidłowościom przyrody, które wyrażane są w postaci odpowiednich praw nauki.
 Jeżeli dysponujemy odpowiednią wiedzą (o przyczynach,  prawidłowościach), to można (przynajmniej w zasadzie) przewidywać przyszły bieg zdarzeń.  Poznawcze znaczenie zasady przyczynowości  sprowadza się do możliwości przewidywania. Determinizm i indeterminizm  występują już w starożytnej filozofii przyrody. Demokryt twierdził, że nie ma w świecie zdarzeń przypadkowych, lecz „wszystko dzieje się wskutek konieczności''. Determinizm  łączono z poglądem, że prawa przyrody mają charakter jednoznaczny. Okazało się jednak że wiele zjawisk podlega jedynie prawom statystycznym. Pogląd, że pewne zjawiska przyrody nie podlegają prawom jednoznacznym, ale jedynie statystycznym to indeterminizm .  Doniosła rola praw statystycznych w fizyce współczesnej wymaga rozszerzenia formuły determinizmu: każde zdarzenie podlega prawom przyrody jednoznacznym (determinizm jednoznaczny, mocny) bądź statystycznym (determinizm probabilistyczny, umiarkowany). Wówczas indeterminizm (umiarkowany) mieści się w ramach determinizmu  w szerszym ujęciu. Wydawało się, że w mechanice, stworzonej przez Galileusza i Newtona, znając położenie i prędkość (lub położenie i pęd) ciała materialnego można przewidzieć cały przyszły ruch tego ciała (a więc podać położenie i pęd w każdej chwili późniejszej), a także ustalić, jaki był ruch tego ciała w przeszłości. Wszystko to jest słuszne  przy założeniu, że znane są  wszystkie siły działające na ciało w przeszłości i w przyszłości. Wynikało to z twierdzeń matematycznych o jednoznaczności rozwiązań równań różniczkowych, a takimi są równania Newtona.
 
-Jednakże historia pokazała, że  w fizyce klasycznej są znane teorie statystyczne, niedeterministyczne.  Rozważmy dla przykładu  gaz zamknięty w jakimś naczyniu. Wiemy, że w warunkach równowagi termodynamicznej dwie równe co do objętości części tego naczynia będą zawierać jednakową liczbę cząsteczek gazu. Nie wiemy jednak, które cząsteczki znajdą się w której z dwu połówek naczynia. Sytuacja pozornie przypomina prawo rozpadu: można podać taki czas, w którym rozpadnie się połowa atomów, i w ten sposób podzielić wszystkie atomy na dwie równe części - te, które się w tym czasie rozpadną, i te, które się nie rozpadną, podobnie jak podzieliliśmy cząsteczki gazu według kryterium, w której połowie naczynia się znajdują. W klasycznej fizyce statystycznej znamy prawa rządzące zachowaniem pojedynczych cząsteczek (są nimi z założenia prawa mechaniki newtonowskiej), a nasza niewiedza co do tego zachowania jest spowodowana po pierwsze niemożliwością śledzenia ruchu wielu miliardów obiektów, a po drugie, brakiem potrzeby, aby to czynić: wystarczy nam znać właśnie tylko pewne wielkości średnie, które ujawniają się fenomenologicznie, na przykład jako temperatura gazu, czy też jego ciśnienie. Tak więc rzeczywisty kompletny opis stanu gazu musiałby zawierać informację dotyczącą N wektorów położenia i N wektorów pędu (N - liczba cząsteczek gazu), co jest liczbą ogromną, podczas gdy opis statystyczny ogranicza się do kilku potrzebnych liczb. Opis statystyczny odnosi się do ogromnej liczby cząstek i jest to opis oparty o teorię prawdopodobieństwa i teorię procesów stochastycznych. Z definicji jest to opis niedeterministyczny. Ale jak powiedzieliśmy, opis jednej cząstki jest w pełni deterministyczny. Twierdzenia o jednoznaczności rozwiązań równań różniczkowych dawały nadzieję na totalny determinizm i przewidywalność ruchu pojedyńczych cząstek. Nadzieja ta z praktycznego punktu widzenia okazała się mrzonką.  W latach 50-tych XX wieku pokazano, że z praktycznego punktu widzenia determinizm mechaniki Newtona jest złudny i ugruntowana wiara w przewidywalność zachowania się prostych układów  mechanicznych  załamała się. Pojawiły się liczne przykłady, a później teoria matematyczna, pokazujące  niemożliwość przewidywania czasowej ewolucji prostych układów mechanicznych. Podkreślamy, że chodzi tu o praktyczne aspekty przewidywalności. Z matematycznego punktu widzenia, przewidywalność jest ciągle słuszna.  Dobitnym przykładem nieprzewidywaloności w praktyce jest prognoza pogody, co udowadnia codzienne życie. Poniżej przedstawimy zagadnienia, które ukażą nam, co oznacza nieprzewidywalność w teorii deterministycznej. Pokażemy, dlaczego ewolucja określona przez determinizm równań Newtona jest nieprzewidywalna. Ta deterministyczna nieprzewidywalność ma swoją nazwę: deterministyczny chaos.
+Jednakże historia pokazała, że  w fizyce klasycznej są znane teorie statystyczne, niedeterministyczne.  Rozważmy dla przykładu  gaz zamknięty w jakimś naczyniu. Wiemy, że w warunkach równowagi termodynamicznej dwie równe co do objętości części tego naczynia będą zawierać jednakową liczbę cząsteczek gazu. Nie wiemy jednak, które cząsteczki znajdą się w której z dwu połówek naczynia. Sytuacja pozornie przypomina prawo rozpadu: można podać taki czas, w którym rozpadnie się połowa atomów, i w ten sposób podzielić wszystkie atomy na dwie równe części - te, które się w tym czasie rozpadną, i te, które się nie rozpadną, podobnie jak podzieliliśmy cząsteczki gazu według kryterium, w której połowie naczynia się znajdują. W klasycznej fizyce statystycznej znamy prawa rządzące zachowaniem pojedynczych cząsteczek (są nimi z założenia prawa mechaniki newtonowskiej), a nasza niewiedza co do tego zachowania jest spowodowana po pierwsze niemożliwością śledzenia ruchu wielu miliardów obiektów, a po drugie, brakiem potrzeby, aby to czynić: wystarczy nam znać właśnie tylko pewne wielkości średnie, które ujawniają się fenomenologicznie, na przykład jako temperatura gazu, czy też jego ciśnienie. Tak więc rzeczywisty kompletny opis stanu gazu musiałby zawierać informację dotyczącą $N$ wektorów położenia i $N$ wektorów pędu ($N$ - liczba cząsteczek gazu), co jest liczbą ogromną, podczas gdy opis statystyczny ogranicza się do kilku potrzebnych liczb. Opis statystyczny odnosi się do ogromnej liczby cząstek i jest to opis oparty o teorię prawdopodobieństwa i teorię procesów stochastycznych. Z definicji jest to opis niedeterministyczny. Ale jak powiedzieliśmy, opis jednej cząstki jest w pełni deterministyczny. Twierdzenia o jednoznaczności rozwiązań równań różniczkowych dawały nadzieję na totalny determinizm i przewidywalność ruchu pojedynczych cząstek. Nadzieja ta z praktycznego punktu widzenia okazała się mrzonką.  W latach 50-tych XX wieku pokazano, że z praktycznego punktu widzenia determinizm mechaniki Newtona jest złudny i ugruntowana wiara w przewidywalność zachowania się prostych układów  mechanicznych  załamała się. Pojawiły się liczne przykłady, a później teoria matematyczna, pokazujące  niemożliwość przewidywania czasowej ewolucji prostych układów mechanicznych. Podkreślamy, że chodzi tu o praktyczne aspekty przewidywalności. Z matematycznego punktu widzenia, przewidywalność jest ciągle słuszna.  Dobitnym przykładem nieprzewidywalności w praktyce jest prognoza pogody, co udowadnia codzienne życie. Poniżej przedstawimy zagadnienia, które ukażą nam, co oznacza nieprzewidywalność w teorii deterministycznej. Pokażemy, dlaczego ewolucja określona przez determinizm równań Newtona jest nieprzewidywalna. Ta deterministyczna nieprzewidywalność ma swoją nazwę: deterministyczny chaos.
 
 
 \section{Model chaosu. Układ bistabilny (oscylator Duffinga)}
@@ -2367,15 +2407,16 @@ B. K. Jones and G. Trefan, Am. J. Phys. 69 (2001) str. 464.
 for the undergraduate laboratory ``
 \end{quote}
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{V} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{4}\PYG{o}{/}\PYG{l+m+mi}{4} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{l+m+mi}{2}
+\PYG{n}{plot}\PYG{p}{(}\PYG{n}{V}\PYG{p}{,}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{1.6}\PYG{p}{,}\PYG{l+m+mf}{1.6}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-# Przeskalowany potencjał bistabilny: a=b=1
-p = plot(0.25*x^4 - 0.5*x^2, (x,-1.6,1.6), figsize=(6,4), axes_labels=[r'$x$',r'$V(x)$'], color="blue")
-p += text("$-x_s$",(-1,0.025),fontsize=16, color='black')
-p += text("$x_s$",(1,0.025),fontsize=16, color='black')
-p.show()
-\end{verbatim}
-
+\includegraphics{sage_chII011_01.pdf}
+\caption{Potencjał bistabilny.}\end{figure}
 
 
 \subsection{Skalowanie}
@@ -2396,7 +2437,7 @@ Obecnie występują 3 przeskalowane parametry:
 \phantomsection\label{ch2/chII011:equation-eqn6}\begin{gather}
 \begin{split} \gamma_0  = \frac{\tau_0^2}{m L} \gamma, \qquad A_0 = \frac{\tau_0^2}{m L} A, \qquad \omega_0 = \tau_0 \Omega\end{split}\label{ch2/chII011-eqn6}
 \end{gather}
-W dalszej części będziemy posługiwali się tylko i wyłącznie przeskalowanym równaniem. Dlatego wygodnie będzie używać ``starych'' oznaczeń: Bedziemy analizowali równanie w postaci
+W dalszej części będziemy posługiwali się tylko i wyłącznie przeskalowanym równaniem. Dlatego wygodnie będzie używać ``starych'' oznaczeń: Będziemy analizowali równanie w postaci
 \phantomsection\label{ch2/chII011:equation-eqn7}\begin{gather}
 \begin{split}\ddot x = x - x^3 - \gamma \dot x + A \cos(\omega_0 t ), \qquad x(0) = x_0, \quad  \dot x(0) = \dot y_0 = v_0\end{split}\label{ch2/chII011-eqn7}
 \end{gather}
@@ -2423,7 +2464,7 @@ Taki przypadek był już rozpatrywany: jest to układ zachowawczy o jednym stopn
 \phantomsection\label{ch2/chII011:equation-eqn10}\begin{gather}
 \begin{split}\frac{1}{2} \dot x^2(t) + V(x(t)) = const. = E  = E_k + E_p = \frac{1}{2} \dot x^2(0) + V(x(0)) = \frac{1}{2}  v_0^2 + V(x_0)\end{split}\label{ch2/chII011-eqn10}
 \end{gather}
-na którą składa się energia kinetyczna $E_k$ oraz energia potencjalna $E_p$.  Stała $E$ jest określona przez warunki początkowe $x(0) = x_0$ oraz $v(0) = v_0$.  Ponieważ jest zachowana całkowita energia układu, ruch jest periodyczny. Nie istnieją atraktory i nie istnieją  asymptotycznie stabilne stany stacjonarne. Krzywe fazowe są zamknięte co oznacza że  cząstka porusza się periodycznie w czasie. W zależności od warunków początkowych, amplituda dragań jest większa lub mniejsza, ponieważ warunki początkowe wyznaczają wartość stałej ruchu $E$. Jeżeli dwa warunki początkowe $(x_{01}, v_{01})$  oraz  $(x_{02}, v_{02})$ nieznacznie się różnią, np. w sensie odległości:
+na którą składa się energia kinetyczna $E_k$ oraz energia potencjalna $E_p$.  Stała $E$ jest określona przez warunki początkowe $x(0) = x_0$ oraz $v(0) = v_0$.  Ponieważ jest zachowana całkowita energia układu, ruch jest periodyczny. Nie istnieją atraktory i nie istnieją  asymptotycznie stabilne stany stacjonarne. Krzywe fazowe są zamknięte co oznacza że  cząstka porusza się periodycznie w czasie. W zależności od warunków początkowych, amplituda drgań jest większa lub mniejsza, ponieważ warunki początkowe wyznaczają wartość stałej ruchu $E$. Jeżeli dwa warunki początkowe $(x_{01}, v_{01})$  oraz  $(x_{02}, v_{02})$ nieznacznie się różnią, np. w sensie odległości:
 \phantomsection\label{ch2/chII011:equation-eqn11}\begin{gather}
 \begin{split}| [x_{01}^2 +  v_{01}^2] - [x_{02}^2 +  v_{02}^2] | << 1\end{split}\label{ch2/chII011-eqn11}
 \end{gather}
@@ -2431,41 +2472,42 @@ to krzywe fazowe nieznacznie się różnią i ruch cząstki dla tych dwóch waru
 
 Poniżej przedstawiamy potencjał i  krzywe fazowe dla tego przypadku.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{}parametry dla wizualizacji}
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x v}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{x0}\PYG{p}{,} \PYG{n}{v0} \PYG{o}{=} \PYG{l+m+mf}{1.5}\PYG{p}{,} \PYG{l+m+mf}{0.2}
+\PYG{n}{V} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{4}\PYG{o}{/}\PYG{l+m+mi}{4} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}\PYG{o}{/}\PYG{l+m+mi}{2}
+\PYG{n}{E} \PYG{o}{=} \PYG{n}{V}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{n}{x0}\PYG{p}{)} \PYG{o}{+} \PYG{n}{v0}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2}
 
-\begin{verbatim}
-#parametry dla wizualizacji
-var('x v')
-x0 = 1.5
-v0 = 0.2
-E = 0.25*x0^4 - 0.5*x0^2 + v0^2
-#
-#prawo zachowania energii
-V=0.25*x^4 - 0.5*x^2
-PZE = v^2 + V == E
-#
-#wychylenia ekstremalne
-print "ekstremalne wychylenia dla (x0,v0) = (%.2f,%.2f)"%(x0,v0)
-rozw = solve(PZE(v=0), x); show(rozw)
-xmin = min([i.rhs() for i in rozw if imag(i.rhs()) == 0])
-xmax = max([i.rhs() for i in rozw if imag(i.rhs()) == 0])
-#
-#i jego rozwiązanie
-print "ekstremalne prędkości dla (x0,v0) = (%.2f,%.2f)"%(x0,v0)
-rozw = solve(PZE, v); show(rozw)
-v1=rozw[0].rhs()
-v2=rozw[1].rhs()
-vmax = abs(v1(x=0))
-#
-#krzywe fazowe
-start_point = (x0,V(x=x0))
-p0 = point(start_point,size=30) + text(r"$  x_0$",start_point,vertical_alignment='bottom',horizontal_alignment='left')
-p1 = plot(V,(x,xmin,xmax))
-p21 = plot(v1, (x,xmin,xmax), color='red')
-p22 = plot(v2, (x,xmin,xmax), color='green')
-(p0+p1).show(figsize=4)
-(p21+p22).show(figsize=4)
-\end{verbatim}
+\PYG{c}{\PYGZsh{}prawo zachowania energii}
+\PYG{n}{PZE} \PYG{o}{=} \PYG{n}{v}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{2} \PYG{o}{+} \PYG{n}{V} \PYG{o}{==} \PYG{n}{E}
 
+\PYG{c}{\PYGZsh{}wychylenia ekstremalne}
+\PYG{n}{rozw} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{PZE}\PYG{p}{(}\PYG{n}{v}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{,} \PYG{n}{x}\PYG{p}{)}
+\PYG{n}{xmin} \PYG{o}{=} \PYG{n+nb}{min}\PYG{p}{(}\PYG{p}{[}\PYG{n}{i}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{rozw} \PYG{k}{if} \PYG{n}{imag}\PYG{p}{(}\PYG{n}{i}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{xmax} \PYG{o}{=} \PYG{n+nb}{max}\PYG{p}{(}\PYG{p}{[}\PYG{n}{i}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n}{rozw} \PYG{k}{if} \PYG{n}{imag}\PYG{p}{(}\PYG{n}{i}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}i jego rozwiązanie wobec v}
+\PYG{n}{rozw} \PYG{o}{=} \PYG{n}{solve}\PYG{p}{(}\PYG{n}{PZE}\PYG{p}{,} \PYG{n}{v}\PYG{p}{)}
+\PYG{n}{v1}\PYG{o}{=}\PYG{n}{rozw}\PYG{p}{[}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{v2}\PYG{o}{=}\PYG{n}{rozw}\PYG{p}{[}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{rhs}\PYG{p}{(}\PYG{p}{)}
+\PYG{n}{vmax} \PYG{o}{=} \PYG{n+nb}{abs}\PYG{p}{(}\PYG{n}{v1}\PYG{p}{(}\PYG{n}{x}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}potencjał}
+\PYG{n}{p1} \PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{V}\PYG{p}{,}\PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{xmin}\PYG{p}{,}\PYG{n}{xmax}\PYG{p}{)}\PYG{p}{)}
+\PYG{c}{\PYGZsh{}krzywe fazowe}
+\PYG{n}{p2} \PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{v1}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{xmin}\PYG{p}{,}\PYG{n}{xmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{p2}\PYG{o}{+}\PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{v2}\PYG{p}{,} \PYG{p}{(}\PYG{n}{x}\PYG{p}{,}\PYG{n}{xmin}\PYG{p}{,}\PYG{n}{xmax}\PYG{p}{)}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\end{Verbatim}
+
+{\hfill\includegraphics[width=0.500\linewidth]{sage_chII011_02a.pdf}\hfill}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.500\linewidth]{sage_chII011_02b.pdf}
+\caption{Potencjał (górna krzywa) oraz krzywe fazowe (dolna)
+dla układu zachowawczego.}\end{figure}
 
 
 \subsection{Krok 2. Układ dysypatywny czyli wpływ tarcia.}
@@ -2480,7 +2522,7 @@ Jest on równoważny układowi 2 równań różniczkowych, autonomicznych, pierw
 \end{gather}
 Oznacza to, że przestrzeń fazowa jest 2-wymiarowa.
 
-Taki przypadek był także rozpatrywany: jest to układ dysypatywny o jednym stopniu swobody. Nie istnieje już stała ruchu $E$.  Całkowita energia układu maleje w czasie.  W tym układzie  istnieją 3 stany stacjonarne. Stany te określone są przez równanie:
+Taki przypadek był także rozpatrywany: jest to układ dyssypatywny o jednym stopniu swobody. Nie istnieje już stała ruchu $E$.  Całkowita energia układu maleje w czasie.  W tym układzie  istnieją 3 stany stacjonarne. Stany te określone są przez równanie:
 \phantomsection\label{ch2/chII011:equation-eqn14}\begin{gather}
 \begin{split}x-x^3=0, \qquad \mbox{stąd} \qquad x_{s0}=0, \quad x_{s1} = 1, \quad x_{s2} = -1\end{split}\label{ch2/chII011-eqn14}
 \end{gather}
@@ -2488,7 +2530,7 @@ Stany stacjonarne $x_{s1} = 1$ oraz $x_{s2} = -1$  są  stabilne. Stan $x_{s0}=0
 \phantomsection\label{ch2/chII011:equation-eqn15}\begin{gather}
 \begin{split}| [x_{01}^2 +  v_{01}^2] - [x_{02}^2 +  v_{02}^2] | << 1\end{split}\label{ch2/chII011-eqn15}
 \end{gather}
-i są w tym samym obszarze przyciągania, to krzywe fazowe nieznacznie się różnią i ruch cząstki dla tych dwóch warunków początkowych nieznacznie się różni. Mówimy wówczas, że układ jest nieczuły na zmianę warunków początkowych. Natomiast jeżeli dwa warunki początkowe $(x_{01}, v_{01}) \in B(A_1)$  oraz  $(x_{02}, v_{02}) \in B(A_2)$ nieznacznie się różnią, ale są w dwóch obszarach przyciągania $B(A_1)$ oraz $B(A_2)$, to trajektorie zaczną po pewnym czasie różnić się znacznie, będą przyciągane do dwóch różnych atraktorów  i będą dążyć  do dwóch różnych stanów stacjonarnych :math:{}` x\_\{s1\} = 1{}` oraz :math:{}` x\_\{s2\} = -1{}`. Tym niemniej, w takiej sytuacji mówimy, że układ jest nieczuły na zmianę warunków początkowych w sensie o którym mowa powyżej.
+i są w tym samym obszarze przyciągania, to krzywe fazowe nieznacznie się różnią i ruch cząstki dla tych dwóch warunków początkowych nieznacznie się różni. Mówimy wówczas, że układ jest nieczuły na zmianę warunków początkowych. Natomiast jeżeli dwa warunki początkowe $(x_{01}, v_{01}) \in B(A_1)$  oraz  $(x_{02}, v_{02}) \in B(A_2)$ nieznacznie się różnią, ale są w dwóch obszarach przyciągania $B(A_1)$ oraz $B(A_2)$, to trajektorie zaczną po pewnym czasie różnić się znacznie, będą przyciągane do dwóch różnych atraktorów  i będą dążyć  do dwóch różnych stanów stacjonarnych $x_{s1} = 1$ oraz $x_{s2} = -1$. Tym niemniej, w takiej sytuacji mówimy, że układ jest nieczuły na zmianę warunków początkowych w sensie o którym mowa powyżej.
 \begin{figure}[htbp]
 \centering
 \capstart
@@ -2496,101 +2538,64 @@ i są w tym samym obszarze przyciągania, to krzywe fazowe nieznacznie się ró�
 \includegraphics{baseny_tarcie.jpg}
 \caption{Diagram basenów przyciągania dla potencjału bistabilnego}\end{figure}
 
-Kolor niebieski to obszar warunków początkowych które są ``przyciągane''  do atraktora $(1, 0)$, do prawego
-minimum potencjału. Kolor czerwony to obszar warunków początkowych które są ``przyciągane''  do atraktora
-$(-1, 0)$, do lewego minimum potencjału. W zależności od wartości stałej tłumienia $\gamma$, diagram
-ten przybiera nieco inne kształty, ale struktura dwu-kolorowych pasów pozostaje. Brzeg obszarów przyciągania jest
-gładką krzywą, której wymiar wynosi 1. Jeżeli warunki początkowe są położone dokładnie na tym brzegu, to cząstka
-porusza się do niestabilnego stanu stacjonarnego $(x=0, v=0)$ (maksimum potencjału).
+Kolor niebieski to obszar warunków początkowych które są ``przyciągane''  do atraktora $(1, 0)$, do prawego minimum potencjału. Kolor niebieski to obszar warunków początkowych które są ``przyciągane''  do atraktora $(-1, 0)$, do lewego minimum potencjału. W zależności od wartości stałej tłumienia $\gamma$, diagram ten przybiera nieco inne kształty, ale struktura dwu-kolorowych pasów pozostaje. Brzeg obszarów przyciągania jest gładką krzywą, której wymiar wynosi 1. Jeżeli warunki początkowe są położone dokładnie na tym brzegu, to cząstka porusza się do niestabilnego stanu stacjonarnego $(x=0, v=0)$ (maksimum potencjału).
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{c}{\PYGZsh{} wykresy dla przypadku z tłumieniem}
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x v}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{x01}\PYG{p}{,} \PYG{n}{v01} \PYG{o}{=} \PYG{l+m+mf}{1.50}\PYG{p}{,} \PYG{l+m+mi}{0}
+\PYG{n}{x02}\PYG{p}{,} \PYG{n}{v02} \PYG{o}{=} \PYG{l+m+mf}{1.52}\PYG{p}{,} \PYG{l+m+mi}{0}
 
-\begin{verbatim}
-# wykresy dla przypadku z tłumieniem
-var('x v')
-x01, v01 = 1.50, 0
-x02, v02 = 1.52, 0
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.1
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,20*pi,0.01)
-num1 = desolve_odeint(vector([v,F-g*v]), [x01,v01], T, [x,v])
-num2 = desolve_odeint(vector([v,F-g*v]), [x02,v02], T, [x,v])
-#
-#krzywe fazowe
-lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(x02)])), color='black', figsize=4)
-lt += point((x01,V(x=x01)), color='green', size=50, axes_labels=['$x$','$V(x)$'])
-lt += point((x02,V(x=x02)), color='red', size=50)
-lb  = list_plot(num1.tolist(), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'])
-lb += list_plot(num2.tolist(), plotjoined=1, color='red', figsize=4)
-rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'])
-rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color='red', figsize=4)
-rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$v(t)$'])
-rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color='red', figsize=4)
-#
-html("""
-<p align='center'>rozwiązania z warunkami początkowymi
-<span style="color:green">($x_{01},v_{01}$)=(%.2f,%.2f)</span>
-<span style="color:red">($x_{02},v_{02}$)=(%.2f,%.2f)</span>
-dążą do tego samego atraktora:
-(x,v)=(-1,0)
-</p>
-"""%(x01,v01,x02,v02))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
+\PYG{c}{\PYGZsh{} siła i potencjał}
+\PYG{n}{F} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{3}
+\PYG{n}{V} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{integrate}\PYG{p}{(}\PYG{n}{F}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
 
+\PYG{c}{\PYGZsh{} tarcie: parametr gamma}
+\PYG{n}{g} \PYG{o}{=} \PYG{l+m+mf}{0.1}
+
+\PYG{c}{\PYGZsh{} numeryczne rozwiazanie równań ruchu}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{20}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{de} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{v}\PYG{p}{,}\PYG{n}{F}\PYG{o}{\PYGZhy{}}\PYG{n}{g}\PYG{o}{*}\PYG{n}{v}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{num1} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x01}\PYG{p}{,}\PYG{n}{v01}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{v}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{num2} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x02}\PYG{p}{,}\PYG{n}{v02}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{v}\PYG{p}{]}\PYG{p}{)}
+
+\PYG{c}{\PYGZsh{}krzywe fazowe}
+\PYG{n}{lt}  \PYG{o}{=} \PYG{n}{plot}\PYG{p}{(}\PYG{n}{V}\PYG{p}{)}
+\PYG{n}{lb}  \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{num1}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{lb} \PYG{o}{+}\PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{num2}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{rt}  \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{n}{num1}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{rt} \PYG{o}{+}\PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{n}{num2}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{rb}  \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{n}{num1}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{rb} \PYG{o}{+}\PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{n}{num2}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chII011_03.pdf}
+\caption{Potencjał (górny lewy panel), krzywe fazowe (lewy dolny panel),
+trajektorie (prawy górny panel) oraz prędkość chwilowa (prawy
+dolny panel) dla układu z tłumieniem.}\end{figure}
 
 Na powyższym zestawie rysunków,  2 warunki początkowe leżą w tym samym obszarze  przyciągania  atraktora $(-1, 0)$. Oznacza to, że 2 warunki początkowe są umiejscowione w czerwonym obszarze na diagramie basenów przyciągania pokazanym powyżej. Układ nie jest czuły na zmianę warunków początkowych, gdy leżą one w tym samym basenie przyciągania.
 
+Teraz zobaczymy jak to wygląda dla innego zestawu warunków początkowych. W powyższym kodzie
+wystarczy podmienić dwie linijki.
 
-\begin{verbatim}
-# wykresy dla przypadku z tłumieniem
-var('x v')
-x01, v01 = 1.58, 0
-x02, v02 = 1.57, 0
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.1
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,20*pi,0.01)
-num1 = desolve_odeint(vector([v,F-g*v]), [x01,v01], T, [x,v])
-num2 = desolve_odeint(vector([v,F-g*v]), [x02,v02], T, [x,v])
-#
-# wykresy funkcji
-lt  = plot(V, (x, -max([abs(x01),abs(x02)]),max([abs(x01),abs(x02)])),color='black',  figsize=4)
-lt += point((x01,V(x=x01)), color='blue', size=50, axes_labels=['$x$','$V(x)$'])
-lt += point((x02,V(x=x02)), color='red', size=50)
-lb  = list_plot(num1.tolist(), plotjoined=1, color='blue', axes_labels=['$x(t)$','$v(t)$'])
-lb += list_plot(num2.tolist(), plotjoined=1, color='red', figsize=4)
-rt  = list_plot(zip(T,num1[:,0].tolist()), plotjoined=1, color='blue', axes_labels=['$t$','$x(t)$'])
-rt += list_plot(zip(T,num2[:,0].tolist()), plotjoined=1, color='red', figsize=4)
-rb  = list_plot(zip(T,num1[:,1].tolist()), plotjoined=1, color='blue', axes_labels=['$t$','$v(t)$'])
-rb += list_plot(zip(T,num2[:,1].tolist()), plotjoined=1, color='red', figsize=4)
-#
-html("""
-<p align='center'>rozwiązania z warunkami początkowymi
-<span style="color:blue">($x_{01},v_{01}$)=(%.2f,%.2f)</span>
-<span style="color:red">($x_{02},v_{02}$)=(%.2f,%.2f)</span>
-dążą do różnych atraktorów:
-<span style="color:blue">(x,v)=(1,0)</span>
-<span style="color:red">(x,v)=(-1,0)</span>
-</p>
-"""%(x01,v01,x02,v02))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{x01}\PYG{p}{,} \PYG{n}{v01} \PYG{o}{=} \PYG{l+m+mf}{1.58}\PYG{p}{,} \PYG{l+m+mi}{0}
+\PYG{n}{x02}\PYG{p}{,} \PYG{n}{v02} \PYG{o}{=} \PYG{l+m+mf}{1.57}\PYG{p}{,} \PYG{l+m+mi}{0}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
+\includegraphics{sage_chII011_04.pdf}
+\caption{Potencjał (górny lewy panel), krzywe fazowe (lewy dolny panel),
+trajektorie (prawy górny panel) oraz prędkość chwilowa (prawy
+dolny panel) dla układu z tłumieniem.}\end{figure}
 
-Na powyższym zestawie rysunków,  2 warunki początkowe leżą w dwóch różnych obszarach  przyciągania.  Oznacza to, że 1 warunek  początkowy leży w  niebieskim obszarze na diagramie basenów przyciągania, natomiast  2 warunek  początkowy leży w  czerwonym obszarze na diagramie basenów przyciągania. Te dwa warunki początkowe leżą blisko brzegu 2 basenów przyciągania. Dlatego układ jest czuły na zmianę warunków początkowych, pod warunkiem że leżą one w dwóch różnych basenach przyciągania. Ale to nie jest jeszcze kryterium własności chaotyczych układu.
+Na powyższym zestawie rysunków,  2 warunki początkowe leżą w dwóch różnych obszarach  przyciągania.  Oznacza to, że 1 warunek  początkowy leży w  niebieskim obszarze na diagramie basenów przyciągania, natomiast  2 warunek  początkowy leży w  czerwonym obszarze na diagramie basenów przyciągania. Te dwa warunki początkowe leżą blisko brzegu 2 basenów przyciągania. Dlatego układ jest czuły na zmianę warunków początkowych, pod warunkiem że leżą one w dwóch różnych basenach przyciągania. Ale to nie jest jeszcze kryterium własności chaotycznych układu.
 
 
 \subsection{Krok 3. Układ z tarciem i periodyczną siłą.}
@@ -2611,20 +2616,25 @@ Matematycy wolą przepisać powyższy układ równań dla ``tradycyjnych''  3 zm
 \end{gather}
 czyli prędkość cząstki $v$ jest teraz oznaczona jako $v=y$.
 
-Okazuje się, że pełny układ wykazuje radykalnie inne własności od poprzednich 2 przypadków. Z punktu widzenia fizyki mamy taki oto proces:  Cząstka porusza się w bistabilnym potencjale. Ponieważ potencjał dąży do nieskończoności gdy położenie dąży do nieskończoności, ruch cząstki jest ograniczony; cząstka jest uwięziona w potencjale i nie może uciec do nieskończoności. Siła tarcia pcha cząstkę do jednego ze (``starych'') stanów stacjonarnych  $x_{s1}$  lub $x_{s2}$. Z kolei zewnętrzna siła periodyczna w czasie pompuje energię do układu i przeciwdziała sile tarcia. Cząstka już nie dąży do stanu stacjonarnego, nie zatrzyma się dla długich czasów ale będzie  ciągle poruszać się i nigdy już nie spocznie. Istotne stają się efekty inercjalne związane z masą czastki, które są odzwierciedlone w wyrazie $\dot y$, czyli przyśpieszeniu cząstki. Istotne jest to, że nie jest to ruch przetłumiony. W konsekwencji układ nie posiada stanu stacjonarnego w postaci punktu w przestrzeni fazowej jak to było w przypadku 2. Wszystkie te powyższe czynniki stają się istotne dla zrozumienia  skomplikowanych i złożonych własności ewolucji cząstki.
+Okazuje się, że pełny układ wykazuje radykalnie inne własności od poprzednich 2 przypadków. Z punktu widzenia fizyki mamy taki oto proces:  Cząstka porusza się w bistabilnym potencjale. Ponieważ potencjał dąży do nieskończoności gdy położenie dąży do nieskończoności, ruch cząstki jest ograniczony; cząstka jest uwięziona w potencjale i nie może uciec do nieskończoności. Siła tarcia pcha cząstkę do jednego ze (``starych'') stanów stacjonarnych  $x_{s1}$  lub $x_{s2}$. Z kolei zewnętrzna siła periodyczna w czasie pompuje energię do układu i przeciwdziała sile tarcia. Cząstka już nie dąży do stanu stacjonarnego, nie zatrzyma się dla długich czasów ale będzie  ciągle poruszać się i nigdy już nie spocznie. Istotne stają się efekty inercjalne związane z masą cząstki, które są odzwierciedlone w wyrazie $\dot y$, czyli przyśpieszeniu cząstki. Istotne jest to, że nie jest to ruch przetłumiony. W konsekwencji układ nie posiada stanu stacjonarnego w postaci punktu w przestrzeni fazowej jak to było w przypadku 2. Wszystkie te powyższe czynniki stają się istotne dla zrozumienia  skomplikowanych i złożonych własności ewolucji cząstki.
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{150}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{de} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{y}\PYG{p}{,}\PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{3}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.26}\PYG{o}{*}\PYG{n}{y}\PYG{o}{+}\PYG{l+m+mf}{0.3}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}\PYG{p}{,} \PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{sol} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{de}\PYG{p}{,}\PYG{p}{[}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{t} \PYG{o}{=} \PYG{n}{line}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{T}\PYG{p}{,}\PYG{n}{sol}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+\PYG{n}{b} \PYG{o}{=} \PYG{n}{line}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{sol}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{sol}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
+\end{Verbatim}
 
-\begin{verbatim}
-# przykładowa trajektoria  (górny wykres)
-# wraz z krzywą fazową (dolny wykres)
-var('x y z')
-T = srange(0,150*pi,0.01)
-sol=desolve_odeint( vector([y,x-x^3-0.26*y+0.3*cos(z), 1]), [0.1,0.1,0],T,[x,y,z])
-t = line(zip(T,sol[:,0]), figsize=(12,4), axes_labels=["$t$","$x(t)$"], frame=1, axes=0)
-b = line(zip(sol[:,0],sol[:,1]), figsize=(12,4), axes_labels=["$x(t)$","$v(t)$"], frame=1, axes=0)
-html.table([[t],[b]])
-\end{verbatim}
+{\hfill\includegraphics{sage_chII011_05a.pdf}\hfill}
+\begin{figure}[htbp]
+\centering
+\capstart
 
+\includegraphics{sage_chII011_05b.pdf}
+\caption{Trajektoria (górny panel) oraz krzywa fazowe (dolny panel),
+dla układu wykazujacego chaos.}\end{figure}
 
 
 \subsection{Ruch periodyczny o okresie 1}
@@ -2637,109 +2647,72 @@ Załóżmy następujące wartości parametrów:
 \end{gather}
 W tym przypadku obserwujemy regularny ruch. Jeżeli nieco zaburzymy warunki początkowe, to nowy ruch jest także regularny (trzeba być ostrożnym, gdy mówimy ``nieco zaburzymy'').
 
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{0}
+\PYG{n}{kolor} \PYG{o}{=} \PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}
 
-\begin{verbatim}
-# wykresy dla przypadku z tłumieniem
-var('x y z')
-x0, y0, z0 = 0.1,0.1,0
-kolor = 'green'
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.1
-A = 0.3
-w = 1
-#
-# układ różniczkowych równań ruchu
-dx = y
-dy = F - g*y + A*cos(z)
-dz = w
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,30*pi,0.01)
-num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
-#
-# wykresy funkcji
-xmin = 1.5
-lt  = plot(V, (x,-xmin,xmin), figsize=4)
-lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['$x$','$V(x)$'])
-lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=kolor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$x(t)$'], figsize=4)
-rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$v(t)$'], figsize=4)
-#
-html("""Układ równań różniczkowych
-$\dot{x} = %s$
-$\dot{y} = %s$
-$\dot{z} = %s$
-z warunkami początkowymi
-$(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
-"""%(dx,dy,dz,x0,y0,z0))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
+\PYG{c}{\PYGZsh{} siła}
+\PYG{n}{F} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{3}
+\PYG{n}{V} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{integrate}\PYG{p}{(}\PYG{n}{F}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
 
+\PYG{c}{\PYGZsh{} tarcie: parametr gamma}
+\PYG{n}{g} \PYG{o}{=} \PYG{l+m+mf}{0.1}
+\PYG{n}{A} \PYG{o}{=} \PYG{l+m+mf}{0.3}
+\PYG{n}{w} \PYG{o}{=} \PYG{l+m+mi}{1}
 
-Przyjrzyjmy sie teraz dwóm trajektoriom startującym z bliskich warunków początkowych. Rozpatrzmy ich początkową i asymptotyczną (dla długich czasów) ewolucję.
+\PYG{c}{\PYGZsh{} układ różniczkowych równań ruchu}
+\PYG{n}{dx} \PYG{o}{=} \PYG{n}{y}
+\PYG{n}{dy} \PYG{o}{=} \PYG{n}{F} \PYG{o}{\PYGZhy{}} \PYG{n}{g}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{A}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}
+\PYG{n}{dz} \PYG{o}{=} \PYG{n}{w}
 
+\PYG{c}{\PYGZsh{} numeryczne rozwiazanie równań ruchu}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{30}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{num} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{,}\PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{y0}\PYG{p}{,}\PYG{n}{z0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\begin{verbatim}
-# wykresy dla przypadku z tłumieniem
-var('x y z')
-x01, y01, z01 = 0.1,0.1,0
-x02, y02, z02 = 0.11,0.1,0
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.1
-A = 0.3
-w = 1
-#
-# układ różniczkowych równań ruchu
-dx = y
-dy = F - g*y + A*cos(z)
-dz = w
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,200*pi,0.01)
-num1 = desolve_odeint(vector([dx,dy,dz]), [x01,y01,z01], T, [x,y,z])
-num2 = desolve_odeint(vector([dx,dy,dz]), [x02,y02,z02], T, [x,y,z])
-#
-lnum = int(len(num1[:,0])/10)
-trans1 = num1[:lnum]
-asymp1 = num1[-lnum:]
-trans2 = num2[:lnum]
-asymp2 = num2[-lnum:]
-#
-# wykresy funkcji
-lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-lt += list_plot(zip(trans2[:,0],trans2[:,1]), plotjoined=1, color='red')
-rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
-rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined=1, color='red')
-lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-lb += list_plot(zip(asymp2[:,0],asymp2[:,1]), plotjoined=0, color='red')
-rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
-rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoined=1, color='red')
-#
-html("""Układ równań różniczkowych
-$\dot{x} = %s$
-$\dot{y} = %s$
-$\dot{z} = %s$
-z różnymi warunkami początkowymi
-<span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2f,%.2f)$</span>
-<span style="color:red;">$(x_{02},y_{02},z_{02}) = (%.2f,%.2f,%.2f)$</span>
-"""%(dx,dy,dz,x01,y01,z01,x02,y02,z02))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
+\includegraphics{sage_chII011_06.pdf}
+\caption{Potencjał (górny lewy panel), krzywe fazowe (lewy dolny panel),
+trajektorie (prawy górny panel) oraz prędkość chwilowa (prawy
+dolny panel) dla układu o okresowości 1.}\end{figure}
 
+Przyjrzyjmy się teraz dwóm trajektoriom startującym z bliskich warunków początkowych. Rozpatrzmy ich początkową i asymptotyczną (dla długich czasów) ewolucję.
+
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
+\PYG{n}{x01}\PYG{p}{,} \PYG{n}{y01}\PYG{p}{,} \PYG{n}{z01} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{0}
+\PYG{n}{x02}\PYG{p}{,} \PYG{n}{y02}\PYG{p}{,} \PYG{n}{z02} \PYG{o}{=} \PYG{l+m+mf}{0.11}\PYG{p}{,}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{0}
+\PYG{n}{F} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{3}
+\PYG{n}{g}\PYG{p}{,} \PYG{n}{A}\PYG{p}{,} \PYG{n}{w} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.3}\PYG{p}{,} \PYG{l+m+mi}{1}
+\PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz} \PYG{o}{=} \PYG{n}{y}\PYG{p}{,} \PYG{n}{F} \PYG{o}{\PYGZhy{}} \PYG{n}{g}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{A}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}\PYG{p}{,} \PYG{n}{w}
+\PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{200}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
+\PYG{n}{num1} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{,}\PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x01}\PYG{p}{,}\PYG{n}{y01}\PYG{p}{,}\PYG{n}{z01}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{num2} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{,}\PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x02}\PYG{p}{,}\PYG{n}{y02}\PYG{p}{,}\PYG{n}{z02}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{lnum} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{num1}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{10}\PYG{p}{)}
+\PYG{c}{\PYGZsh{} ewolucja początkowa}
+\PYG{n}{trans1} \PYG{o}{=} \PYG{n}{num1}\PYG{p}{[}\PYG{p}{:}\PYG{n}{lnum}\PYG{p}{]}
+\PYG{n}{trans2} \PYG{o}{=} \PYG{n}{num2}\PYG{p}{[}\PYG{p}{:}\PYG{n}{lnum}\PYG{p}{]}
+\PYG{c}{\PYGZsh{} ewolucja asymptotyczna}
+\PYG{n}{asymp1} \PYG{o}{=} \PYG{n}{num1}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{n}{lnum}\PYG{p}{:}\PYG{p}{]}
+\PYG{n}{asymp2} \PYG{o}{=} \PYG{n}{num2}\PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{n}{lnum}\PYG{p}{:}\PYG{p}{]}
+\end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chII011_07.pdf}
+\caption{W lewej kolumnie zaprezentowano krzywe fazowe.
+W prawej kolumnie widać trajektorie.
+Górny rząd dopowiada ewolucji początkowej a dolny
+asymptotycznej układu Duffinga pracującego
+o okresowości 1.}\end{figure}
 
 Na dwóch górnych diagramach przedstawioną reżim krótkich czasów. Ponieważ 2 warunki początkowe nieco się różnią, więc początkowa ewolucja nieco się różni. Kolor czerwony i zielony jest rozróżnialny na prawym górnym rysunku pokazującym ewolucję $x(t)$ dla krótkich czasów.  Jeżeli przyjrzymy się reżimowy długich czasów (dwa dolne diagramy) to zauważymy duże podobieństwo w ewolucji: krzywe fazowe są zamknięte więc jest to prosty ruch periodyczny, przypominający nieco zdeformowaną funkcję typu $\sin(\alpha t)$ czy też $\cos(\alpha t)$. Jest to funkcja okresowa z charakterystycznym jednym jedynym  okresem $T$. Dlatego mówimy, że jest ruch periodyczny o okresie 1. Dwie krzywe $x(t)$ na dolnym prawym rysunku nie są rozróżnialne.
 
-Można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że trajektorie dążą do tego samego okresowego rozwiązania, są przyciagane do tego okresowego rozwiązania. Innymi słowy, ta krzywa fazowa o okresie 1  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 1 lub 1-okresowym  atraktorem. Można by postawić pytanie: jak wygląda basen przyciągania dla tego atraktora. Aby dać odpowiedź na to pytanie należy zbadać numerycznie np. kwadrat warunków początkowych  $(x_0, y_0)$ i wybrać te warunki początkowe które dążą do powyższej krzywej fazowej o okresie 1. Okazuje się, że basen przyciągania jest ``porządnym'' zbiorem, którego brzeg jest gładką krzywą, podobnie jak w przypadku zilustrowanym powyżej dla układu tylko z tarciem, bez siły okresowej.
+Można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że trajektorie dążą do tego samego okresowego rozwiązania, są przyciągane do tego okresowego rozwiązania. Innymi słowy, ta krzywa fazowa o okresie 1  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 1 lub 1-okresowym  atraktorem. Można by postawić pytanie: jak wygląda basen przyciągania dla tego atraktora. Aby dać odpowiedź na to pytanie należy zbadać numerycznie np. kwadrat warunków początkowych  $(x_0, y_0)$ i wybrać te warunki początkowe które dążą do powyższej krzywej fazowej o okresie 1. Okazuje się, że basen przyciągania jest ``porządnym'' zbiorem, którego brzeg jest gładką krzywą, podobnie jak w przypadku zilustrowanym powyżej dla układu tylko z tarciem, bez siły okresowej.
 
 
 \subsection{Ruch periodyczny o okresie 3}
@@ -2749,110 +2722,29 @@ Załóżmy następujące wartości parametrów:
 \begin{split}\gamma = 0.22, \qquad A = 0.3, \qquad \omega_0 = 1\end{split}\label{ch2/chII011-eqn20}
 \end{gather}
 W tym przypadku obserwujemy także periodyczny ruch, ale nieco bardziej skomplikowany. Nie jest to prosty periodyczny ruch, ale tzw. ruch o okresie 3, tzn. teraz okres jest 3 razy dłuższy niż w poprzednim przypadku.
+\begin{figure}[htbp]
+\centering
+\capstart
 
-
-\begin{verbatim}
-# wykresy dla przypadku z tłumieniem
-var('x y z')
-x0, y0, z0 = 0.1,0.1,0
-kolor = 'red'
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.22
-A = 0.3
-w = 1
-#
-# układ różniczkowych równań ruchu
-dx = y
-dy = F - g*y + A*cos(z)
-dz = w
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,20*pi,0.01)
-num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
-#
-# wykresy funkcji
-xmin = 1.5
-lt  = plot(V, (x,-xmin,xmin), figsize=4)
-lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['$x$','$V(x)$'])
-lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=kolor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$x(t)$'], figsize=4)
-rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$v(t)$'], figsize=4)
-#
-html("""Układ równań różniczkowych
-$\dot{x} = %s$
-$\dot{y} = %s$
-$\dot{z} = %s$
-z warunkami początkowymi
-$(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
-"""%(dx,dy,dz,x0,y0,z0))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
-
+\includegraphics{sage_chII011_08.pdf}
+\caption{Potencjał (górny lewy panel), krzywe fazowe (lewy dolny panel),
+trajektorie (prawy górny panel) oraz prędkość chwilowa (prawy
+dolny panel) dla układu o okresowości 3.}\end{figure}
 
 I znów zobaczymy, jak początkowa ewolucja różni się od tej po długim czasie.
+\begin{figure}[htbp]
+\centering
+\capstart
 
-
-\begin{verbatim}
-# wykresy dla przypadku z tłumieniem
-var('x y z')
-x01, y01, z01 = 0.10,0.1,0
-x02, y02, z02 = 0.11,0.1,0
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.22
-A = 0.3
-w = 1
-#
-# układ różniczkowych równań ruchu
-dx = y
-dy = F - g*y + A*cos(z)
-dz = w
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,200*pi,0.01)
-num1 = desolve_odeint(vector([dx,dy,dz]), [x01,y01,z01], T, [x,y,z])
-num2 = desolve_odeint(vector([dx,dy,dz]), [x02,y02,z02], T, [x,y,z])
-#
-lnum = int(len(num1[:,0])/10)
-trans1 = num1[:lnum]
-asymp1 = num1[-lnum:]
-trans2 = num2[:lnum]
-asymp2 = num2[-lnum:]
-#
-# wykresy funkcji
-lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-lt += list_plot(zip(trans2[:,0],trans2[:,1]), plotjoined=1, color='red')
-rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
-rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined=1, color='red')
-lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-lb += list_plot(zip(asymp2[:,0],asymp2[:,1]), plotjoined=0, color='red')
-rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
-rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoined=1, color='red')
-#
-html("""Układ równań różniczkowych
-$\dot{x} = %s$
-$\dot{y} = %s$
-$\dot{z} = %s$
-z różnymi warunkami początkowymi
-<span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2f,%.2f)$</span>
-<span style="color:red;">$(x_{02},y_{02},z_{02}) = (%.2f,%.2f,%.2f)$</span>
-"""%(dx,dy,dz,x01,y01,z01,x02,y02,z02))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
-
+\includegraphics{sage_chII011_09.pdf}
+\caption{W lewej kolumnie zaprezentowano krzywe fazowe.
+W prawej kolumnie widać trajektorie.
+Górny rząd dopowiada ewolucji początkowej a dolny
+asymptotycznej układu Duffinga o okresowości 3.}\end{figure}
 
 Dla długich czasów, krzywe fazowe są zamknięte, ale nie są  to krzywe typu zdeformowana elipsa.  To są krzywe z 2 pętelkami. Tym niemniej, ruch jest periodyczny.
 
-Podobnie jak poprzednim przypadku, można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że wiele trajektorii dąży do tej samej  okresowej orbity, są one  przyciagane do tej  zamkniętek krzywej fazowej. Innymi słowy, ta krzywa fazowa o okresie 3  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 3 lub 3-okresowym  atraktorem.  Basen przyciągania dla tego atraktora  na płaszczyźnie warunków początkowych $(x_0, y_0)$  jest ``porządnym'' zbiorem o wymiarze 2 (czyli kawałek płaszczyzny), którego brzeg jest gładką krzywą.
+Podobnie jak poprzednim przypadku, można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że wiele trajektorii dąży do tej samej  okresowej orbity, są one  przyciągane do tej  zamkniętej krzywej fazowej. Innymi słowy, ta krzywa fazowa o okresie 3  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 3 lub 3-okresowym  atraktorem.  Basen przyciągania dla tego atraktora  na płaszczyźnie warunków początkowych $(x_0, y_0)$  jest ``porządnym'' zbiorem o wymiarze 2 (czyli kawałek płaszczyzny), którego brzeg jest gładką krzywą.
 
 
 \subsection{Ruch chaotyczny}
@@ -2862,105 +2754,26 @@ Załóżmy następujące wartości parametrów:
 \begin{split}\gamma = 0.25, \qquad A = 0.3, \qquad \omega_0 = 1\end{split}\label{ch2/chII011-eqn21}
 \end{gather}
 W tym przypadku obserwujemy ruch, który wydaje się być wyjątkowo nieregularny, chaotyczny.
+\begin{figure}[htbp]
+\centering
+\capstart
 
-
-\begin{verbatim}
-# wykresy dla przypadku chaotycznego
-var('x y z')
-x0, y0, z0 = 0.1,0.1,0
-kolor = 'firebrick'
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.25
-A = 0.3
-w = 1
-#
-# układ różniczkowych równań ruchu
-dx = y
-dy = F - g*y + A*cos(z)
-dz = w
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,50*pi,0.01)
-num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
-#
-# wykresy funkcji
-xmin = 1.5
-lt  = plot(V, (x,-xmin,xmin), figsize=4)
-lt += point((x0,V(x=x0)), color=kolor, size=50, axes_labels=['$x$','$V(x)$'])
-lb  = list_plot(zip(num[:,0],num[:,1]), plotjoined=1, color=kolor, axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-rt  = list_plot(zip(T,num[:,0].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$x(t)$'], figsize=4)
-rb  = list_plot(zip(T,num[:,1].tolist()), plotjoined=1, color=kolor, axes_labels=['$t$','$v(t)$'], figsize=4)
-#
-html("""Układ równań różniczkowych
-$\dot{x} = %s$
-$\dot{y} = %s$
-$\dot{z} = %s$
-z warunkami początkowymi
-$(x_0,y_0,z_0) = (%.2f,%.2f,%.2f)$
-"""%(dx,dy,dz,x0,y0,z0))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
-
+\includegraphics{sage_chII011_10.pdf}
+\caption{Potencjał (górny lewy panel), krzywe fazowe (lewy dolny panel),
+trajektorie (prawy górny panel) oraz prędkość chwilowa (prawy
+dolny panel) dla układu chaotycznego.}\end{figure}
 
 Zobaczmy, jak tym razem ewoluują rozwiązania o 2 bliskich warunkach początkowych.
+\begin{figure}[htbp]
+\centering
+\capstart
 
-
-\begin{verbatim}
-var('x y z')
-x01, y01, z01 = 0.1,0.1,0
-x02, y02, z02 = 0.11,0.1,0
-#
-# siła
-F = x-x^3
-V = -integrate(F,x)
-#
-# tarcie: parametr gamma
-g = 0.25
-A = 0.3
-w = 1
-#
-# układ różniczkowych równań ruchu
-dx = y
-dy = F - g*y + A*cos(z)
-dz = w
-#
-# numeryczne rozwiazanie równań ruchu
-T = srange(0,200*pi,0.01)
-num1 = desolve_odeint(vector([dx,dy,dz]), [x01,y01,z01], T, [x,y,z])
-num2 = desolve_odeint(vector([dx,dy,dz]), [x02,y02,z02], T, [x,y,z])
-#
-lnum = int(len(num1[:,0])/10)
-trans1 = num1[:lnum]
-asymp1 = num1[-lnum:]
-trans2 = num2[:lnum]
-asymp2 = num2[-lnum:]
-#
-# wykresy funkcji
-lt = list_plot(zip(trans1[:,0],trans1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-lt += list_plot(zip(trans2[:,0],trans2[:,1]), plotjoined=1, color='red')
-rt = list_plot(zip(T[:lnum],trans1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
-rt += list_plot(zip(T[:lnum],trans2[:,0].tolist()), plotjoined=1, color='red')
-lb = list_plot(zip(asymp1[:,0],asymp1[:,1]), plotjoined=1, color='green', axes_labels=['$x(t)$','$v(t)$'], figsize=4)
-lb += list_plot(zip(asymp2[:,0],asymp2[:,1]), plotjoined=1, color='red')
-rb = list_plot(zip(T[-lnum:],asymp1[:,0].tolist()), plotjoined=1, color='green', axes_labels=['$t$','$x(t)$'], figsize=4)
-rb += list_plot(zip(T[-lnum:],asymp2[:,0].tolist()), plotjoined=1, color='red')
-#
-html("""Układ równań różniczkowych
-$\dot{x} = %s$
-$\dot{y} = %s$
-$\dot{z} = %s$
-z różnymi warunkami początkowymi
-<span style="color:green;">$(x_{01},y_{01},z_{01}) = (%.2f,%.2f,%.2f)$</span>
-<span style="color:red;">$(x_{02},y_{02},z_{02}) = (%.2f,%.2f,%.2f)$</span>
-"""%(dx,dy,dz,x01,y01,z01,x02,y02,z02))
-html.table([[lt,rt],[lb,rb]])
-\end{verbatim}
-
+\includegraphics{sage_chII011_11.pdf}
+\caption{W lewej kolumnie zaprezentowano krzywe fazowe.
+W prawej kolumnie widać trajektorie.
+Górny rząd dopowiada ewolucji początkowej a dolny
+asymptotycznej układu Duffinga o pracującego w
+reżimie chaotycznym.}\end{figure}
 
 Początkowa ewolucja dwóch rozwiązań jest nierozróżnialna (ponieważ 2 warunki początkowe są bardzo blisko siebie). Po pewnym charakterystycznym czasie, zwanym czasem Lapunowa, trajektorie zaczynają różnić się coraz bardziej, zaczynają rozbiegać się: patrz trajektoria czerwona i zielona na dolnym prawym rysunku.
 \begin{figure}[htbp]
@@ -2978,7 +2791,7 @@ lub
 \phantomsection\label{ch2/chII011:equation-eqn23}\begin{gather}
 \begin{split}|\Delta x(t)| = |\Delta x_0|\mbox{e}^{\lambda t}, \qquad \lambda > 0\end{split}\label{ch2/chII011-eqn23}
 \end{gather}
-gdzie $\lambda$ nazywa sie wykładnikiem Lapunowa.
+gdzie $\lambda$ nazywa się wykładnikiem Lapunowa.
 
 Różnice w ewolucji stają się zbyt duże i pojawia się dylemat: która trajektoria jest właściwa, skoro nasza aparatura nie rozróżnia bliskich warunków początkowych. Determinizm staje się złudnym. Nie możemy przewidywać właściwej ewolucji układu.
 
@@ -3028,9 +2841,10 @@ $\gamma = 0.5, \quad A=0.34875, \quad \omega_0 =1, \quad (x_0, y_0, z_0) = (0,  
 
 \section{Scenariusz przejścia do chaosu}
 \label{ch2/chII012::doc}\label{ch2/chII012:scenariusz-przejscia-do-chaosu}
-Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  200 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają sie różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
+Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  200 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają się różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
 
-Niech $x(t)$  będzie trajektorią z warunkiem początkowym $x(0)$, a $X(t)$  będzie trajektorią z warunkiem początkowym :math:{}` X(0){}`.   Niech dwa warunki początkowe różnią się o małą wielkość:
+Niech $x(t)$  będzie trajektorią z warunkiem początkowym $x(0)$, a $X(t)$
+będzie trajektorią z warunkiem początkowym $X(0)$.   Niech dwa warunki początkowe różnią się o małą wielkość:
 \phantomsection\label{ch2/chII012:equation-eqn1}\begin{gather}
 \begin{split}|X(0) - x(0)| = \epsilon_0\end{split}\label{ch2/chII012-eqn1}
 \end{gather}
@@ -3062,7 +2876,7 @@ Załóżmy,  że ktoś jest w stanie przygotować  stan początkowy  ze znacznie
 \end{gather}
 To jest zaledwie 2 razy dłuższy czas!! Widać, że gdy układ jest w reżimie chaotycznym, przewidywalność czasowa jest bardzo ograniczona. Zwiększanie dokładności wyznaczania warunków początkowych  1000-krotnie powoduje wydłużenie  czasu przewidywalności  zaledwie 2 razy. To jest właśnie problem  z prognozą pogody. Możemy zwiększać sieć punktów pomiarowych, a i tak przewidywania pogody są  rozsądne  zaledwie  na kilka dni do przodu.
 
-Problem, czy układ wykazuje własności chaotyczne czy nie, nie jest łatwy do stwierdzenia. Ponieważ układ równań różniczkowych zwykle nie można analitycznie rozwiązać, trzeba bazować na metodach komputerowych. Z jednej strony układ jest czuły na warunki początkowe, z drugiej strony sama metoda numeryczna i obliczenia komputerowe obarczone są błędami, których nie można wyeliminować. Może zdarzyć się, że to nie własność  układu a artefakty komputerowe wytwarzają złudzenie  chaosu. Trzeba na to być czułym. Obecnie istnieją dobre programy komputerowe uwzględniające niedoskonałości o których mowa. Ponadto istnieje kilka charakterystyk,  które mają specyficzne własności  dla układów chaotycznych.  Oto te charaktarystyki:
+Problem, czy układ wykazuje własności chaotyczne czy nie, nie jest łatwy do stwierdzenia. Ponieważ układ równań różniczkowych zwykle nie można analitycznie rozwiązać, trzeba bazować na metodach komputerowych. Z jednej strony układ jest czuły na warunki początkowe, z drugiej strony sama metoda numeryczna i obliczenia komputerowe obarczone są błędami, których nie można wyeliminować. Może zdarzyć się, że to nie własność  układu a artefakty komputerowe wytwarzają złudzenie  chaosu. Trzeba na to być czułym. Obecnie istnieją dobre programy komputerowe uwzględniające niedoskonałości o których mowa. Ponadto istnieje kilka charakterystyk,  które mają specyficzne własności  dla układów chaotycznych.  Oto te charakterystyki:
 \begin{enumerate}
 \item {} 
 Wykładniki Lapunowa $\lambda_i$
@@ -3090,16 +2904,14 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
-\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{,}\PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.1}\PYG{p}{,}\PYG{l+m+mi}{0}
-\PYG{n}{kolor} \PYG{o}{=} \PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{black}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{orange}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}
+\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{o}{\PYGZhy{}}\PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mi}{0}
+\PYG{n}{kolor} \PYG{o}{=} \PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{black}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}
 
 \PYG{c}{\PYGZsh{}model}
 \PYG{n}{F} \PYG{o}{=} \PYG{n}{x}\PYG{o}{\PYGZhy{}}\PYG{n}{x}\PYG{o}{\PYGZca{}}\PYG{l+m+mi}{3}
-\PYG{n}{V} \PYG{o}{=} \PYG{o}{\PYGZhy{}}\PYG{n}{integrate}\PYG{p}{(}\PYG{n}{F}\PYG{p}{,}\PYG{n}{x}\PYG{p}{)}
-\PYG{n}{g} \PYG{o}{=} \PYG{l+m+mf}{0.5}
-\PYG{n}{w} \PYG{o}{=} \PYG{l+m+mi}{1}
+\PYG{n}{g}\PYG{p}{,} \PYG{n}{w} \PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mi}{1}
 
-\PYG{c}{\PYGZsh{}punkty bifurkacji: 0.34357;  0.35506; 0.35785; 0.35846;  ostatni 0.3586}
+\PYG{c}{\PYGZsh{}miejsca podwajania okresu}
 \PYG{n}{Akeys} \PYG{o}{=} \PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}a\PYGZus{}1\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}a\PYGZus{}2\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}a\PYGZus{}3\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}a\PYGZus{}4\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}
 \PYG{n}{Aval}  \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{0.325}\PYG{p}{,}\PYG{l+m+mf}{0.354}\PYG{p}{,}\PYG{l+m+mf}{0.357}\PYG{p}{,}\PYG{l+m+mf}{0.358}\PYG{p}{]}
 \PYG{n}{A} \PYG{o}{=} \PYG{n+nb}{dict}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{Akeys}\PYG{p}{,}\PYG{n}{Aval}\PYG{p}{)}\PYG{p}{)}
@@ -3107,21 +2919,21 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
 \PYG{n}{p} \PYG{o}{=} \PYG{n}{A}
 \PYG{n}{j}\PYG{o}{=}\PYG{l+m+mi}{0}
 \PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{A}\PYG{o}{.}\PYG{n}{keys}\PYG{p}{(}\PYG{p}{)}\PYG{p}{:}
-    \PYG{c}{\PYGZsh{} układ rozniczkowych rownan ruchu}
-    \PYG{n}{dx} \PYG{o}{=} \PYG{n}{y}
-    \PYG{n}{dy} \PYG{o}{=} \PYG{n}{F} \PYG{o}{\PYGZhy{}} \PYG{n}{g}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{A}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}
-    \PYG{n}{dz} \PYG{o}{=} \PYG{n}{w}
-
-    \PYG{c}{\PYGZsh{} numeryczne rozwiazanie}
+    \PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz} \PYG{o}{=} \PYG{n}{y}\PYG{p}{,} \PYG{n}{F} \PYG{o}{\PYGZhy{}} \PYG{n}{g}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{A}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}\PYG{p}{,} \PYG{n}{w}
     \PYG{n}{T} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{l+m+mi}{100}\PYG{o}{*}\PYG{n}{pi}\PYG{p}{,}\PYG{l+m+mf}{0.01}\PYG{p}{)}
     \PYG{n}{num} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{,}\PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{y0}\PYG{p}{,}\PYG{n}{z0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{T}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
-    \PYG{n}{figsize} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mi}{12}\PYG{p}{,}\PYG{l+m+mi}{3}\PYG{p}{]} \PYG{k}{if} \PYG{n}{a} \PYG{o}{==} \PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}a\PYGZus{}4\PYGZdl{}}\PYG{l+s}{\PYGZsq{}} \PYG{k}{else} \PYG{l+m+mf}{3.5}
     \PYG{n}{start}\PYG{p}{,} \PYG{n}{stop} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{o}{*}\PYG{l+m+mf}{0.8}\PYG{p}{)}\PYG{p}{,} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}
-    \PYG{n}{p}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{[}\PYG{n}{start}\PYG{p}{:}\PYG{n}{stop}\PYG{p}{]}\PYG{p}{,}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{[}\PYG{n}{start}\PYG{p}{:}\PYG{n}{stop}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{n}{plotjoined}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{kolor}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{p}{,} \PYG{n}{axes\PYGZus{}labels}\PYG{o}{=}\PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}x(t)\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{\PYGZdl{}v(t)\PYGZdl{}}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}\PYG{p}{,} \PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{\PYGZsq{}}\PYG{l+s+si}{\PYGZpc{}s}\PYG{l+s}{=}\PYG{l+s+si}{\PYGZpc{}.5f}\PYG{l+s}{\PYGZsq{}}\PYG{o}{\PYGZpc{}}\PYG{p}{(}\PYG{n}{a}\PYG{p}{,}\PYG{n}{A}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{n}{figsize}\PYG{o}{=}\PYG{n}{figsize}\PYG{p}{)}
+    \PYG{n}{p}\PYG{p}{[}\PYG{n}{a}\PYG{p}{]} \PYG{o}{=} \PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{[}\PYG{n}{start}\PYG{p}{:}\PYG{n}{stop}\PYG{p}{]}\PYG{p}{,}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{1}\PYG{p}{]}\PYG{p}{[}\PYG{n}{start}\PYG{p}{:}\PYG{n}{stop}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}
     \PYG{n}{j}\PYG{o}{+}\PYG{o}{=}\PYG{l+m+mi}{1}
 \end{Verbatim}
 
 Wystarczy teraz tylko narysować wykresy zmagazynowane w liście \code{p}.
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics{sage_chII012_01.pdf}
+\caption{Podwojenie okresu.}\end{figure}
 
 \begin{Verbatim}[commandchars=\\\{\}]
 \PYG{n}{bif\PYGZus{}p} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{0.34357}\PYG{p}{,}\PYG{l+m+mf}{0.35506}\PYG{p}{,}\PYG{l+m+mf}{0.35785}\PYG{p}{,}\PYG{l+m+mf}{0.35846}\PYG{p}{]}
@@ -3134,15 +2946,15 @@ Wystarczy teraz tylko narysować wykresy zmagazynowane w liście \code{p}.
 
 \subsection{Wykładniki Lapunowa}
 \label{ch2/chII012:wykladniki-lapunowa}
-Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnic ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  $K$ w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla $x(t), y(t), z(t)$ startując z wszystkich warunków początkowych w kuli $K$,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach $(x, y, z)$ w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa $\lambda_1, \lambda_2, \lambda_3$. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniowac trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu.Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
+Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnić ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  $K$ w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla $x(t), y(t), z(t)$ startując z wszystkich warunków początkowych w kuli $K$,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach $(x, y, z)$ w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa $\lambda_1, \lambda_2, \lambda_3$. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniować trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu.Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
 \begin{figure}[htbp]
 \centering
 \capstart
 
-\includegraphics{phspace.png}
+\includegraphics[width=0.500\linewidth]{phspace.png}
 \caption{Schematyczna reprezentacja przestrzeni fazowej.}\end{figure}
 
-Dwie trajektorię leżące początkowo blisko siebie propagują w czasie w odległości   $l(t)   \propto e^{\lambda_1 t}$, powierzchnia  $S$ zmienia się w tempie $S(t)  \propto e^{(\lambda_1 + \lambda_2) t}$, a objętość  $M$ zmienia się w tempie $M(t)  \propto e^{(\lambda_1 + \lambda_2 + \lambda_3) t}$. W reżimie chaotycznym co najmniej jeden z wykładników Lapunowa jest dodatni. Oznacza to, że w przestrzeni fazowej trajektorie rozbiegają się w jednym kierunku. Jeżeli wszystkie 3 wykładniki są ujemne, układ jest w rteżimie regularnum (periodycznym, quasi-periodycznym). Nie ma metod analitycznych pozwalających obliczyć wykładniki Lapunowa. Metody numeryczne też nie są proste. W literaturze można znaleźć algorytmy służące do wyznaczania $\lambda_1, \lambda_2, \lambda_3$.
+Dwie trajektorię leżące początkowo blisko siebie propagują w czasie w odległości   $l(t)   \propto e^{\lambda_1 t}$, powierzchnia  $S$ zmienia się w tempie $S(t)  \propto e^{(\lambda_1 + \lambda_2) t}$, a objętość  $M$ zmienia się w tempie $M(t)  \propto e^{(\lambda_1 + \lambda_2 + \lambda_3) t}$. W reżimie chaotycznym co najmniej jeden z wykładników Lapunowa jest dodatni. Oznacza to, że w przestrzeni fazowej trajektorie rozbiegają się w jednym kierunku. Jeżeli wszystkie 3 wykładniki są ujemne, układ jest w reżimie regularnym (periodycznym, quasi-periodycznym). Nie ma metod analitycznych pozwalających obliczyć wykładniki Lapunowa. Metody numeryczne też nie są proste. W literaturze można znaleźć algorytmy służące do wyznaczania $\lambda_1, \lambda_2, \lambda_3$.
 
 W przypadku oscylatora Duffinga można otrzymać cząstkowe  informacje o wykładnikach Lapunowa.
 \begin{enumerate}
@@ -3154,7 +2966,7 @@ Trzecie równanie dla pomocniczej zmiennej $z$ można rozwiązać otrzymując fu
 \phantomsection\label{ch2/chII012:equation-eqn8}\begin{gather}
 \begin{split}z(t) = \omega t + c\end{split}\label{ch2/chII012-eqn8}
 \end{gather}
-Z pewnością dwie bliskie sobie trajektorie $z_1(t) = \omega t+c_1$ oraz $z_2(t) = \omega t + c_2$ dla chwili   $t=0$ nie rozbiegają się exponencjalnie ponieważ
+Z pewnością dwie bliskie sobie trajektorie $z_1(t) = \omega t+c_1$ oraz $z_2(t) = \omega t + c_2$ dla chwili   $t=0$ nie rozbiegają się eksponencjalnie ponieważ
 \phantomsection\label{ch2/chII012:equation-eqn9}\begin{gather}
 \begin{split}|z_1(t) - z_2(t)| = |c_1 -c_2|\end{split}\label{ch2/chII012-eqn9}
 \end{gather}
@@ -3176,7 +2988,7 @@ Zbadajmy, jak zmienia się w czasie objętość fazowa układu.  W tym celu musi
 \phantomsection\label{ch2/chII012:equation-eqn12}\begin{gather}
 \begin{split} div  \vec F = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}  = -\gamma < 0\end{split}\label{ch2/chII012-eqn12}
 \end{gather}
-Oznacza to, że objętość fazowa w przestrzeni 3-wymiarowej maleje w tempie (zobacz paragraf o układach dysypatywnych)
+Oznacza to, że objętość fazowa w przestrzeni 3-wymiarowej maleje w tempie (zobacz paragraf o układach dyssypatywnych)
 \phantomsection\label{ch2/chII012:equation-eqn13}\begin{gather}
 \begin{split}M(t) \propto e^{-\gamma t}\end{split}\label{ch2/chII012-eqn13}
 \end{gather}\end{quote}
@@ -3197,7 +3009,7 @@ W reżimie chaotycznym jeden z wykładników jest dodatni, np. $\lambda_1 >0$ or
 \phantomsection\label{ch2/chII012:equation-eqn17}\begin{gather}
 \begin{split}\lambda_1  >  \lambda_2  >  \lambda_3, \qquad   \lambda_1 > 0, \qquad \lambda_2  = 0, \qquad   \lambda_3 < 0,  \qquad M(t) =  M(0)  e^{(\lambda_1 + \lambda_2 + \lambda_3) t} = M(0) e^{-\gamma t}\end{split}\label{ch2/chII012-eqn17}
 \end{gather}
-Zwracamy uwgę na to, że elipsoida  w 3-wymiarowej przestrzeni fazowej rozciąga się w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje.Tak to wygląda w reżimie chaotycznym. W reżimie nie-chaotycznym: elipsoida kurczy się  w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Atraktory, które pokazywaliśmy poprzednio, istnieją w 3-wymiarowej przestrzeni fazowej, ale ponieważ objętość fazowa cały czas maleje, wymiar atraktorów musi być mniejszy od 3. W reżimie nie-chaotycznym, n-okresowe atraktory  (krzywe) mają wymiar 1. Atraktory w reżimie chaotycznym mają wymiar większy niż 1, ale mniejszy niż 3. Kaplana i  Yorke (1979) postawili  hipotezę, że  istnieje związek pomiędzy wymiarem fraktalnym atraktora $D_A$  a wykładnikami Lapunowa. Relacja ta ma postać:
+Zwracamy uwagę na to, że elipsoida  w 3-wymiarowej przestrzeni fazowej rozciąga się w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje.Tak to wygląda w reżimie chaotycznym. W reżimie nie-chaotycznym: elipsoida kurczy się  w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Atraktory, które pokazywaliśmy poprzednio, istnieją w 3-wymiarowej przestrzeni fazowej, ale ponieważ objętość fazowa cały czas maleje, wymiar atraktorów musi być mniejszy od 3. W reżimie nie-chaotycznym, n-okresowe atraktory  (krzywe) mają wymiar 1. Atraktory w reżimie chaotycznym mają wymiar większy niż 1, ale mniejszy niż 3. Kaplana i  Yorke (1979) postawili  hipotezę, że  istnieje związek pomiędzy wymiarem fraktalnym atraktora $D_A$  a wykładnikami Lapunowa. Relacja ta ma postać:
 \phantomsection\label{ch2/chII012:equation-eqn18}\begin{gather}
 \begin{split} D_A = 2 +  \frac{\lambda_1}{|\lambda_3|}  >  2\end{split}\label{ch2/chII012-eqn18}
 \end{gather}
@@ -3210,7 +3022,7 @@ Do dzisiaj jest to tylko hipoteza, choć w wielu przypadkach potwierdzona przez 
 
 \subsection{Widmo mocy}
 \label{ch2/chII012:widmo-mocy}
-Jest to kolejna wielkość, która może być indykatorem chaotycznego zachowania sie układu deterministycznego. Pojęcie widma mocy jest dobrze ugruntowane w teorii sygnałów, traktowanych jako nośnik informacji. W ogólności sygnały mogą być deterministyczne (jak w naszym przypadku) i losowe (stochastyczne). W sensie inżynierskim, sygnał to dowolna funkcja czasu.  Jako modele sygnałów wprowadza się również wielkości nazywane dystrybucjami (funkcjami uogólnionymi). Tylko  nieliczne proste sygnały można opisać formułami matematycznymi.  Większość sygnałów, z jakimi spotykamy się w praktyce, ma przebieg na tyle złożony i nieregularny, że ich bezpośredni opis  jako funkcji czasu jest kłopotliwy.  Dlatego też należy posługugiwać się  ich różnego rodzaju reprezentacjami. Reprezentacja sygnału stanowi pewien rodzaj jego symbolicznego opisu, niekiedy o znacznym stopniu abstrakcji. Jej istotą jest to, że zawiera ona pełną informację o sygnale, choć zwykle wyrażoną w innym języku, niż bezpośredni język  w terminach funkcji czasu.  Oznacza to, że znając sygnał, możemy jednoznacznie wyznaczyć jego reprezentację, znając zaś tę reprezentację – odtworzyć jednoznacznie sygnał. Istnieje wiele sposobów reprezentacji sygnałów. Jednym z nich jest analiza furierowska za pomocą transformat Fouriera lub szeregów Fouriera.
+Jest to kolejna wielkość, która może być indykatorem chaotycznego zachowania się układu deterministycznego. Pojęcie widma mocy jest dobrze ugruntowane w teorii sygnałów, traktowanych jako nośnik informacji. W ogólności sygnały mogą być deterministyczne (jak w naszym przypadku) i losowe (stochastyczne). W sensie inżynierskim, sygnał to dowolna funkcja czasu.  Jako modele sygnałów wprowadza się również wielkości nazywane dystrybucjami (funkcjami uogólnionymi). Tylko  nieliczne proste sygnały można opisać formułami matematycznymi.  Większość sygnałów, z jakimi spotykamy się w praktyce, ma przebieg na tyle złożony i nieregularny, że ich bezpośredni opis  jako funkcji czasu jest kłopotliwy.  Dlatego też należy posługiwać się  ich różnego rodzaju reprezentacjami. Reprezentacja sygnału stanowi pewien rodzaj jego symbolicznego opisu, niekiedy o znacznym stopniu abstrakcji. Jej istotą jest to, że zawiera ona pełną informację o sygnale, choć zwykle wyrażoną w innym języku, niż bezpośredni język  w terminach funkcji czasu.  Oznacza to, że znając sygnał, możemy jednoznacznie wyznaczyć jego reprezentację, znając zaś tę reprezentację – odtworzyć jednoznacznie sygnał. Istnieje wiele sposobów reprezentacji sygnałów. Jednym z nich jest analiza furierowska za pomocą transformat Fouriera lub szeregów Fouriera.
 
 Przypomnijmy pojęcie transformacji Fouriera funkcji lub dystrybucji. W najprostszym ujęciu transformatą  Fouriera ${\hat f}(\omega)$  funkcji $f(t)$ nazywamy całkę
 \phantomsection\label{ch2/chII012:equation-eqn20}\begin{gather}
@@ -3222,11 +3034,11 @@ Ponieważ nas interesuje ewolucja sygnału czasowego $f(t) = (x(t),  y(t),  z(t)
 \phantomsection\label{ch2/chII012:equation-eqn21}\begin{gather}
 \begin{split}{\hat f}(\omega) = \lim_{T\to\infty}  \; \int_{0}^{\; T}  \mbox{e}^{i \omega t} f(t)  dt\end{split}\label{ch2/chII012-eqn21}
 \end{gather}
-W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy $T\to \infty$, ale rozpatrujemy dostatecznie długi czas, gdy pojawia się stan ustalony i efekty przejściowe w ewolucji zanikają.  Ze względu na występowanie funkcji  podcałkowej  :math:{}` mbox\{e\}\textasciicircum{}\{i omega t\}{}`, transformata Fouriera jest  funkcją  zespoloną. Dlatego też bada się funkcję rzeczywistą w postaci
+W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy $T\to \infty$, ale rozpatrujemy dostatecznie długi czas, gdy pojawia się stan ustalony i efekty przejściowe w ewolucji zanikają.  Ze względu na występowanie funkcji  podcałkowej  $\mbox{e}^{i \omega t}$, transformata Fouriera jest  funkcją  zespoloną. Dlatego też bada się funkcję rzeczywistą w postaci
 \phantomsection\label{ch2/chII012:equation-eqn22}\begin{gather}
 \begin{split}P(\omega) = \lvert {\hat f}(\omega) \rvert^2\end{split}\label{ch2/chII012-eqn22}
 \end{gather}
-Nazywa się ona widmem mocy sygnału czasowego $f(t)$. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  $\omega$ jest częstością, która jest wielkościa dodatnią, $\omega > 0$.  W dalszym ciągu przyjmiemy to założenie o dodatniości ``częstości''. W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej $C(t)$  procesu stochastycznego.
+Nazywa się ona widmem mocy sygnału czasowego $f(t)$. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  $\omega$ jest częstością, która jest wielkością dodatnią, $\omega > 0$.  W dalszym ciągu przyjmiemy to założenie o dodatniości ``częstości''. W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej $C(t)$  procesu stochastycznego.
 
 Aby wyrobić sobie intuicję o własnościach transformaty Fouriera i widma mocy, wystarczy rozpatrzeć kilka  przypadków funkcji $f(t)$.
 \begin{description}
@@ -3246,7 +3058,7 @@ Transformatą Fouriera jest suma przesuniętych delt Diraca $\delta$, czyli w wi
 
 \end{description}
 
-Zauważmy, że dla tak zdefiniowanych  transformacji Fouriera nie istnieje widmo mocy, ponieważ w ścisłym sensie matematycznym nie istnieje $\delta^2(\omega -\Omega)$ dla delty Diraca. Jednak nie chodzi o precyzję matematyczną, ale o to że pojawia się pik, który nigdy nie jest nieskończony jak w delcie Diraca. My jednak potrzebujemy praktycznej metody sprawdzania chaotyczności procesu i zwykle sygnał próbkujemy dla dyskretnych wartości czasu t. Dlatego też należy wykorzystać aparat Dyskretnej Transformacji Fouriera, która  skończony ciągu sygnału
+Zauważmy, że dla tak zdefiniowanych  transformacji Fouriera nie istnieje widmo mocy, ponieważ w ścisłym sensie matematycznym nie istnieje $\delta^2(\omega -\Omega)$ dla delty Diraca. Jednak nie chodzi o precyzję matematyczną, ale o to że pojawia się pik, który nigdy nie jest nieskończony jak w delcie Diraca. My jednak potrzebujemy praktycznej metody sprawdzania chaotyczności procesu i zwykle sygnał próbujemy dla dyskretnych wartości czasu $t$. Dlatego też należy wykorzystać aparat Dyskretnej Transformacji Fouriera, która  skończony ciągu sygnału
 \phantomsection\label{ch2/chII012:equation-eqn25}\begin{gather}
 \begin{split}\{x_0, x_1, x_2, ..., x_{N-1}\}\end{split}\label{ch2/chII012-eqn25}
 \end{gather}
@@ -3264,42 +3076,55 @@ Dla odpowiednio dużej liczby $N$ (w praktyce rzędu 100), zgodność pomiędzy 
 \PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
 \PYG{n}{g}\PYG{p}{,} \PYG{n}{w0} \PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mi}{1}
 \PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mi}{0}
-
 \PYG{n}{Aval} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{0.325}\PYG{p}{,}\PYG{l+m+mf}{0.354}\PYG{p}{,}\PYG{l+m+mf}{0.357}\PYG{p}{,}\PYG{l+m+mf}{0.358}\PYG{p}{,}\PYG{l+m+mf}{0.4}\PYG{p}{]}
 \PYG{n}{kolor} \PYG{o}{=} \PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{black}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{orange}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}
 \PYG{n}{p} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}
-
 \PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}
 \PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{Aval}\PYG{p}{:}
-    \PYG{n}{dx} \PYG{o}{=} \PYG{n}{y}
-    \PYG{n}{dy} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{3} \PYG{o}{\PYGZhy{}} \PYG{n}{g}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{a}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}
-    \PYG{n}{dz} \PYG{o}{=} \PYG{n}{w0}
+  \PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz} \PYG{o}{=} \PYG{n}{y}\PYG{p}{,} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{3} \PYG{o}{\PYGZhy{}} \PYG{n}{g}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{a}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}\PYG{p}{,} \PYG{n}{w0}
+  \PYG{n}{h}\PYG{p}{,} \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mi}{1100}
+  \PYG{n}{skip} \PYG{o}{=} \PYG{l+m+mi}{100}
+  \PYG{n}{iskip} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{skip}\PYG{o}{/}\PYG{n}{h}\PYG{p}{)}
 
-    \PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.1}
-    \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{1100}
-    \PYG{n}{skip} \PYG{o}{=} \PYG{l+m+mi}{100}
-    \PYG{n}{iskip} \PYG{o}{=} \PYG{n+nb}{int}\PYG{p}{(}\PYG{n}{skip}\PYG{o}{/}\PYG{n}{h}\PYG{p}{)}
-    \PYG{n}{listT} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n}{h}\PYG{p}{,} \PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{l+m+mi}{0}\PYG{p}{)}
-    \PYG{n}{num} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{listT}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
-    \PYG{n}{iks} \PYG{o}{=} \PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{n}{iskip}\PYG{p}{:}\PYG{p}{]}
+  \PYG{n}{listT} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n}{h}\PYG{p}{)}
+  \PYG{n}{num} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}
+                       \PYG{p}{[}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{listT}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
 
-    \PYG{n}{freq} \PYG{o}{=} \PYG{p}{[}\PYG{n}{i}\PYG{o}{/}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZhy{}}\PYG{n}{skip}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{iks}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{]} \PYG{o}{+}\PYGZbs{}
-           \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{iks}\PYG{p}{)}\PYG{o}{/}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZhy{}}\PYG{n}{skip}\PYG{p}{)} \PYG{o}{+} \PYG{n}{i}\PYG{o}{/}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZhy{}}\PYG{n}{skip}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{iks}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{iks}\PYG{p}{)}\PYG{p}{)}\PYG{p}{]}
-    \PYG{n}{freq} \PYG{o}{=} \PYG{p}{[}\PYG{n}{f}\PYG{o}{*}\PYG{l+m+mf}{2.}\PYG{o}{*}\PYG{n}{n}\PYG{p}{(}\PYG{n}{pi}\PYG{p}{)}\PYG{o}{/}\PYG{n}{w0} \PYG{k}{for} \PYG{n}{f} \PYG{o+ow}{in} \PYG{n}{freq}\PYG{p}{]}
+  \PYG{n}{iks} \PYG{o}{=} \PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}\PYG{p}{[}\PYG{n}{iskip}\PYG{p}{:}\PYG{p}{]}
+  \PYG{n}{li} \PYG{o}{=} \PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{iks}\PYG{p}{)}
+  \PYG{n}{freq} \PYG{o}{=} \PYG{p}{[}\PYG{n}{i}\PYG{o}{/}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZhy{}}\PYG{n}{skip}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{li}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{)}\PYG{p}{]} \PYG{o}{+}\PYGZbs{}
+         \PYG{p}{[}\PYG{o}{\PYGZhy{}}\PYG{n}{li}\PYG{o}{/}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZhy{}}\PYG{n}{skip}\PYG{p}{)} \PYG{o}{+} \PYG{n}{i}\PYG{o}{/}\PYG{p}{(}\PYG{n}{T}\PYG{o}{\PYGZhy{}}\PYG{n}{skip}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n}{li}\PYG{o}{/}\PYG{l+m+mi}{2}\PYG{p}{,}\PYG{n}{li}\PYG{p}{)}\PYG{p}{]}
+  \PYG{n}{freq} \PYG{o}{=} \PYG{p}{[}\PYG{n}{f}\PYG{o}{*}\PYG{l+m+mf}{2.}\PYG{o}{*}\PYG{n}{n}\PYG{p}{(}\PYG{n}{pi}\PYG{p}{)}\PYG{o}{/}\PYG{n}{w0} \PYG{k}{for} \PYG{n}{f} \PYG{o+ow}{in} \PYG{n}{freq}\PYG{p}{]}
 
-    \PYG{n}{vx} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{n}{iks}\PYG{p}{)}
-    \PYG{n}{A} \PYG{o}{=} \PYG{n}{vx}\PYG{o}{.}\PYG{n}{fft}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{apply\PYGZus{}map}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:}\PYG{n}{x}\PYG{o}{.}\PYG{n}{abs2}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
-    \PYG{n}{p}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{freq}\PYG{p}{,}\PYG{n}{A}\PYG{o}{.}\PYG{n}{apply\PYGZus{}map}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:}\PYG{n}{x}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
+  \PYG{n}{vx} \PYG{o}{=} \PYG{n}{vector}\PYG{p}{(}\PYG{n}{iks}\PYG{p}{)}
+  \PYG{n}{A} \PYG{o}{=} \PYG{n}{vx}\PYG{o}{.}\PYG{n}{fft}\PYG{p}{(}\PYG{p}{)}\PYG{o}{.}\PYG{n}{apply\PYGZus{}map}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:}\PYG{n}{x}\PYG{o}{.}\PYG{n}{abs2}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}
+  \PYG{n}{p}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n+nb}{zip}\PYG{p}{(}\PYG{n}{freq}\PYG{p}{,}\PYG{n}{A}\PYG{o}{.}\PYG{n}{apply\PYGZus{}map}\PYG{p}{(}\PYG{k}{lambda} \PYG{n}{x}\PYG{p}{:}\PYG{n}{x}\PYG{o}{.}\PYG{n}{log}\PYG{p}{(}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}\PYG{p}{)}
 
-    \PYG{n}{j} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
+  \PYG{n}{j} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
 \end{Verbatim}
+
+{\hfill\includegraphics[width=0.600\linewidth]{sage_chII012_02a.pdf}\hfill}
+
+{\hfill\includegraphics[width=0.600\linewidth]{sage_chII012_02b.pdf}\hfill}
+
+{\hfill\includegraphics[width=0.600\linewidth]{sage_chII012_02c.pdf}\hfill}
+
+{\hfill\includegraphics[width=0.600\linewidth]{sage_chII012_02d.pdf}\hfill}
+
+{\hfill\includegraphics[width=0.600\linewidth]{sage_chII012_02e.pdf}\hfill}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.600\linewidth]{sage_chII012_02.pdf}
+\caption{Podwojenie okresu - widmo mocy.}\end{figure}
 
 
 \subsection{Funkcja korelacyjna}
 \label{ch2/chII012:funkcja-korelacyjna}
-Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości średniej,  w takim sensie jak w teorii procesów stochastycznych lub na wykładach z fizyki statystycznej: średniowanie po realizacjach lub po zespole statystycznym . Ale jeżeli proces deterministyczny jest ergodyczny (trudne pojęcie!), to średnia wartość jest dobrze określona i średnia po zespole  jest równoważna średniej po czasie.  Jeżeli dodatkowo  proces jest stacjonarny, to można zdefiniować funkcję korelacyjną $C(\tau)$  dla procesu deterministycznego. W naszym przypadku: dla położenia lub prędkości, jest ona zdefiniowana przez relacje:
+Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości średniej,  w takim sensie jak w teorii procesów stochastycznych lub na wykładach z fizyki statystycznej: uśrednianie po realizacjach lub po zespole statystycznym . Ale jeżeli proces deterministyczny jest ergodyczny (trudne pojęcie!), to średnia wartość jest dobrze określona i średnia po zespole  jest równoważna średniej po czasie.  Jeżeli dodatkowo  proces jest stacjonarny, to można zdefiniować funkcję korelacyjną $C(\tau)$  dla procesu deterministycznego. W naszym przypadku: dla położenia lub prędkości, jest ona zdefiniowana przez relacje:
 \phantomsection\label{ch2/chII012:equation-eqn28}\begin{gather}
-\begin{split}C(\tau) = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}  [x(t+\tau) - \langle x(t+\tau)\rangle]  [ x(t) - \langle x(t)\rangle]  dt, \qquad \langle x(t)\rangle = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}   x(t)  dt\end{split}\label{ch2/chII012-eqn28}
+\begin{split}C(\tau) = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}  [x(t+\tau) - \langle x(t+\tau)\rangle]  [ x(t) - \langle x(t)\rangle]  dt,\end{split}\label{ch2/chII012-eqn28}\\\begin{split}\langle x(t)\rangle = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}   x(t)  dt.\end{split}\notag
 \end{gather}
 Jeżeli mamy rozwiązanie równania ruchu $x(t)$, to w zależności od postaci tego rozwiązania również SAGE poradzi sobie z rozwiązaniem całki. Jeżeli analityczny wzór będzie poza możliwościami obliczeń symbolicznych, zawsze możemy wygenerować sobie szereg czasowy $x = \{x_1, x_2, \dots \}$. Realizacja funkcji korelacyjnej w SAGE nie będzie stanowić problemu numerycznego. Możemy pokusić się o samodzielne sformułowanie problemu, lub skorzystać z metod pakietu \code{finance}.
 
@@ -3333,8 +3158,8 @@ Teraz obliczymy sobie ową funkcję korelacji dla oscylatora Duffinga.
 
 \PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.1}
 \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{1000}
-\PYG{n}{listT} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{h}\PYG{p}{)}\PYG{p}{,} \PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-\PYG{n}{num} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{listT}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{lT} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{h}\PYG{p}{)}\PYG{p}{,} \PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+\PYG{n}{num} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{,}\PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{y0}\PYG{p}{,}\PYG{n}{z0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{lT}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
 \end{Verbatim}
 
 Skorzystamy zarówno z naszej funkcji jak i z wbudowanego w SAGE pakietu \code{finance},
@@ -3351,37 +3176,22 @@ obliczając funkcję (auto)korelacji dla położenia i dla prędkości.
 \PYG{n}{v} \PYG{o}{=} \PYG{n}{finance}\PYG{o}{.}\PYG{n}{TimeSeries}\PYG{p}{(}\PYG{n}{dane}\PYG{p}{)}
 \PYG{n}{sage\PYGZus{}acorr} \PYG{o}{=} \PYG{p}{[}\PYG{n}{v}\PYG{o}{.}\PYG{n}{autocorrelation}\PYG{p}{(}\PYG{n}{i}\PYG{o}{*}\PYG{l+m+mi}{10}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{l+m+mi}{33}\PYG{p}{)}\PYG{p}{]}
 \end{Verbatim}
+\begin{figure}[htbp]
+\centering
+\capstart
+
+\includegraphics[width=0.600\linewidth]{sage_chII012_03.pdf}
+\caption{Funkcja korelacyjna.}\end{figure}
 
 Powyższe rachunki możemy powtórzyć dla wszystkich punktów o których była mowa przy omawianiu bifurkacji.
 
-\begin{Verbatim}[commandchars=\\\{\}]
-\PYG{n}{var}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{x y z}\PYG{l+s}{\PYGZsq{}}\PYG{p}{)}
-\PYG{n}{g}\PYG{p}{,} \PYG{n}{w0} \PYG{o}{=} \PYG{l+m+mf}{0.5}\PYG{p}{,} \PYG{l+m+mi}{1}
-\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0} \PYG{o}{=} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mf}{0.1}\PYG{p}{,} \PYG{l+m+mi}{0}
+{\hfill\includegraphics[width=0.600\linewidth]{ch2/images/sage_chII012_04.*}\hfill}
+\begin{figure}[htbp]
+\centering
+\capstart
 
-\PYG{n}{Aval} \PYG{o}{=} \PYG{p}{[}\PYG{l+m+mf}{0.325}\PYG{p}{,}\PYG{l+m+mf}{0.354}\PYG{p}{,}\PYG{l+m+mf}{0.357}\PYG{p}{,}\PYG{l+m+mf}{0.358}\PYG{p}{,}\PYG{l+m+mf}{0.4}\PYG{p}{]}
-\PYG{n}{p}\PYG{p}{,} \PYG{n}{ps} \PYG{o}{=} \PYG{p}{[}\PYG{p}{]}\PYG{p}{,} \PYG{p}{[}\PYG{p}{]}
-\PYG{n}{kolor} \PYG{o}{=} \PYG{p}{[}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{blue}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{red}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{green}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{black}\PYG{l+s}{\PYGZsq{}}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}}\PYG{l+s}{orange}\PYG{l+s}{\PYGZsq{}}\PYG{p}{]}
-\PYG{n}{j} \PYG{o}{=} \PYG{l+m+mi}{0}
-\PYG{k}{for} \PYG{n}{a} \PYG{o+ow}{in} \PYG{n}{Aval}\PYG{p}{:}
-    \PYG{n}{dx} \PYG{o}{=} \PYG{n}{y}
-    \PYG{n}{dy} \PYG{o}{=} \PYG{n}{x} \PYG{o}{\PYGZhy{}} \PYG{n}{x}\PYG{o}{*}\PYG{o}{*}\PYG{l+m+mi}{3} \PYG{o}{\PYGZhy{}} \PYG{n}{g}\PYG{o}{*}\PYG{n}{y} \PYG{o}{+} \PYG{n}{a}\PYG{o}{*}\PYG{n}{cos}\PYG{p}{(}\PYG{n}{z}\PYG{p}{)}
-    \PYG{n}{dz} \PYG{o}{=} \PYG{n}{w0}
-
-    \PYG{n}{h} \PYG{o}{=} \PYG{l+m+mf}{0.1}
-    \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{2000}
-    \PYG{n}{listT} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n}{h}\PYG{p}{,} \PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-    \PYG{n}{num} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{listT}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
-
-    \PYG{n}{d} \PYG{o}{=} \PYG{p}{(}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{o}{\PYGZhy{}}\PYG{n}{mean}\PYG{p}{(}\PYG{n}{num}\PYG{p}{[}\PYG{p}{:}\PYG{p}{,}\PYG{l+m+mi}{0}\PYG{p}{]}\PYG{p}{)}\PYG{p}{)}\PYG{o}{.}\PYG{n}{tolist}\PYG{p}{(}\PYG{p}{)}
-    \PYG{n}{v} \PYG{o}{=} \PYG{n}{finance}\PYG{o}{.}\PYG{n}{TimeSeries}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)}
-    \PYG{n}{kor} \PYG{o}{=} \PYG{p}{[}\PYG{n}{v}\PYG{o}{.}\PYG{n}{autocorrelation}\PYG{p}{(}\PYG{n}{i}\PYG{o}{*}\PYG{l+m+mi}{5}\PYG{p}{)} \PYG{k}{for} \PYG{n}{i} \PYG{o+ow}{in} \PYG{n+nb}{range}\PYG{p}{(}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{d}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{5}\PYG{p}{)}\PYG{p}{]}
-    \PYG{n}{p}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{kor}\PYG{p}{,} \PYG{n}{plotjoined}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{kolor}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{p}{,} \PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}a = }\PYG{l+s+si}{\PYGZpc{}.3f}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{n}{a}\PYG{p}{)}\PYG{p}{)}
-    \PYG{n}{ps}\PYG{o}{.}\PYG{n}{append}\PYG{p}{(}\PYG{n}{list\PYGZus{}plot}\PYG{p}{(}\PYG{n}{kor}\PYG{p}{[}\PYG{p}{:}\PYG{n+nb}{len}\PYG{p}{(}\PYG{n}{kor}\PYG{p}{)}\PYG{o}{/}\PYG{l+m+mi}{20}\PYG{p}{]}\PYG{p}{,} \PYG{n}{plotjoined}\PYG{o}{=}\PYG{l+m+mi}{1}\PYG{p}{,} \PYG{n}{color}\PYG{o}{=}\PYG{n}{kolor}\PYG{p}{[}\PYG{n}{j}\PYG{p}{]}\PYG{p}{,} \PYG{n}{legend\PYGZus{}label}\PYG{o}{=}\PYG{l+s}{r\PYGZdq{}}\PYG{l+s}{\PYGZdl{}a = }\PYG{l+s+si}{\PYGZpc{}.3f}\PYG{l+s}{\PYGZdl{}}\PYG{l+s}{\PYGZdq{}}\PYG{o}{\PYGZpc{}}\PYG{n}{a}\PYG{p}{)}\PYG{p}{)}
-
-    \PYG{c}{\PYGZsh{}list\PYGZus{}plot(zip(d,num[:,1].tolist()),plotjoined=1,color=\PYGZsq{}red\PYGZsq{}).show()}
-    \PYG{n}{j} \PYG{o}{+}\PYG{o}{=} \PYG{l+m+mi}{1}
-\end{Verbatim}
+\includegraphics[width=0.600\linewidth]{ch2/images/sage_chII012_04a.*}
+\caption{Funkcja autokorelacyjna.}\end{figure}
 
 
 \subsection{Odwzorowanie (cięcie) Poincarego}
@@ -3394,7 +3204,7 @@ Odwzorowanie Poincarego jest innym przedstawieniem dynamiki układu.  Najprości
 \includegraphics{poincare_section.png}
 \caption{Konstrukcja cięcia Poincarego.}\end{figure}
 
-Jak widać, we wszystkich przykładach krzywe fazowe na płaszczyźnie są ograniczone na pewnym obszarze $(x, y)$. We wszystkich rozpatrzywanych przypadach ruch wydaje sie być prawie-periodyczny: układ ciągle  powraca w te same obszary. Można zbudować następujące przedstawienie tego ruchu.
+Jak widać, we wszystkich przykładach krzywe fazowe na płaszczyźnie są ograniczone na pewnym obszarze $(x, y)$. We wszystkich rozpatrywanych przypadkach ruch wydaje się być prawie-periodyczny: układ ciągle  powraca w te same obszary. Można zbudować następujące przedstawienie tego ruchu.
 
 Okres siły periodycznej wynosi
 \phantomsection\label{ch2/chII012:equation-eqn29}\begin{gather}
@@ -3443,7 +3253,7 @@ Gdyby trajektoria była atraktorem  o okresie 2  to na cięciu Poincarego otrzym
 \begin{enumerate}
 \setcounter{enumi}{2}
 \item {} 
-Gdyby trajektoria była chaotyczna, to za każdym razem przebiega przez inne punkty płaszczyzny i tworzy zbiór składający sie z nieskończenie wielu punktów. Poniżej pokazano takie odwzorowanie dla oscylatora Duffinga.
+Gdyby trajektoria była chaotyczna, to za każdym razem przebiega przez inne punkty płaszczyzny i tworzy zbiór składający się z nieskończenie wielu punktów. Poniżej pokazano takie odwzorowanie dla oscylatora Duffinga.
 
 \end{enumerate}
 \begin{figure}[htbp]
@@ -3478,14 +3288,14 @@ Jeżeli jesteśmy w stanie zbudować graficznie przedstawienie Poincarego danego
 \PYG{c}{\PYGZsh{}symulacje}
 \PYG{c}{\PYGZsh{}\PYGZsh{}\PYGZsh{}}
 \PYG{n}{T} \PYG{o}{=} \PYG{l+m+mi}{10000}
-\PYG{n}{listT} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{h}\PYG{p}{)}\PYG{p}{,} \PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
-\PYG{n}{sol} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,} \PYG{n}{dy}\PYG{p}{,} \PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x0}\PYG{p}{,} \PYG{n}{y0}\PYG{p}{,} \PYG{n}{z0}\PYG{p}{]}\PYG{p}{,} \PYG{n}{listT}\PYG{p}{,} \PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
+\PYG{n}{lT} \PYG{o}{=} \PYG{n}{srange}\PYG{p}{(}\PYG{l+m+mi}{0}\PYG{p}{,}\PYG{n}{T}\PYG{p}{,}\PYG{n+nb}{float}\PYG{p}{(}\PYG{n}{h}\PYG{p}{)}\PYG{p}{,} \PYG{n}{include\PYGZus{}endpoint}\PYG{o}{=}\PYG{n+nb+bp}{True}\PYG{p}{)}
+\PYG{n}{sol} \PYG{o}{=} \PYG{n}{desolve\PYGZus{}odeint}\PYG{p}{(}\PYG{n}{vector}\PYG{p}{(}\PYG{p}{[}\PYG{n}{dx}\PYG{p}{,}\PYG{n}{dy}\PYG{p}{,}\PYG{n}{dz}\PYG{p}{]}\PYG{p}{)}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x0}\PYG{p}{,}\PYG{n}{y0}\PYG{p}{,}\PYG{n}{z0}\PYG{p}{]}\PYG{p}{,}\PYG{n}{lT}\PYG{p}{,}\PYG{p}{[}\PYG{n}{x}\PYG{p}{,}\PYG{n}{y}\PYG{p}{,}\PYG{n}{z}\PYG{p}{]}\PYG{p}{)}
 \end{Verbatim}
 
 
 \subsection{Przykłady chaosu w Naturze}
 \label{ch2/chII012:przyklady-chaosu-w-naturze}
-Należy odróżnić procesy  chaotyczne  od procesów losowych. Procesy chaotyczne są deterministyczne, a procesy stochastyczne są procesami losowymi.  Procesy chaotyczne są badane przez matematyków, fizyków, chemików, biologów, socjologów, meteorologów, astrofizyków, w teorii informacji i neuronauce. We wszystkich tych gałęziach nauki, występują  deterministyczne modele wykazujące własności chaotyczne. Od lat 60-tych XX wieku opublikowano tysiące prac na temat układów chaotycznych.  Matematycy mówią, że prawie wszystkie układy dynamiczne są chaotyczne, a tylko nieliczne układy nie wykazują tej własności. Matematycy dowodzą, że przestrzeń fazowa układu modelowanego przez autonomiczny układ równań różniczkowych musi być co najmniej 3-wymiarowa, aby istniał chaos. Dla układów dyskretnych nie ma takich ograniczeń: jedno równanie  rekurencyjne $x_{n+1} = f(x_n)$  także wykazuje własności chaotyczne.
+Należy odróżnić procesy  chaotyczne  od procesów losowych. Procesy chaotyczne są deterministyczne, a procesy stochastyczne są procesami losowymi.  Procesy chaotyczne są badane przez matematyków, fizyków, chemików, biologów, socjologów, meteorologów, astrofizyków, w teorii informacji i neurobiologii. We wszystkich tych gałęziach nauki, występują  deterministyczne modele wykazujące własności chaotyczne. Od lat 60-tych XX wieku opublikowano tysiące prac na temat układów chaotycznych.  Matematycy mówią, że prawie wszystkie układy dynamiczne są chaotyczne, a tylko nieliczne układy nie wykazują tej własności. Matematycy dowodzą, że przestrzeń fazowa układu modelowanego przez autonomiczny układ równań różniczkowych musi być co najmniej 3-wymiarowa, aby istniał chaos. Dla układów dyskretnych nie ma takich ograniczeń: jedno równanie  rekurencyjne $x_{n+1} = f(x_n)$  także wykazuje własności chaotyczne.
 
 Poniżej podajemy kilka przykładów rzeczywistych zjawisk wykazujących własności chaotyczne.
 \begin{enumerate}
@@ -3499,14 +3309,14 @@ Lasery
 Układy elektroniczne
 
 \item {} 
-Plasma
+Plazma
 
 \item {} 
 Reakcje chemiczne
 
 \end{enumerate}
 
-Na stronie internetowej Wikipedii  z hasłem Chaos Theory  można znaleźć dalsze przykłady oraz podstawowe prace na ten temat. Na zakończenie tej części ksiązki musimy wspomnieć o człowieku, który to wszystko zapoczątkował w 1961 roku. Był to Edward Lorenz, matematyk i meteorolog amerykański,  który analizował jeden z najprostszych modeli pozwalających przewidywać pogodę. To z jego nazwiskiem związany jest  ``efekt motyla'' obrazujący niezwykłą czułość dynamiki na zaburzenia warunków  początkowych: czy ruch motyla w Brazylii może spowodować tornado w Teksasie (ściśle rzecz ujmując to Philip Merilees zasugerował  Lorenzowi taki tytuł wykładu podczas posiedzenia American Association for the Advancement of Science w 1972 roku). W tym obrazowym powiedzeniu zawarta jest istota chaosu: Motyl poprzez swój lot zaburza lokalnie ruch powietrza. Ten zaburzony ruch powietrza narasta i powoduje coraz to większe zmiany pogodowe, zmienia radykalnie ``trajektorię''  doprowadzając do tornada, które pojawi się nad Teksasem. Czy faktycznie motyl może być  taki groźny?
+Na stronie internetowej Wikipedii  z hasłem \emph{Chaos Theory}  można znaleźć dalsze przykłady oraz podstawowe prace na ten temat. Na zakończenie tej części książki musimy wspomnieć o człowieku, który to wszystko zapoczątkował w 1961 roku. Był to Edward Lorenz, matematyk i meteorolog amerykański,  który analizował jeden z najprostszych modeli pozwalających przewidywać pogodę. To z jego nazwiskiem związany jest  ``efekt motyla'' obrazujący niezwykłą czułość dynamiki na zaburzenia warunków  początkowych: czy ruch motyla w Brazylii może spowodować tornado w Teksasie (ściśle rzecz ujmując to Philip Merilees zasugerował  Lorenzowi taki tytuł wykładu podczas posiedzenia American Association for the Advancement of Science w 1972 roku). W tym obrazowym powiedzeniu zawarta jest istota chaosu: Motyl poprzez swój lot zaburza lokalnie ruch powietrza. Ten zaburzony ruch powietrza narasta i powoduje coraz to większe zmiany pogodowe, zmienia radykalnie ``trajektorię''  doprowadzając do tornada, które pojawi się nad Teksasem. Czy faktycznie motyl może być  taki groźny?
 
 
 \chapter{Dynamika stochastyczna}

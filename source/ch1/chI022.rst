@@ -365,7 +365,9 @@ Ewolucja układu to nic innego jak zamiana zmiennych :math:`(x_0, y_0, z_0) \to 
 .. MATH::
     :label: eqn25
 
-    M(t) = \int \int \int_{D(t)}  dx_t dy_t dz_t   =  \int \int \int_{D(0)}  \frac{\partial (x_t, y_t, z_t)}{\partial (x_0, y_0, z_0)} \; dx_0 dy_0 dz_0  = \int \int \int_{D(0)}   J(t)  dx_0 dy_0 dz_0 \qquad  
+    M(t) = \int \int \int_{D(t)}  dx_t dy_t dz_t  =
+    
+    =  \int \int \int_{D(0)}  \frac{\partial (x_t, y_t, z_t)}{\partial (x_0, y_0, z_0)} \; dx_0 dy_0 dz_0  = \int \int \int_{D(0)}   J(t)  dx_0 dy_0 dz_0 \qquad  
 
 
 gdzie :math:`J` jest jakobianem transformacji  :math:`(x_t, y_t, z_t) \to (x_0, y_0, z_0)`. Jeżeli objętość fazowa nie zmienia się w czasie (jest funkcją stałą), to jej pochodna

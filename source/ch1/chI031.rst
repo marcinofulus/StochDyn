@@ -24,7 +24,7 @@ W metodzie  Newtona  kolejne przybliżenie pierwiastka dane jest przez równanie
 
     x_{n+1} = x_n + \frac{F(x_n)}{F'(x_n)}\equiv f(x_n)
 
-gdzie zakładamy, że pochodna :math:`F'(x)` istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji :math:`F(x)`.  W szczególności dla :math:`F(x)=x^2-2` ciąg :eq:`eqn2a` w zależności od warunku początkowego zmierza do liczby :math:`x_{+}=\sqrt{2}` lub :math:`x_{-}=\sqrt{2}`  (co jest oczywiste skądinąd).
+gdzie zakładamy, że pochodna :math:`F'(x)` istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji :math:`F(x)`.  W szczególności dla :math:`F(x)=x^2-2` ciąg :eq:`eqn2a` w zależności od warunku początkowego zmierza do liczby :math:`x_{+}=\sqrt{2}` lub :math:`x_{-}=-\sqrt{2}`  (co jest oczywiste skądinąd).
 
 
 
@@ -39,18 +39,58 @@ gdzie zakładamy, że pochodna :math:`F'(x)` istnieje (w przeciwnym przypadku me
 
   Poniżej prezentujemy program w SAGE:
 
-.. sagecellserver::
-    :is_verbatim: True
+.. only:: latex
 
-    sage: # warunek początkowy 
-    sage: x0 = 1
-    sage: # tu można wstawić dowolną funkcję f(x)
-    sage: f(x) = x - 0.5*x*x+1.7
-    sage: for i in range(20):
-    ...    print x0
-    ...    x0 = f(x0)
+  .. code-block:: python
 
-.. end of input
+      # warunek początkowy 
+      x0 = 1
+      # tu można wstawić dowolną funkcję f(x)
+      f(x) = x - 0.5*x^2 + 1.7
+      for i in range(20):
+        print x0
+        x0 = f(x0)
+  
+  który wyprodukuje iteracyjnie nastepujące liczby
+
+  .. code:: bash
+
+    1
+    2.20000000000000
+    1.48000000000000
+    2.08480000000000
+    1.61160448000000
+    2.01296998002196
+    1.68694590978715
+    1.96405265851335
+    1.73530123580667
+    1.92966604631059
+    1.76786052116862
+    1.90519511001533
+    1.79031090640217
+    1.88770433561089
+    1.80599050626881
+    1.87518965190227
+    1.81702153660159
+    1.86623790436459
+    1.82481594652102
+    1.85983932718231
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: # warunek początkowy 
+      sage: x0 = 1
+      sage: # tu można wstawić dowolną funkcję f(x)
+      sage: f(x) = x - 0.5*x*x+1.7
+      sage: for i in range(20):
+      ...    print x0
+      ...    x0 = f(x0)
+
+  .. end of input
+
 
 Poniżej jest prezentacja graficzna dla ogólniejszego przypadku
 
@@ -62,26 +102,52 @@ Poniżej jest prezentacja graficzna dla ogólniejszego przypadku
 
 z dowolnym parametrem :math:`b`. Zachęcamy do zabawy: zmieniajcie wartość parametru :math:`b` oraz warunek początkowy. Czytelnik łatwo może podać swoje własne równanie, zmieniając odpowiednie wyrażenia w programie.
 
-.. sagecellserver::
-    :is_verbatim: True
+.. only:: latex
 
-    sage: def ne(b,X):
-    ...    return X - b*X*X +1.7
-    sage: #
-    sage: def pophis(startp,b,length):
-    ...    his = [startp]
-    ...    for i in range(length):
-    ...        his.append( ne(b,his[i]) )
-    ...    return his
-    sage: #
-    sage: #warunek pocz. przed b, 
-    sage: #po b ilość iteracji, 
-    sage: #skala wykresu podana w ymin, ymax
-    sage: @interact
-    sage: def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
-    ...    show(list_plot(pophis(1,b,35),plotjoined=True,marker='o',ymin=0.5,ymax=3))
+  .. code-block:: python
 
-.. end of input
+      def ne(b,X):
+        return X - b*X*X + 1.7
+      
+      def pophis(startp,b,length):
+        his = [startp]
+        for i in range(length):
+          his.append(ne(b,his[i]))
+        return his
+      
+      @interact
+      def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
+        show(list_plot(pophis(1,b,35),plotjoined=True,marker='o'))
+
+
+  .. figure:: images/sage_chI031_01.*
+       :align: center
+       :alt: figI03101
+
+       Graficzna prezentacja równania :eq:`eqn4`, dla :math:`b = 0.5`.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: def ne(b,X):
+      ...    return X - b*X*X +1.7
+      sage: #
+      sage: def pophis(startp,b,length):
+      ...    his = [startp]
+      ...    for i in range(length):
+      ...        his.append(ne(b,his[i]))
+      ...    return his
+      sage: #
+      sage: #warunek pocz. przed b, 
+      sage: #po b ilość iteracji, 
+      sage: #skala wykresu podana w ymin, ymax
+      sage: @interact
+      sage: def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
+      ...    show(list_plot(pophis(1,b,35),plotjoined=True,marker='o',ymin=0.5,ymax=3))
+
+  .. end of input
 
 Metoda pajęczyny
 ----------------
@@ -90,49 +156,83 @@ Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjn
 
 Sposób rysowania:
 
-# Dla danego równania  :math:`x_{n+1} = f(x_n)`, rysujemy wykres funkcji 
+#. Dla danego równania  :math:`x_{n+1} = f(x_n)`, rysujemy wykres funkcji 
   :math:`y = f (x)` oraz  linię prostą :math:`y  = x`. Prosta ta pozwala 
   przenosić wartość :math:`x_{n+1}`  z osi OY na oś OX. 
 
-# Na osi OX zaznaczamy warunek początkowy :math:`x_0`. Znajdujemy 
+#. Na osi OX zaznaczamy warunek początkowy :math:`x_0`. Znajdujemy 
   graficznie punkt :math:`x_1 = f(x_0)`, który jest na osi OY.
 
-# Przy pomocy prostej :math:`y=x` przenosimy teraz  punkt :math:`x_1` na oś OX.
+#. Przy pomocy prostej :math:`y=x` przenosimy teraz  punkt :math:`x_1` na oś OX.
 
-# Mając na osi OX punkt :math:`x_1`, traktujemy go jako następny warunek 
+#. Mając na osi OX punkt :math:`x_1`, traktujemy go jako następny warunek 
   początkowy i znajdujemy graficznie na osi OY punkt :math:`x_2=f(x_1)`.
   
-# Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym :math:`x_0`.
+#. Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym :math:`x_0`.
 
 
+.. only:: latex
 
-.. sagecellserver::
-    :is_verbatim: True
+  .. code-block:: python
 
-    sage: var('r,x0,n')
-    sage: @interact
-    sage: def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)
-    ...    f(x)=x - a*x*x+1.7    ## postać funkcji f(x), która mozna zmieniać
-    ...    p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color='black')+plot(x,(x,-1,4),color='green',figsize=5)
-    ...    for n in range(20):
-    ...        th = 1
-    ...        if n>45:
-    ...            th = 1.5
-    ...            color='red'
-    ...        elif n < 5:
-    ...            color='blue'
-    ...            th=1.5    
-    ...        else:
-    ...            color='grey'
-    ...            th =0.5        
-    ...        l1 = line([(x0,x0),(x0,f(x0))],color=color,thickness=th)
-    ...        l2 = line([(x0,f(x0)),(f(x0),f(x0))],color=color,thickness=th)
-    ...        p = p+l1+l2
-    ...        x0 = f(x0)
-    ...    p.axes_labels(["$x_n$","$x_{n+1}$"])     
-    ...    p.show()
+    var('r,x0')
+    @interact
+    def cobweb(a=slider(0.4,1.4,0.1,default=1),
+               x0=slider(0,1,0.1,default=1)):
+      f(x) = x - a*x**2 + 1.7
+      p =  plot(f(x)==0,(x,-1,3),color='black')
+      p += plot(x,(x,-1,4),color='green',figsize=5)
+      for k in range(20):
+        th = 1
+        if k>45:
+          th, color = 1.5, 'red'
+        elif k < 5:
+          th, color = 1.5, 'blue'
+        else:
+          th, color = 0.5, 'grey'
+        l1 = line([(x0,x0),(x0,f(x0))],color=color,thickness=th)
+        l2 = line([(x0,f(x0)),(f(x0),f(x0))],color=color,thickness=th)
+        p += l1 + l2
+        x0 = f(x0)
+      p.axes_labels(["$x_k$","$x_{k+1}$"])     
+      p.show()
 
-.. end of input
+  .. figure:: images/sage_chI031_02.*
+       :align: center
+       :alt: figI03102
+
+       Przykład wykorzystania metody pajęczyny dla :eq:`eqn4` dla 
+       domyślnych parametrów :math:`a=1, x_0=1` z ``interact``.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('r,x0,n')
+      sage: @interact
+      sage: def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)
+      ...    f(x)=x - a*x*x + 1.7    ## postać funkcji f(x), która mozna zmieniać
+      ...    p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color='black')+plot(x,(x,-1,4),color='green',figsize=5)
+      ...    for n in range(20):
+      ...        th = 1
+      ...        if n>45:
+      ...            th = 1.5
+      ...            color='red'
+      ...        elif n < 5:
+      ...            color='blue'
+      ...            th=1.5    
+      ...        else:
+      ...            color='grey'
+      ...            th =0.5        
+      ...        l1 = line([(x0,x0),(x0,f(x0))],color=color,thickness=th)
+      ...        l2 = line([(x0,f(x0)),(f(x0),f(x0))],color=color,thickness=th)
+      ...        p = p+l1+l2
+      ...        x0 = f(x0)
+      ...    p.axes_labels(["$x_n$","$x_{n+1}$"])     
+      ...    p.show()
+
+  .. end of input
 
 
 Stany stacjonarne (punkty stałe) o okresie 1
@@ -154,7 +254,6 @@ Z punktu widzenia modelowania,  chcielibyśmy wiedzieć, czy układ w trakcie ew
 
 A. Stany stacjonarne (punkty stałe o okresie 1)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-
 
 Przypomnijmy sobie, co oznacza istnienie stanu stacjonarnego dla układów modelowanych równaniem różniczkowym: 
 
@@ -210,24 +309,51 @@ Stąd otrzymujemy równanie dla stanu stacjonarnego
 
 Poniżej przedstawiamy to graficznie. Po wielu krokach iteracji obserwujemy powtarzanie się tej samej wartości: kolejna iteracji już nic nie zmienia, jest ta sama, stała. 
 
-.. sagecellserver::
-    :is_verbatim: True
 
-    sage: def newpop(a,prevpop):
-    ...    return a*prevpop
-    sage: #
-    sage: def populationhistory(startpop,a,length):
-    ...    history = [startpop]
-    ...    for i in range(length):
-    ...        history.append( newpop(a,history[i]) )
-    ...    return history
-    sage: #
-    sage: @interact
-    sage: def _( a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a') ):
-    ...    myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala
-    ...    myplot.show()
+.. only:: latex
 
-.. end of input
+  .. code-block:: python
+
+    def newpop(a,prevpop):
+      return a * prevpop
+
+    def p_history(startpop,a,length):
+      history = [startpop]
+      for i in range(length):
+        history.append(newpop(a,history[i]))
+      return history
+
+    @interact
+    def _(a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a')):
+      myplot=list_plot(p_history(1,a,30),plotjoined=True,marker='o')
+      myplot.show()
+
+  .. figure:: images/sage_chI031_03.*
+       :align: center
+       :alt: figI03103
+
+       Punkt stały odwzorowania.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: def newpop(a,prevpop):
+      ...    return a*prevpop
+      sage: #
+      sage: def populationhistory(startpop,a,length):
+      ...    history = [startpop]
+      ...    for i in range(length):
+      ...        history.append( newpop(a,history[i]) )
+      ...    return history
+      sage: #
+      sage: @interact
+      sage: def _( a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a') ):
+      ...    myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala
+      ...    myplot.show()
+
+  .. end of input
 
 
 
@@ -301,10 +427,19 @@ Ponieważ :math:`y_n` jest małą wielkością, to funkcję :math:`f(x_s + y_n)`
 .. MATH::
     :label: eqn18
 
-    y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  = f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + ...  \quad \quad \mbox{gdzie} \quad  \lambda = f'(x_s) \quad \mbox{jest liczbą}
+    y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  = 
+    
+    = f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + \dots,
+    
+gdzie
 
+.. MATH::
+    :label: eqn18
+   
+    \lambda = f'(x_s)
 
-Wykorzystaliśmy tu równość dla stanu stacjonarnego: :math:`x_s = f(x_s)`.  W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego: 
+jest liczbą. Wykorzystaliśmy tu równość dla stanu stacjonarnego: :math:`x_s = f(x_s)`.  
+W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego: 
 
 .. MATH::
     :label: eqn19
@@ -332,7 +467,17 @@ Otrzymamy ciąg liczbowy
 .. MATH::
     :label: eqn21
 
-     y_0, \quad y_1 =   2 y_0, \quad y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0, \quad y_3 =  2 y_2 = 2^3 y_0, \quad y_4 =  2 y_3 = 2^4 y_0, ....
+     y_0,
+     
+     y_1 =   2 y_0,
+     
+     y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0,
+     
+     y_3 =  2 y_2 = 2^3 y_0,
+     
+     y_4 =  2 y_3 = 2^4 y_0,
+
+     \dots
 
 
 Widzimy, że  kolejne  liczby rosną, ponieważ są mnożone przez czynnik 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla :math:`\lambda > 1`, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.
@@ -353,7 +498,17 @@ Otrzymamy ciąg liczbowy
 .. MATH::
     :label: eqn23
 
-     y_0, \quad y_1 = - 2 y_0, \quad y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0, \quad y_3 = (- 2) y_2 =  - 2^3 y_0, \quad y_4 = (- 2) y_3 = 2^4 y_0, ....
+     y_0,
+     
+     y_1 = - 2 y_0,
+     
+     y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0,
+     
+     y_3 = (- 2) y_2 =  - 2^3 y_0,
+     
+     y_4 = (- 2) y_3 = 2^4 y_0,
+
+     \dots
 
 
 Widzimy, że  wartości bezwzględne kolejnych liczby rosną, ponieważ są mnożone przez czynnik - 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla :math:`\lambda < - 1`, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.
@@ -374,7 +529,17 @@ Otrzymamy ciąg liczbowy
 .. MATH::
     :label: eqn25
 
-     y_0, \quad y_1 =   \frac{1}{2} y_0, \quad y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0, \quad y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0, \quad y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0, ....
+     y_0,
+     
+     y_1 =   \frac{1}{2} y_0,
+     
+     y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0,
+     
+     y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0,
+     
+     y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0,
+
+     \dots
 
 
 Widzimy, że  kolejne  liczby maleją, ponieważ są mnożone przez czynnik :math:`1/2`  
@@ -393,25 +558,51 @@ Stany stacjonarne o okresie 2
 
 Jeżeli dla długich iteracji (formalnie dla :math:`n\to\infty`)  otrzymujemy ciągle tą samą wartość, to mówimy o stanie  stacjonarnym o okresie 1. Pokazano to na powyższym rysunku. Jednakże mogą pojawić się inne stany stacjonarne. Dla przykładu, zobaczmy jak zachowuje się układ dla :math:`n\to\infty`, który jest pokazany poniżej.
 
+.. only:: latex
 
-.. sagecellserver::
-    :is_verbatim: True
+  .. code-block:: python
 
-    sage: def ne(b,pre):
-    ...    return 1+b*pre*(1-(1/16)*pre)
-    sage: #
-    sage: def pophis(startp,b,length):
-    ...    his = [startp]
-    ...    for i in range(length):
-    ...        his.append( ne(b,his[i]) )
-    ...    return his
-    sage: #
-    sage: @interact
-    sage: def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
-    ...    aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',ymin=0,ymax=18)##warunek pocz. przed b, skala
-    ...    aplot.show()
+    def ne(b,pre):
+      return 1 + b*pre*(1-(1/16)*pre)
 
-.. end of input
+    def pophis(startp,b,length):
+      his = [startp]
+      for i in range(length):
+        his.append(ne(b,his[i]))
+      return his
+
+    @interact
+    def _(b=slider(0.05,3.8,0.05,default=3.05,label='Factor b')):
+      p = list_plot(pophis(4,b,35),plotjoined=True,marker='o')
+      p.show(figsize=[8,3],axes_labels=[r'$x_s$',r'$f(x_s)$'])
+
+
+  .. figure:: images/sage_chI031_04.*
+       :align: center
+       :alt: figI03104
+
+       Stany stacjonarne o okresie 2.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: def ne(b,pre):
+      ...    return 1+b*pre*(1-(1/16)*pre)
+      sage: #
+      sage: def pophis(startp,b,length):
+      ...    his = [startp]
+      ...    for i in range(length):
+      ...        his.append( ne(b,his[i]) )
+      ...    return his
+      sage: #
+      sage: @interact
+      sage: def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
+      ...    aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',ymin=0,ymax=18)##warunek pocz. przed b, skala
+      ...    aplot.show()
+
+  .. end of input
 
 
 Obserwujemy, że dla dużych wartości iteracji :math:`n>>1`, dwie wartości iteracji powtarzają się i układ "skacze" pomiędzy dwoma stanami. Mówimy wówczas o stanie stacjonarnym o okresie 2. Możemy także powiedzieć, że jest to stan periodyczny. Jak wyznaczyć takie stany?  Skorzystamy ze wzoru na kolejne iteracje: 

@@ -6,9 +6,10 @@ Scenariusz przejścia do chaosu
 .. highlight:: python
   :linenothreshold: 5
 
-Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  200 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają sie różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
+Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  200 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają się różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
 
-Niech :math:`x(t)`  będzie trajektorią z warunkiem początkowym :math:`x(0)`, a :math:`X(t)`  będzie trajektorią z warunkiem początkowym :math:` X(0)`.   Niech dwa warunki początkowe różnią się o małą wielkość: 
+Niech :math:`x(t)`  będzie trajektorią z warunkiem początkowym :math:`x(0)`, a :math:`X(t)`  
+będzie trajektorią z warunkiem początkowym :math:`X(0)`.   Niech dwa warunki początkowe różnią się o małą wielkość: 
 
 .. MATH::
     :label: eqn1
@@ -68,7 +69,7 @@ Załóżmy,  że ktoś jest w stanie przygotować  stan początkowy  ze znacznie
 
 To jest zaledwie 2 razy dłuższy czas!! Widać, że gdy układ jest w reżimie chaotycznym, przewidywalność czasowa jest bardzo ograniczona. Zwiększanie dokładności wyznaczania warunków początkowych  1000-krotnie powoduje wydłużenie  czasu przewidywalności  zaledwie 2 razy. To jest właśnie problem  z prognozą pogody. Możemy zwiększać sieć punktów pomiarowych, a i tak przewidywania pogody są  rozsądne  zaledwie  na kilka dni do przodu.
 
-Problem, czy układ wykazuje własności chaotyczne czy nie, nie jest łatwy do stwierdzenia. Ponieważ układ równań różniczkowych zwykle nie można analitycznie rozwiązać, trzeba bazować na metodach komputerowych. Z jednej strony układ jest czuły na warunki początkowe, z drugiej strony sama metoda numeryczna i obliczenia komputerowe obarczone są błędami, których nie można wyeliminować. Może zdarzyć się, że to nie własność  układu a artefakty komputerowe wytwarzają złudzenie  chaosu. Trzeba na to być czułym. Obecnie istnieją dobre programy komputerowe uwzględniające niedoskonałości o których mowa. Ponadto istnieje kilka charakterystyk,  które mają specyficzne własności  dla układów chaotycznych.  Oto te charaktarystyki: 
+Problem, czy układ wykazuje własności chaotyczne czy nie, nie jest łatwy do stwierdzenia. Ponieważ układ równań różniczkowych zwykle nie można analitycznie rozwiązać, trzeba bazować na metodach komputerowych. Z jednej strony układ jest czuły na warunki początkowe, z drugiej strony sama metoda numeryczna i obliczenia komputerowe obarczone są błędami, których nie można wyeliminować. Może zdarzyć się, że to nie własność  układu a artefakty komputerowe wytwarzają złudzenie  chaosu. Trzeba na to być czułym. Obecnie istnieją dobre programy komputerowe uwzględniające niedoskonałości o których mowa. Ponadto istnieje kilka charakterystyk,  które mają specyficzne własności  dla układów chaotycznych.  Oto te charakterystyki: 
 
 1. Wykładniki Lapunowa :math:`\lambda_i`
 
@@ -94,16 +95,14 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
   .. code-block:: python
 
     var('x y z')
-    x0, y0, z0 = -0.5,-0.1,0
-    kolor = ['blue','red','green','black','orange']
+    x0, y0, z0 = -0.5, -0.1, 0
+    kolor = ['blue','red','green','black']
 
     #model
     F = x-x^3
-    V = -integrate(F,x)
-    g = 0.5
-    w = 1
+    g, w = 0.5, 1
 
-    #punkty bifurkacji: 0.34357;  0.35506; 0.35785; 0.35846;  ostatni 0.3586
+    #miejsca podwajania okresu
     Akeys = ['$a_1$','$a_2$','$a_3$','$a_4$']
     Aval  = [0.325,0.354,0.357,0.358]
     A = dict(zip(Akeys,Aval))
@@ -111,20 +110,21 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
     p = A
     j=0
     for a in A.keys():
-        # układ rozniczkowych rownan ruchu
-        dx = y
-        dy = F - g*y + A[a]*cos(z)
-        dz = w
-        
-        # numeryczne rozwiazanie
+        dx, dy, dz = y, F - g*y + A[a]*cos(z), w
         T = srange(0,100*pi,0.01)
         num = desolve_odeint(vector([dx,dy,dz]), [x0,y0,z0], T, [x,y,z])
-        figsize = [12,3] if a == '$a_4$' else 3.5
         start, stop = int(len(num[:,0])*0.8), len(num[:,0])
-        p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]), plotjoined=1, color=kolor[j], axes_labels=['$x(t)$','$v(t)$'], legend_label='%s=%.5f'%(a,A[a]), figsize=figsize)
+        p[a] = list_plot(zip(num[:,0][start:stop],num[:,1][start:stop]))
         j+=1
         
   Wystarczy teraz tylko narysować wykresy zmagazynowane w liście ``p``.
+
+  .. figure:: images/sage_chII012_01.*
+    :align: center
+    :alt: chII01201
+
+    Podwojenie okresu.
+
 
   .. code-block:: python
 
@@ -192,16 +192,17 @@ Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa si
 Wykładniki Lapunowa
 -------------------
 
-Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnic ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  :math:`K` w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla :math:`x(t), y(t), z(t)` startując z wszystkich warunków początkowych w kuli :math:`K`,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach :math:`(x, y, z)` w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa :math:`\lambda_1, \lambda_2, \lambda_3`. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniowac trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu.Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
+Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnić ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  :math:`K` w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla :math:`x(t), y(t), z(t)` startując z wszystkich warunków początkowych w kuli :math:`K`,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach :math:`(x, y, z)` w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa :math:`\lambda_1, \lambda_2, \lambda_3`. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniować trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu.Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
 
 .. figure:: images/phspace.png
    :align: center
-   :alt: 
+   :alt: Przestrzeń fazowa
+   :width: 50%
 
    Schematyczna reprezentacja przestrzeni fazowej.
 
 
-Dwie trajektorię leżące początkowo blisko siebie propagują w czasie w odległości   :math:`l(t)   \propto e^{\lambda_1 t}`, powierzchnia  :math:`S` zmienia się w tempie :math:`S(t)  \propto e^{(\lambda_1 + \lambda_2) t}`, a objętość  :math:`M` zmienia się w tempie :math:`M(t)  \propto e^{(\lambda_1 + \lambda_2 + \lambda_3) t}`. W reżimie chaotycznym co najmniej jeden z wykładników Lapunowa jest dodatni. Oznacza to, że w przestrzeni fazowej trajektorie rozbiegają się w jednym kierunku. Jeżeli wszystkie 3 wykładniki są ujemne, układ jest w rteżimie regularnum (periodycznym, quasi-periodycznym). Nie ma metod analitycznych pozwalających obliczyć wykładniki Lapunowa. Metody numeryczne też nie są proste. W literaturze można znaleźć algorytmy służące do wyznaczania :math:`\lambda_1, \lambda_2, \lambda_3`.
+Dwie trajektorię leżące początkowo blisko siebie propagują w czasie w odległości   :math:`l(t)   \propto e^{\lambda_1 t}`, powierzchnia  :math:`S` zmienia się w tempie :math:`S(t)  \propto e^{(\lambda_1 + \lambda_2) t}`, a objętość  :math:`M` zmienia się w tempie :math:`M(t)  \propto e^{(\lambda_1 + \lambda_2 + \lambda_3) t}`. W reżimie chaotycznym co najmniej jeden z wykładników Lapunowa jest dodatni. Oznacza to, że w przestrzeni fazowej trajektorie rozbiegają się w jednym kierunku. Jeżeli wszystkie 3 wykładniki są ujemne, układ jest w reżimie regularnym (periodycznym, quasi-periodycznym). Nie ma metod analitycznych pozwalających obliczyć wykładniki Lapunowa. Metody numeryczne też nie są proste. W literaturze można znaleźć algorytmy służące do wyznaczania :math:`\lambda_1, \lambda_2, \lambda_3`.
 
 W przypadku oscylatora Duffinga można otrzymać cząstkowe  informacje o wykładnikach Lapunowa.  
 
@@ -213,7 +214,7 @@ W przypadku oscylatora Duffinga można otrzymać cząstkowe  informacje o wykła
       z(t) = \omega t + c 
 
 
-  Z pewnością dwie bliskie sobie trajektorie :math:`z_1(t) = \omega t+c_1` oraz :math:`z_2(t) = \omega t + c_2` dla chwili   :math:`t=0` nie rozbiegają się exponencjalnie ponieważ
+  Z pewnością dwie bliskie sobie trajektorie :math:`z_1(t) = \omega t+c_1` oraz :math:`z_2(t) = \omega t + c_2` dla chwili   :math:`t=0` nie rozbiegają się eksponencjalnie ponieważ
 
   .. MATH::
       :label: eqn9
@@ -249,7 +250,7 @@ W przypadku oscylatora Duffinga można otrzymać cząstkowe  informacje o wykła
        div  \vec F = \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} + \frac{\partial F_3}{\partial z}  = -\gamma < 0
 
 
-  Oznacza to, że objętość fazowa w przestrzeni 3-wymiarowej maleje w tempie (zobacz paragraf o układach dysypatywnych)
+  Oznacza to, że objętość fazowa w przestrzeni 3-wymiarowej maleje w tempie (zobacz paragraf o układach dyssypatywnych)
 
   .. MATH::
       :label: eqn13
@@ -289,7 +290,7 @@ W reżimie chaotycznym jeden z wykładników jest dodatni, np. :math:`\lambda_1 
     \lambda_1  >  \lambda_2  >  \lambda_3, \qquad   \lambda_1 > 0, \qquad \lambda_2  = 0, \qquad   \lambda_3 < 0,  \qquad M(t) =  M(0)  e^{(\lambda_1 + \lambda_2 + \lambda_3) t} = M(0) e^{-\gamma t}
 
 
-Zwracamy uwgę na to, że elipsoida  w 3-wymiarowej przestrzeni fazowej rozciąga się w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje.Tak to wygląda w reżimie chaotycznym. W reżimie nie-chaotycznym: elipsoida kurczy się  w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Atraktory, które pokazywaliśmy poprzednio, istnieją w 3-wymiarowej przestrzeni fazowej, ale ponieważ objętość fazowa cały czas maleje, wymiar atraktorów musi być mniejszy od 3. W reżimie nie-chaotycznym, n-okresowe atraktory  (krzywe) mają wymiar 1. Atraktory w reżimie chaotycznym mają wymiar większy niż 1, ale mniejszy niż 3. Kaplana i  Yorke (1979) postawili  hipotezę, że  istnieje związek pomiędzy wymiarem fraktalnym atraktora :math:`D_A`  a wykładnikami Lapunowa. Relacja ta ma postać:
+Zwracamy uwagę na to, że elipsoida  w 3-wymiarowej przestrzeni fazowej rozciąga się w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje.Tak to wygląda w reżimie chaotycznym. W reżimie nie-chaotycznym: elipsoida kurczy się  w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Atraktory, które pokazywaliśmy poprzednio, istnieją w 3-wymiarowej przestrzeni fazowej, ale ponieważ objętość fazowa cały czas maleje, wymiar atraktorów musi być mniejszy od 3. W reżimie nie-chaotycznym, n-okresowe atraktory  (krzywe) mają wymiar 1. Atraktory w reżimie chaotycznym mają wymiar większy niż 1, ale mniejszy niż 3. Kaplana i  Yorke (1979) postawili  hipotezę, że  istnieje związek pomiędzy wymiarem fraktalnym atraktora :math:`D_A`  a wykładnikami Lapunowa. Relacja ta ma postać:
 
 .. MATH::
     :label: eqn18
@@ -311,7 +312,7 @@ Do dzisiaj jest to tylko hipoteza, choć w wielu przypadkach potwierdzona przez 
 Widmo mocy
 ----------
 
-Jest to kolejna wielkość, która może być indykatorem chaotycznego zachowania sie układu deterministycznego. Pojęcie widma mocy jest dobrze ugruntowane w teorii sygnałów, traktowanych jako nośnik informacji. W ogólności sygnały mogą być deterministyczne (jak w naszym przypadku) i losowe (stochastyczne). W sensie inżynierskim, sygnał to dowolna funkcja czasu.  Jako modele sygnałów wprowadza się również wielkości nazywane dystrybucjami (funkcjami uogólnionymi). Tylko  nieliczne proste sygnały można opisać formułami matematycznymi.  Większość sygnałów, z jakimi spotykamy się w praktyce, ma przebieg na tyle złożony i nieregularny, że ich bezpośredni opis  jako funkcji czasu jest kłopotliwy.  Dlatego też należy posługugiwać się  ich różnego rodzaju reprezentacjami. Reprezentacja sygnału stanowi pewien rodzaj jego symbolicznego opisu, niekiedy o znacznym stopniu abstrakcji. Jej istotą jest to, że zawiera ona pełną informację o sygnale, choć zwykle wyrażoną w innym języku, niż bezpośredni język  w terminach funkcji czasu.  Oznacza to, że znając sygnał, możemy jednoznacznie wyznaczyć jego reprezentację, znając zaś tę reprezentację – odtworzyć jednoznacznie sygnał. Istnieje wiele sposobów reprezentacji sygnałów. Jednym z nich jest analiza furierowska za pomocą transformat Fouriera lub szeregów Fouriera.
+Jest to kolejna wielkość, która może być indykatorem chaotycznego zachowania się układu deterministycznego. Pojęcie widma mocy jest dobrze ugruntowane w teorii sygnałów, traktowanych jako nośnik informacji. W ogólności sygnały mogą być deterministyczne (jak w naszym przypadku) i losowe (stochastyczne). W sensie inżynierskim, sygnał to dowolna funkcja czasu.  Jako modele sygnałów wprowadza się również wielkości nazywane dystrybucjami (funkcjami uogólnionymi). Tylko  nieliczne proste sygnały można opisać formułami matematycznymi.  Większość sygnałów, z jakimi spotykamy się w praktyce, ma przebieg na tyle złożony i nieregularny, że ich bezpośredni opis  jako funkcji czasu jest kłopotliwy.  Dlatego też należy posługiwać się  ich różnego rodzaju reprezentacjami. Reprezentacja sygnału stanowi pewien rodzaj jego symbolicznego opisu, niekiedy o znacznym stopniu abstrakcji. Jej istotą jest to, że zawiera ona pełną informację o sygnale, choć zwykle wyrażoną w innym języku, niż bezpośredni język  w terminach funkcji czasu.  Oznacza to, że znając sygnał, możemy jednoznacznie wyznaczyć jego reprezentację, znając zaś tę reprezentację – odtworzyć jednoznacznie sygnał. Istnieje wiele sposobów reprezentacji sygnałów. Jednym z nich jest analiza furierowska za pomocą transformat Fouriera lub szeregów Fouriera.
 
 Przypomnijmy pojęcie transformacji Fouriera funkcji lub dystrybucji. W najprostszym ujęciu transformatą  Fouriera :math:`{\hat f}(\omega)`  funkcji :math:`f(t)` nazywamy całkę 
 
@@ -331,7 +332,7 @@ Ponieważ nas interesuje ewolucja sygnału czasowego :math:`f(t) = (x(t),  y(t),
     {\hat f}(\omega) = \lim_{T\to\infty}  \; \int_{0}^{\; T}  \mbox{e}^{i \omega t} f(t)  dt
 
 
-W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy :math:`T\to \infty`, ale rozpatrujemy dostatecznie długi czas, gdy pojawia się stan ustalony i efekty przejściowe w ewolucji zanikają.  Ze względu na występowanie funkcji  podcałkowej  :math:` \mbox{e}^{i \omega t}`, transformata Fouriera jest  funkcją  zespoloną. Dlatego też bada się funkcję rzeczywistą w postaci
+W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy :math:`T\to \infty`, ale rozpatrujemy dostatecznie długi czas, gdy pojawia się stan ustalony i efekty przejściowe w ewolucji zanikają.  Ze względu na występowanie funkcji  podcałkowej  :math:`\mbox{e}^{i \omega t}`, transformata Fouriera jest  funkcją  zespoloną. Dlatego też bada się funkcję rzeczywistą w postaci
 
 .. MATH::
     :label: eqn22
@@ -339,7 +340,7 @@ W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy :math
     P(\omega) = \lvert {\hat f}(\omega) \rvert^2
 
 
-Nazywa się ona widmem mocy sygnału czasowego :math:`f(t)`. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  :math:`\omega` jest częstością, która jest wielkościa dodatnią, :math:`\omega > 0`.  W dalszym ciągu przyjmiemy to założenie o dodatniości "częstości". W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej :math:`C(t)`  procesu stochastycznego.
+Nazywa się ona widmem mocy sygnału czasowego :math:`f(t)`. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  :math:`\omega` jest częstością, która jest wielkością dodatnią, :math:`\omega > 0`.  W dalszym ciągu przyjmiemy to założenie o dodatniości "częstości". W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej :math:`C(t)`  procesu stochastycznego.
 
 Aby wyrobić sobie intuicję o własnościach transformaty Fouriera i widma mocy, wystarczy rozpatrzeć kilka  przypadków funkcji :math:`f(t)`.
 
@@ -365,7 +366,7 @@ Przypadek 2
 
   Transformatą Fouriera jest suma przesuniętych delt Diraca :math:`\delta`, czyli w widmie mocy pojawia się szereg  pików (które w praktyce są  zawsze skończone).
 
-Zauważmy, że dla tak zdefiniowanych  transformacji Fouriera nie istnieje widmo mocy, ponieważ w ścisłym sensie matematycznym nie istnieje :math:`\delta^2(\omega -\Omega)` dla delty Diraca. Jednak nie chodzi o precyzję matematyczną, ale o to że pojawia się pik, który nigdy nie jest nieskończony jak w delcie Diraca. My jednak potrzebujemy praktycznej metody sprawdzania chaotyczności procesu i zwykle sygnał próbkujemy dla dyskretnych wartości czasu t. Dlatego też należy wykorzystać aparat Dyskretnej Transformacji Fouriera, która  skończony ciągu sygnału
+Zauważmy, że dla tak zdefiniowanych  transformacji Fouriera nie istnieje widmo mocy, ponieważ w ścisłym sensie matematycznym nie istnieje :math:`\delta^2(\omega -\Omega)` dla delty Diraca. Jednak nie chodzi o precyzję matematyczną, ale o to że pojawia się pik, który nigdy nie jest nieskończony jak w delcie Diraca. My jednak potrzebujemy praktycznej metody sprawdzania chaotyczności procesu i zwykle sygnał próbujemy dla dyskretnych wartości czasu :math:`t`. Dlatego też należy wykorzystać aparat Dyskretnej Transformacji Fouriera, która  skończony ciągu sygnału
 
 .. MATH::
     :label: eqn25
@@ -437,45 +438,70 @@ Dla odpowiednio dużej liczby :math:`N` (w praktyce rzędu 100), zgodność pomi
     var('x y z')
     g, w0 = 0.5, 1
     x0, y0, z0 = 0.1, 0.1, 0
-
     Aval = [0.325,0.354,0.357,0.358,0.4]
     kolor = ['blue','red','green','black','orange']
     p = []
-
     j = 0
     for a in Aval:
-        dx = y
-        dy = x - x**3 - g*y + a*cos(z)
-        dz = w0
-        
-        h = 0.1
-        T = 1100
-        skip = 100
-        iskip = int(skip/h)
-        listT = srange(0,T,h, include_endpoint=0)
-        num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])        
-        iks = num[:,0].tolist()[iskip:]
-        
-        freq = [i/(T-skip) for i in range(len(iks)/2)] +\
-               [-len(iks)/(T-skip) + i/(T-skip) for i in range(len(iks)/2,len(iks))]
-        freq = [f*2.*n(pi)/w0 for f in freq]
+      dx, dy, dz = y, x - x**3 - g*y + a*cos(z), w0
+      h, T = 0.1, 1100
+      skip = 100
+      iskip = int(skip/h)
 
-        vx = vector(iks)
-        A = vx.fft().apply_map(lambda x:x.abs2())
-        p.append(list_plot(zip(freq,A.apply_map(lambda x:x.log()))))
+      listT = srange(0,T,h)
+      num = desolve_odeint(vector([dx, dy, dz]), 
+                           [x0, y0, z0], listT, [x,y,z])        
 
-        j += 1
+      iks = num[:,0].tolist()[iskip:]  
+      li = len(iks)
+      freq = [i/(T-skip) for i in range(li/2)] +\
+             [-li/(T-skip) + i/(T-skip) for i in range(li/2,li)]
+      freq = [f*2.*n(pi)/w0 for f in freq]
 
+      vx = vector(iks)
+      A = vx.fft().apply_map(lambda x:x.abs2())
+      p.append(list_plot(zip(freq,A.apply_map(lambda x:x.log()))))
+
+      j += 1
+
+  .. image:: images/sage_chII012_02a.*
+    :align: center
+    :width: 60%
+
+  .. image:: images/sage_chII012_02b.*
+    :align: center
+    :width: 60%
+
+  .. image:: images/sage_chII012_02c.*
+    :align: center
+    :width: 60%
+
+  .. image:: images/sage_chII012_02d.*
+    :align: center
+    :width: 60%
+
+  .. image:: images/sage_chII012_02e.*
+    :align: center
+    :width: 60%
+
+  .. figure:: images/sage_chII012_02.*
+    :align: center
+    :width: 60%
+    :alt: chII01202
+
+    Podwojenie okresu - widmo mocy.
 
 Funkcja korelacyjna
 -------------------
 
-Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości średniej,  w takim sensie jak w teorii procesów stochastycznych lub na wykładach z fizyki statystycznej: średniowanie po realizacjach lub po zespole statystycznym . Ale jeżeli proces deterministyczny jest ergodyczny (trudne pojęcie!), to średnia wartość jest dobrze określona i średnia po zespole  jest równoważna średniej po czasie.  Jeżeli dodatkowo  proces jest stacjonarny, to można zdefiniować funkcję korelacyjną :math:`C(\tau)`  dla procesu deterministycznego. W naszym przypadku: dla położenia lub prędkości, jest ona zdefiniowana przez relacje:
+Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości średniej,  w takim sensie jak w teorii procesów stochastycznych lub na wykładach z fizyki statystycznej: uśrednianie po realizacjach lub po zespole statystycznym . Ale jeżeli proces deterministyczny jest ergodyczny (trudne pojęcie!), to średnia wartość jest dobrze określona i średnia po zespole  jest równoważna średniej po czasie.  Jeżeli dodatkowo  proces jest stacjonarny, to można zdefiniować funkcję korelacyjną :math:`C(\tau)`  dla procesu deterministycznego. W naszym przypadku: dla położenia lub prędkości, jest ona zdefiniowana przez relacje:
 
 .. MATH::
     :label: eqn28
 
-    C(\tau) = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}  [x(t+\tau) - \langle x(t+\tau)\rangle]  [ x(t) - \langle x(t)\rangle]  dt, \qquad \langle x(t)\rangle = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}   x(t)  dt 
+    C(\tau) = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}  [x(t+\tau) - \langle x(t+\tau)\rangle]  [ x(t) - \langle x(t)\rangle]  dt, 
+    
+    \langle x(t)\rangle = \lim_{T\to \infty}   \frac{1}{T}   \int_0^{\; T}   x(t)  dt.
 
 Jeżeli mamy rozwiązanie równania ruchu :math:`x(t)`, to w zależności od postaci tego rozwiązania również SAGE poradzi sobie z rozwiązaniem całki. Jeżeli analityczny wzór będzie poza możliwościami obliczeń symbolicznych, zawsze możemy wygenerować sobie szereg czasowy :math:`x = \{x_1, x_2, \dots \}`. Realizacja funkcji korelacyjnej w SAGE nie będzie stanowić problemu numerycznego. Możemy pokusić się o samodzielne sformułowanie problemu, lub skorzystać z metod pakietu ``finance``.
 
@@ -513,10 +539,8 @@ Teraz obliczymy sobie ową funkcję korelacji dla oscylatora Duffinga.
 
     h = 0.1
     T = 1000
-    listT = srange(0,T,float(h), include_endpoint=True)
-    num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
-
-
+    lT = srange(0,T,float(h), include_endpoint=True)
+    num = desolve_odeint(vector([dx,dy,dz]),[x0,y0,z0],lT,[x,y,z])
 
 
 Skorzystamy zarówno z naszej funkcji jak i z wbudowanego w SAGE pakietu ``finance``, 
@@ -537,6 +561,12 @@ obliczając funkcję (auto)korelacji dla położenia i dla prędkości.
     v = finance.TimeSeries(dane)
     sage_acorr = [v.autocorrelation(i*10) for i in range(33)]
 
+  .. figure:: images/sage_chII012_03.*
+    :align: center
+    :width: 60%
+    :alt: chII01202
+
+    Funkcja korelacyjna.
 
 
 .. only:: html
@@ -602,35 +632,16 @@ Powyższe rachunki możemy powtórzyć dla wszystkich punktów o których była 
 
 .. only:: latex
 
-  .. code-block:: python
+  .. image:: images/sage_chII012_04.*
+    :align: center
+    :width: 60%
 
-    var('x y z')
-    g, w0 = 0.5, 1
-    x0, y0, z0 = 0.1, 0.1, 0
+  .. figure:: images/sage_chII012_04a.*
+    :align: center
+    :width: 60%
+    :alt: chII01202
 
-    Aval = [0.325,0.354,0.357,0.358,0.4]
-    p, ps = [], []
-    kolor = ['blue','red','green','black','orange']
-    j = 0
-    for a in Aval:
-        dx = y
-        dy = x - x**3 - g*y + a*cos(z)
-        dz = w0
-        
-        h = 0.1
-        T = 2000
-        listT = srange(0,T,h, include_endpoint=True)
-        num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
-        
-        d = (num[:,0]-mean(num[:,0])).tolist()
-        v = finance.TimeSeries(d)
-        kor = [v.autocorrelation(i*5) for i in range(len(d)/5)]
-        p.append(list_plot(kor, plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
-        ps.append(list_plot(kor[:len(kor)/20], plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
-        
-        #list_plot(zip(d,num[:,1].tolist()),plotjoined=1,color='red').show()
-        j += 1
-    
+    Funkcja autokorelacyjna.
 
 
 
@@ -646,7 +657,7 @@ Odwzorowanie Poincarego jest innym przedstawieniem dynamiki układu.  Najprości
    Konstrukcja cięcia Poincarego.
 
 
-Jak widać, we wszystkich przykładach krzywe fazowe na płaszczyźnie są ograniczone na pewnym obszarze :math:`(x, y)`. We wszystkich rozpatrzywanych przypadach ruch wydaje sie być prawie-periodyczny: układ ciągle  powraca w te same obszary. Można zbudować następujące przedstawienie tego ruchu. 
+Jak widać, we wszystkich przykładach krzywe fazowe na płaszczyźnie są ograniczone na pewnym obszarze :math:`(x, y)`. We wszystkich rozpatrywanych przypadkach ruch wydaje się być prawie-periodyczny: układ ciągle  powraca w te same obszary. Można zbudować następujące przedstawienie tego ruchu. 
 
 Okres siły periodycznej wynosi
 
@@ -720,7 +731,7 @@ Jakie wnioski płyną z takiego przedstawienia.
 
 
 
-3. Gdyby trajektoria była chaotyczna, to za każdym razem przebiega przez inne punkty płaszczyzny i tworzy zbiór składający sie z nieskończenie wielu punktów. Poniżej pokazano takie odwzorowanie dla oscylatora Duffinga.
+3. Gdyby trajektoria była chaotyczna, to za każdym razem przebiega przez inne punkty płaszczyzny i tworzy zbiór składający się z nieskończenie wielu punktów. Poniżej pokazano takie odwzorowanie dla oscylatora Duffinga.
 
 
 .. figure:: images/chaotic_duffing.png
@@ -759,8 +770,8 @@ Jeżeli jesteśmy w stanie zbudować graficznie przedstawienie Poincarego danego
     #symulacje
     ###
     T = 10000
-    listT = srange(0,T,float(h), include_endpoint=True)
-    sol = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+    lT = srange(0,T,float(h), include_endpoint=True)
+    sol = desolve_odeint(vector([dx,dy,dz]),[x0,y0,z0],lT,[x,y,z])
 
 
 .. only:: html
@@ -797,7 +808,7 @@ Jeżeli jesteśmy w stanie zbudować graficznie przedstawienie Poincarego danego
 Przykłady chaosu w Naturze
 --------------------------
 
-Należy odróżnić procesy  chaotyczne  od procesów losowych. Procesy chaotyczne są deterministyczne, a procesy stochastyczne są procesami losowymi.  Procesy chaotyczne są badane przez matematyków, fizyków, chemików, biologów, socjologów, meteorologów, astrofizyków, w teorii informacji i neuronauce. We wszystkich tych gałęziach nauki, występują  deterministyczne modele wykazujące własności chaotyczne. Od lat 60-tych XX wieku opublikowano tysiące prac na temat układów chaotycznych.  Matematycy mówią, że prawie wszystkie układy dynamiczne są chaotyczne, a tylko nieliczne układy nie wykazują tej własności. Matematycy dowodzą, że przestrzeń fazowa układu modelowanego przez autonomiczny układ równań różniczkowych musi być co najmniej 3-wymiarowa, aby istniał chaos. Dla układów dyskretnych nie ma takich ograniczeń: jedno równanie  rekurencyjne :math:`x_{n+1} = f(x_n)`  także wykazuje własności chaotyczne. 
+Należy odróżnić procesy  chaotyczne  od procesów losowych. Procesy chaotyczne są deterministyczne, a procesy stochastyczne są procesami losowymi.  Procesy chaotyczne są badane przez matematyków, fizyków, chemików, biologów, socjologów, meteorologów, astrofizyków, w teorii informacji i neurobiologii. We wszystkich tych gałęziach nauki, występują  deterministyczne modele wykazujące własności chaotyczne. Od lat 60-tych XX wieku opublikowano tysiące prac na temat układów chaotycznych.  Matematycy mówią, że prawie wszystkie układy dynamiczne są chaotyczne, a tylko nieliczne układy nie wykazują tej własności. Matematycy dowodzą, że przestrzeń fazowa układu modelowanego przez autonomiczny układ równań różniczkowych musi być co najmniej 3-wymiarowa, aby istniał chaos. Dla układów dyskretnych nie ma takich ograniczeń: jedno równanie  rekurencyjne :math:`x_{n+1} = f(x_n)`  także wykazuje własności chaotyczne. 
 
 Poniżej podajemy kilka przykładów rzeczywistych zjawisk wykazujących własności chaotyczne. 
 
@@ -807,12 +818,12 @@ Poniżej podajemy kilka przykładów rzeczywistych zjawisk wykazujących własno
 
 3. Układy elektroniczne
 
-4. Plasma
+4. Plazma
 
 5. Reakcje chemiczne
 
 
-Na stronie internetowej Wikipedii  z hasłem Chaos Theory  można znaleźć dalsze przykłady oraz podstawowe prace na ten temat. Na zakończenie tej części ksiązki musimy wspomnieć o człowieku, który to wszystko zapoczątkował w 1961 roku. Był to Edward Lorenz, matematyk i meteorolog amerykański,  który analizował jeden z najprostszych modeli pozwalających przewidywać pogodę. To z jego nazwiskiem związany jest  "efekt motyla" obrazujący niezwykłą czułość dynamiki na zaburzenia warunków  początkowych: czy ruch motyla w Brazylii może spowodować tornado w Teksasie (ściśle rzecz ujmując to Philip Merilees zasugerował  Lorenzowi taki tytuł wykładu podczas posiedzenia American Association for the Advancement of Science w 1972 roku). W tym obrazowym powiedzeniu zawarta jest istota chaosu: Motyl poprzez swój lot zaburza lokalnie ruch powietrza. Ten zaburzony ruch powietrza narasta i powoduje coraz to większe zmiany pogodowe, zmienia radykalnie "trajektorię"  doprowadzając do tornada, które pojawi się nad Teksasem. Czy faktycznie motyl może być  taki groźny?
+Na stronie internetowej Wikipedii  z hasłem *Chaos Theory*  można znaleźć dalsze przykłady oraz podstawowe prace na ten temat. Na zakończenie tej części książki musimy wspomnieć o człowieku, który to wszystko zapoczątkował w 1961 roku. Był to Edward Lorenz, matematyk i meteorolog amerykański,  który analizował jeden z najprostszych modeli pozwalających przewidywać pogodę. To z jego nazwiskiem związany jest  "efekt motyla" obrazujący niezwykłą czułość dynamiki na zaburzenia warunków  początkowych: czy ruch motyla w Brazylii może spowodować tornado w Teksasie (ściśle rzecz ujmując to Philip Merilees zasugerował  Lorenzowi taki tytuł wykładu podczas posiedzenia American Association for the Advancement of Science w 1972 roku). W tym obrazowym powiedzeniu zawarta jest istota chaosu: Motyl poprzez swój lot zaburza lokalnie ruch powietrza. Ten zaburzony ruch powietrza narasta i powoduje coraz to większe zmiany pogodowe, zmienia radykalnie "trajektorię"  doprowadzając do tornada, które pojawi się nad Teksasem. Czy faktycznie motyl może być  taki groźny?
 
 
 

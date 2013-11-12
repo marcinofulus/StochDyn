@@ -197,7 +197,7 @@ Poniżej przedstawiamy dwa przykłady zaczerpnięte z modeli biologicznych.
       j1 = list_plot(sl1.tolist())
       j2 = list_plot(sl2.tolist())
 
-  .. figure:: images/sage_chI024_04.*
+  .. figure:: images/sage_chI024_05.*
      :align: center
      :alt: fig4
 
@@ -237,37 +237,38 @@ Jest to przykład tak zwanego dziwnego atraktora. Najprostsza jego definicja to 
     F1 = sigma*(y-x)
     F2 = x*(rho-z) - y
     F3 = x*y - beta*z
+    de = vector([F1,F2,F3])
     T = srange(0,100,0.01)
-    atraktor_lorenza = desolve_odeint(vector([F1,F2,F3]),[0,0.5,1],T,[x,y,z])
+    atraktor_lorenza = desolve_odeint(de,[0,0.5,1],T,[x,y,z])
     p2d = list_plot(zip(atraktor_lorenza[:,0],atraktor_lorenza[:,1]))
     p3d = list_plot(atraktor_lorenza.tolist(), viewer='tachyon')
       
-  .. figure:: images/sage_chI024_05.*
+  .. figure:: images/sage_chI024_06.*
      :align: center
-     :alt: fig5
+     :alt: fig6
 
      Atraktor Lorenza.
 
 
 .. only:: html
 
-.. sagecellserver::
-    :is_verbatim: True
+  .. sagecellserver::
+      :is_verbatim: True
 
-    sage: var('x y z')
-    sage: rho=28
-    sage: sigma=10
-    sage: beta=8/3
-    sage: F1 = sigma*(y-x)
-    sage: F2 = x*(rho-z) - y
-    sage: F3 = x*y - beta*z
-    sage: T = srange(0,100,0.01)
-    sage: atraktor_lorenza = desolve_odeint(vector([F1,F2,F3]), [0,0.5,1], T, [x,y,z])
-    sage: p2d = list_plot(zip(atraktor_lorenza[:,0],atraktor_lorenza[:,1]), plotjoined=1, figsize=4)
-    sage: p3d = list_plot(atraktor_lorenza.tolist(), plotjoined=1, viewer='tachyon', figsize=4)
-    sage: print "2D rysunek atraktora Lorenza"
-    sage: p2d.show()
-    sage: print "3D rysunek atraktora Lorenza"
-    sage: p3d.show()
-    
-.. end of input
+      sage: var('x y z')
+      sage: rho=28
+      sage: sigma=10
+      sage: beta=8/3
+      sage: F1 = sigma*(y-x)
+      sage: F2 = x*(rho-z) - y
+      sage: F3 = x*y - beta*z
+      sage: T = srange(0,100,0.01)
+      sage: atraktor_lorenza = desolve_odeint(vector([F1,F2,F3]), [0,0.5,1], T, [x,y,z])
+      sage: p2d = list_plot(zip(atraktor_lorenza[:,0],atraktor_lorenza[:,1]), plotjoined=1, figsize=4)
+      sage: p3d = list_plot(atraktor_lorenza.tolist(), plotjoined=1, viewer='tachyon', figsize=4)
+      sage: print "2D rysunek atraktora Lorenza"
+      sage: p2d.show()
+      sage: print "3D rysunek atraktora Lorenza"
+      sage: p3d.show()
+      
+  .. end of input
