@@ -574,6 +574,21 @@ obliczając funkcję (auto)korelacji dla położenia i dla prędkości.
   .. sagecellserver::
       :is_verbatim: True
 
+      sage: def korelator(dane, tau=0):
+      sage:   ret = None
+      sage:   if tau == 0:
+      sage:       ret = 1
+      sage:   else:
+      sage:       tau = abs(tau)
+      sage:       m = mean(dane)
+      sage:       dane = [dane[i] - m for i in xrange(len(dane))]
+      sage:       v = vector(dane)    
+      sage:       sigma = v.dot_product(v)
+      sage:       if tau < len(dane):
+      sage:           ret = v[:-tau].dot_product(v[tau:])
+      sage:       ret /= sigma
+      sage:   return ret
+      sage: #
       sage: var('x y z')
       sage: a, g, w0 = 0.3, 0.26, 1
       sage: x0, y0, z0 = 0.1, 0.1, 0
@@ -602,7 +617,7 @@ Powyższe rachunki możemy powtórzyć dla wszystkich punktów o których była 
   .. sagecellserver::
       :is_verbatim: True
 
-     sage: var('x y z')
+      sage: var('x y z')
       sage: g, w0 = 0.5, 1
       sage: x0, y0, z0 = 0.1, 0.1, 0
       sage: Aval = [0.325,0.354,0.357,0.358,0.4]

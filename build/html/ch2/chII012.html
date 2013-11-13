@@ -316,7 +316,22 @@ for _p in p:
 <p>Teraz obliczymy sobie ową funkcję korelacji dla oscylatora Duffinga.</p>
 <p>Skorzystamy zarówno z naszej funkcji jak i z wbudowanego w SAGE pakietu <tt class="docutils literal"><span class="pre">finance</span></tt>,
 obliczając funkcję (auto)korelacji dla położenia i dla prędkości.</p>
-<div class='sage'><script type='text/x-sage'>var('x y z')
+<div class='sage'><script type='text/x-sage'>def korelator(dane, tau=0):
+  ret = None
+  if tau == 0:
+      ret = 1
+  else:
+      tau = abs(tau)
+      m = mean(dane)
+      dane = [dane[i] - m for i in xrange(len(dane))]
+      v = vector(dane)
+      sigma = v.dot_product(v)
+      if tau < len(dane):
+          ret = v[:-tau].dot_product(v[tau:])
+      ret /= sigma
+  return ret
+#
+var('x y z')
 a, g, w0 = 0.3, 0.26, 1
 x0, y0, z0 = 0.1, 0.1, 0
 dx = y
@@ -335,30 +350,30 @@ v = finance.TimeSeries(dane)
 sage_acorr = [v.autocorrelation(i*10) for i in range(33)]
 (list_plot(my_acorr, plotjoined=1) + list_plot(sage_acorr, plotjoined=0, size=30, color='red')).show(figsize=[8,3], axes_labels=[r"$\tau$",r"$C(\tau)$"])</script></div><p>Powyższe rachunki możemy powtórzyć dla wszystkich punktów o których była mowa przy omawianiu bifurkacji.</p>
 <div class='sage'><script type='text/x-sage'>var('x y z')
- g, w0 = 0.5, 1
- x0, y0, z0 = 0.1, 0.1, 0
- Aval = [0.325,0.354,0.357,0.358,0.4]
- p, ps = [], []
- kolor = ['blue','red','green','black','orange']
- j = 0
- for a in Aval:
-  dx = y
-  dy = x - x**3 - g*y + a*cos(z)
-  dz = w0
-  h = 0.1
-  T = 2000
-  listT = srange(0,T,h, include_endpoint=True)
-  num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
-  d = (num[:,0]-mean(num[:,0])).tolist()
-  v = finance.TimeSeries(d)
-  kor = [v.autocorrelation(i*5) for i in range(len(d)/5)]
-  p.append(list_plot(kor, plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
-  ps.append(list_plot(kor[:len(kor)/20], plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
-  #list_plot(zip(d,num[:,1].tolist()),plotjoined=1,color='red').show()
-  j += 1
- #wykresy
- sum(p).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])
- sum(ps).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])</script></div></div>
+g, w0 = 0.5, 1
+x0, y0, z0 = 0.1, 0.1, 0
+Aval = [0.325,0.354,0.357,0.358,0.4]
+p, ps = [], []
+kolor = ['blue','red','green','black','orange']
+j = 0
+for a in Aval:
+ dx = y
+ dy = x - x**3 - g*y + a*cos(z)
+ dz = w0
+ h = 0.1
+ T = 2000
+ listT = srange(0,T,h, include_endpoint=True)
+ num = desolve_odeint(vector([dx, dy, dz]), [x0, y0, z0], listT, [x,y,z])
+ d = (num[:,0]-mean(num[:,0])).tolist()
+ v = finance.TimeSeries(d)
+ kor = [v.autocorrelation(i*5) for i in range(len(d)/5)]
+ p.append(list_plot(kor, plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+ ps.append(list_plot(kor[:len(kor)/20], plotjoined=1, color=kolor[j], legend_label=r"$a = %.3f$"%a))
+ #list_plot(zip(d,num[:,1].tolist()),plotjoined=1,color='red').show()
+ j += 1
+#wykresy
+sum(p).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])
+sum(ps).show(axes_labels=[r'$\tau$',r'$C(\tau)$'], figsize=[8,3])</script></div></div>
 <div class="section" id="odwzorowanie-ciecie-poincarego">
 <h2>Odwzorowanie (cięcie) Poincarego<a class="headerlink" href="#odwzorowanie-ciecie-poincarego" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>Odwzorowanie Poincarego jest innym przedstawieniem dynamiki układu.  Najprościej jest to wytłumaczyć na przykładzie oscylatora Duffinga. Jego przestrzeń fazowa jest 3-wymiarowa. Ruch w trzecim wymiarze jest jednostajny, <span class="math">\(z(t) = \omega_0 t\)</span>. Rzut orbity na płaszczyznę  <span class="math">\((x, y)\)</span> jest przedstawiony w postaci krzywych fazowych w poprzednich częściach książki.</p>
@@ -518,7 +533,7 @@ points(zip(sol[:,0],sol[:,1]), figsize=(8,4), axes_labels=["$x(n\cdot2 \pi/\omeg
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 12, 2013.
+    Ostatnia modyfikacja Nov 13, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

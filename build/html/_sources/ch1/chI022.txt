@@ -164,7 +164,7 @@ Jeżeli siła będzie liniowa :math:`F=-kx` to dostaniemy wyżej opisane zagadni
   .. sagecellserver::
       :is_verbatim: True
 
-      sage: #0 (kilka zmiennych)
+      sage: #(kilka zmiennych)
       sage: var('x v')
       sage: #parametry dla wizualizacji
       sage: x0 = 1.3
@@ -174,9 +174,6 @@ Jeżeli siła będzie liniowa :math:`F=-kx` to dostaniemy wyżej opisane zagadni
       sage: F = -k*x
       sage: #1
       sage: V = -integral(F,x)
-      sage: p1 = plot(V, xmin=-x0, xmax=x0)
-      sage: p1.show(figsize=4, axes_labels=[r'$x$',r'$V(x)=%s$'%V])
-      sage: #
       sage: #prawo zachowania energii
       sage: E = m*v0^2 + V(x=x0)
       sage: PZE = m*v^2 + V == E
@@ -216,11 +213,6 @@ Jeżeli siła będzie liniowa :math:`F=-kx` to dostaniemy wyżej opisane zagadni
       sage: #
       sage: (p0+p1+p12a).show(figsize=4, axes_labels=['$x$','$V(x)$'])
       sage: (p12b+p2).show(figsize=4,xmax=xmax)
-      sage: 
-      sage: var('x y z t')
-      sage: xy_wsp = [('x','x'),('y','y')]+[('z','z')]
-      sage: N = len(xy_wsp)
-      sage: J  = matrix(SR,N)
 
   .. end of input
 
@@ -475,8 +467,13 @@ Pochodna wyznacznika jest zrobiona automatycznie, potem jest ręcznie wykonane p
   .. sagecellserver::
       :is_verbatim: True
 
+      sage: var('x y z t')
+      sage: xy_wsp = [('x','x'),('y','y')]+[('z','z')]
+      sage: N = len(xy_wsp)
+      sage: J  = matrix(SR,N)
+      sage: # 
       sage: for i,(v,lv) in enumerate(xy_wsp):
-      ...   for j,(u,lu) in enumerate(xy_wsp):
+      ...     for j,(u,lu) in enumerate(xy_wsp):
       ...        J[i,j] = var("d%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial %s_t}{\partial %s_0}'%(lv,lu))
       ...        var("dF%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial F_%s}{\partial %s_t}'%(lv,lu))
       sage: #

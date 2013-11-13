@@ -81,18 +81,18 @@
 \contentsline {section}{\numberline {4.1}Liczby losowe}{119}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Liczby losowe i pseudolosowe}{119}{subsection.4.1.1}
 \contentsline {subsection}{\numberline {4.1.2}Generatory liczb}{121}{subsection.4.1.2}
-\contentsline {subsubsection}{Generatory sprz\IeC {\k e}towe}{121}{subsubsection*.409}
-\contentsline {subsubsection}{Generatory programowe}{121}{subsubsection*.410}
-\contentsline {paragraph}{Liniowy generator kongruencyjny}{121}{paragraph*.411}
-\contentsline {paragraph}{Rejestr przesuwaj\IeC {\k a}cy z liniowym sprz\IeC {\k e}\IeC {\.z}eniem zwrotnym}{123}{paragraph*.412}
-\contentsline {paragraph}{Generator Wichmanna -- Hilla}{123}{paragraph*.413}
-\contentsline {paragraph}{Mersenne Twister}{123}{paragraph*.414}
+\contentsline {subsubsection}{Generatory sprz\IeC {\k e}towe}{121}{subsubsection*.410}
+\contentsline {subsubsection}{Generatory programowe}{121}{subsubsection*.411}
+\contentsline {paragraph}{Liniowy generator kongruencyjny}{121}{paragraph*.412}
+\contentsline {paragraph}{Rejestr przesuwaj\IeC {\k a}cy z liniowym sprz\IeC {\k e}\IeC {\.z}eniem zwrotnym}{123}{paragraph*.413}
+\contentsline {paragraph}{Generator Wichmanna -- Hilla}{123}{paragraph*.414}
+\contentsline {paragraph}{Mersenne Twister}{123}{paragraph*.415}
 \contentsline {subsection}{\numberline {4.1.3}Generowanie liczb losowych o zadanym rozk\IeC {\l }adzie}{124}{subsection.4.1.3}
-\contentsline {subsubsection}{Histogram}{124}{subsubsection*.415}
-\contentsline {subsubsection}{Metoda inwersyjna}{127}{subsubsection*.416}
-\contentsline {paragraph}{Rozk\IeC {\l }ad wyk\IeC {\l }adniczy}{128}{paragraph*.417}
-\contentsline {paragraph}{Rozk\IeC {\l }ad Cauchy'ego}{129}{paragraph*.418}
-\contentsline {paragraph}{Rozk\IeC {\l }ad logistyczny}{130}{paragraph*.419}
+\contentsline {subsubsection}{Histogram}{124}{subsubsection*.416}
+\contentsline {subsubsection}{Metoda inwersyjna}{127}{subsubsection*.417}
+\contentsline {paragraph}{Rozk\IeC {\l }ad wyk\IeC {\l }adniczy}{128}{paragraph*.418}
+\contentsline {paragraph}{Rozk\IeC {\l }ad Cauchy'ego}{129}{paragraph*.419}
+\contentsline {paragraph}{Rozk\IeC {\l }ad logistyczny}{130}{paragraph*.420}
 \contentsline {section}{\numberline {4.2}R\IeC {\'o}wnania r\IeC {\'o}\IeC {\.z}niczkowe zwyczajne}{131}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Metoda Eulera}{131}{subsection.4.2.1}
 \contentsline {section}{\numberline {4.3}Stochastyczne r\IeC {\'o}wnania r\IeC {\'o}\IeC {\.z}niczkowe}{137}{section.4.3}

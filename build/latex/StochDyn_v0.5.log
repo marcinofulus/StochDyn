@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.8)  12 NOV 2013 18:24
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2013.11.8)  13 NOV 2013 00:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -3450,206 +3450,207 @@ Package amsmath Warning: Foreign command \atop;
 (amsmath)                 on input line 3816.
 
 [110] [111]
-
-Package xcolor Warning: Incompatible color definition on input line 3890.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3890.
+Overfull \hbox (26.70593pt too wide) in paragraph at lines 3890--3890
+[] 
+ []
 
 
-Package xcolor Warning: Incompatible color definition on input line 3894.
+Package xcolor Warning: Incompatible color definition on input line 3899.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3894.
+Package xcolor Warning: Incompatible color definition on input line 3899.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3894.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3894.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3904.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3904.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3921.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3921.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3921.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3921.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3921.
-
-
-Package xcolor Warning: Incompatible color definition on input line 3921.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 [112]
 
-Package xcolor Warning: Incompatible color definition on input line 3921.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3921.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3921.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3921.
+Package xcolor Warning: Incompatible color definition on input line 3916.
 
-<sage_chIII02_02.pdf, id=3364, 578.16pt x 433.62pt>
+<sage_chIII02_02.pdf, id=3366, 578.16pt x 433.62pt>
 File: sage_chIII02_02.pdf Graphic file (type pdf)
  <use sage_chIII02_02.pdf>
-Package pdftex.def Info: sage_chIII02_02.pdf used on input line 3926.
+Package pdftex.def Info: sage_chIII02_02.pdf used on input line 3921.
 (pdftex.def)             Requested size: 362.37567pt x 271.77934pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3930.
+Package xcolor Warning: Incompatible color definition on input line 3925.
 
 
-Package xcolor Warning: Incompatible color definition on input line 3930.
+Package xcolor Warning: Incompatible color definition on input line 3925.
 
 [113 <./sage_chIII02_02.pdf>] [114]
 
-Package xcolor Warning: Incompatible color definition on input line 4022.
+Package xcolor Warning: Incompatible color definition on input line 4017.
 
 [115]
 
-Package xcolor Warning: Incompatible color definition on input line 4057.
+Package xcolor Warning: Incompatible color definition on input line 4052.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4057.
+Package xcolor Warning: Incompatible color definition on input line 4052.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 [116]
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4089.
+Package xcolor Warning: Incompatible color definition on input line 4084.
 
-<sage_chIII02_04.pdf, id=3445, 494.6414pt x 212.55661pt>
+<sage_chIII02_04.pdf, id=3447, 494.6414pt x 212.55661pt>
 File: sage_chIII02_04.pdf Graphic file (type pdf)
 
 <use sage_chIII02_04.pdf>
-Package pdftex.def Info: sage_chIII02_04.pdf used on input line 4097.
+Package pdftex.def Info: sage_chIII02_04.pdf used on input line 4092.
 (pdftex.def)             Requested size: 362.37567pt x 155.72287pt.
  [117 <./sage_chIII02_04.pdf>] [118
 
 ]
 Rozdzia\l  4.
 
-Package xcolor Warning: Incompatible color definition on input line 4104.
+Package xcolor Warning: Incompatible color definition on input line 4099.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4104.
+Package xcolor Warning: Incompatible color definition on input line 4099.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4102.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4103.
 
 
 Package xcolor Warning: Incompatible color definition on input line 4107.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4108.
+Package xcolor Warning: Incompatible color definition on input line 4107.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4112.
+Package xcolor Warning: Incompatible color definition on input line 4117.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4112.
+Package xcolor Warning: Incompatible color definition on input line 4117.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4122.
+Package xcolor Warning: Incompatible color definition on input line 4119.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4122.
+Package xcolor Warning: Incompatible color definition on input line 4119.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4124.
+Package xcolor Warning: Incompatible color definition on input line 4119.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4124.
+Package xcolor Warning: Incompatible color definition on input line 4119.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4124.
+Package xcolor Warning: Incompatible color definition on input line 4123.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4124.
+Package xcolor Warning: Incompatible color definition on input line 4123.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4128.
+Package xcolor Warning: Incompatible color definition on input line 4125.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4128.
+Package xcolor Warning: Incompatible color definition on input line 4125.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4130.
+Package xcolor Warning: Incompatible color definition on input line 4125.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4130.
+Package xcolor Warning: Incompatible color definition on input line 4125.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4130.
+Package xcolor Warning: Incompatible color definition on input line 4129.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4130.
+Package xcolor Warning: Incompatible color definition on input line 4129.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4134.
+Package xcolor Warning: Incompatible color definition on input line 4131.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4134.
+Package xcolor Warning: Incompatible color definition on input line 4131.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4136.
+Package xcolor Warning: Incompatible color definition on input line 4131.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4136.
+Package xcolor Warning: Incompatible color definition on input line 4131.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4136.
+Package xcolor Warning: Incompatible color definition on input line 4139.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4136.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4144.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4144.
+Package xcolor Warning: Incompatible color definition on input line 4139.
 
 [119]
 
-Package xcolor Warning: Incompatible color definition on input line 4147.
+Package xcolor Warning: Incompatible color definition on input line 4142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4142.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4144.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4144.
 
 
 Package xcolor Warning: Incompatible color definition on input line 4147.
@@ -3661,34 +3662,31 @@ Package xcolor Warning: Incompatible color definition on input line 4147.
 Package xcolor Warning: Incompatible color definition on input line 4147.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4149.
+Package xcolor Warning: Incompatible color definition on input line 4147.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4149.
+Package xcolor Warning: Incompatible color definition on input line 4157.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4152.
+Package xcolor Warning: Incompatible color definition on input line 4160.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4152.
+Package xcolor Warning: Incompatible color definition on input line 4169.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4152.
+Package xcolor Warning: Incompatible color definition on input line 4169.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4152.
+Package xcolor Warning: Incompatible color definition on input line 4172.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4162.
+Package xcolor Warning: Incompatible color definition on input line 4172.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4165.
+Package xcolor Warning: Incompatible color definition on input line 4172.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4174.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4174.
+Package xcolor Warning: Incompatible color definition on input line 4172.
 
 
 Package xcolor Warning: Incompatible color definition on input line 4177.
@@ -3697,147 +3695,141 @@ Package xcolor Warning: Incompatible color definition on input line 4177.
 Package xcolor Warning: Incompatible color definition on input line 4177.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4177.
+Package xcolor Warning: Incompatible color definition on input line 4179.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4177.
+Package xcolor Warning: Incompatible color definition on input line 4179.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4182.
+Package xcolor Warning: Incompatible color definition on input line 4179.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4182.
+Package xcolor Warning: Incompatible color definition on input line 4179.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4184.
+Package xcolor Warning: Incompatible color definition on input line 4189.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4184.
+Package xcolor Warning: Incompatible color definition on input line 4200.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4184.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4184.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4194.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4205.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4205.
+Package xcolor Warning: Incompatible color definition on input line 4200.
 
 [120]
 
-Package xcolor Warning: Incompatible color definition on input line 4213.
+Package xcolor Warning: Incompatible color definition on input line 4208.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4220.
+Package xcolor Warning: Incompatible color definition on input line 4215.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4227.
+Package xcolor Warning: Incompatible color definition on input line 4222.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4233.
+Package xcolor Warning: Incompatible color definition on input line 4228.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4250.
+Package xcolor Warning: Incompatible color definition on input line 4245.
 
 [121]
 
-Package xcolor Warning: Incompatible color definition on input line 4288.
+Package xcolor Warning: Incompatible color definition on input line 4283.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4288.
+Package xcolor Warning: Incompatible color definition on input line 4283.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4291.
+Package xcolor Warning: Incompatible color definition on input line 4286.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4291.
+Package xcolor Warning: Incompatible color definition on input line 4286.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4291.
+Package xcolor Warning: Incompatible color definition on input line 4286.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4291.
+Package xcolor Warning: Incompatible color definition on input line 4286.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4295.
+Package xcolor Warning: Incompatible color definition on input line 4290.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4295.
+Package xcolor Warning: Incompatible color definition on input line 4290.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4303.
+Package xcolor Warning: Incompatible color definition on input line 4298.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4303.
+Package xcolor Warning: Incompatible color definition on input line 4298.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4303.
+Package xcolor Warning: Incompatible color definition on input line 4298.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4303.
+Package xcolor Warning: Incompatible color definition on input line 4298.
 
-<sage0.png, id=3507, 347.6187pt x 258.7266pt>
+<sage0.png, id=3509, 347.6187pt x 258.7266pt>
 File: sage0.png Graphic file (type png)
  <use sage0.png>
-Package pdftex.def Info: sage0.png used on input line 4310.
+Package pdftex.def Info: sage0.png used on input line 4305.
 (pdftex.def)             Requested size: 347.61784pt x 258.72594pt.
 File: sage0.png Graphic file (type png)
  <use sage0.png>
-Package pdftex.def Info: sage0.png used on input line 4310.
+Package pdftex.def Info: sage0.png used on input line 4305.
 (pdftex.def)             Requested size: 347.61784pt x 258.72594pt.
 
+
+Package xcolor Warning: Incompatible color definition on input line 4311.
+
+[122]
 
 Package xcolor Warning: Incompatible color definition on input line 4316.
 
-[122]
 
 Package xcolor Warning: Incompatible color definition on input line 4321.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4326.
+Package xcolor Warning: Incompatible color definition on input line 4334.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4339.
+Package xcolor Warning: Incompatible color definition on input line 4334.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4339.
+Package xcolor Warning: Incompatible color definition on input line 4336.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4341.
+Package xcolor Warning: Incompatible color definition on input line 4336.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4341.
+Package xcolor Warning: Incompatible color definition on input line 4336.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4341.
+Package xcolor Warning: Incompatible color definition on input line 4336.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4341.
+Package xcolor Warning: Incompatible color definition on input line 4340.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4345.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4345.
+Package xcolor Warning: Incompatible color definition on input line 4340.
 
 [123 <./sage0.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4347.
+Package xcolor Warning: Incompatible color definition on input line 4342.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4347.
+Package xcolor Warning: Incompatible color definition on input line 4342.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4347.
+Package xcolor Warning: Incompatible color definition on input line 4342.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4347.
+Package xcolor Warning: Incompatible color definition on input line 4342.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4346.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4346.
 
 
 Package xcolor Warning: Incompatible color definition on input line 4351.
@@ -3846,83 +3838,86 @@ Package xcolor Warning: Incompatible color definition on input line 4351.
 Package xcolor Warning: Incompatible color definition on input line 4351.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4356.
+Package xcolor Warning: Incompatible color definition on input line 4351.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4356.
+Package xcolor Warning: Incompatible color definition on input line 4351.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4356.
+Package xcolor Warning: Incompatible color definition on input line 4368.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4356.
+Package xcolor Warning: Incompatible color definition on input line 4368.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4373.
+Package xcolor Warning: Incompatible color definition on input line 4381.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4373.
+Package xcolor Warning: Incompatible color definition on input line 4394.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4386.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4399.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4399.
+Package xcolor Warning: Incompatible color definition on input line 4394.
 
 [124]
 
-Package xcolor Warning: Incompatible color definition on input line 4401.
+Package xcolor Warning: Incompatible color definition on input line 4396.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4401.
+Package xcolor Warning: Incompatible color definition on input line 4396.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4401.
+Package xcolor Warning: Incompatible color definition on input line 4396.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4401.
+Package xcolor Warning: Incompatible color definition on input line 4396.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4464.
+Package xcolor Warning: Incompatible color definition on input line 4459.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4464.
+Package xcolor Warning: Incompatible color definition on input line 4459.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4468.
+Package xcolor Warning: Incompatible color definition on input line 4463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4468.
+Package xcolor Warning: Incompatible color definition on input line 4463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4468.
+Package xcolor Warning: Incompatible color definition on input line 4463.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4468.
+Package xcolor Warning: Incompatible color definition on input line 4463.
 
-<bar_chart.png, id=3530, 348.3414pt x 258.0039pt>
+<bar_chart.png, id=3532, 348.3414pt x 258.0039pt>
 File: bar_chart.png Graphic file (type png)
  <use bar_chart.png>
-Package pdftex.def Info: bar_chart.png used on input line 4475.
+Package pdftex.def Info: bar_chart.png used on input line 4470.
 (pdftex.def)             Requested size: 348.34055pt x 258.00327pt.
 File: bar_chart.png Graphic file (type png)
 
 <use bar_chart.png>
-Package pdftex.def Info: bar_chart.png used on input line 4475.
+Package pdftex.def Info: bar_chart.png used on input line 4470.
 (pdftex.def)             Requested size: 348.34055pt x 258.00327pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4482.
+Package xcolor Warning: Incompatible color definition on input line 4477.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4482.
+Package xcolor Warning: Incompatible color definition on input line 4477.
 
 [125 <./bar_chart.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4484.
+Package xcolor Warning: Incompatible color definition on input line 4479.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4479.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4479.
+
+
+Package xcolor Warning: Incompatible color definition on input line 4479.
 
 
 Package xcolor Warning: Incompatible color definition on input line 4484.
@@ -3931,482 +3926,473 @@ Package xcolor Warning: Incompatible color definition on input line 4484.
 Package xcolor Warning: Incompatible color definition on input line 4484.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4484.
+Package xcolor Warning: Incompatible color definition on input line 4486.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4489.
+Package xcolor Warning: Incompatible color definition on input line 4486.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4489.
+Package xcolor Warning: Incompatible color definition on input line 4486.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4491.
+Package xcolor Warning: Incompatible color definition on input line 4486.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4491.
+Package xcolor Warning: Incompatible color definition on input line 4490.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4491.
+Package xcolor Warning: Incompatible color definition on input line 4490.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4491.
+Package xcolor Warning: Incompatible color definition on input line 4492.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4495.
+Package xcolor Warning: Incompatible color definition on input line 4492.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4495.
+Package xcolor Warning: Incompatible color definition on input line 4492.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4497.
+Package xcolor Warning: Incompatible color definition on input line 4492.
 
-
-Package xcolor Warning: Incompatible color definition on input line 4497.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4497.
-
-
-Package xcolor Warning: Incompatible color definition on input line 4497.
-
-<histogram.png, id=3537, 349.0641pt x 171.2799pt>
+<histogram.png, id=3539, 349.0641pt x 171.2799pt>
 File: histogram.png Graphic file (type png)
  <use histogram.png>
-Package pdftex.def Info: histogram.png used on input line 4502.
+Package pdftex.def Info: histogram.png used on input line 4497.
 (pdftex.def)             Requested size: 349.06325pt x 171.27948pt.
 File: histogram.png Graphic file (type png)
 
 <use histogram.png>
-Package pdftex.def Info: histogram.png used on input line 4502.
+Package pdftex.def Info: histogram.png used on input line 4497.
 (pdftex.def)             Requested size: 349.06325pt x 171.27948pt.
- <u01.png, id=3538, 308.5929pt x 159.7167pt>
+ <u01.png, id=3540, 308.5929pt x 159.7167pt>
 File: u01.png Graphic file (type png)
  <use u01.png>
-Package pdftex.def Info: u01.png used on input line 4512.
+Package pdftex.def Info: u01.png used on input line 4507.
 (pdftex.def)             Requested size: 308.59213pt x 159.71631pt.
 File: u01.png Graphic file (type png)
 
 <use u01.png>
-Package pdftex.def Info: u01.png used on input line 4512.
+Package pdftex.def Info: u01.png used on input line 4507.
 (pdftex.def)             Requested size: 308.59213pt x 159.71631pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4518.
+Package xcolor Warning: Incompatible color definition on input line 4513.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4518.
+Package xcolor Warning: Incompatible color definition on input line 4513.
 
 [126 <./histogram.png> <./u01.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4526.
+Package xcolor Warning: Incompatible color definition on input line 4521.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4526.
+Package xcolor Warning: Incompatible color definition on input line 4521.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4526.
+Package xcolor Warning: Incompatible color definition on input line 4521.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4526.
+Package xcolor Warning: Incompatible color definition on input line 4521.
 
-<u01_hist.png, id=3547, 349.7868pt x 156.1032pt>
+<u01_hist.png, id=3549, 349.7868pt x 156.1032pt>
 File: u01_hist.png Graphic file (type png)
  <use u01_hist.png>
-Package pdftex.def Info: u01_hist.png used on input line 4538.
+Package pdftex.def Info: u01_hist.png used on input line 4533.
 (pdftex.def)             Requested size: 349.78595pt x 156.1028pt.
 File: u01_hist.png Graphic file (type png)
 
 <use u01_hist.png>
-Package pdftex.def Info: u01_hist.png used on input line 4538.
+Package pdftex.def Info: u01_hist.png used on input line 4533.
 (pdftex.def)             Requested size: 349.78595pt x 156.1028pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4542.
+Package xcolor Warning: Incompatible color definition on input line 4537.
 
 [127 <./u01_hist.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4589.
+Package xcolor Warning: Incompatible color definition on input line 4584.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4608.
+Package xcolor Warning: Incompatible color definition on input line 4603.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4608.
+Package xcolor Warning: Incompatible color definition on input line 4603.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 [128]
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4629.
+Package xcolor Warning: Incompatible color definition on input line 4624.
 
-<r_exp_hist.png, id=3562, 349.0641pt x 259.4493pt>
+<r_exp_hist.png, id=3564, 349.0641pt x 259.4493pt>
 File: r_exp_hist.png Graphic file (type png)
  <use r_exp_hist.png>
-Package pdftex.def Info: r_exp_hist.png used on input line 4637.
+Package pdftex.def Info: r_exp_hist.png used on input line 4632.
 (pdftex.def)             Requested size: 349.06325pt x 259.44864pt.
 File: r_exp_hist.png Graphic file (type png)
 
 <use r_exp_hist.png>
-Package pdftex.def Info: r_exp_hist.png used on input line 4637.
+Package pdftex.def Info: r_exp_hist.png used on input line 4632.
 (pdftex.def)             Requested size: 349.06325pt x 259.44864pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4645.
+Package xcolor Warning: Incompatible color definition on input line 4640.
 
-<r_cauchy_hist.png, id=3563, 349.0641pt x 260.8947pt>
+<r_cauchy_hist.png, id=3565, 349.0641pt x 260.8947pt>
 File: r_cauchy_hist.png Graphic file (type png)
  <use r_cauchy_hist.png>
-Package pdftex.def Info: r_cauchy_hist.png used on input line 4666.
+Package pdftex.def Info: r_cauchy_hist.png used on input line 4661.
 (pdftex.def)             Requested size: 349.06325pt x 260.89404pt.
 File: r_cauchy_hist.png Graphic file (type png)
 
 <use r_cauchy_hist.png>
-Package pdftex.def Info: r_cauchy_hist.png used on input line 4666.
+Package pdftex.def Info: r_cauchy_hist.png used on input line 4661.
 (pdftex.def)             Requested size: 349.06325pt x 260.89404pt.
  [129 <./r_exp_hist.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4671.
+Package xcolor Warning: Incompatible color definition on input line 4666.
 
-<r_logist_hist.png, id=3572, 349.0641pt x 258.7266pt>
+<r_logist_hist.png, id=3574, 349.0641pt x 258.7266pt>
 File: r_logist_hist.png Graphic file (type png)
  <use r_logist_hist.png>
-Package pdftex.def Info: r_logist_hist.png used on input line 4687.
+Package pdftex.def Info: r_logist_hist.png used on input line 4682.
 (pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
 File: r_logist_hist.png Graphic file (type png)
 
 <use r_logist_hist.png>
-Package pdftex.def Info: r_logist_hist.png used on input line 4687.
+Package pdftex.def Info: r_logist_hist.png used on input line 4682.
 (pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4701.
+Package xcolor Warning: Incompatible color definition on input line 4696.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4701.
+Package xcolor Warning: Incompatible color definition on input line 4696.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4704.
+Package xcolor Warning: Incompatible color definition on input line 4699.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4704.
+Package xcolor Warning: Incompatible color definition on input line 4699.
 
 [130 <./r_cauchy_hist.png>] [131 <./r_logist_hist.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4760.
+Package xcolor Warning: Incompatible color definition on input line 4755.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4760.
+Package xcolor Warning: Incompatible color definition on input line 4755.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4775.
+Package xcolor Warning: Incompatible color definition on input line 4770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4775.
+Package xcolor Warning: Incompatible color definition on input line 4770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4775.
+Package xcolor Warning: Incompatible color definition on input line 4770.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4775.
+Package xcolor Warning: Incompatible color definition on input line 4770.
 
-<euler001.png, id=3587, 349.0641pt x 258.7266pt>
+<euler001.png, id=3589, 349.0641pt x 258.7266pt>
 File: euler001.png Graphic file (type png)
  <use euler001.png>
-Package pdftex.def Info: euler001.png used on input line 4783.
+Package pdftex.def Info: euler001.png used on input line 4778.
 (pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
 File: euler001.png Graphic file (type png)
 
 <use euler001.png>
-Package pdftex.def Info: euler001.png used on input line 4783.
+Package pdftex.def Info: euler001.png used on input line 4778.
 (pdftex.def)             Requested size: 349.06325pt x 258.72594pt.
  [132]
 
-Package xcolor Warning: Incompatible color definition on input line 4796.
+Package xcolor Warning: Incompatible color definition on input line 4791.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4796.
+Package xcolor Warning: Incompatible color definition on input line 4791.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4808.
+Package xcolor Warning: Incompatible color definition on input line 4803.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4808.
+Package xcolor Warning: Incompatible color definition on input line 4803.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4808.
+Package xcolor Warning: Incompatible color definition on input line 4803.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4808.
+Package xcolor Warning: Incompatible color definition on input line 4803.
 
-<euler_err.png, id=3592, 971.63pt x 359.3425pt>
+<euler_err.png, id=3594, 971.63pt x 359.3425pt>
 File: euler_err.png Graphic file (type png)
  <use euler_err.png>
-Package pdftex.def Info: euler_err.png used on input line 4821.
+Package pdftex.def Info: euler_err.png used on input line 4816.
 (pdftex.def)             Requested size: 971.62764pt x 359.34161pt.
 File: euler_err.png Graphic file (type png)
 
 <use euler_err.png>
-Package pdftex.def Info: euler_err.png used on input line 4821.
+Package pdftex.def Info: euler_err.png used on input line 4816.
 (pdftex.def)             Requested size: 452.96788pt x 167.5202pt.
  [133 <./euler001.png>]
-<euler_ebw_h.png, id=3599, 971.63pt x 359.3425pt>
+<euler_ebw_h.png, id=3601, 971.63pt x 359.3425pt>
 File: euler_ebw_h.png Graphic file (type png)
  <use euler_ebw_h.png>
-Package pdftex.def Info: euler_ebw_h.png used on input line 4830.
+Package pdftex.def Info: euler_ebw_h.png used on input line 4825.
 (pdftex.def)             Requested size: 971.62764pt x 359.34161pt.
 File: euler_ebw_h.png Graphic file (type png)
 
 <use euler_ebw_h.png>
-Package pdftex.def Info: euler_ebw_h.png used on input line 4830.
+Package pdftex.def Info: euler_ebw_h.png used on input line 4825.
 (pdftex.def)             Requested size: 452.96788pt x 167.5202pt.
  [134 <./euler_err.png> <./euler_ebw_h.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 4905.
+Package xcolor Warning: Incompatible color definition on input line 4900.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4923.
+Package xcolor Warning: Incompatible color definition on input line 4918.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4923.
+Package xcolor Warning: Incompatible color definition on input line 4918.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4938.
+Package xcolor Warning: Incompatible color definition on input line 4933.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4938.
+Package xcolor Warning: Incompatible color definition on input line 4933.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4938.
+Package xcolor Warning: Incompatible color definition on input line 4933.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4938.
+Package xcolor Warning: Incompatible color definition on input line 4933.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4942.
+Package xcolor Warning: Incompatible color definition on input line 4937.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4942.
+Package xcolor Warning: Incompatible color definition on input line 4937.
 
 [135]
 
-Package xcolor Warning: Incompatible color definition on input line 4949.
+Package xcolor Warning: Incompatible color definition on input line 4944.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4949.
+Package xcolor Warning: Incompatible color definition on input line 4944.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4949.
+Package xcolor Warning: Incompatible color definition on input line 4944.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4949.
+Package xcolor Warning: Incompatible color definition on input line 4944.
 
-<euler_osc.png, id=3612, 516.7305pt x 258.7266pt>
+<euler_osc.png, id=3614, 516.7305pt x 258.7266pt>
 File: euler_osc.png Graphic file (type png)
  <use euler_osc.png>
-Package pdftex.def Info: euler_osc.png used on input line 4957.
+Package pdftex.def Info: euler_osc.png used on input line 4952.
 (pdftex.def)             Requested size: 516.72923pt x 258.72594pt.
 File: euler_osc.png Graphic file (type png)
 
 <use euler_osc.png>
-Package pdftex.def Info: euler_osc.png used on input line 4957.
+Package pdftex.def Info: euler_osc.png used on input line 4952.
 (pdftex.def)             Requested size: 452.96788pt x 226.80367pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 4968.
+Package xcolor Warning: Incompatible color definition on input line 4963.
 
 [136 <./euler_osc.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 5024.
+Package xcolor Warning: Incompatible color definition on input line 5019.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5024.
+Package xcolor Warning: Incompatible color definition on input line 5019.
 
 [137]
 
-Package xcolor Warning: Incompatible color definition on input line 5088.
+Package xcolor Warning: Incompatible color definition on input line 5083.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5088.
+Package xcolor Warning: Incompatible color definition on input line 5083.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5113.
+Package xcolor Warning: Incompatible color definition on input line 5108.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5113.
+Package xcolor Warning: Incompatible color definition on input line 5108.
 
 [138]
 
-Package xcolor Warning: Incompatible color definition on input line 5163.
+Package xcolor Warning: Incompatible color definition on input line 5158.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5163.
+Package xcolor Warning: Incompatible color definition on input line 5158.
 
 [139]
 
-Package xcolor Warning: Incompatible color definition on input line 5177.
+Package xcolor Warning: Incompatible color definition on input line 5172.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5177.
+Package xcolor Warning: Incompatible color definition on input line 5172.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5180.
+Package xcolor Warning: Incompatible color definition on input line 5175.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5180.
+Package xcolor Warning: Incompatible color definition on input line 5175.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5207.
+Package xcolor Warning: Incompatible color definition on input line 5202.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5207.
+Package xcolor Warning: Incompatible color definition on input line 5202.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5217.
+Package xcolor Warning: Incompatible color definition on input line 5212.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5217.
+Package xcolor Warning: Incompatible color definition on input line 5212.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5217.
+Package xcolor Warning: Incompatible color definition on input line 5212.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5217.
+Package xcolor Warning: Incompatible color definition on input line 5212.
 
-<dyf02.png, id=3650, 276.7941pt x 204.5241pt>
+<dyf02.png, id=3652, 276.7941pt x 204.5241pt>
 File: dyf02.png Graphic file (type png)
  <use dyf02.png>
-Package pdftex.def Info: dyf02.png used on input line 5224.
+Package pdftex.def Info: dyf02.png used on input line 5219.
 (pdftex.def)             Requested size: 276.79341pt x 204.52357pt.
 File: dyf02.png Graphic file (type png)
  <use dyf02.png>
-Package pdftex.def Info: dyf02.png used on input line 5224.
+Package pdftex.def Info: dyf02.png used on input line 5219.
 (pdftex.def)             Requested size: 276.79341pt x 204.52357pt.
 
-<dyf.png, id=3651, 465.74pt x 339.2675pt>
+<dyf.png, id=3653, 465.74pt x 339.2675pt>
 File: dyf.png Graphic file (type png)
  <use dyf.png>
-Package pdftex.def Info: dyf.png used on input line 5237.
+Package pdftex.def Info: dyf.png used on input line 5232.
 (pdftex.def)             Requested size: 465.73886pt x 339.26666pt.
 File: dyf.png Graphic file (type png)
  <use dyf.png>
-Package pdftex.def Info: dyf.png used on input line 5237.
+Package pdftex.def Info: dyf.png used on input line 5232.
 (pdftex.def)             Requested size: 452.96788pt x 329.9743pt.
  [140]
-<dyf_100n.png, id=3659, 348.3414pt x 257.2812pt>
+<dyf_100n.png, id=3661, 348.3414pt x 257.2812pt>
 File: dyf_100n.png Graphic file (type png)
  <use dyf_100n.png>
-Package pdftex.def Info: dyf_100n.png used on input line 5265.
+Package pdftex.def Info: dyf_100n.png used on input line 5260.
 (pdftex.def)             Requested size: 348.34055pt x 257.28058pt.
 File: dyf_100n.png Graphic file (type png)
 
 <use dyf_100n.png>
-Package pdftex.def Info: dyf_100n.png used on input line 5265.
+Package pdftex.def Info: dyf_100n.png used on input line 5260.
 (pdftex.def)             Requested size: 348.34055pt x 257.28058pt.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5277.
+Package xcolor Warning: Incompatible color definition on input line 5272.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5277.
+Package xcolor Warning: Incompatible color definition on input line 5272.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5280.
+Package xcolor Warning: Incompatible color definition on input line 5275.
 
 [141 <./dyf02.png>] [142 <./dyf.png> <./dyf_100n.png>]
 
-Package xcolor Warning: Incompatible color definition on input line 5304.
+Package xcolor Warning: Incompatible color definition on input line 5299.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5304.
+Package xcolor Warning: Incompatible color definition on input line 5299.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5315.
+Package xcolor Warning: Incompatible color definition on input line 5310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5315.
+Package xcolor Warning: Incompatible color definition on input line 5310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5315.
+Package xcolor Warning: Incompatible color definition on input line 5310.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5315.
+Package xcolor Warning: Incompatible color definition on input line 5310.
 
-<dryftdif001.png, id=3675, 348.3414pt x 259.4493pt>
+<dryftdif001.png, id=3677, 348.3414pt x 259.4493pt>
 File: dryftdif001.png Graphic file (type png)
  <use dryftdif001.png>
-Package pdftex.def Info: dryftdif001.png used on input line 5323.
+Package pdftex.def Info: dryftdif001.png used on input line 5318.
 (pdftex.def)             Requested size: 348.34055pt x 259.44864pt.
 File: dryftdif001.png Graphic file (type png)
 
 <use dryftdif001.png>
-Package pdftex.def Info: dryftdif001.png used on input line 5323.
+Package pdftex.def Info: dryftdif001.png used on input line 5318.
 (pdftex.def)             Requested size: 348.34055pt x 259.44864pt.
  [143]
 
-Package xcolor Warning: Incompatible color definition on input line 5429.
+Package xcolor Warning: Incompatible color definition on input line 5424.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5429.
+Package xcolor Warning: Incompatible color definition on input line 5424.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5432.
+Package xcolor Warning: Incompatible color definition on input line 5427.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5432.
+Package xcolor Warning: Incompatible color definition on input line 5427.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5435.
+Package xcolor Warning: Incompatible color definition on input line 5430.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5435.
+Package xcolor Warning: Incompatible color definition on input line 5430.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5438.
+Package xcolor Warning: Incompatible color definition on input line 5433.
 
 
-Package xcolor Warning: Incompatible color definition on input line 5438.
+Package xcolor Warning: Incompatible color definition on input line 5433.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5436.
+
+
+Package xcolor Warning: Incompatible color definition on input line 5436.
 
 
 Package xcolor Warning: Incompatible color definition on input line 5441.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5441.
-
-
-Package xcolor Warning: Incompatible color definition on input line 5446.
 
 [144 <./dryftdif001.png>] (./StochDyn_v0.5.ind)
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5456.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 5451.
  [145]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 5456.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 5451.
  (./StochDyn_v0.5.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5456.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5456.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 5451.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 5451.
 
 Package rerunfilecheck Info: File `StochDyn_v0.5.out' has not changed.
 (rerunfilecheck)             Checksum: DAAF7E3E98A54063FA4930550064C24A;1836.
@@ -4417,13 +4403,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5456.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 5451.
  ) 
 Here is how much of TeX's memory you used:
- 19360 strings out of 493307
- 316272 string characters out of 6139905
- 421584 words of memory out of 5000000
- 21132 multiletter control sequences out of 15000+600000
+ 19364 strings out of 493307
+ 316348 string characters out of 6139905
+ 421704 words of memory out of 5000000
+ 21134 multiletter control sequences out of 15000+600000
  84561 words of font info for 113 fonts, out of 8000000 for 9000
  958 hyphenation exceptions out of 8191
  55i,22n,57p,2996b,459s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -4448,10 +4434,10 @@ r/share/texlive/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive
 /texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/t
 imes/utmri8a.pfb>
-Output written on StochDyn_v0.5.pdf (149 pages, 3271297 bytes).
+Output written on StochDyn_v0.5.pdf (149 pages, 3271093 bytes).
 PDF statistics:
- 4015 PDF objects out of 4296 (max. 8388607)
- 2597 compressed objects within 26 object streams
- 1197 named destinations out of 1200 (max. 500000)
+ 4017 PDF objects out of 4296 (max. 8388607)
+ 2599 compressed objects within 26 object streams
+ 1199 named destinations out of 1200 (max. 500000)
  590 words of extra memory for PDF output out of 10000 (max. 10000000)
 

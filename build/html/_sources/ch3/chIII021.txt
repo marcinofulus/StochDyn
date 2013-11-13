@@ -208,20 +208,19 @@ Poniżej pokazujemy jedną z możliwych  realizacji (trajektorii) procesu Wiene
 .. only:: html
 
   .. sagecellserver::
-   :is_verbatim: True
+    :is_verbatim: True
 
-    reset()
-    # parametry symulacji
-    h = 0.01 #krok
-    N = 5000 #ilosc krokow
-    # parametry SDE
-    x0 = 0 #wartosc poczatkowa
-    D = 0.01 #wspolczynnik dyfuzji
-    x = [x0]
-    for i in xrange(1,N):
-      n01 = normalvariate(0,1)
-      x.append(x[i-1] + sqrt(2*h*D) * n01)
-    list_plot(x, plotjoined=True, axes_labels=[r'$t$',r'$x(t)$'], figsize=[8,3], frame=1, axes=0)
+    sage: # parametry symulacji
+    sage: h = 0.01 #krok
+    sage: N = 5000 #ilosc krokow
+    sage: # parametry SDE
+    sage: x0 = 0 #wartosc poczatkowa
+    sage: D = 0.01 #wspolczynnik dyfuzji
+    sage: x = [x0]
+    sage: for i in xrange(1,N):
+    sage:   n01 = normalvariate(0,1)
+    sage:   x.append(x[i-1] + sqrt(2*h*D) * n01)
+    sage: list_plot(x, plotjoined=True, axes_labels=[r'$t$',r'$x(t)$'], figsize=[8,3], frame=1, axes=0)
 
   .. end of input
 
@@ -323,6 +322,8 @@ Aby otrzymać jedną realizację procesu urodzin w przedziale czasu :math:`[0, T
  3. :math:`N(t_2) - N(t_1)` jest liczbą punktów w przedziale :math:`(t_1, t_2)`
 
  4. :math:`N(t)` ma stacjonarne i niezależne przyrosty na nieprzekrywających się przedziałach o rozkładzie prawdopodobieństwa 
+
+
 .. MATH::
  :label: eqn24
 
@@ -533,6 +534,7 @@ gdzie
 
 
 Funkcja korelacyjna tego procesu Poissona ma postać: 
+
 .. MATH::
  :label: eqn48
 
@@ -577,7 +579,7 @@ uzyskamy wykorzystując podstawową funkcję ``random()``.
 .. only:: html
 
   .. sagecellserver::
-   :is_verbatim: True
+    :is_verbatim: True
 
     from scipy import stats
     import matplotlib.pyplot as plt
@@ -815,7 +817,7 @@ Więcej informacji uzyskamy w pomocy (wpisując stats.levy_stable?)
 .. only:: html
 
   .. sagecellserver::
-   :is_verbatim: True
+      :is_verbatim: True
 
       import numpy as np
       from scipy import stats
@@ -841,7 +843,7 @@ Więcej informacji uzyskamy w pomocy (wpisując stats.levy_stable?)
   .. end of input
 
 Korzystając z rozkładu Levy'ego możemy oczywiście uzyskać zmienne normalne 
-:math:`N(0,1)` kładąc :math:`\alpha=2, \beta=0, \sigma = 1/\sqrt(2), \mu=0`.
+:math:`N(0,1)` kładąc :math:`\alpha=2, \beta=0, \sigma = 1/\sqrt{2}, \mu=0`.
 
 .. only:: latex
 
@@ -855,7 +857,7 @@ Korzystając z rozkładu Levy'ego możemy oczywiście uzyskać zmienne normalne
 .. only:: html
 
   .. sagecellserver::
-   :is_verbatim: True
+      :is_verbatim: True
 
       import numpy as np
       from scipy import stats

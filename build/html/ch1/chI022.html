@@ -132,7 +132,7 @@ Cząstka porusza się w prawo gdy prędkość jest dodatnia <span class="math">\
 <div class="math" id="equation-eqn10">
 <span class="eqno">(10)</span>\[m \ddot{x} = F\]</div>
 <p>Jeżeli siła będzie liniowa <span class="math">\(F=-kx\)</span> to dostaniemy wyżej opisane zagadnienie oscylatora harmonicznego. Na początku musimy zadeklarować nazwy zmiennych oraz parametrów użytych w modelu. Pamiętaj - każdorazowo, jeżeli chcesz obliczać coś symbolicznie, trzeba taką linijkę napisać i ją wykonać. W kolejnych linijkach ustalimy parametry układu, zdefiniujemy siły z jakimi mamy do czynienia i obliczymy potencjał (całka z siły brana ze znakiem minus). W następnym kroku, z prawa zachowania energii, obliczymy teraz jak prędkość zależy od położenia (owe krzywe fazowe).</p>
-<div class='sage'><script type='text/x-sage'>#0 (kilka zmiennych)
+<div class='sage'><script type='text/x-sage'>#(kilka zmiennych)
 var('x v')
 #parametry dla wizualizacji
 x0 = 1.3
@@ -142,9 +142,6 @@ m = 1
 F = -k*x
 #1
 V = -integral(F,x)
-p1 = plot(V, xmin=-x0, xmax=x0)
-p1.show(figsize=4, axes_labels=[r'$x$',r'$V(x)=%s$'%V])
-#
 #prawo zachowania energii
 E = m*v0^2 + V(x=x0)
 PZE = m*v^2 + V == E
@@ -183,12 +180,7 @@ p2 =  plot(v1, (x,xmin,xmax), color='red')
 p2 += plot(v2, (x,xmin,xmax), color='green')
 #
 (p0+p1+p12a).show(figsize=4, axes_labels=['$x$','$V(x)$'])
-(p12b+p2).show(figsize=4,xmax=xmax)
-sage:
-var('x y z t')
-xy_wsp = [('x','x'),('y','y')]+[('z','z')]
-N = len(xy_wsp)
-J  = matrix(SR,N)</script></div></div>
+(p12b+p2).show(figsize=4,xmax=xmax)</script></div></div>
 <div class="section" id="uklady-potencjalne">
 <h2>Układy potencjalne<a class="headerlink" href="#uklady-potencjalne" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>Układ o 1 stopniu swobody jest  potencjalny (tzn. istnieje potencjał <span class="math">\(V(x)\)</span>  pod warunkiem, że siła zależy tylko od położenia cząstki, tzn. <span class="math">\(F=F(x)\)</span>. Jeżeli siła zależy także od prędkości cząstki, tzn gdy <span class="math">\(F=F(x, v)\)</span>, nie istnieje potencjał <span class="math">\(V\)</span> taki aby <span class="math">\(F = -V' = - dV/dx\)</span>. Dla układów o wielu stopniach swobody, opisywanych układem równań Newtona</p>
@@ -279,8 +271,13 @@ dowód, najlepiej jest obejść ograniczenia operacji na wyrażeniach z pochodny
 Pochodna wyznacznika jest zrobiona automatycznie, potem jest ręcznie wykonane podstawienie:</p>
 <div class="math" id="equation-eqn31">
 <span class="eqno">(31)</span>\[ \frac{ \partial }{\partial z_0} \dot x_t = \frac{ \partial F_1}{\partial x_t}  \frac{ \partial x_t}{\partial z_0} +  \frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}  +\frac{ \partial F_1}{\partial y_t}  \frac{ \partial y_t}{\partial z_0}\]</div>
-<div class='sage'><script type='text/x-sage'>for i,(v,lv) in enumerate(xy_wsp):
-for j,(u,lu) in enumerate(xy_wsp):
+<div class='sage'><script type='text/x-sage'>var('x y z t')
+xy_wsp = [('x','x'),('y','y')]+[('z','z')]
+N = len(xy_wsp)
+J  = matrix(SR,N)
+#
+for i,(v,lv) in enumerate(xy_wsp):
+  for j,(u,lu) in enumerate(xy_wsp):
      J[i,j] = var("d%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial %s_t}{\partial %s_0}'%(lv,lu))
      var("dF%sd%s"%(v,u),latex_name=r'\displaystyle\frac{\partial F_%s}{\partial %s_t}'%(lv,lu))
 #
@@ -435,7 +432,7 @@ final.simplify_full().show()</script></div><p>Ostatecznie otrzymamy wyrażenie</
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 12, 2013.
+    Ostatnia modyfikacja Nov 13, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

@@ -26,7 +26,7 @@
 
 
 \title{Dynamika stochastyczna}
-\date{12/11/2013}
+\date{13/11/2013}
 \release{I}
 \author{Jerzy Łuczka, Łukasz Machura}
 \newcommand{\sphinxlogo}{}
@@ -3885,14 +3885,9 @@ gdzie
 \begin{split}\langle z_i \rangle = \int_{-\infty}^{\infty} z \rho(z) dz\end{split}\label{ch3/chIII021-eqn47}
 \end{gather}
 Funkcja korelacyjna tego procesu Poissona ma postać:
-.. MATH:
-
-\begin{Verbatim}[commandchars=\\\{\}]
-:label: eqn48
-
-R(t\_2, t\_1) = \PYGZbs{}langle N(t\_2) N(t\_1)\PYGZbs{}rangle = \PYGZbs{}mu\textasciicircum{}2 \PYGZbs{}langle z\_i\PYGZbs{}rangle\textasciicircum{}2 \PYGZbs{};t\_2 \PYGZbs{};t\_1 + \PYGZbs{}mu \PYGZbs{}langle z\_i\PYGZbs{}rangle\PYGZbs{}; \PYGZbs{}mbox\PYGZob{}min\PYGZcb{}(t\_2, t\_1) = \PYGZbs{}langle N(t\_2)\PYGZbs{}rangle\PYGZbs{}langle N(t\_1)\PYGZbs{}rangle+ \PYGZbs{}mu \PYGZbs{};\PYGZbs{}langle z\_i\PYGZbs{}rangle \PYGZbs{}mbox\PYGZob{}min\PYGZcb{}(t\_2, t\_1)
-\end{Verbatim}
-
+\phantomsection\label{ch3/chIII021:equation-eqn48}\begin{gather}
+\begin{split}R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \langle z_i\rangle^2 \;t_2 \;t_1 + \mu \langle z_i\rangle\; \mbox{min}(t_2, t_1) = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \;\langle z_i\rangle \mbox{min}(t_2, t_1)\end{split}\label{ch3/chIII021-eqn48}
+\end{gather}
 Pojedynczą Realizację procesu Poissona można uzyskać poprzez wygenerowanie \code{N} niezależnych
 punktów losowo rozłożonych na osi czasu na odcinku $[0,T]$. Ilość punktów generujemy z
 rozkładu Poissona a ich położenie na osi czasu zgodnie z rozkładem jednorodnym $U(0,N)$.
@@ -4089,7 +4084,7 @@ Więcej informacji uzyskamy w pomocy (wpisując stats.levy\_stable?)
 \end{Verbatim}
 
 Korzystając z rozkładu Levy'ego możemy oczywiście uzyskać zmienne normalne
-$N(0,1)$ kładąc $\alpha=2, \beta=0, \sigma = 1/\sqrt(2), \mu=0$.
+$N(0,1)$ kładąc $\alpha=2, \beta=0, \sigma = 1/\sqrt{2}, \mu=0$.
 \begin{figure}[htbp]
 \centering
 \capstart
