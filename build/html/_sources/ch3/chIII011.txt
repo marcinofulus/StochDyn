@@ -194,7 +194,7 @@ Teraz możemy zdefiniować całkę
  I_2=\int_{t_0}^{\;t} G(X(s), s) \xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G(X(s_i), {\tilde s}_i) [\xi(s_{i+1}) -\xi(s_i)] 
 
 
-Całki, w definicji których wartości procesu :math:`X(t)` lub :math:`\xi(t)` należy brać z lewej strony przedziałów :math:`[s_i, s_{i+1}]`, tzn. dla :math:`G(X(s_i), {\tilde s}_i)`, nazywamy '''całkami Ito''' lub całkami w interpretacji Ito. Ponieważ jak na razie z czysto matematycznego punktu widzenia wybór punktu z lewej strony przedziału jest arbitralny, każdy inny punkt jest równo uprawniony. Ale należy bezwględnie pamiętać, że zmiana położenia punktu :math:`{\tilde s}_i` w przedziale :math:`[s_i, s_{i+1}]` dla :math:`X(\tilde s_i)` czy dla :math:`\xi(\tilde s_i)` oznacza zmianę wartości całki. To odróżnia całki stochastyczne od "tradycyjnych" całek Riemanna. W związku z tym pojawia się poważny problem, gdy chcemy stosować równania stochastyczne do modelowania realnych zjawisk i procesów. Czy istnieją jakieś racjonalne kryteria na wybór punktu pośredniego :math:`\tilde s_i`? Dylemat ten przez pewien okres czasu był przedmiotem dyskusji i polemik w literaturze naukowej. 
+Całki, w definicji których wartości procesu :math:`X(t)` lub :math:`\xi(t)` należy brać z lewej strony przedziałów :math:`[s_i, s_{i+1}]`, tzn. dla :math:`G(X(s_i), {\tilde s}_i)`, nazywamy *całkami Ito* lub całkami w interpretacji Ito. Ponieważ jak na razie z czysto matematycznego punktu widzenia wybór punktu z lewej strony przedziału jest arbitralny, każdy inny punkt jest równo uprawniony. Ale należy bezwględnie pamiętać, że zmiana położenia punktu :math:`{\tilde s}_i` w przedziale :math:`[s_i, s_{i+1}]` dla :math:`X(\tilde s_i)` czy dla :math:`\xi(\tilde s_i)` oznacza zmianę wartości całki. To odróżnia całki stochastyczne od "tradycyjnych" całek Riemanna. W związku z tym pojawia się poważny problem, gdy chcemy stosować równania stochastyczne do modelowania realnych zjawisk i procesów. Czy istnieją jakieś racjonalne kryteria na wybór punktu pośredniego :math:`\tilde s_i`? Dylemat ten przez pewien okres czasu był przedmiotem dyskusji i polemik w literaturze naukowej. 
 
 
 Całka Stratonowicza
@@ -208,7 +208,7 @@ Istnieją także inne definicje całek stochastycznych. Druga, konkurencyjna def
  I_{\circ}= \int_{t_0}^{\;t} G(X(s), s) \circ \,d\xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G\left(\frac{X(s_{i+1}) + X(s_i)}{2}, {\tilde s}_i\right) [\xi(s_{i+1}) -\xi(s_i)] \qquad 
 
 
-gdzie oznaczenie :math:`\circ` w całce ma informować o tym, że wartość funkcji :math:`G(X(t), t)` na przedziale :math:`[s_i, s_{i+1}]` jest brana dla średniej arytmetycznej  :math:`[X(s_{i+1}) + X(s_i)]/2`. Tak określona całka nazywa się '''całką Stratonowicza''' lub całka w sensie Stratonowicza. 
+gdzie oznaczenie :math:`\circ` w całce ma informować o tym, że wartość funkcji :math:`G(X(t), t)` na przedziale :math:`[s_i, s_{i+1}]` jest brana dla średniej arytmetycznej  :math:`[X(s_{i+1}) + X(s_i)]/2`. Tak określona całka nazywa się *całką Stratonowicza* lub całka w sensie Stratonowicza. 
 
 Czytelnik łatwo zauważy, że obie całki są szczególnymi przypadkami takiej oto całki: 
 

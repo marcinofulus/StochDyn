@@ -52,7 +52,7 @@
     
     <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
     <link rel="next" title="Równania różniczkowe zwyczajne" href="chV012.html" />
-    <link rel="prev" title="Podstawowe procesy stochastyczne" href="../ch3/chIII021.html" />
+    <link rel="prev" title="Geometryczny ruch browna" href="../ch3/chIII033.html" />
  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
   </head>
@@ -69,7 +69,7 @@
           <a href="chV012.html" title="Równania różniczkowe zwyczajne"
              accesskey="N">dalej</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../ch3/chIII021.html" title="Podstawowe procesy stochastyczne"
+          <a href="../ch3/chIII033.html" title="Geometryczny ruch browna"
              accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
   <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
    
@@ -128,7 +128,7 @@ kartce papieru) to uzyskanie miliona liczb jest praktycznie nie do zrobienia w t
 problem pojawia się też w momencie, gdy chcielibyśmy mieć liczby naturalne z zakresu np: <span class="math">\(0-10\)</span>,
 czy w końcu losowe liczby zmiennoprzecinkowe. Metody chałupnicze w tym momencie się kończą.</p>
 <p>Z pomocą może przyjść nam komputer. Obecnie
-znakomita większość języków programowania (przynajmniej tych realnie wykorzystywanych <a class="footnote-reference" href="#id4" id="id1">[1]</a>)
+znakomita większość języków programowania (przynajmniej tych realnie wykorzystywanych <a class="footnote-reference" href="#id3" id="id1">[1]</a>)
 posiada w swoich standardowych bibliotekach funkcje
 (metody, klasy) umożliwiające wygenerowanie liczby (pseudo)losowej z przedziału <tt class="docutils literal"><span class="pre">[0,1)</span></tt> lub też
 <tt class="docutils literal"><span class="pre">[0,RAND_MAX]</span></tt>, gdzie ów <tt class="docutils literal"><span class="pre">RAND_MAX</span></tt> to stała zależna od architektury komputera, kompilatora i
@@ -181,7 +181,7 @@ obecnie chyba najbardziej popularny algorytm opracowany w 1997 roku. Np. Matlab/
 też wykorzystuje ten algorytm. Jest on stosunkowo skomplikowany i może być trudny do realizacji,
 dlatego też omówimy sobie dużo prostszy, liniowy generator i omówimy jego zalety i (przede wszystkim)
 wady.</p>
-<p>Programowe generowanie liczb losowych <a class="footnote-reference" href="#id5" id="id2">[2]</a> oparte jest na rekurencji</p>
+<p>Programowe generowanie liczb losowych <a class="footnote-reference" href="#id4" id="id2">[2]</a> oparte jest na rekurencji</p>
 <div class="math">
 \[x_i = f(x_{i-1}, x_{i-2}, \dots, x_{i-k}),\]</div>
 <p>czy w nieco bardziej zwartej formie</p>
@@ -239,18 +239,6 @@ list_plot(lcg_list, figsize=4)</script></div><p>Powinniśmy dostać rysunek podo
 <p class="caption">1000 liczb losowych wygenerowanych generatorem liniowym LCG</p>
 </div>
 <p>Jak widać, program generuje liczby losowe z zakresu [0,m).</p>
-</div>
-<div class="section" id="rejestr-przesuwajacy-z-liniowym-sprzezeniem-zwrotnym">
-<h4>Rejestr przesuwający z liniowym sprzężeniem zwrotnym<a class="headerlink" href="#rejestr-przesuwajacy-z-liniowym-sprzezeniem-zwrotnym" title="Stały odnośnik do tego nagłówka">¶</a></h4>
-<p>TBA</p>
-</div>
-<div class="section" id="generator-wichmanna-hilla">
-<h4>Generator Wichmanna &#8211; Hilla<a class="headerlink" href="#generator-wichmanna-hilla" title="Stały odnośnik do tego nagłówka">¶</a></h4>
-<p>TBA</p>
-</div>
-<div class="section" id="id3">
-<h4>Mersenne Twister<a class="headerlink" href="#id3" title="Stały odnośnik do tego nagłówka">¶</a></h4>
-<p>TBA</p>
 <p>W dalszej części wykładu (a raczej ćwiczeń) będziemy bazować na domyślnym generowaniu liczb losowych w Sage.
 Posłuży nam do tego wspominana już funkcja <tt class="docutils literal"><span class="pre">random()</span></tt> zwracająca liczbę pseudolosową o rozkładzie jednorodnym
 na odcinku [0,1) (co często oznaczane jest poprzez <span class="math">\(U(0,1)\)</span>).</p>
@@ -500,14 +488,14 @@ Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.</dd>
 <dd>Wygeneruj 1000 liczb losowych z rozkładem trójkątnym. Narysuj ich unormowany histogram oraz funkcję gęstości.
 Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.</dd>
 </dl>
-<table class="docutils footnote" frame="void" id="id4" rules="none">
+<table class="docutils footnote" frame="void" id="id3" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Generator liczb pseudolosowych można napisać nawet dla tak egzotycznych języków jak
 <a class="reference external" href="http://esolangs.org/wiki/brainfuck_algorithms#x_.3D_pseudo-random_number">Brainf*ck</a>.</td></tr>
 </tbody>
 </table>
-<table class="docutils footnote" frame="void" id="id5" rules="none">
+<table class="docutils footnote" frame="void" id="id4" rules="none">
 <colgroup><col class="label" /><col /></colgroup>
 <tbody valign="top">
 <tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Od tej chwili będziemy zawsze pisać <em>liczba losowa</em> a mieć na myśli <em>liczbę pseudolosową</em>,
@@ -534,9 +522,6 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
 <li><a class="reference internal" href="#generatory-sprzetowe">Generatory sprzętowe</a></li>
 <li><a class="reference internal" href="#generatory-programowe">Generatory programowe</a><ul>
 <li><a class="reference internal" href="#liniowy-generator-kongruencyjny">Liniowy generator kongruencyjny</a></li>
-<li><a class="reference internal" href="#rejestr-przesuwajacy-z-liniowym-sprzezeniem-zwrotnym">Rejestr przesuwający z liniowym sprzężeniem zwrotnym</a></li>
-<li><a class="reference internal" href="#generator-wichmanna-hilla">Generator Wichmanna &#8211; Hilla</a></li>
-<li><a class="reference internal" href="#id3">Mersenne Twister</a></li>
 </ul>
 </li>
 </ul>
@@ -557,8 +542,8 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
 
   </div>
   <h4>Poprzedni temat</h4>
-  <p class="topless"><a href="../ch3/chIII021.html"
-                        title="poprzedni rozdział">Podstawowe procesy stochastyczne</a></p>
+  <p class="topless"><a href="../ch3/chIII033.html"
+                        title="poprzedni rozdział">Geometryczny ruch browna</a></p>
   <h4>Następny temat</h4>
   <p class="topless"><a href="chV012.html"
                         title="następny rozdział">Równania różniczkowe zwyczajne</a></p>
@@ -597,7 +582,7 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
           <a href="chV012.html" title="Równania różniczkowe zwyczajne"
              >dalej</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="../ch3/chIII021.html" title="Podstawowe procesy stochastyczne"
+          <a href="../ch3/chIII033.html" title="Geometryczny ruch browna"
              >wstecz</a> &nbsp; &nbsp;</li>
   <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
    
@@ -608,7 +593,7 @@ chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach los
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 13, 2013.
+    Ostatnia modyfikacja Nov 15, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

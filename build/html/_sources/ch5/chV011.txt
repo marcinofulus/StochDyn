@@ -279,20 +279,20 @@ Powinniśmy dostać rysunek podobny do tego poniżej.
 Jak widać, program generuje liczby losowe z zakresu [0,m). 
 
 
-Rejestr przesuwający z liniowym sprzężeniem zwrotnym
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Rejestr przesuwający z liniowym sprzężeniem zwrotnym
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBA
+.. TBA
 
-Generator Wichmanna -- Hilla
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.. Generator Wichmanna -- Hilla
+.. ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TBA
+.. TBA
 
-Mersenne Twister
-~~~~~~~~~~~~~~~~
+.. Mersenne Twister
+.. ~~~~~~~~~~~~~~~~
 
-TBA
+.. TBA
 
 W dalszej części wykładu (a raczej ćwiczeń) będziemy bazować na domyślnym generowaniu liczb losowych w Sage. 
 Posłuży nam do tego wspominana już funkcja ``random()`` zwracająca liczbę pseudolosową o rozkładzie jednorodnym 

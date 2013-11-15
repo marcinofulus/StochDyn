@@ -171,14 +171,14 @@
 <p>Teraz możemy zdefiniować całkę</p>
 <div class="math" id="equation-eqn22">
 <span class="eqno">(22)</span>\[I_2=\int_{t_0}^{\;t} G(X(s), s) \xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G(X(s_i), {\tilde s}_i) [\xi(s_{i+1}) -\xi(s_i)]\]</div>
-<p>Całki, w definicji których wartości procesu <span class="math">\(X(t)\)</span> lub <span class="math">\(\xi(t)\)</span> należy brać z lewej strony przedziałów <span class="math">\([s_i, s_{i+1}]\)</span>, tzn. dla <span class="math">\(G(X(s_i), {\tilde s}_i)\)</span>, nazywamy &#8216;&#8217;&#8216;całkami Ito&#8217;&#8216;&#8217; lub całkami w interpretacji Ito. Ponieważ jak na razie z czysto matematycznego punktu widzenia wybór punktu z lewej strony przedziału jest arbitralny, każdy inny punkt jest równo uprawniony. Ale należy bezwględnie pamiętać, że zmiana położenia punktu <span class="math">\({\tilde s}_i\)</span> w przedziale <span class="math">\([s_i, s_{i+1}]\)</span> dla <span class="math">\(X(\tilde s_i)\)</span> czy dla <span class="math">\(\xi(\tilde s_i)\)</span> oznacza zmianę wartości całki. To odróżnia całki stochastyczne od &#8220;tradycyjnych&#8221; całek Riemanna. W związku z tym pojawia się poważny problem, gdy chcemy stosować równania stochastyczne do modelowania realnych zjawisk i procesów. Czy istnieją jakieś racjonalne kryteria na wybór punktu pośredniego <span class="math">\(\tilde s_i\)</span>? Dylemat ten przez pewien okres czasu był przedmiotem dyskusji i polemik w literaturze naukowej.</p>
+<p>Całki, w definicji których wartości procesu <span class="math">\(X(t)\)</span> lub <span class="math">\(\xi(t)\)</span> należy brać z lewej strony przedziałów <span class="math">\([s_i, s_{i+1}]\)</span>, tzn. dla <span class="math">\(G(X(s_i), {\tilde s}_i)\)</span>, nazywamy <em>całkami Ito</em> lub całkami w interpretacji Ito. Ponieważ jak na razie z czysto matematycznego punktu widzenia wybór punktu z lewej strony przedziału jest arbitralny, każdy inny punkt jest równo uprawniony. Ale należy bezwględnie pamiętać, że zmiana położenia punktu <span class="math">\({\tilde s}_i\)</span> w przedziale <span class="math">\([s_i, s_{i+1}]\)</span> dla <span class="math">\(X(\tilde s_i)\)</span> czy dla <span class="math">\(\xi(\tilde s_i)\)</span> oznacza zmianę wartości całki. To odróżnia całki stochastyczne od &#8220;tradycyjnych&#8221; całek Riemanna. W związku z tym pojawia się poważny problem, gdy chcemy stosować równania stochastyczne do modelowania realnych zjawisk i procesów. Czy istnieją jakieś racjonalne kryteria na wybór punktu pośredniego <span class="math">\(\tilde s_i\)</span>? Dylemat ten przez pewien okres czasu był przedmiotem dyskusji i polemik w literaturze naukowej.</p>
 </div>
 <div class="section" id="calka-stratonowicza">
 <h2>Całka Stratonowicza<a class="headerlink" href="#calka-stratonowicza" title="Stały odnośnik do tego nagłówka">¶</a></h2>
 <p>Istnieją także inne definicje całek stochastycznych. Druga, konkurencyjna definicja jest następująca:</p>
 <div class="math" id="equation-eqn23">
 <span class="eqno">(23)</span>\[I_{\circ}= \int_{t_0}^{\;t} G(X(s), s) \circ \,d\xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G\left(\frac{X(s_{i+1}) + X(s_i)}{2}, {\tilde s}_i\right) [\xi(s_{i+1}) -\xi(s_i)] \qquad\]</div>
-<p>gdzie oznaczenie <span class="math">\(\circ\)</span> w całce ma informować o tym, że wartość funkcji <span class="math">\(G(X(t), t)\)</span> na przedziale <span class="math">\([s_i, s_{i+1}]\)</span> jest brana dla średniej arytmetycznej  <span class="math">\([X(s_{i+1}) + X(s_i)]/2\)</span>. Tak określona całka nazywa się &#8216;&#8217;&#8216;całką Stratonowicza&#8217;&#8216;&#8217; lub całka w sensie Stratonowicza.</p>
+<p>gdzie oznaczenie <span class="math">\(\circ\)</span> w całce ma informować o tym, że wartość funkcji <span class="math">\(G(X(t), t)\)</span> na przedziale <span class="math">\([s_i, s_{i+1}]\)</span> jest brana dla średniej arytmetycznej  <span class="math">\([X(s_{i+1}) + X(s_i)]/2\)</span>. Tak określona całka nazywa się <em>całką Stratonowicza</em> lub całka w sensie Stratonowicza.</p>
 <p>Czytelnik łatwo zauważy, że obie całki są szczególnymi przypadkami takiej oto całki:</p>
 <div class="math" id="equation-eqn24">
 <span class="eqno">(24)</span>\[I_{\bullet}= \int_{t_0}^{\;t} G(X(s), s) \bullet \,d\xi(s) = \lim_{n \to \infty} \sum_{i=0}^{n-1} G\left(\lambda X(s_{i+1}) + (1-\lambda) X(s_i), {\tilde s}_i\right) [\xi(s_{i+1}) -\xi(s_i)] \qquad\]</div>
@@ -278,7 +278,7 @@
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 13, 2013.
+    Ostatnia modyfikacja Nov 15, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

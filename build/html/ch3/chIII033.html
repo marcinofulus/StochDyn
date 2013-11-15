@@ -1,0 +1,277 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Geometryczny ruch browna &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Liczby losowe" href="../ch5/chV011.html" />
+    <link rel="prev" title="Proces Ornsteina-Uhlenbecka" href="chIII032.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="../ch5/chV011.html" title="Liczby losowe"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII032.html" title="Proces Ornsteina-Uhlenbecka"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="geometryczny-ruch-browna">
+<h1>Geometryczny ruch browna<a class="headerlink" href="#geometryczny-ruch-browna" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Załóżmy, że posiadamy określoną kwotę pieniędzy i chcemy ją ulokować w banku, który w zamian oferuje odsetki w ramach proponowanych stóp procentowych. W chwili <span class="math">\(t\)</span> posiadamy <span class="math">\(X(t)\)</span> złotych. Ile dostaniemy pieniędzy z banku po czasie <span class="math">\(t+ \Delta t\)</span>. Oznaczmy kwotę po tym czasie jako <span class="math">\(X(t+\Delta t)\)</span>. Kwota po czasie <span class="math">\(t+\Delta t\)</span> to kwota jaka ulokowaliśmy plus kwota z oprocentowania:</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[X(t+\Delta t) = X(t) + \delta X(t)\,\]</div>
+<p>Pierwszy składnik jest kwotą jaką lokujemy w chwili <span class="math">\(t\)</span>. Drugi składnik jest kwotą jaką otrzymamy z oprocentowania lokaty. Ile wynosi ten dodatek? Ta dodatkowa kwota to</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[ \delta X(t) = c X(t) \Delta t\,\]</div>
+<p>Wyrażenie to ma jasną interpretacje: Im więcej ulokujemy w chwili <span class="math">\(t\)</span> (tzn. większe <span class="math">\(X(t)\)</span> ) tym więcej otrzymamy; im dłużej będzie trwała lokata (tzn. większe <span class="math">\(\Delta t\)</span>) tym więcej otrzymamy. Współczynnik <span class="math">\(c\)</span> zależy od stopy procentowej lokaty: im większe oprocentowanie tym większa wartość <span class="math">\(c\)</span> i tym więcej otrzymamy z lokaty. Uwzględniając te dwa składniki otrzymamy równanie na przyrost naszych pieniędzy</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[X(t+\Delta t) - X(t) = c X(t) \Delta t\,\]</div>
+<p>Załóżmy teraz, że oprocentowanie scharakteryzowane przez wielkość <span class="math">\(c\)</span> nie jest ustalone, ale w każdej chwili waha się losowo, to znaczy</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[c \to c + \xi(t)\,\]</div>
+<p>gdzie <span class="math">\(\xi(t)\)</span> opisuje losowe wahania oprocentowania. Innymi słowy jest to jakiś proces stochastyczny. Wówczas nasze równanie będzie miało postać</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[X(t+\Delta t) - X(t) = [c + \xi(t)]\, X(t) \Delta t\]</div>
+<p>Z lewej strony mamy przyrost naszych pieniędzy</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[\Delta X(t) = X(t+\Delta t) - X(t) \,\]</div>
+<p>Jeżeli teraz <span class="math">\(\Delta t\)</span> jest nieskończenie małe, to nasze równanie ma postać równania stochastycznego</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[dX(t) = c X(t) dt + \xi(t)\, X(t) dt\]</div>
+<p>Banki nie stosują losowych wahań oprocentowania, ale powyższy model można zastosować do cen akcji na giełdzie. Tam ceny zmieniają się w każdej chwili i w tych zmianach można odnaleźć część przewidywalnych (deterministycznych) zmian opisywanych parametrem <span class="math">\(c\)</span> i część zmian losowych opisywanych funkcją losową <span class="math">\(\xi(t)\)</span>. Jeżeli te zmiany podobne są do losowych zmian położenia cząstki Browna, to <span class="math">\(\xi(t)\)</span> jest białym szumem Gaussowskim</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(8)</span>\[\xi(t) = \Gamma(t)\,\]</div>
+<p>Jak wiemy biały szum Gaussowski jest pochodną procesu Wienera <span class="math">\(W(t)\)</span>, to znaczy</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(9)</span>\[\Gamma(t) = \frac{dW(t)}{dt}\,\]</div>
+<p>lub równoważnie</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(10)</span>\[\Gamma(t) dt = dW(t)\, \qquad \langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt\]</div>
+<p>Stąd wynika, że równanie przyjmuje postać</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(11)</span>\[dX(t) = c X(t) dt + X(t) d W(t)\,\]</div>
+<p>gdzie <span class="math">\(c\)</span> nazywa się średnią stopą zwrotu, a parametr <span class="math">\(D\)</span> nazywa się zmiennością (chwiejnością) cen akcji. Równanie to ma postać równania Ito i dlatego wnioskujemy, że proces stochastyczny <span class="math">\(X(t)\)</span> jest procesem Markowa. Ponadto jest to proces dyfuzji opisywany równaniem Fokkera-Plancka. Równanie to zostało zaproponowane do opisu zjawisk ekonomicznych na przełomie lat pięćdziesiątych i sześćdziesiątych XX w. niezależnie przez Osborne’a (1959) i Samuelsona (1965). Równanie to opisuje proces stochastyczny, który nazywa się w literaturze <em>geometrycznym procesem Wienera</em>. Równanie to jest jednym z podstawowych elementów modelu wyceny opcji Blacka-Scholesa. Teoria ta została nagrodzona Nagrodą Nobla z ekonomii w roku 1997, a opracowana przez absolwenta fizyki i doktora matematyki Fischera Blacka oraz ekonomistę Myrona Scholesa. Teoria Blacka-Scholesa pozwala na wycenę wartości tzw. finansowych instrumentów pochodnych, czyli opcji, oraz służy do optymalizacji &#8220;bezpiecznego&#8221; portfela inwestycyjnego.</p>
+<p>Równanie powyższe jest jedną z możliwych propozycji. Po pierwsze, należy rozstrzygnąć problem interpretacji tego równania: czy jest to wersja Ito czy wersja Stratonowicza, a może jeszcze inna. Po drugie, proces Wienera można zastąpić innymi procesami. Mogą to być różne odmiany procesu Poissona czy ogólniej Levy&#8217;ego. Wszystkie te procesy to procesy o przyrostach niezależnych. Można modelować fluktuacje cen akcji przez procesy skorelowane, procesy o zależnych przyrostach. Widać, że ten problem cen akcji na giełdzie daje niesłychanie szerokie pole do modelowania. To z kolei pozwala na daleko idące modyfikacje innych modeli, jak na przykład modelu Blacka-Scholesa.</p>
+<div class='sage'><script type='text/x-sage'>h = 0.01
+x0 = 1
+c = 0.1
+D = 0.01
+
+x = [x0]
+N = 100
+for i in xrange(N):
+  x.append((1 + c*h + sqrt(2*h*D)*normalvariate(0,1))*x[i])
+p = list_plot(zip(srange(0,N*h,h),x))
+p.axes_labels([r'$t$',r'$x(t)$'])
+p.show(figsize[8,3])</script></div><div class="section" id="analiza-geometrycznego-ruchu-browna">
+<h2>Analiza geometrycznego ruchu Browna<a class="headerlink" href="#analiza-geometrycznego-ruchu-browna" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Założymy (wzorem większości autorów), że równanie</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(12)</span>\[dX(t) = \mu X(t) dt + X(t) d W(t)\,\]\[X(t) \ge 0, \qquad \langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt\]</div>
+<p>jest równaniem w interpretacji Ito. Później zbadamy to równanie gdy założymy interpretację Stratonowicza. Równanie Fokkera-Plancka dla dla 1-wymiarowej gęstości prawdopodobieństwa <span class="math">\(p(x, t)\)</span> ma postać</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(13)</span>\[\frac{\partial p(x, t)}{\partial t} = - c \frac{\partial}{\partial x} [x p(x, t)] + D \frac{\partial^2}{\partial x^2} x^2 p(x, t),\]\[p(x, 0) =p(x), \qquad x \ge 0\]</div>
+<p>gdzie <span class="math">\(p(x)\)</span> jest początkowym rozkładem prawdopodobieństwa. Rozwiążemy to równanie metodą zamiany zmiennych. Zdefiniujemy nową zmienną <span class="math">\(y\)</span> jako</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(14)</span>\[y=\ln x, \qquad x = e^y\]</div>
+<p>Jeżeli dokonujemy zamiany zmiennych to musimy pamiętać, że gęstość prawdopodobieństwa także ulega transformacji wg zależności</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(15)</span>\[p(x, t) dx = f(y, t) dy,\]</div>
+<p>czyli</p>
+<div class="math">
+\[:label:eqn15a\]\[f(y, t) = p(x, t) \frac{dx}{dy} = e^y p(x, t) = x p(x, t)\]</div>
+<p>oraz</p>
+<div class="math">
+\[:label:eqn15b\]\[p(x, t) = f(y, t) \frac{dy}{dx} = \frac{1}{x} f(y=\ln x, t).\]</div>
+<p>Następnie musimy zamienić różniczkowanie względem <span class="math">\(x\)</span> na różniczkowanie względem <span class="math">\(y\)</span>:</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(16)</span>\[\frac{\partial}{\partial x} [x p(x, t)] = \frac{\partial y}{\partial x} \frac{\partial}{\partial y} f(y, t) = \frac{1}{x} \frac{\partial}{\partial y} f(y, t)\]</div>
+<p>oraz</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(17)</span>\[\frac{\partial^2}{\partial x^2} [x^2 p(x, t)] = \frac{\partial }{\partial x} \frac{\partial}{\partial x} [x f(y, t)] =\]\[= \frac{\partial}{\partial x} \left\{ \frac{\partial y}{\partial x} \frac{\partial}{\partial y} [ x f(y, t)] \right\} = \frac{\partial}{\partial x} \left\{ \frac{1}{x} \frac{\partial}{\partial y} [e^y f(y, t)] \right\} =\]\[= \frac{1}{x} \frac{\partial}{\partial y} \left\{ \frac{1}{x} \left(e^y f(y, t) + e^y \frac{\partial}{\partial y} f(y, t)\right) \right\} = \frac{1}{x} \frac{\partial}{\partial y} \left\{ f(y, t) + \frac{\partial}{\partial y} f(y, t)\right\}\]</div>
+<p>W obu wyrażeniach występuje wyraz <span class="math">\(1/x\)</span>, który przeniesiemy na lewą stronę równania Fokkera-Plancka: <span class="math">\(x p(x, t) = f(y, t)\)</span>. Ostatecznie otrzymamy przetransformowane równanie Fokkera Plancka w postaci</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(18)</span>\[\frac{\partial f(y, t)}{\partial t} = - [c -D] \frac{\partial}{\partial y} f(y, t) + D \frac{\partial^2}{\partial y^2} f(y, t)\]</div>
+<p>Takie równanie spełnia proces, którego równanie Ito ma postać:</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(19)</span>\[dY = (c - D) dt + dW(t)\]</div>
+<p>Równanie to łatwo scałkować:</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(20)</span>\[Y(t) = Y(0) + (c - D) t + W(t)\]</div>
+<p>Ponieważ jest to liniowa transformacja procesu Gaussa <span class="math">\(W(t)\)</span> to proces <span class="math">\(Y(t)\)</span> jest także procesem Gaussa. Więc nie musimy rozwiązywać równani Fokkera-Plancka, aby podać jawną postać gęstości rozkładu <span class="math">\(f(y, t)\)</span>. Wystarczy obliczyć wartość średnią oraz wariancję procesu <span class="math">\(Y(t)\)</span>:</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(21)</span>\[\mu_y(t)=\langle Y(t)\rangle=\langle Y(0) + (c - D) t + W(t)\rangle=\langle Y(0)\rangle + (c-D) t,\]\[\langle Y^2(t)\rangle=\langle [Y(0) + (c - D) t + W(t)\rangle]^2 \rangle =\langle Y^2(0)\rangle + 2 (c-D) t \langle Y(0)\rangle + (c-D)^2 t^2 + 2Dt\]</div>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(22)</span>\[\sigma_y^2(t) = \langle Y^2(t)\rangle - \langle Y(t)\rangle^2 = \sigma_y^2(0) + 2Dt,\]\[\sigma_y^2(0) = \langle Y^2(0)\rangle - \langle Y(0)\rangle^2 .\]</div>
+<p>Gęstość prawdopodobieństwa <span class="math">\(f(y, t)\)</span> ma postać funkcji Gaussa:</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(23)</span>\[f(y, t) = \frac{1}{\sqrt{2\pi \sigma_y^2(t)} }\; \exp\left\{ - \frac{[y-\mu_y(t)]^2}{2\sigma_y^2(t)}\right\}\]</div>
+<p>Wyjściowa gęstość prawdopodobieństwa <span class="math">\(p(x, t)\)</span> wyraża się wzorem:</p>
+<div class="math" id="equation-eqn24">
+<span class="eqno">(24)</span>\[p(x, t) = f(y, t) \frac{dy}{dx} = \frac{1}{x} f(y=\ln x, t) = \frac{1}{x \sqrt{2\pi \sigma_y^2(t)} }\; \exp\left\{ - \frac{[\ln x - \mu_y(t)]^2}{2\sigma_y^2(t)}\right\}\]</div>
+<p>i nazywa się rozkładem log-normalnym. Jeżeli początkowa wartość procesu <span class="math">\(X(0) = X_0\)</span> jest dana (wiemy, ile na początku mamy pieniędzy ulokowanych w akcjach) to</p>
+<div class="math" id="equation-eqn25">
+<span class="eqno">(25)</span>\[\sigma_y^2(0) = \langle Y^2(0)\rangle - \langle Y(0)\rangle^2 = \langle [\ln X_0]^2\rangle - \langle \ln X_0\rangle^2 =[ \ln X_0]^2 - [\ln X_0]^2 = 0\]</div>
+<p>W tym przypadku</p>
+<div class="math" id="equation-eqn26">
+<span class="eqno">(26)</span>\[\mu_y(t) = \ln X_0 + (c-D)t, \qquad \sigma_y^2(t) = 2Dt\]</div>
+<p>Momenty statystyczne wyjściowego procesu <span class="math">\(X(t)\)</span> dane są formułą</p>
+<div class="math" id="equation-eqn27">
+<span class="eqno">(27)</span>\[\langle X^n(t)\rangle = \int_{0}^{\; \infty} x^n p(x, t) dx = e^{\mu(t) n + Dt n^2 }\]</div>
+<p>i można je łatwo wyliczyć korzystając z Sage</p>
+<div class='sage'><script type='text/x-sage'>  var('x,m,D,n,t')
+  assume(t>0)
+  assume(D>0)
+  assume(n>0)
+  g = ((e^(n*x))/sqrt(4*pi*D*t))*exp(-(x-m)^2/(4*D*t))
+  i = integrate(g,x,-oo,oo)
+  show(i)</script></div><p>W szczególności wartość średnia i wariancja (fluktuacje) procesu wynoszą</p>
+<div class="math" id="equation-eqn28">
+<span class="eqno">(28)</span>\[\mu_x(t)=\langle X(t)\rangle=X_0 e^{ct},\]\[\sigma_x^2(t) =\langle X^2(t)\rangle- \langle X(t)\rangle^2=X^2_0 e^{2ct} [e^{2Dt} - 1].\]</div>
+<p>Zauważmy, że zarówno wartość średnia jak i fluktuacje narastają eksponencjalnie w czasie. Warto też obliczyć kurtozę i skośność dla tego modelu.</p>
+<p>Model ten w zastosowaniu do rynków finansowych posiada zarówno pozytywne elementy jak i negatywne elementy. Niewątpliwie pozytywnym elementem jest to że <span class="math">\(X(t)\)</span> przyjmuje tylko dodatnie wartości (nie ma ujemnych pieniędzy). Z drugiej strony, parametr <span class="math">\(D\)</span> często zmienia się, tu założono jego stałość.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Geometryczny ruch browna</a><ul>
+<li><a class="reference internal" href="#analiza-geometrycznego-ruchu-browna">Analiza geometrycznego ruchu Browna</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chIII032.html"
+                        title="poprzedni rozdział">Proces Ornsteina-Uhlenbecka</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="../ch5/chV011.html"
+                        title="następny rozdział">Liczby losowe</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch3/chIII033.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="../ch5/chV011.html" title="Liczby losowe"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII032.html" title="Proces Ornsteina-Uhlenbecka"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Nov 15, 2013.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

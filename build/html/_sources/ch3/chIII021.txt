@@ -173,7 +173,7 @@ Czytelnik zauważy, że niekonsekwentnie piszemy czasami przedział domknięty :
 
 
 Proszę zwrócić uwagę na 4 możliwe przedziały w tych wyrażeniach. 
-Proces Wienera jest granicznym przypadkiem błądzenia losowego : kroki są coraz mniejsze i coraz częstsze. Rozpatrzmy realizacje błądzenia przypadkowego w określonym przedziale czasu :math:`[0, t]`. W przedziale tym wybrana realizacja posiada określoną ilość skoków w których funkcja ta jest nieróżniczkowalna. Przy skalowaniu skoki są coraz mniejsze, ale jest ich znacznie więcej. Więc w przedziale czasu :math:`[0, t]` realizacja posiada znaczniej więcej punktów, w których jest nieróżniczkowalna. W granicy, wielkość skoków dąży do zera, ale ich ilość dąży do nieskończoności. Oznacza to, że realizacja staje się funkcją ciągłą (wysokość skoków dąży do zera), ale jednocześnie nigdzie nie jest różniczkowalna (liczba skoków dąży do nieskończoności). Jest to przykład wyjątkowo dziwnej funkcji. Takiej funkcji nie możemy narysować, ale to co opisano powyżej powinno wyrobić w nas intuicję o własnościach realizacji procesu Wienera. Matematycy (jak zwykle) dowodzą to ściśle, a fizycy to czują i wiedzą dlaczego tak jest. Należy także pamiętać, że taki graniczny proces nie istnieje w rzeczywistości. Rzeczywiste procesy błądzenia przypadkowego mają różne długości (ale nie nieskończenie małe) oraz odbywają się z niezerową częstotliwością (:math:`T` nie jest nieskończenie małe). Jednak gdy :math:`T` jest najmniejszą skalą czasową w badanym układzie, a każde inne czasy charakterystyczne są znacznie większe, to przybliżenie otrzymane po operacji dokonania granic jest rozsądne. To jest przykład kolejnej idealizacji, jaką stosują fizycy do opisu rzeczywistości. 
+Proces Wienera jest granicznym przypadkiem błądzenia losowego: kroki są coraz mniejsze i coraz częstsze. Rozpatrzmy realizacje błądzenia przypadkowego w określonym przedziale czasu :math:`[0, t]`. W przedziale tym wybrana realizacja posiada określoną ilość skoków w których funkcja ta jest nieróżniczkowalna. Przy skalowaniu skoki są coraz mniejsze, ale jest ich znacznie więcej. Więc w przedziale czasu :math:`[0, t]` realizacja posiada znaczniej więcej punktów, w których jest nieróżniczkowalna. W granicy, wielkość skoków dąży do zera, ale ich ilość dąży do nieskończoności. Oznacza to, że realizacja staje się funkcją ciągłą (wysokość skoków dąży do zera), ale jednocześnie nigdzie nie jest różniczkowalna (liczba skoków dąży do nieskończoności). Jest to przykład wyjątkowo dziwnej funkcji. Takiej funkcji nie możemy narysować, ale to co opisano powyżej powinno wyrobić w nas intuicję o własnościach realizacji procesu Wienera. Matematycy (jak zwykle) dowodzą to ściśle, a fizycy to czują i wiedzą dlaczego tak jest. Należy także pamiętać, że taki graniczny proces nie istnieje w rzeczywistości. Rzeczywiste procesy błądzenia przypadkowego mają różne długości (ale nie nieskończenie małe) oraz odbywają się z niezerową częstotliwością (:math:`T` nie jest nieskończenie małe). Jednak gdy :math:`T` jest najmniejszą skalą czasową w badanym układzie, a każde inne czasy charakterystyczne są znacznie większe, to przybliżenie otrzymane po operacji dokonania granic jest rozsądne. To jest przykład kolejnej idealizacji, jaką stosują fizycy do opisu rzeczywistości. 
 
 Proces Wienera jest procesem gaussowskim (normalnym), co jest konsekwencją centralnego twierdzenia granicznego: proces jest wynikiem bardzo wielu niezależnych losowych zdarzeń, dlatego niezależnie od rozkładu prawdopodobieństwa każdego z tych zdarzeń, jego rozkład będzie zbliżony do normalnego.
 
@@ -267,12 +267,13 @@ Przypiszmy teraz każdej losowej chwili czasu akt narodzin dziecka. Prawdopodobi
 w przedziale :math:`(t_1, t_2)` jest k-punktów odpowiada prawdopodobieństwu tego że w przedziale 
 czasu :math:`(t_1, t_2)` urodziło się k dzieci. W ten sposób otrzymujemy losowy proces urodzin. 
 Elementem losowym jest czas narodzin. Wynikiem jest liczba dzieci :math:`N(t)` w pewnej chwili 
-czasu :math:`t`. Rozkład prawdopodobieństwa jest dany przez rozkład Poissona: 
+czasu :math:`t`. Rozkład prawdopodobieństwa jest dany przez rozkład Poissona, opisujący 
+prawdopodobieństwo tego, że :math:`k` dzieci urodzi się w przedziale :math:`(t_1,t_2)`:
    
 .. MATH::
  :label: eqn20
 
-  Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (t_1, t_2)\} = Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}
+  Pr\{k,(t_1, t_2)\} = Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}
 
 
 Przyjmijmy teraz, że :math:`t_1 = 0` i :math:`t_2 =t`. Wówczas :math:`t_2 - t_1 =t-0=t` oraz 
@@ -280,7 +281,7 @@ Przyjmijmy teraz, że :math:`t_1 = 0` i :math:`t_2 =t`. Wówczas :math:`t_2 - t_
 .. MATH::
  :label: eqn21
 
-  p_k(t) = Pr\{N(t) = k\} = Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (0, t)\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}
+  p_k(t) = Pr\{N(t) = k\} = Pr\{k,(0, t)\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}
 
  
 jest prawdopodobieństwem tego, że w przedziale czasu :math:`(0, t)` urodziło się k dzieci. Jeżeli liczbę urodzonych dzieci oznaczymy przez :math:`N(t)` to otrzymamy proces stochastyczny nazywany procesem urodzin. Założymy, że :math:`N(0) = 0`. Oczywiście nie jest to bezwzględny wymóg, ale konwencja. Równie dobrze mógłbym badać dowolny inny stan początkowy :math:`N(0)`. Proces urodzin tak jak każda zmienna losowa o rozkładzie Poissona przyjmuje wartości całkowite nieujemne: 
@@ -375,7 +376,9 @@ Własności procesu Poissona
   .. MATH::
    :label: eqn29
 
-   C(\omega, t) = \langle \mbox{e}^{i\omega N(t)} \rangle = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} p_k(t) = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!} = \mbox{e}^{-\mu t} \; \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \; \frac{(\mu t)^k}{k!} = \mbox{exp}\left[\mu t \left(\mbox{e}^{i\omega} -1\right)\right] 
+   C(\omega, t) = \langle \mbox{e}^{i\omega N(t)} \rangle = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} p_k(t) = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!} = 
+   
+   = \mbox{e}^{-\mu t} \; \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \; \frac{(\mu t)^k}{k!} = \mbox{exp}\left[\mu t \left(\mbox{e}^{i\omega} -1\right)\right] 
 
 
 5. Z p. 3 wynika, że średnio-kwadratowe odchylenie 
@@ -413,7 +416,9 @@ Oczywiście powyższe relacje można podać dla przyrostów procesu Poissona:
   .. MATH::
    :label: eqn33
 
-   R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \;t_2 \;t_1 + \mu \; \mbox{min}(t_2, t_1) = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \; \mbox{min}(t_2, t_1)
+   R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \;t_2 \;t_1 + \mu \; \mbox{min}(t_2, t_1) =
+   
+   = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \; \mbox{min}(t_2, t_1)
 
 
   gdzie funkcja dwóch zmiennych :math:`\mbox{min}(x, y)` oznacza wartość mniejszej liczby z dwóch liczb :math:`x` i :math:`y`: 
@@ -433,7 +438,9 @@ Pokażemy, w jaki sposób można wyznaczyć postać funkcji korelacyjnej. Tą sa
   .. MATH::
    :label: eqn35
 
-   \langle[N(t_2) - N(t_1)] [ N(t_1) - N(t_0)] \rangle = \langle N(t_2) - N(t_1) \rangle \cdot \langle N(t_1) - N(t_0) \rangle = \mu (t_2 -t_1) \; \mu t_1.
+   \langle[N(t_2) - N(t_1)] [ N(t_1) - N(t_0)] \rangle =
+   
+   = \langle N(t_2) - N(t_1) \rangle \cdot \langle N(t_1) - N(t_0) \rangle = \mu (t_2 -t_1) \; \mu t_1.
 
 
   Skorzystaliśmy tu z tego, że wartość średnia iloczynu zmiennych losowych niezależnych jest iloczynem wartości średnich zmiennych losowych niezależnych. Z drugiej strony, wymnożymy wyrażenia w nawiasach pamiętając, że :math:`N(t_0) = N(0) = 0` (proces Poissona startuje z zera). Wówczas otrzymamy 
@@ -449,7 +456,9 @@ Pokażemy, w jaki sposób można wyznaczyć postać funkcji korelacyjnej. Tą sa
   .. MATH::
    :label: eqn37
 
-   \langle N(t_2) N(t_1) \rangle = \mu (t_2 -t_1) \; \mu t_1 +\langle N^2(t_1)\rangle = \mu (t_2 -t_1) \; \mu t_1 + \mu^2 t_1^2 + \mu t_1 
+   \langle N(t_2) N(t_1) \rangle = \mu (t_2 -t_1) \; \mu t_1 +\langle N^2(t_1)\rangle =
+   
+   = \mu (t_2 -t_1) \; \mu t_1 + \mu^2 t_1^2 + \mu t_1 
 
   .. MATH::
    :label: eqn38
@@ -462,7 +471,7 @@ Pokażemy, w jaki sposób można wyznaczyć postać funkcji korelacyjnej. Tą sa
   .. MATH::
    :label: eqn39
 
-   \langle N(t_1) N(t_2)\rangle = \mu (t_1 -t_2) \; \mu t_2 + \langle N^2(t_2)\rangle = \mu^2 t_1 t_2 + \mu t_2\; \; \; \; \mbox{dla} \; \; \; t_1 > t_2
+   \langle N(t_1) N(t_2)\rangle = \mu (t_1 -t_2) \; \mu t_2 + \langle N^2(t_2)\rangle = \mu^2 t_1 t_2 + \mu t_2,\; \mbox{dla} \; t_1 > t_2
 
 
   Ponieważ 
@@ -538,14 +547,15 @@ Funkcja korelacyjna tego procesu Poissona ma postać:
 .. MATH::
  :label: eqn48
 
- R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \langle z_i\rangle^2 \;t_2 \;t_1 + \mu \langle z_i\rangle\; \mbox{min}(t_2, t_1) = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \;\langle z_i\rangle \mbox{min}(t_2, t_1)
+ R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \langle z_i\rangle^2 \;t_2 \;t_1 + \mu \langle z_i\rangle\; \mbox{min}(t_2, t_1) =
+ 
+ = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \;\langle z_i\rangle \mbox{min}(t_2, t_1)
 
 Pojedynczą Realizację procesu Poissona można uzyskać poprzez wygenerowanie ``N`` niezależnych 
 punktów losowo rozłożonych na osi czasu na odcinku :math:`[0,T]`. Ilość punktów generujemy z 
 rozkładu Poissona a ich położenie na osi czasu zgodnie z rozkładem jednorodnym :math:`U(0,N)`. 
-Najprościej będzie posłużyć się dwoma pakietami. Pakietem ``scipy``, aby wygenerować 
-ilość punktów korzystając z rozkładu Poissona. Natomiast pakiet ``matplotlib`` posłuży nam 
-funkcją step do narysowania funkcji schodkowej. Punkty czasowe, w których nastąpi skok 
+Najprościej będzie posłużyć się pakietem ``scipy``, aby wygenerować 
+ilość punktów korzystając z rozkładu Poissona. Punkty czasowe, w których nastąpi skok 
 uzyskamy wykorzystując podstawową funkcję ``random()``.
 
 .. only:: latex
@@ -562,12 +572,7 @@ uzyskamy wykorzystując podstawową funkcję ``random()``.
     
     points = sorted([random()*T for i in steps])
     
-    plt.step(points,steps,linewidth=2R)
-    plt.xlabel(r'$t$')
-    plt.ylabel(r'$N(t)$')
-    plt.savefig('sage_chIII02_02.pdf')
-    plt.savefig('sage_chIII02_02.png')
-    plt.clf()
+    plot_step_function(zip(points,steps))
 
   .. figure:: images/sage_chIII02_02.*
       :align: center
@@ -588,12 +593,9 @@ uzyskamy wykorzystując podstawową funkcję ``random()``.
     N = stats.poisson.rvs(T*mu)
     steps = range(N+1)
     points = sorted([random()*T for i in steps])
-    plt.step(points,steps,linewidth=2R)
-    plt.xlabel(r'$t$')
-    plt.ylabel(r'$N(t)$')
-    plt.savefig('sage_chIII02_02.pdf')
-    plt.savefig('sage_chIII02_02.png')
-    plt.clf()
+    p = plot_step_function(zip(points,steps),figsize=[8,3])
+    p.axes_labels([r'$t$',r'$N(t)$'])
+    p.show()
 
   .. end of input
 
@@ -649,7 +651,7 @@ gdzie eksponenta Levy'ego ma postać
  \psi(\omega) = ia_0 \omega -\frac{1}{2} b \omega^2+\int_{-\infty}^{\infty} \left[\mbox{e}^{i\omega y} - 1 - i\omega y I_{(-1,1)}(y) \right] \nu (dy), \qquad 
 
 
-Stałe :math:`a_0\in R, b \ge 0. Oznaczenie I_A(y)` jest tzw. indykatorem zbioru :math:`A`: jest to funkcja o własności:
+Stałe :math:`a_0\in R, b \ge 0`. Oznaczenie :math:`I_A(y)` jest tzw. indykatorem zbioru :math:`A` - jest to funkcja o własności:
 
 .. MATH::
  :label: eqn53
@@ -805,7 +807,7 @@ Więcej informacji uzyskamy w pomocy (wpisując stats.levy_stable?)
         x.append(x[i-1] + h**(1/alpha) * lab)
 
 
-    .. figure:: images/sage_chIII02_03.*
+  .. figure:: images/sage_chIII02_03.*
       :align: center
       :width: 80%
       :alt: figchIII0203

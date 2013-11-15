@@ -42,6 +42,10 @@ for l in f.readlines():
   elif 'SAGECELL' in l:
     WHOLETXT += '.. only:: latex\n\n'
     WHOLETXT += '  .. code-block:: python\n\n\n\n'
+    WHOLETXT += '  .. figure:: images/\n'
+    WHOLETXT += '     :align: center\n'
+    WHOLETXT += '     :width: 80%\n'
+    WHOLETXT += '     :alt: figch\n\n\n\n'
     WHOLETXT += '.. only:: html\n\n'
     WHOLETXT += '  .. sagecellserver::\n'
     WHOLETXT += '      :is_verbatim: True\n\n\n\n'

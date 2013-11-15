@@ -51,7 +51,7 @@
 
     
     <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
-    <link rel="next" title="Liczby losowe" href="../ch5/chV011.html" />
+    <link rel="next" title="Modele szumów" href="chIII031.html" />
     <link rel="prev" title="Równania stochastyczne i ich interpretacja" href="chIII011.html" />
  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
@@ -66,7 +66,7 @@
           <a href="../genindex.html" title="Indeks ogólny"
              accesskey="I">indeks</a></li>
         <li class="right" >
-          <a href="../ch5/chV011.html" title="Liczby losowe"
+          <a href="chIII031.html" title="Modele szumów"
              accesskey="N">dalej</a> &nbsp; &nbsp;</li>
         <li class="right" >
           <a href="chIII011.html" title="Równania stochastyczne i ich interpretacja"
@@ -166,7 +166,7 @@
 <div class="math" id="equation-eqn15">
 <span class="eqno">(15)</span>\[Pr\{W(t) \in (a, b)\} = Pr\{W(t) \in [a, b]\} = Pr\{W(t) \in [a, b)\} = Pr\{W(t) \in (a, b])\}\]</div>
 <p>Proszę zwrócić uwagę na 4 możliwe przedziały w tych wyrażeniach.
-Proces Wienera jest granicznym przypadkiem błądzenia losowego : kroki są coraz mniejsze i coraz częstsze. Rozpatrzmy realizacje błądzenia przypadkowego w określonym przedziale czasu <span class="math">\([0, t]\)</span>. W przedziale tym wybrana realizacja posiada określoną ilość skoków w których funkcja ta jest nieróżniczkowalna. Przy skalowaniu skoki są coraz mniejsze, ale jest ich znacznie więcej. Więc w przedziale czasu <span class="math">\([0, t]\)</span> realizacja posiada znaczniej więcej punktów, w których jest nieróżniczkowalna. W granicy, wielkość skoków dąży do zera, ale ich ilość dąży do nieskończoności. Oznacza to, że realizacja staje się funkcją ciągłą (wysokość skoków dąży do zera), ale jednocześnie nigdzie nie jest różniczkowalna (liczba skoków dąży do nieskończoności). Jest to przykład wyjątkowo dziwnej funkcji. Takiej funkcji nie możemy narysować, ale to co opisano powyżej powinno wyrobić w nas intuicję o własnościach realizacji procesu Wienera. Matematycy (jak zwykle) dowodzą to ściśle, a fizycy to czują i wiedzą dlaczego tak jest. Należy także pamiętać, że taki graniczny proces nie istnieje w rzeczywistości. Rzeczywiste procesy błądzenia przypadkowego mają różne długości (ale nie nieskończenie małe) oraz odbywają się z niezerową częstotliwością (<span class="math">\(T\)</span> nie jest nieskończenie małe). Jednak gdy <span class="math">\(T\)</span> jest najmniejszą skalą czasową w badanym układzie, a każde inne czasy charakterystyczne są znacznie większe, to przybliżenie otrzymane po operacji dokonania granic jest rozsądne. To jest przykład kolejnej idealizacji, jaką stosują fizycy do opisu rzeczywistości.</p>
+Proces Wienera jest granicznym przypadkiem błądzenia losowego: kroki są coraz mniejsze i coraz częstsze. Rozpatrzmy realizacje błądzenia przypadkowego w określonym przedziale czasu <span class="math">\([0, t]\)</span>. W przedziale tym wybrana realizacja posiada określoną ilość skoków w których funkcja ta jest nieróżniczkowalna. Przy skalowaniu skoki są coraz mniejsze, ale jest ich znacznie więcej. Więc w przedziale czasu <span class="math">\([0, t]\)</span> realizacja posiada znaczniej więcej punktów, w których jest nieróżniczkowalna. W granicy, wielkość skoków dąży do zera, ale ich ilość dąży do nieskończoności. Oznacza to, że realizacja staje się funkcją ciągłą (wysokość skoków dąży do zera), ale jednocześnie nigdzie nie jest różniczkowalna (liczba skoków dąży do nieskończoności). Jest to przykład wyjątkowo dziwnej funkcji. Takiej funkcji nie możemy narysować, ale to co opisano powyżej powinno wyrobić w nas intuicję o własnościach realizacji procesu Wienera. Matematycy (jak zwykle) dowodzą to ściśle, a fizycy to czują i wiedzą dlaczego tak jest. Należy także pamiętać, że taki graniczny proces nie istnieje w rzeczywistości. Rzeczywiste procesy błądzenia przypadkowego mają różne długości (ale nie nieskończenie małe) oraz odbywają się z niezerową częstotliwością (<span class="math">\(T\)</span> nie jest nieskończenie małe). Jednak gdy <span class="math">\(T\)</span> jest najmniejszą skalą czasową w badanym układzie, a każde inne czasy charakterystyczne są znacznie większe, to przybliżenie otrzymane po operacji dokonania granic jest rozsądne. To jest przykład kolejnej idealizacji, jaką stosują fizycy do opisu rzeczywistości.</p>
 <p>Proces Wienera jest procesem gaussowskim (normalnym), co jest konsekwencją centralnego twierdzenia granicznego: proces jest wynikiem bardzo wielu niezależnych losowych zdarzeń, dlatego niezależnie od rozkładu prawdopodobieństwa każdego z tych zdarzeń, jego rozkład będzie zbliżony do normalnego.</p>
 <p>Poniżej pokazujemy jedną z możliwych&nbsp; realizacji (trajektorii) procesu Wienera. Czytelnik może sam wygenerować inne realizacje, zmieniając parametry pojawiające się w programie.</p>
 <div class='sage'><script type='text/x-sage'># parametry symulacji
@@ -199,12 +199,13 @@ Przy takim skalowaniu otrzymamy wyrażenie na parametr</p>
 w przedziale <span class="math">\((t_1, t_2)\)</span> jest k-punktów odpowiada prawdopodobieństwu tego że w przedziale
 czasu <span class="math">\((t_1, t_2)\)</span> urodziło się k dzieci. W ten sposób otrzymujemy losowy proces urodzin.
 Elementem losowym jest czas narodzin. Wynikiem jest liczba dzieci <span class="math">\(N(t)\)</span> w pewnej chwili
-czasu <span class="math">\(t\)</span>. Rozkład prawdopodobieństwa jest dany przez rozkład Poissona:</p>
+czasu <span class="math">\(t\)</span>. Rozkład prawdopodobieństwa jest dany przez rozkład Poissona, opisujący
+prawdopodobieństwo tego, że <span class="math">\(k\)</span> dzieci urodzi się w przedziale <span class="math">\((t_1,t_2)\)</span>:</p>
 <div class="math" id="equation-eqn20">
-<span class="eqno">(20)</span>\[ Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (t_1, t_2)\} = Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}\]</div>
+<span class="eqno">(20)</span>\[ Pr\{k,(t_1, t_2)\} = Pr\{N(t_2) - N(t_1) =k\} = e^{-\mu (t_2 - t_1)} \; \frac{[\mu (t_2 - t_1)]^k}{k!}\]</div>
 <p>Przyjmijmy teraz, że <span class="math">\(t_1 = 0\)</span> i <span class="math">\(t_2 =t\)</span>. Wówczas <span class="math">\(t_2 - t_1 =t-0=t\)</span> oraz</p>
 <div class="math" id="equation-eqn21">
-<span class="eqno">(21)</span>\[ p_k(t) = Pr\{N(t) = k\} = Pr\{k \; \mbox{dzieci urodzonych w przedziale} \; (0, t)\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}\]</div>
+<span class="eqno">(21)</span>\[ p_k(t) = Pr\{N(t) = k\} = Pr\{k,(0, t)\} = \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!}\]</div>
 <p>jest prawdopodobieństwem tego, że w przedziale czasu <span class="math">\((0, t)\)</span> urodziło się k dzieci. Jeżeli liczbę urodzonych dzieci oznaczymy przez <span class="math">\(N(t)\)</span> to otrzymamy proces stochastyczny nazywany procesem urodzin. Założymy, że <span class="math">\(N(0) = 0\)</span>. Oczywiście nie jest to bezwzględny wymóg, ale konwencja. Równie dobrze mógłbym badać dowolny inny stan początkowy <span class="math">\(N(0)\)</span>. Proces urodzin tak jak każda zmienna losowa o rozkładzie Poissona przyjmuje wartości całkowite nieujemne:</p>
 <div class="math" id="equation-eqn22">
 <span class="eqno">(22)</span>\[N(t) = \{0, 1, 2, \dots\}\]</div>
@@ -267,7 +268,7 @@ oszacowany z danych statystycznych czy też z danych doświadczalnych.</p>
 </ol>
 <blockquote>
 <div><div class="math" id="equation-eqn29">
-<span class="eqno">(29)</span>\[C(\omega, t) = \langle \mbox{e}^{i\omega N(t)} \rangle = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} p_k(t) = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!} = \mbox{e}^{-\mu t} \; \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \; \frac{(\mu t)^k}{k!} = \mbox{exp}\left[\mu t \left(\mbox{e}^{i\omega} -1\right)\right]\]</div>
+<span class="eqno">(29)</span>\[C(\omega, t) = \langle \mbox{e}^{i\omega N(t)} \rangle = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} p_k(t) = \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \mbox{e}^{-\mu t} \; \frac{(\mu t)^k}{k!} =\]\[= \mbox{e}^{-\mu t} \; \sum_{k=0}^{\infty} \mbox{e}^{i\omega k} \; \frac{(\mu t)^k}{k!} = \mbox{exp}\left[\mu t \left(\mbox{e}^{i\omega} -1\right)\right]\]</div>
 </div></blockquote>
 <ol class="arabic simple" start="5">
 <li>Z p. 3 wynika, że średnio-kwadratowe odchylenie</li>
@@ -298,7 +299,7 @@ oszacowany z danych statystycznych czy też z danych doświadczalnych.</p>
 </ol>
 <blockquote>
 <div><div class="math" id="equation-eqn33">
-<span class="eqno">(33)</span>\[R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \;t_2 \;t_1 + \mu \; \mbox{min}(t_2, t_1) = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \; \mbox{min}(t_2, t_1)\]</div>
+<span class="eqno">(33)</span>\[R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \;t_2 \;t_1 + \mu \; \mbox{min}(t_2, t_1) =\]\[= \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \; \mbox{min}(t_2, t_1)\]</div>
 <p>gdzie funkcja dwóch zmiennych <span class="math">\(\mbox{min}(x, y)\)</span> oznacza wartość mniejszej liczby z dwóch liczb <span class="math">\(x\)</span> i <span class="math">\(y\)</span>:</p>
 <div class="math" id="equation-eqn34">
 <span class="eqno">(34)</span>\[\begin{split}\mbox{min} (x, y) = \left\{ {{x \; \; \mbox{if}\; \; x &lt; y} \atop {y \; \; \mbox{if} \; \; y&lt;x}}\right\}\end{split}\]</div>
@@ -310,13 +311,13 @@ oszacowany z danych statystycznych czy też z danych doświadczalnych.</p>
 </ol>
 <blockquote>
 <div><div class="math" id="equation-eqn35">
-<span class="eqno">(35)</span>\[\langle[N(t_2) - N(t_1)] [ N(t_1) - N(t_0)] \rangle = \langle N(t_2) - N(t_1) \rangle \cdot \langle N(t_1) - N(t_0) \rangle = \mu (t_2 -t_1) \; \mu t_1.\]</div>
+<span class="eqno">(35)</span>\[\langle[N(t_2) - N(t_1)] [ N(t_1) - N(t_0)] \rangle =\]\[= \langle N(t_2) - N(t_1) \rangle \cdot \langle N(t_1) - N(t_0) \rangle = \mu (t_2 -t_1) \; \mu t_1.\]</div>
 <p>Skorzystaliśmy tu z tego, że wartość średnia iloczynu zmiennych losowych niezależnych jest iloczynem wartości średnich zmiennych losowych niezależnych. Z drugiej strony, wymnożymy wyrażenia w nawiasach pamiętając, że <span class="math">\(N(t_0) = N(0) = 0\)</span> (proces Poissona startuje z zera). Wówczas otrzymamy</p>
 <div class="math" id="equation-eqn36">
 <span class="eqno">(36)</span>\[\langle N(t_2) N(t_1) - N^2(t_1) \rangle = \langle N(t_2) N(t_1) \rangle - \langle N^2(t_1)\rangle =\mu (t_2 -t_1) \; \mu t_1\]</div>
 <p>Stąd wynika, że</p>
 <div class="math" id="equation-eqn37">
-<span class="eqno">(37)</span>\[\langle N(t_2) N(t_1) \rangle = \mu (t_2 -t_1) \; \mu t_1 +\langle N^2(t_1)\rangle = \mu (t_2 -t_1) \; \mu t_1 + \mu^2 t_1^2 + \mu t_1\]</div>
+<span class="eqno">(37)</span>\[\langle N(t_2) N(t_1) \rangle = \mu (t_2 -t_1) \; \mu t_1 +\langle N^2(t_1)\rangle =\]\[= \mu (t_2 -t_1) \; \mu t_1 + \mu^2 t_1^2 + \mu t_1\]</div>
 <div class="math" id="equation-eqn38">
 <span class="eqno">(38)</span>\[\begin{split}\mu^2 t_2 t_1 + \mu t_1 \; \; \; \; \mbox{dla} \; \; \; t_2 &gt; t_1\end{split}\]</div>
 </div></blockquote>
@@ -325,7 +326,7 @@ oszacowany z danych statystycznych czy też z danych doświadczalnych.</p>
 </ol>
 <blockquote>
 <div><div class="math" id="equation-eqn39">
-<span class="eqno">(39)</span>\[\begin{split}\langle N(t_1) N(t_2)\rangle = \mu (t_1 -t_2) \; \mu t_2 + \langle N^2(t_2)\rangle = \mu^2 t_1 t_2 + \mu t_2\; \; \; \; \mbox{dla} \; \; \; t_1 &gt; t_2\end{split}\]</div>
+<span class="eqno">(39)</span>\[\begin{split}\langle N(t_1) N(t_2)\rangle = \mu (t_1 -t_2) \; \mu t_2 + \langle N^2(t_2)\rangle = \mu^2 t_1 t_2 + \mu t_2,\; \mbox{dla} \; t_1 &gt; t_2\end{split}\]</div>
 <p>Ponieważ</p>
 <div class="math" id="equation-eqn40">
 <span class="eqno">(40)</span>\[\langle N(t_2) N(t_1)\rangle = \langle N(t_1) N(t_2)\rangle\]</div>
@@ -356,13 +357,12 @@ wyraz <span class="math">\(\mu p_{k-1}(t)\;\)</span> wchodzi ze znakiem dodatnim
 <span class="eqno">(47)</span>\[\langle z_i \rangle = \int_{-\infty}^{\infty} z \rho(z) dz\]</div>
 <p>Funkcja korelacyjna tego procesu Poissona ma postać:</p>
 <div class="math" id="equation-eqn48">
-<span class="eqno">(48)</span>\[R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \langle z_i\rangle^2 \;t_2 \;t_1 + \mu \langle z_i\rangle\; \mbox{min}(t_2, t_1) = \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \;\langle z_i\rangle \mbox{min}(t_2, t_1)\]</div>
+<span class="eqno">(48)</span>\[R(t_2, t_1) = \langle N(t_2) N(t_1)\rangle = \mu^2 \langle z_i\rangle^2 \;t_2 \;t_1 + \mu \langle z_i\rangle\; \mbox{min}(t_2, t_1) =\]\[= \langle N(t_2)\rangle\langle N(t_1)\rangle+ \mu \;\langle z_i\rangle \mbox{min}(t_2, t_1)\]</div>
 <p>Pojedynczą Realizację procesu Poissona można uzyskać poprzez wygenerowanie <tt class="docutils literal"><span class="pre">N</span></tt> niezależnych
 punktów losowo rozłożonych na osi czasu na odcinku <span class="math">\([0,T]\)</span>. Ilość punktów generujemy z
 rozkładu Poissona a ich położenie na osi czasu zgodnie z rozkładem jednorodnym <span class="math">\(U(0,N)\)</span>.
-Najprościej będzie posłużyć się dwoma pakietami. Pakietem <tt class="docutils literal"><span class="pre">scipy</span></tt>, aby wygenerować
-ilość punktów korzystając z rozkładu Poissona. Natomiast pakiet <tt class="docutils literal"><span class="pre">matplotlib</span></tt> posłuży nam
-funkcją step do narysowania funkcji schodkowej. Punkty czasowe, w których nastąpi skok
+Najprościej będzie posłużyć się pakietem <tt class="docutils literal"><span class="pre">scipy</span></tt>, aby wygenerować
+ilość punktów korzystając z rozkładu Poissona. Punkty czasowe, w których nastąpi skok
 uzyskamy wykorzystując podstawową funkcję <tt class="docutils literal"><span class="pre">random()</span></tt>.</p>
 <div class='sage'><script type='text/x-sage'>from scipy import stats
 import matplotlib.pyplot as plt
@@ -371,12 +371,9 @@ mu = 1.3
 N = stats.poisson.rvs(T*mu)
 steps = range(N+1)
 points = sorted([random()*T for i in steps])
-plt.step(points,steps,linewidth=2R)
-plt.xlabel(r'$t$')
-plt.ylabel(r'$N(t)$')
-plt.savefig('sage_chIII02_02.pdf')
-plt.savefig('sage_chIII02_02.png')
-plt.clf()</script></div></div>
+p = plot_step_function(zip(points,steps),figsize=[8,3])
+p.axes_labels([r'$t$',r'$N(t)$'])
+p.show()</script></div></div>
 </div>
 <div class="section" id="proces-levy-ego">
 <h2>Proces Levy-ego<a class="headerlink" href="#proces-levy-ego" title="Stały odnośnik do tego nagłówka">¶</a></h2>
@@ -404,7 +401,7 @@ plt.clf()</script></div></div>
 <p>gdzie eksponenta Levy&#8217;ego ma postać</p>
 <div class="math" id="equation-eqn52">
 <span class="eqno">(52)</span>\[\psi(\omega) = ia_0 \omega -\frac{1}{2} b \omega^2+\int_{-\infty}^{\infty} \left[\mbox{e}^{i\omega y} - 1 - i\omega y I_{(-1,1)}(y) \right] \nu (dy), \qquad\]</div>
-<p>Stałe <span class="math">\(a_0\in R, b \ge 0. Oznaczenie I_A(y)\)</span> jest tzw. indykatorem zbioru <span class="math">\(A\)</span>: jest to funkcja o własności:</p>
+<p>Stałe <span class="math">\(a_0\in R, b \ge 0\)</span>. Oznaczenie <span class="math">\(I_A(y)\)</span> jest tzw. indykatorem zbioru <span class="math">\(A\)</span> - jest to funkcja o własności:</p>
 <div class="math" id="equation-eqn53">
 <span class="eqno">(53)</span>\[ I_A(y) =1 \quad \mbox{gdy} \quad y\in A \quad \mbox{oraz} \quad I_A(y) = 0 \quad \mbox{w pozostałych przypadkach}\]</div>
 <p><span class="math">\(\nu(dy)\)</span> jest tzw. miarą Levy&#8217;ego o własności</p>
@@ -527,8 +524,8 @@ list_plot(x, plotjoined=True, axes_labels=[r'$t$',r'$x(t)$'], figsize=[8,3], fra
   <p class="topless"><a href="chIII011.html"
                         title="poprzedni rozdział">Równania stochastyczne i ich interpretacja</a></p>
   <h4>Następny temat</h4>
-  <p class="topless"><a href="../ch5/chV011.html"
-                        title="następny rozdział">Liczby losowe</a></p>
+  <p class="topless"><a href="chIII031.html"
+                        title="następny rozdział">Modele szumów</a></p>
   <h3>Ta strona</h3>
   <ul class="this-page-menu">
     <li><a href="../_sources/ch3/chIII021.txt"
@@ -561,7 +558,7 @@ list_plot(x, plotjoined=True, axes_labels=[r'$t$',r'$x(t)$'], figsize=[8,3], fra
           <a href="../genindex.html" title="Indeks ogólny"
              >indeks</a></li>
         <li class="right" >
-          <a href="../ch5/chV011.html" title="Liczby losowe"
+          <a href="chIII031.html" title="Modele szumów"
              >dalej</a> &nbsp; &nbsp;</li>
         <li class="right" >
           <a href="chIII011.html" title="Równania stochastyczne i ich interpretacja"
@@ -575,7 +572,7 @@ list_plot(x, plotjoined=True, axes_labels=[r'$t$',r'$x(t)$'], figsize=[8,3], fra
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 13, 2013.
+    Ostatnia modyfikacja Nov 15, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

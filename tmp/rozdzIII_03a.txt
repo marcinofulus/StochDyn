@@ -1,0 +1,179 @@
+Proces Ornsteina-Uhlenbecka
+
+Rozważmy najprostsze  liniowe równanie różniczkowe
+
+$$\dot x = - ax, \quad a>0, \qquad x(0) = x_0$$
+
+Jego rozwiązaniem jest funkcja eksponencjalna:
+
+$$x(t) = x_0  \mbox{e}^{-at}$$
+
+która zawsze dąży do zera gdy $t \to \infty$.
+
+Zaburzymy losowo to równanie: 
+
+$$\dot x = - ax + a \Gamma(t), \qquad \langle \Gamma(t)\rangle  = 0,  \qquad \langle \Gamma(t) \Gamma(s)\rangle  = 2D  \delta(t-s) \qquad (1) $$
+
+Równanie to  opisuje proces stochastyczny $x=x(t)$ który nazywa się procesem Ornsteina-Uhlenbecka. Proces ten jest procesem Markowa (tw. Dooba). Proces ten jest procesem Gaussa ponieważ jest to transformacja liniowa innego procesu Gaussa, a mianowicie procesu $\Gamma(t)$. Dlatego też proces ten można analizować na wiele sposobów. Po pierwsze, jest to  równanie różniczkowe liniowe niejednorodne. Dlatego jego rozwiązaniem jest funkcja
+
+$$x(t) = x_0 e^{-at} + a \int_0^{\; t}  e^{-a(t-s)}  \Gamma(s)  ds$$
+
+co można sprawdzić bezpośrednio, różniczkując powyższą funkcję.
+
+Można teraz obliczyć wartość średnią tego procesu:
+
+$$\mu(t) = \langle x(t)\rangle  = \langle x_0 \rangle e^{-at} + a \int_0^{\; t}  e^{-a(t-s)} \langle \Gamma(s)\rangle ds = \langle x_0 \rangle e^{-at} $$
+
+gdzie wykorzystaliśmy własności średniowania (średnia z sumy to suma średnich,  średnia ze stałej wielkości to ta sama stała wielkość,  całka to wartość graniczna sumy, itd.).
+
+Obliczenie funkcji korelacyjnej jest bardziej pracochłonne. Trzeba z należytą ostrożnością wymnożyć $x(t)$ oraz $x(\tau)$:
+
+$$ \langle x(t) x(\tau) \rangle  = \langle \left[ x_0 e^{-at} + a \int_0^{\; t}  e^{-a(t-s)}  \Gamma(s)  ds\right] \left[ x_0 e^{-a\tau} + a \int_0^{\; \tau}  e^{-a(\tau -u)}  \Gamma(u)  du\right] \rangle $$
+
+Pamiętając, że $\langle \Gamma(t)\rangle = 0$ dla dowolnego czasu $t$, otrzymamy wyrażenie:
+
+$$ \langle x(t) x(\tau) \rangle  =  \langle x_0^2  \rangle e^{-a(t+\tau)} + a^2   e^{-a(t+\tau)}  \int_0^{\; t}  e^{as} \int_0^{\; \tau} e^{au}   \langle \Gamma(s) \Gamma(u) \rangle   ds  du $$
+
+W wyrażeniu podcałkowym występuje funkcja korelacyjna białego szumu gaussowskiego, więc
+
+$$ \langle x(t) x(\tau) \rangle  =  \langle x_0^2  \rangle e^{-a(t+\tau)} + 2D a^2   e^{-a(t+\tau)}  \int_0^{\; t}  e^{as} \int_0^{\; \tau} e^{au}  \delta(s-u)  ds  du $$
+
+Należy obliczyć całki z $\delta$ - Diraca. Trzeba rozważyć 2 przypadki: gdy $t>\tau$ oraz gdy $\tau > t$. W końcu otrzymamy wynik w postaci:
+
+$$ \langle x(t) x(\tau) \rangle  =  [\langle x_0^2  \rangle -aD]  e^{-a(t+\tau)}+ aD e^{-a|t-\tau|}$$
+
+Ponieważ $x(t)$ jest procesem gauusowskim, możemy podać gęstość prawdopodobieństwa tego procesu:
+
+$$p(x, t) = \frac{1}{\sqrt{2\pi \sigma^2(t)} }\; \exp\left\{ - \frac{[x-\mu(t)]^2}{2\sigma^2(t)}\right\} \qquad (2) $$
+
+Wartość średnia jest dana powyżej. Musimy jeszcze obliczyć wariancję:
+
+$$\sigma^2(t) = \langle x^2(t) \rangle - \langle x(t)\rangle^2 = \sigma^2_0 e^{-2at} + aD [1 - e^{-2at}] \qquad (3) $$
+
+Stacjonarny rozkład prawdopodobieństwa $p_{st}(x)$  to rozkład dla $t\to\infty$. Granice taką łatwo wyznaczyć ponieważ 
+
+$$\mu(t) \to 0, \qquad \sigma^2(t)  \to aD$$
+
+Więc rozkład prawdopodobieństwa $p_{st}(x)$ ma postać gaussowską:
+
+$$p_{st}(x) = \frac{1}{\sqrt{2\pi aD} }\; \exp\left\{ - \frac{x^2}{2 aD}\right\}$$
+
+W ogólności $x(t)$ nie jest  procesem  stacjonarnym. Jeżeli tak wybrać stan początkowy aby
+
+$$\langle x_0^2  \rangle = aD$$
+
+to proces staje się stacjonarny i jest eksponencjalnie skorelowany: 
+
+$$C(t, \tau) = C(t-\tau) =  \langle x(t) x(\tau) \rangle  =  aD e^{-a|t-\tau|} = \frac{D}{\tau_c}  \exp\left[ -\frac{|t-\tau|}{\tau_c}\right]$$
+
+gdzie $\tau_c = 1/a$ jest czasem korelacji procesu. Ale wybór $\langle x_0^2  \rangle = aD$ oznacza, że stan początkowy jest stanem stacjonarnym, czyli $p(x, 0) = p_{st}(x)$. Innymi słowy, proces Ornsteina-Uhlenbecka zawsze staje się stacjonarny albo dla długich czasów albo dla początkowego stanu który jest stanem stacjonarnym. W tym przypadku proces  ten służy jako standardowy przykład eksponencjalnie skorelowanego szumu gaussowskiego. Wyznaczymy teraz widmo mocy tego szumu: 
+
+$$S(\omega) = \int_{-\infty}^{\; \infty} e^{i\omega t} C(t)  dt =  aD  \int_{-\infty}^{\; \infty} e^{i\omega t} e^{-a|t|}  dt = \frac{2a^2 D}{a^2 + \omega^2}  = \frac{2 D}{1 + (\tau_c \omega)^2} $$
+
+Poniżej przedstawiamy tę zależność dla kilku wartości czasu korelacji $\tau_c = 1/a$. Widmo mocy ma maksimum, podobnie jak światło o danym kolorze ma maksimum przy częstości  fali promieniowania elektromagnetycznego.  Jeżeli czas korelacji $\tau_c \to 0$ to widmo mocy wypłaszcza się i dąży do stałej wartości $2D$.  Z kolei funkcja korelacyjna
+
+$$ lim_{\tau_c \to 0} \; \; \frac{D}{\tau_c}  \exp\left[ -\frac{|t-\tau|}{\tau_c}\right] = 2D \delta(t - \tau)$$
+
+i szum staje się białym szumem gaussowskim.
+
+
+SAGECELL
+
+
+Równanie Fokkera-Plancka dla procesu Ornsteina-Uhlenbecka
+
+Zgodnie z regułami podanymi w poprzednim rozdziale, równanie $(1)$ to równanie Langevina, dla którego dryf i funkcja dyfuzji maja postać
+
+$$F(x, t) = -ax, \quad G(x, t) = a$$
+
+Odpowiednie równanie Fokkera-Plancka  dla warunkowej gęstości prawdopodobieństwa $p(x, t|y, s)$ ma postać:
+
+$$  \frac{\partial p(x, t|x_0, s)}{\partial t} =  a  \frac{\partial}{\partial x} [x  p(x, t|x_0, s)] +   D a^2 \frac{\partial^2}{\partial x^2} p(x, t|x_0, s), \qquad  p(x, s|x_0, s) =\delta(x-x_0) $$
+
+Z kolei dla 1-wymiarowej gęstości prawdopodobieństwa $p(x, t)$ należy rozwiązać zagadnienie:
+
+$$  \frac{\partial p(x, t)}{\partial t} =  a  \frac{\partial}{\partial x} [x  p(x, t)] +   D a^2 \frac{\partial^2}{\partial x^2} p(x, t), \qquad  p(x, 0) =p(x)$$
+
+gdzie $p(x)$ jest początkowym rozkładem prawdopodobieństwa. Warto przypomnieć, że zachodzi następująca relacja:
+
+$$p(x, t) = \int_{-\infty}^{\; \infty} p(x, t|, y, s) \; p(y, s)  dy$$
+
+czyli $p(x, t|y, s)$ jest propagatorem: propaguje rozkład w chwili wcześniejszej $s$ do chwili późniejszej $t$. W szczególności
+
+$$p(x, t) = \int_{-\infty}^{\; \infty} p(x, t|, y, 0) \; p(y, 0)  dy \qquad (4) $$
+
+propaguje rozkład początkowy do chwili  $t$.
+
+Oba równania Fokkera-Plancka można rozwiązać metodą funkcji charakterystycznej czyli metodą transformaty Fouriera wybierając odpowiednie warunki początkowe. Wynikiem zastosowania tej metody jest równanie różniczkowe cząstkowe pierwszego rzędu dla funkcji charakterystycznej.   Takie równanie zawsze można rozwiązać tzw. metodą charakterystyk. Ponieważ typowy student nie zna tej metody, nie będziemy jej tu przedstawiać. Postąpimy inaczej. W zasadzie już rozwiązaliśmy podobny problem. Załóżmy, że dana jest wartość początkowa procesu: $x(s) = x_0$. Wybieramy jako chwilę początkową czas $s$.  Ponieważ w równaniu Fokkera-Plancka nie występuje czas w sposób jawny, rozwiązanie $p(x, t|x_0, s)$ zależy tylko od różnicy czasów, tzn. $p(x, t|x_0, s) = p(x, t-s;  x_0)$. Dlatego też w rozwiązaniu $(3)$ oraz w $(4)$ należy dokonać podmiany: $\langle x_0^k\rangle \to x_0^k$ oraz $t \to t-s$. W ten sposób otrzymamy warunkową gęstość rozkładu:
+
+$$p(x, t|x_0, s) = \frac{1}{\sqrt{2\pi \sigma^2(t, s)} }\; \exp\left\{ - \frac{[x- x_0 e^{-a(t-s)})]^2}{2\sigma^2(t, s)}\right\} \qquad (5) $$
+
+gdzie teraz
+
+$$   \sigma^2(t, s) =  aD [1 - e^{-2a(t-s)}] \qquad (6) $$
+
+Można sprawdzić, korzystając z twierdzenia o ciągach $\delta$-podobnych, że w
+granicy $t\to s$  gęstość $p(x, t|x_0, s) \to \delta(x-x_0)$. Dla dowolnego
+warunku początkowego, korzystamy z rów. $(4)$ i otrzymujemy rozkład w dowolnej chwili z dowolnym warunkiem początkowym.
+
+
+SAGECELL
+
+
+Zastosowanie: cząstka Browna
+
+Niech cząstka  Browna o masie $m$ porusza się w płynie. Można zbudować równanie Newtona dla takiej cząstki :
+
+$$m\ddot x + \gamma \dot x = \Gamma(t)   \quad \mbox{czyli} \quad m \dot v + \gamma v = \Gamma(t) \quad \mbox{gdzie } \quad v=\dot x $$
+
+Jest to równanie Langevina, gdzie szum $\gamma(t)$ to losowa siła działająca na cząstkę i mająca swe źródło w zderzeniach cząstek płynu z cząstką Browna. Równanie Langevina dla prędkości cząstki Browna ma taką samą postac jak równanie generujące proces Ornsteina-Uhlenbecka: 
+
+$$\dot v = -(\gamma/m) v + \Gamma(t)/m = - \gamma_0 v + \gamma_0 \Gamma_0(t)$$
+
+gdzie przeskalowane wielkości maja postać
+
+$$\gamma_0 = \frac{\gamma}{m}, \qquad \Gamma_0(t) = \frac{\Gamma(t)}{\gamma}$$
+
+Dla przeskalowanej siły losowej mamy związki: 
+
+$$\langle \Gamma_0(t)\rangle  = 0,  \qquad \langle \Gamma_0(t) \Gamma_0(s)\rangle  = \frac{2D}{\gamma^2}   \delta(t-s)  = 2D_0 \delta(t-s) \qquad (6)$$  
+
+Porównując to z równaniem dla procesu Ornsteina-Uhlenbecka otrzymujemy korespondencję:
+
+$$a  \to  \gamma_0 = \frac{\gamma}{m}, \qquad D \to  D_0 = \frac{D}{\gamma^2}$$
+
+Posiłkując się wynikami dla procesu Ornsteina-Uhlenbecka, otrzymamy dla prędkości cząstki Browna następujace wyniki:
+
+$$\langle v(t) \rangle = \langle v_0\rangle e^{-\gamma t/m}, \qquad \langle v(t) v(s) \rangle = \frac{D}{\gamma m} e^{-\gamma |t-s|/m} $$
+
+przy założeniu, że jest to proces stacjonarny, czyli że w chwili początkowej
+
+$$\langle v_0^2 \rangle =  \frac{D}{\gamma m}$$
+
+Zauważmy, że w dowolnej chwili czasu zachodzi relacja
+
+$$\langle v^2(t) \rangle =  \frac{D}{\gamma m}$$
+
+Z twierdzenia o ekwipartycji energii (fizyka statystyczna) wynika, że 
+
+$$\langle E_k \rangle =  \frac{1}{2} m \langle v^2(t) \rangle =  \frac{1}{2} kT \qquad \mbox{czyli} \qquad  \langle v^2(t) \rangle =  \frac{kT}{m}  = \frac{D}{\gamma m}$$
+
+gdzie $k$ jest stałą Boltzmanna i $T$ jest temperaturą otoczenia (termostatu, płynu). Stąd otrzymujemy ważny wynik, że natężenie szumu termicznego (fluktuacji termicznych) wynosi
+
+$$D= \gamma kT$$
+
+ Kolejny ważny wynik to  czas korelacji prędkości cząstki Browna. Z relacji dla funkcji korelacyjnej wnioskujemy , że czas korelacji 
+
+$$\tau_c = \frac{m}{\gamma}$$
+
+Prędkość cząstki Browna  to losowy proces gaussowski, eksponencjalnie skorelowany. Stacjonarny rozkład prawdopodobieństwa $p_{st}(v)$ ma postać (patrz pierwsz część tego rozdziału)
+
+$$p_{st}(v) = \frac{1}{\sqrt{2\pi aD} }\; \exp\left\{ - \frac{v^2}{2 aD}\right\} = \sqrt{\frac{m}{2\pi kT} }\; \exp\left\{ - \frac{mv^2}{kT}\right\}$$
+
+Jest to dobrze znany rozkład Maxwella. 
+
+
+SAGECELL
+
+
+

@@ -1,0 +1,115 @@
+GEOMETRYCZNY RUCH BROWNA
+
+
+ Załóżmy, że posiadamy określoną kwotę pieniędzy  i chcemy ją ulokować w banku, który w zamian oferuje odsetki w ramach proponowanych stóp procentowych.  W chwili $t$ posiadamy $X(t)$ złotych. Ile dostaniemy pieniędzy z banku po czasie $t+ \Delta t$.  Oznaczmy kwotę po tym czasie jako $X(t+\Delta t)$. Kwota  po czasie $t+\Delta t$ to kwota jaka ulokowaliśmy plus kwota z oprocentowania: 
+$$X(t+\Delta t) = X(t) + \delta X(t)\,$$
+ Pierwszy składnik jest kwotą jaką lokujemy w chwili $t$. Drugi składnik jest kwotą  jaką otrzymamy z oprocentowania lokaty. Ile wynosi ten dodatek? Ta dodatkowa kwota to 
+$$ \delta X(t) = c X(t) \Delta t\,$$
+Wyrażenie to ma jasną  interpretacje: Im więcej ulokujemy w chwili $t$  (tzn. większe $X(t)$ ) tym więcej otrzymamy; im dłużej będzie trwała lokata (tzn. większe $\Delta t$) tym więcej otrzymamy. Współczynnik $c$ zależy od stopy procentowej lokaty: im większe oprocentowanie tym większa wartość $c$ i tym więcej otrzymamy z lokaty. Uwzględniając te dwa składniki otrzymamy równanie na przyrost naszych pieniędzy 
+$$X(t+\Delta t) - X(t)  = c X(t) \Delta t\,$$
+Załóżmy teraz, że oprocentowanie scharakteryzowane przez wielkość $c$ nie jest ustalone, ale w każdej chwili waha się losowo, to znaczy 
+$$c \to c + \xi(t)\,$$
+gdzie $\xi(t)$ opisuje losowe wahania oprocentowania. Innymi słowy jest to jakiś proces stochastyczny. Wówczas nasze równanie będzie miało postać 
+$$X(t+\Delta t) - X(t)  = [c + \xi(t)]\, X(t) \Delta t$$
+Z lewej strony mamy przyrost naszych pieniędzy 
+$$\Delta X(t) = X(t+\Delta t) - X(t) \,$$
+Jeżeli teraz $\Delta t $ jest nieskończenie małe, to nasze równanie ma postać równania stochastycznego
+$$dX(t) = c X(t) dt + \xi(t)\, X(t) dt$$
+Banki nie stosują losowych wahań oprocentowania, ale powyższy model mozna zastosować do cen akcji na giełdzie. Tam ceny zmieniają się w każdej chwili i w tych zmianach można odnaleźć  część przewidywalnych (deterministycznych) zmian opisywanych parametrem $c$  i część zmian losowych opisywanych funkcją losową $\xi(t)$. Jeżeli te zmiany podobne są do losowych zmian położenia czastki Browna, to $\xi(t)$ jest białym szumem Gaussowskim
+$$\xi(t) = \Gamma(t)\,$$
+Jak wiemy biały szum Gaussowski jest pochodną procesu Wienera $W(t)$, to znaczy 
+$$\Gamma(t) = \frac{dW(t)}{dt}\,$$
+lub równoważnie 
+$$\Gamma(t) dt  = dW(t)\, \qquad \langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt$$
+Stąd wynika, że równanie  przyjmuje postać
+$$dX(t) = c X(t) dt + X(t) d W(t)\,$$
+
+gdzie $c$ nazywa się  średnią stopą zwrotu, a parametr $D$ nazywa się zmiennością (chwiejnością) cen akcji. Równanie to ma postać równania Ito i dlatego wnioskujemy, że proces stochastyczny $X(t)$ jest procesem Markowa. Ponadto jest to proces dyfuzji opisywany równaniem Fokkera-Plancka. Równanie to zostało zaproponowane do opisu zjawisk ekonomicznych na przełomie lat pięćdziesiątych i sześćdziesiątych XX w. niezależnie przez Osborne’a (1959) i Samuelsona (1965). Równanie to opisuje proces stochastyczny,  który nazywa się w literaturze '''geometrycznym procesem Wienera'''. Równanie to jest jednym z podstawowych elementów modelu wyceny opcji Blacka-Scholesa.  Teoria ta została nagrodzona Nagrodą Nobla z ekonomii w roku 1997, a opracowana przez absolwenta fizyki i doktora matematyki Fischera Blacka oraz ekonomistę Myrona Scholesa. Teoria Blacka-Scholesa pozwala na wycenę wartości tzw. finansowych instrumentów pochodnych, czyli opcji, oraz służy do optymalizacji  "bezpiecznego" portfela inwestycyjnego.
+
+Równanie powyższe jest jedną z możliwych propozycji.  Po pierwsze, należy rozstrzygnąć problem interpretacji tego równania: czy jest to wersja Ito czy wersja Stratonowicza, a może jeszcze inna. Po drugie, proces Wienera można zastąpić innymi procesami. Mogą to być różne odmiany procesu Poissona czy ogólniej  Levy'ego.   Wszystkie te  procesy to procesy o przyrostach niezależnych. Można modelować fluktuacje cen akcji przez procesy skorelowane, procesy o zależnych przyrostach. Widać, że ten problem cen akcji na giełdzie daje niesłychanie szerokie pole do modelowania. To z kolei pozwala na daleko idące modyfikacje innych modeli, jak na przykład modelu Blacka-Scholesa.
+
+
+
+SAGECELL
+
+
+
+ANALIZA GEOMETRYCZNEGO RUCHU BROWNA
+
+Założymy (wzorem większości autorów), że równanie
+
+$$dX(t) = \mu X(t) dt + X(t) d W(t)\, \qquad X(t) \ge 0,  \qquad \langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt$$
+
+jest równaniem w interpretacji Ito. Później zbadamy to równanie gdy założymy interpretację Stratonowicza.  Równanie Fokkera-Plancka dla  dla 1-wymiarowej gęstości prawdopodobieństwa $p(x, t)$ ma postać
+
+$$  \frac{\partial p(x, t)}{\partial t} =  - c  \frac{\partial}{\partial x} [x  p(x, t)] +   D  \frac{\partial^2}{\partial x^2} x^2  p(x, t), \qquad  p(x, 0) =p(x), \qquad x \ge 0$$
+
+gdzie $p(x)$ jest początkowym rozkładem prawdopodobieństwa. Rozwiążemy to równanie metodą zamiany zmiennych. Zdefiniujemy nową zmienną $y$ jako
+
+$$y=\ln x, \qquad x = e^y$$
+
+Jeżeli dokonujemy zamiany zmiennych to musimy pamiętać, że gęstość prawdopodobieństwa także ulega transformacji wg zależności
+
+$$p(x, t) dx = f(y, t) dy, \qquad \mbox{czyli} \qquad f(y, t) = p(x, t)  \frac{dx}{dy} = e^y  p(x, t) = x  p(x, t) \qquad \mbox{oraz} \qquad p(x, t) = f(y, t)  \frac{dy}{dx} = \frac{1}{x}  f(y=\ln x, t)$$
+
+Następnie musimy zamienić różniczkowanie względem $x$ na różniczkowanie względem $y$: 
+
+$$\frac{\partial}{\partial x} [x  p(x, t)] = \frac{\partial y}{\partial x}  \frac{\partial}{\partial y}  f(y, t) = \frac{1}{x}   \frac{\partial}{\partial y}  f(y, t)$$
+
+oraz
+
+$$\frac{\partial^2}{\partial x^2} [x^2  p(x, t)] = \frac{\partial }{\partial x}  \frac{\partial}{\partial x}  [x f(y, t)] =    \frac{\partial}{\partial x} \left\{ \frac{\partial y}{\partial x}  \frac{\partial}{\partial y} [ x f(y, t)] \right\}  =  \frac{\partial}{\partial x} \left\{ \frac{1}{x}  \frac{\partial}{\partial y}  [e^y  f(y, t)] \right\} = \frac{1}{x}   \frac{\partial}{\partial y} \left\{ \frac{1}{x}  \left(e^y f(y, t) + e^y  \frac{\partial}{\partial y}  f(y, t)\right) \right\} = \frac{1}{x}   \frac{\partial}{\partial y} \left\{ f(y, t) +  \frac{\partial}{\partial y}  f(y, t)\right\} $$
+
+W obu wyrażeniach wystepuje wyraz $1/x$, który przeniesiemy na lewą stronę równania Fokkera-Plancka: $x p(x, t) = f(y, t)$. Ostatecznie otrzymamy przetransformowane równanie Fokkera Plancka w postaci
+
+$$  \frac{\partial f(y, t)}{\partial t} =  - [c -D]  \frac{\partial}{\partial y}  f(y, t) +   D  \frac{\partial^2}{\partial y^2}  f(y, t)$$
+
+Takie równanie spełnia proces, którego równanie Ito ma postać:
+
+$$dY = (c - D) dt + dW(t)$$
+
+Równanie to łatwo scałkować:
+
+$$Y(t) = Y(0) + (c - D) t + W(t)$$
+
+Ponieważ jest to liniowa transformacja procesu Gaussa $W(t)$ to proces $Y(t)$ jest także procesem Gaussa. Więc nie musimy rozwiązyważ równani Fokkera-Plancka, aby podać jawną postać gęstości rozkładu $f(y, t)$. Wystraczy obliczyć wartość średnią oraz wariancję procesu $Y(t)$:
+
+$$\mu_y(t)=\langle Y(t)\rangle=\langle Y(0) + (c - D) t + W(t)\rangle=\langle Y(0)\rangle + (c-D) t, \quad \langle Y^2(t)\rangle=\langle [Y(0) + (c - D) t + W(t)\rangle]^2 \rangle  =\langle Y^2(0)\rangle + 2 (c-D) t \langle Y(0)\rangle + (c-D)^2 t^2 + 2Dt$$
+
+$$\sigma_y^2(t) = \langle Y^2(t)\rangle - \langle Y(t)\rangle^2 = \sigma_y^2(0) + 2Dt, \qquad \sigma_y^2(0) = \langle Y^2(0)\rangle - \langle Y(0)\rangle^2 $$
+
+Gęstość prawdopodobieństwa $f(y, t)$ ma postać funkcji Gaussa:
+
+$$f(y, t) = \frac{1}{\sqrt{2\pi \sigma_y^2(t)} }\; \exp\left\{ - \frac{[y-\mu_y(t)]^2}{2\sigma_y^2(t)}\right\} $$
+
+Wyjściowa  gęstość prawdopodobieństwa $p(x, t)$ wyraża się wzorem: 
+
+$$p(x, t) = f(y, t)  \frac{dy}{dx} = \frac{1}{x}  f(y=\ln x, t) = \frac{1}{x  \sqrt{2\pi \sigma_y^2(t)} }\; \exp\left\{ - \frac{[\ln x  -  \mu_y(t)]^2}{2\sigma_y^2(t)}\right\} $$
+
+i nazywa się rozkładem log-normalnym. Jeżeli początkowa wartość procesu $X(0) = X_0$ jest dana (wiemy, ile na początku mamy pieniędzy ulokowanych w akcjach) to
+
+$$\sigma_y^2(0) = \langle Y^2(0)\rangle - \langle Y(0)\rangle^2 =   \langle [\ln X_0]^2\rangle - \langle \ln X_0\rangle^2 =[ \ln X_0]^2 - [\ln X_0]^2 = 0$$
+
+W tym przypadku 
+
+$$\mu_y(t) = \ln X_0 + (c-D)t, \qquad \sigma_y^2(t) = 2Dt$$
+
+Momenty statystyczne wyjściowego procesu $X(t)$ dane są formułą
+
+$$\langle X^n(t)\rangle = \int_{0}^{\; \infty}  x^n  p(x, t)  dx = e^{\mu(t) n + Dt n^2 }  $$
+
+i można je łatwo wyliczyć korzystając z Sage
+
+
+SAGECELL
+
+
+W szczególności wartość średnia i wariancja (fluktuacje) procesu wynoszą
+
+$$\mu_x(t)=\langle X(t)\rangle=X_0  e^{ct}, \qquad  \quad \sigma_x^2(t) =\langle X^2(t)\rangle- \langle X(t)\rangle^2=X^2_0  e^{2ct}  [e^{2Dt} - 1]$$
+
+Zauważmy, że zarówno wartość średnia jak i fluktuacje narastają eksponencjalnie w czasie.Warto też obliczyć kurtosis i skośność dla tego modelu.
+
+Model ten w zastosowaniu do rynków finansowych posiada zarówno pozytywne elementy jak i negatywne elementy. Niewątpliwie pozytywnym elementem jest to że $X(t)$ przyjmuje tylko dodatnie wartości (nie ma ujemnych pieniędzy). Z drugiej strony, parametr $D$ często zmienia się, tu założono jego stałość.
+
+

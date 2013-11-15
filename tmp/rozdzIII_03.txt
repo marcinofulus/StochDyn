@@ -1,0 +1,225 @@
+MODELE SZUMÓW
+
+Biały szum  Levy'ego
+
+ W literaturze szumem nazywa się dowolny proces stacjonarny. Stacjonarny - oznacza to, że funkcja korelacyjna procesu $\xi(t)$ zależy tylko od różnicy czasów, tzn. 
+
+$$C(t, s) = \langle \xi(t) \xi(s) \rangle = C(t-s)$$
+
+Innymi słowy funkcja
+
+$$C(t) = \langle \xi(s+t) \xi(s) \rangle$$
+
+nie zależy od czasu $s$, a zależy tylko od czasu $t$.
+
+Podaliśmy definicję procesu Levy'ego jako najbardziej ogólnego procesu stochastycznego o niezależnych przyrostach na nieprzekrywających sie przedziałach. Proces ten w szczegolnych przypadkach redukuje się do procesu Wienera i procesu Poissona. Pochodna tego procesu to biały szum Levy'ego  $\xi(t)$:
+
+$$\xi(t)=\frac{dL(t)}{dt} \qquad (13)$$
+
+Z  postaci funkcji korelacyjnej dla procesu Levy'ego wynika, że  funkcja korelacyjna białego szumu  Levy'ego  $\xi(t)$  ma postać
+
+$$\langle \xi(t) \xi(s) \rangle = \frac{\partial^2}{\partial t \partial s} \langle L(t) L(s) \rangle=    \frac{\partial^2}{\partial t \partial s} [2D  \mbox{min} (t, s)] =2D \frac{\partial^2}{\partial t \partial s}  [ t \theta(s-t) + s \theta(t-s)] = 2D \delta (t-s), \qquad (14)$$
+
+co uzasadnia nazwę "biały szum", ponieważ widmo mocy (transformata Fouriera funkcji korelacyjnej) jest niezależna od częstości, podobnie jak dla światła białego.
+
+Przy obliczaniu pochodnych należy pamiętać, że $\theta'(t) = \delta(t)$ oraz $ t\delta(t-s) = s \delta(t-s)$ i $\delta(t-s) = \delta(s-t)$.
+
+Szczególne przypadki tego szumu to:
+
+a:  biały szum gaussowski (pochodna procesu Wienera)
+
+b:  biały szum poissonowski, nazywany białym szumem śrutowym lub poissonowskim ciągiem $\delta$-impulsów  (pochodna procesu Poissona)
+
+
+
+Szumy gaussowskie
+
+Szumem gaussowskim nazywamy dowolny stacjonarny proces stochastyczny o gaussowskimk rozkładzie prawdopodobieństwa. Jest on najczęściej wykorzystywany w modelowaniu z powodu centralnego twierdzenia granicznego. Szum gaussowski pojawia się przy opisie układu oddziałującego z otoczeniem (termostatem) ponieważ termostat jest układem o wielkiej liczbie stopni swobody (większej od liczby Avogadra    $10^{23}$). Dlatego szum termiczny i równowagowe fluktuacje termiczne modelowane są szumem gaussowskim. Szum taki jest całkowicie określony przed dwie wielkości: wartość średnią oraz funkcję korelacyjną. Z matematycznego punktu widzenia, proces taki możemy opisać tzw. funkcjonałem rozkładu prawdopodobieństwa, który jest uogólnieniem gęstości rozkładu prawdopodobieństwa : 
+
+$${\cal D}P[\xi] = {\cal D}z \; {\mbox{exp}}\left[-\frac{1}{2} \int dt\int ds\;\xi(t) K(t-s) \xi(s) \right], \qquad (16)$$
+
+gdzie  ${\cal D} z$ jest pewną miarą funkcjonalną (podobnie jak iloczyn różniczek i jakobianu transformacji w całkach wielokrotnych) oraz funkcja  $K(t)$   jest odwrotnością funkcji korelacyjnej $C(t)$ w takim sensie, że zachodzi relacja
+
+$$\int ds K(t-s) C(s-u) = \delta (t-u) \qquad (17)$$
+
+Biały szum gaussowski odpowiada przypadkowi, gdy funkcja korelacyjna ma postać:
+
+$$C(t)= 2D_0 \delta (t), \qquad (18)$$
+
+gdzie  $D_0$ jest intensywnością szumu.  Dla białego szumu gaussowskiego $\xi(t)$ funkcjonał rozkładu prawdopodobieństwa ma postać:
+
+$${\cal D}P[\xi] = {\cal D}z \; {\mbox{exp}}\left[-D_0 \int dt\;\xi^2(t) \right], \qquad (20)$$
+
+Dlaczego wprowadza sie taki dziwny obiekt matematyczny jak funkcjonał  ${\cal D}P[\xi]$. Przypomnijmy sobie, że zmienna losowa o rozkładzie Gaussa jest okreslona przez wartość średnią zmiennej losowej i jej wariancję
+
+$$\sigma^2 = \langle\xi^2\rangle-\langle\xi\rangle^{2}$$
+
+Dla białego szumu $ \langle \xi^2(t)\rangle = \infty$ i dlatego nie istnieje 1-wymiarowy rozkład prawdopodobieństwa $f(x, t)$ ponieważ $\sigma^2 = \infty$.  Dlatego należy uogólnić teorię tak, aby opisywała także biały szum gaussowski. To umożliwia  funkcjonał  ${\cal D}P[\xi]$.
+
+Istnieją także innego typu szumu gaussowskie. Są to szumy skorelowane (kolorowe). Ważnym przykładem jest eksponencjalnie skorelowany szum:
+
+$$C(t)= \frac{D_0}{\tau_c} \mbox{exp}\left( -\frac{|t|}{\tau_c}\right), \qquad (21)$$
+
+where $D_0$ jest intensywnością (natężeniem) szumu oraz $\tau_c$  nazywa się czasem korelacji szumu. Ten szum jest generowany przez proces Ornsteina-Uhlenbecka, który opiszemy w następnym rozdziale. Kolejnym przykładem szumu skorelowanego jest tzw. szum harmoniczny o funkcji korelacyjnej typu: 
+
+$$C(t)= a_1 \mbox{e}^{-a|t|} \left(\cos \omega t + a_2 \sin \omega t\right) \qquad (22)$$
+
+gdzie  $a_1, a_2$  oraz  $a>0$ są stałymi. Ten szum jest opisany równaniem podobnym do równania Newtona dla oscylatora harmonicznego tłumionego.  Ostatnim przykładem jest szum skorelowany algebraicznie, tzn. jego funkcja korelacyjna jest postaci: 
+
+$$C(t)= C_0 \left(1+ \frac{|t|}{\tau_c}\right)^{-\kappa} \qquad (23)$$
+
+gdzie liczba  $\kappa >0$.
+
+Wszystkie trzy przykłady szumu skorelowanego dążą do białego szumu gaussowskiego w pewnych granicznych przypadkach. Aby to pokazać trzeba skorzystać z twierdzenia o ciągach delta-podobnych.
+
+
+
+
+Szumy poissonowskie
+
+
+
+Poissonowski biały szum  to pochodna procesu Poissona.  Uogólniony proces Poissona można   zapisać przy pomocy funkcji teta Heaviside'a w postaci
+
+$$N(t) = \sum\limits_i z_i \theta (t-t_i), \qquad (24)$$
+
+gdzie  $\theta (x)$ jest funkcją schodkową  Heaviside'a oraz $\{t_i\}$ jest zbiorem losowych chwil skoków o średniej gęstości  $\mu$. Amplitudy skoków  $\{z_i\}$  sa niezależnymi zmiennymi losowymi o tym samym rozkładzie prawdopodobieństa  $\rho(z)$ i są niezależne od $t_i$.  Realizacjami takiego procesu są funkcje schodkowe o skokach w losowych chwilach czasu $t_i$ i o losowych wielkościach skoku  $z_i$.  Pochodna tego procesu 
+
+$$\xi(t) = \frac{dN(t)}{dt}= \sum\limits_i z_i \delta (t-t_i) \qquad (26)$$
+
+to biały szum poissonowski. Faktycznie jest to losowy ciąg impulsów typu $\delta$-Diraca.
+
+Pamiętajmy, że parameter  $\mu$  określa średnią liczbę delta-impulsów na jednostkę czasu. Ponieważ średnia wartość procesu Poissona wynosi $\langle N(t)\rangle = \mu\langle z_i\rangle t$   więc  średnia wartość białego szumu wynosi
+
+$$\langle \xi(t) \rangle = \frac{d\langle N(t)\rangle }{dt} = \mu \langle z_i\rangle $$
+
+gdzie
+
+$$\langle z_i \rangle =  \int_{-\infty}^{\infty}   z \rho(z)  dz $$
+
+Możemy przedefiniowac tak szum, aby jego wartość wynosiła 0. Zdefiniujmy nowy szumy jako
+
+$$Y_0(t) = \sum\limits_{i} z_i \delta (t-t_i) -\mu <z_i> \qquad (27)$$
+
+Wartość średnia oraz funkcja korelacyjne tego szumu to:
+
+$$\langle Y_0(t) \rangle = 0, \quad \langle Y_0(t) Y_0(u) \rangle = 2D_S \delta (t-u), \qquad (28)$$
+
+gdzie  $D_S=(1/2)\mu \langle z_i^2 \rangle$  nazywa się intensywnością szumu. 
+
+Symetryczny biały szum Poissona  to taki ciąg impulsów, że gęstość prawdopodobieństwa  $\rho(z)$ dla rozkładu amplitud jest parzystą (symetryczną)  funkcją. Na przykład rozkład prawdopodobieństwa wielkości skoków
+
+$$\rho(z) = (1/2 A) \mbox{e}^{- \vert z \vert /A}, \quad A > 0$$
+
+jest funkcją symetryczną $z \to -z$. Dlatego też skoki w górę ( $ z>0$ ) oraz  w dół  ($z<0$) są równo prawdopodobne i to odpowiada procesowi urodzin i śmierci.
+
+Jeżeli szum jest asymetryczny, to $\rho(z)\ne \rho(-z)$. Np.
+
+$$\rho(z) = (1/ A^2) z \mbox{e}^{(- z /A)} \theta(z) , \quad A > 0 $$
+
+opisuje niesymetryczny biały szum Poissona. Przykładem też  jest rozkład
+
+$$\rho(z) = (1/A) e^{-z/A} \theta (z), \quad A>0$$
+
+W tym przypadku możliwe są  tylko skoki w górę ($z>0$)  i  ich średnia wartość wynosi:
+
+$$\langle z_i \rangle = A$$
+
+Stąd otrzymujemy interpretację parametru $A$ w powyższym rozkładzie prawdopodobieństwa.
+
+
+SAGECELL
+
+
+Szum dychotomiczny (telegraficzny) 
+
+
+
+Podamy teraz przykład niegaussowskiego szumu.  Jest to 2-stanowy proces stochastyczny
+
+$$\xi(t) = \{-a , b\}, \quad a, b > 0. \qquad (34)$$
+
+Szum może przyjmować dwie wartości $-a$ lub $b$. Przeskoki pomiędzy tymi dwoma stanami są dane przez prawdopodobieństwa przejścia  w jednostce czasu
+
+$$Pr(-a\rightarrow b)=\mu_a = 1/\tau_a, \qquad Pr(b\rightarrow -a)=\mu_b = 1/\tau_b, \qquad (35)$$
+
+gdzie  $\tau _a$ and $\tau _b$ są średnimi czasami przebywania w stanach  $-a$ oraz  $b$.  Jeżeli założymy że
+
+$$b \mu_a= a \mu_b \qquad (36)$$
+
+to proces jest stacjonarny o zerowej wartości średniej. Funkcja korelacyjna ma postać funkcji eksponencjalnej (podobnie jak dla szumu Ornsteina-Uhlenbecka) 
+
+$$C(t) = a b \:\mbox{exp}\left(-\frac{|t|}{\tau_c} \right), \qquad (37)$$
+
+gdzie czas korelacji szumu  $\tau_c$ dany jest prze formułę 
+
+$$1/\tau_c = \mu_a + \mu_b$$
+
+Szum jest symetryczny gdy $a=b$  i to implikuje że  $\mu_a=\mu_b$ gdy $\langle \xi(t) \rangle = 0$. W pewnych przypadkach szum ten może opisywać losowe przejścia pomiędzy dwoma metastabilnymi stanami w układach bistabilnych.
+
+
+SAGECELL
+
+
+Szum kangura
+
+
+
+Obserwacje kangurów prowadzą do ciekawych uogólnień w teorii procesów stochastycznych. Kangur od czasu do czasu skacze. Skoki kangura są o różnej długości.  Pomiędzy skokami kangur spoczywa przez jakiś czas. To zachowanie  kangura prowadzi do następującego opisu procesu losowego kangura $\xi(t)$:  Jest to proces nieciągły i  stacjonarny w którym prawdopodobieństwo przejścia ${\cal W}(z \vert z_0)$  ze stanu $z_0$ do stanu $z$ faktoryzuje się, tzn. 
+
+$${\cal W}(z \vert z_0) = Q(z) \nu (z_0) $$
+
+To oznacza, że kangur skacze ze stanu $z_0$ ze średnią  częstością  $\nu(z_0)$. Wielkość $\tau(z_0) = 1/\nu(z_0)$ to średni czas przebywania w stanie $z_0$. Prawdopodobieństwo, że kangur skoczy do stanu  $z$  wynosi  $Q(z)$ i jest unormowane do 1 w przstrzeni stanów kangura.  Odpowiednie równanie ewolucji dla gęstości prawdopodobieństwa   $p(z, t)$ dla procesu kangura ma postać:
+
+$${\frac{\partial  p(z, t)}{\partial t}} = - \nu (z) p(z, t) + Q(z) \int_{-\infty}^{\infty} \nu (\eta) p(\eta, t) d\eta  $$
+
+W przypadku stanów stacjonarnych, gdy $p(z, t) = p(z)$, otrzymujemy z powyższego równania związek pomiędzy rozkładem stacjonarnym $p(z)$ oraz gęstością prawdopodobieństwa $Q(z)$:
+
+$$Q(z) = \frac{\nu (z) p(z)}{ \int_{-\infty}^{\infty} \nu (\eta) p(\eta, t) d\eta } = \frac{\nu (z) p(z)}{\langle \nu \rangle} \qquad (1) $$
+
+Dla symetrycznego procesu kangura funkcja korelacyjna jest  dana przez  relację (nie jest łatwym zadaniem to pokazać)
+
+$$C(t) = 2 \int_{0}^{\infty} z^2 p(z) \mbox{exp}(-\nu(z)\vert t\vert) \;dz, $$
+
+gdzie  $p(z) = p(-z)$  jest rozkładem stacjonarnym procesu  $\xi(t) $  oraz  $\nu(z) = \nu(-z)$.  W tym przypadku watość średnia procesu jest zero, $\langle \xi(t) \rangle = 0$.
+
+Specjalnym przypadkiem tego procesu jest tzw. szum Kubo-Andersona gdy  $\nu(z) = \nu_0$.  Z rów. $(1)$ wynika, że dla stałej częstości przeskoków stacjonarna gęstość $p(z) = Q(z)$.   Wówczas z powyższej relacji otrzymujemy jawną postać funkcji korelacyjnej:
+
+$$C(t) = \langle z^2 \rangle \mbox{exp}\left(-\frac{\vert t\vert}{\tau_c}\right) $$
+
+gdzie czas korelacji szumu wynosi  $\tau_c = 1/\nu_0$  oraz  $\langle z^2 \rangle$ jest wartością średnią  obliczoną z rozkładem  stacjonarnym $p(z) = Q(z)$. 
+
+Oto dwa przyklady szumów kangura:
+
+(i) proces $\xi(t) $  jest nieograniczony, określony na przedziale  $(-\infty, \infty)$ i stacjonarna gęstość prawdopodobieństwa jest gaussowska:
+
+$$p(z) = Q(z) = \frac{1}{\sqrt{2\pi} \sigma} \mbox{exp}(-z^2/2\sigma^2), \quad \xi(t) \in (-\infty, \infty)$$
+
+(ii) proces $\xi(t) $  jest ograniczony na przedziale  $[-l, l]$ i ma jednostajną gęstość prawdopodobieństwa
+
+$$p(z) = Q(z) = \frac{1}{2l}\theta(z+l)\theta(l-z),\quad \xi(t) \in [-l, l], \qquad (43)$$
+
+gdzie  $\theta(x)$  jest funkcją schodkową Heaviside'a. 
+
+
+SAGECELL
+
+
+SAGECELL
+
+
+Uwagi ogólne: proces Markowa i proces niemarkowowski
+
+Rozważmy dla prostoty równanie stochastyczne w postaci:
+
+$$\dot x = F(x) + G(x) \xi(t)$$
+
+gdzie $\xi(t)$ jest dowolnym opisanym powyżej szumem. Co możemy powiedzieć o procesie stochastycznym $x=x(t)$ gererowanym przez powyższe równanie. Jeżeli szum  $\xi(t)$   is  białym szumem wówczas proces  x(t) jest procesem Markowa.  To jest ogromna zaleta ponieważ proces Markowa jest całkowicie opisany gdy znamy 
+
+(i) warunkową gęstość prawdopodobieństwa $p(x_2, t_2|x_1, t_1)$
+
+(ii) stan początkowy procesu $x(t)$ dany przez rozkład 1-wymiarowy  $p(x, 0)$.   Wówczas spełnione jest równanie  Chapmana-Kołmogorowa z którego można wyprowadzić równanie Fokkera-Plancka lub  Kolmogorowa-Fellera. Rozkłady wielowymiarowe wyrażają się przez powyższe 2 funkcje.  
+
+Jeżeli szum nie jest szumem białym (jest np. eksponencjalnie skorelowanym) to proces $x(t)$ jest procesem niemarkowowskim. Rozkłady wielowymiarowe nie można otrzymać z powyższych 2 funkcji. Wówczas wiemy  niewiele o takim procesie i jego analiza bywa bardzo złożona.
+
+
