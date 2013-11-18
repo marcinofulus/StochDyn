@@ -1,0 +1,227 @@
+Szum dychotomiczny
+------------------
+
+Jest to prawdopodobnie najprostszy z możliwych rodzaj skorelowanego szumu,
+który może wzbudzić transport w układach jakie analizujemy. Proces :math:`\xi(t)`,
+czyli stacjonarny, dychotomiczny, stochastyczny proces Markowa - szum
+telegraficzny, przyjmuje losowo dwie wartości:
+
+.. math::
+   :label: eqn101
+
+   \xi(t)=\{-a, b\}, \qquad a,b>0,
+
+   P(-a \to b)=\mu_a=\frac{1}{\tau_a},
+
+   P(b \to -a)=\mu_b=\frac{1}{\tau_b},
+
+gdzie :math:`P(x_1 \to x_2)` jest prawdopodobieństwem skoku z wartości :math:`x_1` do
+:math:`x_2` na jednostkę czasu, a :math:`\tau_a` i :math:`\tau_b` wyrażają średni czas
+przebywania w stanie odpowiednio :math:`-a` i :math:`b`. Przy założeniu, że rozkład
+początkowy szumu :math:`\xi(t)` jest stacjonarny, czyli:
+
+.. math::
+   :label: eqn102
+
+   P(\xi(0)=b)=\frac{\mu_a}{\mu_a+\mu_b},
+   
+   P(\xi(0)=-a)=\frac{\mu_b}{\mu_a+\mu_b},
+
+średnia wartość wynosi
+
+.. math::
+   :label: eqn103
+   
+   \langle \xi(t) \rangle =\frac{b\mu_a-a\mu_b}{\mu_a+\mu_b}.
+
+Jednak aby średnia siła losowa była zerowa, musimy założyc :math:`b\mu_a=a\mu_b`, co
+spełnia nam automatycznie zakładany warunek. Funkcja korelacyjna wynosi
+wówczas
+
+.. math::
+   :label: eqn104
+  
+   \langle \xi(t) \xi(s) \rangle = \frac{Q}{\tau}e^{-\mid t-s \mid / \tau},
+
+gdzie :math:`Q=\tau ab` jest natężeniem procesu oraz :math:`\tau =1/(\mu_a+\mu_b)` jest
+czasem korelacji. Z powyższego wynika, że szum dychotomiczny jest
+charakteryzowany trzema parametrami: :math:`Q`, :math:`\tau` i :math:`\theta=b-a`. Ostatni mówi
+o symetrii procesu - gdy :math:`\theta` znika proces jest symetryczny, w przeciwnym
+wypadku jest asymetryczny.
+
+Realizacja szumu dychotomicznego
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Proces :math:`\xi(t)` oznacza, że cząstka losowo przeskakuje ze stanu :math:`-a` do :math:`b` i z powrotem, średnio spędzajęc odpowiednio :math:`1/\mu_a` czasu w stanie :math:`-a` i :math:`1/\mu_b` w stanie :math:`b`. Czas pobytu w obu stanach jest zmienną losową o rozkładzie eksponencjalnym i średniej :math:`1/\mu_k`, dla :math:`k=a` lub :math:`b`, zatem algorytm generujący trajektorie :math:`\xi(t)` polega na losowaniu liczb z rozkładem eksponencjalnym. Postępować należy więc w sposób nastepujący:
+
+  * generujemy realizację procesu na jednostkę czasu
+
+  * całkujemy otrzymane równanie rózniczkowe.
+
+
+Gdy startujemy z wartości przykładowo :math:`-a`, bierzemy skok czasowy :math:`\Delta t={1 \over \mu_a} \hat{z}` (czas określający jak długo cząstka przebywać bądzie w stanie :math:`-a`), gdzie :math:`\hat{z}` to generator liczb losowych z rozkładem
+
+.. MATH::
+  :label: eqn105
+
+  P(\Delta t)=\exp(-\Delta t), \Delta t>0.
+
+Aby zapamietaæć całą realizację procesu :math:`\xi(t)` musimy tablicować liczby :math:`t_i` - skoki pomiedzy wartościami :math:`\{ a, b\}`, oraz wartość startową.
+
+.. only:: latex
+
+  .. code-block:: python
+
+    from scipy import stats
+    from numpy import cumsum
+
+    # definicja szumu dychotomicznego
+    a = -1
+    b = 3
+    stan = [a,b]
+    mu_a = 1
+    mu_b = mu_a * abs(b) / abs(a)
+    mu = [mu_a,mu_b]
+
+    # realizacja
+    N = 20
+    czasy = [-log(random()/mu[i%2]) for i in range(N)]
+    punkty = cumsum(czasy)
+    stany = [stan[i%2] for i in range(N)]
+
+    # wizualizacja
+    p = plot_step_function(zip(punkty,stany))
+
+
+  .. figure:: images/sage_chV03_02.*
+    :align: center
+    :width: 80%
+    :alt: figch
+
+    Realizacje szumu dychotomicznego.
+
+
+.. only:: html
+
+  .. sagecellserver::
+    :is_verbatim: True
+
+    from scipy import stats
+    from numpy import cumsum
+    # definicja szumu dychotomicznego
+    a = -1
+    b = 3
+    stan = [a,b]
+    mu_a = 1
+    mu_b = mu_a * abs(b) / abs(a)
+    mu = [mu_a,mu_b]
+    # realizacja
+    N = 20
+    czasy = [-log(random()/mu[i%2]) for i in range(N)]
+    punkty = cumsum(czasy)
+    stany = [stan[i%2] for i in range(N)]
+    # wizualizacja
+    p = plot_step_function(zip(punkty,stany))
+    p.axes_labels([r'$t$',r'$\xi(t)$'])
+    p.show(figsize=[8,3],frame=1,axes=1)
+
+  .. end of input
+
+
+Szum kangura
+------------
+
+Jako, że kangury skaczą zwykle na skończone odległości, to realizacja procesu ograniczonego wydaje się bardziej sensowna. Niemniej jednak dla komputera sytuacja jest bez różnicy. Metoda symulacji procesu kangura polega na generowaniu stanów do których proces skacze (miejsca w które skacze kangur) oraz przedziałów czasowych w których to proces będzie przebywał (czasy odpoczynku kangura pomiędzy skokami). Jeżeli chodzi o proces kangura, to owe przedziały czasowe zależne są od stanu w jakim znajduje się proces (coś jakby powiedzieć, że im dalej kangur skoczy tym dłużej musi odpoczać...). Algorytm polega na powtarzaniu
+
+1. Obliczamy wartość zmiennej losowej korzystając z jednego z rozkładów
+
+  (i) gdy proces :math:`\xi(t)` jest nieograniczony, określony na przedziale :math:`(-\infty, \infty)` i stacjonarna gęstość prawdopodobieństwa jest gaussowska:
+
+    .. MATH::
+      :label: eqn106
+
+      p(z) = Q(z) = \frac{1}{\sqrt{2\pi} \sigma} \mbox{exp}(-z^2/2\sigma^2), \quad \xi(t) \in (-\infty, \infty)
+
+
+  (ii) gdy proces :math:`\xi(t)` jest ograniczony na przedziale :math:`[-l, l]` i ma jednostajną gęstość prawdopodobieństwa
+
+    .. MATH::
+      :label: eqn107
+
+      p(z) = Q(z) = \frac{1}{2l}\theta(z+l)\theta(l-z),\quad \xi(t) \in [-l, l],
+
+    gdzie :math:`\theta(x)` jest funkcją schodkową Heaviside'a. 
+
+2. Teraz obliczamy częstość :math:`\nu(\xi)`.
+
+3. Kiedy już znamy częstość, to obliczamy przedział czasowy w którym będzie przebywał proces kangura w stanie :math:`\xi` zgodnie z
+
+  .. MATH::
+    :label: eqn108
+
+    P(T) = \nu(\xi) e^{-T\nu(\xi)}
+
+
+Oczywiście rozpatrując szum Kubo-Andersona, gdzie :math:`\nu(\xi) = \nu_0` jest stałe, wyrażenia mocno się upraszczają. 
+
+
+.. only:: latex
+
+  .. code-block:: python
+
+    #szum kangura
+    #szum Kubo - Andersona
+    #stała częstość \vu
+    #proces ograniczony
+
+    from scipy import stats
+
+    l = 2
+    N = 20
+    p=[]
+    for iii in range(3):
+        ksi = [2*l*random() - l for i in range(N)]
+        #list_plot(ksi)
+        
+        nu_0 = 2.2
+        czasy = stats.expon.rvs(scale=1/nu_0,size=N)
+        
+        c=random(),random(),random()
+        p.append(plot_step_function(zip(czasy,ksi),color=c))
+
+  .. figure:: images/sage_chV03_03.*
+    :align: center
+    :width: 80%
+    :alt: figch
+
+    Realizacje ograniczonego szumu kangura.
+
+
+.. only:: html
+
+  .. sagecellserver::
+   :is_verbatim: True
+
+    #szum kangura
+    #szum Kubo - Andersona
+    #stała częstość \vu
+    #proces ograniczony
+
+    from scipy import stats
+    l = 2
+    N = 20
+    p=[]
+    for iii in range(3):
+        ksi = [2*l*random() - l for i in range(N)]
+        #list_plot(ksi)
+        nu_0 = 2.2
+        czasy = stats.expon.rvs(scale=1/nu_0,size=N)
+        c=random(),random(),random()
+        p.append(plot_step_function(zip(czasy,ksi),color=c))
+    p=sum(p)
+    p.axes_labels([r'$t$',r'$\xi$'])
+    p.show(figsize=[8,3])
+
+  .. end of input
+
+

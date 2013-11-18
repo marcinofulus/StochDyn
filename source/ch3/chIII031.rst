@@ -36,7 +36,9 @@ Z postaci funkcji korelacyjnej dla procesu Levy'ego wynika, że funkcja korelacy
 .. MATH::
  :label: eqn4
 
- \langle \xi(t) \xi(s) \rangle = \frac{\partial^2}{\partial t \partial s} \langle L(t) L(s) \rangle= \frac{\partial^2}{\partial t \partial s} [2D \mbox{min} (t, s)] =2D \frac{\partial^2}{\partial t \partial s} [ t \theta(s-t) + s \theta(t-s)] = 2D \delta (t-s), \qquad 
+ \langle \xi(t) \xi(s) \rangle = \frac{\partial^2}{\partial t \partial s} \langle L(t) L(s) \rangle= \frac{\partial^2}{\partial t \partial s} [2D \mbox{min} (t, s)] =
+ 
+ =2D \frac{\partial^2}{\partial t \partial s} [ t \theta(s-t) + s \theta(t-s)] = 2D \delta (t-s), \qquad 
 
 
 co uzasadnia nazwę "biały szum", ponieważ widmo mocy (transformata Fouriera funkcji korelacyjnej) jest niezależna od częstości, podobnie jak dla światła białego.
@@ -46,10 +48,9 @@ Przy obliczaniu pochodnych należy pamiętać, że :math:`\theta'(t) = \delta(t)
 
 Szczególne przypadki tego szumu to:
 
-a: biały szum gaussowski (pochodna procesu Wienera)
+a) biały szum gaussowski (pochodna procesu Wienera)
 
-b: biały szum poissonowski, nazywany białym szumem śrutowym lub poissonowskim ciągiem :math:`\delta`-impulsów (pochodna procesu Poissona)
-
+b) biały szum poissonowski, nazywany białym szumem śrutowym lub poissonowskim ciągiem :math:`\delta`-impulsów (pochodna procesu Poissona)
 
 
 Szumy gaussowskie

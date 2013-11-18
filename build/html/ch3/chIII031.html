@@ -52,7 +52,7 @@
     
     <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
     <link rel="next" title="Proces Ornsteina-Uhlenbecka" href="chIII032.html" />
-    <link rel="prev" title="Podstawowe procesy stochastyczne" href="chIII021.html" />
+    <link rel="prev" title="Rachunki w całkach Ito - Stratonowicza" href="chIII030.html" />
  
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
   </head>
@@ -69,7 +69,7 @@
           <a href="chIII032.html" title="Proces Ornsteina-Uhlenbecka"
              accesskey="N">dalej</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="chIII021.html" title="Podstawowe procesy stochastyczne"
+          <a href="chIII030.html" title="Rachunki w całkach Ito - Stratonowicza"
              accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
   <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
    
@@ -101,13 +101,15 @@ funkcja korelacyjna procesu <span class="math">\(\xi(t)\)</span> zależy tylko o
 <span class="eqno">(3)</span>\[\xi(t)=\frac{dL(t)}{dt} \qquad\]</div>
 <p>Z postaci funkcji korelacyjnej dla procesu Levy&#8217;ego wynika, że funkcja korelacyjna białego szumu Levy&#8217;ego <span class="math">\(\xi(t)\)</span> ma postać</p>
 <div class="math" id="equation-eqn4">
-<span class="eqno">(4)</span>\[\langle \xi(t) \xi(s) \rangle = \frac{\partial^2}{\partial t \partial s} \langle L(t) L(s) \rangle= \frac{\partial^2}{\partial t \partial s} [2D \mbox{min} (t, s)] =2D \frac{\partial^2}{\partial t \partial s} [ t \theta(s-t) + s \theta(t-s)] = 2D \delta (t-s), \qquad\]</div>
+<span class="eqno">(4)</span>\[\langle \xi(t) \xi(s) \rangle = \frac{\partial^2}{\partial t \partial s} \langle L(t) L(s) \rangle= \frac{\partial^2}{\partial t \partial s} [2D \mbox{min} (t, s)] =\]\[=2D \frac{\partial^2}{\partial t \partial s} [ t \theta(s-t) + s \theta(t-s)] = 2D \delta (t-s), \qquad\]</div>
 <p>co uzasadnia nazwę &#8220;biały szum&#8221;, ponieważ widmo mocy (transformata Fouriera funkcji korelacyjnej) jest niezależna od częstości, podobnie jak dla światła białego.</p>
 <p>Przy obliczaniu pochodnych należy pamiętać, że <span class="math">\(\theta'(t) = \delta(t)\)</span> oraz
 <span class="math">\(t\delta(t-s) = s \delta(t-s)\)</span> i <span class="math">\(\delta(t-s) = \delta(s-t)\)</span>.</p>
 <p>Szczególne przypadki tego szumu to:</p>
-<p>a: biały szum gaussowski (pochodna procesu Wienera)</p>
-<p>b: biały szum poissonowski, nazywany białym szumem śrutowym lub poissonowskim ciągiem <span class="math">\(\delta\)</span>-impulsów (pochodna procesu Poissona)</p>
+<ol class="loweralpha simple">
+<li>biały szum gaussowski (pochodna procesu Wienera)</li>
+<li>biały szum poissonowski, nazywany białym szumem śrutowym lub poissonowskim ciągiem <span class="math">\(\delta\)</span>-impulsów (pochodna procesu Poissona)</li>
+</ol>
 </div>
 <div class="section" id="szumy-gaussowskie">
 <h2>Szumy gaussowskie<a class="headerlink" href="#szumy-gaussowskie" title="Stały odnośnik do tego nagłówka">¶</a></h2>
@@ -344,8 +346,8 @@ co trzeba zmienić w powyższym kodzie to linijki definiujące ów proces jako n
 
   </div>
   <h4>Poprzedni temat</h4>
-  <p class="topless"><a href="chIII021.html"
-                        title="poprzedni rozdział">Podstawowe procesy stochastyczne</a></p>
+  <p class="topless"><a href="chIII030.html"
+                        title="poprzedni rozdział">Rachunki w całkach Ito - Stratonowicza</a></p>
   <h4>Następny temat</h4>
   <p class="topless"><a href="chIII032.html"
                         title="następny rozdział">Proces Ornsteina-Uhlenbecka</a></p>
@@ -384,7 +386,7 @@ co trzeba zmienić w powyższym kodzie to linijki definiujące ów proces jako n
           <a href="chIII032.html" title="Proces Ornsteina-Uhlenbecka"
              >dalej</a> &nbsp; &nbsp;</li>
         <li class="right" >
-          <a href="chIII021.html" title="Podstawowe procesy stochastyczne"
+          <a href="chIII030.html" title="Rachunki w całkach Ito - Stratonowicza"
              >wstecz</a> &nbsp; &nbsp;</li>
   <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
    
@@ -395,7 +397,7 @@ co trzeba zmienić w powyższym kodzie to linijki definiujące ów proces jako n
   <div class="footer">
     <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
     &copy; Copyright 2013, Jerzy Łuczka, Łukasz Machura.
-    Ostatnia modyfikacja Nov 15, 2013.
+    Ostatnia modyfikacja Nov 18, 2013.
     Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
   </div>
   </body>

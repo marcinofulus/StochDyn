@@ -173,14 +173,14 @@ Jeżeli dokonujemy zamiany zmiennych to musimy pamiętać, że gęstość prawdo
 czyli
 
 .. MATH::
-   :label:eqn15a
+   :label: eqn15a
   
    f(y, t) = p(x, t) \frac{dx}{dy} = e^y p(x, t) = x p(x, t)
 
 oraz
 
 .. MATH::
-   :label:eqn15b
+   :label: eqn15b
   
    p(x, t) = f(y, t) \frac{dy}{dx} = \frac{1}{x} f(y=\ln x, t).
 
@@ -263,7 +263,40 @@ Wyjściowa gęstość prawdopodobieństwa :math:`p(x, t)` wyraża się wzorem:
  p(x, t) = f(y, t) \frac{dy}{dx} = \frac{1}{x} f(y=\ln x, t) = \frac{1}{x \sqrt{2\pi \sigma_y^2(t)} }\; \exp\left\{ - \frac{[\ln x - \mu_y(t)]^2}{2\sigma_y^2(t)}\right\} 
 
 
-i nazywa się rozkładem log-normalnym. Jeżeli początkowa wartość procesu :math:`X(0) = X_0` jest dana (wiemy, ile na początku mamy pieniędzy ulokowanych w akcjach) to
+i nazywa się rozkładem log-normalnym. Poniżej znadziecie jego wykres.
+
+.. only:: latex
+
+  .. code-block:: python
+
+    var('x,d,c,t')
+    fl(x,c,d,t) = exp(-(ln(x)-(c-d)*t)^2/(4*pi*t)) / (x*sqrt(4*pi*t))
+    p=plot(fl(x,2,1,2),(x,0,4),color="red",legend_label="c=2,D=1,t=2")
+    p+=plot(fl(x,2,2,2),(x,0,4),legend_label="c=2,D=2,t=2")
+
+  .. figure:: images/sage_chIII033_02.*
+     :alt: figIII03302
+     :width: 60%
+     :align: center
+
+     Rozkład log-normalny.
+
+
+.. only:: html
+
+  .. sagecellserver::
+    :is_verbatim: True
+
+    var('x,D,c,t')
+    fl(x,c,D,t) = exp(-(ln(x)-(c-D)*t)^2/(4*pi*t)) / (x*sqrt(4*pi*t))
+    p1=plot(fl(x,2,1,2), (x,0,4),color="red",figsize=(6,3), legend_label="c=2, D=1,t=2")
+    p2=plot(fl(x,2,2,2), (x,0,4),color="blue",figsize=(6,3), axes_labels=[r'$x$',r'$p(x,t)$'],legend_label="c=2, D=2,t=2")
+    show(p1+p2)
+     
+  .. end of input
+
+
+Jeżeli początkowa wartość procesu :math:`X(0) = X_0` jest dana (wiemy, ile na początku mamy pieniędzy ulokowanych w akcjach) to
 
 .. MATH::
  :label: eqn25
@@ -307,7 +340,7 @@ i można je łatwo wyliczyć korzystając z Sage
   .. MATH::
      :label: eqnplus
 
-     e^(Dn^t + mn)
+     e^{Dn^t + mn}
 
 
 .. only:: html
@@ -339,6 +372,5 @@ W szczególności wartość średnia i wariancja (fluktuacje) procesu wynoszą
 Zauważmy, że zarówno wartość średnia jak i fluktuacje narastają eksponencjalnie w czasie. Warto też obliczyć kurtozę i skośność dla tego modelu.
 
 Model ten w zastosowaniu do rynków finansowych posiada zarówno pozytywne elementy jak i negatywne elementy. Niewątpliwie pozytywnym elementem jest to że :math:`X(t)` przyjmuje tylko dodatnie wartości (nie ma ujemnych pieniędzy). Z drugiej strony, parametr :math:`D` często zmienia się, tu założono jego stałość.
-
 
 

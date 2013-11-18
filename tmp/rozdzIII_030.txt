@@ -1,0 +1,145 @@
+Rachunki w całkach  Ito - Stratonowicza
+
+Przedstawimy użyteczne formuły, które pojawiają się w teorii Ito i Stratonowicza. Ograniczymy się do przypadku 1-wymiarowego, tzn. jednego równania stochastycznego w interpretacji Ito: 
+
+$$ dX = F(X) dt  + G(X)  dW(t) $$
+
+gdzie proces Wienera ma charakterystyki
+
+$$\langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt$$
+
+
+Stąd, w sensie średniokwadratowym 
+$$ dW(t) = \sqrt{2D dt}$$
+
+Powyższe relacje są bardzo ważne dla zrozumienia rachunku Ito, który różni się od znanego w klasycznej analizie matematycznej.
+
+
+
+Rachunek różniczkowy Ito
+
+ 
+Rozpatrzmy teraz funkcję dwóch zmiennych $g(x, t)$, która jest różniczkowalna dostateczną ilość razy. W szczególności zakładamy, że istnieją pochodne 
+
+$$g'(x, t)= g' =\partial g(x, t)/\partial x, \; \; \dot g(x, t) = \dot g = \partial g(x, t)/\partial t, \; \; g''(x, t) = g'' =\partial^2 g/\partial x^2.$$
+
+Przyjmiemy taką konwencję, że różniczkowanie względem pierwszego argumentu (względem 'położenia' $x$)  oznaczymy apostrofem ' ; różniczkowanie względem drugiego argumentu (względem czasu $t$) oznaczymy kropką $\cdot $. 
+
+Rozpatrzmy teraz funkcję  $g(X, t)$, gdzie teraz pierwszym argumentem jest proces stochastyczny $X(t)$ okreslony przez powyższe równanie stochastyczne Ito.  
+Obliczmy przyrost  funkcji $g(X, t)$ rozwijając funkcję  w szereg Taylora :  
+$$\Delta g(X, t) = g(X+dX, t+dt)- g(x, t)  = \frac{\partial g}{\partial X} dX +  \frac{\partial g}{\partial t} dt + \frac{1}{2} \frac{\partial^2 g}{\partial X^2} dX dX +  \frac{\partial^2 g}{\partial X \partial dt} dX dt + \frac{1}{2} \frac{\partial^2 g}{\partial t^2} dt dt + \dots $$
+Wstawimy teraz wyrażenie na $dX $ z równania Ito 
+$$\Delta g(X, t) = g'(X, t)\left[F(X, t) dt + G(X, t) dW\right] + \dot g(X, t) dt  + \frac{1}{2} g''(X, t) \left[F(X, t) dt + G(X, t) dW\right] \left[F(X, t) dt + G(X, t) dW\right] $$
+$$ + \dot g \,'(X, t) dt \left[F(X, t) dt + G(X, t) dW\right]  + \frac{1}{2} \ddot g(X, t) dt dt + \dots $$
+W wyrażeniu tym pozostawimy wyrazy rzędu co najwyżej dt pamietając że $dW(t)$ jest rzędu $\sqrt{t}$: 
+$$dg(X, t) = g'(X, t)\left[F(X, t) dt + G(X, t) dW\right] + \dot g(X, t) dt + \frac{1}{2} g''(X, t)  G^2(X, t) dW dW $$
+
+W wyrażeniu tym zamieniliśmy $\Delta g(X, t) = dg(X, t)$ ponieważ przyrost liniowy w $dt$ to różniczka. Pozostałe wyrazy dają przyczynki  wyższego rzędu $dt dt,  dt dW$ i pomijamy je.  Zastąpimy teraz $dW dW = dW^2(t)$ przez $2D dt$ otrzymując słynną  formułę Ito 
+$$dg(X, t) = [\dot g(X, t) + g'(X, t) F(X, t) + D g''(X, t)  G^2(X, t)] dt + g'(X, t) G(X, t) dW $$
+
+
+
+PRZYKŁAD 1:
+
+Zobaczmy, jakie nietypowe wnioski można wyciągnąć z tej formuły. W tym celu rozważmy szczególny przypadek i przyjmijmy następujące wyrażenia: 
+
+$$dX = dW, \; \; \;\mbox{tzn.}\; \; \;   F(X, t)=0, \; \; \; \; G(X, t) =1, \; \; \;  D=\frac{1}{2} $$
+
+Niech 
+
+$$ g(X, t) = X^2,  \; \; \;  X(0)=0, \; \; \; D=\frac{1}{2} $$
+
+Wówczas z formuły Ito otrzymamy: 
+
+$$d(X^2) = 2X dX + dt\, $$
+
+Stąd wynika, że 
+
+$$X dX  = \frac{1}{2} d(X^2) + \frac{1}{2} dt\, $$
+
+Ponieważ w tym przykładzie $dX=dW$, czyli $X=W$, to możemy równie dobrze napisać 
+
+$$W dW  = \frac{1}{2} d(W^2) + \frac{1}{2} dt\, $$
+
+Obustronnie  całkowanie daje taki oto wynik 
+
+$$\int_0^{\; t} W dW  = \frac{1}{2} \int_0^{\; t} d(W^2) + \frac{1}{2} \int_0^{\; t} dt  = \frac{1}{2} W^2 + \frac{1}{2} t  $$
+
+Widać, że w  porównaniu z tradycyjnym rachunkiem różniczkowym i całkowym, tutaj pojawia sie dodatkowy składnik $(1/2) t$. Przykład ten pokazuje, że metody rachunkowe, których nauczyliśmy się na kursie analizy matematycznej, w teorii procesów stochastycznych nie muszą obowiązywać. Różniczkowanie i całkowanie wielkości, w których bezpośrednio lub pośrednio pojawiają się procesy Wienera, Poissona, czy ogólniej Levy'ego należy wykonywać biorąc pod uwagę równania stochastyczne typu Ito. Tutaj reguły są nierozerwalnie związane z równaniami  stochastycznymi definiującymi proces stochastyczny. Czytelnik powinien zauważyć, że wszelkie odstępstwa od tradycyjnego rachunku różniczkowego i całkowego pojawiaja się dlatego, że podstawowe procesy takie jak procesy  Wienera, Poissona, czy ogólniej Levy'ego  są  to procesy o przyrostach niezależnych. To z kolei pociąga za sobą własność narastania w czasie fluktuacji tych procesów. Fluktuacje te rosną  jak $\sqrt t$. Oto przyczyna wszelkich odstępstw. A pomyśleć, że wszystko to wzięło swój początek z rzucania monetą i  rozmów telefonicznych.
+
+PRZYKŁAD 2
+
+Rozpatrzmy równanie Ito dla geometrycznego ruch Browna, rozważanego w jednym z poprzednich rozdziałów: 
+
+$$ dX = cX dt  + X dW(t), \quad F(X, t) = cX, \quad G(X, t) =X $$
+
+Niech 
+
+$$g(X, t) = \ln X(t) = Y(t)$$
+
+Teraz $Y(t)$ to nowy proces stochastyczny będący transformacją procesu $X(t)$. Jakie równanie spełnia proces $Y(t)$? Obliczmy różniczkę procesu $Y(t)$  korzystając z formuły Ito. Obilczamy:
+
+$$\dot g(x, t) =  0 , \qquad g'(x, t) = \frac{1}{x},\qquad  g''(x, t) = -\frac{1}{x2},\qquad$$
+
+i wstawiamy do formuły Ito pamiętająć że $dg(X, t) = dY(t)$. Otrzymamy końcowy wynik w postaci
+
+$$ dY(t) = (c-D) dt + dW(t)$$
+
+Równanie to jest proste i można je scałkować:
+
+$$Y(t) =  Y(0) + (c-D) t + W(t)$$
+
+Od razy widać, że jest to proces gaussowski i łatwo wyznaczyć jego rozkład prawdopodobieństwa obliczając jego wartość średnią i wariancję. 
+
+
+Równanie Stratonowicza  a  równanie Ito
+
+Rozważmy równanie stochastyczne w sensie Ito: 
+
+$$dX(t)= F(X(t), t)dt + G(X(t), t) dW(t)\;$$
+
+oraz równanie stochastyczne w sensie Stratonowicza
+
+$$dX(t)= F(X(t), t)dt + G(X(t), t)\circ dW(t)\;$$
+
+Pytamy, jaki jest związek między tymi równaniami. Rozpatrzmy ostatni wyraz w równaniu Stratonowicza
+
+$$G(X(t), t)\circ dW(t) =  G\left(\frac{[X(t+dt)+X(t)]}{2}, t \right)\,dW(t) = G\left( X(t) + \frac{1}{2}[X(t+dt)- X(t)], t\right) dW(t) = G\left(X(t) + \frac{1}{2} dX(t), t\right) dW(t)$$  $$=\left[G( X(t), t) + \frac{1}{2} G'(X(t), t) dX(t) + \dots\right] dW(t) = G(X(t), t) dW(t) + \frac{1}{2} G'(X(t), t) dX(t)) dW(t) + \dots $$ $$= G(X(t), t) dW(t) + \frac{1}{2} G'(X(t), t)\left[F(X(t), t)dt + G(X(t), t) dW(t)\right]  dW(t) +\dots  $$
+
+$$ = G(X(t), t) dW(t) + \frac{1}{2} G'(X(t), t) G(X(t), t) dW(t) dW(t) +\dots  = G(X(t), t) dW(t) + \frac{1}{2} G'(X(t), t) G(X(t), t) 2D dt +\dots  $$
+
+gdzie rozwijaliśmy w szereg Taylora funkcję $G(X+h, t)$ dla $h=dX(t)/2$ oraz zatrzymaliśmy wyrazy co najwyżej rzędu $dt$, Skorzystaliśmy z tego, że w sensie średniokwadratowym $dW(t) dW(t) = 2D dt$. Jeżeli teraz wstawimy to wyrażenie do równania  to otrzymamy równanie w sensie Ito w postaci 
+
+$$\mbox{Stratonowicz --> } \quad dX(t)= F(X(t), t)dt + G(X(t), t)\circ dW(t)  =  \left[F(X(t), t) + D G'(X(t), t) G(X(t), t)\right]dt + G(X(t), t) dW(t) \quad \mbox{<-- Ito}$$
+
+Równanie to ustala związek między równaniem Stratonowicza  a równaniem w sensie Ito. Przy transformacji równania Stratonowicza do równania Ito pojawia się wyraz
+
+$$\frac{1}{2}  G'(X(t), t) G(X(t), t) \langle [dW(t)]^2\rangle =  D  G'(X(t), t) G(X(t), t)  dt$$
+
+nazywany dryfem indukowanym przez szum, ponieważ jest to dodatkowy wyraz przy różniczce $dt$.
+
+Z powyższej formuły wynika także odwrotny związek:
+
+$$\mbox{Ito --> } \quad dX(t)= F(X(t), t)dt + G(X(t), t) dW(t)  =  \left[F(X(t), t) - D G'(X(t), t) G(X(t), t)\right]dt + G(X(t), t)\circ dW(t) \quad \mbox{<-- Stratonowicz}$$
+
+W wielu przypadkach warto "pracować" z równaniami w sensie Stratonowicza, ponieważ operacje na tych równanich są takie same jak w standardowej (klasycznej) analizie matematycznej. Zademonstrujemy to przykładzie równania opisującego geometryczny ruch Browna:
+
+$$ dX = cX dt  + X dW(t), \quad F(X, t) = cX, \quad G(X, t) =X $$
+
+Jest to równanie w interpretacji Ito. W interpretacji Stratonowicz ma ono postać:
+
+$$ dX = (c  - D)  X  dt  + X\circ dW(t) $$
+
+Równanie to można traktować w tradycyjny sposób, Np. podziele obustronnie równanie przez $X$ (czego nie wolno robić w równaniu Ito):
+
+$$ \frac{dX}{X} = (c  - D)  dt  +  dW(t) $$
+
+W tradycyjnym rachunku
+
+$$ \frac{dX}{X} = \ln X  \equiv Y$$
+
+Więc proces $Y = Y(t)$ spełnia równanie
+
+$$ dY = (c  - D)  dt  +  dW(t) $$
+
+Jest to  równanie jakie otrzymaliśmy powyżej z równania Ito przy stosowaniu rachunków Ito. 

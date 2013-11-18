@@ -260,30 +260,30 @@ Zadanie D1.3
 Zadanie D1.4
   Rozwiązać numerycznie równania
   
-  A) :math:`\dot{x} (t) = -k x^3`
+  1) :math:`\dot{x} (t) = -k x^3`
   
-  B) :math:`\dot{x} (t) = F`
+  2) :math:`\dot{x} (t) = F`
   
-  C) :math:`m \ddot{x} (t) = m g`
+  3) :math:`m \ddot{x} (t) = m g`
   
-  D) :math:`\ddot{r} (t) = 4 \epsilon \left[ \left(\frac{\sigma}{r} \right)^{12}-  \left( \frac{\sigma}{r}\right)^6 \right]$, $r>0`
+  4) :math:`\ddot{r} (t) = 4 \epsilon \left[ \left(\frac{\sigma}{r} \right)^{12}-  \left( \frac{\sigma}{r}\right)^6 \right]$, $r>0`
   
-  E) :math:`m \ddot{x} (t) = -\gamma \dot{x}(t) - k x(t)`
+  5) :math:`m \ddot{x} (t) = -\gamma \dot{x}(t) - k x(t)`
 
-  F) :math:`m \ddot{x} (t) =  -k x(t) -\gamma \dot{x}(t) + a \cos(\omega t)`
+  6) :math:`m \ddot{x} (t) =  -k x(t) -\gamma \dot{x}(t) + a \cos(\omega t)`
 
-  Dla każdego przypadku (A-F) należy
+  Dla każdego przypadku należy
 
-  1) narysować `x` (dla D-F również `v`) w funkcji `t` (opisać osie),
+  * narysować `x` (dla D-F również `v`) w funkcji `t` (opisać osie),
 
-  2) odpowiedzieć na pytanie: z jakim ruchem mamy do czynienia [dla jakich parametrow równania ruch 
+  * odpowiedzieć na pytanie: z jakim ruchem mamy do czynienia [dla jakich parametrow równania ruch 
      jest cykliczny (periodyczny), dla jakich rozwiązanie jest stałe (niezmienne w czasie)...],
   
-  3) znaleźć błąd względny i bezwzględny, wykreślić w funkcji czasu.
+  * znaleźć błąd względny i bezwzględny, wykreślić w funkcji czasu.
 
   Pytania:
 
-  1) Czym różni się przypadek E od F?
+  1) Czym różni się przypadek 5 od 6?
 
-  2) Co opisuje potencjał w D? Jakie ma zastosowanie w fizyce?
+  2) Co opisuje potencjał w 4? Jakie ma zastosowanie w fizyce?
 

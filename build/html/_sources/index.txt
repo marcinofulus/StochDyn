@@ -11,9 +11,9 @@ Dynamika stochastyczna
         Jerzy Łuczka, 
         Łukasz Machura
 :Wersja: 
-        0.6 11/2013
+        0.7 11/2013
 :Pobierz:
-        :download:`podręcznik (v0.6, PDF) <pdf/StochDyn_v0.6.pdf>`
+        :download:`podręcznik (v0.7, PDF) <pdf/StochDyn_v0.7.pdf>`
 
 Dynamika deterministyczna
 =========================
@@ -48,6 +48,7 @@ Dynamika stochastyczna
 
    ch3/chIII011
    ch3/chIII021
+   ch3/chIII030
    ch3/chIII031
    ch3/chIII032
    ch3/chIII033
@@ -62,3 +63,5 @@ Dodatek numeryczny
    ch5/chV011
    ch5/chV012
    ch5/chV013
+   ch5/chV014
+   ch5/chV015
