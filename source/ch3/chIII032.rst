@@ -207,8 +207,7 @@ i szum staje się białym szumem gaussowskim.
     for t1 in lT:
         c = [random() for i in range(3)]
         P.append(plot(p(x=x,t=t1,D=1),(x,-1,1),fill=0,color=c,fillcolor=c,legend_label='t=%.2f'%t1))
-    sum(P).save('sage_chIII031_01.png',figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t)$'])
-    sum(P).save('sage_chIII031_01.pdf',figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t)$'])
+    sum(P).show(figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t)$'])
 
   .. end of input
 
@@ -323,8 +322,7 @@ warunku początkowego, korzystamy z rów. :eq:`eqn22` i otrzymujemy rozkład w d
         c = [random() for i in range(3)]
         p.append(plot(pc(x=x,t=t1,s=1,x0=0,a=1,D=1),(x,-0.5,0.5),fill=0))
     p.append(arrow((0,0),(0,29),color='black'))    
-    sum(p).save('sage_chIII031_02.png',figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t|x_0, s)$'])
-    sum(p).save('sage_chIII031_02.pdf',figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t|x_0, s)$'])
+    sum(p).show(figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t|x_0, s)$'])
 
   .. end of input
 
@@ -462,7 +460,7 @@ Jest to dobrze znany rozkład Maxwella.
 .. only:: html
 
   .. sagecellserver::
-   :is_verbatim: True
+    :is_verbatim: True
 
     var('v, T, m')
     k = 1
@@ -474,8 +472,7 @@ Jest to dobrze znany rozkład Maxwella.
     for t in lT:
         color = kolor[lT.index(t)]
         p.append(plot(pst(v=x,T=t,m=1),(x,-2,2),color=color,legend_label='T=%.2f'%t,fill=0,fillcolor=color))
-    sum(p).save('sage_chIII031_03.png',figsize=[8,3],axes_labels=[r'$v$',r'$P_{st}(v)$'])
-    sum(p).save('sage_chIII031_03.pdf',figsize=[8,3],axes_labels=[r'$v$',r'$P_{st}(v)$'])
+    sum(p).show(figsize=[8,3],axes_labels=[r'$v$',r'$P_{st}(v)$'])
 
   .. end of input
 

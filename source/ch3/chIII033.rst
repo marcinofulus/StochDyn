@@ -125,7 +125,7 @@ Równanie powyższe jest jedną z możliwych propozycji. Po pierwsze, należy ro
        x.append((1 + c*h + sqrt(2*h*D)*normalvariate(0,1))*x[i])
      p = list_plot(zip(srange(0,N*h,h),x))
      p.axes_labels([r'$t$',r'$x(t)$'])
-     p.show(figsize[8,3])
+     p.show(figsize=[8,3])
 
   .. end of input
 
@@ -346,7 +346,7 @@ i można je łatwo wyliczyć korzystając z Sage
 .. only:: html
 
   .. sagecellserver::
-   :is_verbatim: True
+     :is_verbatim: True
 
      var('x,m,D,n,t')
      assume(t>0)

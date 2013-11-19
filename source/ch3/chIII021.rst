@@ -727,7 +727,7 @@ Szczególny, ale bardzo ważnym przypadkiem procesu Levy'ego jest tzw. :math:`\a
  \nu(y) = \left[ c_{1} I_{(0,\infty)}(y) + c_{2} I_{(-\infty,0)}(y) \right] | y|^{-\alpha -1}\ dy, \qquad 
 
 
-gdzie :math:`c_1>0` i :math:`c_2>0`. Funkcja charakterystyczna jest postaci
+gdzie :math:`c_1>0` i :math:`c_2>0`. Eksponenta charakterystyczna jest postaci
 
 .. MATH::
  :label: eqn62
@@ -761,22 +761,6 @@ dodatku numerycznym na końcu tego podręcznika. Sama realizacja procesu przebie
 identycznie jak w przypadku procesu Wienera. Jedynymi różnicami są wykładnik 
 stojący przy prefaktorze zmiennej losowej oraz rozkład którym posługujemy się 
 do generowania liczb losowych.
-
-Posłużymy się metodą ``rvs`` funkcji ``levy_stable`` wbudowaną w pakiet ``stats`` biblioteki 
-``scipy``. Pobiera ona 5 argumentów
-
-  ``stats.levy_stable(alpha, beta, loc=0, scale=1, size=1)``
-
-gdzie 
-
-* ``alpha``, ``beta`` - to parametry rozkładu Levy'ego
-
-* ``loc=0``, ``scale=1`` - to odpowiednio średnia i odchylenie standardowe (wraz z domyślnymi wartościami)
-
-*  ``size=1`` - to ilość zmiennych losowych generowanych jednorazowym wywołaniem
-
-
-Więcej informacji uzyskamy w pomocy (wpisując stats.levy_stable?)
 
 .. only:: latex
 

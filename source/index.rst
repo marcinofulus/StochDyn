@@ -22,7 +22,7 @@ Dynamika deterministyczna
    :maxdepth: 1
 
    ch1/chI011
-   ch1/chI012
+   ch1/chI020
    ch1/chI021
    ch1/chI022
    ch1/chI023
@@ -64,4 +64,3 @@ Dodatek numeryczny
    ch5/chV012
    ch5/chV013
    ch5/chV014
-   ch5/chV015
