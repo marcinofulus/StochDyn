@@ -381,8 +381,12 @@ Jako :math:`\xi(t)` wybieramy proces kangura Kubo-Andersona, który to szum jest
 .. MATH::
  :label: eqn40
 
- {\frac{\partial P(x, \xi, t)}{\partial t}}= -{\frac \partial {\partial x}} [F(x)+\xi] P(x, \xi, t)+D{\frac{\partial ^2}{\partial x^2}} P(x,\xi, t) -\nu (\xi) P(x, \xi, t) + Q(\xi) \int_{-\infty}^{\infty} \nu (\eta) P(x, \eta, t) d\eta
+ {\frac{\partial P(x, \xi, t)}{\partial t}}= -{\frac \partial {\partial x}} [F(x)+\xi] P(x, \xi, t)+D{\frac{\partial ^2}{\partial x^2
 
+.. MATH::
+ :label: eqn41
+
+ x,\xi, t) -\nu (\xi) P(x, \xi, t) + Q(\xi) \int_{-\infty}^{\infty} \nu (\eta) P(x, \eta, t) d\eta
 
 
 Równanie to nazywa się równaniem Fellera-Kołmogorowa. Nas nie interesuje łączny rozkład procesu :math:`X(t)` i szumu tylko samego procesu :math:`X(t)` który może być otrzymany z rozkładu :math:`P(x, \xi, t)` przez scałkowanie po zmiennej szumu kangura:

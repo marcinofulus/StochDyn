@@ -276,8 +276,8 @@ Zadanie D1.4
 
   * narysować `x` (dla D-F również `v`) w funkcji `t` (opisać osie),
 
-  * odpowiedzieć na pytanie: z jakim ruchem mamy do czynienia [dla jakich parametrow równania ruch 
-     jest cykliczny (periodyczny), dla jakich rozwiązanie jest stałe (niezmienne w czasie)...],
+  * odpowiedzieć na pytanie: z jakim ruchem mamy do czynienia, dla jakich parametrow równania ruch 
+     jest cykliczny (periodyczny), dla jakich rozwiązanie jest stałe (niezmienne w czasie)...,
   
   * znaleźć błąd względny i bezwzględny, wykreślić w funkcji czasu.
 

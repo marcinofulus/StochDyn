@@ -550,13 +550,12 @@ Dla :math:`\alpha = 1`, wyrażenie jest nieco prostsze i przyjmuje postać
 
 W obu powyższych wzorach :math:`W` oraz :math:`V` to niezależne zmienne losowe; :math:`V` posiada
 rozkład jednorodny na przedziale :math:`(-\frac{\pi}{2},\frac{\pi}{2})`
-a :math:`W` jest generowana z rozkładem wykładniczym o jednostkowej średniej równej.
+a :math:`W` jest generowana z rozkładem wykładniczym o jednostkowej średniej.
 
-Do wygenerowania realizacji procesu Levy'ego posłużymy się metodą ``rvs`` 
-funkcji ``levy_stable`` wbudowaną w pakiet ``stats`` biblioteki 
-``scipy``. Pobiera ona 5 argumentów
+Napiszemy swoją własną funkcję do wygenerowania realizacji procesu Levy'ego. 
+Wykorzystamy podobną definicję jak w przypadku funkcji z pakietu ``stats.scipy``.
 
-  ``stats.levy_stable(alpha, beta, loc=0, scale=1, size=1)``
+  ``my_levy_stable(alpha, beta, loc=0, scale=1)``
 
 gdzie 
 
@@ -564,38 +563,33 @@ gdzie
 
 * ``loc=0``, ``scale=1`` - to odpowiednio średnia i odchylenie standardowe (wraz z domyślnymi wartościami)
 
-*  ``size=1`` - to ilość zmiennych losowych generowanych jednorazowym wywołaniem
-
+Samą funkcję oraz kilka realizacji wygenerowanych z jej pomocą znajdziecie
+poniżej.
 
 .. only:: latex
 
   .. code-block:: python
 
-        import numpy as np
-        from scipy import stats
+    def my_levy_stable(alpha, beta, loc=0, scale=1):
+      mu, sigma = loc, scale
+      V = pi*random() - pi/2
+      W = -log(random())
+      if alpha == 1:
+        dzeta = (pi/2 + beta*V)*tan(V)
+        dzeta -= beta*log((pi*W*cos(V)/2)/(pi/2+beta*V))
+        dzeta *= 2*sigma/pi
+        dzeta += mu
+      else:
+        C = atan(beta*tan(pi*alpha/2))/alpha
+        D = sigma*(cos(atan(beta*tan(pi*alpha/2))))^(-1/alpha)    
+        dzeta = D*sin(alpha*(V+C))*(cos(V-alpha*(V+C))/W)^(1/alpha-1)
+        dzeta /= cos(V)^(1/alpha)
+      return dzeta 
 
-        # parametry symulacji
-        h = 0.01 #krok
-        N = 5000 #ilosc krokow
-
-        # parametry SDE
-        x0 = 0 #wartosc poczatkowa
-
-        #Levy - Smirnoff
-        alpha = 1/2
-        beta = 1
-        mu = 0
-        sigma = 0.1
-
-        x = [x0]
-        for i in xrange(1,N):
-          lab = stats.levy_stable.rvs(alpha, beta, loc=mu, scale=sigma)
-          x.append(x[i-1] + h**(1/alpha) * lab)
-
-  .. figure:: images/sage_chV04_31.*
+  .. figure:: images/sage_chV04_31a.*
     :align: center
     :width: 80%
-    :alt: figchV0431
+    :alt: figchV0431a
 
     Relizacje procesów Levy'ego o parametrach podanych w legendach.
 
@@ -605,26 +599,37 @@ gdzie
   .. sagecellserver::
         :is_verbatim: True
 
-        import numpy as np
-        from scipy import stats
+        def my_levy_stable(alpha, beta, loc=0, scale=1):
+            mu, sigma = loc, scale
+            V = pi*random() - pi/2
+            W = -log(1-random())
+            if alpha == 1:
+                dzeta = mu + 2*sigma*((pi/2 + beta*V)*tan(V)-beta*log((pi*W*cos(V)/2)/(pi/2+beta*V)))/pi
+            else:
+                C = atan(beta*tan(pi*alpha/2))/alpha
+                D = sigma*(cos(atan(beta*tan(pi*alpha/2))))^(-1/alpha)    
+                dzeta = D*sin(alpha*(V+C))*(cos(V-alpha*(V+C))/W)^(1/alpha-1)/cos(V)^(1/alpha)
+            return dzeta 
 
-        # parametry symulacji
-        h = 0.01 #krok
-        N = 5000 #ilosc krokow
-
-        # parametry SDE
-        x0 = 0 #wartosc poczatkowa
-
-        #Levy - Smirnoff
-        alpha = 1/2
-        beta = 1
-        mu = 0
-        sigma = 0.1
-
-        x = [x0]
-        for i in xrange(1,N):
-          lab = stats.levy_stable.rvs(alpha, beta, loc=mu, scale=sigma)
-          x.append(x[i-1] + h**(1/alpha) * lab)
+        h = 0.01
+        N = 5000
+        x0 = 0
+        alpha = [0.1,1/2,1,2]
+        beta = [1,1,1,0]
+        mu = [0,0,0,0]
+        sigma = [1,0.1,0.1,1/sqrt(2)]
+        k = ['red','green','blue','black']
+        p = []
+        for j in range(len(alpha)):
+            x = [x0]
+            c = k[j]
+            for i in xrange(1,N):
+                lab = float(my_levy_stable(alpha[j], beta[j], loc=mu[j], scale=sigma[j]).n())
+                x.append(x[i-1] + h**(1/alpha[j]) * lab)
+            p.append(list_plot(x, plotjoined=True, axes_labels=[r'$t$',r'$x(t)$'], 
+                      figsize=[8,3], frame=1, axes=0, color=c,
+                      legend_label=r"$\alpha=%.2f,\beta=%.2f,\mu=%.2f,\sigma=%.2f$"%(alpha[j],beta[j],mu[j],sigma[j])))
+        graphics_array([p[:2],p[2:]]).show()
 
   .. end of input
 

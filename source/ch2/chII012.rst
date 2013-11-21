@@ -88,6 +88,31 @@ Scenariusz podwojenia okresu
 ----------------------------
 
 Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa się przejściem do chaosu poprzez podwojenie okresu. Jest uniwersalny scenariusz, występujący zarówno w układach z ciągłym czasem jaki i w układach dyskretnych. Został potwierdzony w wielu eksperymentach na różnorodnych układach fizycznych.
+Polega on na tej samej idei, którą przedstawiliśmy powyżej. Ten scenariusz jest bardziej regularny: następują bifurkacje, które zmieniają okresowość orbit periodycznych. Orbita o okresie 1 (to jest umowne, ponieważ okres orbity jest taki sam jak zewnętrznej siły) bifurkuje do orbity o okresie 2 jeżeli zmieniamy np. amplitudę :math:`A` napędzającej zewnętrznej siły. Orbita o okresie 2 bifurkuje do orbity o okresie 4, która to z kolei bifurkuje do orbity o okresie 8. Scenariusz ten powtarze się przy zmianie amplitudy :math:`A`. W przypadku pokazanym na poniższych rysunkach wartości bifurkacyjne amplitudy mają wartości (nie są to dokładne a zaokrąglone wartości):
+
+.. MATH::
+ :label: eqna1
+
+ A_1 = 0.34357; \quad A_2 = 0.35506; \quad A_3 = 0.35785; \quad A_4 = 0.35846; \quad....... \quad A_{\infty} = 0.3586.
+
+
+Wydłuża się okres regularności orbity, aż w końcu okres ten jest nieskończenie długi i orbita wydaje sie być chaotyczna. W takim scenariusu istnieje uniwersalny parametr, nazywany stałą Feigenbauma. Zdefiniowany on jest jako granica ciągu
+
+.. MATH::
+ :label: eqna2
+
+ \delta_n = \frac{A_n - A_{n-1}}{A_{n+1} - A_n}.
+
+
+Granicą tego ciągu jest liczba
+
+.. MATH::
+ :label: eqna3
+
+ \lim_{n\to \infty} \delta_n = 4.6692.....
+
+
+To jest wartość stałej Feigenbauma. Ta sama liczba pojawia się w wielu układach ciągłych i dyskretnych, mimo że dynamika może być zupełnie odmienna. Do dziś nie wiadoma dlaczego tak jest, ale tak jest. Niektórzy nazywają to enigmatycznie *klasą uniwersalności* zjawisk chaotycznych. 
 
 
 .. only:: latex

@@ -52,6 +52,7 @@ Dynamika stochastyczna
    ch3/chIII031
    ch3/chIII032
    ch3/chIII033
+   ch3/chIII034
 
 
 Dodatek numeryczny

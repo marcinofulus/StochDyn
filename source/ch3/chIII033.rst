@@ -1,285 +1,310 @@
-Geometryczny ruch browna
-========================
+Proces Ornsteina-Uhlenbecka
+===========================
 
-Załóżmy, że posiadamy określoną kwotę pieniędzy i chcemy ją ulokować w banku, który w zamian oferuje odsetki w ramach proponowanych stóp procentowych. W chwili :math:`t` posiadamy :math:`X(t)` złotych. Ile dostaniemy pieniędzy z banku po czasie :math:`t+ \Delta t`. Oznaczmy kwotę po tym czasie jako :math:`X(t+\Delta t)`. Kwota po czasie :math:`t+\Delta t` to kwota jaka ulokowaliśmy plus kwota z oprocentowania: 
+Rozważmy najprostsze liniowe równanie różniczkowe
 
 .. MATH::
  :label: eqn1
 
- X(t+\Delta t) = X(t) + \delta X(t)\,
+ \dot x = - ax, \quad a>0, \qquad x(0) = x_0
 
-Pierwszy składnik jest kwotą jaką lokujemy w chwili :math:`t`. Drugi składnik jest kwotą jaką otrzymamy z oprocentowania lokaty. Ile wynosi ten dodatek? Ta dodatkowa kwota to 
+
+Jego rozwiązaniem jest funkcja eksponencjalna:
 
 .. MATH::
  :label: eqn2
 
-  \delta X(t) = c X(t) \Delta t\,
+ x(t) = x_0 \mbox{e}^{-at}
 
-Wyrażenie to ma jasną interpretacje: Im więcej ulokujemy w chwili :math:`t` (tzn. większe :math:`X(t)` ) tym więcej otrzymamy; im dłużej będzie trwała lokata (tzn. większe :math:`\Delta t`) tym więcej otrzymamy. Współczynnik :math:`c` zależy od stopy procentowej lokaty: im większe oprocentowanie tym większa wartość :math:`c` i tym więcej otrzymamy z lokaty. Uwzględniając te dwa składniki otrzymamy równanie na przyrost naszych pieniędzy 
+
+która zawsze dąży do zera gdy :math:`t \to \infty`.
+
+Zaburzymy losowo to równanie: 
 
 .. MATH::
  :label: eqn3
 
- X(t+\Delta t) - X(t) = c X(t) \Delta t\,
+ \dot x = - ax + a \Gamma(t), \qquad \langle \Gamma(t)\rangle = 0, \qquad \langle \Gamma(t) \Gamma(s)\rangle = 2D \delta(t-s) \qquad 
 
-Załóżmy teraz, że oprocentowanie scharakteryzowane przez wielkość :math:`c` nie jest ustalone, ale w każdej chwili waha się losowo, to znaczy 
+
+Równanie to opisuje proces stochastyczny :math:`x=x(t)` który nazywa się procesem Ornsteina-Uhlenbecka. Proces ten jest procesem Markowa (tw. Dooba). Proces ten jest procesem Gaussa ponieważ jest to transformacja liniowa innego procesu Gaussa, a mianowicie procesu :math:`\Gamma(t)`. Dlatego też proces ten można analizować na wiele sposobów. Po pierwsze, jest to równanie różniczkowe liniowe niejednorodne. Dlatego jego rozwiązaniem jest funkcja
 
 .. MATH::
  :label: eqn4
 
- c \to c + \xi(t)\,
+ x(t) = x_0 e^{-at} + a \int_0^{\; t} e^{-a(t-s)} \Gamma(s) ds
 
-gdzie :math:`\xi(t)` opisuje losowe wahania oprocentowania. Innymi słowy jest to jakiś proces stochastyczny. Wówczas nasze równanie będzie miało postać 
+
+co można sprawdzić bezpośrednio, różniczkując powyższą funkcję.
+
+Można teraz obliczyć wartość średnią tego procesu:
 
 .. MATH::
  :label: eqn5
 
- X(t+\Delta t) - X(t) = [c + \xi(t)]\, X(t) \Delta t
+ \mu(t) = \langle x(t)\rangle = \langle x_0 \rangle e^{-at} + a \int_0^{\; t} e^{-a(t-s)} \langle \Gamma(s)\rangle ds = \langle x_0 \rangle e^{-at} 
 
-Z lewej strony mamy przyrost naszych pieniędzy 
+
+gdzie wykorzystaliśmy własności uśredniania (średnia z sumy to suma średnich, średnia ze stałej wielkości to ta sama stała wielkość, całka to wartość graniczna sumy, itd.).
+
+Obliczenie funkcji korelacyjnej jest bardziej pracochłonne. Trzeba z należytą ostrożnością wymnożyć :math:`x(t)` oraz :math:`x(\tau)`:
 
 .. MATH::
  :label: eqn6
 
- \Delta X(t) = X(t+\Delta t) - X(t) \,
+  \langle x(t) x(\tau) \rangle = \langle \left[ x_0 e^{-at} + a \int_0^{\; t} e^{-a(t-s)} \Gamma(s) ds\right] \left[ x_0 e^{-a\tau} + a \int_0^{\; \tau} e^{-a(\tau -u)} \Gamma(u) du\right] \rangle 
 
-Jeżeli teraz :math:`\Delta t` jest nieskończenie małe, to nasze równanie ma postać równania stochastycznego
+
+Pamiętając, że :math:`\langle \Gamma(t)\rangle = 0` dla dowolnego czasu :math:`t`, otrzymamy wyrażenie:
 
 .. MATH::
  :label: eqn7
 
- dX(t) = c X(t) dt + \xi(t)\, X(t) dt
+  \langle x(t) x(\tau) \rangle = \langle x_0^2 \rangle e^{-a(t+\tau)} + a^2 e^{-a(t+\tau)} \int_0^{\; t} e^{as} \int_0^{\; \tau} e^{au} \langle \Gamma(s) \Gamma(u) \rangle ds du 
 
-Banki nie stosują losowych wahań oprocentowania, ale powyższy model można zastosować do cen akcji na giełdzie. Tam ceny zmieniają się w każdej chwili i w tych zmianach można odnaleźć część przewidywalnych (deterministycznych) zmian opisywanych parametrem :math:`c` i część zmian losowych opisywanych funkcją losową :math:`\xi(t)`. Jeżeli te zmiany podobne są do losowych zmian położenia cząstki Browna, to :math:`\xi(t)` jest białym szumem Gaussowskim
+
+W wyrażeniu podcałkowym występuje funkcja korelacyjna białego szumu gaussowskiego, więc
 
 .. MATH::
  :label: eqn8
 
- \xi(t) = \Gamma(t)\,
+  \langle x(t) x(\tau) \rangle = \langle x_0^2 \rangle e^{-a(t+\tau)} + 2D a^2 e^{-a(t+\tau)} \int_0^{\; t} e^{as} \int_0^{\; \tau} e^{au} \delta(s-u) ds du 
 
-Jak wiemy biały szum Gaussowski jest pochodną procesu Wienera :math:`W(t)`, to znaczy 
+
+Należy obliczyć całki z :math:`\delta` - Diraca. Trzeba rozważyć 2 przypadki: gdy :math:`t>\tau` oraz gdy :math:`\tau > t`. W końcu otrzymamy wynik w postaci:
 
 .. MATH::
  :label: eqn9
 
- \Gamma(t) = \frac{dW(t)}{dt}\,
+  \langle x(t) x(\tau) \rangle = [\langle x_0^2 \rangle -aD] e^{-a(t+\tau)}+ aD e^{-a|t-\tau|}
 
-lub równoważnie 
+
+Ponieważ :math:`x(t)` jest procesem gaussowskim, możemy podać gęstość prawdopodobieństwa tego procesu:
 
 .. MATH::
  :label: eqn10
 
- \Gamma(t) dt = dW(t)\, \qquad \langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt
+ p(x, t) = \frac{1}{\sqrt{2\pi \sigma^2(t)} }\; \exp\left\{ - \frac{[x-\mu(t)]^2}{2\sigma^2(t)}\right\} \qquad 
 
-Stąd wynika, że równanie przyjmuje postać
+
+Wartość średnia jest dana powyżej. Musimy jeszcze obliczyć wariancję:
 
 .. MATH::
  :label: eqn11
 
- dX(t) = c X(t) dt + X(t) d W(t)\,
+ \sigma^2(t) = \langle x^2(t) \rangle - \langle x(t)\rangle^2 = \sigma^2_0 e^{-2at} + aD [1 - e^{-2at}] \qquad 
 
 
-gdzie :math:`c` nazywa się średnią stopą zwrotu, a parametr :math:`D` nazywa się zmiennością (chwiejnością) cen akcji. Równanie to ma postać równania Ito i dlatego wnioskujemy, że proces stochastyczny :math:`X(t)` jest procesem Markowa. Ponadto jest to proces dyfuzji opisywany równaniem Fokkera-Plancka. Równanie to zostało zaproponowane do opisu zjawisk ekonomicznych na przełomie lat pięćdziesiątych i sześćdziesiątych XX w. niezależnie przez Osborne’a (1959) i Samuelsona (1965). Równanie to opisuje proces stochastyczny, który nazywa się w literaturze *geometrycznym procesem Wienera*. Równanie to jest jednym z podstawowych elementów modelu wyceny opcji Blacka-Scholesa. Teoria ta została nagrodzona Nagrodą Nobla z ekonomii w roku 1997, a opracowana przez absolwenta fizyki i doktora matematyki Fischera Blacka oraz ekonomistę Myrona Scholesa. Teoria Blacka-Scholesa pozwala na wycenę wartości tzw. finansowych instrumentów pochodnych, czyli opcji, oraz służy do optymalizacji "bezpiecznego" portfela inwestycyjnego.
+Stacjonarny rozkład prawdopodobieństwa :math:`p_{st}(x)` to rozkład dla :math:`t\to\infty`. Granice taką łatwo wyznaczyć ponieważ 
 
-Równanie powyższe jest jedną z możliwych propozycji. Po pierwsze, należy rozstrzygnąć problem interpretacji tego równania: czy jest to wersja Ito czy wersja Stratonowicza, a może jeszcze inna. Po drugie, proces Wienera można zastąpić innymi procesami. Mogą to być różne odmiany procesu Poissona czy ogólniej Levy'ego. Wszystkie te procesy to procesy o przyrostach niezależnych. Można modelować fluktuacje cen akcji przez procesy skorelowane, procesy o zależnych przyrostach. Widać, że ten problem cen akcji na giełdzie daje niesłychanie szerokie pole do modelowania. To z kolei pozwala na daleko idące modyfikacje innych modeli, jak na przykład modelu Blacka-Scholesa.
+.. MATH::
+ :label: eqn12
 
+ \mu(t) \to 0, \qquad \sigma^2(t) \to aD
+
+
+Więc rozkład prawdopodobieństwa :math:`p_{st}(x)` ma postać gaussowską:
+
+.. MATH::
+ :label: eqn13
+
+ p_{st}(x) = \frac{1}{\sqrt{2\pi aD} }\; \exp\left\{ - \frac{x^2}{2 aD}\right\}
+
+
+W ogólności :math:`x(t)` nie jest procesem stacjonarnym. Jeżeli tak wybrać stan początkowy aby
+
+.. MATH::
+ :label: eqn14
+
+ \langle x_0^2 \rangle = aD
+
+
+to proces staje się stacjonarny i jest eksponencjalnie skorelowany: 
+
+.. MATH::
+ :label: eqn15
+
+ C(t, \tau) = C(t-\tau) = \langle x(t) x(\tau) \rangle = aD e^{-a|t-\tau|} = \frac{D}{\tau_c} \exp\left[ -\frac{|t-\tau|}{\tau_c}\right]
+
+
+gdzie :math:`\tau_c = 1/a` jest czasem korelacji procesu. Ale wybór :math:`\langle x_0^2 \rangle = aD` oznacza, że stan początkowy jest stanem stacjonarnym, czyli :math:`p(x, 0) = p_{st}(x)`. Innymi słowy, proces Ornsteina-Uhlenbecka zawsze staje się stacjonarny albo dla długich czasów albo dla początkowego stanu który jest stanem stacjonarnym. W tym przypadku proces ten służy jako standardowy przykład eksponencjalnie skorelowanego szumu gaussowskiego. Wyznaczymy teraz widmo mocy tego szumu: 
+
+.. MATH::
+ :label: eqn16
+
+ S(\omega) = \int_{-\infty}^{\; \infty} e^{i\omega t} C(t) dt = aD \int_{-\infty}^{\; \infty} e^{i\omega t} e^{-a|t|} dt = \frac{2a^2 D}{a^2 + \omega^2} = \frac{2 D}{1 + (\tau_c \omega)^2} 
+
+
+Poniżej przedstawiamy tę zależność dla kilku wartości czasu korelacji :math:`\tau_c = 1/a`. Widmo mocy ma maksimum, podobnie jak światło o danym kolorze ma maksimum przy częstości fali promieniowania elektromagnetycznego. Jeżeli czas korelacji :math:`\tau_c \to 0` to widmo mocy staje się coraz bardziej płaskie i dąży do stałej wartości :math:`2D`. Z kolei funkcja korelacyjna
+
+.. MATH::
+ :label: eqn17
+
+  lim_{\tau_c \to 0} \; \; \frac{D}{\tau_c} \exp\left[ -\frac{|t-\tau|}{\tau_c}\right] = 2D \delta(t - \tau)
+
+
+i szum staje się białym szumem gaussowskim.
 
 
 .. only:: latex
 
   .. code-block:: python
-     
-     h = 0.01
-     x0 = 1
-     c = 0.1
-     D = 0.01
 
-     x = [x0]
-     N = 100
-     for i in xrange(N):
-       x.append((1 + c*h + sqrt(2*h*D)*normalvariate(0,1))*x[i])
-     list_plot(zip(srange(0,N*h,h),x))
-     
+    var('x, t, D')
+    a = 1
+    V = a*x^2
 
-  .. figure:: images/sage_chIII033_01.*
+    #wartosci startowe
+    N = 10
+    x0 = [random()*4 - 2 for i in range(N)]
+    meanx0 = mean(x0)
+    sigmax0 = variance(x0)
+
+    #p(x,t)
+    mu = mean(x0) * exp(-a*t)
+    sigma = (variance(x0) - a*D)*exp(-2*a*t)
+    p = exp(-(x-mu)^2/(2*sigma^2))/sqrt(2*pi*sigma^2)
+    show(p)
+
+    P =[]
+    lT = srange(0,1,0.2,include_endpoint=1)
+    for t1 in lT:
+        c = [random() for i in range(3)]
+        P.append(plot(p(x=x,t=t1,D=1),(x,-1,1),
+        fill=0,
+        color=c,
+        fillcolor=c,
+        legend_label='t=%.2f'%t1))
+
+
+  .. figure:: images/sage_chIII031_01.*
     :align: center
     :width: 80%
-    :alt: figchIII03201
+    :alt: figch
 
-    Relizacja geometrycznego ruchu Browna.
-
+    Gęstość prawdopodobieństwa :math:`p(x,t)`.
 
 .. only:: html
 
   .. sagecellserver::
-     :is_verbatim: True
+    :is_verbatim: True
 
-     h = 0.01
-     x0 = 1
-     c = 0.1
-     D = 0.01
-
-     x = [x0]
-     N = 100
-     for i in xrange(N):
-       x.append((1 + c*h + sqrt(2*h*D)*normalvariate(0,1))*x[i])
-     p = list_plot(zip(srange(0,N*h,h),x))
-     p.axes_labels([r'$t$',r'$x(t)$'])
-     p.show(figsize=[8,3])
+    var('x, t, D')
+    a = 1
+    V = a*x^2
+    #wartosci startowe
+    N = 10
+    x0 = [random()*4 - 2 for i in range(N)]
+    meanx0 = mean(x0)
+    sigmax0 = variance(x0)
+    #p(x,t)
+    mu = mean(x0) * exp(-a*t)
+    sigma = (variance(x0) - a*D)*exp(-2*a*t)
+    p = exp(-(x-mu)^2/(2*sigma^2)) / sqrt(2*pi*sigma^2)
+    show(p)
+    P =[]
+    lT = srange(0,1,0.2,include_endpoint=1)
+    for t1 in lT:
+        c = [random() for i in range(3)]
+        P.append(plot(p(x=x,t=t1,D=1),(x,-1,1),fill=0,color=c,fillcolor=c,legend_label='t=%.2f'%t1))
+    sum(P).show(figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t)$'])
 
   .. end of input
 
 
 
+Równanie Fokkera-Plancka dla procesu Ornsteina-Uhlenbecka
+---------------------------------------------------------
 
-Analiza geometrycznego ruchu Browna
------------------------------------
-
-Założymy (wzorem większości autorów), że równanie
-
-.. MATH::
- :label: eqn12
-
- dX(t) = \mu X(t) dt + X(t) d W(t)\, 
- 
- X(t) \ge 0, \qquad \langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt
-
-
-jest równaniem w interpretacji Ito. Później zbadamy to równanie gdy założymy interpretację Stratonowicza. Równanie Fokkera-Plancka dla dla 1-wymiarowej gęstości prawdopodobieństwa :math:`p(x, t)` ma postać
-
-.. MATH::
- :label: eqn13
-
- \frac{\partial p(x, t)}{\partial t} = - c \frac{\partial}{\partial x} [x p(x, t)] + D \frac{\partial^2}{\partial x^2} x^2 p(x, t),
- 
- p(x, 0) =p(x), \qquad x \ge 0
-
-
-gdzie :math:`p(x)` jest początkowym rozkładem prawdopodobieństwa. Rozwiążemy to równanie metodą zamiany zmiennych. Zdefiniujemy nową zmienną :math:`y` jako
-
-.. MATH::
- :label: eqn14
-
- y=\ln x, \qquad x = e^y
-
-
-Jeżeli dokonujemy zamiany zmiennych to musimy pamiętać, że gęstość prawdopodobieństwa także ulega transformacji wg zależności
-
-.. MATH::
- :label: eqn15
-
- p(x, t) dx = f(y, t) dy,
- 
-czyli
-
-.. MATH::
-   :label: eqn15a
-  
-   f(y, t) = p(x, t) \frac{dx}{dy} = e^y p(x, t) = x p(x, t)
-
-oraz
-
-.. MATH::
-   :label: eqn15b
-  
-   p(x, t) = f(y, t) \frac{dy}{dx} = \frac{1}{x} f(y=\ln x, t).
-
-
-Następnie musimy zamienić różniczkowanie względem :math:`x` na różniczkowanie względem :math:`y`: 
-
-.. MATH::
- :label: eqn16
-
- \frac{\partial}{\partial x} [x p(x, t)] = \frac{\partial y}{\partial x} \frac{\partial}{\partial y} f(y, t) = \frac{1}{x} \frac{\partial}{\partial y} f(y, t)
-
-
-oraz
-
-.. MATH::
- :label: eqn17
-
- \frac{\partial^2}{\partial x^2} [x^2 p(x, t)] = \frac{\partial }{\partial x} \frac{\partial}{\partial x} [x f(y, t)] =
- 
- = \frac{\partial}{\partial x} \left\{ \frac{\partial y}{\partial x} \frac{\partial}{\partial y} [ x f(y, t)] \right\} = \frac{\partial}{\partial x} \left\{ \frac{1}{x} \frac{\partial}{\partial y} [e^y f(y, t)] \right\} =
- 
- = \frac{1}{x} \frac{\partial}{\partial y} \left\{ \frac{1}{x} \left(e^y f(y, t) + e^y \frac{\partial}{\partial y} f(y, t)\right) \right\} = \frac{1}{x} \frac{\partial}{\partial y} \left\{ f(y, t) + \frac{\partial}{\partial y} f(y, t)\right\} 
-
-
-W obu wyrażeniach występuje wyraz :math:`1/x`, który przeniesiemy na lewą stronę równania Fokkera-Plancka: :math:`x p(x, t) = f(y, t)`. Ostatecznie otrzymamy przetransformowane równanie Fokkera Plancka w postaci
+Zgodnie z regułami podanymi w poprzednim rozdziale, równanie :eq:`eqn3` to równanie Langevina, dla którego dryf i funkcja dyfuzji maja postać
 
 .. MATH::
  :label: eqn18
 
- \frac{\partial f(y, t)}{\partial t} = - [c -D] \frac{\partial}{\partial y} f(y, t) + D \frac{\partial^2}{\partial y^2} f(y, t)
+ F(x, t) = -ax, \quad G(x, t) = a
 
 
-Takie równanie spełnia proces, którego równanie Ito ma postać:
+Odpowiednie równanie Fokkera-Plancka dla warunkowej gęstości prawdopodobieństwa :math:`p(x, t|y, s)` ma postać:
 
 .. MATH::
  :label: eqn19
 
- dY = (c - D) dt + dW(t)
+ \frac{\partial p(x, t|x_0, s)}{\partial t} = a \frac{\partial}{\partial x} [x p(x, t|x_0, s)] + D a^2 \frac{\partial^2}{\partial x^2} p(x,t|x_0,s),
+ 
+ p(x, s|x_0, s) =\delta(x-x_0) 
 
 
-Równanie to łatwo scałkować:
+Z kolei dla 1-wymiarowej gęstości prawdopodobieństwa :math:`p(x, t)` należy rozwiązać zagadnienie:
 
 .. MATH::
  :label: eqn20
 
- Y(t) = Y(0) + (c - D) t + W(t)
+ \frac{\partial p(x, t)}{\partial t} = a \frac{\partial}{\partial x} [x p(x, t)] + D a^2 \frac{\partial^2}{\partial x^2} p(x, t), \qquad p(x, 0) =p(x)
 
 
-Ponieważ jest to liniowa transformacja procesu Gaussa :math:`W(t)` to proces :math:`Y(t)` jest także procesem Gaussa. Więc nie musimy rozwiązywać równani Fokkera-Plancka, aby podać jawną postać gęstości rozkładu :math:`f(y, t)`. Wystarczy obliczyć wartość średnią oraz wariancję procesu :math:`Y(t)`:
+gdzie :math:`p(x)` jest początkowym rozkładem prawdopodobieństwa. Warto przypomnieć, że zachodzi następująca relacja:
 
 .. MATH::
  :label: eqn21
 
- \mu_y(t)=\langle Y(t)\rangle=\langle Y(0) + (c - D) t + W(t)\rangle=\langle Y(0)\rangle + (c-D) t, 
- 
- \langle Y^2(t)\rangle=\langle [Y(0) + (c - D) t + W(t)\rangle]^2 \rangle =\langle Y^2(0)\rangle + 2 (c-D) t \langle Y(0)\rangle + (c-D)^2 t^2 + 2Dt
+ p(x, t) = \int_{-\infty}^{\; \infty} p(x, t|, y, s) \; p(y, s) dy
 
+
+czyli :math:`p(x, t|y, s)` jest propagatorem: propaguje rozkład w chwili wcześniejszej :math:`s` do chwili późniejszej :math:`t`. W szczególności
 
 .. MATH::
  :label: eqn22
 
- \sigma_y^2(t) = \langle Y^2(t)\rangle - \langle Y(t)\rangle^2 = \sigma_y^2(0) + 2Dt,
- 
- \sigma_y^2(0) = \langle Y^2(0)\rangle - \langle Y(0)\rangle^2 .
+ p(x, t) = \int_{-\infty}^{\; \infty} p(x, t|, y, 0) \; p(y, 0) dy \qquad 
 
 
-Gęstość prawdopodobieństwa :math:`f(y, t)` ma postać funkcji Gaussa:
+propaguje rozkład początkowy do chwili :math:`t`.
+
+Oba równania Fokkera-Plancka można rozwiązać metodą funkcji charakterystycznej czyli metodą transformaty Fouriera wybierając odpowiednie warunki początkowe. Wynikiem zastosowania tej metody jest równanie różniczkowe cząstkowe pierwszego rzędu dla funkcji charakterystycznej. Takie równanie zawsze można rozwiązać tzw. metodą charakterystyk. Ponieważ typowy student nie zna tej metody, nie będziemy jej tu przedstawiać. Postąpimy inaczej. W zasadzie już rozwiązaliśmy podobny problem. Załóżmy, że dana jest wartość początkowa procesu: :math:`x(s) = x_0`. Wybieramy jako chwilę początkową czas :math:`s`. Ponieważ w równaniu Fokkera-Plancka nie występuje czas w sposób jawny, rozwiązanie :math:`p(x, t|x_0, s)` zależy tylko od różnicy czasów, tzn. :math:`p(x, t|x_0, s) = p(x, t-s; x_0)`. Dlatego też w rozwiązaniu :eq:`eqn11` oraz w :eq:`eqn22` należy dokonać podmiany: :math:`\langle x_0^k\rangle \to x_0^k` oraz :math:`t \to t-s`. W ten sposób otrzymamy warunkową gęstość rozkładu:
 
 .. MATH::
  :label: eqn23
 
- f(y, t) = \frac{1}{\sqrt{2\pi \sigma_y^2(t)} }\; \exp\left\{ - \frac{[y-\mu_y(t)]^2}{2\sigma_y^2(t)}\right\} 
+ p(x, t|x_0, s) = \frac{1}{\sqrt{2\pi \sigma^2(t, s)} }\; \exp\left\{ - \frac{[x- x_0 e^{-a(t-s)})]^2}{2\sigma^2(t, s)}\right\}
 
 
-Wyjściowa gęstość prawdopodobieństwa :math:`p(x, t)` wyraża się wzorem: 
+gdzie teraz
 
 .. MATH::
  :label: eqn24
 
- p(x, t) = f(y, t) \frac{dy}{dx} = \frac{1}{x} f(y=\ln x, t) = \frac{1}{x \sqrt{2\pi \sigma_y^2(t)} }\; \exp\left\{ - \frac{[\ln x - \mu_y(t)]^2}{2\sigma_y^2(t)}\right\} 
+  \sigma^2(t, s) = aD [1 - e^{-2a(t-s)}]
 
 
-i nazywa się rozkładem log-normalnym. Poniżej znadziecie jego wykres.
+Można sprawdzić, korzystając z twierdzenia o ciągach :math:`\delta`-podobnych, że w
+granicy :math:`t\to s` gęstość :math:`p(x, t|x_0, s) \to \delta(x-x_0)`. Dla dowolnego
+warunku początkowego, korzystamy z rów. :eq:`eqn22` i otrzymujemy rozkład w dowolnej chwili z dowolnym warunkiem początkowym.
+
 
 .. only:: latex
 
   .. code-block:: python
 
-    var('x,d,c,t')
-    fl(x,c,d,t) = exp(-(ln(x)-(c-d)*t)^2/(4*pi*t)) / (x*sqrt(4*pi*t))
-    p=plot(fl(x,2,1,2),(x,0,4),color="red",legend_label="c=2,D=1,t=2")
-    p+=plot(fl(x,2,2,2),(x,0,4),legend_label="c=2,D=2,t=2")
+    var('x, t, s, x0, a, D')
 
-  .. figure:: images/sage_chIII033_02.*
-     :alt: figIII03302
-     :width: 60%
-     :align: center
+    sigma(t,s,a,D) = a*D*(1 - exp(-2*a*(t-s)))
+    pc(x,t,s,x0,a,D) = exp(-(x-x0*exp(-a*(t-s)))^2/(2*sigma(t,s,a,D)^2))
+    pc \= sqrt(2*pi*sigma(t,s,a,D)^2)
 
-     Rozkład log-normalny.
+    p =[]
+    lT = srange(0,1,0.2) + srange(0.9,1,0.02)
+    for t1 in lT:
+      c = [random() for i in range(3)]
+      p.append(plot(pc(x=x,t=t1,s=1,x0=0,a=1,D=1),(x,-0.5,0.5),fill=0))
+    p.append(arrow((0,0),(0,29),color='black'))    
+
+
+  .. figure:: images/sage_chIII031_02.*
+    :align: center
+    :width: 80%
+    :alt: figch
+
+    Ciąg :math:`\delta`-podobny.
 
 
 .. only:: html
@@ -287,90 +312,171 @@ i nazywa się rozkładem log-normalnym. Poniżej znadziecie jego wykres.
   .. sagecellserver::
     :is_verbatim: True
 
-    var('x,D,c,t')
-    fl(x,c,D,t) = exp(-(ln(x)-(c-D)*t)^2/(4*pi*t)) / (x*sqrt(4*pi*t))
-    p1=plot(fl(x,2,1,2), (x,0,4),color="red",figsize=(6,3), legend_label="c=2, D=1,t=2")
-    p2=plot(fl(x,2,2,2), (x,0,4),color="blue",figsize=(6,3), axes_labels=[r'$x$',r'$p(x,t)$'],legend_label="c=2, D=2,t=2")
-    show(p1+p2)
-     
+    var('x, t, s, x0, a, D')
+    sigma(t,s,a,D) = a*D*(1 - exp(-2*a*(t-s)))
+    pc(x,t,s,x0,a,D) = exp(-(x-x0*exp(-a*(t-s)))^2/(2*sigma(t,s,a,D)^2)) / sqrt(2*pi*sigma(t,s,a,D)^2)
+    show(pc)
+    p =[]
+    lT = srange(0,1,0.2) + srange(0.9,1,0.02) +[0.99,0.992]#[0.1,0.5,0.9]
+    for t1 in lT:
+        c = [random() for i in range(3)]
+        p.append(plot(pc(x=x,t=t1,s=1,x0=0,a=1,D=1),(x,-0.5,0.5),fill=0))
+    p.append(arrow((0,0),(0,29),color='black'))    
+    sum(p).show(figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t|x_0, s)$'])
+
   .. end of input
 
 
-Jeżeli początkowa wartość procesu :math:`X(0) = X_0` jest dana (wiemy, ile na początku mamy pieniędzy ulokowanych w akcjach) to
+
+Zastosowanie: cząstka Browna
+----------------------------
+
+Niech cząstka Browna o masie :math:`m` porusza się w płynie. Można zbudować równanie Newtona dla takiej cząstki :
 
 .. MATH::
  :label: eqn25
 
- \sigma_y^2(0) = \langle Y^2(0)\rangle - \langle Y(0)\rangle^2 = \langle [\ln X_0]^2\rangle - \langle \ln X_0\rangle^2 =[ \ln X_0]^2 - [\ln X_0]^2 = 0
+ m\ddot x + \gamma \dot x = \Gamma(t) \quad \mbox{czyli} \quad m \dot v + \gamma v = \Gamma(t) \quad \mbox{gdzie } \quad v=\dot x 
 
 
-W tym przypadku 
+Jest to równanie Langevina, gdzie szum :math:`\gamma(t)` to losowa siła działająca na cząstkę i mająca swe źródło w zderzeniach cząstek płynu z cząstką Browna. Równanie Langevina dla prędkości cząstki Browna ma taką samą postać jak równanie generujące proces Ornsteina-Uhlenbecka: 
 
 .. MATH::
  :label: eqn26
 
- \mu_y(t) = \ln X_0 + (c-D)t, \qquad \sigma_y^2(t) = 2Dt
+ \dot v = -(\gamma/m) v + \Gamma(t)/m = - \gamma_0 v + \gamma_0 \Gamma_0(t)
 
 
-Momenty statystyczne wyjściowego procesu :math:`X(t)` dane są formułą
+gdzie przeskalowane wielkości maja postać
 
 .. MATH::
  :label: eqn27
 
- \langle X^n(t)\rangle = \int_{0}^{\; \infty} x^n p(x, t) dx = e^{\mu(t) n + Dt n^2 } 
+ \gamma_0 = \frac{\gamma}{m}, \qquad \Gamma_0(t) = \frac{\Gamma(t)}{\gamma}
 
 
-i można je łatwo wyliczyć korzystając z Sage
+Dla przeskalowanej siły losowej mamy związki: 
+
+.. MATH::
+ :label: eqn28
+
+ \langle \Gamma_0(t)\rangle = 0, \qquad \langle \Gamma_0(t) \Gamma_0(s)\rangle = \frac{2D}{\gamma^2} \delta(t-s) = 2D_0 \delta(t-s) \qquad 
+
+
+Porównując to z równaniem dla procesu Ornsteina-Uhlenbecka otrzymujemy korespondencję:
+
+.. MATH::
+ :label: eqn29
+
+ a \to \gamma_0 = \frac{\gamma}{m}, \qquad D \to D_0 = \frac{D}{\gamma^2}
+
+
+Posiłkując się wynikami dla procesu Ornsteina-Uhlenbecka, otrzymamy dla prędkości cząstki Browna następujące wyniki:
+
+.. MATH::
+ :label: eqn30
+
+ \langle v(t) \rangle = \langle v_0\rangle e^{-\gamma t/m}, \qquad \langle v(t) v(s) \rangle = \frac{D}{\gamma m} e^{-\gamma |t-s|/m} 
+
+
+przy założeniu, że jest to proces stacjonarny, czyli że w chwili początkowej
+
+.. MATH::
+ :label: eqn31
+
+ \langle v_0^2 \rangle = \frac{D}{\gamma m}
+
+
+Zauważmy, że w dowolnej chwili czasu zachodzi relacja
+
+.. MATH::
+ :label: eqn32
+
+ \langle v^2(t) \rangle = \frac{D}{\gamma m}
+
+
+Z twierdzenia o ekwipartycji energii (fizyka statystyczna) wynika, że 
+
+.. MATH::
+ :label: eqn33
+
+ \langle E_k \rangle = \frac{1}{2} m \langle v^2(t) \rangle = \frac{1}{2} kT \qquad \mbox{czyli} \qquad \langle v^2(t) \rangle = \frac{kT}{m} = \frac{D}{\gamma m}
+
+
+gdzie :math:`k` jest stałą Boltzmanna i :math:`T` jest temperaturą otoczenia (termostatu, płynu). Stąd otrzymujemy ważny wynik, że natężenie szumu termicznego (fluktuacji termicznych) wynosi
+
+.. MATH::
+ :label: eqn34
+
+ D= \gamma kT
+
+
+Kolejny ważny wynik to czas korelacji prędkości cząstki Browna. Z relacji dla funkcji korelacyjnej wnioskujemy, że czas korelacji
+
+.. MATH::
+ :label: eqn35
+
+ \tau_c = \frac{m}{\gamma}
+
+
+Prędkość cząstki Browna to losowy proces gaussowski, eksponencjalnie skorelowany. Stacjonarny rozkład prawdopodobieństwa :math:`p_{st}(v)` ma postać (patrz pierwsza część tego rozdziału)
+
+.. MATH::
+ :label: eqn36
+
+ p_{st}(v) = \frac{1}{\sqrt{2\pi aD} }\; \exp\left\{ - \frac{v^2}{2 aD}\right\} = \sqrt{\frac{m}{2\pi kT} }\; \exp\left\{ - \frac{mv^2}{kT}\right\}
+
+
+Jest to dobrze znany rozkład Maxwella. 
 
 
 .. only:: latex
 
   .. code-block:: python
 
-     var('x,m,D,n,t')
-     assume(t>0)
-     assume(D>0)
-     assume(n>0)
-     g = ((e^(n*x))/sqrt(4*pi*D*t))*exp(-(x-m)^2/(4*D*t))
-     integrate(g,x,-oo,oo)
-     
+    var('v, T, m')
+    k = 1
+    pst(v,T,m) = exp(-m*v^2/k/T)*sqrt(m/2/pi/k/T)
 
-  Co powinno obliczyć daną całkę
+    p =[]
+    kolor = ['blue','green','red']
+    lT = [0.01,0.1,1]
+    for t in lT:
+        color = kolor[lT.index(t)]
+        p.append(plot(pst(v=x,T=t,m=1),(x,-2,2),
+         color=color,
+         legend_label='T=%.2f'%t,
+         fill=0,fillcolor=color))
 
-  .. MATH::
-     :label: eqnplus
 
-     e^{Dn^t + mn}
+  .. figure:: images/sage_chIII031_03.*
+    :align: center
+    :width: 80%
+    :alt: figch
+
+    Rozkład Maxwella
 
 
 .. only:: html
 
   .. sagecellserver::
-     :is_verbatim: True
+    :is_verbatim: True
 
-     var('x,m,D,n,t')
-     assume(t>0)
-     assume(D>0)
-     assume(n>0)
-     g = ((e^(n*x))/sqrt(4*pi*D*t))*exp(-(x-m)^2/(4*D*t))
-     i = integrate(g,x,-oo,oo)
-     show(i)
+    var('v, T, m')
+    k = 1
+    pst(v,T,m) = exp(-m*v^2/k/T) * sqrt(m/2/pi/k/T)
+
+    p =[]
+    kolor = ['blue','green','red']
+    lT = [0.01,0.1,1]
+    for t in lT:
+        color = kolor[lT.index(t)]
+        p.append(plot(pst(v=x,T=t,m=1),(x,-2,2),color=color,legend_label='T=%.2f'%t,fill=0,fillcolor=color))
+    sum(p).show(figsize=[8,3],axes_labels=[r'$v$',r'$P_{st}(v)$'])
 
   .. end of input
 
 
 
-W szczególności wartość średnia i wariancja (fluktuacje) procesu wynoszą
-
-.. MATH::
- :label: eqn28
-
- \mu_x(t)=\langle X(t)\rangle=X_0 e^{ct},
- 
- \sigma_x^2(t) =\langle X^2(t)\rangle- \langle X(t)\rangle^2=X^2_0 e^{2ct} [e^{2Dt} - 1].
-
-Zauważmy, że zarówno wartość średnia jak i fluktuacje narastają eksponencjalnie w czasie. Warto też obliczyć kurtozę i skośność dla tego modelu.
-
-Model ten w zastosowaniu do rynków finansowych posiada zarówno pozytywne elementy jak i negatywne elementy. Niewątpliwie pozytywnym elementem jest to że :math:`X(t)` przyjmuje tylko dodatnie wartości (nie ma ujemnych pieniędzy). Z drugiej strony, parametr :math:`D` często zmienia się, tu założono jego stałość.
 
 
