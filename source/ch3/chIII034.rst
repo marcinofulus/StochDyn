@@ -1,4 +1,4 @@
-Geometryczny ruch browna
+Geometryczny ruch Browna
 ========================
 
 Załóżmy, że posiadamy określoną kwotę pieniędzy i chcemy ją ulokować w banku, który w zamian oferuje odsetki w ramach proponowanych stóp procentowych. W chwili :math:`t` posiadamy :math:`X(t)` złotych. Ile dostaniemy pieniędzy z banku po czasie :math:`t+ \Delta t`. Oznaczmy kwotę po tym czasie jako :math:`X(t+\Delta t)`. Kwota po czasie :math:`t+\Delta t` to kwota jaka ulokowaliśmy plus kwota z oprocentowania: 

@@ -11,10 +11,40 @@ Dynamika stochastyczna
         Jerzy Łuczka, 
         Łukasz Machura
 :Wersja: 
-        0.7 11/2013
+        1.0 11/2013
 :Pobierz:
-        :download:`podręcznik (v0.7, PDF) <pdf/StochDyn_v0.7.pdf>`
+        :download:`podręcznik (v1.0, PDF) <pdf/StochDyn_v1.0.pdf>`
 
+Niniejsza książka jest podstawą wykładu o tym samym tytule dla studentów 
+Ekonofizyki drugiego stopnia. Duża część materiału może być wykorzystywana 
+w wykładach, konwersatoriach i laboratoriach komputerowych dla studentów 
+innych kierunków (fizyka, biofizyka, fizyka medyczna, fizyka techniczna). 
+W szczególności rozdziały Dynamika Deterministyczna oraz Chaos w Układach 
+Dynamicznych powinien być przydatny dla wszystkich kierunków studiów na  
+wydziałach przyrodniczych i technicznych. Część materiału może być z 
+powodzeniem używana do 
+wykładów z mechaniki klasycznej, część - do wykładów z metod matematycznych 
+na różnych kierunkach. 
+
+Książka zawiera materiał stricto teoretyczny (prezentacja tradycyjna) 
+oraz nowatorską część:  krótkie programy komputerowe napisane w SAGE, w 
+matematycznym oprogramowaniu typu open-source. Promujemy tego typu 
+oprogramowanie ponieważ każdy student może używać SAGE  bezpłatnie w 
+odróżnieniu od znanych i bardzo drogich programów komputerowych typu 
+Maple i Mathematica. Ponadto oprogramowanie to jest promowane i intensywnie 
+wykorzystywane także w projekcie iCSE (innovative Computers in Science 
+Education) realizowanym w Uniwersytecie Śląskim. Projekt  iCSE to innowacyjny 
+projekt, którego głównym założeniem jest integracja metod komputerowych w tym 
+wizualizacji, numeryki, analizy danych z kierunkowymi przedmiotami wybranych 
+nauk ścisłych. W tym nurcie pisana była ta książka.  Krótkie programy w SAGE 
+umieszczono w edytowalnych interaktywnych oknach (komórkach). Student może 
+edytować i kopiować okna, zmieniać w nich dane, samodzielnie analizować i 
+wizualizować  przedstawiane tam zagadnienia i  problemy. 
+
+Książka ta ma dodatkową zaletę. Może być ciągle poprawiana, modyfikowana, 
+uzupełniana.  Świadomi szybkiego rozwoju technologii informacyjnych jesteśmy 
+otwarci na sugestie i uwagi krytyczne zarówno kadry dydaktycznej jak i studentów.
+ 
 Dynamika deterministyczna
 =========================
 
