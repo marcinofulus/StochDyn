@@ -1,0 +1,9 @@
+Zauważmy, że $\tau_L$  ma wymiar czasu i jest czasem charakterystycznym, który nazywa się czasem Langevina. Aby go zinterpretować, należy zbadać równanie cząstki swobodnej:
+
+$$m\ddot x = -\gamma \dot x, \qquad \mbox{ lub} \qquad \dot v = -\gamma v$$
+
+Rozwiązaniem tego równania liniowego jest funkcja exponencjalna:
+
+$$v(t) = v(0) \exp[-\gamma t/m] = v(0) \exp[-t/(m/\gamma)]$$
+
+Teraz widać, że wielkość $m/\gamma$ to charakterystyczny czas relaksacji prędkości cząstki swobodnej w środowisku z tarciem. Mówi on o tym w jakim tempie cząstka wytraca prędkość wskutek tarcia.

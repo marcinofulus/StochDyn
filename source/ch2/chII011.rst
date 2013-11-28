@@ -117,8 +117,26 @@ Obecnie występują 3 przeskalowane parametry:
 
      \gamma_0  = \frac{\tau_0^2}{m L} \gamma, \qquad A_0 = \frac{\tau_0^2}{m L} A, \qquad \omega_0 = \tau_0 \Omega
 
+Zauważmy, że :math:`\tau_L` ma wymiar czasu i jest czasem charakterystycznym, który nazywa się czasem Langevina. Aby go zinterpretować, należy zbadać równanie cząstki swobodnej:
 
-W dalszej części będziemy posługiwali się tylko i wyłącznie przeskalowanym równaniem. Dlatego wygodnie będzie używać "starych" oznaczeń: Będziemy analizowali równanie w postaci
+.. MATH::
+ :label: eqn6a
+
+ m\ddot x = -\gamma \dot x, \qquad \mbox{ lub} \qquad \dot v = -\gamma v
+
+
+Rozwiązaniem tego równania liniowego jest funkcja exponencjalna:
+
+.. MATH::
+ :label: eqn6b
+
+ v(t) = v(0) \exp[-\gamma t/m] = v(0) \exp[-t/(m/\gamma)]
+
+
+Teraz widać, że wielkość :math:`m/\gamma` to charakterystyczny czas relaksacji prędkości cząstki 
+swobodnej w środowisku z tarciem. Mówi on o tym w jakim tempie cząstka wytraca prędkość wskutek 
+tarcia. W dalszej części będziemy posługiwali się tylko i wyłącznie przeskalowanym równaniem. 
+Dlatego wygodnie będzie używać "starych" oznaczeń: Będziemy analizowali równanie w postaci
 
 .. MATH::
     :label: eqn7
