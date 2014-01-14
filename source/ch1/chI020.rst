@@ -1,7 +1,11 @@
 Układy dynamiczne z czasem ciągłym
 ==================================
 
-We Wstępie podaliśmy kilka przykładów układów opisanych za pomocą równań różniczkowych zwyczajnych. Pierwsza klasa układów to  układy opisywane przez  mechanikę klasyczną i jej  równania Newtona. Inna klasa układów to równania fenomenologiczne opisujące procesy wzrostu, procesy kinetyki chemicznej, dynamiki populacyjnej w układach biologicznych, itd. Te dwie klasy układów opisywane są układem równań różniczkowych zwyczajnych zapisanych w ogólnej postaci jako układ
+We Wstępie podaliśmy kilka przykładów układów opisanych za pomocą równań różniczkowych zwyczajnych. 
+Pierwsza klasa układów to  układy opisywane przez  mechanikę klasyczną i jej  równania Newtona. Inna 
+klasa układów to równania fenomenologiczne opisujące procesy wzrostu, procesy kinetyki chemicznej, 
+dynamiki populacyjnej w układach biologicznych, itd. Te dwie klasy układów opisywane są układem równań 
+różniczkowych zwyczajnych zapisanych w ogólnej postaci jako układ
 
 .. MATH::
     :label: eqn1
@@ -39,7 +43,13 @@ oraz dany jest zbiór warunków początkowych
     \vec x(0) = [x_1(0), x_2(0), x_3(0), ... , x_n(0)] = \vec x_0 = [x_1^{(0)}, x_2^{(0)}, x_3^{(0)}, ... ,  x_n^{(0)}]  
 
 
-Wskaźnik :math:`n` mówi, ile równań różniczkowych jest "ukrytych" w powyższym zapisie wektorowym. Innymi słowy, rozważamy układ :math:`n` równań różniczkowych scharakteryzowanych przez :math:`n` funkcji skalarnych :math:`F_i(x_1, x_2, x_3, ..., x_n), (i=1,2,3, ..., n)`. Zauważmy, że rozważamy funkcje :math:`F_i` które nie zależą w sposób jawny od czasu. W takim przypadku mówimy, że jest to układ autonomiczny :math:`n` równań  różniczkowych zwyczajnych. Ponadto wektor :math:`\vec F` można traktować jako pole wektorowe stowarzyszone z układem równań różniczkowych lub pole wektorowe generowane przez układ równań różniczkowych. Do tej kwestii powrócimy jeszcze.
+Wskaźnik :math:`n` mówi, ile równań różniczkowych jest "ukrytych" w powyższym zapisie wektorowym. Innymi 
+słowy, rozważamy układ :math:`n` równań różniczkowych scharakteryzowanych przez :math:`n` funkcji 
+skalarnych :math:`F_i(x_1, x_2, x_3, ..., x_n), (i=1,2,3, ..., n)`. Zauważmy, że rozważamy funkcje 
+:math:`F_i` które nie zależą w sposób jawny od czasu. W takim przypadku mówimy, że jest to układ 
+autonomiczny :math:`n` równań  różniczkowych zwyczajnych. Ponadto wektor :math:`\vec F` można traktować 
+jako pole wektorowe stowarzyszone z układem równań różniczkowych lub pole wektorowe generowane przez 
+układ równań różniczkowych. Do tej kwestii powrócimy poniżej.
  
 
 Przestrzeń fazowa
@@ -48,7 +58,7 @@ Przestrzeń fazowa
 Jeszcze raz przepiszemy równania różniczkowe   :eq:`eqn5`  w  notacji:
 
 .. MATH::
-    :label: eqn21
+    :label: eqn24
 
     \frac{dx_1}{dt} = F_1(x_1, x_2, x_3, ..., x_n)
 
@@ -59,7 +69,10 @@ Jeszcze raz przepiszemy równania różniczkowe   :eq:`eqn5`  w  notacji:
     \frac{dx_n}{dt} = F_n(x_1, x_2, x_3, ..., x_n)
 
 
-Powyższy układ równań różniczkowych  definiuje pewien układ dynamiczny (matematyczna definicja układu dynamicznego może być bardzo abstrakcyjna, ale na nasze potrzeby wystarczy to, co napisaliśmy).  Zbiór wszystkich możliwych wartości :math:`\{x_1, x_2, x_3, ..., x_n\}` tworzy zbiór który nazywamy przestrzenią fazową układu :eq:`eqn24`. Wymiar tej przestrzeni wynosi :math:`n`, czyli tyle ile jest równań różniczkowych.
+Powyższy układ równań różniczkowych  definiuje pewien układ dynamiczny (matematyczna definicja układu 
+dynamicznego może być bardzo abstrakcyjna, ale na nasze potrzeby wystarczy to, co napisaliśmy).  Zbiór 
+wszystkich możliwych wartości :math:`\{x_1, x_2, x_3, ..., x_n\}` tworzy zbiór który nazywamy przestrzenią 
+fazową układu :eq:`eqn24`. Wymiar tej przestrzeni wynosi :math:`n`, czyli tyle ile jest równań różniczkowych.
 
 W zależności od kontekstu, będziemy stosowali różne zapisy tych samych równań.
 
@@ -101,7 +114,8 @@ Przykłady:
 
   Przestrzeń fazowa  jest 3-wymiarowa.
 
-4. Równanie Newtona dla cząstki poruszającej się tylko wzdłuż osi :math:`OX` na którą działa siła :math:`F(x)` zależna tylko od położenia  ma postać
+4. Równanie Newtona dla cząstki poruszającej się tylko wzdłuż osi :math:`OX` na którą działa siła 
+   :math:`F(x)` zależna tylko od położenia  ma postać
 
   .. MATH::
       :label: eqn31
@@ -109,7 +123,8 @@ Przykłady:
       m \ddot x= F(x)
 
 
-  gdzie :math:`m` jest masą cząstki. Jest to równanie różniczkowe 2-go rzędu i jest ono  równoważne układowi 2 równań różniczkowych 1-go rzędu:
+  gdzie :math:`m` jest masą cząstki. Jest to równanie różniczkowe 2-go rzędu i jest ono  równoważne 
+  układowi 2 równań różniczkowych 1-go rzędu:
 
   .. MATH::
       :label: eqn32
@@ -139,14 +154,21 @@ Aby uniknąć na tym etapie abstrakcyjnych definicji, będziemy rozważać dla p
      \dot y= g(x, y),\quad \quad y(0) = y_0 
 
 
-Przestrzeń fazowa jest 2-wymiarowa. Może to być płaszczyzna lub jej część. Ale może to być bardziej skomplikowany zbiór 2-wymiarowy. Na przykład może to być sfera (podobna do  powierzchni piłki), może to być torus (podobny do dętki rowerowej). Mogą to być jeszcze bardziej skomplikowane obiekty 2-wymiarowe. Ale dla naszych celów wystarczy rozważać płaszczyznę. Na płaszczyźnie można estetycznie przedstawiać coś w formie rysunków. Wprowadzamy na płaszczyźnie kartezjański układ współrzędnych o osiach OX i OY. Warunek początkowy :math:`\{x_0=x(0), y_0=y(0)\}` jest punktem o odpowiednich współrzędnych. Rozwiązujemy powyższy układ równań różniczkowych numerycznie przy pomocy najprostszego schematu:
+Przestrzeń fazowa jest 2-wymiarowa. Może to być płaszczyzna lub jej część. Ale może to być bardziej 
+skomplikowany zbiór 2-wymiarowy. Na przykład może to być sfera (podobna do powierzchni piłki), może 
+to być torus (podobny do dętki rowerowej). Mogą to być jeszcze bardziej skomplikowane obiekty 2-wymiarowe. 
+Ale dla naszych celów wystarczy rozważać płaszczyznę. Na płaszczyźnie można estetycznie przedstawiać coś 
+w formie rysunków. Wprowadzamy na płaszczyźnie kartezjański układ współrzędnych o osiach OX i OY. Warunek 
+początkowy :math:`\{x_0=x(0), y_0=y(0)\}` jest punktem o odpowiednich współrzędnych. Rozwiązujemy powyższy 
+układ równań różniczkowych numerycznie przy pomocy najprostszego schematu z dyskretnym krokiem czasowym 
+:math:`\Delta t = h`.
 
 .. MATH::
     :label: eqn35
 
-    \frac{x(t+h) - x(t)}{h} = f(x(t), y(t))
+    \dot x = \frac{dx}{dt} \to \frac{\Delta x}{\Delta t} = \frac{x(t+h) - x(t)}{h} = f(x(t), y(t))
 
-    \frac{y(t+h) - y(t)}{h} = g(x(t), y(t))
+    \dot y = \frac{dy}{dt} \to \frac{\Delta y}{\Delta t} = \frac{y(t+h) - y(t)}{h} = g(x(t), y(t))
 
 
 Przepiszemy to w postaci
@@ -159,7 +181,8 @@ Przepiszemy to w postaci
     y(t+h) = y(t) + g(x(t), y(t)) h
 
 
-1. Obliczenia numeryczne musimy zacząć od warunku początkowego w chwili :math:`t=0`, czyli w pierwszym kroku obliczamy
+1. Obliczenia numeryczne musimy zacząć od warunku początkowego w chwili :math:`t=0`, czyli 
+   w pierwszym kroku obliczamy
 
   .. MATH::
       :label: eqn39
@@ -169,7 +192,8 @@ Przepiszemy to w postaci
       y_1 = y(h) = y(0) + g(x(0), y(0)) h
 
 
-  Na płaszczyźnie otrzymujemy punkt o współrzędnych :math:`\{x_1, y_1\}`. Zaznaczmy go na płaszczyźnie. Teraz mamy już 2 punkty:
+  Na płaszczyźnie otrzymujemy punkt o współrzędnych :math:`\{x_1, y_1\}`. Zaznaczmy go na płaszczyźnie. 
+  Teraz mamy już 2 punkty:
 
   .. MATH::
       :label: eqn41
@@ -197,7 +221,8 @@ Przepiszemy to w postaci
       y_2 =  y_1 + g(x_1, y_1) h
 
 
-  Na płaszczyźnie otrzymujemy punkt o współrzędnych :math:`\{x_2, y_2\}`. Zaznaczmy go na płaszczyźnie. Teraz mamy już 3 punkty:
+  Na płaszczyźnie otrzymujemy punkt o współrzędnych :math:`\{x_2, y_2\}`. Zaznaczmy go na płaszczyźnie. 
+  Teraz mamy już 3 punkty:
 
   .. MATH::
       :label: eqn45
@@ -214,10 +239,9 @@ Przepiszemy to w postaci
       
       y_3 =  y_2 + g(x_2, y_2) h
 
-
   i otrzymujemy punkt o współrzędnych :math:`\{x_3, y_3\}`.
 
-4. Zauważamy, że w n-tym kroku otrzymujemy równania
+4. Zauważamy, że w :math:`n`-tym kroku otrzymujemy równania
 
   .. MATH::
       :label: eqn48
@@ -227,7 +251,7 @@ Przepiszemy to w postaci
       y_n =  y_{n-1} + g(x_{n-1}, y_{n-1}) h
 
 
-5. Częściej pisze się, co się otrzymuje w następnym kroku, czyli n+1 :
+5. W :math:`n+1`-kroku dostajemy
 
   .. MATH::
       :label: eqn50
@@ -236,29 +260,34 @@ Przepiszemy to w postaci
 
       y_{n+1} =  y_n + g(x_n, y_n) h
 
-
-Otrzymujemy równania rekurencyjne, które pozwalają wyznaczyć ewolucję układu, czyli rozwiązanie numeryczne układu równań różniczkowych. Na płaszczyźnie :math:`XY` otrzymujemy ciąg punktów o współrzędnych
+Otrzymujemy równania rekurencyjne, które pozwalają wyznaczyć ewolucję układu, czyli rozwiązanie numeryczne 
+układu równań różniczkowych. Na płaszczyźnie :math:`XY` otrzymujemy ciąg punktów o współrzędnych
 
 .. MATH::
     :label: eqn52
 
     \{x_n, y_n\}
 
-
-Jeżeli przyrost czasu :math:`h` jest odpowiednio mały, to ten ciąg punktów łączymy linią ciągłą i otrzymujemy  krzywą na płaszczyźnie. Ta krzywa nazywa się krzywą fazową układu dynamicznego.   Mając narysowaną taką krzywą fazową, możemy wnioskować o ewolucji układu i cechach charakterystycznych zachowania się układu w czasie :math:`t`.       Poniżej przedstawiamy dwa przykłady: krzywe fazowe dla oscylatora harmonicznego  i oscylatora harmonicznego tłumionego.  
+Jeżeli przyrost czasu :math:`h` jest odpowiednio mały, to ten ciąg punktów łączymy liniami i otrzymujemy 
+krzywą na płaszczyźnie, którą nazywamy krzywą fazową układu dynamicznego. Mając narysowaną taką krzywą 
+fazową, możemy wnioskować o ewolucji układu i cechach charakterystycznych zachowania się układu w czasie 
+:math:`t`. Poniżej przedstawiamy dwa przykłady: krzywe fazowe dla oscylatora harmonicznego  i oscylatora 
+harmonicznego tłumionego.  
 
 Oscylator harmoniczny
 +++++++++++++++++++++
 
-Przykładem oscylatora harmonicznego jest ciało o masie :math:`m` przyczepione do sprężyny i poruszające się wzdłuż osi :math:`OX`.  Siła działające na to ciało jest proporcjonalna do wychylenia :math:`x` od położenia równowagi i przeciwnie skierowana do wychylenia; gdy rozciągamy sprężynę w kierunku większych dodatnich wartości :math:`x` to siła działa w kierunku ujemnych wartości :math:`x`: 
+Przykładem oscylatora harmonicznego jest ciało o masie :math:`m` przyczepione do sprężyny i poruszające się 
+wzdłuż osi :math:`OX`. Siła działające na to ciało jest proporcjonalna do wychylenia :math:`x` od położenia 
+równowagi i przeciwnie skierowana do wychylenia. Gdy rozciągamy sprężynę w kierunku większych dodatnich 
+wartości :math:`x` to siła działa w kierunku ujemnych wartości :math:`x`. 
 
 .. MATH::
     :label: eqn53
 
      F = -kx
 
-
-gdzie :math:`k` charakteryzuje "sprężystość" sprężyny. Równanie Newtona ma postać:
+gdzie :math:`k` nazywamy stałą sprężystości. Równanie Newtona ma postać
 
 .. MATH::
     :label: eqn54
@@ -266,7 +295,7 @@ gdzie :math:`k` charakteryzuje "sprężystość" sprężyny. Równanie Newtona m
     m\ddot x = -kx, \quad \quad \mbox{lub w postaci} \quad \quad \ddot x = -(k/m) x = -\omega^2 x
 
 
-gdzie :math:`\omega^2 = k/m`. To równanie drugiego rzędu jest równoważne 2 równaniom pierwszego rzędu:
+gdzie :math:`\omega^2 = k/m`. To równanie drugiego rzędu jest równoważne 2 równaniom pierwszego rzędu
 
 .. MATH::
     :label: eqn55
@@ -279,7 +308,10 @@ gdzie :math:`\omega^2 = k/m`. To równanie drugiego rzędu jest równoważne 2 r
 Tłumiony oscylator harmoniczny
 ++++++++++++++++++++++++++++++
 
-Jeżeli w poprzednim przykładzie założymy bardziej realistyczną sytuację, w której  układ nie jest w próżni, ale znajduje się w środowisku (np. w powietrzu, w wodzie lub innej cieczy), to na ciało działa dodatkowa siła, a mianowicie siła tarcia  (tłumienia) :math:`F_d`. Siła tarcia jest proporcjonalna do prędkości cząstki i przeciwnie skierowana do kierunku ruchu
+Jeżeli w poprzednim przykładzie założymy bardziej realistyczną sytuację, w której  układ nie jest w próżni, 
+ale znajduje się w środowisku (np. w powietrzu, w wodzie lub innej cieczy), to na ciało działa dodatkowa siła, 
+a mianowicie siła tarcia (tłumienia) :math:`F_d`. Siła tarcia jest proporcjonalna do prędkości cząstki i 
+przeciwnie skierowana do kierunku ruchu
 
 .. MATH::
     :label: eqn57
@@ -287,27 +319,25 @@ Jeżeli w poprzednim przykładzie założymy bardziej realistyczną sytuację, w
     F_d = -\gamma_0 v = -\gamma_0 \dot x
 
 
-gdzie :math:`\gamma_0` nazywa się współczynnikiem tarcia (tłumienia). 
-
-Siła tarcia jest związana z oddziaływaniem ciała z cząsteczkami otoczenia. Otoczenie stawia opór gdy ciało porusza się w nim i im większa jest prędkość ciała tym większy jest opór otoczenia. Doświadczamy to, gdy biegniemy cali zanurzeni w wodzie. 
-
-Uwzględniając siłę tarcia, równanie Newtona przyjmuje postać
+gdzie :math:`\gamma_0` nazywa się współczynnikiem tarcia (tłumienia). Siła tarcia jest związana z 
+oddziaływaniem ciała z cząsteczkami otoczenia. Otoczenie stawia opór gdy ciało porusza się w nim i im większa 
+jest prędkość ciała tym większy jest opór otoczenia. Doświadczamy tego na przykład wtedy, gdy biegniemy 
+zanurzeni w wodzie. Uwzględniając siłę tarcia, równanie Newtona przyjmuje postać
 
 .. MATH::
     :label: eqn58
 
     m\ddot x = -kx - \gamma_0 \dot x
     
-    
-lub w postaci
+lub
     
 .. MATH::
     :label: eqn58a
 
     \ddot x = -\frac{k}{m} x - \frac{\gamma_0}{m} x = -\omega^2 x - \gamma \dot x
 
-
-gdzie :math:`\omega^2 = k/m`  oraz :math:`\gamma = \gamma_0/m`. Równanie  powyższe  jest równoważne 2 równaniom pierwszego rzędu:
+gdzie :math:`\omega^2 = k/m` oraz :math:`\gamma = \gamma_0/m`. Równanie powyższe jest równoważne 2 
+równaniom pierwszego rzędu:
 
 .. MATH::
     :label: eqn59
@@ -316,9 +346,7 @@ gdzie :math:`\omega^2 = k/m`  oraz :math:`\gamma = \gamma_0/m`. Równanie  powy�
     
     \dot y = -\gamma y -\omega^2 x, \quad \quad y(0) = y_0
 
-
-Oczywiście gdy :math:`\gamma = 0`, wówczas  otrzymujemy równanie oscylatora harmonicznego bez tarcia (nietłumionego).
-
+Oczywiście gdy :math:`\gamma = 0`, wówczas otrzymujemy równanie oscylatora harmonicznego bez tarcia (nietłumionego).
 Poniżej przedstawiamy krzywe fazowe dla tych 2 przykładów.
 
 Oscylator harmoniczny bez tarcia
@@ -427,8 +455,7 @@ Oscylator harmoniczny bez tarcia
   Teraz pozostaje nam już tylko wykreślić odpowiednie listy. Formę wizualizacji pozostawiamy 
   czytelnikom, poniżej prezentując wyniki obliczeń. Krzywa zaprezentowana w tle to wynik użycia
   zaawansowanych algorytmów adaptatywnych. Krzywa bardziej widoczna to efekt obliczeń prostym
-  schematem Eulera, który to pozostawia wiele do życzenia...
-
+  schematem Eulera, który jak łatwo zauwazyć pozostawia wiele do życzenia...
 
   .. figure:: images/sage_chI021_01.*
      :align: center
@@ -436,13 +463,25 @@ Oscylator harmoniczny bez tarcia
 
      Numeryczne rozwiązania oscylatora harmonicznego.
 
+W przypadku oscylatora nietłumionego, krzywe fazowe są zamknięte. Cząstka z biegiem czasu porusza się 
+tak, że położenie :math:`x` i prędkość :math:`v=y` leżą na krzywej fazowej. Ponieważ jest to krzywa 
+zamknięta, to po pewnym czasie cząstka znowu "przebiega" punkty, które się powtarzają. Powtarzanie się 
+jest cechą charakterystyczną ruchu okresowego. Tak więc krzywa fazowa zamknięta przedstawia ruch 
+okresowy (periodyczny). Okres takiego ruchu periodycznego to czas potrzebny na to, aby cząstka startując 
+od punktu np. :math:`\{x_0, y_0\}` i poruszając się po krzywej fazowej dotarła znowu do tego samego 
+punktu :math:`\{x_0, y_0\}`.
 
+W przypadku oscylatora tłumionego, krzywą fazową jest spirala zwijająca się do punktu :math:`\{0, 0\}`. 
+Ruch po spirali oznacza, że zarówno :math:`x` jak i :math:`v=y` maleją w czasie i dla długich czasów 
+położenie :math:`x` oraz prędkość :math:`v` dążą do zera, czyli cząstka zwalnia i na końcu zatrzymuje się. 
+To jest ruch tłumiony: amplituda drgań maleje w czasie. To jest to, co obserwujemy w ruchu kulki 
+zawieszonej na nitce: kulka wykonuje coraz to mniejsze drgania i po długim czasie wisi pionowo (to jest 
+coś co nazywa się stanem równowagi lub położeniem stacjonarnym).
 
-W przypadku oscylatora nietłumionego, krzywe fazowe są zamknięte. Cząstka z biegiem czasu porusza się tak, że położenie :math:`x` i prędkość :math:`v=y`  leżą na krzywej fazowej. Ponieważ jest to krzywa zamknięta, to po pewnym czasie cząstka znowu "przebiega" punkty, które się powtarzają. Powtarzanie się jest cechą charakterystyczną ruchu okresowego. Tak więc krzywa fazowa zamknięta przedstawia ruch okresowy (periodyczny). Okres takiego ruchu periodycznego to czas potrzebny na to, aby cząstka startując od punktu np. :math:`\{x_0, y_0\}` i  poruszając się po krzywej fazowej dotarła znowu do tego samego punktu  :math:`\{x_0, y_0\}`.
-
-W przypadku oscylatora tłumionego, krzywą fazową jest spirala zwijająca się do punktu :math:`\{0, 0\}`. Ruch po spirali oznacza, że zarówno :math:`x` jak i :math:`v=y` maleją w czasie i dla długich czasów położenie :math:`x` oraz prędkość :math:`v` dążą do zera, czyli cząstka zwalnia i na końcu zatrzymuje się. To jest ruch tłumiony: amplituda drgań maleje w czasie. To jest to, co obserwujemy w ruchu kulki zawieszonej na nitce: kulka wykonuje coraz to mniejsze drgania i po długim czasie wisi pionowo ( to jest coś co nazywa się stanem równowagi lub położeniem stacjonarnym).
-
-Gdy mamy bardziej skomplikowane krzywe fazowe, ich "rozszyfrowanie" może być trudniejsze. Ale ogólna zasada jest taka: gdy :math:`x` rośnie to oznacza wzrost położenia cząstki. Gdy :math:`y` maleje to oznacza, że maleje prędkość cząstki.  Gdy :math:`x` maleje to maleje współrzędna położenia cząstki. Gdy :math:`y` rośnie to rośnie prędkość cząstki.
+Gdy mamy bardziej skomplikowane krzywe fazowe, ich "rozszyfrowanie" może być trudniejsze. Ale ogólna 
+zasada jest taka: gdy :math:`x` rośnie to oznacza wzrost położenia cząstki. Gdy :math:`y` maleje to 
+oznacza, że maleje prędkość cząstki. Gdy :math:`x` maleje to maleje współrzędna położenia cząstki. 
+Gdy :math:`y` rośnie to rośnie prędkość cząstki.
 
 Tłumiony oscylator harmoniczny
 ++++++++++++++++++++++++++++++

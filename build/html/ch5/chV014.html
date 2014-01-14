@@ -1,0 +1,575 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Przykłady całkowania procesów stochastycznych &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="prev" title="Stochastyczne równania różniczkowe" href="chV013.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="chV013.html" title="Stochastyczne równania różniczkowe"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="przyklady-calkowania-procesow-stochastycznych">
+<h1>Przykłady całkowania procesów stochastycznych<a class="headerlink" href="#przyklady-calkowania-procesow-stochastycznych" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<div class="section" id="proces-dyfuzji">
+<h2>Proces dyfuzji<a class="headerlink" href="#proces-dyfuzji" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Jest to prawdopodobnie najprostszy proces stochastyczny wykorzystujący biały szum
+gaussowski jako proces losowy. Przez matematyków nazywany jest po prostu procesem
+Wienera ponieważ prawa strona równania ruchu zawiera tylko i wyłącznie ów proces.
+Z drugiej strony jest obok procesu Poissona najważniejszym procesem losowym
+na bazie którego można zdefiniować całą rodzinę procesów losowych o ciągłych
+realizacjach. Równanie to można przedstawić używając równania Ito</p>
+<div class="math">
+\[d x(t) = \sqrt{2 D} dW(t).\]</div>
+<p>Realizacja jest funkcją ciągłą, ale nigdzie nieróżniczkowalną (jako że pochodna
+procesu Wienera nie istnieje). Za pomocą znanego już schematu Eulera-Maruyamy (EM)
+możemy sobie wygenerować pojedynczą realizację takiego procesu. Parametr <span class="math">\(D\)</span>
+reguluje natężenie szumu.</p>
+<div class="math">
+\[x_0 = 0\]\[x_{i+1} = x_i + \sqrt{2 h D} N(0,1).\]</div>
+<p>Wiemy, że dla
+procesu Wienera <span class="math">\(W(0) = 0\)</span>, wystartujemy więc z <span class="math">\(x(0) = 0\)</span>. Weźmy
+krok <span class="math">\(h=0.01\)</span> i 5000 kroków czasowych. Dla przejrzystości weźmiemy
+natężenie szumu <span class="math">\(D=1\)</span>. Jako, że wiemy jak generować zmienne z rozkładem
+<cite>N(0,1)</cite> użyjemy sobie &#8220;symbolicznego&#8221; oznaczenia na funkcję zwracajacą
+takie zmienne. Funkcję taką nazwiemy <tt class="docutils literal"><span class="pre">std_norm</span></tt>. Konkretna realizacja
+takiej funkcji może odbywać np: poprzez algorytm Boxa-Mullera. Funkcja ta
+będzie przy wywołaniu zwracała jedną liczbę losową z <cite>N(0,1)</cite>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+  <span class="n">n01</span> <span class="o">=</span> <span class="n">std_norm</span><span class="p">()</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">D</span><span class="p">)</span> <span class="o">*</span> <span class="n">n01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Teraz narysujmy sobie takie realizacje dla kilku różnych wartości parametru <cite>D</cite>.</p>
+<div class="figure align-center">
+<img alt="Proces dyfuzji dla kilku różnych wartości parametru D." src="../_images/dyf02.png" />
+<p class="caption">Proces dyfuzji dla kilku różnych wartości parametru D.</p>
+</div>
+<p>Na pierwszy rzut oka trajektorie (czy realizacje, przebiegi...) wyglądają kompletnie
+inaczej. Dla małych wartości <cite>D</cite> krzywe są bardziej regularne niż dla tych
+parametryzowanych przez większe wartości <cite>D</cite>, dla których to wykres jest mocno
+poszarpany i nieregularny. Jeżeli jednak narysowalibyśmy je osobno, nie oznaczając
+osi, identyfikacja byłaby niemożliwa - nie widzimy bowiem relacji pomiędzy
+wartościami (przyrostami).</p>
+<div class="figure align-center">
+<img alt="Proces dyfuzji dla kilku różnych wartości parametru D." src="../_images/dyf.png" />
+<p class="caption">Proces dyfuzji dla kilku różnych wartości parametru D. Są to te same przebiegi co
+w poprzednim wykresie. Kolory tu uzyte odpowiadają kolorom z wykresu poprzedniego.</p>
+</div>
+<p>Jako, że rozwiązanie równania dyfuzji znane jest od dawoen dawna, możemy potestować
+na ile dokładnie rozwiązujemy nasze równanie. Oczywiście jedyne co możemy określić,
+to rozkład gęstości prawdopodobieństwa. Zakładając warunki początkowe</p>
+<div class="math">
+\[P(x,0) = \delta (x)\]</div>
+<p>co oznacza, że cały zespół cząstek podlegających dyfuzji wystartuje z <span class="math">\(x(0)=0\)</span>,
+możemy podać odpowiedź, bazując na równaniu dyfuzji</p>
+<div class="math">
+\[\frac{\partial P(x,t)}{\partial t} = D\frac{\partial^2 P(x,t)}{\partial x^2}.\]</div>
+<p>Wynikiem jest rozkład Gaussa postaci</p>
+<div class="math">
+\[P(x,t) = \frac{1}{\sqrt{4 \pi D t}} \exp \Big[ -\frac{x^2}{4 D t} \Big].\]</div>
+<p>w którym wariancja rośnie liniowo z czasem a średnia jest równa zero. Zobaczmy, czy jesteśmy w
+stanie zweryfikować powyższy wzór numerycznie. Postaramy się znaleźć histogram
+pozycji 10000 cząstek po 100 krokach i porównamy go z powyższym wynikiem. Założymy sobie
+<span class="math">\(D=0.1\)</span> i krok czasowy <span class="math">\(h=0.01\)</span>. Oznacza to, że po 100 krokach symulacji
+osiągniemy rzeczywisty czas równy 1.</p>
+<div class="figure align-center">
+<img alt="Proces dyfuzji po 100 krokach symulacji." src="../_images/dyf_100n.png" />
+<p class="caption">Proces dyfuzji po 100 krokach symulacji dla <span class="math">\(D=0.1\)</span>, <span class="math">\(h=0.01\)</span>, <span class="math">\(N=100\)</span>
+a co za tym idzie <span class="math">\(t=Nh\)</span>.</p>
+</div>
+<dl class="docutils">
+<dt>Zadanie 6.1.1</dt>
+<dd>Wykonaj w Sage powyższy rysunek. Metodę generowania histogramów znajdziesz w pierwszej
+części skryptu. Listę położeń, którą należy podać do histogramu wygeneruj w podobny
+sposób jak na początku tego rozdziału.</dd>
+</dl>
+</div>
+<div class="section" id="dyfuzja-ze-stalym-dryftem">
+<h2>Dyfuzja ze stałym dryftem<a class="headerlink" href="#dyfuzja-ze-stalym-dryftem" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Proces taki otrzymuje się bezpośrednio jako graniczny przypadek niesymetrycznego błądzenia
+przypadkowego (polecam poczytać <a class="reference external" href="http://el.us.edu.pl/ekonofizyka/index.php/PIZL:Proces_Wienera_i_proces_dyfuzji#Przypadek_niesymetryczny:_dyfuzja_z_dryfem">ten podrozdział</a>).
+Równanie opisujące ten proces ma postać zbliżoną do poprzedniego, bogatsze jest jednak
+o dodatkowy czynnik, zwany dryftem</p>
+<div class="math">
+\[\frac{\partial P(x,t)}{\partial t} = -V\frac{\partial P(x,t)}{\partial x} + D\frac{\partial^2 P(x,t)}{\partial x^2}.\]</div>
+<p>Rozwiązaniem równania dyfuzji z dryfem, z takim samym warunkiem początkowym jak poprzednio
+(wszystkie cząstki, bądź realizacje zaczynają z tego samego położenia <span class="math">\(x(0)=0\)</span>
+jest następujaca funkcja</p>
+<div class="math">
+\[P(x,t) = \frac{1}{\sqrt{4 \pi D t}} \exp \Big[ -\frac{(x - Vt)^2}{4 D t} \Big].\]</div>
+<p>Jest to funkcja Gaussa opisujaca zmienne losowe normalne, a dwa pierwsze momenty wynoszą
+odpowiednio <span class="math">\(\xi(t) = Vt\)</span> oraz <span class="math">\(\sigma_{\xi}^2 = 2 D t\)</span>. Łatwo zauważyć, że
+zarówno średnia jak i wariancja zależne są liniowo od czasu. Ponadto wariancja jest
+identyczna jak w procesie dyfuzji bez dryftu. Dryft ów stały można z punktu widzenia fizyki
+rozumieć jako stałą siłę przyłożoną do cząstki (coś na kształt cząstki umieszczonej na
+równi pochyłej) - położenie cząstki rośnie liniowo z czasem (jak w ruchu jednostajnie
+prostoliniowym), ale fluktuacje rosną w czasie jak pierwiastek <span class="math">\(\sqrt{t}\)</span>.</p>
+<p>Podobną analizę numeryczną jak poprzednio możemy przeprowadzić i tutaj. Tym razem, wykreślimy
+sobie stroboskopowo histogram położeń po kilku krokach: <cite>N = 10, 100, 200</cite>. Po lekkiej
+modyfikacji numeryczny schemat EM będzie wyglądał tak</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">h</span> <span class="o">=</span> <span class="mf">0.01</span>
+<span class="n">N</span> <span class="o">=</span> <span class="mi">5000</span>
+<span class="n">x0</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">V</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">D</span> <span class="o">=</span> <span class="mi">1</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="n">x0</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">xrange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="n">N</span><span class="p">):</span>
+  <span class="n">n01</span> <span class="o">=</span> <span class="n">std_norm</span><span class="p">()</span>
+  <span class="n">x</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">x</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span> <span class="o">+</span> <span class="n">V</span><span class="o">*</span><span class="n">h</span> <span class="o">+</span> <span class="n">sqrt</span><span class="p">(</span><span class="mi">2</span><span class="o">*</span><span class="n">h</span><span class="o">*</span><span class="n">D</span><span class="p">)</span> <span class="o">*</span> <span class="n">n01</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Teraz wystarczy zobaczyć, czy histogramy położeń po czasie <cite>t=0.1, 1, 2</cite> będą odpowiadały
+obliczonej powyżej funkcji rozkładu.</p>
+<div class="figure align-center">
+<img alt="Proces dyfuzji z dryftem po 10, 100 i 200 krokach symulacji." src="../_images/dryftdif001.png" />
+<p class="caption">Proces dyfuzji ze stałym dryftem po 10, 100 i 200 krokach symulacji dla <span class="math">\(D=0.1\)</span>,
+<span class="math">\(h=0.01\)</span>, a co za tym idzie <span class="math">\(t=0.1, 1, 2\)</span>.</p>
+</div>
+<p>Możemy policzyć sobie teraz średnie, odchylenie standardowe oraz błędy względny i bezwzględny
+przybliżeń dokładnych rozwiązań procesu dyfuzji z dryftem.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="13%" />
+<col width="11%" />
+<col width="17%" />
+<col width="21%" />
+<col width="28%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">czas</th>
+<th class="head">&nbsp;</th>
+<th class="head">teoria</th>
+<th class="head">symulacje</th>
+<th class="head"><span class="math">\(E_b\)</span></th>
+<th class="head"><span class="math">\(E_w\)</span> [%]</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td rowspan="2">t=0.1</td>
+<td>średnia</td>
+<td>0.10</td>
+<td>0.09972</td>
+<td>0.0002766</td>
+<td>0.2766</td>
+</tr>
+<tr class="row-odd"><td>std</td>
+<td>0.1414</td>
+<td>0.1413</td>
+<td>0.00007544</td>
+<td>0.05335</td>
+</tr>
+<tr class="row-even"><td rowspan="2">t=1</td>
+<td>średnia</td>
+<td>1.0</td>
+<td>1.005</td>
+<td>0.005345</td>
+<td>0.5345</td>
+</tr>
+<tr class="row-odd"><td>std</td>
+<td>0.4472</td>
+<td>0.444</td>
+<td>0.003026</td>
+<td>0.6766</td>
+</tr>
+<tr class="row-even"><td rowspan="2">t=2</td>
+<td>średnia</td>
+<td>2.0</td>
+<td>2.001</td>
+<td>0.001460</td>
+<td>0.07302</td>
+</tr>
+<tr class="row-odd"><td>std</td>
+<td>0.6324</td>
+<td>0.6362</td>
+<td>0.003708</td>
+<td>0.5863</td>
+</tr>
+</tbody>
+</table>
+<p>Jak widzimy błędy bezwzględne dochodzą do około pół punktu procentowego różnicy dla 10000
+realizacji. Zwiekszenie próby spowoduje jeszcze lepsze dopasowanie, zmniejszenie spowoduje
+większe odchylenia od wartości rzeczywistych.</p>
+<dl class="docutils">
+<dt>Zadanie 6.1.2</dt>
+<dd>Oblicz błędy przybliżenia rozwiazania problemu dyfuzji ze stałym dryftem dla 10, 100, 500 i
+1000 różnych realizacji. Zestawienia podaj w tabeli.</dd>
+</dl>
+</div>
+<div class="section" id="szum-dychotomiczny">
+<h2>Szum dychotomiczny<a class="headerlink" href="#szum-dychotomiczny" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Jest to prawdopodobnie najprostszy z możliwych rodzaj skorelowanego szumu,
+który może wzbudzić transport w układach jakie analizujemy. Proces <span class="math">\(\xi(t)\)</span>,
+czyli stacjonarny, dychotomiczny, stochastyczny proces Markowa - szum
+telegraficzny, przyjmuje losowo dwie wartości:</p>
+<div class="math" id="equation-eqn101">
+<span class="eqno">(1)</span>\[\begin{split}\xi(t)=\{-a, b\}, \qquad a,b&gt;0,\end{split}\]\[P(-a \to b)=\mu_a=\frac{1}{\tau_a},\]\[P(b \to -a)=\mu_b=\frac{1}{\tau_b},\]</div>
+<p>gdzie <span class="math">\(P(x_1 \to x_2)\)</span> jest prawdopodobieństwem skoku z wartości <span class="math">\(x_1\)</span> do
+<span class="math">\(x_2\)</span> na jednostkę czasu, a <span class="math">\(\tau_a\)</span> i <span class="math">\(\tau_b\)</span> wyrażają średni czas
+przebywania w stanie odpowiednio <span class="math">\(-a\)</span> i <span class="math">\(b\)</span>. Przy założeniu, że rozkład
+początkowy szumu <span class="math">\(\xi(t)\)</span> jest stacjonarny, czyli:</p>
+<div class="math" id="equation-eqn102">
+<span class="eqno">(2)</span>\[P(\xi(0)=b)=\frac{\mu_a}{\mu_a+\mu_b},\]\[P(\xi(0)=-a)=\frac{\mu_b}{\mu_a+\mu_b},\]</div>
+<p>średnia wartość wynosi</p>
+<div class="math" id="equation-eqn103">
+<span class="eqno">(3)</span>\[\langle \xi(t) \rangle =\frac{b\mu_a-a\mu_b}{\mu_a+\mu_b}.\]</div>
+<p>Jednak aby średnia siła losowa była zerowa, musimy założyc <span class="math">\(b\mu_a=a\mu_b\)</span>, co
+spełnia nam automatycznie zakładany warunek. Funkcja korelacyjna wynosi
+wówczas</p>
+<div class="math" id="equation-eqn104">
+<span class="eqno">(4)</span>\[\langle \xi(t) \xi(s) \rangle = \frac{Q}{\tau}e^{-\mid t-s \mid / \tau},\]</div>
+<p>gdzie <span class="math">\(Q=\tau ab\)</span> jest natężeniem procesu oraz <span class="math">\(\tau =1/(\mu_a+\mu_b)\)</span> jest
+czasem korelacji. Z powyższego wynika, że szum dychotomiczny jest
+charakteryzowany trzema parametrami: <span class="math">\(Q\)</span>, <span class="math">\(\tau\)</span> i <span class="math">\(\theta=b-a\)</span>. Ostatni mówi
+o symetrii procesu - gdy <span class="math">\(\theta\)</span> znika proces jest symetryczny, w przeciwnym
+wypadku jest asymetryczny.</p>
+<div class="section" id="realizacja-szumu-dychotomicznego">
+<h3>Realizacja szumu dychotomicznego<a class="headerlink" href="#realizacja-szumu-dychotomicznego" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>Proces <span class="math">\(\xi(t)\)</span> oznacza, że cząstka losowo przeskakuje ze stanu <span class="math">\(-a\)</span> do <span class="math">\(b\)</span> i z powrotem, średnio spędzajęc odpowiednio <span class="math">\(1/\mu_a\)</span> czasu w stanie <span class="math">\(-a\)</span> i <span class="math">\(1/\mu_b\)</span> w stanie <span class="math">\(b\)</span>. Czas pobytu w obu stanach jest zmienną losową o rozkładzie eksponencjalnym i średniej <span class="math">\(1/\mu_k\)</span>, dla <span class="math">\(k=a\)</span> lub <span class="math">\(b\)</span>, zatem algorytm generujący trajektorie <span class="math">\(\xi(t)\)</span> polega na losowaniu liczb z rozkładem eksponencjalnym. Postępować należy więc w sposób nastepujący:</p>
+<blockquote>
+<div><ul class="simple">
+<li>generujemy realizację procesu na jednostkę czasu</li>
+<li>całkujemy otrzymane równanie rózniczkowe.</li>
+</ul>
+</div></blockquote>
+<p>Gdy startujemy z wartości przykładowo <span class="math">\(-a\)</span>, bierzemy skok czasowy <span class="math">\(\Delta t={1 \over \mu_a} \hat{z}\)</span> (czas określający jak długo cząstka przebywać bądzie w stanie <span class="math">\(-a\)</span>), gdzie <span class="math">\(\hat{z}\)</span> to generator liczb losowych z rozkładem</p>
+<div class="math" id="equation-eqn105">
+<span class="eqno">(5)</span>\[\begin{split}P(\Delta t)=\exp(-\Delta t), \Delta t&gt;0.\end{split}\]</div>
+<p>Aby zapamietaæć całą realizację procesu <span class="math">\(\xi(t)\)</span> musimy tablicować liczby <span class="math">\(t_i\)</span> - skoki pomiedzy wartościami <span class="math">\(\{ a, b\}\)</span>, oraz wartość startową.</p>
+<div class='sage'><script type='text/x-sage'>from scipy import stats
+from numpy import cumsum
+# definicja szumu dychotomicznego
+a = -1
+b = 3
+stan = [a,b]
+mu_a = 1
+mu_b = mu_a * abs(b) / abs(a)
+mu = [mu_a,mu_b]
+# realizacja
+N = 20
+czasy = [-log(random()/mu[i%2]) for i in range(N)]
+punkty = cumsum(czasy)
+stany = [stan[i%2] for i in range(N)]
+# wizualizacja
+p = plot_step_function(zip(punkty,stany))
+p.axes_labels([r'$t$',r'$\xi(t)$'])
+p.show(figsize=[8,3],frame=1,axes=1)</script></div></div>
+</div>
+<div class="section" id="szum-kangura">
+<h2>Szum kangura<a class="headerlink" href="#szum-kangura" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Jako, że kangury skaczą zwykle na skończone odległości, to realizacja procesu ograniczonego wydaje się bardziej sensowna. Niemniej jednak dla komputera sytuacja jest bez różnicy. Metoda symulacji procesu kangura polega na generowaniu stanów do których proces skacze (miejsca w które skacze kangur) oraz przedziałów czasowych w których to proces będzie przebywał (czasy odpoczynku kangura pomiędzy skokami). Jeżeli chodzi o proces kangura, to owe przedziały czasowe zależne są od stanu w jakim znajduje się proces (coś jakby powiedzieć, że im dalej kangur skoczy tym dłużej musi odpoczać...). Algorytm polega na powtarzaniu</p>
+<ol class="arabic simple">
+<li>Obliczamy wartość zmiennej losowej korzystając z jednego z rozkładów</li>
+</ol>
+<blockquote>
+<div><ol class="lowerroman simple">
+<li>gdy proces <span class="math">\(\xi(t)\)</span> jest nieograniczony, określony na przedziale <span class="math">\((-\infty, \infty)\)</span> i stacjonarna gęstość prawdopodobieństwa jest gaussowska:</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn106">
+<span class="eqno">(6)</span>\[p(z) = Q(z) = \frac{1}{\sqrt{2\pi} \sigma} \mbox{exp}(-z^2/2\sigma^2), \quad \xi(t) \in (-\infty, \infty)\]</div>
+</div></blockquote>
+<ol class="lowerroman simple" start="2">
+<li>gdy proces <span class="math">\(\xi(t)\)</span> jest ograniczony na przedziale <span class="math">\([-l, l]\)</span> i ma jednostajną gęstość prawdopodobieństwa</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn107">
+<span class="eqno">(7)</span>\[p(z) = Q(z) = \frac{1}{2l}\theta(z+l)\theta(l-z),\quad \xi(t) \in [-l, l],\]</div>
+<p>gdzie <span class="math">\(\theta(x)\)</span> jest funkcją schodkową Heaviside&#8217;a.</p>
+</div></blockquote>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Teraz obliczamy częstość <span class="math">\(\nu(\xi)\)</span>.</li>
+<li>Kiedy już znamy częstość, to obliczamy przedział czasowy w którym będzie przebywał proces kangura w stanie <span class="math">\(\xi\)</span> zgodnie z</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn108">
+<span class="eqno">(8)</span>\[P(T) = \nu(\xi) e^{-T\nu(\xi)}\]</div>
+</div></blockquote>
+<p>Oczywiście rozpatrując szum Kubo-Andersona, gdzie <span class="math">\(\nu(\xi) = \nu_0\)</span> jest stałe, wyrażenia mocno się upraszczają.</p>
+<div class='sage'><script type='text/x-sage'>#szum kangura
+#szum Kubo - Andersona
+#stała częstość \vu
+#proces ograniczony
+
+from scipy import stats
+l = 2
+N = 20
+p=[]
+for iii in range(3):
+    ksi = [2*l*random() - l for i in range(N)]
+    #list_plot(ksi)
+    nu_0 = 2.2
+    czasy = stats.expon.rvs(scale=1/nu_0,size=N)
+    c=random(),random(),random()
+    p.append(plot_step_function(zip(czasy,ksi),color=c))
+p=sum(p)
+p.axes_labels([r'$t$',r'$\xi$'])
+p.show(figsize=[8,3])</script></div></div>
+<div class="section" id="proces-poissona">
+<h2>Proces Poissona<a class="headerlink" href="#proces-poissona" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Pojedynczą realizację procesu Poissona można uzyskać poprzez wygenerowanie
+<span class="math">\(N\)</span> niezależnych punktów losowo rozłożonych na osi czasu na odcinku
+<span class="math">\([0,T]\)</span>. Ilość punktów generujemy z rozkładu Poissona a ich położenie
+na osi czasu zgodnie z rozkładem jednorodnym <span class="math">\(U(0,N)\)</span>. Najprościej
+posłużyć się pakietem <tt class="docutils literal"><span class="pre">scipy</span></tt>, aby wygenerować ilość punktów korzystając
+z rozkładu Poissona. Tak właśnie zrobiliśmy w rozdziale poświęconym
+dynamice stochastycznej. Tutaj skorzystamy z metody inwersyjnej.
+Kolejne zdarzenia na osi czasu są z definicji procesu Poissona od siebie
+niezależne. Rozkład czasów miedzy dwoma kolejnymi punktami jest eksponencjalny</p>
+<div class="math" id="equation-eqn201">
+<span class="eqno">(9)</span>\[p(t) = \mu e^{-\mu t}\]</div>
+<p>Sekwencja liczb wygenerowanych z takim rozkładem zdefiniuje nam proces
+Poissona.</p>
+<p>Jak już pisaliśmy wcześniej, dystrybuanta rozkładu <a href="#equation-eqn201">(9)</a> wynosi</p>
+<div class="math" id="equation-eqn202">
+<span class="eqno">(10)</span>\[F(x) = 1 - e^{-\mu x}\]</div>
+<p>A jej odwrotność <span class="math">\(-\ln(1 - u)/\mu\)</span>, gdzie <span class="math">\(u\)</span> to liczba
+losowa o rozkładzie <span class="math">\(U(0,1)\)</span>. Wygenerujemy ją posługując się
+podstawową funkcję <tt class="docutils literal"><span class="pre">random()</span></tt>.</p>
+<div class='sage'><script type='text/x-sage'>from numpy import cumsum
+F(u, a) = -log(1-u)/a
+N = 20
+skoki = range(N)
+kolor = ["red", "green", "blue"]
+mu = 0.5
+p = []
+for ii in range(3):
+  l = [F(random(), par) for i in skoki]
+  l = cumsum(l)
+  p.append(plot_step_function(zip(l,skoki),color=kolor[ii]))
+sum(p).show(figsize=[8,3],axes_labels=[r'$t$',r'$N(t)$'])</script></div></div>
+<div class="section" id="stabilny-proces-levy-ego">
+<h2><span class="math">\(\alpha\)</span>-stabilny proces Levy&#8217;ego<a class="headerlink" href="#stabilny-proces-levy-ego" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Również w przypadku procesów wykorzystujących statystykę Levy&#8217;ego posłużymy
+się metodą inwersyjną.
+Funkcja charakterystyczna dla <span class="math">\(\alpha\)</span>-stabilnego procesu Levy&#8217;ego
+jest postaci</p>
+<div class="math" id="equation-eqn302">
+<span class="eqno">(11)</span>\[\begin{split}\phi(k)=\left\{\begin{array}{ll}\exp\left[ -\sigma^\alpha|k|^\alpha\left (1-i\beta\mbox{sgn} k\tan\frac{\pi\alpha}{2} \right) +i\mu k \right], &amp; \mbox{for}\;\;\alpha\neq 1, \\\exp\left[ -\sigma|k|\left (1+i\beta\frac{2}{\pi}\mbox{sgn} k \ln|k| \right) + i\mu k \right], &amp; \mbox{for}\;\;\alpha=1. \\\end{array}\right.\end{split}\]</div>
+<p>gdzie <span class="math">\(\alpha\in(0, 2]\)</span>. Przypadek <span class="math">\(\beta=0\)</span> oznacza, że proces jest symetryczny.</p>
+<p>Przepis, na wygenerowanie zmiennej losowej o rozkładzie <span class="math">\(\alpha\)</span>-stabilnym
+jest następujący. Jeżeli <span class="math">\(\alpha \ne 1\)</span>, obliczamy</p>
+<div class="math" id="equation-eqn302">
+<span class="eqno">(12)</span>\[\varsigma = D_{\alpha,\beta,\sigma} \frac{\sin(\alpha(V+C_{\alpha,\beta})) }{ (\cos V)^{\frac{1}{\alpha}}}\left[\frac{\cos(V-\alpha(V+C_{\alpha,\beta}))}{W}\right]^{\frac{1-\alpha}{\alpha}},\]</div>
+<p>gdzie zmienne <span class="math">\(C\)</span> i <span class="math">\(D\)</span> są dane wzorami</p>
+<div class="math" id="equation-eqn303">
+<span class="eqno">(13)</span>\[C_{\alpha,\beta}=\frac{\arctan\left(\beta\tan \frac{\pi\alpha}{2} \right)}{\alpha},\]</div>
+<p>oraz</p>
+<div class="math" id="equation-eqn304">
+<span class="eqno">(14)</span>\[D_{\alpha,\beta,\sigma}=\sigma\left[ \cos\left(\arctan\left(\beta\tan \frac{\pi\alpha}{2}\right) \right) \right]^{-\frac{1}{\alpha}}.\]</div>
+<p>Dla <span class="math">\(\alpha = 1\)</span>, wyrażenie jest nieco prostsze i przyjmuje postać</p>
+<div class="math" id="equation-eqn305">
+<span class="eqno">(15)</span>\[\varsigma = \frac{2\sigma}{\pi} \left[ (\frac{\pi}{2}+\beta V)\tan V -\beta\ln \left (\frac{\frac{\pi}{2}W\cos V}{\frac{\pi}{2}+\beta V} \right) \right] + \mu.\]</div>
+<p>W obu powyższych wzorach <span class="math">\(W\)</span> oraz <span class="math">\(V\)</span> to niezależne zmienne losowe; <span class="math">\(V\)</span> posiada
+rozkład jednorodny na przedziale <span class="math">\((-\frac{\pi}{2},\frac{\pi}{2})\)</span>
+a <span class="math">\(W\)</span> jest generowana z rozkładem wykładniczym o jednostkowej średniej.</p>
+<p>Napiszemy swoją własną funkcję do wygenerowania realizacji procesu Levy&#8217;ego.
+Wykorzystamy podobną definicję jak w przypadku funkcji z pakietu <tt class="docutils literal"><span class="pre">stats.scipy</span></tt>.</p>
+<blockquote>
+<div><tt class="docutils literal"><span class="pre">my_levy_stable(alpha,</span> <span class="pre">beta,</span> <span class="pre">loc=0,</span> <span class="pre">scale=1)</span></tt></div></blockquote>
+<p>gdzie</p>
+<ul class="simple">
+<li><tt class="docutils literal"><span class="pre">alpha</span></tt>, <tt class="docutils literal"><span class="pre">beta</span></tt> - to parametry rozkładu Levy&#8217;ego</li>
+<li><tt class="docutils literal"><span class="pre">loc=0</span></tt>, <tt class="docutils literal"><span class="pre">scale=1</span></tt> - to odpowiednio średnia i odchylenie standardowe (wraz z domyślnymi wartościami)</li>
+</ul>
+<p>Samą funkcję oraz kilka realizacji wygenerowanych z jej pomocą znajdziecie
+poniżej.</p>
+<div class='sage'><script type='text/x-sage'>def my_levy_stable(alpha, beta, loc=0, scale=1):
+    mu, sigma = loc, scale
+    V = pi*random() - pi/2
+    W = -log(1-random())
+    if alpha == 1:
+        dzeta = mu + 2*sigma*((pi/2 + beta*V)*tan(V)-beta*log((pi*W*cos(V)/2)/(pi/2+beta*V)))/pi
+    else:
+        C = atan(beta*tan(pi*alpha/2))/alpha
+        D = sigma*(cos(atan(beta*tan(pi*alpha/2))))^(-1/alpha)
+        dzeta = D*sin(alpha*(V+C))*(cos(V-alpha*(V+C))/W)^(1/alpha-1)/cos(V)^(1/alpha)
+    return dzeta
+
+h = 0.01
+N = 5000
+x0 = 0
+alpha = [0.1,1/2,1,2]
+beta = [1,1,1,0]
+mu = [0,0,0,0]
+sigma = [1,0.1,0.1,1/sqrt(2)]
+k = ['red','green','blue','black']
+p = []
+for j in range(len(alpha)):
+    x = [x0]
+    c = k[j]
+    for i in xrange(1,N):
+        lab = float(my_levy_stable(alpha[j], beta[j], loc=mu[j], scale=sigma[j]).n())
+        x.append(x[i-1] + h**(1/alpha[j]) * lab)
+    p.append(list_plot(x, plotjoined=True, axes_labels=[r'$t$',r'$x(t)$'],
+              figsize=[8,3], frame=1, axes=0, color=c,
+              legend_label=r"$\alpha=%.2f,\beta=%.2f,\mu=%.2f,\sigma=%.2f$"%(alpha[j],beta[j],mu[j],sigma[j])))
+graphics_array([p[:2],p[2:]]).show()</script></div><p>Aby korzystając z powyższej metody otrzymać zmienne z rozkładami</p>
+<ul class="simple">
+<li>normalnym <span class="math">\(N(\mu, 2 \sigma^2)\)</span> należy zdefiniować
+<span class="math">\(\alpha=2,\beta=0\)</span>,</li>
+<li>normalnym <span class="math">\(N(0,1)\)</span> należy podać
+<span class="math">\(\alpha=2,\beta=0,\sigma=1/\sqrt{2},\mu=0\)</span>,</li>
+<li>Cauchy-ego należy podać
+<span class="math">\(\alpha=1,\beta=0\)</span>,</li>
+<li>Levyego-Smirnoffa należy podać
+<span class="math">\(\alpha=1/2,\beta=1\)</span>.</li>
+</ul>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Przykłady całkowania procesów stochastycznych</a><ul>
+<li><a class="reference internal" href="#proces-dyfuzji">Proces dyfuzji</a></li>
+<li><a class="reference internal" href="#dyfuzja-ze-stalym-dryftem">Dyfuzja ze stałym dryftem</a></li>
+<li><a class="reference internal" href="#szum-dychotomiczny">Szum dychotomiczny</a><ul>
+<li><a class="reference internal" href="#realizacja-szumu-dychotomicznego">Realizacja szumu dychotomicznego</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#szum-kangura">Szum kangura</a></li>
+<li><a class="reference internal" href="#proces-poissona">Proces Poissona</a></li>
+<li><a class="reference internal" href="#stabilny-proces-levy-ego"><span class="math">\(\alpha\)</span>-stabilny proces Levy&#8217;ego</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chV013.html"
+                        title="poprzedni rozdział">Stochastyczne równania różniczkowe</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch5/chV014.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="chV013.html" title="Stochastyczne równania różniczkowe"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

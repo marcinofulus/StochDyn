@@ -1,0 +1,462 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dyskretne układy dynamiczne &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Determinizm a przewidywalność" href="../ch2/chII011.html" />
+    <link rel="prev" title="Atraktory" href="chI024.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="../ch2/chII011.html" title="Determinizm a przewidywalność"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI024.html" title="Atraktory"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dyskretne-uklady-dynamiczne">
+<h1>Dyskretne układy dynamiczne<a class="headerlink" href="#dyskretne-uklady-dynamiczne" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>We Wprowadzeniu pokazaliśmy w jaki sposób mogą pojawiać się zagadnienia modelowane równaniami rekurencyjnymi</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[x_{n+1} = f(x_n), \quad \quad x_0 = c\qquad\]</div>
+<p>Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykładem jest algorytm Newtona pozwalający rekurencyjnie znajdować pierwiastki równania</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[F(x) = 0\]</div>
+<p>W metodzie  Newtona  kolejne przybliżenie pierwiastka dane jest przez równanie</p>
+<div class="math" id="equation-eqn2a">
+<span class="eqno">(3)</span>\[x_{n+1} = x_n + \frac{F(x_n)}{F'(x_n)}\equiv f(x_n)\]</div>
+<p>gdzie zakładamy, że pochodna <span class="math">\(F'(x)\)</span> istnieje (w przeciwnym przypadku metoda ta nie może być stosowana). Oznacza to, że nie możemy wpaść w ekstremum funkcji <span class="math">\(F(x)\)</span>.  W szczególności dla <span class="math">\(F(x)=x^2-2\)</span> ciąg <a href="#equation-eqn2a">(3)</a> w zależności od warunku początkowego zmierza do liczby <span class="math">\(x_{+}=\sqrt{2}\)</span> lub <span class="math">\(x_{-}=-\sqrt{2}\)</span>  (co jest oczywiste skądinąd).</p>
+<dl class="docutils">
+<dt><em>Wizualizacja iteracji</em></dt>
+<dd><p class="first">Używając komputera, kolejne wyrazy <span class="math">\(x_n\)</span> jest łatwo uzyskać. Dla przykładu, niech</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(4)</span>\[x_{n+1} = x_n - 0.5  x_{n}^2 +1.7, \qquad x_0 = 1\]</div>
+<p class="last">Poniżej prezentujemy program w SAGE:</p>
+</dd>
+</dl>
+<div class='sage'><script type='text/x-sage'># warunek początkowy
+x0 = 1
+# tu można wstawić dowolną funkcję f(x)
+f(x) = x - 0.5*x*x+1.7
+for i in range(20):
+ print x0
+ x0 = f(x0)</script></div><p>Poniżej jest prezentacja graficzna dla ogólniejszego przypadku</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(5)</span>\[x_{n+1} = x_n - b  x_{n}^2 +1.7, \qquad x_0 = 1\]</div>
+<p>z dowolnym parametrem <span class="math">\(b\)</span>. Zachęcamy do zabawy: zmieniajcie wartość parametru <span class="math">\(b\)</span> oraz warunek początkowy. Czytelnik łatwo może podać swoje własne równanie, zmieniając odpowiednie wyrażenia w programie.</p>
+<div class='sage'><script type='text/x-sage'>def ne(b,X):
+ return X - b*X*X +1.7
+#
+def pophis(startp,b,length):
+ his = [startp]
+ for i in range(length):
+     his.append(ne(b,his[i]))
+ return his
+#
+#warunek pocz. przed b,
+#po b ilość iteracji,
+#skala wykresu podana w ymin, ymax
+@interact
+def _(b=slider(0.05,3,0.05,default=0.5,label='Factor b')):
+ show(list_plot(pophis(1,b,35),plotjoined=True,marker='o',ymin=0.5,ymax=3))</script></div><div class="section" id="metoda-pajeczyny">
+<h2>Metoda pajęczyny<a class="headerlink" href="#metoda-pajeczyny" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjnych.   Za pomocą tego wykresu  można obserwować kolejne kroki iteracji.</p>
+<p>Sposób rysowania:</p>
+<ol class="arabic simple">
+<li>Dla danego równania  <span class="math">\(x_{n+1} = f(x_n)\)</span>, rysujemy wykres funkcji</li>
+</ol>
+<blockquote>
+<div><span class="math">\(y = f (x)\)</span> oraz  linię prostą <span class="math">\(y  = x\)</span>. Prosta ta pozwala
+przenosić wartość <span class="math">\(x_{n+1}\)</span>  z osi OY na oś OX.</div></blockquote>
+<ol class="arabic simple">
+<li>Na osi OX zaznaczamy warunek początkowy <span class="math">\(x_0\)</span>. Znajdujemy</li>
+</ol>
+<blockquote>
+<div>graficznie punkt <span class="math">\(x_1 = f(x_0)\)</span>, który jest na osi OY.</div></blockquote>
+<ol class="arabic simple">
+<li>Przy pomocy prostej <span class="math">\(y=x\)</span> przenosimy teraz  punkt <span class="math">\(x_1\)</span> na oś OX.</li>
+<li>Mając na osi OX punkt <span class="math">\(x_1\)</span>, traktujemy go jako następny warunek</li>
+</ol>
+<blockquote>
+<div>początkowy i znajdujemy graficznie na osi OY punkt <span class="math">\(x_2=f(x_1)\)</span>.</div></blockquote>
+<ol class="arabic simple">
+<li>Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym <span class="math">\(x_0\)</span>.</li>
+</ol>
+<div class='sage'><script type='text/x-sage'>var('r,x0,n')
+@interact
+def cobweb(a=slider(0.4,1.4,0.1,default=1),x0=slider(0,1,0.1,default=1)): ## zmiana parametru a (am, aM, krok) w funkcji f(x)
+ f(x)=x - a*x*x + 1.7    ## postać funkcji f(x), która mozna zmieniać
+ p = plot(f(x)==0,(x,-1,3),ymin=-2,ymax=3,xmin=-1,xmax=3,color='black')+plot(x,(x,-1,4),color='green',figsize=5)
+ for n in range(20):
+     th = 1
+     if n>45:
+         th = 1.5
+         color='red'
+     elif n < 5:
+         color='blue'
+         th=1.5
+     else:
+         color='grey'
+         th =0.5
+     l1 = line([(x0,x0),(x0,f(x0))],color=color,thickness=th)
+     l2 = line([(x0,f(x0)),(f(x0),f(x0))],color=color,thickness=th)
+     p = p+l1+l2
+     x0 = f(x0)
+ p.axes_labels(["$x_n$","$x_{n+1}$"])
+ p.show()</script></div></div>
+<div class="section" id="stany-stacjonarne-punkty-stale-o-okresie-1">
+<h2>Stany stacjonarne (punkty stałe) o okresie 1<a class="headerlink" href="#stany-stacjonarne-punkty-stale-o-okresie-1" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Układ dynamiczny z czasem dyskretnym ma postać równania rekurencyjnego</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(6)</span>\[x_{n+1} = f(x_n), \quad \quad x_0  \quad \mbox{znamy}\]</div>
+<p>Wartość funkcji w następnym kroku  <span class="math">\(x_{n+1}\)</span>  jest obliczana z wartości  funkcji   <span class="math">\(x_n\)</span>  w kroku poprzednim.</p>
+<p>Z punktu widzenia modelowania,  chcielibyśmy wiedzieć, czy układ w trakcie ewolucji dąży do jakiegoś stanu stacjonarnego i czy ten stan stacjonarny jest stabilny. Pojawia się też pytanie, jakiego typu stany stacjonarne mogą pojawiać się dla układów modelowanych równaniami rekurencyjnymi.</p>
+<div class="section" id="a-stany-stacjonarne-punkty-stale-o-okresie-1">
+<h3>A. Stany stacjonarne (punkty stałe o okresie 1)<a class="headerlink" href="#a-stany-stacjonarne-punkty-stale-o-okresie-1" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>Przypomnijmy sobie, co oznacza istnienie stanu stacjonarnego dla układów modelowanych równaniem różniczkowym:</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(7)</span>\[ \frac{dx(t)}{dt} = F(x(t))\]</div>
+<p>Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji, nie zmienia się wraz ze zmianą czasu, czyli <span class="math">\(x(t) = x_s\)</span> jest wielkością stałą, niezmienną. Skoro tak, to</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(8)</span>\[ \frac{dx(t)}{dt}  = \frac{dx_s}{dt}  = 0\]</div>
+<p>Aby lewa strona równania różniczkowego była równa prawej stronie, musi zachodzić równość:</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(9)</span>\[F(x_s) = 0\]</div>
+<p>To jest równanie (warunek), z którego wyznaczamy stan stacjonarny.</p>
+<p>Podobnie rozumujemy w przypadku równań rekurencyjnych:  Stan stacjonarny to taki stan, który nie zmienia się w trakcie ewolucji (dyskretnej), czyli z punktu <span class="math">\(x_s\)</span> otrzymujemy znowu <span class="math">\(x_s\)</span>. Dla równania dyskretnego ta niezmienność oznacza, że</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(10)</span>\[\quad \mbox{jeżeli} \quad x_n = x_s \quad \mbox{to} \quad x_{n+1} = x_s\]</div>
+<p>i równanie rekurencyjne</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(11)</span>\[x_{n+1} = f(x_n) \quad \mbox{ma postać} \quad x_s = f(x_s)\]</div>
+<p>Stąd otrzymujemy równanie dla stanu stacjonarnego</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(12)</span>\[x_s = f(x_s) \quad \mbox{lub w uproszczonym zapisie} \quad x=f(x)\]</div>
+<p><em>Zapamiętajmy to równanie!</em> Matematycy zamiast nazwy &#8220;stan stacjonarny&#8221; stosują nazwę &#8220;punkt stały odwzorowania&#8221; lub &#8220;punkt stały o okresie 1&#8221; .</p>
+<p>Poniżej przedstawiamy to graficznie. Po wielu krokach iteracji obserwujemy powtarzanie się tej samej wartości: kolejna iteracji już nic nie zmienia, jest ta sama, stała.</p>
+<div class='sage'><script type='text/x-sage'>def newpop(a,prevpop):
+ return a*prevpop
+#
+def populationhistory(startpop,a,length):
+ history = [startpop]
+ for i in range(length):
+     history.append( newpop(a,history[i]) )
+ return history
+#
+@interact
+def _( a=slider(0.5,1.1,0.05,default=0.5,label='Malthus Factor a') ):
+ myplot=list_plot( populationhistory(1,a,30) ,plotjoined=True,marker='o',ymin=0,ymax=2)##warunek pocz. przed m, skala
+ myplot.show()</script></div><p>Zobaczmy jak to &#8220;działa&#8221; w przypadku tzw. równania logistycznego gdy <span class="math">\(f(x) = ax (1-x)\)</span>:</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(13)</span>\[x = f(x) \quad \mbox{oznacza} \quad x=ax  = ax - ax^2\]</div>
+<p>Jest to równanie kwadratowe:</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(14)</span>\[ax^2 -ax +x = 0 \quad \mbox{czyli} \quad  ax^2 + x  =  x [ax + ] = 0\]</div>
+<p>Otrzymujemy dwa rozwiązania</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(15)</span>\[x_1 = 0 \quad \mbox{orax} \quad x_2 = \frac{a-1}{a} = 1 - \frac{1}{a}\]</div>
+<p>Są to dwa stany stacjonarne układu. Występuje tu podobieństwo do ciągłego modelu Verhulsta, które też posiada dwa stany stacjonarne <span class="math">\(N_1 = 0\)</span> (niestabilne)  oraz <span class="math">\(N_2 = K\)</span> (stabilne).</p>
+<p>Który ze stanów stacjonarnych  <span class="math">\(x_1\)</span>   i   <span class="math">\(x_2\)</span>  jest stabilny, a który niestabilny.  Zbadamy teraz ten problem.</p>
+</div>
+<div class="section" id="b-stabilnosc-stanow-stacjonarnych">
+<h3>B. Stabilność stanów stacjonarnych<a class="headerlink" href="#b-stabilnosc-stanow-stacjonarnych" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>Stabilność stanu stacjonarnego <span class="math">\(x_s\)</span>  jest podobnie definiowana jak w przypadku równań różniczkowych zwyczajnych: dowolnie małe odchylenie od stanu stacjonarnego   jest w trakcie ewolucji redukowane i odchylenie dąży do zera. Innymi słowy: jeżeli stan początkowy <span class="math">\(x_0\)</span> mało różni się od stany stacjonarnego <span class="math">\(x_s\)</span>, to ciąg liczb:</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(16)</span>\[x_0, \quad x_1=f(x_0), \quad x_2 = f(x_1), \quad x_3 = f(x_2), \quad x_4 = f(x_3), \dots\]</div>
+<p>dąży do stanu stacjonarnego <span class="math">\(x_s\)</span>.</p>
+<p>Innymi słowy, jeżeli <span class="math">\(|x_0 - x_s| &lt; \delta\)</span>  dla odpowiednio małej liczby <span class="math">\(\delta\)</span>   to   <span class="math">\(|x_n - x_s| \to 0\)</span>  gdy <span class="math">\(n \to \infty\)</span>. Wyprowadzimy kryterium które pozwala badać stabilność <span class="math">\(x_s\)</span>.</p>
+<p>Wprowadzamy oznaczenie dla małego odchylenia od stanu stacjonarnego:</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(17)</span>\[\begin{split}y_n = x_n - x_s &lt;&lt; 1\end{split}\]</div>
+<p>stąd</p>
+<div class="math" id="equation-eqn16a">
+<span class="eqno">(18)</span>\[x_n = x_s + y_n.\]</div>
+<p>Wówczas</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(19)</span>\[y_{n+1} = x_{n+1} - x_s = f(x_n) - x_s  = f( x_s + y_n) - x_s\]</div>
+<p>Ponieważ <span class="math">\(y_n\)</span> jest małą wielkością, to funkcję <span class="math">\(f(x_s + y_n)\)</span> rozwijamy w szereg Taylora:</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(20)</span>\[y_{n+1} =  f( x_s + y_n) - x_s \approx [f(x_s) + f'(x_s) y_n + ...] - x_s  =\]\[= f(x_s) - x_s  + f'(x_s) y_n+ ...  = \lambda y_n + \dots,\]</div>
+<p>gdzie</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(21)</span>\[\lambda = f'(x_s)\]</div>
+<p>jest liczbą. Wykorzystaliśmy tu równość dla stanu stacjonarnego: <span class="math">\(x_s = f(x_s)\)</span>.
+W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacjonarnego:</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(22)</span>\[y_{n+1} = \lambda y_n\]</div>
+<p>Jeżeli <span class="math">\(y_{n} \to 0\)</span>  to stan stacjonarny <span class="math">\(x_s\)</span> jest stabilny. Musimy teraz zbadać,  dla jakich wartości liczby <span class="math">\(\lambda = f'(x_s)\)</span> równanie dla <span class="math">\(y_n\)</span>  ma rozwiązania dążące do zera dla warunku początkowego <span class="math">\(|y_0| &lt;&lt; 1\)</span> .</p>
+<p>Rozpatrzymy 4 przypadki:</p>
+<div class="section" id="przypadek">
+<h4>1. Przypadek <span class="math">\(\lambda  &gt; 1\)</span><a class="headerlink" href="#przypadek" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>Aby łatwiej zrozumieć, przyjmiemy  <span class="math">\(\lambda =  2\)</span>. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(23)</span>\[y_{n+1} = 2 y_n\]</div>
+<p>Otrzymamy ciąg liczbowy</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(24)</span>\[ y_0,\]\[ y_1 =   2 y_0,\]\[ y_2 =  2 y_1 =  2 \times 2 y_0 = 2^2 y_0,\]\[ y_3 =  2 y_2 = 2^3 y_0,\]\[ y_4 =  2 y_3 = 2^4 y_0,\]\[ \dots\]</div>
+<p>Widzimy, że  kolejne  liczby rosną, ponieważ są mnożone przez czynnik 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla <span class="math">\(\lambda &gt; 1\)</span>, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.</p>
+</div>
+<div class="section" id="id1">
+<h4>2. Przypadek <span class="math">\(\lambda &lt; -1\)</span><a class="headerlink" href="#id1" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>Aby łatwiej zrozumieć, przyjmiemy  <span class="math">\(\lambda = - 2\)</span>. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać</p>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(25)</span>\[y_{n+1} = - 2 y_n\]</div>
+<p>Otrzymamy ciąg liczbowy</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(26)</span>\[ y_0,\]\[ y_1 = - 2 y_0,\]\[ y_2 = - 2 y_1 = (- 2)  \times (- 2) y_0 = 2^2 y_0,\]\[ y_3 = (- 2) y_2 =  - 2^3 y_0,\]\[ y_4 = (- 2) y_3 = 2^4 y_0,\]\[ \dots\]</div>
+<p>Widzimy, że  wartości bezwzględne kolejnych liczby rosną, ponieważ są mnożone przez czynnik - 2 i ciąg liczbowy jest rozbieżny. Otrzymujemy stąd wniosek, że dla <span class="math">\(\lambda &lt; - 1\)</span>, stan stacjonarny nie jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej rośnie wraz z kolejnym krokiem iteracji.</p>
+</div>
+<div class="section" id="id2">
+<h4>3. Przypadek <span class="math">\(\lambda  \in (-1, 1)\)</span><a class="headerlink" href="#id2" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>Aby łatwiej zrozumieć, przyjmiemy  <span class="math">\(\lambda =  (1/2)\)</span>. Wówczas równanie na odchylenie od stanu stacjonarnego ma postać</p>
+<div class="math" id="equation-eqn24">
+<span class="eqno">(27)</span>\[y_{n+1} = \frac{1}{2}  y_n\]</div>
+<p>Otrzymamy ciąg liczbowy</p>
+<div class="math" id="equation-eqn25">
+<span class="eqno">(28)</span>\[ y_0,\]\[ y_1 =   \frac{1}{2} y_0,\]\[ y_2 =  \frac{1}{2}  y_1 =  \frac{1}{2} \times \frac{1}{2}  y_0 =\frac{1}{2^2}  y_0,\]\[ y_3 =  \frac{1}{2}  y_2 = \frac{1}{2^3}  y_0,\]\[ y_4 =  \frac{1}{2}  y_3 = \frac{1}{2^4}  y_0,\]\[ \dots\]</div>
+<p>Widzimy, że  kolejne  liczby maleją, ponieważ są mnożone przez czynnik <span class="math">\(1/2\)</span>
+i ciąg liczbowy dąży do zera. Otrzymujemy stąd wniosek, że dla <span class="math">\(\lambda  \in (-1, 1)\)</span>,
+stan stacjonarny  jest stabilny: nieskończenie małe odchylenie od wartości stacjonarnej
+maleje do zera  wraz z kolejnym krokiem iteracji.</p>
+<p>Wniosek z tego jest następujący:</p>
+<div class="admonition note">
+<p class="first admonition-title">Uwaga</p>
+<p class="last">Stan stacjonarny <span class="math">\(x_s\)</span> jest stabilny jeżeli <span class="math">\(\lambda = f'(x_s) \in (-1, 1)\)</span>.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="stany-stacjonarne-o-okresie-2">
+<h2>Stany stacjonarne o okresie 2<a class="headerlink" href="#stany-stacjonarne-o-okresie-2" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Jeżeli dla długich iteracji (formalnie dla <span class="math">\(n\to\infty\)</span>)  otrzymujemy ciągle tą samą wartość, to mówimy o stanie  stacjonarnym o okresie 1. Pokazano to na powyższym rysunku. Jednakże mogą pojawić się inne stany stacjonarne. Dla przykładu, zobaczmy jak zachowuje się układ dla <span class="math">\(n\to\infty\)</span>, który jest pokazany poniżej.</p>
+<div class='sage'><script type='text/x-sage'>def ne(b,pre):
+ return 1+b*pre*(1-(1/16)*pre)
+#
+def pophis(startp,b,length):
+ his = [startp]
+ for i in range(length):
+     his.append( ne(b,his[i]) )
+ return his
+#
+@interact
+def _( b=slider(0.05,3.8,0.05,default=3.05,label='Factor b') ):
+ aplot=list_plot( pophis(4,b,35) ,plotjoined=True,marker='o',ymin=0,ymax=18)##warunek pocz. przed b, skala
+ aplot.show()</script></div><p>Obserwujemy, że dla dużych wartości iteracji <span class="math">\(n&gt;&gt;1\)</span>, dwie wartości iteracji powtarzają się i układ &#8220;skacze&#8221; pomiędzy dwoma stanami. Mówimy wówczas o stanie stacjonarnym o okresie 2. Możemy także powiedzieć, że jest to stan periodyczny. Jak wyznaczyć takie stany?  Skorzystamy ze wzoru na kolejne iteracje:</p>
+<div class="math" id="equation-eqn26">
+<span class="eqno">(29)</span>\[x_{n+2} = f(x_{n+1}), \qquad x_{n+1} = f(x_{n})\]</div>
+<p>Należy zauważyć, że wartość <span class="math">\(x_{n+2} = x_n\)</span> ponieważ co drugi krok jest ten sam stan. Dlatego też</p>
+<div class="math" id="equation-eqn27">
+<span class="eqno">(30)</span>\[x_{n+2} = f(x_{n+1}) = f[f(x_{n})] = x_n\]</div>
+<p>Jeżeli oznaczymy stan stacjonarny <span class="math">\(x_s\)</span> o okresie 2 jako <span class="math">\(x^*\)</span> to powyższe równanie przepiszemy jako</p>
+<div class="math" id="equation-eqn28">
+<span class="eqno">(31)</span>\[f[f(x^*)] = x^*\]</div>
+<p>Ale to samo zachodzi dla stanu <span class="math">\(x_{n+3} = x_{n+1}\)</span>. Dlatego równanie powyższe ma 2 rozwiązania <span class="math">\(x^* = x^*_1\)</span>  oraz  <span class="math">\(x^* = x^*_2\)</span>.</p>
+<p>W praktyce rozwiązujemy równanie w postaci bardziej przyjaznej:</p>
+<div class="math" id="equation-eqn29">
+<span class="eqno">(32)</span>\[x = f[f(x)] \equiv g(x)\]</div>
+<p>Pamiętajmy, że jest to złożenie 2 funkcji (co prawda takich samych funkcji, ale to jest drugorzędne).</p>
+<p><strong>To jest bardzo ważne równanie!</strong></p>
+<p>Napisanie tego równania w jawnej postaci nastręcza duże kłopoty przeciętnemu studentowi. Dlatego podamy 1 przykład. Niech układ dynamiczny będzie opisany równaniem</p>
+<div class="math" id="equation-eqn30">
+<span class="eqno">(33)</span>\[x_{n+1} = 1- 2 x_n^2, \qquad f(x_n) = 1 - 2 x_n^2 \qquad \mbox{czyli} \qquad f(x) = 1 - 2 x^2\]</div>
+<p>Ile wynosi <span class="math">\(f[f(x)]\)</span>? Obliczamy</p>
+<div class="math" id="equation-eqn31">
+<span class="eqno">(34)</span>\[f[f(x)] = 1 - 2 [f(x)]^2  =  1 - 2 [1 - 2 x^2]^2 = 1 - 2[1 - 4 x^2 + 4 x^4] = -8 x^4 + 8 x^2 -1\]</div>
+<p>Dlatego równanie które określa stan stacjonarny o okresie 2 ma postać</p>
+<div class="math" id="equation-eqn32">
+<span class="eqno">(35)</span>\[x = -8 x^4 + 8 x^2 -1 = g(x)\]</div>
+<p>Jest to wielomian 4-go stopnia.</p>
+<div class="section" id="stabilnosc-stanow-stacjonarnych-o-okresie-2">
+<h3>Stabilność stanów stacjonarnych o okresie 2<a class="headerlink" href="#stabilnosc-stanow-stacjonarnych-o-okresie-2" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>Badanie stabilności stanów o okresie 2 jest analogiczne do badania stabilności stanów stacjonarnych o okresie 1. Jeżeli stan stacjonarny jest określony przez równanie</p>
+<div class="math" id="equation-eqn33">
+<span class="eqno">(36)</span>\[x^*=g(x^*)\]</div>
+<p>to  stan ten jest  stabilny gdy</p>
+<div class="math" id="equation-eqn34">
+<span class="eqno">(37)</span>\[\lambda_2 = g'(x^*) \in (-1, 1)\]</div>
+<p>Ponieważ funkcja <span class="math">\(g(x)\)</span> jest funkcją złożoną, więc  należy stosować reguły różniczkowania  funkcji złożonej:</p>
+<div class="math" id="equation-eqn35">
+<span class="eqno">(38)</span>\[  \lambda_2 = g'(x^*)  =  \bigl[\{f[f(x)]\}' \bigr]_{x=x^*} =\biggl[ \frac{df(u)}{du}\biggr]_{u=f(x^*)} \biggl(\frac{df(x)}{dx}\biggr)_{x=x^*}  \in (-1, 1)\]</div>
+<p>Powyższy związek można przepisać  w postaci:</p>
+<div class="math" id="equation-eqn36">
+<span class="eqno">(39)</span>\[  \lambda_2 = f'(u^*) f'(x^*) \in (-1, 1)\]</div>
+<p>gdzie <span class="math">\(u^*=f(x^*)\)</span></p>
+<p>Warto coś tu zauważyć  i uprościć. Ponieważ stan <span class="math">\(x^*\)</span> jest o okresie 2 to jak nadmieniliśmy powyżej, faktycznie są 2 stany: <span class="math">\(x^* = x^*_1\)</span> (np. górny)  oraz <span class="math">\(x^* = x^*_2\)</span> (np. dolny), co widać doskonale z powyższego rysunku. Dlatego też dolny stan przechodzi w górny i następnie górny stan przechodzi w dolny. Można to zapisać jako:</p>
+<div class="math" id="equation-eqn37">
+<span class="eqno">(40)</span>\[x_2^* = f(x_1^*), \qquad x_1^* = f(x_2^*)\]</div>
+<p>Stąd otrzymujemy relację:</p>
+<div class="math" id="equation-eqn38">
+<span class="eqno">(41)</span>\[  \lambda_2(x_1^*)  = f'(x^*_2) f'(x^*_1) \in (-1, 1)\]</div>
+<p>Podobna relacja zachodzi dla drugiego stanu</p>
+<div class="math" id="equation-eqn39">
+<span class="eqno">(42)</span>\[  \lambda_2(x_2^*)  = f'(x^*_1) f'(x^*_1) \in (-1, 1)\]</div>
+<p>Jest to ta sama relacja co dla <span class="math">\(x^*_1\)</span>. Więc oznacza to, że wystarczy zbadać wielkość <span class="math">\(f'(x_1)f'(x_2)\)</span>, gdzie <span class="math">\(x_1\)</span>  oraz  <span class="math">\(x_2\)</span> to dwa  rozwiązania równania <span class="math">\(x=f(f(x))\)</span>.</p>
+<p>Podobnie można badać  punkty stałe o dowolnym okresie <span class="math">\(n\)</span>:</p>
+<div class="math" id="equation-eqn40">
+<span class="eqno">(43)</span>\[x^*= f\{f[ .....f(x^*) .....]\}  = G(x^*)\]</div>
+<p>gdzie mamy n-krotne złożenie odwzorowania <span class="math">\(f\)</span>.</p>
+<p>Stan  <span class="math">\(x^*\)</span>  jest  stabilny gdy</p>
+<div class="math" id="equation-eqn41">
+<span class="eqno">(44)</span>\[\lambda_n = G'(x^*) \in (-1, 1)\]</div>
+<p>Ponieważ funkcja <span class="math">\(G(x)\)</span> jest funkcją złożoną, więc  należy stosować reguły różniczkowania  funkcji złożonej, podobnie jak to jest pokazane powyżej w przypadku <span class="math">\(n=2\)</span>.</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Dyskretne układy dynamiczne</a><ul>
+<li><a class="reference internal" href="#metoda-pajeczyny">Metoda pajęczyny</a></li>
+<li><a class="reference internal" href="#stany-stacjonarne-punkty-stale-o-okresie-1">Stany stacjonarne (punkty stałe) o okresie 1</a><ul>
+<li><a class="reference internal" href="#a-stany-stacjonarne-punkty-stale-o-okresie-1">A. Stany stacjonarne (punkty stałe o okresie 1)</a></li>
+<li><a class="reference internal" href="#b-stabilnosc-stanow-stacjonarnych">B. Stabilność stanów stacjonarnych</a><ul>
+<li><a class="reference internal" href="#przypadek">1. Przypadek <span class="math">\(\lambda  &gt; 1\)</span></a></li>
+<li><a class="reference internal" href="#id1">2. Przypadek <span class="math">\(\lambda &lt; -1\)</span></a></li>
+<li><a class="reference internal" href="#id2">3. Przypadek <span class="math">\(\lambda  \in (-1, 1)\)</span></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#stany-stacjonarne-o-okresie-2">Stany stacjonarne o okresie 2</a><ul>
+<li><a class="reference internal" href="#stabilnosc-stanow-stacjonarnych-o-okresie-2">Stabilność stanów stacjonarnych o okresie 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chI024.html"
+                        title="poprzedni rozdział">Atraktory</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="../ch2/chII011.html"
+                        title="następny rozdział">Determinizm a przewidywalność</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch1/chI031.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="../ch2/chII011.html" title="Determinizm a przewidywalność"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI024.html" title="Atraktory"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

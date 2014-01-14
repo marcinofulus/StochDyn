@@ -1,0 +1,336 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Istnienie i jednoznaczność rozwiązań &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Dynamiczne układy zachowawcze i dysypatywne" href="chI022.html" />
+    <link rel="prev" title="Układy dynamiczne z czasem ciągłym" href="chI020.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="chI022.html" title="Dynamiczne układy zachowawcze i dysypatywne"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI020.html" title="Układy dynamiczne z czasem ciągłym"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="istnienie-i-jednoznacznosc-rozwiazan">
+<h1>Istnienie i jednoznaczność rozwiązań<a class="headerlink" href="#istnienie-i-jednoznacznosc-rozwiazan" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Do opisu  realnych zjawisk przy pomocy równań różniczkowych zwyczajnych z warunkami początkowymi zadanymi w chwili  czasu <span class="math">\(t=0\)</span>, potrzebne nam są rozwiązania dla czasów <span class="math">\(t&gt;0\)</span> (ewolucja czasowa).  Można też rozpatrywać przypadek <span class="math">\(t&lt;0\)</span> ale to zaliczyłbym do ćwiczeń matematycznych.  Ważnym zagadnieniem jest istnienie rozwiązań równań różniczkowych. Możemy zapytać, czy zawsze rozwiązania równań różniczkowych istnieją i jeżeli istnieją, to czy to są jedyne rozwiązania z warunkiem początkowym. Oczywiście dla różnych warunków początkowych układ może różnie ewoluować, ale gdy startuje  zawsze z tego samego  stanu (warunku) początkowego to czy ewolucja jest taka sama? Na tym polega problem jednoznaczności rozwiązań. Jeżeli dla danego warunku początkowego istnieją  np. 3 rozwiązania, to jak ewoluuje układ: istnieją 3 możliwości i którą możliwość wybiera układ? Gdyby tak było dla realnych układów to nie moglibyśmy przewidywać ewolucji układu, nie moglibyśmy sterować układami, brak byłoby determinizmu.  W rozwoju nauk ścisłych to właśnie determinizm stał się kołem napędowym rozwoju cywilizacyjnego ludzkości. To determinizm pozwala budować urządzenia, które działają tak jak my sobie tego życzymy: telewizor odbiera wybrany przeze mnie program, używam telefonu do komunikacji  z moją rodziną, wystrzelona rakieta ma taką trajektorię jaką zaplanowałem, itd.  Zbadamy 3 przykłady, które przybliżą nam powyższą problematykę. Źródło tych przykładów jest w  książce: J. Hale, H. Kocak, &#8220;Dynamics and Bifurcations&#8221;. Książka jest znakomita.</p>
+<div class="section" id="przyklad-1">
+<h2>Przykład 1<a class="headerlink" href="#przyklad-1" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Równanie</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[\frac{dx}{dt}=-2x, \qquad x(0) = x_0\]</div>
+<p>jest równaniem różniczkowym liniowym. Jest to jedno z najprostszych równań różniczkowych.  Można łatwo sprawdzić, że funkcja</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[x(t) = x_0   e^{-2t}\]</div>
+<p>jest rozwiązaniem i spełnia warunek początkowy <span class="math">\(x(0) = x_0\)</span>. Funkcja ta jest dobrze określona dla wszystkich skończonych  wartości czasu <span class="math">\(t \in (-\infty, \infty)\)</span>.  Nie ma tu większych ograniczeń.  Jest to jedyne rozwiązanie.  Poniższy rysunek daje wyobrażenie o rozwiązaniach <span class="math">\(x(t)\)</span> dla 3 różnych warunków początkowych. Przy okazji zauważmy, że wszystkie trzy rozwiązania dążą do tego samego stanu <span class="math">\(x=0\)</span>  dla długich czasów <span class="math">\(t\to \infty\)</span>.</p>
+<div class='sage'><script type='text/x-sage'>var('t')
+g(t,a) = a*exp(-2*t)
+p1 = plot(g(t,a=1),(t,0,2), legend_label=r"$x(0)=1$", color='blue')
+p2 = plot(g(t,a=0), (t,0,2), legend_label=r"$x(0)=0$", color='red')
+p3 = plot(g(t,a=-1), (t,0,2), legend_label=r"$x(0)=-1$", color='green')
+show(p1+p2+p3, figsize=[6,3], axes_labels=[r'$t$',r'$x(t)$'], axes=False, frame=True)</script></div></div>
+<div class="section" id="przyklad-2">
+<h2>Przykład 2<a class="headerlink" href="#przyklad-2" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Równanie</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[\frac{dx}{dt}= 3 x^2, \qquad x(0) = x_0\]</div>
+<p>jest równaniem różniczkowym nieliniowym.   Prawa strona tego równania jest określona dla wszystkich wartości <span class="math">\(x\)</span>. Podobnie jak poprzednie równanie, można  je rozwiązać metodą separacji zmiennych. Otrzymamy funkcję</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[x(t) = \frac{x_0}{1-3 x_0 t}\]</div>
+<p>która jest rozwiązaniem i spełnia warunek początkowy. Funkcja ta nie jest określona dla wszystkich skończonych  wartości czasu <span class="math">\(t \in (-\infty, \infty)\)</span>.  Istnieją  ograniczenia dla wartości czasu <span class="math">\(t\)</span>. Ale jest to jedyne rozwiązanie.</p>
+<div class='sage'><script type='text/x-sage'>var('t')
+g  = plot(-4.0/(1 +12*t), (t,0,0.5), detect_poles='show', legend_label=r'$x(0)=-4$', color='blue')
+g += plot(lambda t: 0.0, (t,0,0.5), legend_label=r'$x(0)=0$', color='red')
+g += plot(1.0/(1-3*t), (t,0,1/3), detect_poles='show', legend_label=r'$x(0)=1$', color='green')
+g.show(axes_labels=[r'$t$',r'$x$'], ymin=-4, ymax=8, figsize=[6,3], axes=False, frame=True)</script></div><p>Wszystkie rozwiązania z ujemnym warunkiem początkowym <span class="math">\(x(0) &lt; 0\)</span> są dobrze zdefiniowane dla wszystkich czasów <span class="math">\(t&gt;0\)</span> (krzywa niebieska). Podobnie jest z rozwiązaniem <span class="math">\(x(t) = 0\)</span> dla warunku początkowego <span class="math">\(x(0)=0\)</span> (krzywa czerwona). Natomiast rozwiązanie z  dodatnim warunkiem początkowym <span class="math">\(x(0) &gt; 0\)</span> rozbiega się w skończonym czasie <span class="math">\(t&lt; 1/3x_0\)</span> . Gdyby to równanie miało opisywać ruch cząstki, to oznacza że w skończonym czasie cząstka przebywa nieskończoną odległość. To jest niefizyczne. Równanie  to mogłoby   opisywać proces wybuchu  substancji: <span class="math">\(x\)</span> mogłoby być objętością pęczniejącej substancji która  wybucha po skończonym czasie.</p>
+</div>
+<div class="section" id="przyklad-3">
+<h2>Przykład 3<a class="headerlink" href="#przyklad-3" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Równanie</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[\frac{dx}{dt}=  2 \sqrt x, \qquad x(0) = x_0 \ge 0\]</div>
+<p>jest równaniem różniczkowym nieliniowym.  Prawa strona tego równania jest określona dla nieujemnych wartości <span class="math">\(x \ge 0\)</span>.  Podobnie jak  2 poprzednie równania, można  je rozwiązać metodą separacji zmiennych. Otrzymamy rozwiązanie</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[x(t) = (t +  \sqrt x_0)^2\]</div>
+<p>Funkcja ta jest określona dla wszystkich wartości czasu <span class="math">\(t &gt;0\)</span>.   Jest to jedyne  rozwiązanie  z wyjątkiem jednego warunku początkowego: <span class="math">\(x(0) = 0\)</span>. Dla tego warunku początkowego istnieje jeszcze jedno rozwiązanie, a mianowicie <span class="math">\(x(t) = 0\)</span>. Tak więc dla <span class="math">\(x(0) = 0\)</span> mamy  2 różne rozwiązania</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[x(t) = t^2, \qquad x(t) = 0\]</div>
+<p>Jak przebiega ewolucja, gdy układ startuje ze stanu początkowego <span class="math">\(x(0) = 0\)</span> ? W tym przypadku rozwiązania są niejednoznaczne.</p>
+<div class='sage'><script type='text/x-sage'>var('t')
+p1=plot(t**2,(t,0,1), legend_label=r"$x(0)=1$", color='blue')
+p2=plot(0,(t,0,1), legend_label=r"$x(0)=0$", color='red')
+show(p1+p2, figsize=[6,3], axes=False, frame=True)</script></div><p>Co jest takiego charakterystycznego w ostatnim przykładzie, że pojawia się niejednoznaczność rozwiązania równania różniczkowego?  Na to pytanie daje odpowiedź  twierdzenie o jednoznaczności rozwiązania równania różniczkowego. Potrzebna nam będzie własność funkcji:</p>
+<p>Mówimy, że funkcja <span class="math">\(f(x)\)</span> spełnia  warunek Lipschitza na zbiorze otwartym <span class="math">\(U\)</span> jeżeli istnieje taka stała <span class="math">\(L &gt; 0\)</span>,  że</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(8)</span>\[|f(x_2) -f(x_1)| \le L|x_2 - x_1|\]</div>
+<p>dla wszystkich <span class="math">\(x_1, x_2 \in U\)</span>.</p>
+<p>Warunek Lipschitza można zapisać w postaci</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(9)</span>\[|f(x+h) -f(x)| \le L h \quad \quad \mbox{lub jako} \quad \quad \frac{f(x+h) - f(x)}{h}| \le L\]</div>
+<p>Z tego wynika że jeżeli  <span class="math">\(f(x)\)</span> ma ograniczoną pochodną, to spełnia warunek Lipschitza. Są  oczywiście nieróżniczkowalne funkcje, które spełniają warunek Lipschitza.</p>
+<dl class="docutils">
+<dt>Twierdzenie Picarda</dt>
+<dd>Jeżeli funkcja <span class="math">\(f(x)\)</span> jest ciągła w <span class="math">\(U\)</span> oraz spełnia warunek Lipschitza w  <span class="math">\(U\)</span> wówczas równanie różniczkowe</dd>
+</dl>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(10)</span>\[\frac{dx}{dt} = f(x), \qquad x(0) = x_0\]</div>
+<p>ma dokładnie jedno rozwiązanie w <span class="math">\(U\)</span>.</p>
+<p>Istnieje kilka  modyfikacji tego twierdzenia, ale na nasze potrzeby ta najprostsza wersja jest wystarczająca.
+W przypadku układu równań różniczkowych, warunek Lipschitza ma postać</p>
+<div class="math" id="equation-eqn10a">
+<span class="eqno">(11)</span>\[| F_i(x_1, x_2, x_3, ..., x_n) - F_i(y_1, y_2, y_3, ..., y_n) | \le L  \sum_{k=1}^n|x_k-y_k|\]</div>
+<p>Nierówność ta musi  być spełniona dla wszystkich funkcji <span class="math">\(F_i\)</span> i twierdzenie Picarda brzmi
+podobnie. Warunek Lipschitza jest spełniony gdy pochodne cząstkowe są ograniczone,</p>
+<div class="math" id="equation-eqn10b">
+<span class="eqno">(12)</span>\[\lvert\frac{\partial F_i}{\partial x_k}\rvert \le K\]</div>
+<p>dla dodatnich <span class="math">\(K\)</span>.</p>
+<p>Teraz możemy odpowiedzieć, dlaczego w 3 przykładzie rozwiązanie jest niejednoznaczne: funkcja <span class="math">\(f(x) = 2\sqrt x\)</span> nie spełnia warunku Lipschitza ponieważ pochodna</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(13)</span>\[\frac{df(x)}{dx} = \frac{1}{\sqrt x}\]</div>
+<p>w punkcie <span class="math">\(x=0\)</span> jest rozbieżna. W punktach <span class="math">\(x&gt;0\)</span>  pochodna ma wartość skończoną i jest spełnione twierdzenie Picarda. Dlatego też  rozwiązania są jednoznaczne.</p>
+</div>
+<div class="section" id="dodatek">
+<h2>Dodatek<a class="headerlink" href="#dodatek" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Sage z powodzeniem jest w stanie rozwiązywać pewne równania różniczkowe zwyczajne. Zobaczmy jak poradzi sobie z powyższymi przykładami.</p>
+<div class="section" id="id1">
+<h3>Przykład 1<a class="headerlink" href="#id1" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(14)</span>\[\frac{dx}{dt}=-2x, \qquad x(0) = x_0\]</div>
+<p>z rozwiązaniem</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(15)</span>\[x(t) = x_0   e^{-2t}.\]</div>
+<p>Na początek zadamy sobie zmienne. Druga linijka mówi o tym, że zmienna <span class="math">\(x\)</span> będzie funkcją parametru <span class="math">\(t\)</span> (czasu). Zamiast
+używać nazwy <tt class="docutils literal"><span class="pre">g</span></tt> użyjemy świeżo obliczonego rozwiązania <tt class="docutils literal"><span class="pre">rozw</span></tt>.</p>
+<div class='sage'><script type='text/x-sage'>var('t x_0')
+x = function('x', t)
+rrz = diff(x,t) == -2*x
+rozw = desolve(rrz, x)
+rozw = rozw.subs(c=x_0)
+print "rozwiązanie równania"
+show(rozw)
+p1 = plot(rozw(x_0=1), (t,0,2), legend_label=r"$x(0)=1$", color='blue')
+p2 = plot(rozw(x_0=0), (t,0,2), legend_label=r"$x(0)=0$", color='red')
+p3 = plot(rozw(x_0=-1), (t,0,2), legend_label=r"$x(0)=-1$", color='green')
+show(p1+p2+p3, figsize=[6,3], axes_labels=[r'$t$',r'$x(t)$'], axes=False, frame=True)</script></div></div>
+<div class="section" id="id2">
+<h3>Przykład 2<a class="headerlink" href="#id2" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(16)</span>\[\frac{dx}{dt}= 3 x^2, \qquad x(0) = x_0\]</div>
+<p>z rozwiązaniem</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(17)</span>\[x(t) = \frac{x_0}{1-3 x_0 t}.\]</div>
+<div class='sage'><script type='text/x-sage'>var('t x_0 c')
+x = function('x', t)
+print "Definiujemy równanie różniczkowe"
+rrz = diff(x,t) == 3*x^2
+rozw2 = desolve(rrz, x)
+print "i je rozwiązujemy..."
+show(rozw2)
+print "krok 1\n obliczamy x(t) z poprzedniego kroku"
+rozw2 = solve(rozw2,x)[0].rhs()
+show(rozw2)
+print "krok 2\n obliczamy x(0)"
+buf = rozw2(t=0) == x_0
+show(buf)
+print "krok 3\n wyznaczamy stałą c"
+buf = solve(buf,c)[0].rhs()
+show(buf)
+print "krok 4\n wstawiamy c do równania"
+rozw2 = rozw2.subs(c=buf).full_simplify()
+show(rozw2)
+print "I na koniec prezentujemy wyniki"
+x0 = -4
+w = plot(rozw2(x_0=x0), (t,0,1), detect_poles='show', legend_label=r'$x(0)=%d$'%x0, color='blue')
+x0 = 0
+w += plot(rozw2(x_0=x0), (t,0,1), legend_label=r'$x(0)=%d$'%x0, color='red')
+x0 = 1
+w += plot(rozw2(x_0=x0), (t,0,1/3), legend_label=r'$x(0)=%d$'%x0, color='green')
+w.show(axes_labels=[r'$t$',r'$x$'], tick_formatter='latex', xmin=0, xmax=0.5, ymin=-4.1, ymax=8, figsize=(6,3), axes=False, frame=True)</script></div></div>
+<div class="section" id="id3">
+<h3>Przykład 2<a class="headerlink" href="#id3" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(18)</span>\[\frac{dx}{dt}=  2 \sqrt x, \qquad x(0) = x_0 \ge 0\]</div>
+<p>z rozwiązaniem</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(19)</span>\[x(t) = (t +  \sqrt x_0)^2\]</div>
+<div class='sage'><script type='text/x-sage'>var('t x_0 c')
+forget()
+assume(x_0>=0)
+assume(t+c>0)
+print "równanie"
+x = function('x', t)
+rrz = diff(x,t) == 2*sqrt(x)
+show(rrz)
+print "i jego rozwiązanie"
+rozw3 = solve(desolve(rrz, x),x)[0]
+show(rozw3)
+print "stała całkowania"
+buf = solve(x_0 == rozw3.rhs()(t=0),c)
+show(buf)
+print "mamy dwa możliwe rozwiązania, wybieramy to z dodatnim c"
+buf = buf[1]
+show(buf)
+print "i dostajemy ostatecznie"
+rozw3 = rozw3.subs(c=buf.rhs())
+show(rozw3)
+print "I na koniec prezentujemy wyniki"
+p1=plot(rozw3.rhs()(x_0=0),(t,0,1), legend_label=r"$x(0)=1$", color='blue')
+show(p1, figsize=[6,3], axes=False, frame=True)</script></div><p>No tak, ale gdzie jest rozwiązanie <span class="math">\(x(t) = 0\)</span>? Na chwilę obecną Sage nie rozróżni obu możliwych rozwiązań. Dlatego umiejętność analitycznego rozwiązania takich problemów wciąż jest niezbędna!</p>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Istnienie i jednoznaczność rozwiązań</a><ul>
+<li><a class="reference internal" href="#przyklad-1">Przykład 1</a></li>
+<li><a class="reference internal" href="#przyklad-2">Przykład 2</a></li>
+<li><a class="reference internal" href="#przyklad-3">Przykład 3</a></li>
+<li><a class="reference internal" href="#dodatek">Dodatek</a><ul>
+<li><a class="reference internal" href="#id1">Przykład 1</a></li>
+<li><a class="reference internal" href="#id2">Przykład 2</a></li>
+<li><a class="reference internal" href="#id3">Przykład 2</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chI020.html"
+                        title="poprzedni rozdział">Układy dynamiczne z czasem ciągłym</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="chI022.html"
+                        title="następny rozdział">Dynamiczne układy zachowawcze i dysypatywne</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch1/chI021.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="chI022.html" title="Dynamiczne układy zachowawcze i dysypatywne"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI020.html" title="Układy dynamiczne z czasem ciągłym"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

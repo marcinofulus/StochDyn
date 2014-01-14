@@ -224,12 +224,18 @@ gdzie :math:`\lambda \in [0, 1]` i może przyjmowac dowolną wartość z tego pr
 
 .. note::
 
-   1. Istnieją twierdzenia mówiące o tym, że jeżeli proces :math:`xi(t)` jest skorelowany, to obie definicje są równoważne. Problem pojawia sie tylko wówczas gdy :math:`\xi(t)` jest procesem stochatycznym o niezależnych przyrostach. Takimi procesami są podstawowe modelowe procesy stochastyczne: proces Wienera, proces Poissona i proces Levy'ego. 
+   1. Istnieją twierdzenia mówiące o tym, że jeżeli proces :math:`\xi(t)` jest skorelowany, to obie definicje 
+      są równoważne. Problem pojawia sie tylko wówczas gdy :math:`\xi(t)` jest procesem stochastycznym o niezależnych 
+      przyrostach. Takimi procesami są podstawowe modelowe procesy stochastyczne: proces Wienera, proces Poissona i proces Levy'ego. 
 
-   2. Jeżeli te trzy procesy sa przybliżeniami odpowiednich procesów skorelowanych, to właściwa definicja jest definicją Stratonowicza. Innymi słowy, wyjściowe całki ze skorelowanymi procesami nie zależą od definicji, ale w granicy gdy czas korelacji dąży do zera, wartości całek są takie jak w definicji Stratonowicza.
+   2. Jeżeli te trzy procesy sa przybliżeniami odpowiednich procesów skorelowanych, to właściwa definicja jest definicją 
+      Stratonowicza. Innymi słowy, wyjściowe całki ze skorelowanymi procesami nie zależą od definicji, ale w granicy gdy 
+      czas korelacji dąży do zera, wartości całek są takie jak w definicji Stratonowicza.
 
-   3. Istnieje związek między całkami Ito i Stratonowicza: z całki Ito można otrzymać całkę Stratonowicza i odwrotnie: z całki Stratonowicza można otrzymać całkę Ito. Więc generalnie nie należy się przejmować interpretacją tak długo jak prowadzimy formalne obliczenia, ale w opdowiednim momencie trzeba wybrać odpowiednią interpretację całki, ponieważ końcowe wyniki zależą od tej interpretacji. 
-
+   3. Istnieje związek między całkami Ito i Stratonowicza: z całki Ito można otrzymać całkę Stratonowicza i odwrotnie: z 
+      całki Stratonowicza można otrzymać całkę Ito. Więc generalnie nie należy się przejmować interpretacją tak długo jak 
+      prowadzimy formalne obliczenia, ale w opdowiednim momencie trzeba wybrać odpowiednią interpretację całki, ponieważ 
+      końcowe wyniki zależą od tej interpretacji. 
 
 
 Przypadek wielowymiarowy

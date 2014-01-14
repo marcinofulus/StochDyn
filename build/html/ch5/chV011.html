@@ -1,0 +1,600 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Liczby losowe &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Równania różniczkowe zwyczajne" href="chV012.html" />
+    <link rel="prev" title="Układy w kontakcie z termostatem: Uogólnione równania Langevina" href="../ch3/chIII041.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="chV012.html" title="Równania różniczkowe zwyczajne"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ch3/chIII041.html" title="Układy w kontakcie z termostatem: Uogólnione równania Langevina"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="liczby-losowe">
+<h1>Liczby losowe<a class="headerlink" href="#liczby-losowe" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<div class="admonition note">
+<p class="first admonition-title">Uwaga</p>
+<p class="last">W tym kursie do numerycznych realizacji używać będziemy pakietu <a class="reference external" href="http://sagemath.org/">Sage</a>. Jest to dostępny dla
+każdego program typu open-source bazujacy na języku <a class="reference external" href="http://python.org/">Python</a>.</p>
+</div>
+<div class="section" id="liczby-losowe-i-pseudolosowe">
+<h2>Liczby losowe i pseudolosowe<a class="headerlink" href="#liczby-losowe-i-pseudolosowe" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Intuicyjnie dość dobrze rozumiemy co oznacza termin <em>liczba losowa</em>. Każdy z nas choć
+raz w życiu podrzucił monetę do góry po to, by &#8220;ślepy los&#8221; zdecydował za niego o jakimś
+wyborze (jeżeli w ten sposób zdecydowaliście o wyborze studiów, to szczerze mówiąc -
+gratuluję). Oczywiście na monecie nie ma żadnych liczb, ale można sobie potraktować
+reszkę (R) jako 0 a orła (O) jako 1 (co bardzo dobrze reprezentuje fałsz i prawdę lub niemożliwe
+i pewne zdarzenie w teorii prawdopodobieństwa). Teraz już możemy sobie podrzucać monetę
+i na kartce papieru zapisywać kolejne wylosowane (wyrzucone) przez nas liczby</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+</pre></div>
+</div>
+<p>co odpowiada oczywiście wyrzuceniu kolejno</p>
+<div class="highlight-python"><pre>R, O, R, R, R, R, O, R, O, O, R, R, O, R, O.</pre>
+</div>
+<p>W naszym przypadku zapiszemy sobie te liczby od razu do listy w notatniku Sage.</p>
+<div class='sage'><script type='text/x-sage'>rzuty = [0, 1, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 1]
+print rzuty</script></div><p>Mamy teraz je dostępne pod zmienną <tt class="docutils literal"><span class="pre">rzuty</span></tt>. Do prostych zagadnień, gdzie potrzebne jest nam
+kilka, czy nawet kilkanaście takich liczb, bez problemu możemy poradzić sobie rzucając monetą.
+Jeżeli potrzebujemy zadecydować o wyborze pomiędzy trzema możliwościami możemy użyć sześciennej
+kości do gry i przykładowo wybrać wynik poprzez działanie modulo 3 (<span class="math">\(\text{mod} 3\)</span>).
+Tym razem dostaniemy trzy możliwe liczby <tt class="docutils literal"><span class="pre">0,</span> <span class="pre">1,</span> <span class="pre">2</span></tt></p>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># rzuty kością</span>
+<span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span>
+</pre></div>
+</div>
+<div class="highlight-python"><div class="highlight"><pre><span class="c"># modulo 3</span>
+<span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">1.</span>
+</pre></div>
+</div>
+<p>Sytuacja zrobi się jednak nieco bardziej skomplikowana, gdy będziemy potrzebować tysiąc, milion czy
+bilion takich liczb. Jeżeli nawet grupa 10 studentów była by w stanie wyrzucić monetą tysiąc
+losowych zer i jedynek w pół godziny (włączając w to zapisywanie w liście Sage lub nawet na
+kartce papieru) to uzyskanie miliona liczb jest praktycznie nie do zrobienia w ten sposób.
+problem pojawia się też w momencie, gdy chcielibyśmy mieć liczby naturalne z zakresu np: <span class="math">\(0-10\)</span>,
+czy w końcu losowe liczby zmiennoprzecinkowe. Metody chałupnicze w tym momencie się kończą.</p>
+<p>Z pomocą może przyjść nam komputer. Obecnie
+znakomita większość języków programowania (przynajmniej tych realnie wykorzystywanych <a class="footnote-reference" href="#id3" id="id1">[1]</a>)
+posiada w swoich standardowych bibliotekach funkcje
+(metody, klasy) umożliwiające wygenerowanie liczby (pseudo)losowej z przedziału <tt class="docutils literal"><span class="pre">[0,1)</span></tt> lub też
+<tt class="docutils literal"><span class="pre">[0,RAND_MAX]</span></tt>, gdzie ów <tt class="docutils literal"><span class="pre">RAND_MAX</span></tt> to stała zależna od architektury komputera, kompilatora i
+bibliotek.</p>
+<p>W Sage liczby losowe uzyskuje się poprzez funkcję <tt class="docutils literal"><span class="pre">random()</span></tt>. Zwraca ona liczbę losową z przedziału
+<tt class="docutils literal"><span class="pre">[0.0,</span> <span class="pre">1.0)</span></tt>. Wykorzysując proste wyrażenie listowe możemy przypisać do listy N liczb losowych.</p>
+<div class='sage'><script type='text/x-sage'>N = 10
+lista = [random() for i in xrange(N)]
+print lista</script></div><p>Inna funkcja <tt class="docutils literal"><span class="pre">randint(a,</span> <span class="pre">b)</span></tt>, zwraca liczby całkowite z przedziału <tt class="docutils literal"><span class="pre">[a,b]</span></tt>. Czyli symulacja rzutu
+monetą może być zrealizowana poprzez</p>
+<div class='sage'><script type='text/x-sage'>N = 10
+rzut_moneta = [randint(0,1) for i in xrange(N)]
+print rzut_moneta</script></div><dl class="docutils">
+<dt>Zadanie 2.2.1</dt>
+<dd><strong>Zamodeluj w Sage rzut kością.</strong> Wygeneruj listę 1000 liczb odzwierciedlających 1000 rzutów symetryczną
+sześcienną kością do gry. Wynik zapisz w zmiennej <tt class="docutils literal"><span class="pre">rzut_kostka</span></tt>.</dd>
+</dl>
+<p>Matematycznie rzecz biorąc liczbę losową można utożsamić z wartością jaką przybiera pewna zmienna losowa
+<span class="math">\(\xi\)</span>. Możemy napisać, że dla procesu jakim jest rzut kością zmienna losowa <span class="math">\(\xi\)</span> może przybierać
+wartości <tt class="docutils literal"><span class="pre">0</span></tt> lub <tt class="docutils literal"><span class="pre">1</span></tt>. Matematyczne konsekwencje poznaliście już na wykładzie <a class="reference external" href="http://el.us.edu.pl/ekonofizyka/index.php/Procesy_i_Zjawiska_Losowe">Procesy i zjawiska losowe</a>, tutaj zajmiemy się znacznie szerzej
+generowaniem liczb losowych i wykorzystaniem ich właśnie do realizacji procesów losowych, ze szczególnym
+uwzględnieniem zastosowania dla rynków finansowych, czy w ogólności w modelach ekonomicznych.</p>
+<p>No koniec tego rozdziału musimy sobie powiedzieć jasno: program komputerowy bazujący na deterministycznym
+generatorze liczb losowych może wygenerować tylko i wyłącznie liczby pseudolosowe, czyli takie, które tylko
+imitują prawdziwe liczby czysto losowe. Te ostatnie osiągalne są tylko procesie rzeczywistym. Możemy jednak
+za pomocą takich generatorów uzyskać ciąg liczb (bitów), który pod pewnymi względami będzie nierozróżnialny
+od ciągu uzyskanego z prawdziwie losowego źródła (np: z rzutu rzeczywistą kością).</p>
+</div>
+<div class="section" id="generatory-liczb">
+<h2>Generatory liczb<a class="headerlink" href="#generatory-liczb" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p><em>Generator liczb losowych</em> (RNG, z ang. random number generator) lub nieco bardziej ściśle <em>generator
+zdarzeń losowych</em> (REG, z ang. random event generator) to układ produkujący losowy ciąg elementów
+binarnych (bitów) najczęściej ułożony w postaci szeregu liczb losowych. Z punktu widzenia sposobu
+generowania liczb losowych wyróżniamy generatory sprzętowe (fizyczne, rzeczywiste) i programowe.</p>
+<div class="section" id="generatory-sprzetowe">
+<h3>Generatory sprzętowe<a class="headerlink" href="#generatory-sprzetowe" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>TRNG (z ang. True RNG) - działające na zasadzie obrazowania właściwości i parametrów fizycznego procesu
+stochastycznego. Może to być ów rzut kością, monetą, wybieranie karty z talii kart itp. Wykorzystywać
+można też: efekt fotoelektryczny, szum termiczny, szum śrutowy, proces zaniku radioaktywnego...</p>
+</div>
+<div class="section" id="generatory-programowe">
+<h3>Generatory programowe<a class="headerlink" href="#generatory-programowe" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>PRNG, (z ang. Pseudo RNG) - działające na zasadzie deterministycznego obliczania ciągu liczb, które
+wyglądają jak liczby losowe. Algorytmy realizujące PRNG istnieją już ponad pół wieku i są obecnie
+zaimplementowane dla większości języków programowania. Na podstawie początkowej wartości nazywanej
+ziarnem czy zarodkiem (z ang. seed) oblicza kolejne wartości.
+Obie prezentowane funkcje Sage (<tt class="docutils literal"><span class="pre">random</span></tt> i <tt class="docutils literal"><span class="pre">randint</span></tt>) korzystają właśnie z jednego z takich
+algorytmów, zwanego <a class="reference external" href="http://pl.wikipedia.org/wiki/Mersenne_Twister">Mersenne Twister</a>. Jest to
+obecnie chyba najbardziej popularny algorytm opracowany w 1997 roku. Np. Matlab/GNU Octave
+też wykorzystuje ten algorytm. Jest on stosunkowo skomplikowany i może być trudny do realizacji,
+dlatego też omówimy sobie dużo prostszy, liniowy generator i omówimy jego zalety i (przede wszystkim)
+wady.</p>
+<p>Programowe generowanie liczb losowych <a class="footnote-reference" href="#id4" id="id2">[2]</a> oparte jest na rekurencji</p>
+<div class="math">
+\[x_i = f(x_{i-1}, x_{i-2}, \dots, x_{i-k}),\]</div>
+<p>czy w nieco bardziej zwartej formie</p>
+<div class="math">
+\[x_i = f(x_{i-1}).\]</div>
+<p>Sekwencje te będą w oczywisty sposób deterministyczne. Problem polega na wygenerowaniu liczb których
+własności bardzo dobrze przypominają główne własności liczb prawdziwie losowych. Dodatkowo sekwencje liczb
+pseudolosowych będą powtarzały się co pewien okres, więc dość istotne jest aby generator takich liczb
+posiadał ów okres jak najdłuższy.</p>
+<div class="section" id="liniowy-generator-kongruencyjny">
+<h4>Liniowy generator kongruencyjny<a class="headerlink" href="#liniowy-generator-kongruencyjny" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>LCG (linear congruential generator) wyznaczony jest przez metodę rekurencyjną</p>
+<div class="math">
+\[X_{n+1} = (a X_n + c) \quad \text{mod} \quad m.\]</div>
+<p>Stan początkowy to wartość ziarna (zalążka). Nie jest on zbytnio bezpieczny - istnieją techniki identyfikacji
+parametrów modelu na podstawie obserwacji wyników. Dla niektórych parametrów jest prawie losowy a dla
+innych dość szybko staje się okresowy. W powyższej definicji <span class="math">\(x_0\)</span> to ziarno (zalążek),
+<span class="math">\(a\)</span> mnożnik, <span class="math">\(c\)</span> przesunięcie a <span class="math">\(m \in \mathbb{Z}\)</span> nazywamy modułem. Dwie liczby nazywamy kongruentnymi
+(przystającymi) modulo <span class="math">\(m\)</span> jeżeli ich różnica jest podzielna przez <span class="math">\(m\)</span>. Jeżeli <span class="math">\(0 \le a &lt; m\)</span> oraz
+<span class="math">\(a \equiv b \; \text{mod} \; m\)</span> wtedy <span class="math">\(a\)</span> nazywamy resztą <span class="math">\(b \; \text{mod} \; m\)</span>. Liczbę <span class="math">\(a\)</span> można łatwo obliczyć
+z</p>
+<div class="math">
+\[a = b - \lfloor b/m \rfloor \times m\]</div>
+<p>gdzie funkcja podłoga (z ang. floor) <span class="math">\(\lfloor \circ \rfloor\)</span> oblicza największą liczbą całkowitą mniejszą od <span class="math">\(\circ\)</span>.</p>
+<p>Jeżeli weźmiemy <span class="math">\(c = 0\)</span> dostaniemy multiplikatywny generator kongruencyjny. Jeżeli chodzi o moduł, to typowymi wartościami
+będą potęgi <span class="math">\(2^k\)</span>, a wartościami tych potęg bedą typowe wielkości maszynowe dla przechowywania liczb całkowitych.
+Tak było przynajmniej dla wczesnych realizacji takiego generatora, co związane było z możliwością łatwej redukcji modulo
+poprzez wykorzystanie przepełnienia w stałopozycyjnej reprezentacji liczb w operacji mnożenia (w ciele liczb
+całkowitych) <span class="math">\(a x_i\)</span>. W operacjach stałoprzecinkowych pierwszy bit reprezentuje znak, wobec czego w wyniku takiego mnożenia
+zamiast liczb z zakresu <span class="math">\([0, 2^{32} -1)\)</span> dostaniemy liczby z zakresu <span class="math">\([-2^{31}+1, 2^{31}-1]\)</span>. W ogólności wykonując
+operacje na liczbach większych od <span class="math">\(2^{31}-1\)</span> jako wynik zachowujemy tylko bity niskiego rzędu.</p>
+<p>Mnożnik <cite>a</cite> wybierać trzeba w taki sposób, aby LCG miał jak najdłuższy okres. Na 32-bitowych maszynach popularnymi wartościami
+początkowo były <span class="math">\(m=2^{32}\)</span> i <span class="math">\(a=65539\)</span>. Jako, że dzisiejsze komputery są na tyle wydajne, by przeprowadzać reducję
+modulo bardzo wydajnie, wiele ówczesnych implementacji generatora wykorzystuje operacje zmiennoprzecinkowe o zwiększonej precyzji.
+Inne wartości <span class="math">\(a=1099087573, 2396548189, 3934873077, 2304580733\)</span> również produkują porządne sekwencje liczb losowych.</p>
+<p>Innym dobrym wyborem dla <cite>m</cite> jest podstawienie dużej liczby pierwszej <cite>p</cite>. Wtedy okresem LCG będzie <cite>p-1</cite> jeżeli tylko
+mnożnik ustawimy jako jego pierwiastek pierwotny. Szczególnie ważne wydają się być liczby pierwsze postaci
+<span class="math">\(2^p -1\)</span>, nazywane liczbami Mersenne&#8217;a. Na maszynach 32-bitowych popularnym wyborem bywa para
+<span class="math">\(m=2^{31}-1\)</span> i jej pierwiastek pierwotny <span class="math">\(a=7^5=16807\)</span>.</p>
+<p>Implementacja LCG w Sage nie powinna nastręczać zbytnich problemów.</p>
+<div class='sage'><script type='text/x-sage'>def myLCG(x, a=1664525, b=1013904223, m=2**32):
+  return mod(a*x+b,m)
+#
+def get_from_LCG(n=1, seed=123):
+  ret = [seed]
+  for i in xrange(n-1):
+    ret.append(myLCG(ret[i]))
+  return ret
+#
+N = 1000
+lcg_list = get_from_LCG(N)
+list_plot(lcg_list, figsize=4)</script></div><p>Powinniśmy dostać rysunek podobny do tego poniżej.</p>
+<div class="figure align-center">
+<img alt="liczby losowe wygenerowane przy pomocy mylcg" src="../_images/sage0.png" />
+<p class="caption">1000 liczb losowych wygenerowanych generatorem liniowym LCG</p>
+</div>
+<p>Jak widać, program generuje liczby losowe z zakresu [0,m).</p>
+<p>W dalszej części wykładu (a raczej ćwiczeń) będziemy bazować na domyślnym generowaniu liczb losowych w Sage.
+Posłuży nam do tego wspominana już funkcja <tt class="docutils literal"><span class="pre">random()</span></tt> zwracająca liczbę pseudolosową o rozkładzie jednorodnym
+na odcinku [0,1) (co często oznaczane jest poprzez <span class="math">\(U(0,1)\)</span>).</p>
+<div class="math">
+\[\begin{split}U(0,1) = \left\{ \begin{array}{l l} 1 &amp; \quad 0 \le x &lt; 1\\ 0 &amp; \quad \text{poza}\\ \end{array} \right.\end{split}\]</div>
+<p>Aby uzyskać liczbę z przedziału [0,12.76)
+wystarczy po prostu pomnożyć liczbę zwracną przez <tt class="docutils literal"><span class="pre">random()</span></tt> przez prawą granicę</p>
+<div class='sage'><script type='text/x-sage'>random()*12.76</script></div><p>a żeby uzyskać listę 123 liczb z przedziału [-13.3, 33.1) należy wykonać</p>
+<div class='sage'><script type='text/x-sage'>[random()*(33.1+13.3) - 13.3 for i in xrange(123)]</script></div><p>W ogólności do wygenerowania listy N liczb losowych z przedziału [A,B) należy użyć polecenia</p>
+<div class='sage'><script type='text/x-sage'>N = 100
+A = -10
+B = 20
+[random()*(B-A) + A for i in xrange(N)]</script></div><dl class="docutils">
+<dt>Zadanie 2.2.2</dt>
+<dd>Zmodyfikuj definicję <tt class="docutils literal"><span class="pre">mylcg</span></tt> tak, aby funkcja zwracała liczby losowe z przedziału [0,1).</dd>
+<dt>Zadanie 2.2.3</dt>
+<dd>LCG zdefiniowany tak jak powyżej produkuje stosunkowo dobre liczby losowe (prace naukowe
+nad tym stosunkowo prostym generatorem trwają do dzisiaj, dowodzone są coraz to inne
+okresy bazujące na wyborze różnych zestawów parametrów <span class="math">\(a,c,m\)</span>). Naszym zadaniem
+będzie natomiast zepsucie takiego generatora. Proszę znaleźć (numerycznie) 4 zestawy
+parametrów definiujących LCG takich, aby okres generatora był krótki. Wykreśl w Sage
+4 rysunki LCG(N) (dla powiedzmy N=1000) dla owych parametrów. Powinieneś zauważyć
+regularność.</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="section" id="generowanie-liczb-losowych-o-zadanym-rozkladzie">
+<h2>Generowanie liczb losowych o zadanym rozkładzie<a class="headerlink" href="#generowanie-liczb-losowych-o-zadanym-rozkladzie" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Jako, że już dysponujemy generatorem liczb losowych o rozkładzie jednostajnym na odcinku
+<span class="math">\([0,1) - U(0,1)\)</span> to możemy pokusić się o wygenerowanie liczb losowych o różnych innych rozkładach
+prawdopodobieństwa. Znane jest kilka metod generowania takich liczb. Wszystkie przedstawione
+tutaj będą opierały się na tym, że umiemy generować liczby z rozkładem U(0,1). Szczególną uwagę
+poświęcimy generowaniu liczb z rozkładem N(0,1). Jest to standardowy zapis oznaczający rozkład
+normalny (Gaussa) o średniej równej 0 i odchyleniu standardowym równym 1.
+Zanim omówimy pierwszą metodę, wcześniej zdefiniujemy sobie pojęcie
+<em>histogramu</em>. Będzie nam on potrzebny do wizualizacji rozkładów (czy raczej ich gęstości) z wygenerowanych
+liczb losowych.</p>
+<div class="section" id="histogram">
+<h3>Histogram<a class="headerlink" href="#histogram" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>Wikipedia definiuje histogram jako jeden z graficznych sposobów przedstawiania rozkładu empirycznego cechy.
+Konstruuje się go jako szereg prostokątów odpowiadających liczebności elementów wpadających do określonego
+przedziału klasowego. Szerokości przedziałów klasowych mogą mieć stałe lub zmienne długości. W bardziej
+matematycznym sensie histogram to funkcja zliczająca ilość obserwacji pasujących do oddzielnych przedziałów
+klasowych. Jeżeli <cite>n</cite> oznacza liczbę wszystkich obserwacji, a <cite>k</cite> to liczba przedziałów, wtedy histogram
+<span class="math">\(m_i\)</span> spełnia następujący warunek</p>
+<div class="math">
+\[n = \sum_{i=1}^k m_i\]</div>
+<p>Ideę histogramu najlepiej zrozumiec na przykładzie. Mamy następującą listę liczb</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">l</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="o">-</span><span class="mi">2</span><span class="p">,</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="o">-</span><span class="mi">4</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Budując histogram na początku musimy ustalić szerokość przedziału. Zacznijmy od łatwiejszej wersji: niech
+szerokość będzie stała. Najlepiej podzielić ową listę na przedziały zawierające liczby całkowite. W zasadzie
+wystarczy zliczać ile jest poszczególnych liczb całkowitych w liście l. Zróbmy to. Widzimy, że mamy</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+<col width="9%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">-5</th>
+<th class="head">-4</th>
+<th class="head">-3</th>
+<th class="head">-2</th>
+<th class="head">-1</th>
+<th class="head">0</th>
+<th class="head">1</th>
+<th class="head">2</th>
+<th class="head">3</th>
+<th class="head">4</th>
+<th class="head">5</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>1</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>0</td>
+<td>3</td>
+<td>1</td>
+<td>2</td>
+<td>4</td>
+<td>2</td>
+</tr>
+</tbody>
+</table>
+<p>W zasadzie mamy już nasz histogram. Jeżeli posumujemy ilość elementów listy (<tt class="docutils literal"><span class="pre">len(l)</span></tt>), oraz obliczymy <cite>n</cite>
+zobaczymy, że dostaniemy tą samą liczbę (=20). Pozostaje narysować ów histogram. Na odciętej musimy odłożyć
+przedziały klasowe a na rzędnej liczebności danego przedziału. Przyjęło się rysować histogram używając
+słupków. Sage na chwilę obecną posiada kilka metod narysowania takiego histogramu. Jeżeli nie zależy nam na
+poprawnym opisaniu odciętej (np: chcemy tylko zobaczyć kształt histogramu), wystarczy napisać</p>
+<div class='sage'><script type='text/x-sage'>l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+h = [l.count(i) for i in range(-5,6)]
+bar_chart(h, width=1, color="orangered").show(axes_labels=['$i$','$\#$'], title="histogram")</script></div><p>Nie jest to prawdziwy histogram, bowiem odłożone na osi OY liczebności powinny odpowiadać rzeczywistym
+wartościom (przedziałom). Możemy skorzystać z pakietu <tt class="docutils literal"><span class="pre">Time</span> <span class="pre">Series</span></tt> dostępnego w Sage. Wystarczą
+prosta komenda aby uzyskać dostęp do wielu statystycznych funkcji typowych dla analizy szeregu czasowego.</p>
+<p>Aby obliczyć histogram dla 10 równych przedziałów (od minimalnej do maksymalnej wartości występującej
+w liście <tt class="docutils literal"><span class="pre">l</span></tt>) i narysować jego wykres, wystarczy napisać</p>
+<div class='sage'><script type='text/x-sage'>l = [1, -3, -5, -1, -3, 1, 5, 1, 3, -3, 4, 2, 4, -1, 4, 5, -2, 4, 3, -4]
+v = finance.TimeSeries(l)
+v.histogram(bins=11)
+v.plot_histogram(bins=11, normalize=0, color="orangered", axes_labels=['$i$','$\#$'], figszie=4)</script></div><p>Oczywiście całą procedurę można powtórzyć dla liczb zmiennoprzecinkowych (rzeczywistych, wymiernych). W tym
+wypadku należałoby oczywiście policzyć ile posiadanych liczb wpada do zdefiniowanych &#8220;pudełek&#8221;. Zobaczmy drugi
+przykład, gdzie obliczymy i narysujemy w Sage histogram dla dziesięciu tysięcy liczb z U(0,1). Powinniśmy dostać</p>
+<div class="figure align-center">
+<img alt="Wykres rozkładu jednorodnego na odcinku [0,1)" src="../_images/u01.png" />
+<p class="caption">Wykres rozkładu U(0,1)</p>
+</div>
+<dl class="docutils">
+<dt>Przykład 2</dt>
+<dd><p class="first">Wygenerujemy 10000 liczb losowych a następnie dla nich obliczymy i narysujemy histogram.</p>
+<div class='sage'><script type='text/x-sage'>N = 10000
+u01 = [random() for i in xrange(N)]
+fu01 = lambda x: 0 if x < 0 or x > 1 else 1
+v = finance.TimeSeries([random() for i in xrange(N)])
+plot1 = plot(fu01,(-1,2), thickness=1, color="black")
+plot2 = v.plot_histogram(bins=10, color="orangered")
+(plot1 + plot2).show(axes_labels=[r'$\xi$',r'$U(0,1)$'])</script></div></dd>
+</dl>
+<p>Ostatnia linia wyrysuje nam obie funkcje na jednym wykresie. Zachęcamy czytelnika do poeksperymentowania z
+powyższym kodem - można zmienić liczbę prób <cite>N</cite> i łatwo zobaczyć jak histogram zaczyna oddalać się od
+teoretycznego rozkładu dla małych N i jak zbliża się dla dużych. Można też zobaczyć jak ilość przedziałów
+(parametr <tt class="docutils literal"><span class="pre">bins</span></tt>) wpływa na otrzymany histogram.</p>
+<div class="figure align-center">
+<img alt="Wykres rozkładu jednorodnego na odcinku [0,1)" src="../_images/u01_hist.png" />
+<p class="caption">Wykres rozkładu U(0,1) + histogram miliona prób.</p>
+</div>
+</div>
+<div class="section" id="metoda-inwersyjna">
+<h3>Metoda inwersyjna<a class="headerlink" href="#metoda-inwersyjna" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<p>Każdy rozkład prawdopodobieństwa może być jednoznacznie scharakteryzowany poprzez pewną funkcję
+rzeczywistą zwaną <strong>dystrybuantą</strong>.</p>
+<dl class="docutils">
+<dt>Dystrybuanta</dt>
+<dd><p class="first">Niech <span class="math">\(\mathbb{P}\)</span> będzie rozkładem prawdopodobieństwa. Funkcję
+<span class="math">\(\mathbb{F}: \mathbb{R} \to \mathbb{R}\)</span> daną wzorem</p>
+<div class="math">
+\[\mathbb{F}(\xi) = \mathbb{P}((-\infty, \xi))\]</div>
+<p class="last">nazywamy dystrybuantą rozkładu <span class="math">\(\mathbb{P}\)</span>.</p>
+</dd>
+</dl>
+<p>W metodzie inwersyjnej żądany rozkład o dystrybuancie <span class="math">\(\mathbb{F}\)</span> uzyskuje się poprzez przekształcenie
+zmiennej losowej o rozkładzie U(0,1) za pomocą funkcji odwrotnej do <span class="math">\(\mathbb{F}\)</span>.</p>
+<dl class="docutils">
+<dt>Twierdzenie</dt>
+<dd>Załóżmy, że dystrybuanta <span class="math">\(\mathbb{F}\)</span> jest ściśle rosnąca. Jeśli zmienna losowa <cite>u</cite> ma
+rozkład <cite>U(0,1)</cite> to <span class="math">\(\mathbb{F}^{-1}(u)\)</span> ma dystrybuantę <span class="math">\(\mathbb{F}\)</span>.</dd>
+<dt>Dowód</dt>
+<dd>TBA</dd>
+</dl>
+<p>Algorytm wykorzystujący powyższe twierdzenie jest bardzo prosty i wygląda następująco:</p>
+<ol class="arabic">
+<li><p class="first">Generujemy liczbę <span class="math">\(u \in U(0.1)\)</span>.</p>
+</li>
+<li><p class="first">Przekształcamy <cite>u</cite> stosując</p>
+<p><span class="math">\(x = \mathbb{F}^{-1}(u)\)</span></p>
+<p>Wynikowa liczba losowa <span class="math">\(x\)</span> posiada żądany rozkład <span class="math">\(\mathbb{P}\)</span>.</p>
+</li>
+</ol>
+<p>Oczywiście skuteczność tej metody zależy bezpośrednio od tego czy możemy łatwo obliczyć <span class="math">\(\mathbb{F}^{-1}\)</span>.
+Jeżeli tak - jest to najprostsza znana metoda generowania liczb losowych z danym rozkładem. Do rozkładów,
+do których można zastosować tą metodę należą wszystkie rozkłady, których dystrybuanta znana jest jawnie <em>oraz</em>
+można ją łatwo odwrócić. O takich rozkładach powiemy sobie niżej.</p>
+<div class="section" id="rozklad-wykladniczy">
+<h4>Rozkład wykładniczy<a class="headerlink" href="#rozklad-wykladniczy" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>Przejdźmy wreszcie do generowania liczb losowych z rozkładem innym niż <cite>U(0,1)</cite>. Na początek weźmy jeden
+z najbardziej powszechnych, czy popularnych rozkładów prawdopodobieństwa - <strong>rozkład wykładniczy</strong>. Gęstość
+takiego rozkładu dana jest wzorem</p>
+<div class="math">
+\[f(\xi) = \lambda e^{-\lambda \xi}\]</div>
+<p>Jak łatwo policzyć, dystrybuanta <cite>F(x)</cite> wynosi</p>
+<div class="math">
+\[F(x) = \int_{-\infty}^x f(\xi) d\xi = -e^{-\lambda \xi}\Big|_{-\infty}^x = -e^{-\lambda x} + 1,\]</div>
+<p>a jej odwrotność</p>
+<div class="math">
+\[F^{-1}(u) = -\frac{1}{\lambda} \ln (1-u).\]</div>
+<p>Spróbujmy wygenerować 5000 liczb o rozkładzie wykładniczym. Następnie obliczymy sobie histogram, unormujemy
+go i porównamy z teoretycznym rozkładem dla kilku wartości <span class="math">\(\lambda = 0.5, 1, 1.5\)</span>.</p>
+<div class='sage'><script type='text/x-sage'>f(xi, a) = a * exp(-a * xi)
+F(u, a) = -log(1-u)/a
+N = 5000
+kolor = ["red", "green", "blue"]
+parlist = [1.5, 1, 0.5]
+p = []
+for par in parlist:
+  lista = [F(random(), par) for i in xrange(N)]
+  v = finance.TimeSeries(lista)
+  P = v.plot_histogram(bins=100, color=kolor[parlist.index(par)], alpha=0.5)
+  P.set_aspect_ratio("automatic")
+  p.append(P)
+  p.append(plot(f(xi,par), 0, max(lista), thickness=2, color=kolor[parlist.index(par)],
+  legend_label=r'$\lambda = %.1f$'%par))
+sum(p).show(xmin=0, xmax=5, figsize=5, axes_labels=[r'$\xi$',r'$\lambda e^{-\lambda \xi}$'], fontsize=12)</script></div><p>Alternatywnie można wykorzystać przekształcenie bazujące na spostrzeżeniu, że liczby <span class="math">\(1-u\)</span> oraz
+<span class="math">\(u (u \in U(0,1)\)</span> posiadają ten sam rozkład <cite>U(0,1)</cite>.</p>
+</div>
+<div class="section" id="rozklad-cauchy-ego">
+<h4>Rozkład Cauchy&#8217;ego<a class="headerlink" href="#rozklad-cauchy-ego" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>Rozkład ten dany jest wzorem</p>
+<div class="math">
+\[f(\xi) = \frac{\sigma}{\pi (\xi^2 + \sigma^2)}\]</div>
+<p>Odwrotność dystrybuanty powyższego rozkładu wynosi</p>
+<div class="math">
+\[F^{-1}(u) = \sigma \tan \Big[\pi \Big(u - \frac{1}{2} \Big)\Big].\]</div>
+<p>Stosując proste i bardzo naturalne przekształcenie oryginalnej zmiennej <span class="math">\(v = 1/2 - u\)</span>
+dostajemy nieco prostsze wyrażenie</p>
+<div class="math">
+\[F^{-1}(v) = \sigma \tan (\pi v).\]</div>
+<p>Stosując podobne metody jak w poprzednim rozdziale możemy sprawdzić, czy powyższe przekształcenie
+generuje liczby z odpowiednim rozkładem.</p>
+<div class="figure align-center">
+<img alt="Rozkład Cauchyego." src="../_images/r_cauchy_hist.png" />
+<p class="caption">Wykres gęstości rozkładu Cauchy&#8217;ego oraz histogram z 5000 prób liczb losowych dla trzech wartości parametru
+<span class="math">\(\sigma = 0.5, 1, 2\)</span>.</p>
+</div>
+</div>
+<div class="section" id="rozklad-logistyczny">
+<h4>Rozkład logistyczny<a class="headerlink" href="#rozklad-logistyczny" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>Rozkład ten dany jest wzorem</p>
+<div class="math">
+\[f(\xi) = \frac{1}{2 + e^{\xi} + e^{-\xi}}\]</div>
+<p>Odwrotność dystrybuanty powyższego rozkładu wynosi</p>
+<div class="math">
+\[F^{-1}(u) = \ln\frac{u}{1-u}.\]</div>
+<p>Stosując podobne metody jak w poprzednim rozdziale możemy sprawdzić, czy powyższe przekształcenie
+generuje liczby z odpowiednim rozkładem.</p>
+<div class="figure align-center">
+<img alt="Rozkład logistyczny." src="../_images/r_logist_hist.png" />
+<p class="caption">Wykres gęstości rozkładu logistycznego oraz histogram z 200000 prób liczb losowych.</p>
+</div>
+<dl class="docutils">
+<dt>Zadanie 2.3.1</dt>
+<dd>Wygeneruj 200000 liczb losowych z rozkładem Pareto. Narysuj ich unormowany histogram oraz funkcję gęstości.
+Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.</dd>
+<dt>Zadanie 2.3.2.</dt>
+<dd>Wygeneruj 1000 liczb losowych z rozkładem trójkątnym. Narysuj ich unormowany histogram oraz funkcję gęstości.
+Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.</dd>
+</dl>
+<table class="docutils footnote" frame="void" id="id3" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id1">[1]</a></td><td>Generator liczb pseudolosowych można napisać nawet dla tak egzotycznych języków jak
+<a class="reference external" href="http://esolangs.org/wiki/brainfuck_algorithms#x_.3D_pseudo-random_number">Brainf*ck</a>.</td></tr>
+</tbody>
+</table>
+<table class="docutils footnote" frame="void" id="id4" rules="none">
+<colgroup><col class="label" /><col /></colgroup>
+<tbody valign="top">
+<tr><td class="label"><a class="fn-backref" href="#id2">[2]</a></td><td>Od tej chwili będziemy zawsze pisać <em>liczba losowa</em> a mieć na myśli <em>liczbę pseudolosową</em>,
+chyba, że napisane zostanie explicite, że mówimy o rzeczywistych liczbach losowych.</td></tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Liczby losowe</a><ul>
+<li><a class="reference internal" href="#liczby-losowe-i-pseudolosowe">Liczby losowe i pseudolosowe</a></li>
+<li><a class="reference internal" href="#generatory-liczb">Generatory liczb</a><ul>
+<li><a class="reference internal" href="#generatory-sprzetowe">Generatory sprzętowe</a></li>
+<li><a class="reference internal" href="#generatory-programowe">Generatory programowe</a><ul>
+<li><a class="reference internal" href="#liniowy-generator-kongruencyjny">Liniowy generator kongruencyjny</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#generowanie-liczb-losowych-o-zadanym-rozkladzie">Generowanie liczb losowych o zadanym rozkładzie</a><ul>
+<li><a class="reference internal" href="#histogram">Histogram</a></li>
+<li><a class="reference internal" href="#metoda-inwersyjna">Metoda inwersyjna</a><ul>
+<li><a class="reference internal" href="#rozklad-wykladniczy">Rozkład wykładniczy</a></li>
+<li><a class="reference internal" href="#rozklad-cauchy-ego">Rozkład Cauchy&#8217;ego</a></li>
+<li><a class="reference internal" href="#rozklad-logistyczny">Rozkład logistyczny</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="../ch3/chIII041.html"
+                        title="poprzedni rozdział">Układy w kontakcie z termostatem: Uogólnione równania Langevina</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="chV012.html"
+                        title="następny rozdział">Równania różniczkowe zwyczajne</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch5/chV011.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="chV012.html" title="Równania różniczkowe zwyczajne"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="../ch3/chIII041.html" title="Układy w kontakcie z termostatem: Uogólnione równania Langevina"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

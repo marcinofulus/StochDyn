@@ -342,6 +342,7 @@ Szum jest symetryczny gdy :math:`a=b` i to implikuje że :math:`\mu_a=\mu_b` gdy
 
     # definicja symetrycznego
     # szumu dychotomicznego
+    from numpy import cumsum 
     a = -1
     b = 3
     stan = [a,b]
@@ -374,6 +375,7 @@ Szum jest symetryczny gdy :math:`a=b` i to implikuje że :math:`\mu_a=\mu_b` gdy
 
     # definicja symetrycznego
     # szumu dychotomicznego
+    from numpy import cumsum
     a = -1
     b = 3
     stan = [a,b]

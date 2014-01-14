@@ -1,0 +1,255 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Dynamika stochastyczna &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="#" />
+    <link rel="next" title="Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych" href="ch1/chI011.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="ch1/chI011.html" title="Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+  <li><a href="#">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="dynamika-stochastyczna">
+<h1>Dynamika stochastyczna<a class="headerlink" href="#dynamika-stochastyczna" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Autorzy:</th><td class="field-body">Jerzy Łuczka,
+Łukasz Machura</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Wersja:</th><td class="field-body">1.0 11/2013</td>
+</tr>
+<tr class="field-odd field"><th class="field-name">Pobierz:</th><td class="field-body"><a class="reference download internal" href="_downloads/StochDyn_v1.0.pdf"><tt class="xref download docutils literal"><span class="pre">podręcznik</span> <span class="pre">(v1.0,</span> <span class="pre">PDF)</span></tt></a></td>
+</tr>
+</tbody>
+</table>
+<p>Niniejsza książka jest podstawą wykładu o tym samym tytule dla studentów
+Ekonofizyki drugiego stopnia. Duża część materiału może być wykorzystywana
+w wykładach, konwersatoriach i laboratoriach komputerowych dla studentów
+innych kierunków (fizyka, biofizyka, fizyka medyczna, fizyka techniczna).
+W szczególności rozdziały Dynamika deterministyczna oraz Chaos w układach
+dynamicznych powinien być przydatny dla wszystkich kierunków studiów na
+wydziałach przyrodniczych i technicznych. Część materiału może być z
+powodzeniem używana do
+wykładów z mechaniki klasycznej, część - do wykładów z metod matematycznych
+na różnych kierunkach.</p>
+<p>Książka zawiera materiał stricto teoretyczny (prezentacja tradycyjna)
+oraz nowatorską część:  krótkie programy komputerowe napisane w SAGE, w
+matematycznym oprogramowaniu typu open-source. Promujemy tego typu
+oprogramowanie ponieważ każdy student może używać SAGE  bezpłatnie w
+odróżnieniu od znanych i bardzo drogich programów komputerowych typu
+Maple i Mathematica. Ponadto oprogramowanie to jest promowane i intensywnie
+wykorzystywane także w projekcie iCSE (innovative Computers in Science
+Education) realizowanym w Uniwersytecie Śląskim. Projekt  iCSE to innowacyjny
+projekt, którego głównym założeniem jest integracja metod komputerowych w tym
+wizualizacji, numeryki, analizy danych z kierunkowymi przedmiotami wybranych
+nauk ścisłych. W tym nurcie pisana była ta książka.  Krótkie programy w SAGE
+umieszczono w edytowalnych interaktywnych oknach (komórkach). Student może
+edytować i kopiować okna, zmieniać w nich dane, samodzielnie analizować i
+wizualizować  przedstawiane tam zagadnienia i  problemy.</p>
+<p>Książka ta ma dodatkową zaletę. Może być ciągle poprawiana, modyfikowana,
+uzupełniana.  Świadomi szybkiego rozwoju technologii informacyjnych jesteśmy
+otwarci na sugestie i uwagi krytyczne zarówno kadry dydaktycznej jak i studentów.</p>
+<div class="section" id="dynamika-deterministyczna">
+<h2>Dynamika deterministyczna<a class="headerlink" href="#dynamika-deterministyczna" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI011.html">Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI011.html#modelowanie-z-czasem-dyskretnym">Modelowanie z czasem dyskretnym</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI020.html">Układy dynamiczne z czasem ciągłym</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI021.html">Istnienie i jednoznaczność rozwiązań</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI022.html">Dynamiczne układy zachowawcze i dysypatywne</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI023.html">Stany stacjonarne i ich stabilność</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI024.html">Atraktory</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch1/chI031.html">Dyskretne układy dynamiczne</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="chaos-w-ukladach-dynamicznych">
+<h2>Chaos w układach dynamicznych<a class="headerlink" href="#chaos-w-ukladach-dynamicznych" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ch2/chII011.html">Determinizm a przewidywalność</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2/chII011.html#model-chaosu-uklad-bistabilny-oscylator-duffinga">Model chaosu. Układ bistabilny (oscylator Duffinga)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch2/chII012.html">Scenariusz przejścia do chaosu</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="id1">
+<h2>Dynamika stochastyczna<a class="headerlink" href="#id1" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII011.html">Równania stochastyczne i ich interpretacja</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII021.html">Podstawowe procesy stochastyczne</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII030.html">Rachunki w całkach Ito - Stratonowicza</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII031.html">Modele szumów</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII032.html">Równania ewolucji dla rozkładów prawdopodobieństwa</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII033.html">Proces Ornsteina-Uhlenbecka</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII034.html">Geometryczny ruch Browna</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch3/chIII041.html">Układy w kontakcie z termostatem: Uogólnione równania Langevina</a></li>
+</ul>
+</div>
+</div>
+<div class="section" id="dodatek-numeryczny">
+<h2>Dodatek numeryczny<a class="headerlink" href="#dodatek-numeryczny" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<div class="toctree-wrapper compound">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ch5/chV011.html">Liczby losowe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5/chV012.html">Równania różniczkowe zwyczajne</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5/chV013.html">Stochastyczne równania różniczkowe</a></li>
+<li class="toctree-l1"><a class="reference internal" href="ch5/chV014.html">Przykłady całkowania procesów stochastycznych</a></li>
+</ul>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="#">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Dynamika stochastyczna</a><ul>
+<li><a class="reference internal" href="#dynamika-deterministyczna">Dynamika deterministyczna</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#chaos-w-ukladach-dynamicznych">Chaos w układach dynamicznych</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#id1">Dynamika stochastyczna</a><ul>
+</ul>
+</li>
+<li><a class="reference internal" href="#dodatek-numeryczny">Dodatek numeryczny</a><ul>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="ch1/chI011.html"
+                        title="następny rozdział">Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="ch1/chI011.html" title="Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych"
+             >dalej</a> &nbsp; &nbsp;</li>
+  <li><a href="#">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

@@ -1,0 +1,509 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Układy dynamiczne z czasem ciągłym &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Istnienie i jednoznaczność rozwiązań" href="chI021.html" />
+    <link rel="prev" title="Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych" href="chI011.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="chI021.html" title="Istnienie i jednoznaczność rozwiązań"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI011.html" title="Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="uklady-dynamiczne-z-czasem-ciaglym">
+<h1>Układy dynamiczne z czasem ciągłym<a class="headerlink" href="#uklady-dynamiczne-z-czasem-ciaglym" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>We Wstępie podaliśmy kilka przykładów układów opisanych za pomocą równań różniczkowych zwyczajnych. Pierwsza klasa układów to  układy opisywane przez  mechanikę klasyczną i jej  równania Newtona. Inna klasa układów to równania fenomenologiczne opisujące procesy wzrostu, procesy kinetyki chemicznej, dynamiki populacyjnej w układach biologicznych, itd. Te dwie klasy układów opisywane są układem równań różniczkowych zwyczajnych zapisanych w ogólnej postaci jako układ</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[\frac{dx_1}{dt} = F_1(x_1, x_2, x_3, ..., x_n)\]\[\frac{dx_2}{dt} = F_2(x_1, x_2, x_3, ..., x_n)\]\[\vdots\]\[\frac{dx_n}{dt} = F_n(x_1, x_2, x_3, ..., x_n)\]</div>
+<p>Ten układ możemy zapisać w notacji wektorowej w  postaci</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(2)</span>\[\frac{d\vec x}{dt} = \vec F(\vec x), \quad \quad \vec x(0)  = \vec x_0  \qquad \quad\]</div>
+<p>gdzie wektory</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(3)</span>\[\vec x = [x_1, x_2, x_3, ...., x_n], \quad \quad \vec F = [F_1, F_2, F_3, ..., F_n]\]</div>
+<p>oraz dany jest zbiór warunków początkowych</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(4)</span>\[\vec x(0) = [x_1(0), x_2(0), x_3(0), ... , x_n(0)] = \vec x_0 = [x_1^{(0)}, x_2^{(0)}, x_3^{(0)}, ... ,  x_n^{(0)}]\]</div>
+<p>Wskaźnik <span class="math">\(n\)</span> mówi, ile równań różniczkowych jest &#8220;ukrytych&#8221; w powyższym zapisie wektorowym. Innymi słowy, rozważamy układ <span class="math">\(n\)</span> równań różniczkowych scharakteryzowanych przez <span class="math">\(n\)</span> funkcji skalarnych <span class="math">\(F_i(x_1, x_2, x_3, ..., x_n), (i=1,2,3, ..., n)\)</span>. Zauważmy, że rozważamy funkcje <span class="math">\(F_i\)</span> które nie zależą w sposób jawny od czasu. W takim przypadku mówimy, że jest to układ autonomiczny <span class="math">\(n\)</span> równań  różniczkowych zwyczajnych. Ponadto wektor <span class="math">\(\vec F\)</span> można traktować jako pole wektorowe stowarzyszone z układem równań różniczkowych lub pole wektorowe generowane przez układ równań różniczkowych. Do tej kwestii powrócimy jeszcze.</p>
+<div class="section" id="przestrzen-fazowa">
+<h2>Przestrzeń fazowa<a class="headerlink" href="#przestrzen-fazowa" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Jeszcze raz przepiszemy równania różniczkowe   <a href="#equation-eqn5">(2)</a>  w  notacji:</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(5)</span>\[\frac{dx_1}{dt} = F_1(x_1, x_2, x_3, ..., x_n)\]\[\frac{dx_2}{dt} = F_2(x_1, x_2, x_3, ..., x_n)\]\[\vdots\]\[\frac{dx_n}{dt} = F_n(x_1, x_2, x_3, ..., x_n)\]</div>
+<p>Powyższy układ równań różniczkowych  definiuje pewien układ dynamiczny (matematyczna definicja układu dynamicznego może być bardzo abstrakcyjna, ale na nasze potrzeby wystarczy to, co napisaliśmy).  Zbiór wszystkich możliwych wartości <span class="math">\(\{x_1, x_2, x_3, ..., x_n\}\)</span> tworzy zbiór który nazywamy przestrzenią fazową układu <a href="#equation-eqn24">(?)</a>. Wymiar tej przestrzeni wynosi <span class="math">\(n\)</span>, czyli tyle ile jest równań różniczkowych.</p>
+<p>W zależności od kontekstu, będziemy stosowali różne zapisy tych samych równań.</p>
+<p>Przykłady:</p>
+<ol class="arabic simple">
+<li>Jedno równanie różniczkowe. Zwykle będziemy stosowali  zapis</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn25">
+<span class="eqno">(6)</span>\[\frac{dx}{dt} = \dot x = f(x)\]</div>
+<p>Przestrzeń fazowa  jest 1-wymiarowa.</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>Dwa równania różniczkowe. Zwykle będziemy stosowali  zapis</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn26">
+<span class="eqno">(7)</span>\[\frac{dx}{dt} = \dot x = f(x, y)\]\[\frac{dy}{dt} = \dot y= g(x, y)\]</div>
+<p>Przestrzeń fazowa  jest 2-wymiarowa.</p>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Trzy  równania różniczkowe. Zwykle będziemy stosowali  zapis</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn28">
+<span class="eqno">(8)</span>\[\frac{dx}{dt} = \dot x = f(x, y, z)\]\[\frac{dy}{dt} = \dot y= g(x, y, z)\]\[\frac{dz}{dt} = \dot z= h(x, y, z)\]</div>
+<p>Przestrzeń fazowa  jest 3-wymiarowa.</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Równanie Newtona dla cząstki poruszającej się tylko wzdłuż osi <span class="math">\(OX\)</span> na którą działa siła <span class="math">\(F(x)\)</span> zależna tylko od położenia  ma postać</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn31">
+<span class="eqno">(9)</span>\[m \ddot x= F(x)\]</div>
+<p>gdzie <span class="math">\(m\)</span> jest masą cząstki. Jest to równanie różniczkowe 2-go rzędu i jest ono  równoważne układowi 2 równań różniczkowych 1-go rzędu:</p>
+<div class="math" id="equation-eqn32">
+<span class="eqno">(10)</span>\[\dot x = v\]\[\dot v = \frac{1}{m} F(x)\]</div>
+<p>Przestrzeń fazowa  jest 2-wymiarowa: jest to zbiór możliwych położeń i prędkości cząstki, <span class="math">\(\{x, v\}\)</span>.
+Mimo swej prostoty, ten model jest niesłychanie ważny. Stanowi on punkt wyjścia dla zrozumienia wielu ważnych
+aspektów układów dynamicznych.</p>
+</div></blockquote>
+<div class="section" id="geometryczne-wlasnosci-przestrzeni-fazowej">
+<h3>Geometryczne własności przestrzeni fazowej<a class="headerlink" href="#geometryczne-wlasnosci-przestrzeni-fazowej" title="Stały odnośnik do tego nagłówka">¶</a></h3>
+<div class="section" id="krzywa-fazowe">
+<h4>Krzywa fazowe<a class="headerlink" href="#krzywa-fazowe" title="Stały odnośnik do tego nagłówka">¶</a></h4>
+<p>Aby uniknąć na tym etapie abstrakcyjnych definicji, będziemy rozważać dla przykładu 2-wymiarowy układ dynamiczny</p>
+<div class="math" id="equation-eqn33">
+<span class="eqno">(11)</span>\[ \dot x = f(x, y), \quad \quad x(0) = x_0\]\[ \dot y= g(x, y),\quad \quad y(0) = y_0\]</div>
+<p>Przestrzeń fazowa jest 2-wymiarowa. Może to być płaszczyzna lub jej część. Ale może to być bardziej skomplikowany zbiór 2-wymiarowy. Na przykład może to być sfera (podobna do  powierzchni piłki), może to być torus (podobny do dętki rowerowej). Mogą to być jeszcze bardziej skomplikowane obiekty 2-wymiarowe. Ale dla naszych celów wystarczy rozważać płaszczyznę. Na płaszczyźnie można estetycznie przedstawiać coś w formie rysunków. Wprowadzamy na płaszczyźnie kartezjański układ współrzędnych o osiach OX i OY. Warunek początkowy <span class="math">\(\{x_0=x(0), y_0=y(0)\}\)</span> jest punktem o odpowiednich współrzędnych. Rozwiązujemy powyższy układ równań różniczkowych numerycznie przy pomocy najprostszego schematu:</p>
+<div class="math" id="equation-eqn35">
+<span class="eqno">(12)</span>\[\frac{x(t+h) - x(t)}{h} = f(x(t), y(t))\]\[\frac{y(t+h) - y(t)}{h} = g(x(t), y(t))\]</div>
+<p>Przepiszemy to w postaci</p>
+<div class="math" id="equation-eqn37">
+<span class="eqno">(13)</span>\[x(t+h) = x(t) + f(x(t), y(t)) h\]\[y(t+h) = y(t) + g(x(t), y(t)) h\]</div>
+<ol class="arabic simple">
+<li>Obliczenia numeryczne musimy zacząć od warunku początkowego w chwili <span class="math">\(t=0\)</span>, czyli w pierwszym kroku obliczamy</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn39">
+<span class="eqno">(14)</span>\[x_1 =x(h) = x(0) + f(x(0), y(0)) h\]\[y_1 = y(h) = y(0) + g(x(0), y(0)) h\]</div>
+<p>Na płaszczyźnie otrzymujemy punkt o współrzędnych <span class="math">\(\{x_1, y_1\}\)</span>. Zaznaczmy go na płaszczyźnie. Teraz mamy już 2 punkty:</p>
+<div class="math" id="equation-eqn41">
+<span class="eqno">(15)</span>\[\{x_0, y_0\}, \quad \quad \{x_1, y_1\}\]</div>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li>W następnym kroku wybieramy czas <span class="math">\(t=h\)</span>:</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn42">
+<span class="eqno">(16)</span>\[x_2 =x(h+h) = x(2h) =  x(h) + f(x(h), y(h)) h\]\[y_2 = y(h+h) = y(2h) =  y(h) + g(x(h), y(h)) h\]</div>
+<p>Wykorzystamy oznaczenie jak wyżej: <span class="math">\(x_1 =  x(h),  y_1 = y(h)\)</span> i przepiszemy te równania w postaci</p>
+<div class="math" id="equation-eqn43">
+<span class="eqno">(17)</span>\[x_2 =  x_1 + f(x_1, y_1) h\]\[y_2 =  y_1 + g(x_1, y_1) h\]</div>
+<p>Na płaszczyźnie otrzymujemy punkt o współrzędnych <span class="math">\(\{x_2, y_2\}\)</span>. Zaznaczmy go na płaszczyźnie. Teraz mamy już 3 punkty:</p>
+<div class="math" id="equation-eqn45">
+<span class="eqno">(18)</span>\[\{x_0, y_0\}, \quad \quad \{x_1, y_1\},  \quad \quad \{x_2, y_2\}\]</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Widzimy od razu, że w 3 kroku otrzymujemy równania</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn46">
+<span class="eqno">(19)</span>\[x_3 =  x_2 + f(x_2, y_2) h\]\[y_3 =  y_2 + g(x_2, y_2) h\]</div>
+<p>i otrzymujemy punkt o współrzędnych <span class="math">\(\{x_3, y_3\}\)</span>.</p>
+</div></blockquote>
+<ol class="arabic simple" start="4">
+<li>Zauważamy, że w n-tym kroku otrzymujemy równania</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn48">
+<span class="eqno">(20)</span>\[x_n =  x_{n-1} + f(x_{n-1}, y_{n-1}) h\]\[y_n =  y_{n-1} + g(x_{n-1}, y_{n-1}) h\]</div>
+</div></blockquote>
+<ol class="arabic simple" start="5">
+<li>Częściej pisze się, co się otrzymuje w następnym kroku, czyli n+1 :</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn50">
+<span class="eqno">(21)</span>\[x_{n+1} =  x_n + f(x_n, y_n) h\]\[y_{n+1} =  y_n + g(x_n, y_n) h\]</div>
+</div></blockquote>
+<p>Otrzymujemy równania rekurencyjne, które pozwalają wyznaczyć ewolucję układu, czyli rozwiązanie numeryczne układu równań różniczkowych. Na płaszczyźnie <span class="math">\(XY\)</span> otrzymujemy ciąg punktów o współrzędnych</p>
+<div class="math" id="equation-eqn52">
+<span class="eqno">(22)</span>\[\{x_n, y_n\}\]</div>
+<p>Jeżeli przyrost czasu <span class="math">\(h\)</span> jest odpowiednio mały, to ten ciąg punktów łączymy linią ciągłą i otrzymujemy  krzywą na płaszczyźnie. Ta krzywa nazywa się krzywą fazową układu dynamicznego.   Mając narysowaną taką krzywą fazową, możemy wnioskować o ewolucji układu i cechach charakterystycznych zachowania się układu w czasie <span class="math">\(t\)</span>.       Poniżej przedstawiamy dwa przykłady: krzywe fazowe dla oscylatora harmonicznego  i oscylatora harmonicznego tłumionego.</p>
+<div class="section" id="oscylator-harmoniczny">
+<h5>Oscylator harmoniczny<a class="headerlink" href="#oscylator-harmoniczny" title="Stały odnośnik do tego nagłówka">¶</a></h5>
+<p>Przykładem oscylatora harmonicznego jest ciało o masie <span class="math">\(m\)</span> przyczepione do sprężyny i poruszające się wzdłuż osi <span class="math">\(OX\)</span>.  Siła działające na to ciało jest proporcjonalna do wychylenia <span class="math">\(x\)</span> od położenia równowagi i przeciwnie skierowana do wychylenia; gdy rozciągamy sprężynę w kierunku większych dodatnich wartości <span class="math">\(x\)</span> to siła działa w kierunku ujemnych wartości <span class="math">\(x\)</span>:</p>
+<div class="math" id="equation-eqn53">
+<span class="eqno">(23)</span>\[ F = -kx\]</div>
+<p>gdzie <span class="math">\(k\)</span> charakteryzuje &#8220;sprężystość&#8221; sprężyny. Równanie Newtona ma postać:</p>
+<div class="math" id="equation-eqn54">
+<span class="eqno">(24)</span>\[m\ddot x = -kx, \quad \quad \mbox{lub w postaci} \quad \quad \ddot x = -(k/m) x = -\omega^2 x\]</div>
+<p>gdzie <span class="math">\(\omega^2 = k/m\)</span>. To równanie drugiego rzędu jest równoważne 2 równaniom pierwszego rzędu:</p>
+<div class="math" id="equation-eqn55">
+<span class="eqno">(25)</span>\[\dot x = y, \quad \quad x(0) = x_0\]\[\dot y = -\omega^2 x, \quad \quad y(0) = y_0\]</div>
+</div>
+<div class="section" id="tlumiony-oscylator-harmoniczny">
+<h5>Tłumiony oscylator harmoniczny<a class="headerlink" href="#tlumiony-oscylator-harmoniczny" title="Stały odnośnik do tego nagłówka">¶</a></h5>
+<p>Jeżeli w poprzednim przykładzie założymy bardziej realistyczną sytuację, w której  układ nie jest w próżni, ale znajduje się w środowisku (np. w powietrzu, w wodzie lub innej cieczy), to na ciało działa dodatkowa siła, a mianowicie siła tarcia  (tłumienia) <span class="math">\(F_d\)</span>. Siła tarcia jest proporcjonalna do prędkości cząstki i przeciwnie skierowana do kierunku ruchu</p>
+<div class="math" id="equation-eqn57">
+<span class="eqno">(26)</span>\[F_d = -\gamma_0 v = -\gamma_0 \dot x\]</div>
+<p>gdzie <span class="math">\(\gamma_0\)</span> nazywa się współczynnikiem tarcia (tłumienia).</p>
+<p>Siła tarcia jest związana z oddziaływaniem ciała z cząsteczkami otoczenia. Otoczenie stawia opór gdy ciało porusza się w nim i im większa jest prędkość ciała tym większy jest opór otoczenia. Doświadczamy to, gdy biegniemy cali zanurzeni w wodzie.</p>
+<p>Uwzględniając siłę tarcia, równanie Newtona przyjmuje postać</p>
+<div class="math" id="equation-eqn58">
+<span class="eqno">(27)</span>\[m\ddot x = -kx - \gamma_0 \dot x\]</div>
+<p>lub w postaci</p>
+<div class="math" id="equation-eqn58a">
+<span class="eqno">(28)</span>\[\ddot x = -\frac{k}{m} x - \frac{\gamma_0}{m} x = -\omega^2 x - \gamma \dot x\]</div>
+<p>gdzie <span class="math">\(\omega^2 = k/m\)</span>  oraz <span class="math">\(\gamma = \gamma_0/m\)</span>. Równanie  powyższe  jest równoważne 2 równaniom pierwszego rzędu:</p>
+<div class="math" id="equation-eqn59">
+<span class="eqno">(29)</span>\[\dot x = y, \quad \quad x(0) = x_0\]\[\dot y = -\gamma y -\omega^2 x, \quad \quad y(0) = y_0\]</div>
+<p>Oczywiście gdy <span class="math">\(\gamma = 0\)</span>, wówczas  otrzymujemy równanie oscylatora harmonicznego bez tarcia (nietłumionego).</p>
+<p>Poniżej przedstawiamy krzywe fazowe dla tych 2 przykładów.</p>
+</div>
+<div class="section" id="oscylator-harmoniczny-bez-tarcia">
+<h5>Oscylator harmoniczny bez tarcia<a class="headerlink" href="#oscylator-harmoniczny-bez-tarcia" title="Stały odnośnik do tego nagłówka">¶</a></h5>
+<div class='sage'><script type='text/x-sage'>var('x y')
+def schemat_eulera2D(vec, ics, Tlist):
+ i = 0
+ dx = [ics[0]]
+ dy = [ics[1]]
+ h = Tlist[i+1] - Tlist[i]
+ iks(x,y) = vec[0R]*h
+ igrek(x,y) = vec[1R]*h
+ for time in Tlist:
+     dx.append(dx[i] + iks(dx[i],dy[i]))
+     dy.append(dy[i] + igrek(dx[i],dy[i]))
+     i += 1
+ return zip(dx,dy)
+#
+@interact(layout={'top':[['omega','x0','y0']],'bottom':[['T','h']]})
+def _(title=['a','b'], h=selector(['0.005','0.01','0.05','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=input_box(1,label=r'$\omega$', width=10)):
+ global oscylator_nietlumiony, background
+ if T == 0:
+     T = 2*pi/omega
+ listT = srange(0,T,float(h), include_endpoint=True)
+ background = desolve_odeint(vector([y,-omega^2*x]), [x0, y0], srange(0,T+0.1,0.1,include_endpoint=True), [x,y])
+ oscylator_nietlumiony = schemat_eulera2D([y,-omega^2*x], [x0, y0], listT)
+ print r'Parametry modelu'
+ html(r'$\omega=%s, x_0=%s, y_0=%s$'%(omega,x0,y0))
+ print r'Parametry symulacji'
+ html(r'$h=%s, T=%s$'%(h,T))
+ print '\nDla T=0 lista generowana jest automatycznie dla jednego okresu własnego oscylatora'
+#
+@interact
+def _(krok=slider(1, len(oscylator_nietlumiony), 1, default=1, label=r'krok')):
+...
+ buf = zip(*oscylator_nietlumiony)
+ minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]), max(buf[1])
+ kroki = oscylator_nietlumiony[:krok]
+ kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)
+...
+ txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
+ for i in range(1,len(kroki)):
+     txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
+...
+ full_plot = list_plot(oscylator_nietlumiony, plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
+ full_plot += list_plot(background.tolist(), plotjoined=1, color='grey', alpha=0.5)
+ html.table([["krzywe fazowe dla oscylatora bez tarcia",""],[full_plot+kroki_plot,kroki_plot+txt_plot]])</script></div><p>W przypadku oscylatora nietłumionego, krzywe fazowe są zamknięte. Cząstka z biegiem czasu porusza się tak, że położenie <span class="math">\(x\)</span> i prędkość <span class="math">\(v=y\)</span>  leżą na krzywej fazowej. Ponieważ jest to krzywa zamknięta, to po pewnym czasie cząstka znowu &#8220;przebiega&#8221; punkty, które się powtarzają. Powtarzanie się jest cechą charakterystyczną ruchu okresowego. Tak więc krzywa fazowa zamknięta przedstawia ruch okresowy (periodyczny). Okres takiego ruchu periodycznego to czas potrzebny na to, aby cząstka startując od punktu np. <span class="math">\(\{x_0, y_0\}\)</span> i  poruszając się po krzywej fazowej dotarła znowu do tego samego punktu  <span class="math">\(\{x_0, y_0\}\)</span>.</p>
+<p>W przypadku oscylatora tłumionego, krzywą fazową jest spirala zwijająca się do punktu <span class="math">\(\{0, 0\}\)</span>. Ruch po spirali oznacza, że zarówno <span class="math">\(x\)</span> jak i <span class="math">\(v=y\)</span> maleją w czasie i dla długich czasów położenie <span class="math">\(x\)</span> oraz prędkość <span class="math">\(v\)</span> dążą do zera, czyli cząstka zwalnia i na końcu zatrzymuje się. To jest ruch tłumiony: amplituda drgań maleje w czasie. To jest to, co obserwujemy w ruchu kulki zawieszonej na nitce: kulka wykonuje coraz to mniejsze drgania i po długim czasie wisi pionowo ( to jest coś co nazywa się stanem równowagi lub położeniem stacjonarnym).</p>
+<p>Gdy mamy bardziej skomplikowane krzywe fazowe, ich &#8220;rozszyfrowanie&#8221; może być trudniejsze. Ale ogólna zasada jest taka: gdy <span class="math">\(x\)</span> rośnie to oznacza wzrost położenia cząstki. Gdy <span class="math">\(y\)</span> maleje to oznacza, że maleje prędkość cząstki.  Gdy <span class="math">\(x\)</span> maleje to maleje współrzędna położenia cząstki. Gdy <span class="math">\(y\)</span> rośnie to rośnie prędkość cząstki.</p>
+</div>
+<div class="section" id="id1">
+<h5>Tłumiony oscylator harmoniczny<a class="headerlink" href="#id1" title="Stały odnośnik do tego nagłówka">¶</a></h5>
+<div class='sage'><script type='text/x-sage'>var('x y')
+def schemat_eulera2D(vec, ics, Tlist):
+ i = 0
+ dx = [ics[0]]
+ dy = [ics[1]]
+ h = Tlist[i+1] - Tlist[i]
+ iks(x,y) = vec[0R]*h
+ igrek(x,y) = vec[1R]*h
+ for time in Tlist:
+     dx.append(dx[i] + iks(dx[i],dy[i]))
+     dy.append(dy[i] + igrek(dx[i],dy[i]))
+     i += 1
+ return zip(dx,dy)
+#
+@interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom':[['T','h']]})
+def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=input_box(1,label=r'$\omega$', width=10), ggamma=input_box(0.5,label=r'$\gamma$', width=10)):
+ global oscylator_tlumiony, globggamma, globomega, background2
+ globggamma = ggamma
+ globomega = omega
+ if T == 0:
+     T = 2*pi/omega
+ listT = srange(0,T,float(h),include_endpoint=True)
+ background2 = desolve_odeint(vector([y,-omega^2*x-ggamma*y]), [x0, y0], srange(0,2*pi/omega+0.1,0.1,include_endpoint=True), [x,y])
+ oscylator_tlumiony = schemat_eulera2D([y,-omega^2*x-ggamma*y], [x0, y0], listT)
+ print r'Parametry modelu'
+ html(r'$\gamma=%s, \omega=%s, x_0=%s, y_0=%s$'%(ggamma,omega,x0,y0))
+ print r'Parametry symulacji'
+ html(r'$h=%s, T=%s$'%(h,T))
+ print '\nDla T=0 lista generowana jest automatycznie dla jednego okresu własnego oscylatora'
+#
+@interact
+def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, label=r'krok')):
+ buf = zip(*oscylator_tlumiony)
+ minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]), max(buf[1])
+ kroki = oscylator_tlumiony[:krok]
+ kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)
+ txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
+ for i in range(1,len(kroki)):
+     txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
+ full_plot = list_plot(oscylator_tlumiony, plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
+ full_plot += list_plot(background2.tolist(), plotjoined=1, color='grey', alpha=0.5)
+ html.table([["krzywe fazowe dla oscylatora tłumionego",""],[full_plot+kroki_plot,kroki_plot+txt_plot]])</script></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="pole-wektorowe">
+<h2>Pole wektorowe<a class="headerlink" href="#pole-wektorowe" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Prawe strony układu równań różniczkowych</p>
+<div class="math" id="equation-eqn61">
+<span class="eqno">(30)</span>\[ \dot x = f(x, y), \quad \quad x(0) = x_0\]\[ \dot y= g(x, y),\quad \quad y(0) = y_0\]</div>
+<p>można traktować jak składowe pewnego pola wektorowego:</p>
+<div class="math" id="equation-eqn63">
+<span class="eqno">(31)</span>\[\vec F = [F_x, F_y] = [f(x, y), g(x, y)]\]</div>
+<p>W każdym punkcie płaszczyzny o współrzędnych <span class="math">\(\{x, y\}\)</span> rysujemy wektor  o składowych  <span class="math">\([f(x, y), g(x, y)]\)</span>. W ten sposób otrzymujemy pole wektorowe. No dobrze, ale jaką informację o układzie można &#8220;wyciągnąć&#8221; z tego pola wektorowego. Wykonajmy takie oto ćwiczenie numeryczne: Startujemy z warunku początkowego <span class="math">\(\{x_0, y_0\}\)</span> i rysujemy w tym punkcie wektor o składowych <span class="math">\([f(x_0, y_0), g(x_0, y_0)]\)</span> czyli</p>
+<div class="math" id="equation-eqn64">
+<span class="eqno">(32)</span>\[\mbox{w punkcie }  \quad \{x_0, y_0\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_0, y_0), g(x_0, y_0)]\]</div>
+<p>Jak poprzednio, rozwiązujemy numerycznie układ równań różniczkowych i obliczamy  <span class="math">\(\{x_1, y_1\}\)</span>:</p>
+<div class="math" id="equation-eqn65">
+<span class="eqno">(33)</span>\[\mbox{w punkcie }  \quad \{x_1, y_1\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_1, y_1), g(x_1, y_1)]\]</div>
+<p>Następnie obliczamy  <span class="math">\(\{x_2, y_2\}\)</span>:</p>
+<div class="math" id="equation-eqn66">
+<span class="eqno">(34)</span>\[\mbox{w punkcie }  \quad \{x_2, y_2\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_2, y_2), g(x_2, y_2)]\]</div>
+<p>W n-tym kroku iteracji obliczamy  <span class="math">\(\{x_n, y_n\}\)</span>:</p>
+<div class="math" id="equation-eqn67">
+<span class="eqno">(35)</span>\[\mbox{w punkcie }  \quad \{x_n, y_n\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_n, y_n), g(x_n, y_n)]\]</div>
+<p>Ponieważ wszystkie powyższe punkty  <span class="math">\(\{x_i, y_i\}\)</span> leżą na krzywej fazowej, to wektory <span class="math">\([f(x_i, y_i), g(x_i, y_i)]\)</span>  są przyczepione do tych krzywych fazowych. Zauważamy, że wektory te są styczne do krzywej fazowej. Jeżeli <span class="math">\(\{x_i, y_i\}\)</span> miały by interpretacje położenia cząstki na płaszczyźnie, to wektory  <span class="math">\([f(x_i, y_i), g(x_i, y_i)]\)</span> miały by interpretację prędkości ponieważ <span class="math">\(\dot x = f(x, y)\)</span> oraz <span class="math">\(\dot y = g(x, y)\)</span>. Wiemy, że <span class="math">\(\dot x = v_x\)</span> jest x-ową składową prędkości, z kolei <span class="math">\(\dot y = v_y\)</span> jest y-ową składową prędkości. Innymi słowy, otrzymane pole wektorowe to pole prędkości fikcyjnej cząstki.</p>
+<div class='sage'><script type='text/x-sage'>var('x y')
+@interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom':[['T','h']]})
+def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(20, width=10), omega=input_box(1,label=r'$\omega$', width=10), ggamma=input_box(0.5,label=r'$\gamma$', width=10)):
+ global oscylator_tlumiony, globggamma, globomega
+ globggamma = ggamma
+ globomega = omega
+ listT = srange(0,T,float(h))
+ oscylator_tlumiony = desolve_odeint(vector([y,-omega^2*x-ggamma*y]), [x0, y0], listT, [x,y])
+ print r'Parametry modelu'
+ html(r'$\gamma=%s, \omega=%s, x_0=%s, y_0=%s$'%(ggamma,omega,x0,y0))
+ print r'Parametry symulacji'
+ html(r'$h=%s, T=%s$'%(h,T))
+vf = lambda u,a,b: (u[0]+u[1],u[1]-a*u[0]-b*u[1])
+#
+@interact
+def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, label=r'krok')):
+ kroki = oscylator_tlumiony[:krok]
+ kroki_plot = list_plot(kroki.tolist(), figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5)
+ pole_wektorowe = arrow(kroki[0],vf(kroki[0],globomega^2,globggamma),color='red',xmax=vf(kroki[0],globomega^2,globggamma)[0])
+ for krok in kroki[1:]:
+     pole_wektorowe += arrow(krok,vf(krok,globomega^2,globggamma),color='red', width=.4)
+ txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
+ for i in range(1,len(kroki)):
+     txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
+ shadowplot = list_plot(oscylator_tlumiony.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], alpha=0.2)
+ full_plot = list_plot(oscylator_tlumiony.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$']) + plot_vector_field([y,-globomega^2*x-globggamma*y], (x, -4.5, 4.5), (y, -4.5, 4.5), plot_points=20, color='lime')
+ html.table([["krzywe fazowe dla oscylatora tłumionego",""],[full_plot+kroki_plot,shadowplot+kroki_plot+txt_plot+pole_wektorowe]])</script></div><p>Poniżej znajdziecie komórkę, w której zachęcamy wszystkich do eksperymentowania z
+różnymi modelami. Miłej zabawy...</p>
+<div class="admonition tip">
+<p class="first admonition-title">Wskazówka</p>
+<p class="last">Aby całość zadziałała poprawnie musicie zadeklarować model podając <tt class="docutils literal"><span class="pre">dx</span></tt> i <tt class="docutils literal"><span class="pre">dy</span></tt>,
+podać wartości wszystkich parametrów (teraz jest tylko <tt class="docutils literal"><span class="pre">alpha</span></tt>)
+oraz warunki początkowe <tt class="docutils literal"><span class="pre">x0</span></tt> i <tt class="docutils literal"><span class="pre">y0</span></tt>.
+Na koniec zdecudujcie jaki okres dynamiki punktu chcecie symulować
+przypisując do zmiennej <tt class="docutils literal"><span class="pre">T</span></tt> odpowiednią wartość.</p>
+</div>
+<div class='sage'><script type='text/x-sage'>#########
+# Model #
+#########
+# zmienne
+var('x y')
+#
+# parametry
+# UWAGA: jeżeli Twój model będzie zależny od innych parametrów
+#        tu właśnie musisz je wszystkie wyspecyfikować
+alpha = 1
+#
+# warunki początkowe
+x0 = 1
+y0 = 1
+#
+# model
+dx = y
+dy = -alpha*x - y
+#
+# czas (T) symulacji
+T = 12
+#
+###################################################
+# Symulacje + wizualizacja                        #
+###################################################
+listT = srange(0,T,0.1,include_endpoint=True)
+numeryka = desolve_odeint(vector([dx, dy]), [x0, y0], listT, [x,y])
+przestrzen_fazowa = list_plot(numeryka.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
+pole_wektorowe = plot_vector_field([dx,dy], (x, numeryka[:,0].min(), numeryka[:,0].max()), (y, numeryka[:,1].min(), numeryka[:,1].max()), plot_points=10, color='lime')
+show(przestrzen_fazowa+pole_wektorowe)</script></div></div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Układy dynamiczne z czasem ciągłym</a><ul>
+<li><a class="reference internal" href="#przestrzen-fazowa">Przestrzeń fazowa</a><ul>
+<li><a class="reference internal" href="#geometryczne-wlasnosci-przestrzeni-fazowej">Geometryczne własności przestrzeni fazowej</a><ul>
+<li><a class="reference internal" href="#krzywa-fazowe">Krzywa fazowe</a><ul>
+<li><a class="reference internal" href="#oscylator-harmoniczny">Oscylator harmoniczny</a></li>
+<li><a class="reference internal" href="#tlumiony-oscylator-harmoniczny">Tłumiony oscylator harmoniczny</a></li>
+<li><a class="reference internal" href="#oscylator-harmoniczny-bez-tarcia">Oscylator harmoniczny bez tarcia</a></li>
+<li><a class="reference internal" href="#id1">Tłumiony oscylator harmoniczny</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#pole-wektorowe">Pole wektorowe</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chI011.html"
+                        title="poprzedni rozdział">Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="chI021.html"
+                        title="następny rozdział">Istnienie i jednoznaczność rozwiązań</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch1/chI020.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="chI021.html" title="Istnienie i jednoznaczność rozwiązań"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chI011.html" title="Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

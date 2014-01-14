@@ -1,0 +1,325 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Proces Ornsteina-Uhlenbecka &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Geometryczny ruch Browna" href="chIII034.html" />
+    <link rel="prev" title="Równania ewolucji dla rozkładów prawdopodobieństwa" href="chIII032.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="chIII034.html" title="Geometryczny ruch Browna"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII032.html" title="Równania ewolucji dla rozkładów prawdopodobieństwa"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="proces-ornsteina-uhlenbecka">
+<h1>Proces Ornsteina-Uhlenbecka<a class="headerlink" href="#proces-ornsteina-uhlenbecka" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Rozważmy najprostsze liniowe równanie różniczkowe</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[\begin{split}\dot x = - ax, \quad a&gt;0, \qquad x(0) = x_0\end{split}\]</div>
+<p>Jego rozwiązaniem jest funkcja eksponencjalna:</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[x(t) = x_0 \mbox{e}^{-at}\]</div>
+<p>która zawsze dąży do zera gdy <span class="math">\(t \to \infty\)</span>.</p>
+<p>Zaburzymy losowo to równanie:</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[\dot x = - ax + a \Gamma(t), \qquad \langle \Gamma(t)\rangle = 0, \qquad \langle \Gamma(t) \Gamma(s)\rangle = 2D \delta(t-s) \qquad\]</div>
+<p>Równanie to opisuje proces stochastyczny <span class="math">\(x=x(t)\)</span> który nazywa się procesem Ornsteina-Uhlenbecka. Proces ten jest procesem Markowa (tw. Dooba). Proces ten jest procesem Gaussa ponieważ jest to transformacja liniowa innego procesu Gaussa, a mianowicie procesu <span class="math">\(\Gamma(t)\)</span>. Dlatego też proces ten można analizować na wiele sposobów. Po pierwsze, jest to równanie różniczkowe liniowe niejednorodne. Dlatego jego rozwiązaniem jest funkcja</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[x(t) = x_0 e^{-at} + a \int_0^{\; t} e^{-a(t-s)} \Gamma(s) ds\]</div>
+<p>co można sprawdzić bezpośrednio, różniczkując powyższą funkcję.</p>
+<p>Można teraz obliczyć wartość średnią tego procesu:</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[\mu(t) = \langle x(t)\rangle = \langle x_0 \rangle e^{-at} + a \int_0^{\; t} e^{-a(t-s)} \langle \Gamma(s)\rangle ds = \langle x_0 \rangle e^{-at}\]</div>
+<p>gdzie wykorzystaliśmy własności uśredniania (średnia z sumy to suma średnich, średnia ze stałej wielkości to ta sama stała wielkość, całka to wartość graniczna sumy, itd.).</p>
+<p>Obliczenie funkcji korelacyjnej jest bardziej pracochłonne. Trzeba z należytą ostrożnością wymnożyć <span class="math">\(x(t)\)</span> oraz <span class="math">\(x(\tau)\)</span>:</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[ \langle x(t) x(\tau) \rangle = \langle \left[ x_0 e^{-at} + a \int_0^{\; t} e^{-a(t-s)} \Gamma(s) ds\right] \left[ x_0 e^{-a\tau} + a \int_0^{\; \tau} e^{-a(\tau -u)} \Gamma(u) du\right] \rangle\]</div>
+<p>Pamiętając, że <span class="math">\(\langle \Gamma(t)\rangle = 0\)</span> dla dowolnego czasu <span class="math">\(t\)</span>, otrzymamy wyrażenie:</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[ \langle x(t) x(\tau) \rangle = \langle x_0^2 \rangle e^{-a(t+\tau)} + a^2 e^{-a(t+\tau)} \int_0^{\; t} e^{as} \int_0^{\; \tau} e^{au} \langle \Gamma(s) \Gamma(u) \rangle ds du\]</div>
+<p>W wyrażeniu podcałkowym występuje funkcja korelacyjna białego szumu gaussowskiego, więc</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(8)</span>\[ \langle x(t) x(\tau) \rangle = \langle x_0^2 \rangle e^{-a(t+\tau)} + 2D a^2 e^{-a(t+\tau)} \int_0^{\; t} e^{as} \int_0^{\; \tau} e^{au} \delta(s-u) ds du\]</div>
+<p>Należy obliczyć całki z <span class="math">\(\delta\)</span> - Diraca. Trzeba rozważyć 2 przypadki: gdy <span class="math">\(t&gt;\tau\)</span> oraz gdy <span class="math">\(\tau &gt; t\)</span>. W końcu otrzymamy wynik w postaci:</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(9)</span>\[ \langle x(t) x(\tau) \rangle = [\langle x_0^2 \rangle -aD] e^{-a(t+\tau)}+ aD e^{-a|t-\tau|}\]</div>
+<p>Ponieważ <span class="math">\(x(t)\)</span> jest procesem gaussowskim, możemy podać gęstość prawdopodobieństwa tego procesu:</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(10)</span>\[p(x, t) = \frac{1}{\sqrt{2\pi \sigma^2(t)} }\; \exp\left\{ - \frac{[x-\mu(t)]^2}{2\sigma^2(t)}\right\} \qquad\]</div>
+<p>Wartość średnia jest dana powyżej. Musimy jeszcze obliczyć wariancję:</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(11)</span>\[\sigma^2(t) = \langle x^2(t) \rangle - \langle x(t)\rangle^2 = \sigma^2_0 e^{-2at} + aD [1 - e^{-2at}] \qquad\]</div>
+<p>Stacjonarny rozkład prawdopodobieństwa <span class="math">\(p_{st}(x)\)</span> to rozkład dla <span class="math">\(t\to\infty\)</span>. Granice taką łatwo wyznaczyć ponieważ</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(12)</span>\[\mu(t) \to 0, \qquad \sigma^2(t) \to aD\]</div>
+<p>Więc rozkład prawdopodobieństwa <span class="math">\(p_{st}(x)\)</span> ma postać gaussowską:</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(13)</span>\[p_{st}(x) = \frac{1}{\sqrt{2\pi aD} }\; \exp\left\{ - \frac{x^2}{2 aD}\right\}\]</div>
+<p>W ogólności <span class="math">\(x(t)\)</span> nie jest procesem stacjonarnym. Jeżeli tak wybrać stan początkowy aby</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(14)</span>\[\langle x_0^2 \rangle = aD\]</div>
+<p>to proces staje się stacjonarny i jest eksponencjalnie skorelowany:</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(15)</span>\[C(t, \tau) = C(t-\tau) = \langle x(t) x(\tau) \rangle = aD e^{-a|t-\tau|} = \frac{D}{\tau_c} \exp\left[ -\frac{|t-\tau|}{\tau_c}\right]\]</div>
+<p>gdzie <span class="math">\(\tau_c = 1/a\)</span> jest czasem korelacji procesu. Ale wybór <span class="math">\(\langle x_0^2 \rangle = aD\)</span> oznacza, że stan początkowy jest stanem stacjonarnym, czyli <span class="math">\(p(x, 0) = p_{st}(x)\)</span>. Innymi słowy, proces Ornsteina-Uhlenbecka zawsze staje się stacjonarny albo dla długich czasów albo dla początkowego stanu który jest stanem stacjonarnym. W tym przypadku proces ten służy jako standardowy przykład eksponencjalnie skorelowanego szumu gaussowskiego. Wyznaczymy teraz widmo mocy tego szumu:</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(16)</span>\[S(\omega) = \int_{-\infty}^{\; \infty} e^{i\omega t} C(t) dt = aD \int_{-\infty}^{\; \infty} e^{i\omega t} e^{-a|t|} dt = \frac{2a^2 D}{a^2 + \omega^2} = \frac{2 D}{1 + (\tau_c \omega)^2}\]</div>
+<p>Poniżej przedstawiamy tę zależność dla kilku wartości czasu korelacji <span class="math">\(\tau_c = 1/a\)</span>. Widmo mocy ma maksimum, podobnie jak światło o danym kolorze ma maksimum przy częstości fali promieniowania elektromagnetycznego. Jeżeli czas korelacji <span class="math">\(\tau_c \to 0\)</span> to widmo mocy staje się coraz bardziej płaskie i dąży do stałej wartości <span class="math">\(2D\)</span>. Z kolei funkcja korelacyjna</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(17)</span>\[ lim_{\tau_c \to 0} \; \; \frac{D}{\tau_c} \exp\left[ -\frac{|t-\tau|}{\tau_c}\right] = 2D \delta(t - \tau)\]</div>
+<p>i szum staje się białym szumem gaussowskim.</p>
+<div class='sage'><script type='text/x-sage'>var('x, t, D')
+a = 1
+V = a*x^2
+#wartosci startowe
+N = 10
+x0 = [random()*4 - 2 for i in range(N)]
+meanx0 = mean(x0)
+sigmax0 = variance(x0)
+#p(x,t)
+mu = mean(x0) * exp(-a*t)
+sigma = (variance(x0) - a*D)*exp(-2*a*t)
+p = exp(-(x-mu)^2/(2*sigma^2)) / sqrt(2*pi*sigma^2)
+show(p)
+P =[]
+lT = srange(0,1,0.2,include_endpoint=1)
+for t1 in lT:
+    c = [random() for i in range(3)]
+    P.append(plot(p(x=x,t=t1,D=1),(x,-1,1),fill=0,color=c,fillcolor=c,legend_label='t=%.2f'%t1))
+sum(P).show(figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t)$'])</script></div><div class="section" id="rownanie-fokkera-plancka-dla-procesu-ornsteina-uhlenbecka">
+<h2>Równanie Fokkera-Plancka dla procesu Ornsteina-Uhlenbecka<a class="headerlink" href="#rownanie-fokkera-plancka-dla-procesu-ornsteina-uhlenbecka" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Zgodnie z regułami podanymi w poprzednim rozdziale, równanie <a href="#equation-eqn3">(3)</a> to równanie Langevina, dla którego dryf i funkcja dyfuzji maja postać</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(18)</span>\[F(x, t) = -ax, \quad G(x, t) = a\]</div>
+<p>Odpowiednie równanie Fokkera-Plancka dla warunkowej gęstości prawdopodobieństwa <span class="math">\(p(x, t|y, s)\)</span> ma postać:</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(19)</span>\[\frac{\partial p(x, t|x_0, s)}{\partial t} = a \frac{\partial}{\partial x} [x p(x, t|x_0, s)] + D a^2 \frac{\partial^2}{\partial x^2} p(x,t|x_0,s),\]\[p(x, s|x_0, s) =\delta(x-x_0)\]</div>
+<p>Z kolei dla 1-wymiarowej gęstości prawdopodobieństwa <span class="math">\(p(x, t)\)</span> należy rozwiązać zagadnienie:</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(20)</span>\[\frac{\partial p(x, t)}{\partial t} = a \frac{\partial}{\partial x} [x p(x, t)] + D a^2 \frac{\partial^2}{\partial x^2} p(x, t), \qquad p(x, 0) =p(x)\]</div>
+<p>gdzie <span class="math">\(p(x)\)</span> jest początkowym rozkładem prawdopodobieństwa. Warto przypomnieć, że zachodzi następująca relacja:</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(21)</span>\[p(x, t) = \int_{-\infty}^{\; \infty} p(x, t|, y, s) \; p(y, s) dy\]</div>
+<p>czyli <span class="math">\(p(x, t|y, s)\)</span> jest propagatorem: propaguje rozkład w chwili wcześniejszej <span class="math">\(s\)</span> do chwili późniejszej <span class="math">\(t\)</span>. W szczególności</p>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(22)</span>\[p(x, t) = \int_{-\infty}^{\; \infty} p(x, t|, y, 0) \; p(y, 0) dy \qquad\]</div>
+<p>propaguje rozkład początkowy do chwili <span class="math">\(t\)</span>.</p>
+<p>Oba równania Fokkera-Plancka można rozwiązać metodą funkcji charakterystycznej czyli metodą transformaty Fouriera wybierając odpowiednie warunki początkowe. Wynikiem zastosowania tej metody jest równanie różniczkowe cząstkowe pierwszego rzędu dla funkcji charakterystycznej. Takie równanie zawsze można rozwiązać tzw. metodą charakterystyk. Ponieważ typowy student nie zna tej metody, nie będziemy jej tu przedstawiać. Postąpimy inaczej. W zasadzie już rozwiązaliśmy podobny problem. Załóżmy, że dana jest wartość początkowa procesu: <span class="math">\(x(s) = x_0\)</span>. Wybieramy jako chwilę początkową czas <span class="math">\(s\)</span>. Ponieważ w równaniu Fokkera-Plancka nie występuje czas w sposób jawny, rozwiązanie <span class="math">\(p(x, t|x_0, s)\)</span> zależy tylko od różnicy czasów, tzn. <span class="math">\(p(x, t|x_0, s) = p(x, t-s; x_0)\)</span>. Dlatego też w rozwiązaniu <a href="#equation-eqn11">(11)</a> oraz w <a href="#equation-eqn22">(22)</a> należy dokonać podmiany: <span class="math">\(\langle x_0^k\rangle \to x_0^k\)</span> oraz <span class="math">\(t \to t-s\)</span>. W ten sposób otrzymamy warunkową gęstość rozkładu:</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(23)</span>\[p(x, t|x_0, s) = \frac{1}{\sqrt{2\pi \sigma^2(t, s)} }\; \exp\left\{ - \frac{[x- x_0 e^{-a(t-s)})]^2}{2\sigma^2(t, s)}\right\}\]</div>
+<p>gdzie teraz</p>
+<div class="math" id="equation-eqn24">
+<span class="eqno">(24)</span>\[ \sigma^2(t, s) = aD [1 - e^{-2a(t-s)}]\]</div>
+<p>Można sprawdzić, korzystając z twierdzenia o ciągach <span class="math">\(\delta\)</span>-podobnych, że w
+granicy <span class="math">\(t\to s\)</span> gęstość <span class="math">\(p(x, t|x_0, s) \to \delta(x-x_0)\)</span>. Dla dowolnego
+warunku początkowego, korzystamy z rów. <a href="#equation-eqn22">(22)</a> i otrzymujemy rozkład w dowolnej chwili z dowolnym warunkiem początkowym.</p>
+<div class='sage'><script type='text/x-sage'>var('x, t, s, x0, a, D')
+sigma(t,s,a,D) = a*D*(1 - exp(-2*a*(t-s)))
+pc(x,t,s,x0,a,D) = exp(-(x-x0*exp(-a*(t-s)))^2/(2*sigma(t,s,a,D)^2)) / sqrt(2*pi*sigma(t,s,a,D)^2)
+show(pc)
+p =[]
+lT = srange(0,1,0.2) + srange(0.9,1,0.02) +[0.99,0.992]#[0.1,0.5,0.9]
+for t1 in lT:
+    c = [random() for i in range(3)]
+    p.append(plot(pc(x=x,t=t1,s=1,x0=0,a=1,D=1),(x,-0.5,0.5),fill=0))
+p.append(arrow((0,0),(0,29),color='black'))
+sum(p).show(figsize=[8,3],axes_labels=[r'$x$',r'$p(x, t|x_0, s)$'])</script></div></div>
+<div class="section" id="zastosowanie-czastka-browna">
+<h2>Zastosowanie: cząstka Browna<a class="headerlink" href="#zastosowanie-czastka-browna" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Niech cząstka Browna o masie <span class="math">\(m\)</span> porusza się w płynie. Można zbudować równanie Newtona dla takiej cząstki :</p>
+<div class="math" id="equation-eqn25">
+<span class="eqno">(25)</span>\[m\ddot x + \gamma \dot x = \Gamma(t) \quad \mbox{czyli} \quad m \dot v + \gamma v = \Gamma(t) \quad \mbox{gdzie } \quad v=\dot x\]</div>
+<p>Jest to równanie Langevina, gdzie szum <span class="math">\(\gamma(t)\)</span> to losowa siła działająca na cząstkę i mająca swe źródło w zderzeniach cząstek płynu z cząstką Browna. Równanie Langevina dla prędkości cząstki Browna ma taką samą postać jak równanie generujące proces Ornsteina-Uhlenbecka:</p>
+<div class="math" id="equation-eqn26">
+<span class="eqno">(26)</span>\[\dot v = -(\gamma/m) v + \Gamma(t)/m = - \gamma_0 v + \gamma_0 \Gamma_0(t)\]</div>
+<p>gdzie przeskalowane wielkości maja postać</p>
+<div class="math" id="equation-eqn27">
+<span class="eqno">(27)</span>\[\gamma_0 = \frac{\gamma}{m}, \qquad \Gamma_0(t) = \frac{\Gamma(t)}{\gamma}\]</div>
+<p>Dla przeskalowanej siły losowej mamy związki:</p>
+<div class="math" id="equation-eqn28">
+<span class="eqno">(28)</span>\[\langle \Gamma_0(t)\rangle = 0, \qquad \langle \Gamma_0(t) \Gamma_0(s)\rangle = \frac{2D}{\gamma^2} \delta(t-s) = 2D_0 \delta(t-s) \qquad\]</div>
+<p>Porównując to z równaniem dla procesu Ornsteina-Uhlenbecka otrzymujemy korespondencję:</p>
+<div class="math" id="equation-eqn29">
+<span class="eqno">(29)</span>\[a \to \gamma_0 = \frac{\gamma}{m}, \qquad D \to D_0 = \frac{D}{\gamma^2}\]</div>
+<p>Posiłkując się wynikami dla procesu Ornsteina-Uhlenbecka, otrzymamy dla prędkości cząstki Browna następujące wyniki:</p>
+<div class="math" id="equation-eqn30">
+<span class="eqno">(30)</span>\[\langle v(t) \rangle = \langle v_0\rangle e^{-\gamma t/m}, \qquad \langle v(t) v(s) \rangle = \frac{D}{\gamma m} e^{-\gamma |t-s|/m}\]</div>
+<p>przy założeniu, że jest to proces stacjonarny, czyli że w chwili początkowej</p>
+<div class="math" id="equation-eqn31">
+<span class="eqno">(31)</span>\[\langle v_0^2 \rangle = \frac{D}{\gamma m}\]</div>
+<p>Zauważmy, że w dowolnej chwili czasu zachodzi relacja</p>
+<div class="math" id="equation-eqn32">
+<span class="eqno">(32)</span>\[\langle v^2(t) \rangle = \frac{D}{\gamma m}\]</div>
+<p>Z twierdzenia o ekwipartycji energii (fizyka statystyczna) wynika, że</p>
+<div class="math" id="equation-eqn33">
+<span class="eqno">(33)</span>\[\langle E_k \rangle = \frac{1}{2} m \langle v^2(t) \rangle = \frac{1}{2} kT \qquad \mbox{czyli} \qquad \langle v^2(t) \rangle = \frac{kT}{m} = \frac{D}{\gamma m}\]</div>
+<p>gdzie <span class="math">\(k\)</span> jest stałą Boltzmanna i <span class="math">\(T\)</span> jest temperaturą otoczenia (termostatu, płynu). Stąd otrzymujemy ważny wynik, że natężenie szumu termicznego (fluktuacji termicznych) wynosi</p>
+<div class="math" id="equation-eqn34">
+<span class="eqno">(34)</span>\[D= \gamma kT\]</div>
+<p>Kolejny ważny wynik to czas korelacji prędkości cząstki Browna. Z relacji dla funkcji korelacyjnej wnioskujemy, że czas korelacji</p>
+<div class="math" id="equation-eqn35">
+<span class="eqno">(35)</span>\[\tau_c = \frac{m}{\gamma}\]</div>
+<p>Prędkość cząstki Browna to losowy proces gaussowski, eksponencjalnie skorelowany. Stacjonarny rozkład prawdopodobieństwa <span class="math">\(p_{st}(v)\)</span> ma postać (patrz pierwsza część tego rozdziału)</p>
+<div class="math" id="equation-eqn36">
+<span class="eqno">(36)</span>\[p_{st}(v) = \frac{1}{\sqrt{2\pi aD} }\; \exp\left\{ - \frac{v^2}{2 aD}\right\} = \sqrt{\frac{m}{2\pi kT} }\; \exp\left\{ - \frac{mv^2}{kT}\right\}\]</div>
+<p>Jest to dobrze znany rozkład Maxwella.</p>
+<div class='sage'><script type='text/x-sage'>var('v, T, m')
+k = 1
+pst(v,T,m) = exp(-m*v^2/k/T) * sqrt(m/2/pi/k/T)
+
+p =[]
+kolor = ['blue','green','red']
+lT = [0.01,0.1,1]
+for t in lT:
+    color = kolor[lT.index(t)]
+    p.append(plot(pst(v=x,T=t,m=1),(x,-2,2),color=color,legend_label='T=%.2f'%t,fill=0,fillcolor=color))
+sum(p).show(figsize=[8,3],axes_labels=[r'$v$',r'$P_{st}(v)$'])</script></div></div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Proces Ornsteina-Uhlenbecka</a><ul>
+<li><a class="reference internal" href="#rownanie-fokkera-plancka-dla-procesu-ornsteina-uhlenbecka">Równanie Fokkera-Plancka dla procesu Ornsteina-Uhlenbecka</a></li>
+<li><a class="reference internal" href="#zastosowanie-czastka-browna">Zastosowanie: cząstka Browna</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chIII032.html"
+                        title="poprzedni rozdział">Równania ewolucji dla rozkładów prawdopodobieństwa</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="chIII034.html"
+                        title="następny rozdział">Geometryczny ruch Browna</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch3/chIII033.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="chIII034.html" title="Geometryczny ruch Browna"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII032.html" title="Równania ewolucji dla rozkładów prawdopodobieństwa"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

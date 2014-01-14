@@ -1,0 +1,349 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Równania ewolucji dla rozkładów prawdopodobieństwa &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Proces Ornsteina-Uhlenbecka" href="chIII033.html" />
+    <link rel="prev" title="Modele szumów" href="chIII031.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="chIII033.html" title="Proces Ornsteina-Uhlenbecka"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII031.html" title="Modele szumów"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="rownania-ewolucji-dla-rozkladow-prawdopodobienstwa">
+<h1>Równania ewolucji dla rozkładów prawdopodobieństwa<a class="headerlink" href="#rownania-ewolucji-dla-rozkladow-prawdopodobienstwa" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<p>Z fizycznego punktu widzenia szumy możemy podzielić na dwie klasy:</p>
+<ul class="simple">
+<li>szumy równowagowe (szumy termiczne, fluktuacje termiczne)</li>
+<li>szumy nierównowagowe (fluktuacje nierównowagowe)</li>
+</ul>
+<p>Stany stacjonarne układów na które działają szumy termiczne powinny być stanami równowagi termodynamicznej. Jak rozpoznać, czy szum w równaniu Ito lub Langevina ma charakter fluktuacji równowagowych czy fluktuacji nierównowagowych? Odpowiedź jest następująca: dla układów dążących do stanu równowagi termodynamicznej powinno być spełnione twierdzenie fluktuacyjno-dysypacyjne. Na przykład równanie Langevina</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[m\ddot X(t) + \gamma \dot X(t) + U'(X(t))= \sqrt{2\gamma k_BT}\;\Gamma(t)\]</div>
+<p>lub wersja przetłumiona</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[\gamma \dot X(t)= - U'(X(t)) + \sqrt{2\gamma k_BT}\;\Gamma(t),\]</div>
+<p>zawiera szum równowagowy ponieważ istnieje silny związek pomiędzy parametrami występującymi z lewej i prawej strony tych równań. Parametr <span class="math">\(\gamma\)</span> pojawia się z lewej i prawej strony. Oznacza to, że wyraz opisujący tłumienie (dyssypację) występuje jednocześnie z wyrazem opisującym siłę losową <span class="math">\(\Gamma(t)\)</span>. Jeżeli <span class="math">\(\gamma = 0\)</span> to znikają oba wyrazy: nie ma fluktuacji bez dyssypacji i nie ma dyssypacji bez fluktuacji. To jest treścią twierdzenia fluktuacyjno-dyssypacyjnego.</p>
+<p>Jeżeli w równaniu pojawia się wyraz losowy i nie ma on związku z wyrazami opisującymi dyssypację, to jest to szum nierównowagowy. Przy modelowaniu innych zjawisk niż procesy fizyczne nie musimy się martwić takimi subtelnościami. Przy analizie zmian cen akcji na giełdzie byłoby trudno wyodrębnić losowe czynniki które odpowiadałyby fluktuacjom równowagowym. Na rynkach finansowych fluktuacje zawsze mają charakter fluktuacji nierównowagowych. Na rynkach finansowych trudno oczekiwać stanów stacjonarnych które byłyby w stanie równowagi z otoczeniem. Procesy modelujące rynki finansowe są zawsze procesami niestacjonarnymi i nierównowagowymi. Na przykład równanie Langevina w postaci</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[\dot X(t)= F(X(t)) + \xi(t)\]</div>
+<p>gdzie <span class="math">\(\xi(t)\)</span> jest skorelowanym szumem, opisuje proces którego stan stacjonarny (jeżeli taki w ogóle istnieje) nie jest stanem równowagi termodynamicznej (nie ma postaci rozkładu Boltzmanna). Równanie stochastyczne typu</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[\dot X= F(X) + G(X) \xi(t),\]</div>
+<p>(dalej nie będziemy zaznaczali zależności procesu <span class="math">\(X\)</span> od czasu bo to jest oczywiste) nazywa się równaniem z multiplikatywnym szumem i z pewnością nie opisuje stanów równowagi termodynamicznej. Wszelkie multiplikatywne szumy opisują nierównowagowe procesy.</p>
+<p>W modelowaniu opartym na równaniach stochastycznych typu jak powyżej pojawia się następujący problem: Jaki jest rozkład prawdopodobieństwa <span class="math">\(P(x, t)\)</span> procesu stochastycznego <span class="math">\(X=X(t)\)</span>? Można też zapytać: jakie równanie ewolucji spełnia rozkład <span class="math">\(P(x, t)\)</span>? Wszystko zależy od postaci szumu <span class="math">\(\xi(t)\)</span>. W wielu przypadkach nawet nie znamy takiego równania ewolucji. Poniżej prezentujemy przypadki dla których równanie ewolucji dla <span class="math">\(P(x, t)\)</span> są znane. Mimo że często nie potrafimy analitycznie rozwiązać tych równań stanowią one ważny punkt wyjścia to analizy numerycznej.</p>
+<div class="section" id="bialy-szum-gaussowski-i-rownania-fokkera-plancka">
+<h2>Biały szum gaussowski i równania Fokkera-Plancka<a class="headerlink" href="#bialy-szum-gaussowski-i-rownania-fokkera-plancka" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Jeżeli szum <span class="math">\(\Gamma(t)\)</span> w równaniu Langevina</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[\dot X= F(X) + G(X) \Gamma(t), \quad \langle \Gamma(t)\rangle= 0, \qquad \langle \Gamma(t) \Gamma(s)\rangle= 2D \delta(t-s)\]</div>
+<p>jest białym szumem gaussowskim, to z poprzednich rozdziałów wiemy, że przy interpretacji Ito równanie ewolucji dla rozkładu prawdopodobieństwa <span class="math">\(P(x, t)\)</span> jest równaniem Fokkera-Plancka</p>
+<div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[\frac{\partial}{\partial t} P(x,t)= -\frac{\partial}{\partial x} F(x) P(x,t) + D \frac{\partial^2}{\partial x^2}G^2(x)P(x,t) = L P(x, t)\]</div>
+<p>gdzie przez <span class="math">\(L\)</span> oznaczyliśmy operator różniczkowania</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[LP(x, t) = \left[ -\frac{\partial}{\partial x} F(x) + D \frac{\partial^2}{\partial x^2}G^2(x)\right] P(x,t)\]</div>
+<p>który nazywa się operatorem infinitezymalnym lub generatorem danego procesu. Generator ten składa się z 2 części. Pierwsza część</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(8)</span>\[L_1 P(x, t) = -\frac{\partial}{\partial x} F(x) P(x, t)\]</div>
+<p>zawiera funkcję <span class="math">\(F(x)\)</span> i opisuje część deterministyczną w równaniu Langevina. Jest to operator różniczkowanie pierwszego rzędu. Należy to zapamiętać! Druga część</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(9)</span>\[L_2 P(x, t) = D \frac{\partial^2}{\partial x^2}G^2(x) P(x,t)\]</div>
+<p>zawiera funkcję <span class="math">\(G(x)\)</span> i opisuje część losową równania Langevina (lub Ito). Ta część opisuje proces dyfuzji. Tak więc dyfuzja jest opisywana operatorem różniczkowania drugiego rzędu.</p>
+<p>Jeżeli powyższe równanie Langevina jest w interpretacji Stratonowicza to równanie ewolucji dla rozkład prawdopodobieństwa <span class="math">\(P(x, t)\)</span> ma postać nieco inną postać, a mianowicie</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(10)</span>\[\frac{\partial}{\partial t} P(x,t)= -\frac{\partial}{\partial x} F(x) P(x,t) + D \frac{\partial}{\partial x}G(x)\frac{\partial}{\partial x}G(x) P(x,t)\]</div>
+<p>Równania tego typu można analizować zarówno analitycznie jak i numerycznie.</p>
+</div>
+<div class="section" id="szumy-skorelowane-i-rownania-typu-rownan-fokkera-plancka">
+<h2>Szumy skorelowane i równania typu równań Fokkera-Plancka<a class="headerlink" href="#szumy-skorelowane-i-rownania-typu-rownan-fokkera-plancka" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Niech teraz</p>
+<div class="math" id="equation-eqn11">
+<span class="eqno">(11)</span>\[\dot X= F(X) + G(X) \xi(t)\]</div>
+<p>gdzie <span class="math">\(\xi(t)\)</span> jest gaussowskim szumem skorelowanym. W ogólnym przypadku nie znamy równania dla <span class="math">\(P(x, t)\)</span>. Ale jeżeli szum <span class="math">\(\xi(t)\)</span> jest zdefiniowany przez równanie typu równania Ito (Langevina) z pomocniczym białym szumem gaussowskim to można otrzymać równanie ewolucji w rozszerzonej przestrzeni fazowej. Co to znaczy? Podamy przykład. Niech szum <span class="math">\(\xi(t)\)</span> będzie eksponencjalnie skorelowanym szumem gaussowskim. Oznacza to, że <span class="math">\(\xi(t)\)</span> jest procesem Ornsteina-Uhlenbecka i generowany jest przez równanie</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(12)</span>\[\dot \xi = -\frac{1}{\tau_c} \xi + \frac{1}{\tau_c} \Gamma(t)\]</div>
+<p>gdzie <span class="math">\(\Gamma\)</span> jest białym szumem gaussowskim jak powyżej. Równanie Fokkera-Plancka dla tego procesu ma postać:</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(13)</span>\[\frac{\partial}{\partial t} f(\xi, t) = \left[\frac{1}{\tau_c} \frac{\partial}{\partial \xi} + \frac{D}{\tau_c^2} \frac{\partial^2}{\partial \xi^2}\right] f(\xi, t) = L_{\xi} f(\xi, t)\]</div>
+<p>gdzie wyrażenie w nawiasie oznaczyliśmy jako <span class="math">\(L_{\xi}\)</span> i nazywa się generatorem procesu Ornsteina-Uhlenbecka.</p>
+<p>Teraz możemy połączyć te 2 równania i rozważyć układ 2 równań stochastycznych:</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(14)</span>\[\dot X= F(X) + G(X) \xi(t)\]</div>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(15)</span>\[\dot \xi = -\frac{1}{\tau_c} \xi + \frac{1}{\tau_c} \Gamma(t)\]</div>
+<p>Zgodnie z poprzednimi rozdziałami, ten układ 2 równań opisuje 2-wymiarowy proces Markowa. Łączny (2-wymiarowy) rozkład prawdopodobieństwa <span class="math">\(P(x, \xi, t)\)</span> spełnia równanie Fokkera-Plancka w postaci:</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(16)</span>\[ \frac{\partial}{\partial t} P(x, \xi, t)= -\frac{\partial}{\partial x} \left[ F(x)+G(x)\xi\right] P(x, \xi,t) + \left[\frac{1}{\tau_c} \frac{\partial}{\partial \xi} + \frac{D}{\tau_c^2} \frac{\partial^2}{\partial \xi^2}\right] P(x, \xi, t) \qquad(*)\]</div>
+<p>Gęstość prawdopodobieństwa <span class="math">\(P(x, \xi, t)\)</span> opisuje zarówno proces <span class="math">\(X(t)\)</span> jak i szum <span class="math">\(\xi(t)\)</span>. Ale nas interesuje tylko proces <span class="math">\(X(t)\)</span> i jego rozkład <span class="math">\(P(x, t)\)</span>. Jak go otrzymać? Oto recepta:</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(17)</span>\[P(x, t) = \int_{-\infty}^{\; \infty} P(x, \xi, t) d\xi\]</div>
+<p>czyli należy scałkować po zmiennej szumu <span class="math">\(\xi\)</span>. Niestety nie można otrzymać równania ewolucji tylko dla rozkładu <span class="math">\(P(x, t)\)</span>. To jest poważny problem, do dziś nie rozwiązany. Czy równanie ewolucji <span class="math">\((*)\)</span> jest pomocne w wyznaczeniu rozkładu <span class="math">\(P(x, t)\)</span>? I tak nie potrafimy go rozwiązać i znaleźć postać funkcji <span class="math">\(P(x, \xi, t)\)</span>. W praktyce zwykle numerycznie symulujemy układ 2 równań Langevina i z symulacji otrzymujemy charakterystyki probabilistyczne procesu <span class="math">\(X(t)\)</span>.</p>
+<p>Z powyższego przykładu można wysnuć następujące uogólnienie:</p>
+<p>Niech szum <span class="math">\(\xi(t)\)</span> (z matematycznego punktu widzenia) będzie zdefiniowany przez układ <span class="math">\(n\)</span> równań stochastycznych Ito dla zmiennych <span class="math">\(\vec \xi =\{\xi, \xi_1, \xi_2,..., \xi_{n-1}\}\)</span> z pomocniczymi zmiennymi <span class="math">\(\{\xi_i, i=1,2,\cdots n-1\}\)</span>. Wówczas proces wektorowy <span class="math">\(\vec \xi(t)\)</span> jest procesem Markowa i znane jest równanie Fokkera-Plancka z generatorem <span class="math">\(L_{\vec \xi}\)</span>. Proces stochastyczny w rozszerzonej przestrzeni fazowej <span class="math">\(\{x, {\vec \xi}\}\)</span> jest procesem Markowa i podobnie jak powyżej równanie ewolucji dla łącznego rozkładu prawdopodobieństwa ma postać</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(18)</span>\[ \frac{\partial}{\partial t} P(x,{\vec \xi}, t)= -\frac{\partial}{\partial x} \left[ F(x)+G(x)\xi\right] P(x,{\vec \xi},t) + L_{\vec \xi} P(x, {\vec \xi}, t)\]</div>
+<p>Podobne reguły stosuje się do równań z niegaussowskimi szumami dla których znane są generatory <span class="math">\(L_{\xi}\)</span>.</p>
+</div>
+<div class="section" id="uklady-z-bialym-szumem-poissona">
+<h2>Układy z białym szumem Poissona<a class="headerlink" href="#uklady-z-bialym-szumem-poissona" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Niech układ będzie modelowany równaniem</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(19)</span>\[\dot X = F(X) + Y_0(t)\]</div>
+<p>gdzie <span class="math">\(Y_0(t)\)</span> jest białym szumem Poissona (patrz rozdział o modelach szumów)</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(20)</span>\[\begin{split}Y_0(t) = \sum\limits_{i} z_i \delta (t-t_i) -\mu &lt;z_i&gt;\end{split}\]</div>
+<p>gdzie amplitudy impulsów <span class="math">\(z_i\)</span> mają rozkład określony przez zadaną gęstość prawdopodobieństwa <span class="math">\(\rho(z)\)</span>. Wartość średnia oraz funkcja korelacyjna tego szumu to:</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(21)</span>\[\langle Y_0(t) \rangle = 0, \quad \langle Y_0(t) Y_0(u) \rangle = 2D_S \delta (t-u)\]</div>
+<p>gdzie <span class="math">\(D_S=(1/2)\mu &lt;z_i^2&gt;\)</span> nazywa się intensywnością szumu.</p>
+<p>Przepiszemy równanie Langevina w postaci</p>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(22)</span>\[\begin{split}\dot X = F(X) -\mu &lt;z_i&gt; + \sum\limits_{i} z_i \delta (t-t_i)\end{split}\]</div>
+<p>Równanie ewolucji dla rozkładu prawdopodobieństwa <span class="math">\(P(x, t)\)</span> procesu <span class="math">\(X=X(t)\)</span> ma postać</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(23)</span>\[\begin{split}{\partial P(x, t) \over \partial t} =-{\partial\over \partial x} [F(x)-\mu &lt;z_i&gt; ]P(x, t)+\mu \int\limits_{- \infty}^{\; \infty} \rho(z)[P(x-z, t)-P(x, t) ]\; dz\end{split}\]</div>
+<p>Jest to równanie różniczkowo-całkowe. Pierwsza część prawej strony tego równania opisuje deterministyczną część równania Langevina. Druga część (całkowa) opisuje część losową indukowaną szumem Poissona.</p>
+<p>Gdyby równanie Langevina zawierało dodatkowo wyraz z białym szumem gaussowskim <span class="math">\(\Gamma(t)\)</span>:</p>
+<div class="math" id="equation-eqn24">
+<span class="eqno">(24)</span>\[\dot X = F(X) + Y_0(t) + \Gamma(t)\]</div>
+<p>wówczas równanie ewolucji ma postać</p>
+<div class="math" id="equation-eqn25">
+<span class="eqno">(25)</span>\[\begin{split}{\partial P(x, t) \over \partial t} =-{\partial\over \partial x} [F(x)-\mu &lt;z_i&gt; ]P(x, t)+\mu \int\limits_{- \infty}^{\; \infty} \rho(z)[P(x-z, t)-P(x, t) ]\; dz + D \frac{\partial^2}{\partial x^2} P(x, t)\end{split}\]</div>
+<p>czyli dodajemy dodatkowy generator związany z gaussowską dyfuzją, podobnie jak w równaniu Fokkera-Plancka.</p>
+</div>
+<div class="section" id="uklady-z-szumem-dychotomicznym">
+<h2>Układy z szumem dychotomicznym<a class="headerlink" href="#uklady-z-szumem-dychotomicznym" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Rozważamy równanie stochastyczne Langevina z białym szumem gaussowskim <span class="math">\(\Gamma(t)\)</span> i szumem dychotomicznym <span class="math">\(\xi(t)\)</span> w postaci</p>
+<div class="math" id="equation-eqn26">
+<span class="eqno">(26)</span>\[\dot X = F(X) + \Gamma (t) + \xi(t)\]</div>
+<p>Szum dychotomiczny ma 2 stany:</p>
+<div class="math" id="equation-eqn27">
+<span class="eqno">(27)</span>\[\begin{split}\xi(t) = \{-a, b\}, \quad a, b &gt; 0\end{split}\]</div>
+<p>Przeskoki pomiędzy tymi dwoma stanami są dane przez prawdopodobieństwa przejścia w jednostce czasu</p>
+<div class="math" id="equation-eqn28">
+<span class="eqno">(28)</span>\[Pr(-a\rightarrow b)=\mu_a = 1/\tau_a, \qquad Pr(b\rightarrow -a)=\mu_b = 1/\tau_b, \qquad\]</div>
+<p>gdzie <span class="math">\(\tau _a\)</span> and <span class="math">\(\tau _b\)</span> są średnimi czasami przebywania w stanach <span class="math">\(-a\)</span> oraz <span class="math">\(b\)</span>. Jeżeli założymy że</p>
+<div class="math" id="equation-eqn29">
+<span class="eqno">(29)</span>\[b \mu_a= a \mu_b \qquad\]</div>
+<p>to proces jest stacjonarny o zerowej wartości średniej. Funkcja korelacyjna ma postać funkcji eksponencjalnej (podobnie jak dla szumu Ornsteina-Uhlenbecka)</p>
+<div class="math" id="equation-eqn30">
+<span class="eqno">(30)</span>\[C(t) = a b \:\mbox{exp}\left(-\frac{|t|}{\tau_c} \right), \qquad\]</div>
+<p>gdzie czas korelacji szumu <span class="math">\(\tau_c\)</span> dany jest prze formułę</p>
+<div class="math" id="equation-eqn31">
+<span class="eqno">(31)</span>\[1/\tau_c = \mu_a + \mu_b\]</div>
+<p>Proces <span class="math">\(X(t)\)</span> jest niemarkowowski ale 2-wymiarowy proces <span class="math">\(\{X(t), \xi(t)\}\)</span> jest procesem Markowa. Rozkłady prawdopodobieństwa</p>
+<div class="math" id="equation-eqn32">
+<span class="eqno">(32)</span>\[P_{+}(x,t)\equiv p(x,b,t),\quad P_{-}(x,t)\equiv p(x,-a,t) \qquad\]</div>
+<p>spełniają układ równań</p>
+<div class="math" id="equation-eqn33">
+<span class="eqno">(33)</span>\[{\frac{\partial P_{+}(x,t)}{\partial t}}=-{\frac \partial {\partial x}} \left[F(x)+b\right]P_{+}(x,t)+D{\frac{\partial ^2}{\partial x^2}} P_{+}(x,t) -\mu_b P_{+}(x,t)+\mu_a P_{-}(x,t)\]</div>
+<div class="math" id="equation-eqn34">
+<span class="eqno">(34)</span>\[{\frac{\partial P_{-}(x,t)}{\partial t}}=-{\frac \partial {\partial x}} \left[F(x)-a\right]P_{-}(x,t)+D{\frac{\partial ^2}{\partial x^2}}P_{-}(x,t) +\mu_b P_{+}(x,t)-\mu_a P_{-}(x,t)\]</div>
+<p>Pierwszy wyraz po prawej stronie to dryf (część deterministyczna procesu), drugi wyraz z <span class="math">\(D\)</span> to dyfuzja, ostatnie wyrazy opisują szum dychotomiczny (generator szumu dychotomicznego to macierz).</p>
+<p>Jeżeli jesteśmy w stanie rozwiązać te równania, wówczas rozkład prawdopodobieństwa tylko procesu <span class="math">\(X(t)\)</span> można otrzymać z relacji</p>
+<div class="math" id="equation-eqn35">
+<span class="eqno">(35)</span>\[P(x,t) = p(x,b,t)+p(x,-a,t)\]</div>
+<p>Sumowanie dla dyskretnego szumu jest analogiem całkowania dla ciągłego szumu jak to było w przypadku szumu Ornsteina-Uhlenbecka. Można otrzymać równoważną postać równań ewolucji dodając do siebie powyższe równania lub odejmując je po wymnożeniu pierwszego przez <span class="math">\(b\)</span> i drugiego - przez <span class="math">\(a\)</span>:</p>
+<div class="math" id="equation-eqn36">
+<span class="eqno">(36)</span>\[{\frac{\partial P(x,t)}{\partial t}}=-\frac{\partial} {\partial x} F(x)P(x, t) + D \frac{\partial^2 }{\partial x^2} P(x,t) -\frac{\partial} {\partial x} W(x, t)\]</div>
+<div class="math" id="equation-eqn37">
+<span class="eqno">(37)</span>\[{\frac{\partial W(x, t) }{\partial t}} = - {\frac{\partial }{\partial x}} \left\{\left[F(x) + \theta\right] W(x, t) -D {\frac{\partial}{\partial x}} W(x, t) \right\} - {\frac{1}{\tau_c}} W(x, t) - ab {\frac{\partial }{\partial x}}P(x, t)\]</div>
+<p>gdzie <span class="math">\(W(x,t)\equiv bp(x,b,t)-ap(x,-a,t)\)</span>. Parametr <span class="math">\(\theta=b-a\)</span> jest miarą asymetrii szumu dychotomicznego <span class="math">\(\xi(t)\)</span>: Jeżeli <span class="math">\(a=b\)</span> to <span class="math">\(\xi(t)\)</span> jest szumem symetrycznym. W przeciwnym przypadku szum dychotomiczny jest asymetryczny. Funkcje <span class="math">\(P(x, t)\)</span> oraz <span class="math">\(W(x, t)\)</span> są unormowane w następujący sposób:</p>
+<div class="math" id="equation-eqn38">
+<span class="eqno">(38)</span>\[\begin{split}\int_{-\infty}^{\infty} P(x, t) \;dx = 1, \qquad \int_{-\infty}^{\infty} W(x, t) \;dx = &lt;\xi(t)&gt; = 0\end{split}\]</div>
+<p>Powyższe równania ewolucji można analizować zarówno metodami analitycznymi jak i metodami numerycznymi. Ponadto przydatne są symulacje komputerowe równań Langevina.</p>
+</div>
+<div class="section" id="uklady-z-szumem-kangura">
+<h2>Układy z szumem kangura<a class="headerlink" href="#uklady-z-szumem-kangura" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Rozważamy równanie stochastyczne Langevina z białym szumem gaussowskim <span class="math">\(\Gamma(t)\)</span> oraz z szumem kangura <span class="math">\(\xi(t)\)</span> w postaci</p>
+<div class="math" id="equation-eqn39">
+<span class="eqno">(39)</span>\[\dot X = F(X) + \Gamma (t)+ \xi(t)\]</div>
+<p>Jako <span class="math">\(\xi(t)\)</span> wybieramy proces kangura Kubo-Andersona, który to szum jest eksponencjalnie skorelowany. I znowu proces <span class="math">\(X=X(t)\)</span> jest niemarkowowski jako proces z szumem skorelowanym. Jednakże proces 2-wymiarowy <span class="math">\(\{x(t), \xi(t)\}\)</span> jest już procesem Markowa. Łączny rozkład prawdopodobieństwa spełnia równanie ewolucji w postaci</p>
+<div class="math" id="equation-eqn40">
+<span class="eqno">(40)</span>\[\begin{split}{\frac{\partial P(x, \xi, t)}{\partial t}}= -{\frac \partial {\partial x}} [F(x)+\xi] P(x, \xi, t)+D{\frac{\partial ^2}{\partial x^2}}&nbsp;P(x,\xi, t) -\nu (\xi) P(x, \xi, t) + Q(\xi) \int_{-\infty}^{\infty} \nu (\eta) P(x, \eta, t) d\eta\end{split}\]</div>
+<p>Równanie to nazywa się równaniem Fellera-Kołmogorowa. Nas nie interesuje łączny rozkład procesu <span class="math">\(X(t)\)</span> i szumu tylko samego procesu <span class="math">\(X(t)\)</span> który może być otrzymany z rozkładu <span class="math">\(P(x, \xi, t)\)</span> przez scałkowanie po zmiennej szumu kangura:</p>
+<div class="math" id="equation-eqn42">
+<span class="eqno">(41)</span>\[{\cal P}(x, t) = \int_{-\infty}^{\infty} P(x, \xi, t) d\xi.\]</div>
+<p>Wówczas otrzymamy równanie ciągłości:</p>
+<div class="math" id="equation-eqn43">
+<span class="eqno">(42)</span>\[{\frac{\partial {\cal P}(x,t)}{\partial t}} = -{\frac{\partial J(x,t)}{\partial x}}\]</div>
+<p>gdzie strumień prawdopodobieństwa <span class="math">\(J(x, t)\)</span> dla procesu <span class="math">\(X(t)\)</span> ma postać:</p>
+<div class="math" id="equation-eqn44">
+<span class="eqno">(43)</span>\[J(x, t)= f(x){\cal P}(x, t) - D \frac{\partial {\cal P}(x,t)}{\partial x} +\int_{-\infty}^{\infty} \xi P(x, \xi,t) d\xi\]</div>
+<p>Szum kangura jest rzadko wykorzystywany do modelowania. A szkoda.</p>
+</div>
+<div class="section" id="uklady-z-szumem-levy-ego">
+<h2>Układy z szumem Levy&#8217;ego<a class="headerlink" href="#uklady-z-szumem-levy-ego" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Rozpatrujemy równanie stochastyczne</p>
+<div class="math" id="equation-eqn45">
+<span class="eqno">(44)</span>\[\dot X= F(X) + Z(t)\]</div>
+<p>gdzie <span class="math">\(Z(t)\)</span> jest białym szumem Levy&#8217;ego określonym przez tryplet <span class="math">\((0, b, \nu)\)</span> czyli jest procesem o wartości średniej zero. W literaturze trudno znaleźć równanie ewolucji dla rozkładu prawdopodobieństwa <span class="math">\(P(x, t)\)</span> procesu <span class="math">\(X(t)\)</span>.</p>
+<p>To co wiemy dla ogólnego przypadku <span class="math">\(Z(t)\)</span>, wynika z twierdzenia Dooba: proces <span class="math">\(X(t)\)</span> jest procesem Markowa i jego infinitezymalny operator (generator) <span class="math">\(L\)</span> określony jest przez relację</p>
+<div class="math" id="equation-eqn46">
+<span class="eqno">(45)</span>\[L^\dagger f(x) ={\partial\over \partial x} F(x)f(x) + \frac{b}{2} {\partial^2 \over \partial x^2} f(x) + \int\limits_{- \infty}^{\infty}\nu(dy) \left[f(x+y)-f(x) - y I_{(-1,1)}(y) \frac{\partial}{\partial x} f(x)\right]\]</div>
+<p>dla dowolnej funkcji dwukrotnie różniczkowalnej <span class="math">\(f(x)\)</span>. Operator <span class="math">\(L^\dagger\)</span> jest operatorem sprzężonym do operatora <span class="math">\(L\)</span> w sensie relacji</p>
+<div class="math" id="equation-eqn47">
+<span class="eqno">(46)</span>\[\begin{split}&lt;L^\dagger f|g&gt; = &lt;f|Lg&gt;\end{split}\]</div>
+<p>gdzie symbol <span class="math">\(&lt;f|g&gt;\)</span> oznacza iloczyn skalarny dwóch funkcji <span class="math">\(f\)</span> oraz <span class="math">\(g\)</span> zdefiniowany przez całkę:</p>
+<div class="math" id="equation-eqn48">
+<span class="eqno">(47)</span>\[\begin{split}&lt;f|g&gt; = \int_{-\infty}^{\; \infty} f(x) g(x) dx\end{split}\]</div>
+<p>Jeżeli skorzystamy z postaci <span class="math">\(L^\dagger\)</span> oraz iloczyny skalarnego, potrafimy obliczyć operator <span class="math">\(L\)</span>, który pozwala wyznaczyć równanie ewolucji dla <span class="math">\(P(x, t)\)</span> w postaci:</p>
+<div class="math" id="equation-eqn49">
+<span class="eqno">(48)</span>\[{\partial P(x, t) \over \partial t} = L P(x, t) = -{\partial\over \partial x} F(x) P(x, t) + \frac{b}{2} {\partial^2 \over \partial x^2} P(x, t) + \int\limits_{- \infty}^{\infty}\nu(dy) \left[P(x-y, t)-P(x, t) + y I_{(-1,1)}(y) \frac{\partial}{\partial x} P(x,t\right]\]</div>
+<p>Postać tego równania sugeruje użycie metod numerycznych. Polecamy książkę Rama Cont, Peter Tankov, <em>Financial Modelling with Jump Processes</em> opublikowaną w 2004 r. przez wydawnictwo Chapman&amp;Hall/CRC. Zawiera ona bogaty materiał na temat procesów Levy&#8217;ego oraz metody numeryczne do badania powyższych zagadnień.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Równania ewolucji dla rozkładów prawdopodobieństwa</a><ul>
+<li><a class="reference internal" href="#bialy-szum-gaussowski-i-rownania-fokkera-plancka">Biały szum gaussowski i równania Fokkera-Plancka</a></li>
+<li><a class="reference internal" href="#szumy-skorelowane-i-rownania-typu-rownan-fokkera-plancka">Szumy skorelowane i równania typu równań Fokkera-Plancka</a></li>
+<li><a class="reference internal" href="#uklady-z-bialym-szumem-poissona">Układy z białym szumem Poissona</a></li>
+<li><a class="reference internal" href="#uklady-z-szumem-dychotomicznym">Układy z szumem dychotomicznym</a></li>
+<li><a class="reference internal" href="#uklady-z-szumem-kangura">Układy z szumem kangura</a></li>
+<li><a class="reference internal" href="#uklady-z-szumem-levy-ego">Układy z szumem Levy&#8217;ego</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chIII031.html"
+                        title="poprzedni rozdział">Modele szumów</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="chIII033.html"
+                        title="następny rozdział">Proces Ornsteina-Uhlenbecka</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch3/chIII032.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="chIII033.html" title="Proces Ornsteina-Uhlenbecka"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII031.html" title="Modele szumów"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

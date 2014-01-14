@@ -49,14 +49,14 @@ master_doc = 'index'
 
 # General information about the project. 
 project = u'Dynamika stochastyczna'
-copyright = u'2013, Jerzy Łuczka, Łukasz Machura'
+copyright = u'2014, Jerzy Łuczka, Łukasz Machura'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
 # built documents.
 #
 # The short X.Y version.
-version = '1.0'
+version = '1.02'
 # The full version, including alpha/beta/rc tags.
 release = 'I'
 
@@ -258,7 +258,7 @@ texinfo_documents = [
 epub_title = u'Dynamika stochastyczna'
 epub_author = u'Jerzy Łuczka, Łukasz Machura'
 epub_publisher = u'Jerzy Łuczka, Łukasz Machura'
-epub_copyright = u'2013, Jerzy Łuczka, Łukasz Machura'
+epub_copyright = u'2014, Jerzy Łuczka, Łukasz Machura'
 
 # The language of the text. It defaults to the language option
 # or en if the language is not set.

@@ -11,16 +11,16 @@ Dynamika stochastyczna
         Jerzy Łuczka, 
         Łukasz Machura
 :Wersja: 
-        1.0 11/2013
+        1.02 1/2014
 :Pobierz:
-        :download:`podręcznik (v1.0, PDF) <pdf/StochDyn_v1.0.pdf>`
+        :download:`podręcznik (v1.02, PDF) <pdf/StochDyn_v1.02.pdf>`
 
 Niniejsza książka jest podstawą wykładu o tym samym tytule dla studentów 
 Ekonofizyki drugiego stopnia. Duża część materiału może być wykorzystywana 
 w wykładach, konwersatoriach i laboratoriach komputerowych dla studentów 
 innych kierunków (fizyka, biofizyka, fizyka medyczna, fizyka techniczna). 
-W szczególności rozdziały Dynamika Deterministyczna oraz Chaos w Układach 
-Dynamicznych powinien być przydatny dla wszystkich kierunków studiów na  
+W szczególności rozdziały Dynamika deterministyczna oraz Chaos w układach 
+dynamicznych powinien być przydatny dla wszystkich kierunków studiów na  
 wydziałach przyrodniczych i technicznych. Część materiału może być z 
 powodzeniem używana do 
 wykładów z mechaniki klasycznej, część - do wykładów z metod matematycznych 
@@ -83,6 +83,7 @@ Dynamika stochastyczna
    ch3/chIII032
    ch3/chIII033
    ch3/chIII034
+   ch3/chIII041
 
 
 Dodatek numeryczny

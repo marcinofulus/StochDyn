@@ -1,0 +1,387 @@
+
+
+
+  <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Układy w kontakcie z termostatem: Uogólnione równania Langevina &mdash; Dynamika stochastyczna</title>
+    
+    <link rel="stylesheet" href="../_static/upgow.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Noticia+Text|Open+Sans|Droid+Sans+Mono&subset=latin,latin-ext" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '../',
+        VERSION:     'I',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="../_static/jquery.js"></script>
+    <script type="text/javascript" src="../_static/underscore.js"></script>
+    <script type="text/javascript" src="../_static/doctools.js"></script>
+    <script type="text/javascript" src="../_static/translations.js"></script>
+    <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" src="../_static/jquery.cookie.js"></script>
+    <script type="text/javascript" src="../_static/cloud.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/jquery.min.js"></script>
+	<script src="http://sagecell.icse.us.edu.pl:6363/static/embedded_sagecell.js"></script>
+	
+	<!-- <script src="http://sagecell.sagemath.org/static/jquery.min.js"></script> -->
+        <!--     <script src="http://sagecell.sagemath.org/static/embedded_sagecell.js"></script> -->
+
+	<script>sagecell.makeSagecell({inputLocation: ".sage"});</script>
+
+	<style type="text/css">
+		.sagecell .CodeMirror-scroll {
+			overflow-y: hidden;
+			overflow-x: auto;
+		}
+		.sagecell .CodeMirror {
+			height: auto;
+		}
+	</style>
+
+    
+    <link rel="top" title="Dynamika stochastyczna" href="../index.html" />
+    <link rel="next" title="Liczby losowe" href="../ch5/chV011.html" />
+    <link rel="prev" title="Geometryczny ruch Browna" href="chIII034.html" />
+ 
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1">
+  </head>
+  <body>
+  <div class="relbar-top">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             accesskey="I">indeks</a></li>
+        <li class="right" >
+          <a href="../ch5/chV011.html" title="Liczby losowe"
+             accesskey="N">dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII034.html" title="Geometryczny ruch Browna"
+             accesskey="P">wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="content">  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="uklady-w-kontakcie-z-termostatem-uogolnione-rownania-langevina">
+<h1>Układy w kontakcie z termostatem: Uogólnione równania Langevina<a class="headerlink" href="#uklady-w-kontakcie-z-termostatem-uogolnione-rownania-langevina" title="Stały odnośnik do tego nagłówka">¶</a></h1>
+<div class="section" id="motywacja">
+<h2>Motywacja<a class="headerlink" href="#motywacja" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Dobrze znane równanie oscylatora harmonicznego ma postać:</p>
+<div class="math" id="equation-eqn1">
+<span class="eqno">(1)</span>\[\ddot x + \omega^2 x=0\]</div>
+<p>Rozwiązaniem tego równania jest funkcja opisująca drgania harmoniczne, np.</p>
+<div class="math" id="equation-eqn2">
+<span class="eqno">(2)</span>\[x(t) = A \cos (\omega t + \phi)\]</div>
+<p>gdzie <span class="math">\(A\)</span> jest amplitudą drgań, <span class="math">\(\omega\)</span> jest częstością drgań oraz
+<span class="math">\(\phi\)</span> jest fazą.</p>
+<p>Równanie to ma wiele realizacji: masa przyczepiona do sprężyny poruszająca się
+w jednym wymiarze (wzdłuż osi OX) czy wahadło matematyczne (kulka zawieszona na
+nieważkim pręcie w polu ziemskim). Równanie to jest słuszne przy bardzo
+idealizujących założeniach typu ruch w próżni. Zwykle tego typu układy nie
+drgają permanentnie, nieskończenie długo lecz obserwujemy tłumienie drgań.
+Jeżeli uwzględnimy tłumienie (tarcie), to równanie ruchu rozpatrywanego układu
+przyjmuje postać</p>
+<div class="math" id="equation-eqn3">
+<span class="eqno">(3)</span>\[\ddot x + \gamma \dot x + \omega^2 x=0\]</div>
+<p>gdzie <span class="math">\(\gamma\)</span> jest współczynnikiem tłumienia (tarcia). Rozwiązaniem tego
+równania jest funkcja typu</p>
+<div class="math" id="equation-eqn4">
+<span class="eqno">(4)</span>\[x(t) = B \mbox{e}^{- \alpha t}\cos (\Omega t + \phi_0)\]</div>
+<p>która opisuje drgania tłumione.</p>
+<p>Dlaczego w realnych układach występuje tarcie? Oczywiście jest ono spowodowane oddziaływaniem układu z otoczeniem. Innymi słowy układ oddziaływuje z cząstkami otoczenia. Ale zgodnie z zasadą akcji i reakcji, otoczenie też oddziaływuje z układem. Jeżeli uwględnimy dodatkowo, że cząstki otoczenia zderzają się z układem i działają na układ pewną siła, to równanie ruch przyjmuje postać</p>
+<div class="math" id="equation-eqn5">
+<span class="eqno">(5)</span>\[\ddot x + \gamma \dot x + \omega^2 x= \Gamma(t)\]</div>
+<p>gdzie <span class="math">\(\Gamma(t)\)</span> jest siłą wywieraną przez cząstki otoczenia na nasz układ. Jest to siła zderzeń cząstek otoczenia na układ. Co możemy powiedzieć o tej sile?</p>
+<ol class="arabic simple">
+<li>Po pierwsze, jest to siła losowa.</li>
+<li>Po drugie, średnio rzecz biorąc, możliwe są wszystkie kierunki tej siły. Dlatego też wartość średnia tej siły powinna wynosić zero,</li>
+</ol>
+<blockquote>
+<div><div class="math" id="equation-eqn6">
+<span class="eqno">(6)</span>\[\langle \Gamma(t)\rangle = 0\]</div>
+</div></blockquote>
+<ol class="arabic simple" start="3">
+<li>Po trzecie, powinna to być wielkość losowa o rozkładzie normalnym, co wynika z centralnego twierdzenia granicznego. Mówiąc prosto, jeżeli jakaś wielkość jest sumą lub średnią bardzo wielu drobnych losowych czynników, to niezależnie od rozkładu każdego z tych czynników, jej rozkład będzie zbliżony do normalnego. W rzeczywistości taki rozkład nie jest ściśle realizowany, ale jest to przybliżenie dobrze oddające charakter oddziaływania otoczenia na układ.</li>
+</ol>
+<p>Prezentowane podejście jest fenomenologiczne, oparte na potocznych obserwacjach. Okazuje
+się, że równanie <a href="#equation-eqn5">(5)</a> jest zgodne z fizyką statystyczną układów w stanie równowagi
+termodynamicznej oraz jest jej uogólnieniem na stany nierównowagowe! Równanie <a href="#equation-eqn5">(5)</a>
+wygląda jak równanie Newtona z losową siłą <span class="math">\(\Gamma(t)\)</span>. Tego typu równanie
+nazywane jest w fizyce równaniem Langevina.</p>
+</div>
+<div class="section" id="hamiltonowski-model-mikroskopowy-wyprowadzenie-uogolnionych-rownan-langevina">
+<h2>Hamiltonowski model mikroskopowy: wyprowadzenie uogólnionych równań Langevina<a class="headerlink" href="#hamiltonowski-model-mikroskopowy-wyprowadzenie-uogolnionych-rownan-langevina" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Z fizyki statystycznej wiemy, że układ oddziałujący z otoczeniem <span class="math">\(E\)</span> (termostatem, środowiskiem) o temperaturze <span class="math">\(T\)</span> dąży dla długich czasów do stanu równowagi termodynamicznej z otoczeniem i temperatura układu jest taka sama jak otoczenia. Rozważania przedstawiane na wykładzie z fizyki statystycznej mają charakter fenomenologiczny oparty o argumenty stosowane dla układów makroskopowych. Tutaj chcemy przedstawić teorię mikroskopową opartą o klasyczną mechanikę i klasyczną fizykę statystyczną. W tym celu rozważamy klasyczny układ <span class="math">\(S\)</span> (od słowa system) jako układ otwarty oddziałujący z klasycznymi cząstkami termostatu <span class="math">\(E\)</span>. Zakładamy, że termostat <span class="math">\(E\)</span> jest ogromy, tak że jego energia nie zmienia się wskutek oddziaływania z układem <span class="math">\(S\)</span> oraz że termostat jest w stanie równowagi termodynamicznej. Oznacza to, że w końcowej fazie powinniśmy wykonać tzw. przejście termodynamiczne: termostat staje się nieskończenie duży. Całkowity układ <span class="math">\(S+E\)</span> jest układem zamkniętym, izolowanym i jego dynamika jest określona przez prawa mechaniki klasycznej i równania ruch Newtona lub Eulera-Lagrange&#8217;a albo Hamiltona. Najwygodniejszym formalizmem jest formalizm Hamiltona. Układ <span class="math">\(S+E\)</span> jest określony, jeżeli znamy jego całkowitą energię wyrażoną w języku funkcji Hamiltona <span class="math">\(H\)</span>. Jest to energia <span class="math">\(H_S\)</span> układu <span class="math">\(S\)</span>, energia <span class="math">\(H_T\)</span> termostatu <span class="math">\(E\)</span> i energia oddziaływania <span class="math">\(H_{S-T}\)</span> pomiędzy układem i termostatem:</p>
+<div class="math" id="equation-eqn7">
+<span class="eqno">(7)</span>\[H = H_S + H_T + H_{S-T}\]</div>
+<p>Jako standardowy model, rozważa się cząstkę o jednym stopniu swobody w potencjale <span class="math">\(U(x)\)</span> scharakteryzowany przez położenie <span class="math">\(x\)</span> i pęd <span class="math">\(p\)</span>. Jako termostat rozważa się układ oscylatorów o współrzędnych <span class="math">\(\{q_k, p_k\}\)</span>. Oddziaływanie modeluje się jako oddziaływanie bi-liniowe typu <span class="math">\(x q_k\)</span>. Funkcja Hamiltona takiego układu ma postać:</p>
+<div class="math" id="equation-eqn8">
+<span class="eqno">(8)</span>\[H=\frac{p^2}{2m} + U(x) + \sum_k \left[\frac{p_k^2}{2m_k}+ \frac{m_k\omega_k^2}{2}\Big(q_k - \frac{\lambda_k}{m_k\omega_k^2} x\Big)^2\right].\]</div>
+<p>Przez <span class="math">\(m_k\)</span> oznaczamy masy oscylatorów, <span class="math">\(\omega_k\)</span> to częstości oscylatorów oraz parametry <span class="math">\(\lambda_k\)</span> to stałe oddziaływania układu z otoczeniem. Można spytać, dlaczego taka postać funkcji Hamiltona a nie inna. Ta postać jest &#8220;przyjazna&#8221;, tzn. nie jest sprzeczna z prawami fizyki, jest łatwo rozwiązywalna i zawiera wszystkie istotne cechy. Jest też w pewnym stopniu modelem minimalnym, nie zaciemniającym istotę zagadnienia. Oddziaływanie jest ukryte w wyrazie mieszanym po wykonaniu potęgowania pod sumą:</p>
+<div class="math" id="equation-eqn9">
+<span class="eqno">(9)</span>\[H_{S-E} = \lambda_k q_k x\]</div>
+<p>Aby zbadać dynamikę układu, musimy podać równania ruchu Hamiltona:</p>
+<div class="math" id="equation-eqn10">
+<span class="eqno">(10)</span>\[\dot x = \frac{\partial H}{\partial p}, \qquad \dot p = - \frac{\partial H}{\partial x}, \qquad \dot q_k = \frac{\partial H}{\partial p_k}, \qquad \dot p_k = - \frac{\partial H}{\partial q_k}.\]</div>
+<p>Jeżeli wykonamy odpowiednie różniczkowania w funkcji Hamiltona, otrzymamy następujące równania ruchu:</p>
+<div class="math" id="equation-eqn12">
+<span class="eqno">(11)</span>\[\dot x = \frac{p}{m}, \qquad \dot p = -U'(x) + \sum_k \lambda_k (q_k - \frac{\lambda_k}{m_k\omega_k^2} x),\]\[\dot q_k = \frac{p_k}{m_k}, \qquad \dot p_k = - m_k \omega_k^2 q_k + \lambda_k x,\]</div>
+<p>gdzie <span class="math">\(U'(x) = dU(x)/dx\)</span>.</p>
+<p>Z dwóch ostatnich równań Hamiltona otrzymamy (należy zróżniczkować 3 równanie dla <span class="math">\(q_k\)</span> i w miejsce <span class="math">\(\dot p_k\)</span> wstawić 4 równanie) :</p>
+<div class="math" id="equation-eqn13">
+<span class="eqno">(12)</span>\[m_k \ddot q_k + m_k \omega_k^2 q_k= \lambda_k x = \lambda_k x(t).\]</div>
+<p>Jest to równanie ruch dla oscylatora harmonicznego. Prawa strona tego równania to siła
+z jaką układ <span class="math">\(S\)</span> działa na oscylatory termostatu. Jest to równanie liniowe
+różniczkowe 2-go rzędu niejednorodne. Można jest rozwiązać dla dowolnej prawej strony.
+Metoda rozwiązywania jest podana w paragrafie 7.3 ksiązki F. W. Byrona i R. W.
+Fullera &#8220;Matematyka w fizyce klasycznej i kwantowej&#8221;&#8221;, tom2. Rozwiązanie to ma
+postać (patrz tam równanie (7.35b))</p>
+<div class="math" id="equation-eqn14">
+<span class="eqno">(13)</span>\[q_k = q_k(t) = q_k(0) \cos \omega_k t + \frac{p_k(0)}{m_k \omega_k} \sin \omega_k t + \frac{\lambda_k}{m_k \omega_k} \int_0^{\; t} \sin \omega_k (t - s) x(s) ds\]</div>
+<p>Z dwóch pierwszych równań Hamiltona otrzymamy (podobnie jak poprzednio dla oscylatorów) równanie ruchu:</p>
+<div class="math" id="equation-eqn15">
+<span class="eqno">(14)</span>\[ m\ddot x(t) = -\frac{dU(x)}{dx} - \sum_k \frac{\lambda_k^2}{m_k \omega_k^2} x +  \sum_k \lambda_k q_k.\]</div>
+<p>W miejsce <span class="math">\(q_k = q_k(t)\)</span> wstawiamy powyższe rozwiązanie co implikuje:</p>
+<div class="math" id="equation-eqn16">
+<span class="eqno">(15)</span>\[ m\ddot x(t) = -U'(x(t)) - \sum_k \frac{\lambda_k^2}{m_k \omega_k^2} x(t) +\]\[ + \sum_k \frac{\lambda_k}{m_k \omega_k} \int_0^{\; t} \sin \omega_k (t - s) x(s) ds +\]\[ + \sum_k \lambda_k [q_k(0) \cos \omega_k t + \frac{p_k(0)}{m_k \omega_k} \sin \omega_k t ].\]</div>
+<p>Całkujemy przez części wyrażenie z całką. Pojawi się <span class="math">\(x(0)\)</span>. Dla ułatwienia założymy, że początkowe położenie cząstki <span class="math">\(x(0) =0\)</span>. Nie jest to założenie restrykcyjne, ponieważ zawsze można tak wybrać układ współrzędnych, aby to było spełnione. Jeżeli wykonamy to całkowanie, otrzymamy ostatecznie wyrażenie:</p>
+<div class="math" id="equation-eqn17">
+<span class="eqno">(16)</span>\[m\ddot x(t) + \int_0^{\;t} \gamma(t-s) \dot x(s)\;ds + U'(x(t)= \xi(t),\]</div>
+<p>gdzie funkcja podcałkowa</p>
+<div class="math" id="equation-eqn18">
+<span class="eqno">(17)</span>\[\gamma(t)= \int_0^{\;\infty} \frac{J(\omega)}{\omega} \cos(\omega t) \;d\omega,\]</div>
+<p>opisuje efekty dysypacji (tłumienia, tarcia) oraz</p>
+<div class="math" id="equation-eqn19">
+<span class="eqno">(18)</span>\[J(\omega)= \sum_k \frac{\lambda_k^2}{m_k\omega_k} \delta(\omega-\omega_k).\]</div>
+<p>nazywa się funkcją spektralną (lub gęstością spektralną) termostatu. Opisuje ona jednocześnie oddziaływanie i własności termostatu (ponieważ są tam stałe oddziaływanie <span class="math">\(\lambda_k\)</span> oraz rozkład częstości <span class="math">\(\omega_k\)</span> (czyli także energii) termostatu w zależności od <span class="math">\(k\)</span>).</p>
+<p>Występująca po prawej stronie siła <span class="math">\(\xi(t)\)</span> jest oznaczeniem dla wyrażenia</p>
+<div class="math" id="equation-eqn20">
+<span class="eqno">(19)</span>\[\xi(t) = \sum_k \lambda_k\Big[q_k(0) \cos \omega_k t + \frac{p_k(0)}{m_k\omega_k} \sin \omega_k t\Big].\]</div>
+<p>Termostat składa się z ogromnej ilości cząstek (zwykle rzędu <span class="math">\(10^{23}\)</span> i więcej). Początkowe położenia <span class="math">\(q_k(0)\)</span> i początkowe pędy <span class="math">\(p_k(0)\)</span> cząstek otoczenia nie są znane. Ale ponieważ tworzą one termostat, to zakładamy że termostat jest w stanie równowagi termodynamicznej opisanej przez rozkład kanoniczny</p>
+<div class="math" id="equation-eqn21">
+<span class="eqno">(20)</span>\[P(\{ x_k \}, \{ p_k\} = N_0 \exp [-H_T/k_BT]\]</div>
+<p>gdzie <span class="math">\(T\)</span> jest temperatura termostatu oraz <span class="math">\(k_B\)</span> jest stałą Boltzmanna oraz</p>
+<div class="math" id="equation-eqn22">
+<span class="eqno">(21)</span>\[H_T = \sum_k \left[\frac{p_k^2}{2m_k}+ \frac{1}{2} m_k \omega_k^2 q_k^2\right]\]</div>
+<p>jest funkcją Hamiltona dla termostatu. Zauważmy, że funkcja ta jest formą kwadratową zmiennych <span class="math">\(\{q_k, p_k\}\)</span>. To implikuje, że mają one rozkład normalny (gaussowski). Dlatego</p>
+<div class="math" id="equation-eqn23">
+<span class="eqno">(22)</span>\[\langle q_k(0)\rangle = 0, \qquad \langle q_k^2(0)\rangle = \frac{k_BT}{m_k \omega_k^2}, \qquad \langle p_k(0)\rangle = 0, \qquad \langle p_k^2(0)\rangle = m_k k_BT\]</div>
+<p>Z kolei to oznacza, że siła <span class="math">\(\xi(t)\)</span> jest gaussowskim procesem stochastycznym. Obliczymy jego wartość średnią i funkcję korelacyjną (pojawiają się tylko i wyłącznie gaussowskie całki) :</p>
+<div class="math" id="equation-eqn24">
+<span class="eqno">(23)</span>\[\langle \xi(t) \rangle = 0, \quad \langle \xi(t) \xi(s)\rangle = k_BT \gamma(t-s),\]</div>
+<p>Zauważmy, że funkcja korelacyjna fluktuującej siły <span class="math">\(\xi(t)\)</span> jest ściśle związana z funkcją dysypacji <span class="math">\(\gamma(t)\)</span>. Jest to treść twierdzenia fluktuacyjno-dysypacyjnego:</p>
+<p>Jeżeli układ oddziaływuje z otoczeniem to na układ działają siły losowe oraz układ podlega dysypacji; nie może byc dysypacji bez fluktuacji siły losowej <span class="math">\(\xi(t)\)</span> oraz fluktuującej siły, która by nie powodowała dysypacji. Te dwa elementy są ze sobą nierozerwalnie związane.</p>
+<p>Równanie <a href="#equation-eqn17">(16)</a> wraz z relacjami w <a href="#equation-eqn24">(23)</a> nazywa się uogólnionym równaniem Langevina.</p>
+<p>W granicy termodynamicznej, prawie-periodyczna funkcja <span class="math">\(\gamma(t)\)</span> staję się funkcją nieperiodyczną i generalnie malejącą. Postać tej funkcji zależy od funkcji spektralnej termostatu <span class="math">\(J(\omega)\)</span>. Pytanie, czy proces <span class="math">\(x(t)\)</span> jest procesem Markowa czy nie, zależy też od postaci <span class="math">\(J(\omega)\)</span>. Ponieważ na ogół nie znamy <span class="math">\(\{\lambda_k, m_k, \omega_k\}\)</span>, modelujemy układ podając modelowe przykłady funkcji spektralnej <span class="math">\(J(\omega)\)</span> lub funkcji dysypacji <span class="math">\(\gamma(t)\)</span>. Poniżej przedstawimy 2 przykłady.</p>
+</div>
+<div class="section" id="termiczne-fluktuacje-rownowagowe-bialy-szum-gaussowski">
+<h2>Termiczne fluktuacje równowagowe: biały szum gaussowski<a class="headerlink" href="#termiczne-fluktuacje-rownowagowe-bialy-szum-gaussowski" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Uogólnione równanie Langevina <a href="#equation-eqn17">(16)</a> jest równaniem różniczkowo-całkowym, w dodatku stochastycznym ponieważ siła <span class="math">\(\xi(t)\)</span> jest siłą losową. Równanie różniczkowe przypominające równanie Newtona może być otrzymane z rów. <a href="#equation-eqn17">(16)</a> w pewnej granicznej sytuacji: w tzw. przypadku omowym gdy funkcja spektralna <span class="math">\(J(\omega)=2\gamma \omega/\pi\)</span>, gdzie <span class="math">\(\gamma\)</span> jest stałą. W tym przypadku funkcja dysypacji ma postać:</p>
+<div class="math" id="equation-eqn25">
+<span class="eqno">(24)</span>\[\gamma(t)= \int_0^{\;\infty} \frac{J(\omega)}{\omega} \cos(\omega t) \;d\omega = \frac{2 \gamma}{\pi} \int_0^{\;\infty} \cos(\omega t) \;d\omega= 2\gamma \delta(t)\]</div>
+<p>Dla tego przypadku wyrażenie</p>
+<div class="math" id="equation-eqn26">
+<span class="eqno">(25)</span>\[\int_0^{\;t} \gamma(t-s) \dot x(s)\;ds = 2 \gamma \int_0^{\;t} \delta(t-s) \dot x(s)\;ds = \gamma \dot x(t)\]</div>
+<p>i uogólnione równanie Langevina <a href="#equation-eqn17">(16)</a> redukuje się do postaci równania Newtona z losową siłą:</p>
+<div class="math" id="equation-eqn27">
+<span class="eqno">(26)</span>\[m\ddot x(t) + \gamma \dot x(t) + U'(x(t)= \xi(t)\]</div>
+<p>gdzie parametr <span class="math">\(\gamma\)</span> ma interpretację stałej tłumienia (współczynnika tarcia) oraz gaussowska siła losowa <span class="math">\(\xi(t)\)</span> spełnia relacje (patrz rów. <a href="#equation-eqn24">(23)</a> powyżej):</p>
+<div class="math" id="equation-eqn28">
+<span class="eqno">(27)</span>\[\langle \xi(t) \rangle= 0, \quad \langle \xi(t) \xi(s)\rangle = 2\gamma k_BT \delta(t-s),\]</div>
+<p>czyli jest białym szumem gaussowskim. Równanie to jest równoważne równaniu</p>
+<div class="math" id="equation-eqn29">
+<span class="eqno">(28)</span>\[m\ddot x(t) + \gamma \dot x(t) + U'(x(t)= \sqrt{2\gamma k_BT}\;\Gamma(t)\]</div>
+<p>gdzie tym razem szum <span class="math">\(\Gamma(t)\)</span> spełnia relacje</p>
+<div class="math" id="equation-eqn30">
+<span class="eqno">(29)</span>\[\langle \Gamma(t) \rangle= 0, \quad \langle \Gamma(t) \Gamma(s)\rangle= \delta(t-s),\]</div>
+<p>Prawa strona w rów. <a href="#equation-eqn29">(28)</a> spełnia te same relacje co w rów. <a href="#equation-eqn28">(27)</a>
+dlatego obie formy równania ruchu <a href="#equation-eqn27">(26)</a> oraz <a href="#equation-eqn29">(28)</a> są równoważne.</p>
+<p>Równanie <a href="#equation-eqn29">(28)</a> jest wygodnie przepisać w postaci 2 równań pierwszego
+rzędu dla zmiennych położenie - prędkość <span class="math">\(\{x(t), v(t)\}\)</span> :</p>
+<div class="math" id="equation-eqn31">
+<span class="eqno">(30)</span>\[\dot x(t) = v(t),\]</div>
+<div class="math" id="equation-eqn32">
+<span class="eqno">(31)</span>\[\dot v(t) = -\frac{\gamma}{m} v(t) - \frac{1}{m}U'(x(t)+ \frac{1}{m}\sqrt{2\gamma k_BT}\; \Gamma(t)\]</div>
+<p>Jak wynika z poprzednich części, 2-wymiarowy proces stochastyczny <span class="math">\(\{x(t), v(t)\}\)</span> jest procesem Markowa. Gęstość prawdopodobieństwa przejścia lub warunkowa gęstość prawdopodobieństwa <span class="math">\(P\equiv P(x, v, t|x_0, v_0, t_0')\)</span> spełnia równanie Fokkera-Plancka</p>
+<div class="math" id="equation-eqn33">
+<span class="eqno">(32)</span>\[\frac{\partial P}{\partial t} = -\frac{\partial}{\partial x} (v P) +\frac{\partial}{\partial v} \left ( \frac{\gamma}{m} v +\frac{1}{m} U'(x) \right ) P + \frac{\gamma k_B T}{m^2} \frac{\partial^2 P}{\partial v^2}\]</div>
+<p>W literaturze fizycznej równanie to nazywa się równaniem Kramersa. Powyższego równania nie można rozwiązać w zamkniętej postaci analitycznej. Natomiast rozwiązanie stacjonarne</p>
+<div class="math" id="equation-eqn34">
+<span class="eqno">(33)</span>\[P_{st} (x, v) = \lim_{t\to \infty} P(x, v, t)\]</div>
+<p>tego równania ma postać</p>
+<div class="math" id="equation-eqn35">
+<span class="eqno">(34)</span>\[P_{st}(x, v) = N_0 \mbox{exp} \left[ -\left ( {mv^2/2}+ U(x)\right )/k_B T \right ]\]</div>
+<p>gdzie <span class="math">\(N_0\)</span> jest stałą normalizacyjną. Czytelnik może to sprawdzić bezpośrednim rachunkiem, jednak obliczenia są dość żmudne. Łatwo zauważyć, że stan stacjonarny określony przez to równanie jest stanem równowagi termodynamicznej podobnie jak dla zespołu kanonicznego Gibbsa. Wyrażenie w eksponencie tego równania jest energią cząstki:</p>
+<div class="math" id="equation-eqn36">
+<span class="eqno">(35)</span>\[E = \frac{mv^2}{2} + U(x) = \frac{p^2}{2m} + U(x) = H(x, p), \qquad p=mv\]</div>
+<p>Jeżeli energię wyrazimy w zmiennych położenie-pęd, to otrzymamy funkcję Hamiltona <span class="math">\(H(x, p)\)</span> dla badanego układu. Wówczas stacjonarna gęstość prawdopodobieństwa <a href="#equation-eqn35">(34)</a> ma postać rozkładu Gibbsa:</p>
+<div class="math" id="equation-eqn37">
+<span class="eqno">(36)</span>\[P_{st}(x, v) = N_0 \mbox{e}^{-H/k_BT}\]</div>
+<p>Proces 2-wymiarowy <span class="math">\(\{x(t), p(t)\}\)</span> można zrzutować na przestrzeń położeń. Oznacza to, że rozkład prawdopodobieństwa położeń <span class="math">\(p(x)\)</span> otrzymuje się zgodnie z zasadami rachunku prawdopodobieństwa w następujący sposób:</p>
+<div class="math" id="equation-eqn38">
+<span class="eqno">(37)</span>\[p(x) = \int_{-\infty}^{\; \infty} P_{st}(x, v) dv = \widetilde N_0 \mbox{e}^{-U(x)/k_BT}\]</div>
+<p>Jest to rozkład Boltzmanna dla położeń cząstki Browna.</p>
+<p>Zbadajmy teraz tzw. przypadek przetłumionej dynamiki: tarcie jest na tyle duże, że efekty inercjalne związane z przyśpieszeniem można pominąć. Innymi słowy dynamika układu jest określona przez równanie ruchu</p>
+<div class="math" id="equation-eqn39">
+<span class="eqno">(38)</span>\[\gamma \dot x(t)= - U'(x(t) + \sqrt{2\gamma k_BT}\;\Gamma(t)\]</div>
+<p>które można otrzymać z rów. <a href="#equation-eqn33">(32)</a> zakładająć że <span class="math">\(m \ddot x(t) = 0\)</span>. Dla tego jednowymiarowego równania Langevina otrzymujemy następujące równanie Fokkera-Plancka:</p>
+<div class="math" id="equation-eqn40">
+<span class="eqno">(39)</span>\[\gamma \frac{\partial p(x, t)}{\partial t} = \frac{\partial}{\partial x} U'(x) p(x, t) + k_B T\frac{\partial^2}{\partial x^2} p(x, t)\]</div>
+<p>W literaturze fizycznej równanie to nazywa się równaniem Smoluchowskiego. W stanie stacjonarnym <span class="math">\(p(x) = \lim_{t\to \infty} px, t)\)</span> dlatego też <span class="math">\(p(x)\)</span> spełnia równanie</p>
+<div class="math" id="equation-eqn41">
+<span class="eqno">(40)</span>\[\frac{\partial}{\partial x} U'(x) p(x) + k_B T\frac{\partial^2}{\partial x^2} p(x) = 0 \qquad \mbox{czyli} \quad \frac{\partial}{\partial x}\left[ U'(x) p(x) + k_B T\frac{\partial}{\partial x} p(x)\right] = 0\]</div>
+<p>Wyrażenie w nawiasie jest wielkością stałą (zerem) i dlatego</p>
+<div class="math" id="equation-eqn42">
+<span class="eqno">(41)</span>\[U'(x) p(x) + k_B T\frac{d p(x)}{dx} = 0\]</div>
+<p>Rozwiązaniem tego równania jest funkcja Boltzmanna <span class="math">\(p(x) = \widetilde N_0 \mbox{exp}(-U(x)/k_BT)\)</span>.</p>
+</div>
+<div class="section" id="kolorowy-szum-termiczny">
+<h2>Kolorowy szum termiczny<a class="headerlink" href="#kolorowy-szum-termiczny" title="Stały odnośnik do tego nagłówka">¶</a></h2>
+<p>Na podstawie twierdzenia fluktuacyjno-dysypacyjnego siła losowa <span class="math">\(\xi(t)\)</span> w uogólnionym równaniu Langevina jest ściśle związana z jądrem całkowym <span class="math">\(\gamma(t)\)</span> w tym równaniu. Innymi słowy</p>
+<div class="math" id="equation-eqn43">
+<span class="eqno">(42)</span>\[\langle \xi(t) \rangle= 0, \quad \langle \xi(t) \xi(s)\rangle = k_BT \gamma(t-s),\]</div>
+<p>W poprzednim przypadku założyliśmy, że <span class="math">\(\gamma(t) = 2\delta(t)\)</span> co oznacza, że szum termiczny jest nieskorelowany dla <span class="math">\(t \neq s\)</span>. Teraz założymy, że szum termiczny <span class="math">\(\xi(t) = \eta(t)\)</span> jest skorelowany. Częstym przypadkiem korelacji jest eksponencjalna korelacja określona przez funkcje korelacyjną</p>
+<div class="math" id="equation-eqn44">
+<span class="eqno">(43)</span>\[\langle \eta(t) \eta(s)\rangle = k_BT \gamma(t-s) =\frac{\gamma k_BT}{\tau_c} \;\mbox{e}^{-|t-s|/\tau_c}\]</div>
+<p>gdzie <span class="math">\(\tau_c\)</span> jest czasem korelacji szumu termicznego <span class="math">\(\eta(t)\)</span>. Taki gaussowski szum nazywa się procesem Ornsteina-Uhlenbecka. Ponieważ</p>
+<div class="math" id="equation-eqn45">
+<span class="eqno">(44)</span>\[\lim_{\tau_c \to 0} \frac{1}{\tau_c} \;\mbox{e}^{-|t|/\tau_c}= 2 \delta(t)\]</div>
+<p>oznacza to, że proces <span class="math">\(\eta(t)\)</span> dąży do białego szumu gaussowskiego gdy <span class="math">\(\tau_c \to 0\)</span> i otrzymujemy poprzedni przypadek. Szum <span class="math">\(\eta(t)\)</span> jako proces Ornsteina-Uhlenbecka spełnia równanie Langevina w postaci:</p>
+<div class="math" id="equation-eqn46">
+<span class="eqno">(45)</span>\[\dot \eta(t)= -\frac{1}{\tau_c} \eta(t) +\frac{1}{\tau_c} \sqrt{2\gamma k_BT} \;\widetilde\Gamma(t), \qquad \widetilde\Gamma(t) \rangle = 0, \qquad \langle \widetilde\Gamma(t) \widetilde\Gamma(s)\rangle = \delta(t-s)\]</div>
+<p>gdzie <span class="math">\(\widetilde\Gamma(t)\)</span> jest (pomocniczym i abstrakcyjnym) białym szumem gaussowskim.</p>
+<p>Uogólnione równanie Langevina <a href="#equation-eqn17">(16)</a> przyjmuje teraz postać</p>
+<div class="math" id="equation-eqn47">
+<span class="eqno">(46)</span>\[m\ddot x(t) + \frac{\gamma }{\tau_c} \; \int_0^{\;t} {e}^{-|t-s|/\tau_c} \dot x(s)\;ds + U'(x(t)= \eta(t)\]</div>
+<p>Wprowadzimy pomocniczy proces <span class="math">\(Z(t)\)</span> zdefiniowany przez relację</p>
+<div class="math" id="equation-eqn48">
+<span class="eqno">(47)</span>\[Z(t) = \frac{\gamma}{\tau_c} \; \int_0^{\; t} \mbox{e}^{-(t-s)/\tau_c} \dot x(s)\;ds\]</div>
+<p>który jest częścią całkową w rów. <a href="#equation-eqn47">(46)</a>. Wówczas rów. <a href="#equation-eqn47">(46)</a> można przepisać w postaci</p>
+<div class="math" id="equation-eqn49">
+<span class="eqno">(48)</span>\[m \dot v(t)= - U'(x(t) -Z(t) + \eta(t)\]</div>
+<div class="math" id="equation-eqn50">
+<span class="eqno">(49)</span>\[\dot x(t)= v(t)\]</div>
+<div class="math" id="equation-eqn51">
+<span class="eqno">(50)</span>\[\dot Z(t)= -\frac{1}{\tau_c} Z(t) +\frac{\gamma}{\tau_c} v(t)\]</div>
+<div class="math" id="equation-eqn52">
+<span class="eqno">(51)</span>\[\dot \eta(t)= -\frac{1}{\tau_c} \eta(t) +\frac{1}{\tau_c} \sqrt{2\gamma k_BT} \;\widetilde\Gamma(t)\]</div>
+<p>Zamiast równania różniczkowo-całkowego <a href="#equation-eqn47">(46)</a> otrzymujemy układ 4 równań różniczkowych. Niewątpliwie jest on łatwiejszy do analizy numerycznej. Uklad ten można zredukować do 3 równań wprowadzając nowy proces <span class="math">\(G(t)\)</span> określony przez relację</p>
+<div class="math" id="equation-eqn53">
+<span class="eqno">(52)</span>\[G(t) = \eta(t)-Z(t)\]</div>
+<p>Wówczas otrzymamu układ 3 równań w postaci:</p>
+<div class="math" id="equation-eqn54">
+<span class="eqno">(53)</span>\[m \dot v(t) = - U'(x(t) + G(t),\]</div>
+<div class="math" id="equation-eqn55">
+<span class="eqno">(54)</span>\[\dot x(t) = v(t),\]</div>
+<div class="math" id="equation-eqn56">
+<span class="eqno">(55)</span>\[\dot G(t) = -\frac{1}{\tau_c} G(t) - \frac{\gamma}{\tau_c} v(t) +\frac{1}{\tau_c} \sqrt{2\gamma k_BT}\; \widetilde\Gamma(t)\]</div>
+<p>Ten układ równań stochastycznych można symulować numerycznie otrzymując interesujące nas charakterystyki probabilistyczne. Warunki początkowe dla tego układu równań można łatwo sformułować. Jedynym kłopotem może być warunek początkowy <span class="math">\(G(0)\)</span> dla pomocniczego procesu <span class="math">\(G(t)\)</span>. Ale ponieważ <span class="math">\(Z(0) =0\)</span>, więc <span class="math">\(G(0) = \eta(0)\)</span>, czyli należy znać rozkład początkowy <span class="math">\(p_{O-U}(x)\)</span> dla procesu Ornsteina-Uhlenbecka. Ale rozkład ten jest znany. Jest to (stacjonarny) rozkład Gaussa:</p>
+<div class="math" id="equation-eqn57">
+<span class="eqno">(56)</span>\[p_{O-U}(x) = \sqrt{\frac{\tau_c}{2\pi \gamma k_BT} }\; \exp\left\{ - \frac{\tau_c x^2}{2 \gamma k_B T}\right\}\]</div>
+<p>Kończąc ten wykład chcemy nadmienić, że istnieją 2 przypadki dla których zawsze możemy rozwiązać uogólnione równanie Langevina. Te 2 przypadki to</p>
+<ul class="simple">
+<li>cząstka swobodna, <span class="math">\(U(x)=0\)</span>;</li>
+<li>cząstka w potencjale kwadratowym <span class="math">\(U(x)=(1/2)kx^2\)</span> (dysypatywny oscylator harmoniczny).</li>
+</ul>
+<p>W pierwszym przypadku proces jest niestacjonarnym procesem Gaussa o naturze dyfuzji normalnej lub anomalnej w zależności od postaci funkcji dysypacji <span class="math">\(\gamma(t)\)</span>. W drugim przypadku stacjonarna gęstość rozkładu powinna mieć postać rozkładu Gibbsa.</p>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <div class="sphinxlocaltoc">
+  <h3><a href="../index.html">Spis treści</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Układy w kontakcie z termostatem: Uogólnione równania Langevina</a><ul>
+<li><a class="reference internal" href="#motywacja">Motywacja</a></li>
+<li><a class="reference internal" href="#hamiltonowski-model-mikroskopowy-wyprowadzenie-uogolnionych-rownan-langevina">Hamiltonowski model mikroskopowy: wyprowadzenie uogólnionych równań Langevina</a></li>
+<li><a class="reference internal" href="#termiczne-fluktuacje-rownowagowe-bialy-szum-gaussowski">Termiczne fluktuacje równowagowe: biały szum gaussowski</a></li>
+<li><a class="reference internal" href="#kolorowy-szum-termiczny">Kolorowy szum termiczny</a></li>
+</ul>
+</li>
+</ul>
+
+  </div>
+  <h4>Poprzedni temat</h4>
+  <p class="topless"><a href="chIII034.html"
+                        title="poprzedni rozdział">Geometryczny ruch Browna</a></p>
+  <h4>Następny temat</h4>
+  <p class="topless"><a href="../ch5/chV011.html"
+                        title="następny rozdział">Liczby losowe</a></p>
+  <h3>Ta strona</h3>
+  <ul class="this-page-menu">
+    <li><a href="../_sources/ch3/chIII041.txt"
+           rel="nofollow">Pokaż źródło</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Szybkie wyszukiwanie</h3>
+    <form class="search" action="../search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Szukaj" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Wprowadź szukany termin lub nazwę modułu, klasy lub funkcji.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+  </div>
+  <div class="relbar-bottom">
+    
+    <div class="related">
+      <h3>Nawigacja</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="../genindex.html" title="Indeks ogólny"
+             >indeks</a></li>
+        <li class="right" >
+          <a href="../ch5/chV011.html" title="Liczby losowe"
+             >dalej</a> &nbsp; &nbsp;</li>
+        <li class="right" >
+          <a href="chIII034.html" title="Geometryczny ruch Browna"
+             >wstecz</a> &nbsp; &nbsp;</li>
+  <li><a href="../index.html">Dynamika stochastyczna</a> &raquo;</li>
+   
+      </ul>
+    </div>
+  </div>
+  
+  <div class="footer">
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    &copy; Copyright 2014, Jerzy Łuczka, Łukasz Machura.
+    Ostatnia modyfikacja Jan 14, 2014.
+    Utworzone przy pomocy <a href="http://sphinx.pocoo.org/">Sphinx</a>'a 1.1.3.
+  </div>
+  </body>
+</html>

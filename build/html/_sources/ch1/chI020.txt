@@ -1,0 +1,689 @@
+Układy dynamiczne z czasem ciągłym
+==================================
+
+We Wstępie podaliśmy kilka przykładów układów opisanych za pomocą równań różniczkowych zwyczajnych. Pierwsza klasa układów to  układy opisywane przez  mechanikę klasyczną i jej  równania Newtona. Inna klasa układów to równania fenomenologiczne opisujące procesy wzrostu, procesy kinetyki chemicznej, dynamiki populacyjnej w układach biologicznych, itd. Te dwie klasy układów opisywane są układem równań różniczkowych zwyczajnych zapisanych w ogólnej postaci jako układ
+
+.. MATH::
+    :label: eqn1
+
+    \frac{dx_1}{dt} = F_1(x_1, x_2, x_3, ..., x_n)
+
+    \frac{dx_2}{dt} = F_2(x_1, x_2, x_3, ..., x_n)
+
+    \vdots
+
+    \frac{dx_n}{dt} = F_n(x_1, x_2, x_3, ..., x_n) 
+
+
+Ten układ możemy zapisać w notacji wektorowej w  postaci
+
+.. MATH::
+    :label: eqn5
+
+    \frac{d\vec x}{dt} = \vec F(\vec x), \quad \quad \vec x(0)  = \vec x_0  \qquad \quad  
+
+
+gdzie wektory
+
+.. MATH::
+    :label: eqn6
+
+    \vec x = [x_1, x_2, x_3, ...., x_n], \quad \quad \vec F = [F_1, F_2, F_3, ..., F_n]
+
+
+oraz dany jest zbiór warunków początkowych
+
+.. MATH::
+    :label: eqn7
+
+    \vec x(0) = [x_1(0), x_2(0), x_3(0), ... , x_n(0)] = \vec x_0 = [x_1^{(0)}, x_2^{(0)}, x_3^{(0)}, ... ,  x_n^{(0)}]  
+
+
+Wskaźnik :math:`n` mówi, ile równań różniczkowych jest "ukrytych" w powyższym zapisie wektorowym. Innymi słowy, rozważamy układ :math:`n` równań różniczkowych scharakteryzowanych przez :math:`n` funkcji skalarnych :math:`F_i(x_1, x_2, x_3, ..., x_n), (i=1,2,3, ..., n)`. Zauważmy, że rozważamy funkcje :math:`F_i` które nie zależą w sposób jawny od czasu. W takim przypadku mówimy, że jest to układ autonomiczny :math:`n` równań  różniczkowych zwyczajnych. Ponadto wektor :math:`\vec F` można traktować jako pole wektorowe stowarzyszone z układem równań różniczkowych lub pole wektorowe generowane przez układ równań różniczkowych. Do tej kwestii powrócimy jeszcze.
+ 
+
+Przestrzeń fazowa
+-----------------
+
+Jeszcze raz przepiszemy równania różniczkowe   :eq:`eqn5`  w  notacji:
+
+.. MATH::
+    :label: eqn21
+
+    \frac{dx_1}{dt} = F_1(x_1, x_2, x_3, ..., x_n)
+
+    \frac{dx_2}{dt} = F_2(x_1, x_2, x_3, ..., x_n)
+
+    \vdots
+
+    \frac{dx_n}{dt} = F_n(x_1, x_2, x_3, ..., x_n)
+
+
+Powyższy układ równań różniczkowych  definiuje pewien układ dynamiczny (matematyczna definicja układu dynamicznego może być bardzo abstrakcyjna, ale na nasze potrzeby wystarczy to, co napisaliśmy).  Zbiór wszystkich możliwych wartości :math:`\{x_1, x_2, x_3, ..., x_n\}` tworzy zbiór który nazywamy przestrzenią fazową układu :eq:`eqn24`. Wymiar tej przestrzeni wynosi :math:`n`, czyli tyle ile jest równań różniczkowych.
+
+W zależności od kontekstu, będziemy stosowali różne zapisy tych samych równań.
+
+Przykłady:
+
+1. Jedno równanie różniczkowe. Zwykle będziemy stosowali  zapis
+
+  .. MATH::
+      :label: eqn25
+
+      \frac{dx}{dt} = \dot x = f(x)
+
+
+  Przestrzeń fazowa  jest 1-wymiarowa.
+
+2. Dwa równania różniczkowe. Zwykle będziemy stosowali  zapis
+
+  .. MATH::
+      :label: eqn26
+
+      \frac{dx}{dt} = \dot x = f(x, y)
+
+      \frac{dy}{dt} = \dot y= g(x, y)
+
+
+  Przestrzeń fazowa  jest 2-wymiarowa.
+
+3. Trzy  równania różniczkowe. Zwykle będziemy stosowali  zapis
+
+  .. MATH::
+      :label: eqn28
+
+      \frac{dx}{dt} = \dot x = f(x, y, z)
+
+      \frac{dy}{dt} = \dot y= g(x, y, z)
+
+      \frac{dz}{dt} = \dot z= h(x, y, z)
+
+
+  Przestrzeń fazowa  jest 3-wymiarowa.
+
+4. Równanie Newtona dla cząstki poruszającej się tylko wzdłuż osi :math:`OX` na którą działa siła :math:`F(x)` zależna tylko od położenia  ma postać
+
+  .. MATH::
+      :label: eqn31
+
+      m \ddot x= F(x)
+
+
+  gdzie :math:`m` jest masą cząstki. Jest to równanie różniczkowe 2-go rzędu i jest ono  równoważne układowi 2 równań różniczkowych 1-go rzędu:
+
+  .. MATH::
+      :label: eqn32
+
+      \dot x = v
+      
+      \dot v = \frac{1}{m} F(x)
+
+
+  Przestrzeń fazowa  jest 2-wymiarowa: jest to zbiór możliwych położeń i prędkości cząstki, :math:`\{x, v\}`.  
+  Mimo swej prostoty, ten model jest niesłychanie ważny. Stanowi on punkt wyjścia dla zrozumienia wielu ważnych 
+  aspektów układów dynamicznych. 
+
+Geometryczne własności przestrzeni fazowej
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Krzywa fazowe
+"""""""""""""
+
+Aby uniknąć na tym etapie abstrakcyjnych definicji, będziemy rozważać dla przykładu 2-wymiarowy układ dynamiczny
+
+.. MATH::
+    :label: eqn33
+
+     \dot x = f(x, y), \quad \quad x(0) = x_0 
+
+     \dot y= g(x, y),\quad \quad y(0) = y_0 
+
+
+Przestrzeń fazowa jest 2-wymiarowa. Może to być płaszczyzna lub jej część. Ale może to być bardziej skomplikowany zbiór 2-wymiarowy. Na przykład może to być sfera (podobna do  powierzchni piłki), może to być torus (podobny do dętki rowerowej). Mogą to być jeszcze bardziej skomplikowane obiekty 2-wymiarowe. Ale dla naszych celów wystarczy rozważać płaszczyznę. Na płaszczyźnie można estetycznie przedstawiać coś w formie rysunków. Wprowadzamy na płaszczyźnie kartezjański układ współrzędnych o osiach OX i OY. Warunek początkowy :math:`\{x_0=x(0), y_0=y(0)\}` jest punktem o odpowiednich współrzędnych. Rozwiązujemy powyższy układ równań różniczkowych numerycznie przy pomocy najprostszego schematu:
+
+.. MATH::
+    :label: eqn35
+
+    \frac{x(t+h) - x(t)}{h} = f(x(t), y(t))
+
+    \frac{y(t+h) - y(t)}{h} = g(x(t), y(t))
+
+
+Przepiszemy to w postaci
+
+.. MATH::
+    :label: eqn37
+
+    x(t+h) = x(t) + f(x(t), y(t)) h
+
+    y(t+h) = y(t) + g(x(t), y(t)) h
+
+
+1. Obliczenia numeryczne musimy zacząć od warunku początkowego w chwili :math:`t=0`, czyli w pierwszym kroku obliczamy
+
+  .. MATH::
+      :label: eqn39
+
+      x_1 =x(h) = x(0) + f(x(0), y(0)) h
+
+      y_1 = y(h) = y(0) + g(x(0), y(0)) h
+
+
+  Na płaszczyźnie otrzymujemy punkt o współrzędnych :math:`\{x_1, y_1\}`. Zaznaczmy go na płaszczyźnie. Teraz mamy już 2 punkty:
+
+  .. MATH::
+      :label: eqn41
+
+      \{x_0, y_0\}, \quad \quad \{x_1, y_1\}
+
+
+2. W następnym kroku wybieramy czas :math:`t=h`:
+
+  .. MATH::
+      :label: eqn42
+
+      x_2 =x(h+h) = x(2h) =  x(h) + f(x(h), y(h)) h
+      
+      y_2 = y(h+h) = y(2h) =  y(h) + g(x(h), y(h)) h
+
+
+  Wykorzystamy oznaczenie jak wyżej: :math:`x_1 =  x(h),  y_1 = y(h)` i przepiszemy te równania w postaci
+
+  .. MATH::
+      :label: eqn43
+
+      x_2 =  x_1 + f(x_1, y_1) h
+
+      y_2 =  y_1 + g(x_1, y_1) h
+
+
+  Na płaszczyźnie otrzymujemy punkt o współrzędnych :math:`\{x_2, y_2\}`. Zaznaczmy go na płaszczyźnie. Teraz mamy już 3 punkty:
+
+  .. MATH::
+      :label: eqn45
+
+      \{x_0, y_0\}, \quad \quad \{x_1, y_1\},  \quad \quad \{x_2, y_2\}
+
+
+3. Widzimy od razu, że w 3 kroku otrzymujemy równania
+
+  .. MATH::
+      :label: eqn46
+
+      x_3 =  x_2 + f(x_2, y_2) h
+      
+      y_3 =  y_2 + g(x_2, y_2) h
+
+
+  i otrzymujemy punkt o współrzędnych :math:`\{x_3, y_3\}`.
+
+4. Zauważamy, że w n-tym kroku otrzymujemy równania
+
+  .. MATH::
+      :label: eqn48
+
+      x_n =  x_{n-1} + f(x_{n-1}, y_{n-1}) h
+      
+      y_n =  y_{n-1} + g(x_{n-1}, y_{n-1}) h
+
+
+5. Częściej pisze się, co się otrzymuje w następnym kroku, czyli n+1 :
+
+  .. MATH::
+      :label: eqn50
+
+      x_{n+1} =  x_n + f(x_n, y_n) h
+
+      y_{n+1} =  y_n + g(x_n, y_n) h
+
+
+Otrzymujemy równania rekurencyjne, które pozwalają wyznaczyć ewolucję układu, czyli rozwiązanie numeryczne układu równań różniczkowych. Na płaszczyźnie :math:`XY` otrzymujemy ciąg punktów o współrzędnych
+
+.. MATH::
+    :label: eqn52
+
+    \{x_n, y_n\}
+
+
+Jeżeli przyrost czasu :math:`h` jest odpowiednio mały, to ten ciąg punktów łączymy linią ciągłą i otrzymujemy  krzywą na płaszczyźnie. Ta krzywa nazywa się krzywą fazową układu dynamicznego.   Mając narysowaną taką krzywą fazową, możemy wnioskować o ewolucji układu i cechach charakterystycznych zachowania się układu w czasie :math:`t`.       Poniżej przedstawiamy dwa przykłady: krzywe fazowe dla oscylatora harmonicznego  i oscylatora harmonicznego tłumionego.  
+
+Oscylator harmoniczny
++++++++++++++++++++++
+
+Przykładem oscylatora harmonicznego jest ciało o masie :math:`m` przyczepione do sprężyny i poruszające się wzdłuż osi :math:`OX`.  Siła działające na to ciało jest proporcjonalna do wychylenia :math:`x` od położenia równowagi i przeciwnie skierowana do wychylenia; gdy rozciągamy sprężynę w kierunku większych dodatnich wartości :math:`x` to siła działa w kierunku ujemnych wartości :math:`x`: 
+
+.. MATH::
+    :label: eqn53
+
+     F = -kx
+
+
+gdzie :math:`k` charakteryzuje "sprężystość" sprężyny. Równanie Newtona ma postać:
+
+.. MATH::
+    :label: eqn54
+
+    m\ddot x = -kx, \quad \quad \mbox{lub w postaci} \quad \quad \ddot x = -(k/m) x = -\omega^2 x
+
+
+gdzie :math:`\omega^2 = k/m`. To równanie drugiego rzędu jest równoważne 2 równaniom pierwszego rzędu:
+
+.. MATH::
+    :label: eqn55
+
+    \dot x = y, \quad \quad x(0) = x_0
+
+    \dot y = -\omega^2 x, \quad \quad y(0) = y_0
+
+
+Tłumiony oscylator harmoniczny
+++++++++++++++++++++++++++++++
+
+Jeżeli w poprzednim przykładzie założymy bardziej realistyczną sytuację, w której  układ nie jest w próżni, ale znajduje się w środowisku (np. w powietrzu, w wodzie lub innej cieczy), to na ciało działa dodatkowa siła, a mianowicie siła tarcia  (tłumienia) :math:`F_d`. Siła tarcia jest proporcjonalna do prędkości cząstki i przeciwnie skierowana do kierunku ruchu
+
+.. MATH::
+    :label: eqn57
+
+    F_d = -\gamma_0 v = -\gamma_0 \dot x
+
+
+gdzie :math:`\gamma_0` nazywa się współczynnikiem tarcia (tłumienia). 
+
+Siła tarcia jest związana z oddziaływaniem ciała z cząsteczkami otoczenia. Otoczenie stawia opór gdy ciało porusza się w nim i im większa jest prędkość ciała tym większy jest opór otoczenia. Doświadczamy to, gdy biegniemy cali zanurzeni w wodzie. 
+
+Uwzględniając siłę tarcia, równanie Newtona przyjmuje postać
+
+.. MATH::
+    :label: eqn58
+
+    m\ddot x = -kx - \gamma_0 \dot x
+    
+    
+lub w postaci
+    
+.. MATH::
+    :label: eqn58a
+
+    \ddot x = -\frac{k}{m} x - \frac{\gamma_0}{m} x = -\omega^2 x - \gamma \dot x
+
+
+gdzie :math:`\omega^2 = k/m`  oraz :math:`\gamma = \gamma_0/m`. Równanie  powyższe  jest równoważne 2 równaniom pierwszego rzędu:
+
+.. MATH::
+    :label: eqn59
+
+    \dot x = y, \quad \quad x(0) = x_0
+    
+    \dot y = -\gamma y -\omega^2 x, \quad \quad y(0) = y_0
+
+
+Oczywiście gdy :math:`\gamma = 0`, wówczas  otrzymujemy równanie oscylatora harmonicznego bez tarcia (nietłumionego).
+
+Poniżej przedstawiamy krzywe fazowe dla tych 2 przykładów.
+
+Oscylator harmoniczny bez tarcia
+++++++++++++++++++++++++++++++++
+
+.. only:: html 
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('x y')
+      sage: def schemat_eulera2D(vec, ics, Tlist):
+      ...    i = 0
+      ...    dx = [ics[0]]
+      ...    dy = [ics[1]]
+      ...    h = Tlist[i+1] - Tlist[i]
+      ...    iks(x,y) = vec[0R]*h
+      ...    igrek(x,y) = vec[1R]*h
+      ...    for time in Tlist:
+      ...        dx.append(dx[i] + iks(dx[i],dy[i]))
+      ...        dy.append(dy[i] + igrek(dx[i],dy[i]))
+      ...        i += 1
+      ...    return zip(dx,dy)
+      sage: #
+      sage: @interact(layout={'top':[['omega','x0','y0']],'bottom':[['T','h']]})
+      sage: def _(title=['a','b'], h=selector(['0.005','0.01','0.05','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=input_box(1,label=r'$\omega$', width=10)):
+      ...    global oscylator_nietlumiony, background
+      ...    if T == 0:
+      ...        T = 2*pi/omega
+      ...    listT = srange(0,T,float(h), include_endpoint=True)
+      ...    background = desolve_odeint(vector([y,-omega^2*x]), [x0, y0], srange(0,T+0.1,0.1,include_endpoint=True), [x,y])
+      ...    oscylator_nietlumiony = schemat_eulera2D([y,-omega^2*x], [x0, y0], listT)
+      ...    print r'Parametry modelu'
+      ...    html(r'$\omega=%s, x_0=%s, y_0=%s$'%(omega,x0,y0))
+      ...    print r'Parametry symulacji'
+      ...    html(r'$h=%s, T=%s$'%(h,T))
+      ...    print '\nDla T=0 lista generowana jest automatycznie dla jednego okresu własnego oscylatora'
+      sage: #
+      sage: @interact
+      sage: def _(krok=slider(1, len(oscylator_nietlumiony), 1, default=1, label=r'krok')):
+      ...    
+      ...    buf = zip(*oscylator_nietlumiony)
+      ...    minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]), max(buf[1])
+      ...    kroki = oscylator_nietlumiony[:krok]
+      ...    kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)
+      ...    
+      ...    txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
+      ...    for i in range(1,len(kroki)):
+      ...        txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
+      ...    
+      ...    full_plot = list_plot(oscylator_nietlumiony, plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
+      ...    full_plot += list_plot(background.tolist(), plotjoined=1, color='grey', alpha=0.5)
+      ...    html.table([["krzywe fazowe dla oscylatora bez tarcia",""],[full_plot+kroki_plot,kroki_plot+txt_plot]])
+
+  .. end of output
+
+..  ##**
+
+.. only:: latex
+
+  Przede wszystkim napiszemy funkcję realizującą schemat Eulera rozwiązywania (iterowania) 
+  równań różniczkowych zupełnie tak jak przedstawiono powyżej.
+
+  .. code-block:: python
+
+    def schemat_eulera2D(vec, ics, Tlist):
+      i = 0
+      dx = [ics[0]]
+      dy = [ics[1]]
+      h = Tlist[i+1] - Tlist[i]
+
+      iks(x,y) = vec[0R]*h
+      igrek(x,y) = vec[1R]*h
+      
+      for time in Tlist:
+          dx.append(dx[i] + iks(dx[i],dy[i]))
+          dy.append(dy[i] + igrek(dx[i],dy[i]))
+          i += 1
+          
+      return zip(dx,dy)
+
+
+  Jak widać funkcj ta nie jest ani zbytnio trudna do zrozumienia, ani przesadnie optymalnie 
+  napisana. Jako argumenty wejściowe pobierzemy wektor prawych stron układu dwóch równań 
+  różniczkowych (np: oscylatora harmonicznego), wartości początkowe obu zmiennych oraz listę
+  punktów czasowych w jakich dynamika ma być próbkowana. Aby ów algorytm zadziałał, odległości
+  pomiędzy poszczególnymi chwilami czasowymi muszą być stałe. Tak zdefiniowana funkcja
+  pozwoli nam na praktyczne takie samo wywołanie jak oryginalna funkcja Sage
+  ``desolve_odeint``.
+
+  Następnie wykonamy symulacje dla konkretnego układu, tzn: dla ustalonych parametrów 
+  :math:`\omega, x_0, y_0`. 
+
+  .. code-block:: python
+
+    omega = 1
+    x0, y0 = 2, 4
+    h = 0.1
+    T = 2*pi/omega
+    l1T = srange(0,T,h,include_endpoint=True)
+    l2T = srange(0,T,h,include_endpoint=True)
+    de = [y,-omega^2*x]
+    bgr = desolve_odeint(vector(de),[x0,y0],l2T,[x,y])
+    oscylator = schemat_eulera2D(de,[x0,y0],l1T)
+
+  Teraz pozostaje nam już tylko wykreślić odpowiednie listy. Formę wizualizacji pozostawiamy 
+  czytelnikom, poniżej prezentując wyniki obliczeń. Krzywa zaprezentowana w tle to wynik użycia
+  zaawansowanych algorytmów adaptatywnych. Krzywa bardziej widoczna to efekt obliczeń prostym
+  schematem Eulera, który to pozostawia wiele do życzenia...
+
+
+  .. figure:: images/sage_chI021_01.*
+     :align: center
+     :alt: fig1
+
+     Numeryczne rozwiązania oscylatora harmonicznego.
+
+
+
+W przypadku oscylatora nietłumionego, krzywe fazowe są zamknięte. Cząstka z biegiem czasu porusza się tak, że położenie :math:`x` i prędkość :math:`v=y`  leżą na krzywej fazowej. Ponieważ jest to krzywa zamknięta, to po pewnym czasie cząstka znowu "przebiega" punkty, które się powtarzają. Powtarzanie się jest cechą charakterystyczną ruchu okresowego. Tak więc krzywa fazowa zamknięta przedstawia ruch okresowy (periodyczny). Okres takiego ruchu periodycznego to czas potrzebny na to, aby cząstka startując od punktu np. :math:`\{x_0, y_0\}` i  poruszając się po krzywej fazowej dotarła znowu do tego samego punktu  :math:`\{x_0, y_0\}`.
+
+W przypadku oscylatora tłumionego, krzywą fazową jest spirala zwijająca się do punktu :math:`\{0, 0\}`. Ruch po spirali oznacza, że zarówno :math:`x` jak i :math:`v=y` maleją w czasie i dla długich czasów położenie :math:`x` oraz prędkość :math:`v` dążą do zera, czyli cząstka zwalnia i na końcu zatrzymuje się. To jest ruch tłumiony: amplituda drgań maleje w czasie. To jest to, co obserwujemy w ruchu kulki zawieszonej na nitce: kulka wykonuje coraz to mniejsze drgania i po długim czasie wisi pionowo ( to jest coś co nazywa się stanem równowagi lub położeniem stacjonarnym).
+
+Gdy mamy bardziej skomplikowane krzywe fazowe, ich "rozszyfrowanie" może być trudniejsze. Ale ogólna zasada jest taka: gdy :math:`x` rośnie to oznacza wzrost położenia cząstki. Gdy :math:`y` maleje to oznacza, że maleje prędkość cząstki.  Gdy :math:`x` maleje to maleje współrzędna położenia cząstki. Gdy :math:`y` rośnie to rośnie prędkość cząstki.
+
+Tłumiony oscylator harmoniczny
+++++++++++++++++++++++++++++++
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: var('x y')
+      sage: def schemat_eulera2D(vec, ics, Tlist):
+      ...    i = 0
+      ...    dx = [ics[0]]
+      ...    dy = [ics[1]]
+      ...    h = Tlist[i+1] - Tlist[i]
+      ...    iks(x,y) = vec[0R]*h
+      ...    igrek(x,y) = vec[1R]*h
+      ...    for time in Tlist:
+      ...        dx.append(dx[i] + iks(dx[i],dy[i]))
+      ...        dy.append(dy[i] + igrek(dx[i],dy[i]))
+      ...        i += 1
+      ...    return zip(dx,dy)
+      sage: #
+      sage: @interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom':[['T','h']]})
+      sage: def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(0, width=10), omega=input_box(1,label=r'$\omega$', width=10), ggamma=input_box(0.5,label=r'$\gamma$', width=10)):
+      ...    global oscylator_tlumiony, globggamma, globomega, background2
+      ...    globggamma = ggamma
+      ...    globomega = omega
+      ...    if T == 0: 
+      ...        T = 2*pi/omega
+      ...    listT = srange(0,T,float(h),include_endpoint=True)
+      ...    background2 = desolve_odeint(vector([y,-omega^2*x-ggamma*y]), [x0, y0], srange(0,2*pi/omega+0.1,0.1,include_endpoint=True), [x,y])
+      ...    oscylator_tlumiony = schemat_eulera2D([y,-omega^2*x-ggamma*y], [x0, y0], listT)
+      ...    print r'Parametry modelu'
+      ...    html(r'$\gamma=%s, \omega=%s, x_0=%s, y_0=%s$'%(ggamma,omega,x0,y0))
+      ...    print r'Parametry symulacji'
+      ...    html(r'$h=%s, T=%s$'%(h,T))
+      ...    print '\nDla T=0 lista generowana jest automatycznie dla jednego okresu własnego oscylatora'
+      sage: #
+      sage: @interact    
+      sage: def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, label=r'krok')):
+      ...    buf = zip(*oscylator_tlumiony)
+      ...    minx, maxx, miny, maxy = min(buf[0]), max(buf[0]), min(buf[1]), max(buf[1])
+      ...    kroki = oscylator_tlumiony[:krok]
+      ...    kroki_plot = list_plot(kroki, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=minx, xmax=maxx, ymin=miny, ymax=maxy)
+      ...    txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
+      ...    for i in range(1,len(kroki)):
+      ...        txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
+      ...    full_plot = list_plot(oscylator_tlumiony, plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
+      ...    full_plot += list_plot(background2.tolist(), plotjoined=1, color='grey', alpha=0.5)
+      ...    html.table([["krzywe fazowe dla oscylatora tłumionego",""],[full_plot+kroki_plot,kroki_plot+txt_plot]])
+
+  .. end of output
+
+.. ##**
+
+
+.. only:: latex
+
+  Powtórzymy dokładnie te same obliczenia co wcześniej. W zasadzie wystarczy tylko dodać
+  parametr ``gama`` opisujący tłumienie oraz przemodelować lekko linijkę definiującą
+  równania różniczkowe.
+
+  .. code-block:: python
+
+     gama = 0.5
+     de = [y, -omega^2*x-gama*y]
+
+  Cała reszta wykonuje się identycznie. Poniżej prezentujemy wyniki zabaw numerycznych.
+
+  .. figure:: images/sage_chI021_02.*
+     :align: center
+     :alt: fig2
+
+     Numeryczne rozwiązania tłumionego oscylatora harmonicznego.
+
+
+
+
+Pole wektorowe
+--------------
+
+Prawe strony układu równań różniczkowych  
+
+.. MATH::
+    :label: eqn61
+
+     \dot x = f(x, y), \quad \quad x(0) = x_0 
+
+     \dot y= g(x, y),\quad \quad y(0) = y_0 
+
+
+można traktować jak składowe pewnego pola wektorowego:
+
+.. MATH::
+    :label: eqn63
+
+    \vec F = [F_x, F_y] = [f(x, y), g(x, y)]
+
+
+W każdym punkcie płaszczyzny o współrzędnych :math:`\{x, y\}` rysujemy wektor  o składowych  :math:`[f(x, y), g(x, y)]`. W ten sposób otrzymujemy pole wektorowe. No dobrze, ale jaką informację o układzie można "wyciągnąć" z tego pola wektorowego. Wykonajmy takie oto ćwiczenie numeryczne: Startujemy z warunku początkowego :math:`\{x_0, y_0\}` i rysujemy w tym punkcie wektor o składowych :math:`[f(x_0, y_0), g(x_0, y_0)]` czyli
+
+.. MATH::
+    :label: eqn64
+
+    \mbox{w punkcie }  \quad \{x_0, y_0\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_0, y_0), g(x_0, y_0)]
+
+
+Jak poprzednio, rozwiązujemy numerycznie układ równań różniczkowych i obliczamy  :math:`\{x_1, y_1\}`:
+
+.. MATH::
+    :label: eqn65
+
+    \mbox{w punkcie }  \quad \{x_1, y_1\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_1, y_1), g(x_1, y_1)]
+
+
+Następnie obliczamy  :math:`\{x_2, y_2\}`:
+
+.. MATH::
+    :label: eqn66
+
+    \mbox{w punkcie }  \quad \{x_2, y_2\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_2, y_2), g(x_2, y_2)]
+
+
+W n-tym kroku iteracji obliczamy  :math:`\{x_n, y_n\}`:
+
+.. MATH::
+    :label: eqn67
+
+    \mbox{w punkcie }  \quad \{x_n, y_n\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_n, y_n), g(x_n, y_n)]
+
+
+Ponieważ wszystkie powyższe punkty  :math:`\{x_i, y_i\}` leżą na krzywej fazowej, to wektory :math:`[f(x_i, y_i), g(x_i, y_i)]`  są przyczepione do tych krzywych fazowych. Zauważamy, że wektory te są styczne do krzywej fazowej. Jeżeli :math:`\{x_i, y_i\}` miały by interpretacje położenia cząstki na płaszczyźnie, to wektory  :math:`[f(x_i, y_i), g(x_i, y_i)]` miały by interpretację prędkości ponieważ :math:`\dot x = f(x, y)` oraz :math:`\dot y = g(x, y)`. Wiemy, że :math:`\dot x = v_x` jest x-ową składową prędkości, z kolei :math:`\dot y = v_y` jest y-ową składową prędkości. Innymi słowy, otrzymane pole wektorowe to pole prędkości fikcyjnej cząstki.
+
+.. only:: html
+
+  .. sagecellserver::
+      :is_verbatim: True
+      
+      sage: var('x y')
+      sage: @interact(layout={'top':[['omega','ggamma','x0','y0']],'bottom':[['T','h']]})
+      sage: def _(title=['a','b'], h=selector(['0.05','0.01','0.1','0.5','1'], default='0.1', buttons=True),x0=input_box(2,label=r'$x_0$', width=10), y0=input_box(4,label=r'$y_0$', width=10), T=input_box(20, width=10), omega=input_box(1,label=r'$\omega$', width=10), ggamma=input_box(0.5,label=r'$\gamma$', width=10)):
+      ...    global oscylator_tlumiony, globggamma, globomega
+      ...    globggamma = ggamma
+      ...    globomega = omega
+      ...    listT = srange(0,T,float(h))
+      ...    oscylator_tlumiony = desolve_odeint(vector([y,-omega^2*x-ggamma*y]), [x0, y0], listT, [x,y])   
+      ...    print r'Parametry modelu'
+      ...    html(r'$\gamma=%s, \omega=%s, x_0=%s, y_0=%s$'%(ggamma,omega,x0,y0))
+      ...    print r'Parametry symulacji'
+      ...    html(r'$h=%s, T=%s$'%(h,T))
+      sage: vf = lambda u,a,b: (u[0]+u[1],u[1]-a*u[0]-b*u[1])
+      sage: #
+      sage: @interact
+      sage: def _(krok=slider(1, len(oscylator_tlumiony), 1, default=1, label=r'krok')):
+      ...    kroki = oscylator_tlumiony[:krok]
+      ...    kroki_plot = list_plot(kroki.tolist(), figsize=(4,4), axes_labels=[r'$x$',r'$y$'], size=30, xmin=-4.5, xmax=4.5, ymin=-4.5, ymax=4.5)
+      ...    pole_wektorowe = arrow(kroki[0],vf(kroki[0],globomega^2,globggamma),color='red',xmax=vf(kroki[0],globomega^2,globggamma)[0])
+      ...    for krok in kroki[1:]:
+      ...        pole_wektorowe += arrow(krok,vf(krok,globomega^2,globggamma),color='red', width=.4)      
+      ...    txt_plot = text(r'$[x_0,y_0]$',kroki[0],vertical_alignment='bottom',horizontal_alignment='left')
+      ...    for i in range(1,len(kroki)):
+      ...        txt_plot += text(r'$[x_{%d},y_{%d}]$'%(i,i),kroki[i],vertical_alignment='bottom',horizontal_alignment='left')
+      ...    shadowplot = list_plot(oscylator_tlumiony.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'], alpha=0.2) 
+      ...    full_plot = list_plot(oscylator_tlumiony.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$']) + plot_vector_field([y,-globomega^2*x-globggamma*y], (x, -4.5, 4.5), (y, -4.5, 4.5), plot_points=20, color='lime')
+      ...    html.table([["krzywe fazowe dla oscylatora tłumionego",""],[full_plot+kroki_plot,shadowplot+kroki_plot+txt_plot+pole_wektorowe]])
+
+  .. end of output
+
+.. only:: latex
+
+  Wizualizacja pola wektorowego w systemie Sage może być dość prosto wykonane za pomocą wbudowanej funkcji
+  ``plot_vector_field``. Funkcja zwraca wykres unormowanego pola dla zadanego równania różniczkowego. My 
+  jednak zobrazujemy też powyższe idee i wykreślimy (w Sage oczywiście) pole dla kilku kolejnych kroków iteracji
+  numerycznej.
+
+  .. code-block:: python
+
+      omega, gama = 1, 0.5
+      xm, ym = 4.5, 4.5
+      de = [y,-omega^2*x-gama*y]
+      plot_vector_field(de,(x,-xm,xm),(y,-ym,ym))
+
+
+  .. figure:: images/sage_chI021_03.*
+     :align: center
+     :alt: fig3
+
+     Pole wektorowe oraz krzywe fazowe dla oscylatora tłumionego.
+
+   
+  Zachęcamy do eksperymentowania z różnymi modelami czy też układami fizycznymi. Proszę 
+  tylko pamiętać, że aby powyższa numeryka zadziałała poprawnie należy poprawnie
+  zdefiniować model fizyczny: ustalić wszystkie parametry i zmienne. Inwencja mile
+  widziana (może warto wykorzystać dekorator ``interact``)! 
+
+.. only:: html
+
+  Poniżej znajdziecie komórkę, w której zachęcamy wszystkich do eksperymentowania z 
+  różnymi modelami. Miłej zabawy...
+
+  .. tip::
+     
+     Aby całość zadziałała poprawnie musicie zadeklarować model podając ``dx`` i ``dy``, 
+     podać wartości wszystkich parametrów (teraz jest tylko ``alpha``)
+     oraz warunki początkowe ``x0`` i ``y0``. 
+     Na koniec zdecudujcie jaki okres dynamiki punktu chcecie symulować 
+     przypisując do zmiennej ``T`` odpowiednią wartość.
+
+  .. sagecellserver::
+      :is_verbatim: True
+
+      sage: #########
+      sage: # Model #
+      sage: #########
+      sage: # zmienne
+      sage: var('x y')
+      sage: #
+      sage: # parametry
+      sage: # UWAGA: jeżeli Twój model będzie zależny od innych parametrów 
+      sage: #        tu właśnie musisz je wszystkie wyspecyfikować
+      sage: alpha = 1
+      sage: #
+      sage: # warunki początkowe
+      sage: x0 = 1
+      sage: y0 = 1
+      sage: #
+      sage: # model
+      sage: dx = y
+      sage: dy = -alpha*x - y
+      sage: #
+      sage: # czas (T) symulacji
+      sage: T = 12
+      sage: #
+      sage: ###################################################
+      sage: # Symulacje + wizualizacja                        #
+      sage: ###################################################
+      sage: listT = srange(0,T,0.1,include_endpoint=True)
+      sage: numeryka = desolve_odeint(vector([dx, dy]), [x0, y0], listT, [x,y])
+      sage: przestrzen_fazowa = list_plot(numeryka.tolist(), plotjoined=1, figsize=(4,4), axes_labels=[r'$x$',r'$y$'])
+      sage: pole_wektorowe = plot_vector_field([dx,dy], (x, numeryka[:,0].min(), numeryka[:,0].max()), (y, numeryka[:,1].min(), numeryka[:,1].max()), plot_points=10, color='lime')
+      sage: show(przestrzen_fazowa+pole_wektorowe)
+
+  .. end of output
