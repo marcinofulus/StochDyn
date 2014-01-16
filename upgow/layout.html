@@ -123,7 +123,8 @@
 
   {%- block footer %}
   <div class="footer">
-    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="_static/upgow.png" alt="UPGOW"/></a><br/>
+    <a class="logo" href="http://upgow.us.edu.pl/" target="_blank"><img src="{{ pathto('_static/upgow.png',1) }}" alt="UPGOW"/></a><br/>
+    <img src="{{ pathto('_static/stopka_EU.png',1) }}" alt="EU"/><br/>
     {%- if show_copyright %}
     {%- if hasdoc('copyright') %}
     {% trans path=pathto('copyright'), copyright=copyright|e %}&copy; <a href="{{ path }}">Copyright</a> {{ copyright }}.{% endtrans %}

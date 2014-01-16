@@ -545,7 +545,7 @@ co trzeba zmienić w powyższym kodzie to linijki definiujące ów proces jako n
 .. only:: html
 
   .. sagecellserver::
-   :is_verbatim: True
+    :is_verbatim: True
 
     #szum kangura
     #szum Kubo - Andersona
