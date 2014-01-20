@@ -172,7 +172,7 @@ Możemy przedefiniować tak szum, aby jego wartość wynosiła 0. Zdefiniujmy no
 .. MATH::
  :label: eqn17
 
- Y_0(t) = \sum\limits_{i} z_i \delta (t-t_i) -\mu <z_i> \qquad 
+ Y_0(t) = \sum\limits_{i} z_i \delta (t-t_i) -\mu \langle z_i \rangle
 
 
 Wartość średnia oraz funkcja korelacyjne tego szumu to:

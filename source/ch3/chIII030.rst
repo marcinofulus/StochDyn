@@ -45,7 +45,7 @@ Ito. Obliczmy przyrost funkcji :math:`g(X, t)` rozwijając funkcję w szereg Tay
 .. MATH::
  :label: eqn5
 
- \Delta g(X, t) = g(X+dX, t+dt)- g(x, t) =
+ \Delta g(X, t) = g(X+dX, t+dt)- g(X, t) =
  
  = \frac{\partial g}{\partial X} dX + \frac{\partial g}{\partial t} dt + \frac{1}{2} \frac{\partial^2 g}{\partial X^2} dX dX + \frac{\partial^2 g}{\partial X \partial dt} dX dt + \frac{1}{2} \frac{\partial^2 g}{\partial t^2} dt dt + \dots 
 
@@ -60,7 +60,7 @@ Wstawimy teraz wyrażenie na :math:`dX` z równania Ito
 
  + \dot g \,'(X, t) dt \left[F(X, t) dt + G(X, t) dW\right] + \frac{1}{2} \ddot g(X, t) dt dt + \dots 
 
-W wyrażeniu tym pozostawimy wyrazy rzędu co najwyżej :math:`dt` pamiętając że :math:`dW(t)` jest rzędu :math:`\sqrt{t}`: 
+W wyrażeniu tym pozostawimy wyrazy rzędu co najwyżej :math:`dt` pamiętając że :math:`dW(t)` jest rzędu :math:`\sqrt{dt}`: 
 
 .. MATH::
  :label: eqn8
@@ -130,7 +130,7 @@ Widać, że w porównaniu z tradycyjnym rachunkiem różniczkowym i całkowym, t
 Przykład 2
 ++++++++++
 
-Rozpatrzmy równanie Ito dla geometrycznego ruch Browna, rozważanego w jednym z poprzednich rozdziałów: 
+Rozpatrzmy równanie Ito dla geometrycznego ruch Browna, rozważanego w jednym z następnych rozdziałów: 
 
 .. MATH::
  :label: eqn16
@@ -151,7 +151,7 @@ Teraz :math:`Y(t)` to nowy proces stochastyczny będący transformacją procesu 
 .. MATH::
  :label: eqn18
 
- \dot g(x, t) = 0, \qquad g'(x, t) = \frac{1}{x},\qquad g''(x, t) = -\frac{1}{x2},\qquad
+ \dot g(x, t) = 0, \qquad g'(x, t) = \frac{1}{x},\qquad g''(x, t) = -\frac{1}{x^2},\qquad
 
 i wstawiamy do formuły Ito pamiętając że :math:`dg(X, t) = dY(t)`. Otrzymamy końcowy wynik w postaci
 
@@ -242,7 +242,9 @@ Z powyższej formuły wynika także odwrotny związek:
  = \left[F(X(t), t) - D G'(X(t), t) G(X(t), t)\right]dt + G(X(t), t)\circ dW(t) \quad \mbox{<-- Stratonowicz}
 
 
-W wielu przypadkach warto "pracować" z równaniami w sensie Stratonowicza, ponieważ operacje na tych równaniach są takie same jak w standardowej (klasycznej) analizie matematycznej. Zademonstrujemy to przykładzie równania opisującego geometryczny ruch Browna:
+W wielu przypadkach warto "pracować" z równaniami w sensie Stratonowicza, ponieważ operacje 
+na tych równaniach są takie same jak w standardowej (klasycznej) analizie matematycznej. 
+Zademonstrujemy to na przykładzie równania opisującego geometryczny ruch Browna:
 
 .. MATH::
  :label: eqn28

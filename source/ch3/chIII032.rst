@@ -16,7 +16,7 @@ Stany stacjonarne układów na które działają szumy termiczne powinny być st
  m\ddot X(t) + \gamma \dot X(t) + U'(X(t))= \sqrt{2\gamma k_BT}\;\Gamma(t)
 
 
-lub wersja przetłumiona
+lub wersja dla dynamiki przetłumionej 
 
 .. MATH::
  :label: eqn2
