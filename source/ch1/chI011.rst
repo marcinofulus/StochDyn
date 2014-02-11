@@ -6,6 +6,8 @@
 Opis i modelowanie zjawisk oraz procesów przy pomocy równań różniczkowych
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+.. index:: równanie Newtona
+
 Jednym z podstawowych praw fizyki, jakie poznajemy w szkole średniej jest II zasada dynamiki Newtona. 
 Opisuje ona klasyczne układy mechaniczne. Układy te są idealizacją realnych układów występujących w 
 otaczającym nas świecie. W najprostszej wersji II zasada dynamiki Newtona w odniesieniu do jednej 
@@ -48,6 +50,8 @@ W ogólnej postaci siła
     F = F(x, v, t) = F(x, dx/dt, t)
 
 może zależeć od położenia :math:`x` cząstki, jej prędkości :math:`v=dx/dt` oraz czasu :math:`t`. 
+
+.. index:: modelowanie; model ciągły
 
 Jeżeli przyśpieszenie :math:`a` oraz siłę :math:`F` w takiej postaci podstawimy do równania Newtona, 
 to jego postać jest następująca:
@@ -208,6 +212,8 @@ równaniami.
 W wielu dziedzinach nauki (chemia, biologia, socjologia, nauki ekonomiczne) stosuje się fenomenologiczny 
 sposób modelowania. Aby sobie uzmysłowić jak go stosować podamy jeden przykład.
 
+.. index:: proces wzrostu
+
 Modelowanie procesu wzrostu
 """""""""""""""""""""""""""
 
@@ -362,6 +368,9 @@ zwyczajnych.
       sage:  line(zip(U,sol[:,2]), color='green', legend_label="k=0.2",axes_labels=['t','x(t)'])
 
   .. end of output
+
+
+.. index:: modelowanie; model dyskretny
 
 Modelowanie z czasem dyskretnym
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
