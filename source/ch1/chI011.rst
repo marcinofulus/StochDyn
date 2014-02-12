@@ -254,7 +254,7 @@ dlatego też z relacji :eq:`eqn20` otrzymujemy
 
     x(t+h) = x(t) +  k  x(t) h
 
-Powyrzszą zależność możemy przepisać w postaci
+Powyższą zależność możemy przepisać w postaci
 
 .. MATH::
     :label: eqn24

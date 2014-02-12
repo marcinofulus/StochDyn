@@ -10,6 +10,8 @@ Jeżeli dysponujemy odpowiednią wiedzą (o przyczynach,  prawidłowościach), t
 Jednakże historia pokazała, że  w fizyce klasycznej są znane teorie statystyczne, niedeterministyczne.  Rozważmy dla przykładu  gaz zamknięty w jakimś naczyniu. Wiemy, że w warunkach równowagi termodynamicznej dwie równe co do objętości części tego naczynia będą zawierać jednakową liczbę cząsteczek gazu. Nie wiemy jednak, które cząsteczki znajdą się w której z dwu połówek naczynia. Sytuacja pozornie przypomina prawo rozpadu: można podać taki czas, w którym rozpadnie się połowa atomów, i w ten sposób podzielić wszystkie atomy na dwie równe części - te, które się w tym czasie rozpadną, i te, które się nie rozpadną, podobnie jak podzieliliśmy cząsteczki gazu według kryterium, w której połowie naczynia się znajdują. W klasycznej fizyce statystycznej znamy prawa rządzące zachowaniem pojedynczych cząsteczek (są nimi z założenia prawa mechaniki newtonowskiej), a nasza niewiedza co do tego zachowania jest spowodowana po pierwsze niemożliwością śledzenia ruchu wielu miliardów obiektów, a po drugie, brakiem potrzeby, aby to czynić: wystarczy nam znać właśnie tylko pewne wielkości średnie, które ujawniają się fenomenologicznie, na przykład jako temperatura gazu, czy też jego ciśnienie. Tak więc rzeczywisty kompletny opis stanu gazu musiałby zawierać informację dotyczącą :math:`N` wektorów położenia i :math:`N` wektorów pędu (:math:`N` - liczba cząsteczek gazu), co jest liczbą ogromną, podczas gdy opis statystyczny ogranicza się do kilku potrzebnych liczb. Opis statystyczny odnosi się do ogromnej liczby cząstek i jest to opis oparty o teorię prawdopodobieństwa i teorię procesów stochastycznych. Z definicji jest to opis niedeterministyczny. Ale jak powiedzieliśmy, opis jednej cząstki jest w pełni deterministyczny. Twierdzenia o jednoznaczności rozwiązań równań różniczkowych dawały nadzieję na totalny determinizm i przewidywalność ruchu pojedynczych cząstek. Nadzieja ta z praktycznego punktu widzenia okazała się mrzonką.  W latach 50-tych XX wieku pokazano, że z praktycznego punktu widzenia determinizm mechaniki Newtona jest złudny i ugruntowana wiara w przewidywalność zachowania się prostych układów  mechanicznych  załamała się. Pojawiły się liczne przykłady, a później teoria matematyczna, pokazujące  niemożliwość przewidywania czasowej ewolucji prostych układów mechanicznych. Podkreślamy, że chodzi tu o praktyczne aspekty przewidywalności. Z matematycznego punktu widzenia, przewidywalność jest ciągle słuszna.  Dobitnym przykładem nieprzewidywalności w praktyce jest prognoza pogody, co udowadnia codzienne życie. Poniżej przedstawimy zagadnienia, które ukażą nam, co oznacza nieprzewidywalność w teorii deterministycznej. Pokażemy, dlaczego ewolucja określona przez determinizm równań Newtona jest nieprzewidywalna. Ta deterministyczna nieprzewidywalność ma swoją nazwę: deterministyczny chaos. 
 
 
+.. index:: oscylator Duffinga
+
 Model chaosu. Układ bistabilny (oscylator Duffinga)
 ===================================================
 
@@ -157,6 +159,7 @@ Przeskalowane równanie jest w takiej postaci, że przyjmujemy wartości paramet
 Krok 1. Układ zachowawczy
 -------------------------
 
+.. index:: oscylator Duffinga; układ zachowawczy
 
 W pierwszym  kroku rozpatrujemy najprostszy przypadek (pamiętajmy o przeskalowanej postaci, w której masa cząstki :math:`m=1`)):
 
@@ -283,6 +286,7 @@ Poniżej przedstawiamy potencjał i  krzywe fazowe dla tego przypadku.
 Krok 2. Układ dysypatywny czyli wpływ tarcia.
 ---------------------------------------------
 
+.. index:: oscylator Duffinga; układ dysypatywny
 
 W drugim  kroku dodajemy tarcie i rozpatrujemy równanie ruchu w postaci:
 
@@ -490,6 +494,8 @@ Na powyższym zestawie rysunków,  2 warunki początkowe leżą w dwóch różny
 Krok 3. Układ z tarciem i periodyczną siłą.
 -------------------------------------------
 
+.. index:: oscylator Duffinga; dynamika chaotyczna
+
 W trzecim kroku dodajemy siłę periodyczną w czasie  i rozpatrujemy równanie ruchu w wyjściowej pełnej postaci:
 
 .. MATH::
@@ -507,7 +513,7 @@ Jest on równoważny układowi 3 równań różniczkowych, autonomicznych, pierw
     
     \dot v = x - x^3 -\gamma v + A \cos z , \qquad v(0) = v_0, 
     
-    z = \omega_0, \qquad z(0) = 0.
+    \dot z = \omega_0, \qquad z(0) = 0.
 
 
 Oznacza to, że przestrzeń fazowa jest 3-wymiarowa.
@@ -521,7 +527,7 @@ Matematycy wolą przepisać powyższy układ równań dla "tradycyjnych"  3 zmie
     
     \dot y = x - x^3 -\gamma y + A \cos z , \qquad y(0) = y_0, 
     
-    z = \omega_0, \qquad z(0) = 0.
+    \dot z = \omega_0, \qquad z(0) = 0.
 
 
 czyli prędkość cząstki :math:`v` jest teraz oznaczona jako :math:`v=y`.
@@ -569,6 +575,8 @@ Okazuje się, że pełny układ wykazuje radykalnie inne własności od poprzedn
 
 Ruch periodyczny o okresie 1
 ----------------------------
+
+.. index:: oscylator Duffinga; ruch okresowy
 
 W modelu występują 3 bezwymiarowe parametry: współczynnik tarcia :math:`\gamma`, amplituda zewnętrznej siły :math:`A` oraz częstość drgań :math:`\omega_0` siły periodycznej w czasie. Poniżej pokażemy kilka charakterystycznych trajektorii układu. Zaczniemy od prostej periodycznej ewolucji, ruchu okresowego o tzw. okresie 1.
 
@@ -764,6 +772,8 @@ Można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe
 Ruch periodyczny o okresie 3
 ----------------------------
 
+.. index:: oscylator Duffinga; ruch okresowy
+
 Załóżmy następujące wartości parametrów:
 
 .. MATH::
@@ -910,6 +920,8 @@ Podobnie jak poprzednim przypadku, można zrobić doświadczenie numeryczne i wy
 
 Ruch chaotyczny
 ---------------
+
+.. index:: oscylator Duffinga; dynamika chaotyczna
 
 Załóżmy następujące wartości parametrów:
 
