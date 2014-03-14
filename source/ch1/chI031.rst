@@ -9,7 +9,7 @@ We Wprowadzeniu pokazaliśmy w jaki sposób mogą pojawiać się zagadnienia mod
     x_{n+1} = f(x_n), \quad \quad x_0 = c\qquad 
 
 
-Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy ( co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykładem jest algorytm Newtona pozwalający rekurencyjnie znajdować pierwiastki równania
+Z jednej strony mogą to być przybliżenia  równań różniczkowych, gdy pochodną aproksymujemy  skończonym ilorazem różniczkowym. Z drugiej strony, mogą to być układy dynamiczne w których czas jest  dyskretny i jest mierzony co pewien ustalony interwał czasowy (co sekundę, co godzinę, co dzień, co miesiąc, itd.). Tego typu modele spotykamy w biologii. Kolejnym przykładem jest algorytm Newtona pozwalający rekurencyjnie znajdować pierwiastki równania
 
 .. MATH::
     :label: eqn2
@@ -53,7 +53,7 @@ gdzie zakładamy, że pochodna :math:`F'(x)` istnieje (w przeciwnym przypadku me
   
   który wyprodukuje iteracyjnie nastepujące liczby
 
-  .. code:: bash
+  .. code-block:: bash
 
     1
     2.20000000000000
@@ -156,19 +156,19 @@ Metoda pajęczyny pozwala na wykresie śledzić własności równań rekurencyjn
 
 Sposób rysowania:
 
-#. Dla danego równania  :math:`x_{n+1} = f(x_n)`, rysujemy wykres funkcji 
-  :math:`y = f (x)` oraz  linię prostą :math:`y  = x`. Prosta ta pozwala 
-  przenosić wartość :math:`x_{n+1}`  z osi OY na oś OX. 
+1. Dla danego równania  :math:`x_{n+1} = f(x_n)`, rysujemy wykres funkcji 
+   :math:`y = f (x)` oraz  linię prostą :math:`y  = x`. Prosta ta pozwala 
+   przenosić wartość :math:`x_{n+1}`  z osi OY na oś OX. 
 
-#. Na osi OX zaznaczamy warunek początkowy :math:`x_0`. Znajdujemy 
-  graficznie punkt :math:`x_1 = f(x_0)`, który jest na osi OY.
+2. Na osi OX zaznaczamy warunek początkowy :math:`x_0`. Znajdujemy 
+   graficznie punkt :math:`x_1 = f(x_0)`, który jest na osi OY.
 
-#. Przy pomocy prostej :math:`y=x` przenosimy teraz  punkt :math:`x_1` na oś OX.
+3. Przy pomocy prostej :math:`y=x` przenosimy teraz  punkt :math:`x_1` na oś OX.
 
-#. Mając na osi OX punkt :math:`x_1`, traktujemy go jako następny warunek 
-  początkowy i znajdujemy graficznie na osi OY punkt :math:`x_2=f(x_1)`.
+4. Mając na osi OX punkt :math:`x_1`, traktujemy go jako następny warunek 
+   początkowy i znajdujemy graficznie na osi OY punkt :math:`x_2=f(x_1)`.
   
-#. Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym :math:`x_0`.
+5. Powtarzamy kroki od 2,3,4 z ostatnim otrzymanym punktem jako początkowym :math:`x_0`.
 
 
 .. only:: latex
@@ -362,7 +362,7 @@ Zobaczmy jak to "działa" w przypadku tzw. równania logistycznego gdy :math:`f(
 .. MATH::
     :label: eqn12
 
-    x = f(x) \quad \mbox{oznacza} \quad x=ax  = ax - ax^2
+    x = f(x) \quad \mbox{oznacza} \quad x = ax - ax^2
 
 
 Jest to równanie kwadratowe: 
@@ -370,7 +370,7 @@ Jest to równanie kwadratowe:
 .. MATH::
     :label: eqn13
 
-    ax^2 -ax +x = 0 \quad \mbox{czyli} \quad  ax^2 + x  =  x [ax + ] = 0 
+    ax^2 -ax +x = 0 \quad \mbox{czyli} \quad  ax^2 + x  =  x (ax + 1) = 0 
 
 
 Otrzymujemy dwa rozwiązania 
@@ -381,9 +381,11 @@ Otrzymujemy dwa rozwiązania
     x_1 = 0 \quad \mbox{orax} \quad x_2 = \frac{a-1}{a} = 1 - \frac{1}{a}
 
 
-Są to dwa stany stacjonarne układu. Występuje tu podobieństwo do ciągłego modelu Verhulsta, które też posiada dwa stany stacjonarne :math:`N_1 = 0` (niestabilne)  oraz :math:`N_2 = K` (stabilne).
+Są to dwa stany stacjonarne układu. Występuje tu podobieństwo do ciągłego modelu Verhulsta, które też posiada dwa 
+stany stacjonarne :math:`N_1 = 0` (niestabilne)  oraz :math:`N_2 = K` (stabilne).
 
-Który ze stanów stacjonarnych  :math:`x_1`   i   :math:`x_2`  jest stabilny, a który niestabilny.  Zbadamy teraz ten problem.   
+Który z podanych stanów stacjonarnych :math:`x_1` i :math:`x_2` jest stabilny, a który niestabilny? Zbadamy teraz 
+ten problem.   
 
 
 B. Stabilność stanów stacjonarnych
@@ -434,7 +436,7 @@ Ponieważ :math:`y_n` jest małą wielkością, to funkcję :math:`f(x_s + y_n)`
 gdzie
 
 .. MATH::
-    :label: eqn18
+    :label: eqn18a
    
     \lambda = f'(x_s)
 
@@ -449,7 +451,7 @@ W ten sposób otrzymaliśmy równanie rekurencyjne dla odchylenia od stanu stacj
 
 Jeżeli :math:`y_{n} \to 0`  to stan stacjonarny :math:`x_s` jest stabilny. Musimy teraz zbadać,  dla jakich wartości liczby :math:`\lambda = f'(x_s)` równanie dla :math:`y_n`  ma rozwiązania dążące do zera dla warunku początkowego :math:`|y_0| << 1` .  
 
-Rozpatrzymy 4 przypadki: 
+Rozpatrzymy 3 przypadki: 
 
 1. Przypadek :math:`\lambda  > 1`
 """""""""""""""""""""""""""""""""
@@ -727,7 +729,7 @@ Podobna relacja zachodzi dla drugiego stanu
 .. MATH::
     :label: eqn39
 
-      \lambda_2(x_2^*)  = f'(x^*_1) f'(x^*_1) \in (-1, 1)
+      \lambda_2(x_2^*)  = f'(x^*_1) f'(x^*_2) \in (-1, 1)
 
 
 Jest to ta sama relacja co dla :math:`x^*_1`. Więc oznacza to, że wystarczy zbadać wielkość :math:`f'(x_1)f'(x_2)`, gdzie :math:`x_1`  oraz  :math:`x_2` to dwa  rozwiązania równania :math:`x=f(f(x))`.

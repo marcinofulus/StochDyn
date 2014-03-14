@@ -49,18 +49,20 @@ po zmiennej iteracyjnej `i`
    y_{i+1} = y_i + f(y_i,s_i) h.
 
 Dostając tzw. schemat Eulera. Innymi metodami wyprowadzenia tego prostego schematu będzie użycie 
-rozwinięcia Tylora lub wycałkowanie równania różniczowego od :math:`s_0` do :math`s_0 + h` 
+rozwinięcia Tylora lub wycałkowanie równania różniczowego od :math:`s_0` do :math:`s_0 + h` 
 za pomocą metody prostokątów (uzywając tylko jednego prostokąta na całym przedziale całkowania).
 
-Zadanie D1.1
-  Uzyskaj schemat Eulera z rozwinięcia Tylora.
+.. topic:: Zadania 
 
-Zadanie D1.2
-  Uzyskaj schemat Eulera całkując równanie różniczkowe.
+  Zadanie D5
+    Uzyskaj schemat Eulera z rozwinięcia Tylora.
+
+  Zadanie D6
+    Uzyskaj schemat Eulera całkując równanie różniczkowe.
 
 Dokładność metody Eulera mocno zależy od wyboru kroku całkowania `h`. Musimy też na początku zadać 
 warunki startowe (początkowe) iteracji, zupełnie jak podczas rozwiązywania równań metodami analitycznymi.
-Dla przykładu obliczmy numerycznie ruch przetłumionego sprężyny o współczynniku sprężystości `k`.
+Dla przykładu obliczmy numerycznie przetłumiony ruch sprężyny o współczynniku sprężystości `k`.
 
 .. math::
 
@@ -177,8 +179,7 @@ w potencjale :math:`U(x) = -k x^2 / 2`. Pominiemy siły tarcia. Również w spok
 
    m \ddot{x}(t) = -kx(t).
 
-Równanie to posiada znane 
-`analityczne rozwiązanie <http://ribes.if.uj.edu.pl/homepage/weblog/Oscylator_harmoniczny_rozwiazanie/Oscylator_harmoniczny_rozwiazanie.pdf>`_.
+Równanie to posiada znane analityczne rozwiązanie.
 Oznaczając :math:`\omega_0^2 = k/m` dostajemy
 
 .. math::
@@ -253,37 +254,40 @@ Inną, aczkolwiek trudniejszą metodą będzie użycie algorytmów wyższego rz�
 (2-giego, 4-tego i wyższych rzędów). Dociekliwy student może zajrzeć 
 `tutaj <http://en.wikipedia.org/wiki/List_of_Runge%E2%80%93Kutta_methods>`_.
   
-Zadanie D1.3
-  Przeprowadź podobną symulację dla innych wartości `h`. Wykreśl zależność błędów względnego i bezwzględnego
-  w funkcji wartości `h`. Błędy badaj po rzeczywistym czasie symulacji :math:`T_E = 100`.
-  
-Zadanie D1.4
-  Rozwiązać numerycznie równania
-  
-  1) :math:`\dot{x} (t) = -k x^3`
-  
-  2) :math:`\dot{x} (t) = F`
-  
-  3) :math:`m \ddot{x} (t) = m g`
-  
-  4) :math:`\ddot{r} (t) = 4 \epsilon \left[ \left(\frac{\sigma}{r} \right)^{12}-  \left( \frac{\sigma}{r}\right)^6 \right]$, $r>0`
-  
-  5) :math:`m \ddot{x} (t) = -\gamma \dot{x}(t) - k x(t)`
+.. topic:: Zadania
 
-  6) :math:`m \ddot{x} (t) =  -k x(t) -\gamma \dot{x}(t) + a \cos(\omega t)`
+  Zadanie D7
+    Przeprowadź podobną symulację dla innych wartości `h`. Wykreśl zależność błędów względnego i bezwzględnego
+    w funkcji wartości `h`. Błędy badaj po rzeczywistym czasie symulacji :math:`T_E = 100`.
+    
+  Zadanie D8
+    Rozwiązać numerycznie równania
+    
+    1) :math:`\dot{x} (t) = -k x^3`
+    
+    2) :math:`\dot{x} (t) = F`
+    
+    3) :math:`m \ddot{x} (t) = m g`
+    
+    4) :math:`\ddot{r} (t) = 4 \epsilon \left[ \left(\frac{\sigma}{r} \right)^{12}-  \left( \frac{\sigma}{r}\right)^6 \right]$, $r>0`
+    
+    5) :math:`m \ddot{x} (t) = -\gamma \dot{x}(t) - k x(t)`
 
-  Dla każdego przypadku należy
+    6) :math:`m \ddot{x} (t) =  -k x(t) -\gamma \dot{x}(t) + a \cos(\omega t)`
 
-  * narysować `x` (dla D-F również `v`) w funkcji `t` (opisać osie),
+    Dla każdego przypadku należy
 
-  * odpowiedzieć na pytanie: z jakim ruchem mamy do czynienia, dla jakich parametrow równania ruch 
-     jest cykliczny (periodyczny), dla jakich rozwiązanie jest stałe (niezmienne w czasie)...,
-  
-  * znaleźć błąd względny i bezwzględny, wykreślić w funkcji czasu.
+      * narysować `x` (dla D-F również `v`) w funkcji `t` (opisać osie),
 
-  Pytania:
+      * odpowiedzieć na pytanie: z jakim ruchem mamy do czynienia, dla jakich parametrow równania ruch 
+       jest cykliczny (periodyczny), dla jakich rozwiązanie jest stałe (niezmienne w czasie)...,
+    
+      * znaleźć błąd względny i bezwzględny, wykreślić w funkcji czasu.
 
-  1) Czym różni się przypadek 5 od 6?
+      
+    Pytania:
 
-  2) Co opisuje potencjał w 4? Jakie ma zastosowanie w fizyce?
+    1) Czym różni się przypadek 5 od 6?
+
+    2) Co opisuje potencjał w 4? Jakie ma zastosowanie w fizyce?
 

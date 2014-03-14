@@ -145,7 +145,7 @@ Założymy (wzorem większości autorów), że równanie
  X(t) \ge 0, \qquad \langle dW(t) \rangle = 0, \qquad \langle[dW(t)]^2 \rangle = 2D dt
 
 
-jest równaniem w interpretacji Ito. Później zbadamy to równanie gdy założymy interpretację Stratonowicza. Równanie Fokkera-Plancka dla dla 1-wymiarowej gęstości prawdopodobieństwa :math:`p(x, t)` ma postać
+jest równaniem w interpretacji Ito. Później zbadamy to równanie gdy założymy interpretację Stratonowicza. Równanie Fokkera-Plancka dla 1-wymiarowej gęstości prawdopodobieństwa :math:`p(x, t)` ma postać
 
 .. MATH::
  :label: eqn13
@@ -205,7 +205,8 @@ oraz
  = \frac{1}{x} \frac{\partial}{\partial y} \left\{ \frac{1}{x} \left(e^y f(y, t) + e^y \frac{\partial}{\partial y} f(y, t)\right) \right\} = \frac{1}{x} \frac{\partial}{\partial y} \left\{ f(y, t) + \frac{\partial}{\partial y} f(y, t)\right\} 
 
 
-W obu wyrażeniach występuje wyraz :math:`1/x`, który przeniesiemy na lewą stronę równania Fokkera-Plancka: :math:`x p(x, t) = f(y, t)`. Ostatecznie otrzymamy przetransformowane równanie Fokkera Plancka w postaci
+W obu wyrażeniach występuje wyraz :math:`1/x`, który przeniesiemy na lewą stronę równania Fokkera-Plancka 
+wykorzystując zależność :eq:`eqn15a`. Ostatecznie otrzymamy przetransformowane równanie Fokkera Plancka w postaci
 
 .. MATH::
  :label: eqn18

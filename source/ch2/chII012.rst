@@ -6,7 +6,7 @@ Scenariusz przejścia do chaosu
 .. highlight:: python
   :linenothreshold: 5
 
-Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  200 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają się różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
+Zmieniając parametry układu oraz warunki początkowe, możemy sterować własnościami ewolucji czasowej. Widzieliśmy, że istnieją rozwiązania periodyczne. Może to być prosty ruch periodyczny charakteryzujący się jednym charakterystycznym okresem T (lub częstością).  Mogą to być ruchy periodyczne bardziej skomplikowane:  o okresie 2, 3, 4, itd. Zauważmy, że ruch periodyczny o okresie 3 powtarza się po czasie 3 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu można zaobserwować po czasie  3 razy dłuższym.   Ruch periodyczny o okresie 20 powtarza się po czasie 20 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu jest obserwowana po czasie 20 razy dłuższym.  Ruch periodyczny o okresie 2000 powtarza się po czasie 2000 razy dłuższym niż ruch o okresie 1. Dlatego też regularność ruchu może być rozpoznana po czasie  2000 razy dłuższym.  Zwiększając periodyczność ruchu aż do nieskończoności, zauważamy że regularność ruchu powtarza się po nieskończonym czasie, czyli ruch staje się nieregularny dla obserwatora. Trajektoria wygląda tak, jakby to był ruch przypadkowy, losowy, chaotyczny. Ruch jest ciągle deterministyczny, ale skomplikowany,  niepowtarzalny, nieregularny. W niektórych przypadkach układ jest wyjątkowo wrażliwy na warunki początkowe: dla dwóch różnych, ale bardzo mało różniących się warunków początkowych, odpowiadające im trajektorie z czasem zaczynają się różnić i odbiegać od siebie. Jeżeli zmniejszymy odległość między warunkami początkowymi, to czas po jakim można rozróżnić  2 trajektorii wydłuża się, ale prędzej czy później, trajektorie zaczynają się rozbiegać. Z praktycznego punktu widzenia, warunki początkowe można zadawać ze skończoną dokładnością, ale nie z zerową dokładnością, tak jak to się zakłada w twierdzeniach matematycznych. Dlatego też w reżimie, w którym układ jest czuły na warunki początkowe, w praktyce niepewność warunków początkowych powoduje niepewność  ewolucji czasowej. Można to sprecyzować w matematycznym sensie w następujący sposób:
 
 Niech :math:`x(t)`  będzie trajektorią z warunkiem początkowym :math:`x(0)`, a :math:`X(t)`  
 będzie trajektorią z warunkiem początkowym :math:`X(0)`.   Niech dwa warunki początkowe różnią się o małą wielkość: 
@@ -88,7 +88,7 @@ Scenariusz podwojenia okresu
 ----------------------------
 
 Przedstawimy teraz standardowy scenariusz przejścia do chaosu, który nazywa się przejściem do chaosu poprzez podwojenie okresu. Jest uniwersalny scenariusz, występujący zarówno w układach z ciągłym czasem jaki i w układach dyskretnych. Został potwierdzony w wielu eksperymentach na różnorodnych układach fizycznych.
-Polega on na tej samej idei, którą przedstawiliśmy powyżej. Ten scenariusz jest bardziej regularny: następują bifurkacje, które zmieniają okresowość orbit periodycznych. Orbita o okresie 1 (to jest umowne, ponieważ okres orbity jest taki sam jak zewnętrznej siły) bifurkuje do orbity o okresie 2 jeżeli zmieniamy np. amplitudę :math:`A` napędzającej zewnętrznej siły. Orbita o okresie 2 bifurkuje do orbity o okresie 4, która to z kolei bifurkuje do orbity o okresie 8. Scenariusz ten powtarze się przy zmianie amplitudy :math:`A`. W przypadku pokazanym na poniższych rysunkach wartości bifurkacyjne amplitudy mają wartości (nie są to dokładne a zaokrąglone wartości):
+Polega on na tej samej idei, którą przedstawiliśmy powyżej. Ten scenariusz jest bardziej regularny: następują bifurkacje, które zmieniają okresowość orbit periodycznych. Orbita o okresie 1 (to jest umowne, ponieważ okres orbity jest taki sam jak zewnętrznej siły) bifurkuje do orbity o okresie 2 jeżeli zmieniamy np. amplitudę :math:`A` napędzającej zewnętrznej siły. Orbita o okresie 2 bifurkuje do orbity o okresie 4, która to z kolei bifurkuje do orbity o okresie 8. Scenariusz ten powtarza się przy zmianie amplitudy :math:`A`. W przypadku pokazanym na poniższych rysunkach wartości bifurkacyjne amplitudy mają wartości (nie są to dokładne a zaokrąglone wartości):
 
 .. MATH::
  :label: eqna1
@@ -217,7 +217,7 @@ To jest wartość stałej Feigenbauma. Ta sama liczba pojawia się w wielu ukła
 Wykładniki Lapunowa
 -------------------
 
-Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnić ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  :math:`K` w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla :math:`x(t), y(t), z(t)` startując z wszystkich warunków początkowych w kuli :math:`K`,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach :math:`(x, y, z)` w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa :math:`\lambda_1, \lambda_2, \lambda_3`. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniować trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu.Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
+Dla rozpatrywanego układu oscylatora Duffinga przestrzeń fazowa jest 3-wymiarowa. Dlatego też w rzeczywistości są 3 wykładniki Lapunowa, a nie 1 jak powiedzieliśmy powyżej.  Aby wyjaśnić ten problem, musimy rozważyć  zbiór warunków początkowych, które tworzą  kulę  :math:`K` w  badanej przestrzeni fazowej.  Jeżeli będziemy iterować równania dla :math:`x(t), y(t), z(t)` startując z wszystkich warunków początkowych w kuli :math:`K`,  to zbiór punktów zawartych początkowo w kuli zmieni swój kształt. Kula już nie będzie kulą. Prędkość z jaką  kula ulega deformacji we wszystkich 3 kierunkach :math:`(x, y, z)` w przestrzeni fazowej  jest określona przez 3 wykładniki Lapunowa :math:`\lambda_1, \lambda_2, \lambda_3`. Jeżeli badany układ jest chaotyczny, to zazwyczaj kula powiększa się w jednym kierunku, a maleje w dwóch pozostałych przyjmując kształt elipsoidy. W takim wypadku możemy zdefiniować trzy wykładniki Lapunowa mierzące deformacje elipsoidy w trzech wzajemnie prostopadłych kierunkach. Ilość wykładników Lapunowa jest więc zależna od wymiaru układu. Są one jednym z kryteriów chaotyczności ruchu. Jeżeli elipsoida w jednym kierunku rozciąga się, wielkość jej osi w tym kierunku rośnie i wykładnik Lapunowa jest dodatnie. W kierunkach, w których osie elipsoidy maleją, wykładniki Lapunowa są ujemne.
 
 .. figure:: images/phspace.png
    :align: center
@@ -264,7 +264,7 @@ W przypadku oscylatora Duffinga można otrzymać cząstkowe  informacje o wykła
       
       \dot y = F_2 = x - x^3 -\gamma y + A \cos z , \qquad y(0) = y_0,
       
-      z = F_3 = \omega, \qquad z(0) = 0.
+      \dot z = F_3 = \omega, \qquad z(0) = 0.
 
 
   Zbadajmy, jak zmienia się w czasie objętość fazowa układu.  W tym celu musimy obliczyć dywergencję pola wektorowego
@@ -312,10 +312,20 @@ W reżimie chaotycznym jeden z wykładników jest dodatni, np. :math:`\lambda_1 
 .. MATH::
     :label: eqn17
 
-    \lambda_1  >  \lambda_2  >  \lambda_3, \qquad   \lambda_1 > 0, \qquad \lambda_2  = 0, \qquad   \lambda_3 < 0,  \qquad M(t) =  M(0)  e^{(\lambda_1 + \lambda_2 + \lambda_3) t} = M(0) e^{-\gamma t}
+    \lambda_1  >  \lambda_2  >  \lambda_3, \qquad   \lambda_1 > 0, \qquad \lambda_2  = 0, \qquad   \lambda_3 < 0  
+    
+    M(t) =  M(0)  e^{(\lambda_1 + \lambda_2 + \lambda_3) t} = M(0) e^{-\gamma t}
 
 
-Zwracamy uwagę na to, że elipsoida  w 3-wymiarowej przestrzeni fazowej rozciąga się w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje.Tak to wygląda w reżimie chaotycznym. W reżimie nie-chaotycznym: elipsoida kurczy się  w jednym kierunku, kurczy się w drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Atraktory, które pokazywaliśmy poprzednio, istnieją w 3-wymiarowej przestrzeni fazowej, ale ponieważ objętość fazowa cały czas maleje, wymiar atraktorów musi być mniejszy od 3. W reżimie nie-chaotycznym, n-okresowe atraktory  (krzywe) mają wymiar 1. Atraktory w reżimie chaotycznym mają wymiar większy niż 1, ale mniejszy niż 3. Kaplana i  Yorke (1979) postawili  hipotezę, że  istnieje związek pomiędzy wymiarem fraktalnym atraktora :math:`D_A`  a wykładnikami Lapunowa. Relacja ta ma postać:
+Zwracamy uwagę na to, że elipsoida  w 3-wymiarowej przestrzeni fazowej rozciąga się w jednym kierunku, kurczy się w 
+drugim kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Tak to wygląda w 
+reżimie chaotycznym. W reżimie nie-chaotycznym: elipsoida kurczy się  w jednym kierunku, kurczy się w drugim 
+kierunku i nie zmienia się w trzecim kierunku  oraz objętość elipsoidy cały czas maleje. Atraktory, które 
+pokazywaliśmy poprzednio, istnieją w 3-wymiarowej przestrzeni fazowej, ale ponieważ objętość fazowa cały czas maleje, 
+wymiar atraktorów musi być mniejszy od 3. W reżimie nie-chaotycznym, n-okresowe atraktory  (krzywe) mają wymiar 1. 
+Atraktory w reżimie chaotycznym mają wymiar większy niż 1, ale mniejszy niż 3. Kaplana i  Yorke (1979) postawili  
+hipotezę, że  istnieje związek pomiędzy wymiarem fraktalnym atraktora :math:`D_A`  a wykładnikami Lapunowa. Relacja 
+ta ma postać:
 
 .. MATH::
     :label: eqn18
@@ -365,7 +375,7 @@ W praktyce obliczeń komputerowych nigdy nie wykonujemy dokładnej granicy :math
     P(\omega) = \lvert {\hat f}(\omega) \rvert^2
 
 
-Nazywa się ona widmem mocy sygnału czasowego :math:`f(t)`. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  :math:`\omega` jest częstością, która jest wielkością dodatnią, :math:`\omega > 0`.  W dalszym ciągu przyjmiemy to założenie o dodatniości "częstości". W ogólności, jej związek z mocą ( w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej :math:`C(t)`  procesu stochastycznego.
+Nazywa się ona widmem mocy sygnału czasowego :math:`f(t)`. W pewnych przypadkach, faktycznie jest to wielkość fizyczna mająca interpretację mocy, a liczba  :math:`\omega` jest częstością, która jest wielkością dodatnią, :math:`\omega > 0`.  W dalszym ciągu przyjmiemy to założenie o dodatniości "częstości". W ogólności, jej związek z mocą (w sensie fizycznym) jest luźny. To widmo mocy jest zdefiniowane inaczej niż w teorii stacjonarnych procesów stochastycznych: tam jest to transformacja Fouriera funkcji korelacyjnej :math:`C(t)`  procesu stochastycznego.
 
 Aby wyrobić sobie intuicję o własnościach transformaty Fouriera i widma mocy, wystarczy rozpatrzeć kilka  przypadków funkcji :math:`f(t)`.
 
@@ -391,7 +401,7 @@ Przypadek 2
 
   Transformatą Fouriera jest suma przesuniętych delt Diraca :math:`\delta`, czyli w widmie mocy pojawia się szereg  pików (które w praktyce są  zawsze skończone).
 
-Zauważmy, że dla tak zdefiniowanych  transformacji Fouriera nie istnieje widmo mocy, ponieważ w ścisłym sensie matematycznym nie istnieje :math:`\delta^2(\omega -\Omega)` dla delty Diraca. Jednak nie chodzi o precyzję matematyczną, ale o to że pojawia się pik, który nigdy nie jest nieskończony jak w delcie Diraca. My jednak potrzebujemy praktycznej metody sprawdzania chaotyczności procesu i zwykle sygnał próbujemy dla dyskretnych wartości czasu :math:`t`. Dlatego też należy wykorzystać aparat Dyskretnej Transformacji Fouriera, która  skończony ciągu sygnału
+Zauważmy, że dla tak zdefiniowanych  transformacji Fouriera nie istnieje widmo mocy, ponieważ w ścisłym sensie matematycznym nie istnieje :math:`\delta^2(\omega -\Omega)` dla delty Diraca. Jednak nie chodzi o precyzję matematyczną, ale o to że pojawia się pik, który nigdy nie jest nieskończony jak w delcie Diraca. My jednak potrzebujemy praktycznej metody sprawdzania chaotyczności procesu i zwykle sygnał próbujemy dla dyskretnych wartości czasu :math:`t`. Dlatego też należy wykorzystać aparat Dyskretnej Transformacji Fouriera, która  skończony ciąg sygnału
 
 .. MATH::
     :label: eqn25
@@ -516,10 +526,11 @@ Dla odpowiednio dużej liczby :math:`N` (w praktyce rzędu 100), zgodność pomi
 
     Podwojenie okresu - widmo mocy.
 
+
 Funkcja korelacyjna
 -------------------
 
-Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości średniej,  w takim sensie jak w teorii procesów stochastycznych lub na wykładach z fizyki statystycznej: uśrednianie po realizacjach lub po zespole statystycznym . Ale jeżeli proces deterministyczny jest ergodyczny (trudne pojęcie!), to średnia wartość jest dobrze określona i średnia po zespole  jest równoważna średniej po czasie.  Jeżeli dodatkowo  proces jest stacjonarny, to można zdefiniować funkcję korelacyjną :math:`C(\tau)`  dla procesu deterministycznego. W naszym przypadku: dla położenia lub prędkości, jest ona zdefiniowana przez relacje:
+Jeżeli badamy deterministyczny proces, nie zawsze jest sens mówić o wartości średniej,  w takim sensie jak w teorii procesów stochastycznych lub na wykładach z fizyki statystycznej: uśrednianie po realizacjach lub po zespole statystycznym. Ale jeżeli proces deterministyczny jest ergodyczny (trudne pojęcie!), to średnia wartość jest dobrze określona i średnia po zespole  jest równoważna średniej po czasie.  Jeżeli dodatkowo  proces jest stacjonarny, to można zdefiniować funkcję korelacyjną :math:`C(\tau)`  dla procesu deterministycznego. W naszym przypadku: dla położenia lub prędkości, jest ona zdefiniowana przez relacje:
 
 .. MATH::
     :label: eqn28

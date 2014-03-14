@@ -169,7 +169,7 @@ Równanie to jest proste i można je scałkować:
  Y(t) = Y(0) + (c-D) t + W(t)
 
 
-Od razy widać, że jest to proces gaussowski i łatwo wyznaczyć jego rozkład prawdopodobieństwa obliczając jego wartość średnią i wariancję. 
+Od razu widać, że jest to proces gaussowski i łatwo wyznaczyć jego rozkład prawdopodobieństwa obliczając jego wartość średnią i wariancję. 
 
 
 Równanie Stratonowicza a równanie Ito
@@ -212,7 +212,9 @@ Pytamy, jaki jest związek między tymi równaniami. Rozpatrzmy ostatni wyraz w 
  
  = G(X(t), t) dW(t) + \frac{1}{2} G'(X(t), t) G(X(t), t) 2D dt +\dots,
 
-gdzie rozwijaliśmy w szereg Taylora funkcję :math:`G(X+h, t)` dla :math:`h=dX(t)/2` oraz zatrzymaliśmy wyrazy co najwyżej rzędu :math:`dt`, Skorzystaliśmy z tego, że w sensie średniokwadratowym :math:`dW(t) dW(t) = 2D dt`. Jeżeli teraz wstawimy to wyrażenie do równania to otrzymamy równanie w sensie Ito w postaci 
+gdzie rozwijaliśmy w szereg Taylora funkcję :math:`G(X+h, t)` dla :math:`h=dX(t)/2` oraz zatrzymaliśmy wyrazy co 
+najwyżej rzędu :math:`dt`. Skorzystaliśmy z tego, że w sensie średniokwadratowym :math:`dW(t) dW(t) = 2D dt`. 
+Jeżeli teraz wstawimy to wyrażenie do równania, to otrzymamy równanie w sensie Ito w postaci 
 
 .. MATH::
  :label: eqn25
@@ -273,7 +275,7 @@ W tradycyjnym rachunku
 .. MATH::
  :label: eqn31
 
- \frac{dX}{X} = \ln X \equiv Y
+ \frac{dX}{X} = d \ln X \equiv dY
 
 
 Więc proces :math:`Y = Y(t)` spełnia równanie

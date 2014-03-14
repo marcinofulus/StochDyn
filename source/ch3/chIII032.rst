@@ -59,7 +59,7 @@ Jeżeli szum :math:`\Gamma(t)` w równaniu Langevina
  \dot X= F(X) + G(X) \Gamma(t), \quad \langle \Gamma(t)\rangle= 0, \qquad \langle \Gamma(t) \Gamma(s)\rangle= 2D \delta(t-s)
 
 
-jest białym szumem gaussowskim, to z poprzednich rozdziałów wiemy, że przy interpretacji Ito równanie ewolucji dla rozkładu prawdopodobieństwa :math:`P(x, t)` jest równaniem Fokkera-Plancka
+jest białym szumem gaussowskim, to z dla interpretacji Ito równanie ewolucji dla rozkładu prawdopodobieństwa :math:`P(x, t)` jest równaniem Fokkera-Plancka
 
 .. MATH::
  :label: eqn6
@@ -83,7 +83,7 @@ który nazywa się operatorem infinitezymalnym lub generatorem danego procesu. G
  L_1 P(x, t) = -\frac{\partial}{\partial x} F(x) P(x, t)
 
 
-zawiera funkcję :math:`F(x)` i opisuje część deterministyczną w równaniu Langevina. Jest to operator różniczkowanie pierwszego rzędu. Należy to zapamiętać! Druga część
+zawiera funkcję :math:`F(x)` i opisuje część deterministyczną w równaniu Langevina. Jest to operator różniczkowania pierwszego rzędu. Należy to zapamiętać! Druga część
 
 .. MATH::
  :label: eqn9
@@ -93,7 +93,7 @@ zawiera funkcję :math:`F(x)` i opisuje część deterministyczną w równaniu L
 
 zawiera funkcję :math:`G(x)` i opisuje część losową równania Langevina (lub Ito). Ta część opisuje proces dyfuzji. Tak więc dyfuzja jest opisywana operatorem różniczkowania drugiego rzędu.
 
-Jeżeli powyższe równanie Langevina jest w interpretacji Stratonowicza to równanie ewolucji dla rozkład prawdopodobieństwa :math:`P(x, t)` ma postać nieco inną postać, a mianowicie
+Jeżeli powyższe równanie Langevina jest w interpretacji Stratonowicza to równanie ewolucji dla rozkład prawdopodobieństwa :math:`P(x, t)` ma postać nieco inną, a mianowicie
 
 .. MATH::
  :label: eqn10
@@ -116,7 +116,11 @@ Niech teraz
  \dot X= F(X) + G(X) \xi(t)
 
 
-gdzie :math:`\xi(t)` jest gaussowskim szumem skorelowanym. W ogólnym przypadku nie znamy równania dla :math:`P(x, t)`. Ale jeżeli szum :math:`\xi(t)` jest zdefiniowany przez równanie typu równania Ito (Langevina) z pomocniczym białym szumem gaussowskim to można otrzymać równanie ewolucji w rozszerzonej przestrzeni fazowej. Co to znaczy? Podamy przykład. Niech szum :math:`\xi(t)` będzie eksponencjalnie skorelowanym szumem gaussowskim. Oznacza to, że :math:`\xi(t)` jest procesem Ornsteina-Uhlenbecka i generowany jest przez równanie
+gdzie :math:`\xi(t)` jest gaussowskim szumem skorelowanym. W ogólnym przypadku nie znamy równania dla :math:`P(x, t)`. 
+Ale jeżeli szum :math:`\xi(t)` jest zdefiniowany przez równanie typu równania Ito (Langevina) z pomocniczym białym 
+szumem gaussowskim to można otrzymać równanie ewolucji w rozszerzonej przestrzeni fazowej. Co to znaczy? Podamy 
+przykład. Niech szum :math:`\xi(t)` będzie eksponencjalnie skorelowanym szumem gaussowskim. Oznacza to, 
+że :math:`\xi(t)` jest procesem Ornsteina-Uhlenbecka i generowany jest przez równanie
 
 .. MATH::
  :label: eqn12
@@ -124,7 +128,8 @@ gdzie :math:`\xi(t)` jest gaussowskim szumem skorelowanym. W ogólnym przypadku 
  \dot \xi = -\frac{1}{\tau_c} \xi + \frac{1}{\tau_c} \Gamma(t)
 
 
-gdzie :math:`\Gamma` jest białym szumem gaussowskim jak powyżej. Równanie Fokkera-Plancka dla tego procesu ma postać:
+gdzie :math:`\Gamma` jest białym szumem gaussowskim jak powyżej. Równanie Fokkera-Plancka,
+opisujące dynamikę funkcji gęstości prawdopodobieństwa :math:`f(\xi,t)` dla tego procesu, ma postać:
 
 .. MATH::
  :label: eqn13
@@ -261,47 +266,6 @@ Rozważamy równanie stochastyczne Langevina z białym szumem gaussowskim :math:
 
  \dot X = F(X) + \Gamma (t) + \xi(t)
 
-
-Szum dychotomiczny ma 2 stany: 
-
-.. MATH::
- :label: eqn27
-
- \xi(t) = \{-a, b\}, \quad a, b > 0
-
-
-Przeskoki pomiędzy tymi dwoma stanami są dane przez prawdopodobieństwa przejścia w jednostce czasu
-
-.. MATH::
- :label: eqn28
-
- Pr(-a\rightarrow b)=\mu_a = 1/\tau_a, \qquad Pr(b\rightarrow -a)=\mu_b = 1/\tau_b, \qquad 
-
-
-gdzie :math:`\tau _a` and :math:`\tau _b` są średnimi czasami przebywania w stanach :math:`-a` oraz :math:`b`. Jeżeli założymy że
-
-.. MATH::
- :label: eqn29
-
- b \mu_a= a \mu_b \qquad 
-
-
-to proces jest stacjonarny o zerowej wartości średniej. Funkcja korelacyjna ma postać funkcji eksponencjalnej (podobnie jak dla szumu Ornsteina-Uhlenbecka) 
-
-.. MATH::
- :label: eqn30
-
- C(t) = a b \:\mbox{exp}\left(-\frac{|t|}{\tau_c} \right), \qquad 
-
-
-gdzie czas korelacji szumu :math:`\tau_c` dany jest prze formułę 
-
-.. MATH::
- :label: eqn31
-
- 1/\tau_c = \mu_a + \mu_b
-
-
 Proces :math:`X(t)` jest niemarkowowski ale 2-wymiarowy proces :math:`\{X(t), \xi(t)\}` jest procesem Markowa. Rozkłady prawdopodobieństwa
 
 .. MATH::
@@ -381,7 +345,9 @@ Jako :math:`\xi(t)` wybieramy proces kangura Kubo-Andersona, który to szum jest
 .. MATH::
  :label: eqn40
 
- {\frac{\partial P(x, \xi, t)}{\partial t}}= -{\frac \partial {\partial x}} [F(x)+\xi] P(x, \xi, t)+D{\frac{\partial ^2}{\partial x^2}} P(x,\xi, t) -\nu (\xi) P(x, \xi, t) + Q(\xi) \int_{-\infty}^{\infty} \nu (\eta) P(x, \eta, t) d\eta
+ {\frac{\partial P(x, \xi, t)}{\partial t}}= -{\frac \partial {\partial x}} [F(x)+\xi] P(x, \xi, t)+D{\frac{\partial ^2}{\partial x^2}} P(x,\xi, t) +
+ 
+ -\nu (\xi) P(x, \xi, t) + Q(\xi) \int_{-\infty}^{\infty} \nu (\eta) P(x, \eta, t) d\eta
 
 
 
@@ -406,16 +372,15 @@ gdzie strumień prawdopodobieństwa :math:`J(x, t)` dla procesu :math:`X(t)` ma 
 .. MATH::
  :label: eqn44
 
- J(x, t)= f(x){\cal P}(x, t) - D \frac{\partial {\cal P}(x,t)}{\partial x} +\int_{-\infty}^{\infty} \xi P(x, \xi,t) d\xi
+ J(x, t)= F(x){\cal P}(x, t) - D \frac{\partial {\cal P}(x,t)}{\partial x} +\int_{-\infty}^{\infty} \xi P(x, \xi,t) d\xi
 
 
 Szum kangura jest rzadko wykorzystywany do modelowania. A szkoda.
 
 
 
-Układy z szumem Levy'ego
+Układy z procesem Levy'ego
 ------------------------
-
 
 Rozpatrujemy równanie stochastyczne
 
@@ -451,14 +416,19 @@ gdzie symbol :math:`<f|g>` oznacza iloczyn skalarny dwóch funkcji :math:`f` ora
  <f|g> = \int_{-\infty}^{\; \infty} f(x) g(x) dx 
 
 
-Jeżeli skorzystamy z postaci :math:`L^\dagger` oraz iloczyny skalarnego, potrafimy obliczyć operator :math:`L`, który pozwala wyznaczyć równanie ewolucji dla :math:`P(x, t)` w postaci:
+Jeżeli skorzystamy z postaci :math:`L^\dagger` oraz iloczyny skalarnego, potrafimy obliczyć operator 
+:math:`L`, który pozwala wyznaczyć równanie ewolucji dla :math:`P(x, t)` w postaci:
 
 .. MATH::
  :label: eqn49
 
- {\partial P(x, t) \over \partial t} = L P(x, t) = -{\partial\over \partial x} F(x) P(x, t) + \frac{b}{2} {\partial^2 \over \partial x^2} P(x, t) + \int\limits_{- \infty}^{\infty}\nu(dy) \left[P(x-y, t)-P(x, t) + y I_{(-1,1)}(y) \frac{\partial}{\partial x} P(x,t\right] 
+ {\partial P(x, t) \over \partial t} = L P(x, t) = -{\partial\over \partial x} F(x) P(x, t) + \frac{b}{2} {\partial^2 \over \partial x^2} P(x, t) +
+ 
+ + \int\limits_{- \infty}^{\infty}\nu(dy) \left[P(x-y, t)-P(x, t) + y I_{(-1,1)}(y) \frac{\partial}{\partial x} P(x,t\right] 
 
 
-Postać tego równania sugeruje użycie metod numerycznych. Polecamy książkę Rama Cont, Peter Tankov, *Financial Modelling with Jump Processes* opublikowaną w 2004 r. przez wydawnictwo Chapman&Hall/CRC. Zawiera ona bogaty materiał na temat procesów Levy'ego oraz metody numeryczne do badania powyższych zagadnień.
+Postać tego równania sugeruje użycie metod numerycznych. Polecamy książkę Rama Cont, Peter Tankov, 
+*Financial Modelling with Jump Processes* opublikowaną w 2004 r. przez wydawnictwo Chapman&Hall/CRC. 
+Zawiera ona bogaty materiał na temat procesów Levy'ego oraz metody numeryczne do badania powyższych zagadnień.
 
 

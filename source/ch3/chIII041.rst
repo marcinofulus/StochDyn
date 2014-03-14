@@ -94,7 +94,12 @@ Jako standardowy model, rozważa się cząstkę o jednym stopniu swobody w poten
 
  H=\frac{p^2}{2m} + U(x) + \sum_k \left[\frac{p_k^2}{2m_k}+ \frac{m_k\omega_k^2}{2}\Big(q_k - \frac{\lambda_k}{m_k\omega_k^2} x\Big)^2\right].
 
-Przez :math:`m_k` oznaczamy masy oscylatorów, :math:`\omega_k` to częstości oscylatorów oraz parametry :math:`\lambda_k` to stałe oddziaływania układu z otoczeniem. Można spytać, dlaczego taka postać funkcji Hamiltona a nie inna. Ta postać jest "przyjazna", tzn. nie jest sprzeczna z prawami fizyki, jest łatwo rozwiązywalna i zawiera wszystkie istotne cechy. Jest też w pewnym stopniu modelem minimalnym, nie zaciemniającym istotę zagadnienia. Oddziaływanie jest ukryte w wyrazie mieszanym po wykonaniu potęgowania pod sumą:
+Przez :math:`m_k` oznaczamy masy oscylatorów, :math:`\omega_k` to częstości oscylatorów oraz parametry 
+:math:`\lambda_k` to stałe oddziaływania układu z otoczeniem. Można spytać, dlaczego taka postać funkcji 
+Hamiltona a nie inna. Ta postać jest "przyjazna", tzn. nie jest sprzeczna z prawami fizyki, jest łatwo 
+rozwiązywalna i zawiera wszystkie istotne cechy. Jest też w pewnym stopniu modelem minimalnym, nie 
+zaciemniającym istoty zagadnienia. Oddziaływanie jest ukryte w wyrazie mieszanym po wykonaniu potęgowania 
+pod sumą:
 
 .. MATH::
  :label: eqn9
@@ -134,7 +139,7 @@ Jest to równanie ruch dla oscylatora harmonicznego. Prawa strona tego równania
 z jaką układ :math:`S` działa na oscylatory termostatu. Jest to równanie liniowe
 różniczkowe 2-go rzędu niejednorodne. Można jest rozwiązać dla dowolnej prawej strony.
 Metoda rozwiązywania jest podana w paragrafie 7.3 ksiązki F. W. Byrona i R. W.
-Fullera "Matematyka w fizyce klasycznej i kwantowej"", tom2. Rozwiązanie to ma
+Fullera "Matematyka w fizyce klasycznej i kwantowej", tom2. Rozwiązanie to ma
 postać (patrz tam równanie (7.35b))
 
 .. MATH::
@@ -183,7 +188,7 @@ opisuje efekty dysypacji (tłumienia, tarcia) oraz
 .. MATH::
  :label: eqn19
 
- J(\omega)= \sum_k \frac{\lambda_k^2}{m_k\omega_k} \delta(\omega-\omega_k).
+ J(\omega)= \sum_k \frac{\lambda_k^2}{m_k\omega_k} \delta(\omega-\omega_k)
 
 
 nazywa się funkcją spektralną (lub gęstością spektralną) termostatu. Opisuje ona jednocześnie oddziaływanie i własności termostatu (ponieważ są tam stałe oddziaływanie :math:`\lambda_k` oraz rozkład częstości :math:`\omega_k` (czyli także energii) termostatu w zależności od :math:`k`).
@@ -201,10 +206,10 @@ Termostat składa się z ogromnej ilości cząstek (zwykle rzędu :math:`10^{23}
 .. MATH::
  :label: eqn21
 
- P(\{ x_k \}, \{ p_k\} = N_0 \exp [-H_T/k_BT]
+ P(\{ x_k \}, \{ p_k\}) = N_0 \exp [-H_T/k_BT]
 
 
-gdzie :math:`T` jest temperatura termostatu oraz :math:`k_B` jest stałą Boltzmanna oraz
+gdzie :math:`T` jest temperaturą termostatu oraz :math:`k_B` jest stałą Boltzmanna oraz
 
 .. MATH::
  :label: eqn22
@@ -262,7 +267,7 @@ i uogólnione równanie Langevina :eq:`eqn17` redukuje się do postaci równania
 .. MATH::
  :label: eqn27
 
- m\ddot x(t) + \gamma \dot x(t) + U'(x(t)= \xi(t)
+ m\ddot x(t) + \gamma \dot x(t) + U'\left( x(t) \right)= \xi(t)
 
 
 gdzie parametr :math:`\gamma` ma interpretację stałej tłumienia (współczynnika tarcia) oraz gaussowska siła losowa :math:`\xi(t)` spełnia relacje (patrz rów. :eq:`eqn24` powyżej):
@@ -278,7 +283,7 @@ czyli jest białym szumem gaussowskim. Równanie to jest równoważne równaniu
 .. MATH::
  :label: eqn29
 
- m\ddot x(t) + \gamma \dot x(t) + U'(x(t)= \sqrt{2\gamma k_BT}\;\Gamma(t)
+ m\ddot x(t) + \gamma \dot x(t) + U'(x(t))= \sqrt{2\gamma k_BT}\;\Gamma(t)
 
 
 gdzie tym razem szum :math:`\Gamma(t)` spełnia relacje
@@ -373,7 +378,7 @@ które można otrzymać z rów. :eq:`eqn33` zakładająć że :math:`m \ddot x(t
  \gamma \frac{\partial p(x, t)}{\partial t} = \frac{\partial}{\partial x} U'(x) p(x, t) + k_B T\frac{\partial^2}{\partial x^2} p(x, t)
 
 
-W literaturze fizycznej równanie to nazywa się równaniem Smoluchowskiego. W stanie stacjonarnym :math:`p(x) = \lim_{t\to \infty} px, t)` dlatego też :math:`p(x)` spełnia równanie
+W literaturze fizycznej równanie to nazywa się równaniem Smoluchowskiego. W stanie stacjonarnym :math:`p(x) = \lim_{t\to \infty} p(x, t)` dlatego też :math:`p(x)` spełnia równanie
 
 .. MATH::
  :label: eqn41
@@ -472,7 +477,9 @@ który jest częścią całkową w rów. :eq:`eqn47`. Wówczas rów. :eq:`eqn47`
  \dot \eta(t)= -\frac{1}{\tau_c} \eta(t) +\frac{1}{\tau_c} \sqrt{2\gamma k_BT} \;\widetilde\Gamma(t)
 
 
-Zamiast równania różniczkowo-całkowego :eq:`eqn47` otrzymujemy układ 4 równań różniczkowych. Niewątpliwie jest on łatwiejszy do analizy numerycznej. Uklad ten można zredukować do 3 równań wprowadzając nowy proces :math:`G(t)` określony przez relację
+Zamiast równania różniczkowo-całkowego :eq:`eqn47` otrzymujemy układ 4 równań różniczkowych. Niewątpliwie jest on 
+łatwiejszy do analizy numerycznej. Układ ten można zredukować do 3 równań wprowadzając nowy proces :math:`G(t)` 
+określony przez relację
 
 .. MATH::
  :label: eqn53

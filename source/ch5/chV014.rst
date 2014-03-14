@@ -67,9 +67,9 @@ wartościami (przyrostami).
   :align: center
 
   Proces dyfuzji dla kilku różnych wartości parametru D. Są to te same przebiegi co
-  w poprzednim wykresie. Kolory tu uzyte odpowiadają kolorom z wykresu poprzedniego.
+  w poprzednim wykresie. Kolory tu użyte odpowiadają kolorom z wykresu poprzedniego.
 
-Jako, że rozwiązanie równania dyfuzji znane jest od dawoen dawna, możemy potestować
+Jako, że rozwiązanie równania dyfuzji znane jest od dawien dawna, możemy potestować
 na ile dokładnie rozwiązujemy nasze równanie. Oczywiście jedyne co możemy określić, 
 to rozkład gęstości prawdopodobieństwa. Zakładając warunki początkowe
 
@@ -101,7 +101,7 @@ osiągniemy rzeczywisty czas równy 1.
   :align: center
 
   Proces dyfuzji po 100 krokach symulacji dla :math:`D=0.1`, :math:`h=0.01`, :math:`N=100`
-  a co za tym idzie :math:`t=Nh`.
+  a co za tym idzie rzeczywisty czas symulacji to :math:`t=Nh`.
 
 Zadanie 6.1.1
   Wykonaj w Sage powyższy rysunek. Metodę generowania histogramów znajdziesz w pierwszej
@@ -111,8 +111,7 @@ Zadanie 6.1.1
 Dyfuzja ze stałym dryftem
 -------------------------
 Proces taki otrzymuje się bezpośrednio jako graniczny przypadek niesymetrycznego błądzenia
-przypadkowego (polecam poczytać `ten podrozdział 
-<http://el.us.edu.pl/ekonofizyka/index.php/PIZL:Proces_Wienera_i_proces_dyfuzji#Przypadek_niesymetryczny:_dyfuzja_z_dryfem>`_).
+przypadkowego.
 Równanie opisujące ten proces ma postać zbliżoną do poprzedniego, bogatsze jest jednak
 o dodatkowy czynnik, zwany dryftem
 
@@ -121,7 +120,7 @@ o dodatkowy czynnik, zwany dryftem
    \frac{\partial P(x,t)}{\partial t} = -V\frac{\partial P(x,t)}{\partial x} + D\frac{\partial^2 P(x,t)}{\partial x^2}.
 
 Rozwiązaniem równania dyfuzji z dryfem, z takim samym warunkiem początkowym jak poprzednio 
-(wszystkie cząstki, bądź realizacje zaczynają z tego samego położenia :math:`x(0)=0`
+(wszystkie cząstki, bądź realizacje zaczynają z tego samego położenia :math:`x(0)=0`)
 jest następujaca funkcja
 
 .. math::
@@ -131,7 +130,7 @@ jest następujaca funkcja
 Jest to funkcja Gaussa opisujaca zmienne losowe normalne, a dwa pierwsze momenty wynoszą
 odpowiednio :math:`\xi(t) = Vt` oraz :math:`\sigma_{\xi}^2 = 2 D t`. Łatwo zauważyć, że
 zarówno średnia jak i wariancja zależne są liniowo od czasu. Ponadto wariancja jest 
-identyczna jak w procesie dyfuzji bez dryftu. Dryft ów stały można z punktu widzenia fizyki
+identyczna jak w procesie dyfuzji bez dryftu. Ów stały dryft można z punktu widzenia fizyki
 rozumieć jako stałą siłę przyłożoną do cząstki (coś na kształt cząstki umieszczonej na 
 równi pochyłej) - położenie cząstki rośnie liniowo z czasem (jak w ruchu jednostajnie
 prostoliniowym), ale fluktuacje rosną w czasie jak pierwiastek :math:`\sqrt{t}`.
@@ -181,6 +180,8 @@ przybliżeń dokładnych rozwiązań procesu dyfuzji z dryftem.
 |     +-------+------+---------+-----------+---------------+
 |     |std    |0.6324|0.6362   |0.003708   |0.5863         |
 +-----+-------+------+---------+-----------+---------------+
+
+.. .| 
 
 Jak widzimy błędy bezwzględne dochodzą do około pół punktu procentowego różnicy dla 10000 
 realizacji. Zwiekszenie próby spowoduje jeszcze lepsze dopasowanie, zmniejszenie spowoduje
@@ -247,13 +248,17 @@ wówczas
 gdzie :math:`Q=\tau ab` jest natężeniem procesu oraz :math:`\tau =1/(\mu_a+\mu_b)` jest
 czasem korelacji. Z powyższego wynika, że szum dychotomiczny jest
 charakteryzowany trzema parametrami: :math:`Q`, :math:`\tau` i :math:`\theta=b-a`. Ostatni mówi
-o symetrii procesu - gdy :math:`\theta` znika proces jest symetryczny, w przeciwnym
+o symetrii procesu - gdy :math:`\theta` znika, proces jest symetryczny, w przeciwnym
 wypadku jest asymetryczny.
 
 Realizacja szumu dychotomicznego
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Proces :math:`\xi(t)` oznacza, że cząstka losowo przeskakuje ze stanu :math:`-a` do :math:`b` i z powrotem, średnio spędzajęc odpowiednio :math:`1/\mu_a` czasu w stanie :math:`-a` i :math:`1/\mu_b` w stanie :math:`b`. Czas pobytu w obu stanach jest zmienną losową o rozkładzie eksponencjalnym i średniej :math:`1/\mu_k`, dla :math:`k=a` lub :math:`b`, zatem algorytm generujący trajektorie :math:`\xi(t)` polega na losowaniu liczb z rozkładem eksponencjalnym. Postępować należy więc w sposób nastepujący:
+Proces :math:`\xi(t)` oznacza, że cząstka losowo przeskakuje ze stanu :math:`-a` do :math:`b` i z 
+powrotem, średnio spędzajęc odpowiednio :math:`1/\mu_a` czasu w stanie :math:`-a` i :math:`1/\mu_b` 
+w stanie :math:`b`. Czas pobytu w obu stanach jest zmienną losową o rozkładzie eksponencjalnym i 
+średniej :math:`1/\mu_k`, dla :math:`k=a` lub :math:`b`, zatem algorytm generujący trajektorie 
+:math:`\xi(t)` polega na losowaniu liczb z rozkładem eksponencjalnym. Postępować należy więc w sposób nastepujący:
 
   * generujemy realizację procesu na jednostkę czasu
 
@@ -267,7 +272,7 @@ Gdy startujemy z wartości przykładowo :math:`-a`, bierzemy skok czasowy :math:
 
   P(\Delta t)=\exp(-\Delta t), \Delta t>0.
 
-Aby zapamietaæć całą realizację procesu :math:`\xi(t)` musimy tablicować liczby :math:`t_i` - skoki pomiedzy wartościami :math:`\{ a, b\}`, oraz wartość startową.
+Aby zapamietać całą realizację procesu :math:`\xi(t)` musimy tablicować liczby :math:`t_i` - skoki pomiedzy wartościami :math:`\{ a, b\}`, oraz wartość startową.
 
 .. only:: latex
 
@@ -456,7 +461,7 @@ Jak już pisaliśmy wcześniej, dystrybuanta rozkładu :eq:`eqn201` wynosi
 
 A jej odwrotność :math:`-\ln(1 - u)/\mu`, gdzie :math:`u` to liczba 
 losowa o rozkładzie :math:`U(0,1)`. Wygenerujemy ją posługując się
-podstawową funkcję ``random()``.
+podstawową funkcją SAGE ``random()``.
 
 
 .. only:: latex
@@ -523,7 +528,7 @@ Przepis, na wygenerowanie zmiennej losowej o rozkładzie :math:`\alpha`-stabilny
 jest następujący. Jeżeli :math:`\alpha \ne 1`, obliczamy
 
 .. math::
-  :label: eqn302
+  :label: eqn302a
 
   \varsigma = D_{\alpha,\beta,\sigma} \frac{\sin(\alpha(V+C_{\alpha,\beta})) }{ (\cos V)^{\frac{1}{\alpha}}}\left[\frac{\cos(V-\alpha(V+C_{\alpha,\beta}))}{W}\right]^{\frac{1-\alpha}{\alpha}},
 

@@ -3,7 +3,20 @@
 Istnienie i jednoznaczność rozwiązań
 ------------------------------------
 
-Do opisu  realnych zjawisk przy pomocy równań różniczkowych zwyczajnych z warunkami początkowymi zadanymi w chwili  czasu :math:`t=0`, potrzebne nam są rozwiązania dla czasów :math:`t>0` (ewolucja czasowa).  Można też rozpatrywać przypadek :math:`t<0` ale to zaliczyłbym do ćwiczeń matematycznych.  Ważnym zagadnieniem jest istnienie rozwiązań równań różniczkowych. Możemy zapytać, czy zawsze rozwiązania równań różniczkowych istnieją i jeżeli istnieją, to czy to są jedyne rozwiązania z warunkiem początkowym. Oczywiście dla różnych warunków początkowych układ może różnie ewoluować, ale gdy startuje  zawsze z tego samego  stanu (warunku) początkowego to czy ewolucja jest taka sama? Na tym polega problem jednoznaczności rozwiązań. Jeżeli dla danego warunku początkowego istnieją  np. 3 rozwiązania, to jak ewoluuje układ: istnieją 3 możliwości i którą możliwość wybiera układ? Gdyby tak było dla realnych układów to nie moglibyśmy przewidywać ewolucji układu, nie moglibyśmy sterować układami, brak byłoby determinizmu.  W rozwoju nauk ścisłych to właśnie determinizm stał się kołem napędowym rozwoju cywilizacyjnego ludzkości. To determinizm pozwala budować urządzenia, które działają tak jak my sobie tego życzymy: telewizor odbiera wybrany przeze mnie program, używam telefonu do komunikacji  z moją rodziną, wystrzelona rakieta ma taką trajektorię jaką zaplanowałem, itd.  Zbadamy 3 przykłady, które przybliżą nam powyższą problematykę. Źródło tych przykładów jest w  książce: J. Hale, H. Kocak, "Dynamics and Bifurcations". Książka jest znakomita.
+Do opisu  realnych zjawisk przy pomocy równań różniczkowych zwyczajnych z warunkami początkowymi zadanymi w chwili  
+czasu :math:`t=0`, potrzebne nam są rozwiązania dla czasów :math:`t>0` (ewolucja czasowa).  Można też rozpatrywać 
+przypadek :math:`t<0` ale to zaliczylibyśmy do ćwiczeń matematycznych.  Ważnym zagadnieniem jest istnienie rozwiązań 
+równań różniczkowych. Możemy zapytać, czy zawsze rozwiązania równań różniczkowych istnieją i jeżeli istnieją, to 
+czy to są jedyne rozwiązania z warunkiem początkowym. Oczywiście dla różnych warunków początkowych układ może różnie 
+ewoluować, ale gdy startuje  zawsze z tego samego  stanu (warunku) początkowego to czy ewolucja jest taka sama? 
+Na tym polega problem jednoznaczności rozwiązań. Jeżeli dla danego warunku początkowego istnieją  np. 3 rozwiązania, 
+to jak ewoluuje układ: istnieją 3 możliwości i którą możliwość wybiera układ? Gdyby tak było dla realnych układów 
+to nie moglibyśmy przewidywać ewolucji układu, nie moglibyśmy sterować układami, brak byłoby determinizmu.  
+W rozwoju nauk ścisłych to właśnie determinizm stał się kołem napędowym rozwoju cywilizacyjnego ludzkości. 
+To determinizm pozwala budować urządzenia, które działają tak jak my sobie tego życzymy: telewizor odbiera wybrany 
+przeze mnie program, używam telefonu do komunikacji  z moją rodziną, wystrzelona rakieta ma taką trajektorię jaką 
+zaplanowałem, itd.  Zbadamy 3 przykłady, które przybliżą nam powyższą problematykę. Źródło tych przykładów jest w  
+książce: J. Hale, H. Kocak, "Dynamics and Bifurcations". Książka jest znakomita.
 
 Przykład 1
 ~~~~~~~~~~
@@ -182,7 +195,7 @@ Warunek Lipschitza można zapisać w postaci
 .. MATH::
     :label: eqn9
 
-    |f(x+h) -f(x)| \le L h \quad \quad \mbox{lub jako} \quad \quad \frac{f(x+h) - f(x)}{h}| \le L
+    |f(x+h) -f(x)| \le L h \quad \quad \mbox{lub jako} \qquad \left| \frac{f(x+h) - f(x)}{h}\right| \le L
 
 Z tego wynika że jeżeli  :math:`f(x)` ma ograniczoną pochodną, to spełnia warunek Lipschitza. Są  oczywiście nieróżniczkowalne funkcje, które spełniają warunek Lipschitza.
 
@@ -205,7 +218,7 @@ W przypadku układu równań różniczkowych, warunek Lipschitza ma postać
     | F_i(x_1, x_2, x_3, ..., x_n) - F_i(y_1, y_2, y_3, ..., y_n) | \le L  \sum_{k=1}^n|x_k-y_k|
 
 Nierówność ta musi  być spełniona dla wszystkich funkcji :math:`F_i` i twierdzenie Picarda brzmi 
-podobnie. Warunek Lipschitza jest spełniony gdy pochodne cząstkowe są ograniczone,
+podobnie. Warunek Lipschitza jest spełniony, gdy pochodne cząstkowe są ograniczone,
 
 .. math::
    :label: eqn10b

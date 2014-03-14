@@ -31,7 +31,10 @@ Równanie Newtona jest równaniem 2-go rzędu, autonomicznym.   Zapiszemy je w p
     
     m\dot v = F(x) = -V'(x),  \qquad v(0)=v_0.
 
-Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa :math:`\{x, v\}`. W tej przestrzeni fazowej może analizować krzywe fazowe. Można zauważyć, że położenie :math:`x(t)` oraz prędkość :math:`v(t)` cząstki zmieniają się w czasie zgodnie z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji :math:`x(t)` oraz :math:`v(t)`, która nie zmienia się w czasie:
+Z tego wynika, że przestrzeń fazowa układu jest 2-wymiarowa :math:`\{x, v\}`. W tej przestrzeni fazowej może analizować 
+krzywe fazowe. Można zauważyć, że jeżeli położenie :math:`x(t)` oraz prędkość :math:`v(t)` cząstki zmieniają się w czasie zgodnie 
+z równaniem Newtona, to istnieje pewna funkcja (kombinacja) tych 2 funkcji :math:`x(t)` oraz :math:`v(t)`, 
+która nie zmienia się w czasie:
 
 .. MATH::
     :label: eqn4
@@ -44,7 +47,7 @@ Wielkość :math:`E` nazywa się  w fizyce całkowitą energią układu i skład
 .. MATH::
     :label: eqn5
 
-    \frac{dE}{dt} = \frac{d}{dt}  E[x(t), v(t)] = \frac{\partial E}{\partial x}  \frac{dx}{dt} + \frac{\partial E}{\partial v}  \frac{dv}{dt} =  V'(x)  \dot x +  mv \dot v = -F(x) v + v F(x)
+    \frac{dE}{dt} = \frac{d}{dt}  E[x(t), v(t)] = \frac{\partial E}{\partial x}  \frac{dx}{dt} + \frac{\partial E}{\partial v}  \frac{dv}{dt} =  V'(x)  \dot x +  mv \dot v = -F(x) v + v F(x) = 0
 
 
 gdzie skorzystaliśmy ze związku pomiędzy siłą i energią potencjalną oraz z równania Newtona.
@@ -108,7 +111,10 @@ o osiach :math:`a=2E/k` oraz :math:`b=2E/m`.
 
      Krzywa fazowa :eq:`eqn9` dla :math:`k=0.2, E=2, m=1`.
 
-Elipsa jest krzywą zamkniętą, więc ruch jest periodyczny. Można sobie wyobrażać, że ruch cząstki w potencjale :math:`V(x)` jest  podobny do  ruchu cząstki we wnętrzu połówki sfery (w czasze). Nie jest to prawdą, ale takie wyobrażenie wyrabia w nas intuicję o własnościach ruchu. Poniżej przedstawiamy krok po kroku co zrobić, aby narysować krzywe fazowe układu.
+Elipsa jest krzywą zamkniętą, więc ruch jest periodyczny. Można sobie wyobrażać, że ruch cząstki w potencjale 
+:math:`V(x)` jest  podobny do  ruchu cząstki we wnętrzu połówki sfery (w czasie). Nie jest to prawdą, ale 
+takie wyobrażenie wyrabia w nas intuicję o własnościach ruchu. Poniżej przedstawiamy krok po kroku co zrobić, 
+aby narysować krzywe fazowe układu.
 
 Rysujemy wykres przedstawiający potencjał :math:`V(x)`. Poniżej tego wykresu, z osią pionową ustawioną jak w wykresie dla potencjału, rysujemy 2 symetryczne krzywe zadane przez prawo zachowania energii :math:`\frac{1}{2}m v^2 + V(x) = E` czyli stąd wynika że :math:`v = \pm \sqrt{\frac{2}{m}[(E-V(x)]}`. Te dwie krzywe :math:`v=v(x, E)` są krzywymi fazowymi.
 Cząstka porusza się w prawo gdy prędkość jest dodatnia :math:`v>0` (zielona krzywa) i w lewo gdy prędkość jest ujemna :math:`v<0` (czerwona krzywa). Prędkość jest zero wówczas, gdy :math:`V(x) = E`. Wynika to z prawa zachowania energii (podstaw tam :math:`v=0`). Równanie :math:`V(x) = E` wyznacza punkty zwrotu :math:`x_i` : cząstka w tych punktach ma zerową prędkość i zmienia kierunek ruch (zawraca). 
@@ -219,7 +225,10 @@ Jeżeli siła będzie liniowa :math:`F=-kx` to dostaniemy wyżej opisane zagadni
 Układy potencjalne
 ------------------
 
-Układ o 1 stopniu swobody jest  potencjalny (tzn. istnieje potencjał :math:`V(x)`  pod warunkiem, że siła zależy tylko od położenia cząstki, tzn. :math:`F=F(x)`. Jeżeli siła zależy także od prędkości cząstki, tzn gdy :math:`F=F(x, v)`, nie istnieje potencjał :math:`V` taki aby :math:`F = -V' = - dV/dx`. Dla układów o wielu stopniach swobody, opisywanych układem równań Newtona
+Układ o 1 stopniu swobody jest  potencjalny (tzn. istnieje potencjał :math:`V(x)` pod warunkiem, że siła zależy tylko 
+od położenia cząstki, tzn. :math:`F=F(x)`. Jeżeli siła zależy także od prędkości cząstki, tzn. gdy :math:`F=F(x, v)`, 
+nie istnieje potencjał :math:`V` taki aby :math:`F = -V' = - dV/dx`. Dla układów o wielu stopniach swobody, 
+opisywanych układem równań Newtona
 
 .. MATH::
     :label: eqn11
@@ -227,7 +236,9 @@ Układ o 1 stopniu swobody jest  potencjalny (tzn. istnieje potencjał :math:`V(
     m_i \frac{d^2\vec r_i}{dt^2} = \vec F_i(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)
 
 
-dla :math:`N` cząstek, układ jest potencjalny, gdy istnieje taka funkcja skalarna :math:`V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)`, że siła działająca na :math:`i`-tą cząstkę jest gradientem potencjału ze znakiem minus. Prościej jest to wyjaśnić na przykładzie 1 cząstki poruszającej się w przestrzeni 3-wymiarowej:
+dla :math:`N` cząstek, układ jest potencjalny, gdy istnieje taka funkcja skalarna 
+:math:`V(\vec r_1,  \vec r_2, \vec r_3, ..., \vec r_N)`, że siła działająca na :math:`i`-tą cząstkę jest gradientem 
+potencjału ze znakiem minus. Prościej jest to wyjaśnić na przykładzie 1 cząstki poruszającej się w przestrzeni 3-wymiarowej:
 
 .. MATH::
     :label: eqn12
@@ -239,7 +250,9 @@ dla :math:`N` cząstek, układ jest potencjalny, gdy istnieje taka funkcja skala
     m\frac{d^2z}{dt^2} = F_3(x, y, z) = - \frac{\partial}{\partial x} V(x, y, z).
 
 
-W ogólnym przypadku, gdy mamy zadane 3 składowe siły :math:`F_1,  F_2` oraz :math:`F_3`, nie musi istniej tylko jedna funkcja :math:`V` taka aby powyższe równania były spełnione. Nasuwa się pytanie, czy istnieje proste kryterium mówiące, że układ jest potencjalny. Jeżeli
+W ogólnym przypadku, gdy mamy zadane 3 składowe siły :math:`F_1,  F_2` oraz :math:`F_3`, nie musi istnieć tylko jedna 
+funkcja :math:`V` taka aby powyższe równania były spełnione. Nasuwa się pytanie, czy istnieje proste kryterium mówiące, 
+że układ jest potencjalny. Jeżeli
 
 .. MATH::
     :label: eqn13
@@ -259,7 +272,7 @@ Wystarczy zatem sprawdzić, czy rotacja pola sił  :math:`\vec F`  jest 0.
 
  
 
-.. topic:: Zadanie
+.. topic:: Zadania
     
     Sprawdzić, czy  siły :math:`\vec F(x, y, z)` o zadanych składowych 
     :math:`F_i = F_i(x,y,z)` są potencjalne.
@@ -526,7 +539,7 @@ To, co jest w nawiasie kwadratowym  nazywa się dywergencją pola wektorowego :m
     =  \int \int \int_{D(t)} \; \mbox{ div} \vec F  dx_t dy_t dz_t 
 
 
-gdzie dokonaliśmy odwrotnego przejścia  ( z prawej strony na lewą stronę) jak  w równaniu :eq:`eqn25`.
+gdzie dokonaliśmy odwrotnego przejścia  (z prawej strony na lewą stronę) jak  w równaniu :eq:`eqn25`.
 
 Można teraz uogólnić ten wynik na dowolną ilość wymiarów przestrzeni fazowej  dla układu równań
 
@@ -581,9 +594,9 @@ Przykład 1: Oscylator harmoniczny tłumiony
 .. MATH::
     :label: eqn39
 
-    \dot x = y = F_1(x, y), \qquad x(0) = x_0,
+    \dot x = y = F_1(x, y), \qquad x(0) = x_0
     
-    \dot y = -\gamma y -\omega^2 x = F_2(x, y), \qquad y(0) = y_0.
+    \dot y = -\gamma y -\omega^2 x = F_2(x, y), \qquad y(0) = y_0, \gamma > 0
 
 
 Łatwo obliczyć dywergencję pola
@@ -594,7 +607,7 @@ Przykład 1: Oscylator harmoniczny tłumiony
     \mbox{ div} \vec F =  \frac{\partial F_1}{\partial x} + \frac{\partial F_2}{\partial y} = -\gamma <0
 
 
-Równanie :eq:`eqn37` przyjmuje postać
+Równanie :eq:`eqn38` przyjmuje postać
 
 .. MATH::
     :label: eqn41
@@ -611,11 +624,11 @@ Przykład 2: Model Lorenza
 .. MATH::
     :label: eqn42
 
-    \dot x = \sigma (y-x) = F_1(x, y,  z), \qquad x(0) = x_0,
+    \dot x = \sigma (y-x) = F_1(x, y, z), \qquad x(0) = x_0,
     
-    \dot y = x(\rho - z) -y = F_2(x, y,  z),  \qquad y(0) = y_0,
+    \dot y = x(\rho - z) -y = F_2(x, y, z),  \qquad y(0) = y_0,
     
-    \dot z = x y - \beta z = F_3(x, y,  z), , \qquad z(0) = z_0.
+    \dot z = x y - \beta z = F_3(x, y, z), \qquad z(0) = z_0.
 
 
 gdzie wszystkie parametry są dodatnie: :math:`\sigma, \rho, \beta > 0`. 

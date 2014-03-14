@@ -70,7 +70,7 @@ Sytuacja zrobi się jednak nieco bardziej skomplikowana, gdy będziemy potrzebow
 bilion takich liczb. Jeżeli nawet grupa 10 studentów była by w stanie wyrzucić monetą tysiąc 
 losowych zer i jedynek w pół godziny (włączając w to zapisywanie w liście Sage lub nawet na
 kartce papieru) to uzyskanie miliona liczb jest praktycznie nie do zrobienia w ten sposób. 
-problem pojawia się też w momencie, gdy chcielibyśmy mieć liczby naturalne z zakresu np: :math:`0-10`, 
+Problem pojawia się też w momencie, gdy chcielibyśmy mieć liczby naturalne z zakresu np: :math:`0-10`, 
 czy w końcu losowe liczby zmiennoprzecinkowe. Metody chałupnicze w tym momencie się kończą.
 
 Z pomocą może przyjść nam komputer. Obecnie 
@@ -365,18 +365,19 @@ W ogólności do wygenerowania listy N liczb losowych z przedziału [A,B) należ
 
   .. end of input  
 
+.. topic:: Zadania
 
-Zadanie 2.2.2
-  Zmodyfikuj definicję ``mylcg`` tak, aby funkcja zwracała liczby losowe z przedziału [0,1).
+  Zadanie D1
+    Zmodyfikuj definicję ``mylcg`` tak, aby funkcja zwracała liczby losowe z przedziału [0,1).
 
-Zadanie 2.2.3
-  LCG zdefiniowany tak jak powyżej produkuje stosunkowo dobre liczby losowe (prace naukowe
-  nad tym stosunkowo prostym generatorem trwają do dzisiaj, dowodzone są coraz to inne
-  okresy bazujące na wyborze różnych zestawów parametrów :math:`a,c,m`). Naszym zadaniem 
-  będzie natomiast zepsucie takiego generatora. Proszę znaleźć (numerycznie) 4 zestawy 
-  parametrów definiujących LCG takich, aby okres generatora był krótki. Wykreśl w Sage
-  4 rysunki LCG(N) (dla powiedzmy N=1000) dla owych parametrów. Powinieneś zauważyć 
-  regularność.
+  Zadanie D2
+    LCG zdefiniowany tak jak powyżej produkuje stosunkowo dobre liczby losowe (prace naukowe
+    nad tym stosunkowo prostym generatorem trwają do dzisiaj, dowodzone są coraz to inne
+    okresy bazujące na wyborze różnych zestawów parametrów :math:`a,c,m`). Naszym zadaniem 
+    będzie natomiast zepsucie takiego generatora. Proszę znaleźć (numerycznie) 4 zestawy 
+    parametrów definiujących LCG takich, aby okres generatora był krótki. Wykreśl w Sage
+    4 rysunki LCG(N) (dla powiedzmy N=1000) dla owych parametrów. Powinieneś zauważyć 
+    regularność.
 
 Generowanie liczb losowych o zadanym rozkładzie
 -----------------------------------------------
@@ -738,13 +739,15 @@ generuje liczby z odpowiednim rozkładem.
   Wykres gęstości rozkładu logistycznego oraz histogram z 200000 prób liczb losowych.
 
 
-Zadanie 2.3.1
-  Wygeneruj 200000 liczb losowych z rozkładem Pareto. Narysuj ich unormowany histogram oraz funkcję gęstości. 
-  Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
+.. topic:: Zadania
 
-Zadanie 2.3.2.
-  Wygeneruj 1000 liczb losowych z rozkładem trójkątnym. Narysuj ich unormowany histogram oraz funkcję gęstości. 
-  Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
+  Zadanie D3
+    Wygeneruj 200000 liczb losowych z rozkładem Pareto. Narysuj ich unormowany histogram oraz funkcję gęstości. 
+    Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
+
+  Zadanie D4
+    Wygeneruj 1000 liczb losowych z rozkładem trójkątnym. Narysuj ich unormowany histogram oraz funkcję gęstości. 
+    Porównaj obie funkcje zmieniając wszystkie parametry rozkładu.
 
 
 

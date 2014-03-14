@@ -16,7 +16,8 @@ Może istnieć kilka stanów stacjonarnych, a nawet nieskończenie wiele stanów
     \frac{d\vec x}{dt} = \vec F(\vec x), \qquad \vec x(0)  = \vec x_0
 
 
-z warunkiem początkowym :math:`\vec x(0) = \vec x_s`. Jeżeli  :math:`\vec x(t) = \vec x_s` jest rozwiązaniem stacjonarnym to musi spełniać układ :eq:`eqn2`., czyli
+z warunkiem początkowym :math:`\vec x(0) = \vec x_s`. Jeżeli  :math:`\vec x(t) = \vec x_s` jest rozwiązaniem 
+stacjonarnym to musi spełniać układ :eq:`eqn2`, czyli
 
 .. MATH::
     :label: eqn3
@@ -32,7 +33,7 @@ Innymi słowy, stan stacjonarny wyznaczany jest z warunku:
     \vec F(\vec x_s)) = 0
 
 
-Powyższy warunek to układ :math:`n`-równań algebraicznych. Zwykle udaje  nam się go rozwiązać analitycznie w niewielu przypadkach,  w szczególności gdy wymiar przestrzeni fazowej  :math:`n >1`.  Natomiast możemy taki układ rozwiązywać numerycznie. Jeżeli już wyznaczymy stan stacjonarny, to nasuwa się pytanie na ile jest on stabilny, tzn. gdy nieco wytrącimy układ z tego stanu to czy powróci on do poprzedniego stanu stacjonarnego czy też oddali się od niego.  Na przykład stanem stacjonarnym kulki poruszającej się na nitce w polu ziemskim jest położenie pionowe. Gdy kulkę wychylimy z tego położenia, po dostatecznie długim czasie powróci ona do pozycji pionowej i tak tam pozostanie nieruchoma. Jest to stabilny stan równowagi. Rozważmy teraz kulkę mogącą poruszać się tylko po sferze. Gdy umieścimy kulkę na  biegunie północnym sfery w polu ziemskim to nieskończenie małe zaburzenie spowoduje, że kulka spadnie z tego położenie i nigdy do niego nie powróci. W obu tych przypadkach zakładamy  rzeczywiste warunki ruchu z tarciem. Pominięcie tarcia spowoduje radykalnie różne zachowanie. Te dwa przykłady pozwalają nabyć intuicję, co to znaczy że stan stacjonarny jest stabilny lub jest niestabilny.  Z grubsza można powiedzieć, że stan stacjonarny  :math:`\vec x_s` jest stabilny jeśli każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` pozostaje blisko :math:`\vec x_s` wraz z upływem czasu. Natomiast  :math:`\vec x_s` jest niestabilny gdy  każda każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` oddala się od tego punktu gdy :math:`t\to \infty`.  Można podać bardziej precyzyjne definicje.
+Powyższy warunek to układ :math:`n`-równań algebraicznych. Zwykle udaje  nam się go rozwiązać analitycznie w niewielu przypadkach,  w szczególności gdy wymiar przestrzeni fazowej  :math:`n >1`.  Natomiast możemy taki układ rozwiązywać numerycznie. Jeżeli już wyznaczymy stan stacjonarny, to nasuwa się pytanie na ile jest on stabilny, tzn. gdy nieco wytrącimy układ z tego stanu to czy powróci on do poprzedniego stanu stacjonarnego czy też oddali się od niego.  Na przykład stanem stacjonarnym kulki poruszającej się na nitce w polu ziemskim jest położenie pionowe. Gdy kulkę wychylimy z tego położenia, po dostatecznie długim czasie powróci ona do pozycji pionowej i tak tam pozostanie nieruchoma. Jest to stabilny stan równowagi. Rozważmy teraz kulkę mogącą poruszać się tylko po sferze. Gdy umieścimy kulkę na  biegunie północnym sfery w polu ziemskim to nieskończenie małe zaburzenie spowoduje, że kulka spadnie z tego położenie i nigdy do niego nie powróci. W obu tych przypadkach zakładamy  rzeczywiste warunki ruchu z tarciem. Pominięcie tarcia spowoduje radykalnie różne zachowanie. Te dwa przykłady pozwalają nabyć intuicję, co to znaczy że stan stacjonarny jest stabilny lub jest niestabilny.  Z grubsza można powiedzieć, że stan stacjonarny  :math:`\vec x_s` jest stabilny jeśli każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` pozostaje blisko :math:`\vec x_s` wraz z upływem czasu. Natomiast  :math:`\vec x_s` jest niestabilny gdy każda trajektoria startującego z punktu bliskiego :math:`\vec x_s` oddala się od tego punktu gdy :math:`t\to \infty`.  Można podać bardziej precyzyjne definicje.
 
 **Definicja**
   Mówimy, że stan stacjonarny  :math:`\vec x_s` jest stabilny jeżeli  dla dowolnego :math:`\epsilon >0` istnieje 
@@ -230,7 +231,7 @@ gdzie funkcja
     V(x) = -\int f(x)  dx 
 
 
-nazywana jest "potencjałem".  W ogólności to nie jest potencjał fizyczny który pojawia się w równaniu Newtona  dla cząstki z tłumieniem:
+nazywana jest "potencjałem".  W ogólności nie jest to potencjał fizyczny, który pojawia się w równaniu Newtona  dla cząstki z tłumieniem:
 
 .. MATH::
     :label: eqn20
@@ -259,7 +260,7 @@ Stąd też "historycznie" wywodzi się nazwa potencjał dla abstrakcyjnego ukła
 .. MATH::
     :label: eqn23
 
-     \dot x = f(x) =  = -V'(x)
+     \dot x = f(x) = -V'(x)
 
 
 Stan stacjonarny :math:`x_s` określony równaniem
@@ -358,9 +359,9 @@ Z powyższego przykładu zauważmy następujące cechy:
 
 2. Krzywe :math:`x(t)`  są funkcjami monotonicznymi: albo cały czas rosną w czasie, albo cały czas maleją gdy czas rośnie. Dlaczego? Rozważmy  2 przykłady warunków początkowych widocznych na rysunku:
 
-  (a)  gdy :math:`x(0) = 4` to :math:`\dot x (x=4) = 4\cdot 4 -4^3 = -48 < 0`.   Pochodna jest ujemna, a to oznacza że funkcja maleje. Podobnie jest dla wszystkich warunków początkowych :math:`x(0) > 2`
+  * gdy :math:`x(0) = 4` to :math:`\dot x (x=4) = 4\cdot 4 -4^3 = -48 < 0`.   Pochodna jest ujemna, a to oznacza że funkcja maleje. Podobnie jest dla wszystkich warunków początkowych :math:`x(0) > 2`
 
-  (b) gdy :math:`x(0) = 0.2` to :math:`\dot x (x=0.2) = 4\cdot 0.2 -(0.2)^3 > 0`.  Pochodna jest dodatnia, a to oznacza że funkcja rośnie. Podobnie jest dla wszystkich warunków początkowych :math:`x(0)  \in (0, 2)`
+  * gdy :math:`x(0) = 0.2` to :math:`\dot x (x=0.2) = 4\cdot 0.2 -(0.2)^3 > 0`.  Pochodna jest dodatnia, a to oznacza że funkcja rośnie. Podobnie jest dla wszystkich warunków początkowych :math:`x(0)  \in (0, 2)`
 
 3. Różne krzywe :math:`x(t)` nigdy się nie przecinają. Wynika to z tego, że rozwiązania są jedyne i jednoznaczne. Jeżeli by się przecinały,  to z punktu przecięcia wychodziłoby kilka rozwiązań. A to jest niemożliwe na mocy twierdzenia o jednoznaczności rozwiązań.
 
@@ -413,7 +414,7 @@ Charakteryzują one odchylenie od stanu stacjonarnego, które są małe gdy stan
 
      \dot Y(t)= \dot y(t) - \dot y_s  = \dot y(t) =
      
-     =  g(x(t), y(t)) =g(x_s +X(t), y_s + Y(t))  = gf(x_s, y_s) + \frac{\partial g}{\partial x}  X + \frac{\partial g}{\partial y} Y + ...
+     =  g(x(t), y(t)) =g(x_s +X(t), y_s + Y(t))  = g(x_s, y_s) + \frac{\partial g}{\partial x}  X + \frac{\partial g}{\partial y} Y + ...
 
 
 Wszystkie pochodne cząstkowe są obliczane w punkcie :math:`(x_s, y_s)`. Ponieważ w punkcie stacjonarnym :math:`f(x_s, y_s)=g(x_s, y_s)=0` otrzymujemy zlinearyzowane równania różniczkowe w postaci
@@ -461,7 +462,7 @@ Wstawiamy te relacje do  układu równań zlinearyzowanych:
 .. MATH::
     :label: eqn36
 
-    \lambda A = a_{11} A +  a_{12} B
+    \lambda X = a_{11} A +  a_{12} B
 
 
 .. MATH::

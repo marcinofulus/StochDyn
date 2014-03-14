@@ -339,7 +339,7 @@ Niech cząstka Browna o masie :math:`m` porusza się w płynie. Można zbudować
  m\ddot x + \gamma \dot x = \Gamma(t) \quad \mbox{czyli} \quad m \dot v + \gamma v = \Gamma(t) \quad \mbox{gdzie } \quad v=\dot x 
 
 
-Jest to równanie Langevina, gdzie szum :math:`\gamma(t)` to losowa siła działająca na cząstkę i mająca swe źródło w zderzeniach cząstek płynu z cząstką Browna. Równanie Langevina dla prędkości cząstki Browna ma taką samą postać jak równanie generujące proces Ornsteina-Uhlenbecka: 
+Jest to równanie Langevina, gdzie szum :math:`\Gamma(t)` to losowa siła działająca na cząstkę i mająca swe źródło w zderzeniach cząstek płynu z cząstką Browna. Równanie Langevina dla prędkości cząstki Browna ma taką samą postać jak równanie generujące proces Ornsteina-Uhlenbecka: 
 
 .. MATH::
  :label: eqn26
@@ -347,7 +347,7 @@ Jest to równanie Langevina, gdzie szum :math:`\gamma(t)` to losowa siła dział
  \dot v = -(\gamma/m) v + \Gamma(t)/m = - \gamma_0 v + \gamma_0 \Gamma_0(t)
 
 
-gdzie przeskalowane wielkości maja postać
+gdzie przeskalowane wielkości mają postać
 
 .. MATH::
  :label: eqn27

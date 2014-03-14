@@ -5,7 +5,21 @@ Determinizm jest terminem wieloznacznym.  W odniesieniu do nauk przyrodniczych m
 
 Każde zjawisko jest wyznaczone przez swoje przyczyny i całokształt warunków.
 Każde zjawisko podlega prawidłowościom przyrody, które wyrażane są w postaci odpowiednich praw nauki.
-Jeżeli dysponujemy odpowiednią wiedzą (o przyczynach,  prawidłowościach), to można (przynajmniej w zasadzie) przewidywać przyszły bieg zdarzeń.  Poznawcze znaczenie zasady przyczynowości  sprowadza się do możliwości przewidywania. Determinizm i indeterminizm  występują już w starożytnej filozofii przyrody. Demokryt twierdził, że nie ma w świecie zdarzeń przypadkowych, lecz „wszystko dzieje się wskutek konieczności". Determinizm  łączono z poglądem, że prawa przyrody mają charakter jednoznaczny. Okazało się jednak że wiele zjawisk podlega jedynie prawom statystycznym. Pogląd, że pewne zjawiska przyrody nie podlegają prawom jednoznacznym, ale jedynie statystycznym to indeterminizm .  Doniosła rola praw statystycznych w fizyce współczesnej wymaga rozszerzenia formuły determinizmu: każde zdarzenie podlega prawom przyrody jednoznacznym (determinizm jednoznaczny, mocny) bądź statystycznym (determinizm probabilistyczny, umiarkowany). Wówczas indeterminizm (umiarkowany) mieści się w ramach determinizmu  w szerszym ujęciu. Wydawało się, że w mechanice, stworzonej przez Galileusza i Newtona, znając położenie i prędkość (lub położenie i pęd) ciała materialnego można przewidzieć cały przyszły ruch tego ciała (a więc podać położenie i pęd w każdej chwili późniejszej), a także ustalić, jaki był ruch tego ciała w przeszłości. Wszystko to jest słuszne  przy założeniu, że znane są  wszystkie siły działające na ciało w przeszłości i w przyszłości. Wynikało to z twierdzeń matematycznych o jednoznaczności rozwiązań równań różniczkowych, a takimi są równania Newtona. 
+Jeżeli dysponujemy odpowiednią wiedzą (o przyczynach,  prawidłowościach), to można (przynajmniej w zasadzie) 
+przewidywać przyszły bieg zdarzeń.  Poznawcze znaczenie zasady przyczynowości  sprowadza się do możliwości 
+przewidywania. Determinizm i indeterminizm  występują już w starożytnej filozofii przyrody. Demokryt twierdził, 
+że nie ma w świecie zdarzeń przypadkowych, lecz „wszystko dzieje się wskutek konieczności". Determinizm  
+łączono z poglądem, że prawa przyrody mają charakter jednoznaczny. Okazało się jednak że wiele zjawisk podlega 
+jedynie prawom statystycznym. Pogląd, że pewne zjawiska przyrody nie podlegają prawom jednoznacznym, ale 
+jedynie statystycznym to indeterminizm.  Doniosła rola praw statystycznych w fizyce współczesnej wymaga 
+rozszerzenia formuły determinizmu: każde zdarzenie podlega prawom przyrody jednoznacznym (determinizm jednoznaczny, 
+mocny) bądź statystycznym (determinizm probabilistyczny, umiarkowany). Wówczas indeterminizm (umiarkowany) mieści 
+się w ramach determinizmu  w szerszym ujęciu. Wydawało się, że w mechanice, stworzonej przez Galileusza i Newtona, 
+znając położenie i prędkość (lub położenie i pęd) ciała materialnego można przewidzieć cały przyszły ruch tego 
+ciała (a więc podać położenie i pęd w każdej chwili późniejszej), a także ustalić, jaki był ruch tego ciała w 
+przeszłości. Wszystko to jest słuszne  przy założeniu, że znane są  wszystkie siły działające na ciało w przeszłości 
+i w przyszłości. Wynikało to z twierdzeń matematycznych o jednoznaczności rozwiązań równań różniczkowych, a 
+takimi są równania Newtona. 
 
 Jednakże historia pokazała, że  w fizyce klasycznej są znane teorie statystyczne, niedeterministyczne.  Rozważmy dla przykładu  gaz zamknięty w jakimś naczyniu. Wiemy, że w warunkach równowagi termodynamicznej dwie równe co do objętości części tego naczynia będą zawierać jednakową liczbę cząsteczek gazu. Nie wiemy jednak, które cząsteczki znajdą się w której z dwu połówek naczynia. Sytuacja pozornie przypomina prawo rozpadu: można podać taki czas, w którym rozpadnie się połowa atomów, i w ten sposób podzielić wszystkie atomy na dwie równe części - te, które się w tym czasie rozpadną, i te, które się nie rozpadną, podobnie jak podzieliliśmy cząsteczki gazu według kryterium, w której połowie naczynia się znajdują. W klasycznej fizyce statystycznej znamy prawa rządzące zachowaniem pojedynczych cząsteczek (są nimi z założenia prawa mechaniki newtonowskiej), a nasza niewiedza co do tego zachowania jest spowodowana po pierwsze niemożliwością śledzenia ruchu wielu miliardów obiektów, a po drugie, brakiem potrzeby, aby to czynić: wystarczy nam znać właśnie tylko pewne wielkości średnie, które ujawniają się fenomenologicznie, na przykład jako temperatura gazu, czy też jego ciśnienie. Tak więc rzeczywisty kompletny opis stanu gazu musiałby zawierać informację dotyczącą :math:`N` wektorów położenia i :math:`N` wektorów pędu (:math:`N` - liczba cząsteczek gazu), co jest liczbą ogromną, podczas gdy opis statystyczny ogranicza się do kilku potrzebnych liczb. Opis statystyczny odnosi się do ogromnej liczby cząstek i jest to opis oparty o teorię prawdopodobieństwa i teorię procesów stochastycznych. Z definicji jest to opis niedeterministyczny. Ale jak powiedzieliśmy, opis jednej cząstki jest w pełni deterministyczny. Twierdzenia o jednoznaczności rozwiązań równań różniczkowych dawały nadzieję na totalny determinizm i przewidywalność ruchu pojedynczych cząstek. Nadzieja ta z praktycznego punktu widzenia okazała się mrzonką.  W latach 50-tych XX wieku pokazano, że z praktycznego punktu widzenia determinizm mechaniki Newtona jest złudny i ugruntowana wiara w przewidywalność zachowania się prostych układów  mechanicznych  załamała się. Pojawiły się liczne przykłady, a później teoria matematyczna, pokazujące  niemożliwość przewidywania czasowej ewolucji prostych układów mechanicznych. Podkreślamy, że chodzi tu o praktyczne aspekty przewidywalności. Z matematycznego punktu widzenia, przewidywalność jest ciągle słuszna.  Dobitnym przykładem nieprzewidywalności w praktyce jest prognoza pogody, co udowadnia codzienne życie. Poniżej przedstawimy zagadnienia, które ukażą nam, co oznacza nieprzewidywalność w teorii deterministycznej. Pokażemy, dlaczego ewolucja określona przez determinizm równań Newtona jest nieprzewidywalna. Ta deterministyczna nieprzewidywalność ma swoją nazwę: deterministyczny chaos. 
 
@@ -25,10 +39,15 @@ Aby dobrze zrozumieć istotę chaotycznego zachowania się układów dynamicznyc
 
 Model ten wydaje się być banalnie prosty.
 
-jest to ruch cząstki w polu siły :math:`F(x) = ax-bx^3  (a, b > 0)`
-jest to ruch tłumiony tarciem :math:`F(v) = - \gamma v = -\gamma \dot x` oraz 
-na cząstkę działa siła periodyczna w czasie :math:`F(t) = A\cos(\Omega t)`. 
-Zauważmy, że średnia wartość siły :math:`F(t)` na jednym okresie wynosi  zero, czyli średnio działa zerowa siła! Siła :math:`F(x) = x-x^3` to jest siła potencjalna. Dlatego warto wykreślić potencjał :math:`V(x)`  odpowiadający tej sile:
+  * jest to ruch cząstki w polu siły :math:`F(x) = ax-bx^3  (a, b > 0)`,
+
+  * jest to ruch tłumiony tarciem :math:`F(\dot x) = F(v) = - \gamma v = -\gamma \dot x` oraz 
+
+  * na cząstkę działa siła periodyczna w czasie :math:`F(t) = A\cos(\Omega t)`. 
+
+
+Zauważmy, że średnia wartość siły :math:`F(t)` na jednym okresie wynosi  zero, czyli średnio działa zerowa siła! 
+Siła :math:`F(x) = ax-bx^3` to jest siła potencjalna. Dlatego warto wykreślić potencjał :math:`V(x)`  odpowiadający tej sile:
 
 .. MATH::
     :label: eqn2
@@ -60,10 +79,11 @@ Powyższe równanie Newtona  ma kilka realizacji.
 
 .. only:: latex
 
+  Wizualizacja potencjału w SAGE to jedna prosta komenda.
+
   .. code-block:: python
 
-    V = x^4/4 - x^2/2
-    plot(V,(x,-1.6,1.6)) 
+    plot(x^4/4 - x^2/2,(x,-1.6,1.6)) 
 
 
   .. figure:: images/sage_chII011_01.*
@@ -119,7 +139,8 @@ Obecnie występują 3 przeskalowane parametry:
 
      \gamma_0  = \frac{\tau_0^2}{m L} \gamma, \qquad A_0 = \frac{\tau_0^2}{m L} A, \qquad \omega_0 = \tau_0 \Omega
 
-Zauważmy, że :math:`\tau_L` ma wymiar czasu i jest czasem charakterystycznym, który nazywa się czasem Langevina. Aby go zinterpretować, należy zbadać równanie cząstki swobodnej:
+Zauważmy, że :math:`m/\gamma` ma wymiar czasu i jest czasem charakterystycznym, który nazywa się czasem Langevina 
+:math:`\tau_L`. Aby go zinterpretować, należy zbadać równanie cząstki swobodnej:
 
 .. MATH::
  :label: eqn6a
@@ -143,7 +164,7 @@ Dlatego wygodnie będzie używać "starych" oznaczeń: Będziemy analizowali ró
 .. MATH::
     :label: eqn7
 
-    \ddot x = x - x^3 - \gamma \dot x + A \cos(\omega_0 t ), \qquad x(0) = x_0, \quad  \dot x(0) = \dot y_0 = v_0
+    \ddot x = x - x^3 - \gamma \dot x + A \cos(\omega_0 t ), \qquad x(0) = x_0, \quad  \dot x(0) = \dot x_0 = v_0
 
 
 gdzie przeskalowany potencjał
@@ -161,7 +182,8 @@ Krok 1. Układ zachowawczy
 
 .. index:: oscylator Duffinga; układ zachowawczy
 
-W pierwszym  kroku rozpatrujemy najprostszy przypadek (pamiętajmy o przeskalowanej postaci, w której masa cząstki :math:`m=1`)):
+W pierwszym  kroku rozpatrujemy najprostszy przypadek (pamiętajmy o przeskalowanej postaci, w której 
+masa cząstki :math:`m=1`):
 
 .. MATH::
     :label: eqn8
@@ -702,8 +724,8 @@ Przyjrzyjmy się teraz dwóm trajektoriom startującym z bliskich warunków pocz
 
        W lewej kolumnie zaprezentowano krzywe fazowe. 
        W prawej kolumnie widać trajektorie.
-       Górny rząd dopowiada ewolucji początkowej a dolny 
-       asymptotycznej układu Duffinga pracującego 
+       Górny rząd odpowiada ewolucji początkowej a dolny 
+       asymptotycznej układu Duffinga 
        o okresowości 1.
 
 .. only:: html
@@ -764,9 +786,22 @@ Przyjrzyjmy się teraz dwóm trajektoriom startującym z bliskich warunków pocz
 
   .. end of input
 
-Na dwóch górnych diagramach przedstawioną reżim krótkich czasów. Ponieważ 2 warunki początkowe nieco się różnią, więc początkowa ewolucja nieco się różni. Kolor czerwony i zielony jest rozróżnialny na prawym górnym rysunku pokazującym ewolucję :math:`x(t)` dla krótkich czasów.  Jeżeli przyjrzymy się reżimowy długich czasów (dwa dolne diagramy) to zauważymy duże podobieństwo w ewolucji: krzywe fazowe są zamknięte więc jest to prosty ruch periodyczny, przypominający nieco zdeformowaną funkcję typu :math:`\sin(\alpha t)` czy też :math:`\cos(\alpha t)`. Jest to funkcja okresowa z charakterystycznym jednym jedynym  okresem :math:`T`. Dlatego mówimy, że jest ruch periodyczny o okresie 1. Dwie krzywe :math:`x(t)` na dolnym prawym rysunku nie są rozróżnialne. 
+Na dwóch górnych diagramach przedstawioną reżim krótkich czasów. Ponieważ 2 warunki początkowe nieco się różnią, 
+więc początkowa ewolucja nieco się różni. Kolor czerwony i zielony jest rozróżnialny na prawym górnym rysunku 
+pokazującym ewolucję :math:`x(t)` dla krótkich czasów.  Jeżeli przyjrzymy się reżimowi długich czasów 
+(dwa dolne diagramy) to zauważymy duże podobieństwo w ewolucji: krzywe fazowe są zamknięte więc jest to 
+prosty ruch periodyczny, przypominający nieco zdeformowaną funkcję typu :math:`\sin(\alpha t)` czy też 
+:math:`\cos(\alpha t)`. Jest to funkcja okresowa z charakterystycznym jednym jedynym  okresem :math:`T`. Dlatego 
+mówimy, że jest to ruch periodyczny o okresie 1. Dwie krzywe :math:`x(t)` na dolnym prawym rysunku nie są rozróżnialne. 
 
-Można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że trajektorie dążą do tego samego okresowego rozwiązania, są przyciągane do tego okresowego rozwiązania. Innymi słowy, ta krzywa fazowa o okresie 1  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 1 lub 1-okresowym  atraktorem. Można by postawić pytanie: jak wygląda basen przyciągania dla tego atraktora. Aby dać odpowiedź na to pytanie należy zbadać numerycznie np. kwadrat warunków początkowych  :math:`(x_0, y_0)` i wybrać te warunki początkowe które dążą do powyższej krzywej fazowej o okresie 1. Okazuje się, że basen przyciągania jest "porządnym" zbiorem, którego brzeg jest gładką krzywą, podobnie jak w przypadku zilustrowanym powyżej dla układu tylko z tarciem, bez siły okresowej.
+Można zrobić doświadczenie numeryczne i wybierać różne warunki początkowe. Zobaczymy, że trajektorie dążą do 
+tego samego okresowego rozwiązania, są przyciągane do tego okresowego rozwiązania. Innymi słowy, ta krzywa fazowa 
+o okresie 1  jest ATRAKTOREM.  Atraktor ten nazywa się periodycznym atraktorem o okresie 1 lub 1-okresowym  
+atraktorem. Można by postawić pytanie: jak wygląda basen przyciągania dla tego atraktora. Aby dać odpowiedź na 
+to pytanie należy zbadać numerycznie np. kwadrat warunków początkowych  :math:`(x_0, y_0)` i wybrać te 
+warunki początkowe, które dążą do powyższej krzywej fazowej o okresie 1. Okazuje się, że basen przyciągania 
+jest "porządnym" zbiorem, którego brzeg jest gładką krzywą, podobnie jak w przypadku zilustrowanym 
+powyżej dla układu tylko z tarciem, bez siły okresowej.
 
 
 Ruch periodyczny o okresie 3
@@ -1001,7 +1036,7 @@ Zobaczmy, jak tym razem ewoluują rozwiązania o 2 bliskich warunkach początkow
        W lewej kolumnie zaprezentowano krzywe fazowe. 
        W prawej kolumnie widać trajektorie.
        Górny rząd dopowiada ewolucji początkowej a dolny 
-       asymptotycznej układu Duffinga o pracującego w 
+       asymptotycznej układu Duffinga pracującego w 
        reżimie chaotycznym.
 
 .. only:: html

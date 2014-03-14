@@ -33,7 +33,7 @@ W równaniu tym występują trzy wielkości:
 Ponieważ ruch zachodzi tylko wzdłuż osi OX (tak zakładamy dla prostoty), siła  :math:`F` 
 działa tylko w kierunku OX oraz przyśpieszenie :math:`a` jest wzdłuż osi OX.
 
-Wiemy z kursu fizyki, że przyśpieszenie cząstki jest pochodną ( względem czasu) pierwszego rzędu 
+Wiemy z kursu fizyki, że przyśpieszenie cząstki jest pochodną (względem czasu) pierwszego rzędu 
 prędkości :math:`v` cząstki. Z kolei prędkość :math:`v` cząstki jest pochodną pierwszego rzędu 
 położenia cząstki :math:`x`. 
 
@@ -313,7 +313,7 @@ tempa wzrostu :math:`k` od dodatkowych czynników. Na przykład przy modelowaniu
 zajęcy, możemy uzależnić tempo wzrostu :math:`k` od liczby zajęcy w populacji: duża ilość zajęcy 
 powoduje dużą konsumpcję pożywienia, a to z kolei skutkuje zmaleniem ilości pożywienia i utrudnieniami 
 w zdobywaniu pożywienia. W efekcie zmniejsza się tempo wzrostu :math:`k`. Innymi słowy, :math:`k` 
-powinno być malejącą funkcją :math:`x(t)` liczebników w populacji. Istnieje nieskończenie wiele 
+powinno być malejącą funkcją :math:`x(t)` osobników w populacji. Istnieje nieskończenie wiele 
 takich funkcji.  Na przykład
 
 .. MATH::
@@ -420,5 +420,5 @@ Układ 2 równań z czasem dyskretnym ma postać
 gdzie funkcje :math:`f` i :math:`g` są zadanymi funkcjami.
 Analiza jakościowa takiego układu jest bardzo trudna. Czasami nieumiejętne stosowanie numerycznej analizy 
 może skutkować tym, że umkną nam istotne cechy takiego układu, zwłaszcza gdy w układzie  występują dodatkowo  
-parametry których zmiana może powodować coś, co nazywa się bifurkacjami.  Ale o tym w dalszej części książki.    
+parametry, których zmiana może powodować coś, co nazywa się bifurkacjami.  Ale o tym w dalszej części książki.    
 

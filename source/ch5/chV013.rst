@@ -39,7 +39,7 @@ postać
 .. math::
    :label: eqnV1
 
-   f_{W_t - W_s}(x) = \frac{1}{\sqrt{2 \pi D (t - s)}} \exp \Big[ -\frac{x^2}{4D(t-s)} \Big].
+   f_{W_t - W_s}(x) = \frac{1}{\sqrt{4 \pi D (t - s)}} \exp \Big[ -\frac{x^2}{4D(t-s)} \Big].
 
 Proces taki może być wyprowadzony jako proces graniczny błądzenia przypadkowego. Wystarczy tylko zbadać
 granicę dla której wielkość skoku i czas pomiędzy skokami będą maleć do zera. Tak zdefiniowanym procesem
@@ -65,7 +65,7 @@ sensu pod znakiem całki
 
    X(t) = X(0) + \int_0^t a(s,y) ds + \int_0^t b(s,y) dW_s.
 
-Ostatni wyraz z prawej zwany jest całką Ito. 
+Ostatni wyraz po prawej stronie zwany jest całką Ito. 
 
 Równanie Blacka-Scholesa
 ++++++++++++++++++++++++
@@ -86,7 +86,7 @@ finansowych instrumentów pochodnych, czyli opcji, oraz służy do optymalizacji
 inwestycyjnego.
 
 Pomimo tego, że równanie to wygląda na proste, żeby nie powiedzieć zbyt proste na to by opisywać jakąkolwiek
-rzeczywistość na rynkach finansowych, ma ono olbrzymie znaczenie, jako, że może być rozwiązane ściśle
+rzeczywistość na rynkach finansowych, ma ono olbrzymie znaczenie, jako, że może być rozwiązane ściśle,
 dając wynikowy wzór z którego możemy wyliczyć zmianę cen prostych opcji. Jak już powiedzieliśmy, 
 rozwiązanie jest geometrycznym ruchem Browna
 
@@ -106,7 +106,7 @@ ona np. na rozwinięciu Tylora w przybliżeniu pierwszego rzędu. Stochastycznym
 jest metoda Eulera-Maruyamy. 
 
 Będziemy chcieli podać przybliżone rozwiązanie ogólnej postaci SDE na przedziale czasowym 
-:math:`t \in [t_0,t_E]`. Na początku zdyskretyzujemy sobie ów przedział czasowy, ustalając na siatkę
+:math:`t \in [t_0,t_E]`. Na początku zdyskretyzujemy sobie ów przedział czasowy, ustalając siatkę
 `N` punktów
 
 .. math::
@@ -186,7 +186,7 @@ w sensie silnym. Dany jest on wzorem iteracyjnym
    w_0 = X_0
 
    w_{i+1} = w_i + a(w_i,t_i) h - 
-   \frac{h}{2} b(x_i,t_i)\frac{\partial b}{\partial x}'(w_i,t_i)(z_i^2 - 1) +
+   \frac{h}{2} b(x_i,t_i)\frac{\partial b}{\partial x}(w_i,t_i)(z_i^2 - 1) +
    \sqrt{h} b(w_i,t_i) z_i.
 
 Obie metody (Millsteina i Eulera-Maruyamy) redukują się do tego samego schematu gdy część losowa nie jest 
@@ -206,8 +206,8 @@ Stochastyczne metody Rungeggo-Kutty. Zostały one podane przez Rebeccę
 Honeycutt w 1992. Ideą jest rozszerzenie klasycznej metody RK2 tak by
 poprawnie całkowała również człon stochastyczny.
 
-Wrócimy na chwilę do równania :eq:`eqnV3`. Dość łatwo wyobrazić sobie
-scałkować numerycznie część deterministyczną metodą RK dowolnego w 
+Wrócimy na chwilę do równania :eq:`eqnV3`. Dość łatwo scałkować numerycznie 
+część deterministyczną metodą RK dowolnego w 
 zasadzie rzędu. Jeżeli np: posłużymy się metodą RK4 a cześć stochastyczną
 obliczymy metodą Millsteina to otrzymamy metodę
 która co prawda zgadza się co do rzędu rozwinięcia dla części 

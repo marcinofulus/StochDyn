@@ -1,7 +1,24 @@
 Równania stochastyczne i ich interpretacja
 ==========================================
 
-Dotychczas rozważaliśmy modele deterministyczne bazujące na równaniach różniczkowych zwyczajnych. Twierdzenia matematyczne dają nam pewność że przy odpowiednicj założeniach rozwiązania równań różniczkowych są jednoznaczne przy zadanych warunkach początkowych. To jest kluczowe dla szerokiej klasy zjawisk w przyrodzie. Ten determinizm pozwala przewidywać ewolucję układów, pozwala konstruować i używać urządzenia, które pracują zgodnie z jego planowanymi funkcjami. To zapewniają twierdzenia matematyczne. Ale też pokazaliśmy, że matematyczny determinizm może być w praktyce złudny ponieważ dokładne w sensie matematycznym przygotowanie układu w określonych stanach początkowych jest niemożliwe. Niedokładności warunków początkowych mogą w trakcie ewolucji narastać powodując utratę przewidywalności ukrytą w równaniach różniczkowych. Dlatego ten fenomen nazywa się deterministycznym chaosem, czyli czymś co jest nieprzewidywalne ale jednocześnie nie jest losowe. Teraz rozpoczynamy wędrówkę po innej klasie zjawisk i procesów dynamicznych, a mianowicie po krainie procesów losowych. Ta klasa zjawisk bazuje na teorii procesów stochastycznych. To jest teoria matematyczna, której fundamenty oparte są o teorię prawdopodobieństwa. Niewątpliwie procesy stochastyczne nie są procesami deterministycznymi. Ich opis używa takich pojęć jak wartość średnia, fluktuacje czyli niespodziewane odchylania od wartości średniej, korelacja w różnych momentach czasu, charakterystyki spektralne ważne z eksperymentalnego punktu. Opis procesów stochastycznych jest do pewnego stopnia podobny do przedstawionego wcześniej opisu: bazuje on też na równaniach różniczkowych w których pojawiają się wyrażenia mogące przyjmować w sposób losowy różne wartości. Aby to wyjaśnić, posłużmy się przykładem z klasycznej mechaniki Newtona. Ba, możemy przywołać tu równanie Newtona dla cząstki o jednym stopniu swobody w potencjale :math:`V(x)`. Jest ono postaci: 
+Dotychczas rozważaliśmy modele deterministyczne bazujące na równaniach różniczkowych zwyczajnych. Twierdzenia 
+matematyczne dają nam pewność że przy odpowiednich założeniach rozwiązania równań różniczkowych są jednoznaczne 
+przy zadanych warunkach początkowych. To jest kluczowe dla szerokiej klasy zjawisk w przyrodzie. Ten determinizm 
+pozwala przewidywać ewolucję układów, pozwala konstruować i używać urządzenia, które pracują zgodnie z jego 
+planowanymi funkcjami. To zapewniają twierdzenia matematyczne. Ale też pokazaliśmy, że matematyczny determinizm 
+może być w praktyce złudny ponieważ dokładne w sensie matematycznym przygotowanie układu w określonych stanach 
+początkowych jest niemożliwe. Niedokładności warunków początkowych mogą w trakcie ewolucji narastać powodując 
+utratę przewidywalności ukrytą w równaniach różniczkowych. Dlatego ten fenomen nazywa się deterministycznym 
+chaosem, czyli czymś co jest nieprzewidywalne ale jednocześnie nie jest losowe. Teraz rozpoczynamy wędrówkę po 
+innej klasie zjawisk i procesów dynamicznych, a mianowicie po krainie procesów losowych. Ta klasa zjawisk bazuje 
+na teorii procesów stochastycznych. To jest teoria matematyczna, której fundamenty oparte są o teorię 
+prawdopodobieństwa. Niewątpliwie procesy stochastyczne nie są procesami deterministycznymi. Ich opis używa takich 
+pojęć jak wartość średnia, fluktuacje czyli niespodziewane odchylania od wartości średniej, korelacja w różnych 
+momentach czasu, charakterystyki spektralne ważne z eksperymentalnego punktu widzenia. Opis procesów stochastycznych jest 
+do pewnego stopnia podobny do przedstawionego wcześniej opisu: bazuje on też na równaniach różniczkowych w 
+których pojawiają się wyrażenia mogące przyjmować w sposób losowy różne wartości. Aby to wyjaśnić, posłużmy się 
+przykładem z klasycznej mechaniki Newtona. Ba, możemy przywołać tu równanie Newtona dla cząstki o jednym stopniu 
+swobody w potencjale :math:`V(x)`. Jest ono postaci: 
 
 .. MATH::
  :label: eqn1
@@ -9,7 +26,19 @@ Dotychczas rozważaliśmy modele deterministyczne bazujące na równaniach róż
  m \ddot x + \gamma \dot x = -V'(x)
 
 
-W równaniu tym pojawia się wyraz :math:`\gamma \dot x`, który uwzględnia tarcie, tłumienie. Skąd pojawia się tarcie (tłumienie) w układzie? Wywodzi się ono z oddziaływania układu z otoczeniem. Rzeczywiste układy zawsze są w jakimś ośrodku: w powietrzu, wodzie, krysztale, komórce biologicznej. Owo oddziaływanie z otoczeniem jest źródłem tarcia, ale też jest jednym z czynników powodujących losowość. Wpływ otoczenia nie da się przewidzieć ponieważ rzeczywiste otoczenie składa się w bardzo dużej ilości cząstek. Przypomnijmy że w szkance wypełnionej wodą mamy około :math:`10^{23}` cząstek. Nie znamy ani położeń tych cząstek, ani prędkości tych cząstek. Ale gdybyśmy nawet znali te wielkości, to co nam z takiej wiedzy. Gdybyśmy chcieli modelować oddziaływanie układu z otoczeniem jako oddziaływanie opisane przez równania Newtona, to liczba równań Newtona rzędu :math:`10^{23}` jest przerażająco wielka. Nie bylibyśmy w stanie je zapisać, nie mówiąc o ich rozwiązywaniu. W tej beznadziejnej sytuacji powstaje fizyka statystyczna i teoria procesów stochastycznech. W tych teoriach nie ma determinizmu. Musi nam wystarczyć tylko prawdopodobieństwo tego, że cząstka w chwili :math:`t=17` znajduje się w jakimś obszarze :math:`A`, że średnia wartość prędkośći w chwili :math:`t=32 s` wynosi :math:`36 m/s` oraz że cząstka średnio oddaliła się o :math:`x=2 m` od położenia początkowego. 
+W równaniu tym pojawia się wyraz :math:`\gamma \dot x`, który uwzględnia tarcie, tłumienie. Skąd pojawia się 
+tarcie (tłumienie) w układzie? Wywodzi się ono z oddziaływania układu z otoczeniem. Rzeczywiste układy zawsze 
+są w jakimś ośrodku: w powietrzu, wodzie, krysztale, komórce biologicznej. Owo oddziaływanie z otoczeniem jest 
+źródłem tarcia, ale też jest jednym z czynników powodujących losowość. Wpływ otoczenia nie da się przewidzieć 
+ponieważ rzeczywiste otoczenie składa się w bardzo dużej ilości cząstek. Przypomnijmy że w szkance wypełnionej 
+wodą mamy około :math:`10^{23}` cząstek. Nie znamy ani położeń tych cząstek, ani prędkości tych cząstek. Ale 
+gdybyśmy nawet znali te wielkości, to co nam z takiej wiedzy. Gdybyśmy chcieli modelować oddziaływanie układu 
+z otoczeniem jako oddziaływanie opisane przez równania Newtona, to liczba równań Newtona rzędu :math:`10^{23}` 
+jest przerażająco wielka. Nie bylibyśmy w stanie ich zapisać, nie mówiąc o ich rozwiązywaniu. W tej 
+beznadziejnej sytuacji powstaje fizyka statystyczna i teoria procesów stochastycznech. W tych teoriach nie ma 
+determinizmu. Musi nam wystarczyć tylko prawdopodobieństwo tego, że cząstka w chwili :math:`t=17` znajduje się 
+w jakimś obszarze :math:`A`, że średnia wartość prędkośći w chwili :math:`t=32 s` wynosi :math:`36 m/s` oraz 
+że cząstka średnio oddaliła się o :math:`x=2 m` od położenia początkowego. 
 
 W powyższym równaniu Newtona uwzględniliśmy wyraz opisujący tarcie (czyli oddziaływanie z otoczeniem), ale nie uwzględniliśmy jeszcze jednej siły, siły jaką cząstki otoczenia wywierają na układ. Poprawniejsze równanie miałoby postać:
 
@@ -228,13 +257,13 @@ gdzie :math:`\lambda \in [0, 1]` i może przyjmowac dowolną wartość z tego pr
       są równoważne. Problem pojawia sie tylko wówczas gdy :math:`\xi(t)` jest procesem stochastycznym o niezależnych 
       przyrostach. Takimi procesami są podstawowe modelowe procesy stochastyczne: proces Wienera, proces Poissona i proces Levy'ego. 
 
-   2. Jeżeli te trzy procesy sa przybliżeniami odpowiednich procesów skorelowanych, to właściwa definicja jest definicją 
+   2. Jeżeli te trzy procesy są przybliżeniami odpowiednich procesów skorelowanych, to właściwa definicja jest definicją 
       Stratonowicza. Innymi słowy, wyjściowe całki ze skorelowanymi procesami nie zależą od definicji, ale w granicy gdy 
       czas korelacji dąży do zera, wartości całek są takie jak w definicji Stratonowicza.
 
    3. Istnieje związek między całkami Ito i Stratonowicza: z całki Ito można otrzymać całkę Stratonowicza i odwrotnie: z 
       całki Stratonowicza można otrzymać całkę Ito. Więc generalnie nie należy się przejmować interpretacją tak długo jak 
-      prowadzimy formalne obliczenia, ale w opdowiednim momencie trzeba wybrać odpowiednią interpretację całki, ponieważ 
+      prowadzimy formalne obliczenia, ale w odpowiednim momencie trzeba wybrać odpowiednią interpretację całki, ponieważ 
       końcowe wyniki zależą od tej interpretacji. 
 
 
@@ -267,7 +296,7 @@ Mogą być takie przypadki, gdy wielkości losowe pojawiają sie w nieliniowy sp
   \frac{dX}{dt} = F(X, \eta(t)) \qquad 
 
 
-Czytelnik sam może napisać odpowiednik wielowymiarowy równania :eq:`eqn27`. Z punktu widzenia zastosowań ważne jest jakie istnieją modele matematyczne zaburzeń losowych :math:`\{\eta_i(t)\}` czy :math:`\{\xi_i(t)\}`. Mogą to być procesy stacjonarne, procesy Markowa (markowowskie) lub też procesy niemarkowowskie. Mogą to byc procesy skorelowane lub nieskorelowane. W następnej części podamy przykłady najczęściej stosowanych modeli szumu. 
+Czytelnik sam może napisać odpowiednik wielowymiarowy równania :eq:`eqn27`. Z punktu widzenia zastosowań ważne jest jakie istnieją modele matematyczne zaburzeń losowych :math:`\{\eta_i(t)\}` czy :math:`\{\xi_i(t)\}`. Mogą to być procesy stacjonarne, procesy Markowa (markowowskie) lub też procesy niemarkowowskie. Mogą to być procesy skorelowane lub nieskorelowane. W następnej części podamy przykłady najczęściej stosowanych modeli szumu. 
 
 
 

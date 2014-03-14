@@ -88,7 +88,7 @@ gdzie :math:`D_0` jest intensywnością szumu. Dla białego szumu gaussowskiego 
  {\cal D}P[\xi] = {\cal D}z \; {\mbox{exp}}\left[-D_0 \int dt\;\xi^2(t) \right], \qquad 
 
 
-Dlaczego wprowadza się taki dziwny obiekt matematyczny jak funkcjonał :math:`{\cal D}P[\xi]`. Przypomnijmy sobie, że zmienna losowa o rozkładzie Gaussa jest określona przez wartość średnią zmiennej losowej i jej wariancję
+Dlaczego wprowadza się taki dziwny obiekt matematyczny jak funkcjonał :math:`{\cal D}P[\xi]`? Przypomnijmy sobie, że zmienna losowa o rozkładzie Gaussa jest określona przez wartość średnią zmiennej losowej i jej wariancję
 
 .. MATH::
  :label: eqn9
@@ -583,7 +583,7 @@ Rozważmy dla prostoty równanie stochastyczne w postaci:
  \dot x = F(x) + G(x) \xi(t)
 
 
-gdzie :math:`\xi(t)` jest dowolnym opisanym powyżej szumem. Co możemy powiedzieć o procesie stochastycznym :math:`x=x(t)` generowanym przez powyższe równanie. Jeżeli szum :math:`\xi(t)` is białym szumem wówczas proces :math:`x(t)` jest procesem Markowa. To jest ogromna zaleta ponieważ proces Markowa jest całkowicie opisany gdy znamy 
+gdzie :math:`\xi(t)` jest dowolnym opisanym powyżej szumem. Co możemy powiedzieć o procesie stochastycznym :math:`x=x(t)` generowanym przez powyższe równanie. Jeżeli szum :math:`\xi(t)` jest białym szumem wówczas proces :math:`x(t)` jest procesem Markowa. To jest ogromna zaleta ponieważ proces Markowa jest całkowicie opisany gdy znamy 
 
 (i) warunkową gęstość prawdopodobieństwa :math:`p(x_2, t_2|x_1, t_1)`
 

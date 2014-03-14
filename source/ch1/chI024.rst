@@ -1,14 +1,14 @@
 Atraktory
 =========
 
-Atraktor :math:`A` to taki zbiór w przestrzeni fazowej układu dynamicznego, że wiele trajektorii startujących nawet bardzo daleko od tego zbioru  dąży w miarę upływu czasu do tego zbioru :math:`A`.  Najprościej jest to zrozumieć na przykładzie oscylatora tłumionego. Realizacją takiego oscylatora może być wahadło matematyczne czyli kulka  na nieważkim pręcie zawieszona w jakimś środowisku (byleby nie w próżni). Na kulkę działa siła przyciągania ziemskiego i siła tarcia. Kulkę wychylamy o dowolny kąt od pozycji pionowej  i obserwujemy trajektorię  kulki. Kulka wykonuje coraz to mniejsze wahania i po dostatecznie długim czasie zatrzymuje się w pozycji pionowej. Kulkę możemy wychylać o dowolny kąt, nadawać jej dowolną prędkość, a i tak po pewnym czasie kulka zatrzyma  się w pozycji pionowej, która odpowiada zerowemu wychyleniu kulki. Ten zerowy kąt wychylenia jest atraktorem. W tym przypadku atraktorem jest  punkt w przestrzeni fazowej. Ponieważ przestrzeń fazowa oscylatora harmonicznego  tłumionego jest 2-wymiarowa położenie-prędkość, atraktorem jest punkt :math:`A = (położenie = 0, prędkość = 0)`. 
+Atraktor :math:`A` to taki zbiór w przestrzeni fazowej układu dynamicznego, że wiele trajektorii startujących nawet bardzo daleko od tego zbioru  dąży w miarę upływu czasu do tego zbioru :math:`A`.  Najprościej jest to zrozumieć na przykładzie oscylatora tłumionego. Realizacją takiego oscylatora może być wahadło matematyczne czyli kulka  na nieważkim pręcie zawieszona w jakimś środowisku (byleby nie w próżni). Na kulkę działa siła przyciągania ziemskiego i siła tarcia. Kulkę wychylamy o dowolny kąt od pozycji pionowej  i obserwujemy trajektorię  kulki. Kulka wykonuje coraz to mniejsze wahania i po dostatecznie długim czasie zatrzymuje się w pozycji pionowej. Kulkę możemy wychylać o dowolny kąt, nadawać jej dowolną prędkość, a i tak po pewnym czasie kulka zatrzyma  się w pozycji pionowej, która odpowiada zerowemu wychyleniu kulki. Ten zerowy kąt wychylenia jest atraktorem. W tym przypadku atraktorem jest  punkt w przestrzeni fazowej. Ponieważ przestrzeń fazowa oscylatora harmonicznego  tłumionego jest 2-wymiarowa położenie-prędkość, atraktorem jest punkt :math:`A = (\mathrm{położenie} = 0, \mathrm{prędkość} = 0)`. 
 
 Podamy teraz bardziej formalną definicję.
 
 Atraktor
   Atraktorem nazywamy ograniczony zbiór w przestrzeni fazowej, do którego dążą asymptotycznie w czasie (tzn. gdy :math:`t \to \infty`) obszary warunków początkowych o niezerowej objętości  w przestrzeni fazowej. Atraktor to inaczej zbiór przyciągający: przyciąga on trajektorie o różnych warunkach początkowych.  Ale nie musi on przyciągać wszystkich trajektorii. Dla danego układu dynamicznego może istnieć wiele atraktorów, nawet nieskończenie wiele. Atraktory mogą mieć  nieskomplikowaną strukturę: to może być  punkt, kilka punktów, krzywa taka jak okrąg czy zdeformowana elipsa, część płaszczyzny, torus (podobny do dętki),  część przestrzeni. Atraktory mogą też  mieć skomplikowaną strukturę: może to być zbiór fraktalny, tzn. zbiór o niecałkowitym wymiarze, np. 0.63, 2.06. Taki atraktor nazywa się *dziwnym atraktorem*.
 
-Z atraktorami związane są obszary przyciągania lub baseny przyciągania :math:`B(A)`. Basenem przyciągania atraktora :math:`A` nazywamy zbiór warunków początkowych :math:`x_0` , dla których trajektorie są przyciągane do :math:`A`, czyli 
+Z atraktorami związane są obszary przyciągania lub baseny przyciągania :math:`B(A)`. Basenem przyciągania atraktora :math:`A` nazywamy zbiór warunków początkowych :math:`x_0`, dla których trajektorie są przyciągane do :math:`A`, czyli 
 
 .. MATH::
     :label: eqn1
@@ -16,7 +16,7 @@ Z atraktorami związane są obszary przyciągania lub baseny przyciągania :math
     B(A) = \{ x_0: lim_{t \to \infty} x(t; x_0) \in A\}
 
 
-gdzie :math:`x(t; x_0)` jest trajektorią startującą z warunku początkowego :math:`x_0`, np. rozwiązaniem układu równań różniczkowych  z odpowiednimi warunkami początkowymi :math:`\vec x_0`.
+gdzie :math:`x(t; x_0)` jest trajektorią startującą z warunku początkowego :math:`x_0`, np. rozwiązaniem układu równań różniczkowych  z odpowiednimi warunkami początkowymi :math:`x_0`.
 
 Przykład 1: oscylator harmoniczny tłumiony
 ------------------------------------------
@@ -41,7 +41,7 @@ Jest tylko jeden atraktor: to punkt (0, 0). Basenem przyciągania jest cała pł
      :align: center
      :alt: fig1
 
-     Trajektorie zbiegają się do jednego basenu przyciągania
+     Trajektorie zbiegają się do jednego atraktora
      :math:`(x,y) = (0,0)`.
 
 
@@ -96,7 +96,7 @@ wizualizacja jest opracowana na
      :align: center
      :alt: fig2
 
-     Trajektorie zbiegają się do dwóch basenów przyciągania
+     Trajektorie zbiegają się do dwóch atraktorów
      usytuowanych w dwóch minimach potencjału bistabilnego
      :math:`(-x_s, 0)` oraz :math:`(x_s, 0)`.
 

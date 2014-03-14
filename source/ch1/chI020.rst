@@ -582,7 +582,10 @@ można traktować jak składowe pewnego pola wektorowego:
     \vec F = [F_x, F_y] = [f(x, y), g(x, y)]
 
 
-W każdym punkcie płaszczyzny o współrzędnych :math:`\{x, y\}` rysujemy wektor  o składowych  :math:`[f(x, y), g(x, y)]`. W ten sposób otrzymujemy pole wektorowe. No dobrze, ale jaką informację o układzie można "wyciągnąć" z tego pola wektorowego. Wykonajmy takie oto ćwiczenie numeryczne: Startujemy z warunku początkowego :math:`\{x_0, y_0\}` i rysujemy w tym punkcie wektor o składowych :math:`[f(x_0, y_0), g(x_0, y_0)]` czyli
+W każdym punkcie płaszczyzny o współrzędnych :math:`\{x, y\}` rysujemy wektor  o składowych  :math:`[f(x, y), g(x, y)]`. 
+W ten sposób otrzymujemy pole wektorowe. No dobrze, ale jaką informację o układzie można "wyciągnąć" z tego pola 
+wektorowego? Wykonajmy takie oto ćwiczenie numeryczne: Startujemy z warunku początkowego :math:`\{x_0, y_0\}` i 
+rysujemy w tym punkcie wektor o składowych :math:`[f(x_0, y_0), g(x_0, y_0)]` czyli
 
 .. MATH::
     :label: eqn64
@@ -614,7 +617,12 @@ W n-tym kroku iteracji obliczamy  :math:`\{x_n, y_n\}`:
     \mbox{w punkcie }  \quad \{x_n, y_n\}   \quad \mbox{rysujemy wektor o składowych} \quad [f(x_n, y_n), g(x_n, y_n)]
 
 
-Ponieważ wszystkie powyższe punkty  :math:`\{x_i, y_i\}` leżą na krzywej fazowej, to wektory :math:`[f(x_i, y_i), g(x_i, y_i)]`  są przyczepione do tych krzywych fazowych. Zauważamy, że wektory te są styczne do krzywej fazowej. Jeżeli :math:`\{x_i, y_i\}` miały by interpretacje położenia cząstki na płaszczyźnie, to wektory  :math:`[f(x_i, y_i), g(x_i, y_i)]` miały by interpretację prędkości ponieważ :math:`\dot x = f(x, y)` oraz :math:`\dot y = g(x, y)`. Wiemy, że :math:`\dot x = v_x` jest x-ową składową prędkości, z kolei :math:`\dot y = v_y` jest y-ową składową prędkości. Innymi słowy, otrzymane pole wektorowe to pole prędkości fikcyjnej cząstki.
+Ponieważ wszystkie powyższe punkty  :math:`\{x_i, y_i\}` leżą na krzywej fazowej, to wektory 
+:math:`[f(x_i, y_i), g(x_i, y_i)]` są przyczepione do tych krzywych fazowych. Zauważamy, że wektory te są styczne do 
+krzywej fazowej. Jeżeli :math:`\{x_i, y_i\}` miały by interpretację położenia cząstki na płaszczyźnie, to wektory  
+:math:`[f(x_i, y_i), g(x_i, y_i)]` miały by interpretację prędkości ponieważ :math:`\dot x = f(x, y)` oraz 
+:math:`\dot y = g(x, y)`. Wiemy, że :math:`\dot x = v_x` jest x-ową składową prędkości, z kolei :math:`\dot y = v_y` 
+jest y-ową składową prędkości. Innymi słowy, otrzymane pole wektorowe to pole prędkości fikcyjnej cząstki.
 
 .. only:: html
 
@@ -653,7 +661,7 @@ Ponieważ wszystkie powyższe punkty  :math:`\{x_i, y_i\}` leżą na krzywej faz
 
 .. only:: latex
 
-  Wizualizacja pola wektorowego w systemie Sage może być dość prosto wykonane za pomocą wbudowanej funkcji
+  Wizualizacja pola wektorowego w systemie Sage może być dość prosto wykonana za pomocą wbudowanej funkcji
   ``plot_vector_field``. Funkcja zwraca wykres unormowanego pola dla zadanego równania różniczkowego. My 
   jednak zobrazujemy też powyższe idee i wykreślimy (w Sage oczywiście) pole dla kilku kolejnych kroków iteracji
   numerycznej.

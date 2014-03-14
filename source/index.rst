@@ -11,9 +11,9 @@ Dynamika stochastyczna
         Jerzy Łuczka, 
         Łukasz Machura
 :Wersja: 
-        1.02 1/2014
+        1.03 3/2014
 :Pobierz:
-        :download:`podręcznik (v1.02, PDF) <pdf/StochDyn_v1.02.pdf>`
+        :download:`podręcznik (v1.03, PDF) <pdf/StochDyn_v1.03.pdf>`
 
 Niniejsza książka jest podstawą wykładu o tym samym tytule dla studentów 
 Ekonofizyki drugiego stopnia. Duża część materiału może być wykorzystywana 

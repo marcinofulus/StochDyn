@@ -78,7 +78,7 @@ Pytamy, jakie jest prawdopodobieństwo tego, że po wykonaniu :math:`n` kroków,
 .. MATH::
  :label: eqn6
 
- L\to 0, \quad, T\to 0, \quad \mbox{w taki sposób, aby} \quad \frac{L^2}{T} = const. = 2D
+ L\to 0, \quad T\to 0, \quad \mbox{w taki sposób, aby} \quad \frac{L^2}{T} = const. = 2D
 
 
 gdzie stałą :math:`D` nazywa się współczynnikiem dyfuzji lub natężeniem (intensywnością) procesu stochastycznego.
@@ -131,7 +131,7 @@ Korzystając z własności 3 można obliczyć funkcję korelacyjną procesy Wien
  \langle W(t_2) W(t_1) \rangle = 2D \mbox{min} (t_2, t_1) = 2D [ t_1 \theta(t_2 - t_1) + t_2 \theta(t_1 -t_2)]
 
 
-gdzie funkcja :math:`\mbox{min}(t,s)` oznacza mniejszą z 2 wartości :math:`t` i :math:`s`. Funkcję te można wyrazić w matematycznym zapisie korzystając z funkcji skokowej Heaviside'a :math:`\theta(x)`. Przyrost :math:`W(t_2) - W(t_1)` jest zmienna losową gaussowską o zerowej wartości średniej i wariancji :math:`\sigma^2 = 2D(t_2 - t_1)`. Więc jego rozkład prawdopodobieństwa ma postać 
+gdzie funkcja :math:`\mbox{min}(t,s)` oznacza mniejszą z 2 wartości :math:`t` i :math:`s`. Funkcję te można wyrazić w matematycznym zapisie korzystając z funkcji skokowej Heaviside'a :math:`\theta(x)`. Przyrost :math:`W(t_2) - W(t_1)` jest zmienną losową gaussowską o zerowej wartości średniej i wariancji :math:`\sigma^2 = 2D(t_2 - t_1)`. Więc jego rozkład prawdopodobieństwa ma postać 
  
 .. MATH::
  :label: eqn11
@@ -246,7 +246,7 @@ Jeżeli wylosowany punkt jest w tym przedziale, uważam to za sukces. Wybieramy 
  n \to \infty, \;\;\; p \to 0 \;\;\;\; \mbox{ale} \;\;n\cdot p = \frac{n(t_2 - t_1)}{T} = \lambda 
 
 
-co da się osiągnąć gdy założymy że :math:`T \to \infty` przy czym 
+co da się osiągnąć gdy założymy, że :math:`T \to \infty` przy czym 
 
 .. MATH::
  :label: eqn18
@@ -460,10 +460,7 @@ Pokażemy, w jaki sposób można wyznaczyć postać funkcji korelacyjnej. Tą sa
    
    = \mu (t_2 -t_1) \; \mu t_1 + \mu^2 t_1^2 + \mu t_1 
 
-  .. MATH::
-   :label: eqn38
-
-   \mu^2 t_2 t_1 + \mu t_1 \; \; \; \; \mbox{dla} \; \; \; t_2 > t_1
+   = \mu^2 t_2 t_1 + \mu t_1 \; \; \; \; \mbox{dla} \; \; \; t_2 > t_1
 
 
 2. Niech :math:`t_1 > t_2 > t_0=0`. Przyrosty :math:`N(t_1) - N(t_2)` oraz :math:`N(t_2) - N(t_0)` są zmiennymi losowymi niezależnymi. Możemy powtórzyć trzy kroki analogiczne do tych w powyższych trzech równaniach otrzymując 
@@ -603,9 +600,9 @@ uzyskamy wykorzystując podstawową funkcję ``random()``.
 Proces Levy-ego
 ---------------
 
-Uogólnimy dwa powyższe procesy: Wienera i Poissona, które w potocznym sensie są jednocześnie najbardziej losowe. Są też procesami Markowa. Podkreślamy, że są to podstawowe procesy stochastyczne, ale nie powinno się je nazywać szumem ponieważ nie są to procesy stacjonarne. Są one najbardziej losowe, ponieważ następujące po sobie przyrosty tych procesów są niezależne.
+Uogólnimy dwa powyższe procesy: Wienera i Poissona, które w potocznym sensie są jednocześnie najbardziej losowe. Są też procesami Markowa. Podkreślamy, że są to podstawowe procesy stochastyczne, ale nie powinno się ich nazywać szumem ponieważ nie są to procesy stacjonarne. Są one najbardziej losowe, ponieważ następujące po sobie przyrosty tych procesów są niezależne.
 
-Powyższe dwa procesy są szczególnymi przypadkami procesu który nazywa się procesem Levy'ego. Wiele innych procesów są albo funkcjami procesu Levy'ego albo funkcjonałami (trochę ogólniejszymi zależnościami) tego procesu.
+Powyższe dwa procesy są szczególnymi przypadkami procesu który nazywa się procesem Levy'ego. Wiele innych procesów jest albo funkcjami procesu Levy'ego albo funkcjonałami (trochę ogólniejszymi zależnościami) tego procesu.
 
 Definicja procesu Levy'ego :math:`L(t)` jest relatywnie prosta: jest to rzeczywisty proces stochastyczny, prawostronnie ciągły o skończonych granicach lewostronnych oraz
 
@@ -685,7 +682,7 @@ Z twierdzenia Levy'ego-Ito wynika, że proces Levy'ego :math:`L(t)` składa się
  L(t)=L_1(t) +L_2(t) + L_3(t) + L_4(t), \qquad 
 
 
-gdzie :math:`L_1(t)` to dryf, :math:`L_2(t)` to proces Wienera, :math:`L_3(t)` to złożony proces Poissona oraz :math:`L_4(t)` to czysto skokowy proces zwany martngałem (a pure jump martingale). Mówiąc w prosty sposób, martyngał to taki proces stochastyczny, że warunkowa wartość średnia
+gdzie :math:`L_1(t)` to dryf, :math:`L_2(t)` to proces Wienera, :math:`L_3(t)` to złożony proces Poissona oraz :math:`L_4(t)` to czysto skokowy proces zwany martyngałem (a pure jump martingale). Mówiąc w prosty sposób, martyngał to taki proces stochastyczny, że warunkowa wartość średnia
 
 .. MATH::
  :label: eqn57
@@ -719,12 +716,12 @@ gdzie
 
 Warto podkreślić, że liniowa kombinacja niezależnych procesów Levy'ego jest także procesem Levy'ego.
 
-Szczególny, ale bardzo ważnym przypadkiem procesu Levy'ego jest tzw. :math:`\alpha`-stabilny proces :math:`L_{\alpha}(t)` 0 indeksie :math:`\alpha \in (0, 2]`. To jest przypadek trypletu :math:`(a, 0, \nu)` z miarą Levy'ego w postaci
+Szczególny, ale bardzo ważnym przypadkiem procesu Levy'ego jest tzw. :math:`\alpha`-stabilny proces :math:`L_{\alpha}(t)` o indeksie :math:`\alpha \in (0, 2]`. To jest przypadek trypletu :math:`(a, 0, \nu)` z miarą Levy'ego w postaci
 
 .. MATH::
  :label: eqn61
 
- \nu(y) = \left[ c_{1} I_{(0,\infty)}(y) + c_{2} I_{(-\infty,0)}(y) \right] | y|^{-\alpha -1}\ dy, \qquad 
+ \nu(dy) = \left[ c_{1} I_{(0,\infty)}(y) + c_{2} I_{(-\infty,0)}(y) \right] | y|^{-\alpha -1}\ dy, 
 
 
 gdzie :math:`c_1>0` i :math:`c_2>0`. Eksponenta charakterystyczna jest postaci
